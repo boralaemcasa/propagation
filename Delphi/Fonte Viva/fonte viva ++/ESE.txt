@@ -1,0 +1,442 @@
+novoCapitulo(1);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2256/capitulo-i-nao-vim-destruir-a-lei/1");
+processar(2, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2121/capitulo-i-nao-vim-destruir-a-lei/moises");
+processar(3, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2126/capitulo-i-nao-vim-destruir-a-lei/o-cristo");
+processar(5, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2129/capitulo-i-nao-vim-destruir-a-lei/o-espiritismo");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2133/capitulo-i-nao-vim-destruir-a-lei/alianca-da-ciencia-e-da-religiao");
+processar(9, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2135/capitulo-i-nao-vim-destruir-a-lei/a-nova-era");
+novoCapitulo(2);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2257/capitulo-ii-meu-reino-nao-e-deste-mundo/1");
+processar(2, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2139/capitulo-ii-meu-reino-nao-e-deste-mundo/a-vida-futura");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2142/capitulo-ii-meu-reino-nao-e-deste-mundo/a-realeza-de-jesus");
+processar(5, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2144/capitulo-ii-meu-reino-nao-e-deste-mundo/o-ponto-de-vista");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2149/capitulo-ii-meu-reino-nao-e-deste-mundo/instrucoes-dos-espiritos/8");
+novoCapitulo(3);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2258/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/1");
+processar(2, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2150/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/diferentes-estados-da-alma-na-erraticidade");
+processar(3, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2152/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/diferentes-categorias-de-mundos-habitados");
+processar(6, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2156/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/destinacao-da-terra-causas-das-miserias-humanas");
+processar(8, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7559/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/mundos-inferiores-e-mundos-superiores");
+processar(13, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2165/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/mundos-de-expiacoes-e-de-provas");
+processar(16, 18,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2169/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/mundos-regeneradores");
+processar(19, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2173/capitulo-iii-ha-muitas-moradas-na-casa-de-meu-pai/progressao-dos-mundos");
+novoCapitulo(4);
+processar(1, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7450/capitulo-iv-ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo/ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo");
+processar(4, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2176/capitulo-iv-ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo/ressurreicao-e-reencarnacao");
+processar(18, 23,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2191/capitulo-iv-ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo/a-reencarnacao-fortalece-os-lacos-de-familia-ao-passo-que-a-unidade-da-existencia-os-rompe");
+processar(24, 24,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2200/capitulo-iv-ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo/instrucoes-dos-espiritos/limites-da-encarnacao/24-quais-os-limites-da-encarnacao");
+processar(25, 26,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2201/capitulo-iv-ninguem-podera-ver-o-reino-de-deus-se-nao-nascer-de-novo/instrucoes-dos-espiritos/necessidades-da-encarnacao");
+novoCapitulo(5);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2254/capitulo-v-bem-aventurados-os-aflitos/1");
+processar(2, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2255/capitulo-v-bem-aventurados-os-aflitos/2");
+processar(3, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2204/capitulo-v-bem-aventurados-os-aflitos/justica-das-aflicoes");
+processar(4, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2206/capitulo-v-bem-aventurados-os-aflitos/causas-atuais-das-aflicoes");
+processar(6, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2209/capitulo-v-bem-aventurados-os-aflitos/causas-anteriores-das-aflicoes");
+processar(11, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2216/capitulo-v-bem-aventurados-os-aflitos/esquecimento-do-passado/11");
+processar(12, 13,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2217/capitulo-v-bem-aventurados-os-aflitos/motivos-de-resignacao");
+processar(14, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2220/capitulo-v-bem-aventurados-os-aflitos/o-suicidio-e-a-loucura");
+processar(18, 18,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2228/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/bem-e-mal-sofrer/18");
+processar(19, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2231/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/o-mal-e-o-remedio/19");
+processar(20, 20,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2233/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/a-felicidade-nao-e-deste-mundo/20");
+processar(21, 21,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2235/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/perda-de-pessoas-amadas-mortes-prematuras/21");
+processar(22, 22,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2237/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/se-fosse-um-homem-de-bem-teria-morrido/22");
+processar(23, 23,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2239/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/os-tormentos-voluntarios/23");
+processar(24, 24,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2241/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/a-desgraca-real/24");
+processar(25, 25,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2243/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/a-melancolia/25");
+processar(26, 26,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7565/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/provas-voluntarias-o-verdadeiro-cilicio/26");
+processar(27, 27,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2246/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/dever-se-a-por-termo-as-provas-do-proximo/27");
+processar(28, 28,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2248/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/sera-licito-abreviar-a-vida-de-um-doente-que-sofra-sem-esperanca-de-cura/28");
+processar(29, 30,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7566/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/sacrificios-da-propria-vida");
+processar(31, 31,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7570/capitulo-v-bem-aventurados-os-aflitos/instrucoes-dos-espiritos/proveito-dos-sofrimentos-para-outrem/31");
+novoCapitulo(6);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2263/capitulo-vi-o-cristo-consolador/o-jugo-leve");
+processar(3, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2266/capitulo-vi-o-cristo-consolador/consolador-prometido");
+processar(5, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2270/capitulo-vi-o-cristo-consolador/instrucoes-dos-espiritos/advento-do-espirito-de-verdade");
+novoCapitulo(7);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2275/capitulo-vii-bem-aventurados-os-pobres-de-espirito/o-que-se-deve-entender-por-pobres-de-espirito");
+processar(3, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2278/capitulo-vii-bem-aventurados-os-pobres-de-espirito/aquele-que-se-eleva-sera-rebaixado");
+processar(7, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2283/capitulo-vii-bem-aventurados-os-pobres-de-espirito/misterios-ocultos-aos-doutos-e-aos-prudentes");
+processar(11, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2289/capitulo-vii-bem-aventurados-os-pobres-de-espirito/instrucoes-dos-espiritos/o-orgulho-e-a-humildade");
+processar(13, 13,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2294/capitulo-vii-bem-aventurados-os-pobres-de-espirito/instrucoes-dos-espiritos/missao-do-homem-inteligente-na-terra/13");
+novoCapitulo(8);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2295/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/simplicidade-e-pureza-de-coracao");
+processar(5, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2300/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/pecado-por-pensamentos-adulterio");
+processar(8, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2304/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/verdadeira-pureza-maos-nao-lavadas");
+processar(11, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2308/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/escandalos-se-a-vossa-mao-e-motivo-de-escandalo-cortai-a");
+processar(18, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2317/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/instrucoes-dos-espiritos/deixai-que-venham-a-mim-as-criancinhas");
+processar(20, 21,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2320/capitulo-viii-bem-aventurados-os-que-tem-coracao-puro/instrucoes-dos-espiritos/bem-aventurados-os-que-tem-fechados-os-olhos");
+novoCapitulo(9);
+processar(1, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2323/capitulo-ix-bem-aventurados-os-que-sao-brandos-e-pacificos/injurias-e-violencias");
+processar(6, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2331/capitulo-ix-bem-aventurados-os-que-sao-brandos-e-pacificos/instrucoes-dos-espiritos/a-afabilidade-e-a-docura/6");
+processar(7, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2333/capitulo-ix-bem-aventurados-os-que-sao-brandos-e-pacificos/instrucoes-dos-espiritos/a-paciencia/7");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2335/capitulo-ix-bem-aventurados-os-que-sao-brandos-e-pacificos/instrucoes-dos-espiritos/obediencia-e-resignacao/8");
+processar(9, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2336/capitulo-ix-bem-aventurados-os-que-sao-brandos-e-pacificos/instrucoes-dos-espiritos/a-colera");
+novoCapitulo(10);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2339/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/perdoai-para-que-deus-vos-perdoe");
+processar(5, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2344/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/reconciliacoes-com-os-adversarios");
+processar(7, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2347/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/o-sacrificio-mais-agradavel-a-deus");
+processar(9, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2350/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/o-argueiro-e-a-trave-no-olho");
+processar(11, 13,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2353/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/nao-julgueis-para-nao-serdes-julgados-atire-a-primeira-pedra-aquele-que-estiver-sem-pecado");
+processar(14, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2358/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/instrucoes-dos-espiritos/perdao-das-ofensas");
+processar(16, 18,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2361/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/instrucoes-dos-espiritos/a-indulgencia");
+processar(19, 21,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2365/capitulo-x-bem-aventurados-os-que-sao-misericordiosos/instrucoes-dos-espiritos/e-permitido-repreender-os-outros-notar-as-imperfeicoes-de-outrem-divulgar-o-mal-de-outrem");
+novoCapitulo(11);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7455/capitulo-xi-amar-o-proximo-como-a-si-mesmo/o-mandamento-maior");
+processar(5, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2373/capitulo-xi-amar-o-proximo-como-a-si-mesmo/dai-a-cesar-o-que-e-de-cesar");
+processar(8, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2378/capitulo-xi-amar-o-proximo-como-a-si-mesmo/instrucoes-dos-espiritos/a-lei-de-amor");
+processar(11, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2382/capitulo-xi-amar-o-proximo-como-a-si-mesmo/instrucoes-dos-espiritos/o-egoismo");
+processar(13, 13,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2386/capitulo-xi-amar-o-proximo-como-a-si-mesmo/instrucoes-dos-espiritos/a-fe-e-a-caridade/13");
+processar(14, 14,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2388/capitulo-xi-amar-o-proximo-como-a-si-mesmo/instrucoes-dos-espiritos/caridade-para-com-os-criminosos/14");
+processar(15, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2390/capitulo-xi-amar-o-proximo-como-a-si-mesmo/instrucoes-dos-espiritos/deve-se-expor-a-vida-por-um-malfeitor/15");
+novoCapitulo(12);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2391/capitulo-xii-amai-os-vossos-inimigos/retribuir-o-mal-com-o-bem");
+processar(5, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2396/capitulo-xii-amai-os-vossos-inimigos/os-inimigos-desencarnados");
+processar(7, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2400/capitulo-xii-amai-os-vossos-inimigos/se-alguem-vos-bater-na-face-direita-apresentai-lhe-tambem-a-outra");
+processar(9, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2405/capitulo-xii-amai-os-vossos-inimigos/instrucoes-dos-espiritos/a-vinganca/9");
+processar(10, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2407/capitulo-xii-amai-os-vossos-inimigos/instrucoes-dos-espiritos/o-odio/10");
+processar(11, 16,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7571/capitulo-xii-amai-os-vossos-inimigos/instrucoes-dos-espiritos/o-duelo");
+novoCapitulo(13);
+processar(1, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2415/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/fazer-o-bem-sem-ostentacao");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2420/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/os-infortunios-ocultos/4");
+processar(5, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2421/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/o-obulo-da-viuva");
+processar(7, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2424/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/convidar-os-pobres-e-os-estropiados-dar-sem-esperar-retribuicao");
+processar(9, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2428/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/a-caridade-material-e-a-caridade-moral");
+processar(11, 16,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2431/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/a-beneficiencia");
+processar(17, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2439/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/a-piedade/17");
+processar(18, 18,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2441/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/os-orfaos/18");
+processar(19, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2443/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/beneficios-pagos-com-a-ingratidao/19");
+processar(20, 20,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2445/capitulo-xiii-nao-saiba-a-vossa-mao-esquerda-o-que-de-a-vossa-mao-direita/instrucoes-dos-espiritos/beneficencia-exclusiva/20");
+novoCapitulo(14);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7460/capitulo-xiv-honrai-a-vosso-pai-e-a-vossa-mae/honrai-vosso-pai-e-vossa-mae");
+processar(3, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2448/capitulo-xiv-honrai-a-vosso-pai-e-a-vossa-mae/piedade-filial");
+processar(5, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2451/capitulo-xiv-honrai-a-vosso-pai-e-a-vossa-mae/quem-e-minha-mae-e-quem-sao-meus-irmaos");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2456/capitulo-xiv-honrai-a-vosso-pai-e-a-vossa-mae/a-parentela-corporal-e-a-parentela-espiritual/8");
+processar(9, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2459/capitulo-xiv-honrai-a-vosso-pai-e-a-vossa-mae/instrucoes-dos-espiritos/a-ingratidao-dos-filhos-e-os-lacos-de-familia/9");
+novoCapitulo(15);
+processar(1, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2460/capitulo-xv-fora-da-caridade-nao-ha-salvacao/o-de-que-precisa-o-espirito-para-se-salvar-parabola-do-bom-samaritano");
+processar(4, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2464/capitulo-xv-fora-da-caridade-nao-ha-salvacao/o-mandamento-maior");
+processar(6, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2467/capitulo-xv-fora-da-caridade-nao-ha-salvacao/necessidade-de-caridade-segundo-s-paulo");
+processar(8, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7464/capitulo-xv-fora-da-caridade-nao-ha-salvacao/fora-da-igreja-nao-ha-salvacao-fora-da-verdade-nao-ha-salvacao/8");
+processar(10, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2475/capitulo-xv-fora-da-caridade-nao-ha-salvacao/instrucoes-dos-espiritos/fora-da-caridade-nao-ha-salvacao/10");
+novoCapitulo(16);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2476/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/salvacao-dos-ricos");
+processar(3, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2480/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/preservar-se-da-avareza/3");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2482/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/jesus-em-casa-de-zaqueu/4");
+processar(5, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2484/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/parabola-do-mau-rico/5");
+processar(6, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2486/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/parabola-dos-talentos/6");
+processar(7, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2488/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/utilidade-providencial-da-riqueza-provas-da-riqueza-e-da-miseria/7");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2490/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/desigualdade-das-riquezas/8");
+processar(9, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2492/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/instrucoes-dos-espiritos/a-verdadeira-propriedade");
+processar(11, 13,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2495/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/instrucoes-dos-espiritos/emprego-da-riqueza");
+processar(14, 14,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2500/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/instrucoes-dos-espiritos/desprendimento-dos-bens-terrenos/14");
+processar(15, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2502/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/instrucoes-dos-espiritos/transmissao-da-riqueza/15");
+novoCapitulo(17);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2502/capitulo-xvi-nao-se-pode-servir-a-deus-e-a-mamon/instrucoes-dos-espiritos/transmissao-da-riqueza/15");
+processar(3, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2507/capitulo-xvii-sede-perfeitos/o-homem-de-bem/3");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2509/capitulo-xvii-sede-perfeitos/os-bons-espiritas/4");
+processar(5, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2510/capitulo-xvii-sede-perfeitos/parabola-do-semeador");
+processar(7, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7466/capitulo-xvii-sede-perfeitos/instrucoes-dos-espiritos/o-dever/7");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2516/capitulo-xvii-sede-perfeitos/instrucoes-dos-espiritos/a-virtude/8");
+processar(9, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2518/capitulo-xvii-sede-perfeitos/instrucoes-dos-espiritos/os-superiores-e-os-inferiores/9");
+processar(10, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2520/capitulo-xvii-sede-perfeitos/instrucoes-dos-espiritos/o-homem-no-mundo/10");
+processar(11, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2522/capitulo-xvii-sede-perfeitos/instrucoes-dos-espiritos/cuidar-do-corpo-e-do-espirito/11");
+novoCapitulo(18);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2523/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/parabola-do-festim-de-bodas");
+processar(3, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2526/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/a-porta-estreita");
+processar(6, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2530/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/nem-todos-os-que-dizem-senhor-senhor-entrarao-no-reino-dos-ceus");
+processar(10, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2535/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/muito-se-pedira-aquele-que-muito-recebeu");
+processar(13, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2540/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/instrucoes-dos-espiritos/dar-se-a-aquele-que-tem");
+processar(16, 16,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2545/capitulo-xviii-muitos-os-chamados-poucos-os-escolhidos/instrucoes-dos-espiritos/pelas-suas-obras-e-que-se-reconhece-o-cristao/16");
+novoCapitulo(19);
+processar(1, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2546/capitulo-xix-a-fe-transporta-montanhas/o-poder-da-fe");
+processar(6, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2552/capitulo-xix-a-fe-transporta-montanhas/a-fe-religiosa-condicao-da-fe-inabalavel");
+processar(8, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2555/capitulo-xix-a-fe-transporta-montanhas/parabola-da-figueira-que-secou");
+processar(11, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2561/capitulo-xix-a-fe-transporta-montanhas/instrucoes-dos-espiritos/a-fe-mae-da-esperanca-da-caridade/11");
+processar(12, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2563/capitulo-xix-a-fe-transporta-montanhas/instrucoes-dos-espiritos/a-fe-humana-e-a-divina/12");
+novoCapitulo(20);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2564/capitulo-xx-os-trabalhadores-da-ultima-hora/1");
+processar(2, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2566/capitulo-xx-os-trabalhadores-da-ultima-hora/instrucoes-dos-espiritos/os-ultimos-serao-os-primeiros");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2570/capitulo-xx-os-trabalhadores-da-ultima-hora/instrucoes-dos-espiritos/missao-dos-espiritas/4");
+processar(5, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2572/capitulo-xx-os-trabalhadores-da-ultima-hora/instrucoes-dos-espiritos/os-obreiros-do-senhor/5");
+novoCapitulo(21);
+processar(1, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2573/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/conhece-se-a-arvore-pelo-fruto");
+processar(4, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2578/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/missao-dos-profetas/4");
+processar(5, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2580/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/prodigios-dos-falsos-profetas/5");
+processar(6, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2581/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/nao-creais-em-todos-os-espiritos");
+processar(8, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2586/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/instrucoes-dos-espiritos/os-falsos-profetas/8");
+processar(9, 9,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2588/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/instrucoes-dos-espiritos/caracteres-do-verdadeiro-profeta/9");
+processar(10, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2589/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/instrucoes-dos-espiritos/os-falsos-profetas-da-erraticidade");
+processar(11, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2591/capitulo-xxi-havera-falsos-cristos-e-falsos-profetas/instrucoes-dos-espiritos/jeremias-e-os-falsos-profetas");
+novoCapitulo(22);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2593/capitulo-xxii-nao-separareis-o-que-deus-juntou/indissolubilidade-do-casamento");
+processar(5, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2598/capitulo-xxii-nao-separareis-o-que-deus-juntou/o-divorcio");
+novoCapitulo(23);
+processar(1, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2600/capitulo-xxiii-estranha-moral/odiar-os-pais");
+processar(4, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2604/capitulo-xxiii-estranha-moral/abandonar-pai-mae-e-filhos");
+processar(7, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2608/capitulo-xxiii-estranha-moral/deixar-aos-mortos-o-cuidado-de-enterrar-seus-mortos");
+processar(9, 18,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2610/capitulo-xxiii-estranha-moral/nao-vim-trazer-a-paz-mas-a-divisao");
+novoCapitulo(24);
+processar(1, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2621/capitulo-xxiv-nao-ponhais-a-candeia-debaixo-do-alqueire/candeia-sob-o-alqueire-por-que-fala-jesus-por-parabolas");
+processar(8, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2629/capitulo-xxiv-nao-ponhais-a-candeia-debaixo-do-alqueire/nao-vades-ter-com-os-gentios");
+processar(11, 12,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2633/capitulo-xxiv-nao-ponhais-a-candeia-debaixo-do-alqueire/nao-sao-os-que-gozam-saude-que-precisam-de-medico");
+processar(13, 16,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2636/capitulo-xxiv-nao-ponhais-a-candeia-debaixo-do-alqueire/coragem-da-fe");
+processar(17, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2641/capitulo-xxiv-nao-ponhais-a-candeia-debaixo-do-alqueire/carregar-sua-cruz-quem-quiser-salvar-a-vida-perde-la-a");
+novoCapitulo(25);
+processar(1, 5,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2645/capitulo-xxv-buscai-e-achareis/ajuda-te-a-ti-mesmo-que-o-ceu-te-ajudara");
+processar(6, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2651/capitulo-xxv-buscai-e-achareis/observai-os-passaros-do-ceu");
+processar(9, 11,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2655/capitulo-xxv-buscai-e-achareis/nao-vos-afadigueis-pela-posse-de-ouro");
+novoCapitulo(26);
+processar(1, 2,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2659/capitulo-xxvi-dai-gratuitamente-o-que-gratuitamente-recebestes/dom-de-curar");
+processar(3, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2662/capitulo-xxvi-dai-gratuitamente-o-que-gratuitamente-recebestes/preces-pagas");
+processar(5, 6,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2665/capitulo-xxvi-dai-gratuitamente-o-que-gratuitamente-recebestes/mercadores-expulsos-do-templo");
+processar(7, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2668/capitulo-xxvi-dai-gratuitamente-o-que-gratuitamente-recebestes/mediunidade-gratuita");
+novoCapitulo(27);
+processar(1, 4,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2673/capitulo-xxvii-pedi-e-obtereis/qualidades-da-prece");
+processar(5, 8,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2678/capitulo-xxvii-pedi-e-obtereis/eficacia-da-prece");
+processar(9, 15,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2683/capitulo-xxvii-pedi-e-obtereis/acao-da-prece-transmissao-do-pensamento");
+processar(16, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2691/capitulo-xxvii-pedi-e-obtereis/preces-inteligentes");
+processar(18, 21,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2694/capitulo-xxvii-pedi-e-obtereis/da-prece-pelos-mortos-e-pelos-espiritos-sofredores");
+processar(22, 22,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2700/capitulo-xxvii-pedi-e-obtereis/instrucoes-dos-espiritos/maneira-de-orar");
+processar(23, 23,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2702/capitulo-xxvii-pedi-e-obtereis/instrucoes-dos-espiritos/felicidade-que-a-prece-proporciona");
+novoCapitulo(28);
+processar(1, 1,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/2704/capitulo-xxviii-coletanea-de-preces-espiritas/preambulo");
+processar(2, 3,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/6981/capitulo-xxviii-coletanea-de-preces-espiritas/i-preces-gerais/oracao-dominical");
+processar(4, 7,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/6984/capitulo-xxviii-coletanea-de-preces-espiritas/i-preces-gerais/reunioes-espiritas");
+processar(8, 10,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/6989/capitulo-xxviii-coletanea-de-preces-espiritas/i-preces-gerais/para-os-mediuns");
+processar(11, 14,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/6997/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/aos-anjos-guardiaes-e-aos-espiritos-protetores");
+processar(15, 17,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7002/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/para-afastar-os-maus-espiritos");
+processar(18, 19,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7006/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/para-pedir-a-corrigenda-de-um-defeito");
+processar(20, 21,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7009/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/para-pedir-a-forca-de-resistir-a-uma-tentacao");
+processar(22, 23,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7012/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/acao-de-gracas-pela-vitoria-alcancada-sobre-uma-tentacao");
+processar(24, 25,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7015/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/para-pedir-um-conselho");
+processar(26, 27,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7018/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/nas-aflicoes-da-vida");
+processar(28, 29,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7021/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/acao-de-gracas-por-um-favor-obtido");
+processar(30, 33,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7024/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/ato-de-submissao-e-de-resignacao");
+processar(34, 35,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7029/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/num-perigo-iminente");
+processar(36, 37,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7032/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/acao-de-gracas-por-haver-escapado-a-um-perigo");
+processar(38, 39,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7035/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/a-hora-de-dormir");
+processar(40, 41,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7038/capitulo-xxviii-coletanea-de-preces-espiritas/ii-preces-por-aquele-mesmo-que-ora/prevendo-proxima-a-morte");
+processar(42, 43,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7041/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/por-alguem-que-esteja-em-aflicao");
+processar(44, 45,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7044/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/acao-de-gracas-por-um-beneficio-concedido-a-outrem");
+processar(46, 47,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7047/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/pelos-nossos-inimigos-e-pelos-que-nos-querem-mal");
+processar(48, 49,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7050/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/acao-de-gracas-pelo-bem-concedido-aos-nossos-inimigos");
+processar(50, 52,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7053/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/pelos-inimigos-do-espiritismo");
+processar(53, 56,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7057/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/por-uma-crianca-que-acaba-de-nascer");
+processar(57, 58,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7062/capitulo-xxviii-coletanea-de-preces-espiritas/iii-preces-por-outrem/por-um-agonizante");
+processar(59, 61,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7065/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/por-alguem-que-acaba-de-morrer");
+processar(62, 63,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7066/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/pelas-pessoas-a-quem-tivemos-afeicao");
+processar(64, 66,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7067/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/pelas-almas-sofredoras-que-pedem-preces");
+processar(67, 68,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7068/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/por-um-inimigo-que-morreu");
+processar(69, 70,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7069/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/por-um-criminoso");
+processar(71, 72,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7070/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/por-um-suicida");
+processar(73, 74,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7071/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/pelos-espiritos-arrependidos");
+processar(75, 76,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7072/capitulo-xxviii-coletanea-de-preces-espiritas/iv-preces-pelos-que-ja-nao-sao-da-terra/pelos-espiritos-endurecidos");
+processar(77, 80,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7091/capitulo-xxviii-coletanea-de-preces-espiritas/v-preces-pelos-doentes-e-pelos-obsidiados/pelos-doentes");
+processar(81, 84,
+"https://kardecpedia.com/roteiro-de-estudos/887/o-evangelho-segundo-o-espiritismo/7092/capitulo-xxviii-coletanea-de-preces-espiritas/v-preces-pelos-doentes-e-pelos-obsidiados/pelos-obsidiados");

@@ -1,0 +1,36 @@
+1) Fast quintic. Sextic skeleton.
+2) Sextic working. Cancel button.
+
+It's slow. 
+
+We are using 00 .. 02 11 20 = array[6]. Do we need to go until 66 = array[14]?
+
+We need to search for integer ge's >= 0.
+
+Maybe z = \sum \theta_{ij} t_0^i t_1^j.
+
+*** We need to test if the solution works for all t \in [-delta, delta], \exits delta.
+
+If the quintic gets better, then the sextic gets better too.
+
+y^5 - y + t = 0 <==> y = \sum_{k = 0}^3 c_k t^k hyper(a_k; b_k; gt^\ell)
+<==> \sum_{i = 0}^4 m_i y^{(i)} + m_5 = 0
+<==> \sum b_n t^n = 0, \forall t; b_n = f(a, b, c, gc, ge).
+
+y = \sum c_k t^k \sum \alpha(k, i) (gt^\ell)^i/i!
+
+y = \sum_{k = 0}^3 \sum_{i = 0}^\infty c_k \alpha(k, i) g^i/i! t^{i \ell + k}
+
+m_5 = \sum_{j = 0}^G \gamma(5, j) t^j
+
+m_0 y = \sum \beta(k, i) \gamma(0, j) t^{i \ell + j + k}
+
+m_1 y' = \sum \beta(k, i) (i \ell + k) \gamma(1, j) t^{i \ell + j + k - 1}
+
+m_2 y'' = \sum \beta(k, i) (i \ell + k) (i \ell + k - 1) \gamma(2, j) t^{i \ell + j + k - 2}
+
+m_3 y''' = \sum \beta(k, i) (i \ell + k) (i \ell + k - 1) (i \ell + k - 2) \gamma(3, j) t^{i \ell + j + k - 3}
+
+m_4 y'''' = \sum \beta(k, i) (i \ell + k) (i \ell + k - 1) (i \ell + k - 2) (i \ell + k - 3) \gamma(4, j) t^{i \ell + j + k - 4}
+
+Determine b_n.

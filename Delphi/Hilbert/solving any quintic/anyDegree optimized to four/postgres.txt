@@ -1,0 +1,12 @@
+create table poly (
+  who character varying(255) not null,
+  i integer not null,
+  coef numeric(1000,0) not null,
+  p1 integer not null,
+  p2 integer not null,
+  p3 integer not null,
+  p4 integer not null,
+  p5 integer not null,
+  p6 integer not null,
+  primary key (who, i)
+);  

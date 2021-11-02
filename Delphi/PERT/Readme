@@ -1,0 +1,86 @@
+
+
+This is PERT++ (An enhanced edition of the program or project evaluation and review technique that includes Statistical PERT) in Delphi and FreePascal.
+   
+Version: 1.32
+
+Date: July 6, 2017
+
+
+Authors: 
+
+Amine Moulay Ramdane that have implemented PERT,Robert  Sedgewick, Kevin Wayne. 
+
+Description:
+
+This program (or project) evaluation and review technique includes Statistical PERT, it is a statistical tool, used in project management, which was designed to analyze and represent the tasks involved in completing a given project.
+
+PERT++ permits also to calculate:
+
+- The longest path of planned activities to the end of the project
+- The earliest and latest that each activity can start and finish without making the project longer
+- Determines “critical” activities (on the longest path)
+- Prioritize activities for the effective management and to
+shorten the planned critical path of a project by:
+- Pruning critical path activities
+- “Fast tracking" (performing more activities in parallel)
+- “Crashing the critical path" (shortening the durations of critical path activities by adding resources)
+- And it permits to give Risk for each output PERT formula
+
+PERT is a method of analyzing the tasks involved in completing a given project, especially the time needed to complete each task, and to identify the minimum time needed to complete the total project. It incorporates uncertainty by making it possible to schedule a project while not knowing precisely the details and durations of all the activities. It is more of an event-oriented technique rather than start- and completion-oriented, and is used more in projects where time is the major factor rather than cost. It is applied to very large-scale, one-time, complex, non-routine infrastructure and Research and Development projects.
+
+PERT and CPM are complementary tools, because "CPM employs one time estimate and one cost estimate for each activity; PERT may utilize three time estimates (optimistic, most likely, and pessimistic) and no costs for each activity. Although these are distinct differences, the term PERT is applied increasingly to all critical path scheduling
+
+This PERT library uses a CPM algorithm that uses Topological sorting to render CPM a linear-time algorithm for finding the critical path of the project, so it's fast.
+
+You have to have a java compiler, and you have first to compile the java libraries with the batch file compile.bat, and after that compile the Delphi and Freepascal test1.pas program.
+
+Here is the procedure to call:for PERT:
+
+procedure solvePERT(filename:string;var info:TCPMInfo;var  finishTime:system.double;var criticalPathStdDeviation:system.double);
+
+The arguments are:
+
+The filename: is the file to pass, it's is organized as:
+
+The first line is the number of jobs, the rest of each of the lines are: three time estimates that takes the job (optimistic, expected, and pessimistic) and after that the number of precedence constraints and after that the precedence constraints that specify that the job have to be completed before certain other jobs are begun.
+
+info: is the returned information, you can get the job number and the start and finish time of the job in info[i].job and info[i].start and info[i].finish, please look at the test.pas example to understand.
+
+finishTime: is the finish time.
+
+criticalPathStdDeviation: is the critical path standard deviation.
+
+I have also provided you with three other functions, here they are:
+
+function NormalDistA (const Mean, StdDev, AVal, BVal: Extended): Single;
+
+function NormalDistP (const Mean, StdDev, AVal: Extended): Single;
+
+function InvNormalDist(const Mean, StdDev, PVal: Extended; const Less: Boolean): Extended;
+
+For NormalDistA() or NormalDistP(), you pass the best estimate of completion time to Mean, and you pass the critical path standard deviation to StdDev, and you will get the probability of the value Aval or the probability between the values of Aval and Bval. 
+
+For InvNormalDist(), you pass the best estimate of completion time to Mean, and you pass the critical path standard deviation to StdDev, and you will get the length of the critical path of the probability PVal, and when Less is TRUE, you will obtain a cumulative distribution.
+
+I have also included a 32 bit and 64 bit windows executables called PERT32.exe and PERT64.exe (that take the file, with a the file format that i specified above, as an argument) inside the zip, they run the PERT solver, it is a very powerful tool, you need to compile CPM.java with compile.bat before running them.
+
+I have also included a 32 bit and 64 bit windows executables called CPM32.exe and CPM64.exe (that take the file, with a the file format that i specified in the Readme.CPM file, as an argument) inside the zip, they run the CPM solver that you use with Statistical PERT that i have included inside the zip file, you need to compile CPM.java with compile.bat before running them.
+
+The very important things to know about PERT is this:
+
+1- PERT works best in projects where previous experience can be relied on to accurately make predictions.
+
+2- To not underestimate project completion time, especially if delays cause the critical path to shift around, you have to enhance with point number 1 above or/and  management time and resources can be applied to make sure that optimistic and most likely and pessimistic time estimates of activities are accurate.
+
+Also PERT++ zip file includes the powerful Statistical PERT, Statistical PERT is inside Statistical_PERT_Beta_1.0.xlsx microsoft excel workbook, you can use LibreOffice or Microsoft Office to execute it, after that pass the output data of Statistical PERT to CPM library, please read the Readme.CPM to learn how to use CPM library, and please read and learn about Statistical PERT on internet.
+
+
+Have fun with it !
+
+
+Thank you,
+Amine Moulay Ramdane.
+
+
+

@@ -1,0 +1,1366 @@
+unit SNum;
+
+interface
+
+const
+  PRIMOS_SOURCE = 'D:\Vi\Matemática\EXEs\primos novos.dat';
+
+var
+  PRIMO_LIMITE: longword;
+
+type
+  SFrac = record
+    n, d: string;
+  end;
+
+function Valida(s: string): string;
+function FracValida(s: string): string;
+
+function FloatSoma(a, b: string): string;
+function FloatSubtrai(a, b: string): string;
+function FloatMultiplica(a, b: string): string;
+function SNumAbs(a: string): string;
+function FloatAbs(a: string): string;
+function DivideDizima(fracn, fracd: string; algarismos: integer): string;
+function FloatCompare(a, b: string): shortint;
+function Trunc(x: string): string;
+
+// as funçoes abaixo já partem de q as strings sao válidas
+function Soma(a, b: string): string;
+function Subtrai(a, b: string): string;
+function Multiplica(a, b: string): string; overload;
+function Multiplica(a, b, dir: string): string; overload;
+procedure Divide(a, b: string; var q, r: string);
+function Potencia(a, b: string): string;
+function mdc(x, y: string): string;
+function mmc(x, y: string): string;
+function binom(n, p: string): string; // fração aceita, resultado inteiro
+function sqrt(n, x: string): string;
+function Gamma(n: string): string;
+
+function SNumCompare(a, b: string): shortint;
+function FloatOposto(s: string): string;
+function SNumOposto(s: string): string;
+
+function FatoresPrimos(x: string): string;
+
+// fraçoes
+function Str2Frac(x: string): SFrac;
+procedure FracReduz(var x: string);
+function SFracDizima(frac: SFrac): string;
+
+function FracAdd(x, y: string): string;
+function FracSub(x, y: string): string;
+function FracMul(x, y: string): string;
+function FracDiv(x, y: string): string;
+function FracOposto(s: string): string;
+function FracCompare(x, y: string): shortint;
+function FracAbs(a: string): string;
+function FracPower(x, y: string): string;
+function FracLog(b, erro, x: string; var CANCELAR: boolean): string;
+function FracFloor(x: string): string;
+
+procedure ZeroLTrim(var s: string);
+
+implementation
+
+uses SysUtils, Forms, Windows, Messages;
+
+function FloatSubtrai(a, b: string): string;
+begin
+  result := FloatSoma(a, FloatOposto(b));
+end;
+
+procedure ZeroLTrim(var s: string);
+begin
+  while (copy(s, 1, 1) = '0') and (length(s) > 1) and (s[2] <> '/') do
+    delete(s, 1, 1);
+end;
+
+function Soma(a, b: string): string;
+var i, x: integer;
+  carry: byte;
+  minus: boolean;
+begin
+  minus := false;
+  if copy(a, 1, 1) = '-' then
+  begin
+    delete(a, 1, 1);
+    if copy(b, 1, 1) = '-' then
+    begin
+      delete(b, 1, 1);
+           // -a + (-b) = -(a + b)
+      minus := true;
+    end
+    else
+    begin
+           // -a + b = b - a
+      Result := Subtrai(b, a);
+      exit;
+    end;
+  end
+  else if copy(b, 1, 1) = '-' then
+  begin
+    delete(b, 1, 1);
+     // a + (-b) = a - b
+    Result := Subtrai(a, b);
+    exit;
+  end;
+
+  if length(a) > length(b) then // troca a, b
+  begin
+    Result := a;
+    a := b;
+    b := Result;
+  end;
+
+  x := length(b);
+  while length(a) < x do
+    a := '0' + a;
+
+//008765
+//123400
+  i := x;
+  while (i > 0) and (b[i] = '0') do
+    dec(i);
+
+  Result := copy(a, i + 1, x - i);
+  delete(a, i + 1, x - i);
+  delete(b, i + 1, x - i);
+
+  carry := 0;
+  for i := i downto 1 do
+  begin
+    x := byte(a[i]) - 48 + byte(b[i]) - 48 + carry;
+    if x >= 10 then
+    begin
+      carry := 1;
+      dec(x, 10);
+    end
+    else carry := 0;
+    Result := char(x + 48) + Result;
+  end;
+  if carry <> 0 then
+    Result := '1' + Result;
+  if minus then
+    Result := '-' + Result;
+end;
+
+function Subtrai(a, b: string): string;
+var i: integer;
+  x, carry: shortint;
+begin
+  if copy(a, 1, 1) = '-' then
+  begin
+    delete(a, 1, 1);
+    if copy(b, 1, 1) = '-' then
+    begin
+      delete(b, 1, 1);
+            // -a - (-b) = b - a
+      Result := Subtrai(b, a);
+    end
+    else
+    begin
+            // -a - b = -(a + b)
+      Result := '-' + Soma(a, b);
+    end;
+    exit;
+  end
+  else if copy(b, 1, 1) = '-' then
+  begin
+    delete(b, 1, 1);
+      // a - (-b) = a + b
+    Result := Soma(a, b);
+    exit;
+  end
+  else if SNumCompare(a, b) < 0 then
+  begin
+      // a < b => a - b = -(b - a)
+    Result := '-' + Subtrai(b, a);
+    exit;
+  end;
+// 923
+// 199
+  while length(b) < length(a) do
+    b := '0' + b;
+  Result := '';
+  carry := 0;
+  for i := length(a) downto 1 do
+  begin
+    x := byte(a[i]) - 48 - byte(b[i]) + 48 - carry;
+    if x < 0 then
+    begin
+      carry := 1;
+      inc(x, 10);
+    end
+    else carry := 0;
+    Result := char(x + 48) + Result;
+  end;
+
+  ZeroLTrim(Result);
+end;
+
+function FloatCompare(a, b: string): shortint;
+var
+  minus: boolean;
+  i, j, x: integer;
+begin
+  if pos('.', a) = 0 then
+    a := a + '.0';
+  if pos('.', b) = 0 then
+    b := b + '.0';
+
+  i := length(a) - pos('.', a); //12.123456
+  j := length(b) - pos('.', b); //12.1234
+  if j > i then
+  begin
+    Result := -SNumCompare(b, a);
+    exit;
+  end;
+
+  for x := 1 to i - j do
+    b := b + '0'; //12.123400
+
+  Result := 0;
+  if a = b then exit;
+  minus := false;
+  if copy(a, 1, 1) = '-' then
+    if copy(b, 1, 1) = '-'
+      then minus := true
+    else Result := -1
+  else if copy(b, 1, 1) = '-' then
+    Result := 1;
+
+  if Result <> 0 then exit;
+
+  if minus then
+  begin
+    delete(a, 1, 1);
+    delete(b, 1, 1);
+  end;
+
+  while length(b) < length(a) do
+    b := '0' + b;
+  while length(a) < length(b) do
+    a := '0' + a;
+
+// positivos
+  if a > b
+    then Result := 1
+  else Result := -1;
+
+// negativos inverte
+  if minus then Result := -Result;
+end;
+
+function FloatMultiplica(a, b: string): string;
+var i, j: integer;
+begin
+  i := pos('.', a);
+  if i > 0 then
+  begin
+    delete(a, i, 1);
+    i := length(a) + 1 - i; // 12.123456 ; 6
+  end;
+  j := pos('.', b);
+  if j > 0 then
+  begin
+    delete(b, j, 1);
+    j := length(b) + 1 - j; // 12.1234 ; 4
+  end;
+  Result := Multiplica(a, b); // -9775064704
+  if Result[1] = '-' then
+    while length(Result) < i + j + 2 do
+      insert('0', result, 2) // -09775064704
+  else
+    while length(Result) < i + j + 1 do
+      result := '0' + result; // 09775064704
+
+  insert('.', Result, length(Result) + 1 - i - j); // -0.9775064704
+
+  while copy(result, length(result) - 1, 2) = '00' do
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.0', result) > 0) and (pos('.0', result) = length(result) - 1) then
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.', result) > 0) and (pos('.', result) = length(result)) then
+    result := copy(result, 1, length(result) - 1);
+end;
+
+function FloatSoma(a, b: string): string;
+var
+  i, j, x: integer;
+begin
+  if pos('.', a) = 0 then
+    a := a + '.0';
+  if pos('.', b) = 0 then
+    b := b + '.0';
+
+  i := length(a) - pos('.', a); //12.123456
+  j := length(b) - pos('.', b); //12.1234
+  if j > i then
+  begin
+    x := j;
+    j := i; // j := min
+    i := x; // i := max
+    Result := b;
+    b := a;
+    a := Result;
+  end;
+
+  for x := 1 to i - j do
+    b := b + '0'; //12.123400
+
+  delete(a, length(a) - i, 1); // 12123456
+  delete(b, length(b) - i, 1); // 12123400
+
+  Result := Soma(a, b);
+  if result[1] = '-' then
+    j := 2
+  else
+    j := 1;
+  while length(result) < i + j do
+    insert('0', Result, j);
+  insert('.', Result, length(Result) + 1 - i);
+
+  while copy(result, length(result) - 1, 2) = '00' do
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.0', result) > 0) and (pos('.0', result) = length(result) - 1) then
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.', result) > 0) and (pos('.', result) = length(result)) then
+    result := copy(result, 1, length(result) - 1);
+end;
+
+function Multiplica(a, b: string): string; overload;
+var i, j: integer;
+  x, carry: byte;
+  minus: boolean;
+  subtotal: string;
+  multAlgarismo: array[2..9] of string;
+begin
+  minus := (copy(a, 1, 1) = '-');
+  if minus then delete(a, 1, 1);
+  if copy(b, 1, 1) = '-' then
+  begin
+    delete(b, 1, 1);
+    minus := not minus;
+  end;
+
+  for i := 2 to 9 do
+  begin
+    multAlgarismo[i] := '';
+    carry := 0;
+
+  // multiplicar i por cada algarismo de a
+    for j := length(a) downto 1 do
+    begin
+      x := (byte(a[j]) - 48) * i + carry;
+      carry := x div 10;
+      x := x mod 10;
+      multAlgarismo[i] := char(x + 48) + multAlgarismo[i];
+    end;
+
+    if carry <> 0 then
+      multAlgarismo[i] := char(carry + 48) + multAlgarismo[i];
+  end;
+
+  Result := '0';
+  for i := length(b) downto 1 do
+    if b[i] <> '0' then
+    begin
+      subtotal := '';
+      // zeros aa direita
+      if i < length(b) then
+        for j := 1 to length(b) - i do
+          subtotal := '0' + subtotal;
+
+      if b[i] = '1'
+        then subtotal := a + subtotal
+      else subtotal := multAlgarismo[(byte(b[i]) - 48)] + subtotal;
+
+      // o resultado é a soma dos subtotais
+      Result := soma(Result, subtotal);
+    end;
+
+  ZeroLTrim(Result);
+
+  if minus and (result <> '0') then
+    Result := '-' + Result;
+end;
+
+function Multiplica(a, b, dir: string): string; overload;
+var i, j: integer;
+  x, carry: byte;
+  minus: boolean;
+  subtotal: string;
+  multAlgarismo: array[2..9] of string;
+  f: TextFile;
+  t: TDateTime;
+begin
+  minus := (copy(a, 1, 1) = '-');
+  if minus then delete(a, 1, 1);
+  if copy(b, 1, 1) = '-' then
+  begin
+    delete(b, 1, 1);
+    minus := not minus;
+  end;
+
+  if FileExists(dir + 'calcula.ini') then
+  begin
+    AssignFile(f, dir + 'calcula.ini');
+    Reset(f);
+
+    for i := 2 to 9 do
+    begin
+      readln(f);
+      readln(f, multAlgarismo[i]);
+    end;
+
+    readln(f);
+    readln(f, i);
+    readln(f);
+    readln(f, result);
+    CloseFile(f);
+  end
+  else begin
+    for i := 2 to 9 do
+    begin
+      multAlgarismo[i] := '';
+      carry := 0;
+
+   // multiplicar i por cada algarismo de a
+      for j := length(a) downto 1 do
+      begin
+        x := (byte(a[j]) - 48) * i + carry;
+        carry := x div 10;
+        x := x mod 10;
+        multAlgarismo[i] := char(x + 48) + multAlgarismo[i];
+      end;
+
+      if carry <> 0 then
+        multAlgarismo[i] := char(carry + 48) + multAlgarismo[i];
+    end;
+
+    i := length(b) + 1;
+    Result := '0';
+  end;
+
+  for i := i - 1 downto 1 do
+    if b[i] <> '0' then
+    begin
+      t := Time; // vamos ver qto tempo leva
+
+      subtotal := '';
+     // zeros aa direita
+      if i < length(b) then
+        for j := 1 to length(b) - i do
+          subtotal := '0' + subtotal;
+
+      if b[i] = '1'
+        then subtotal := a + subtotal
+      else subtotal := multAlgarismo[(byte(b[i]) - 48)] + subtotal;
+
+     // o resultado é a soma dos subtotais
+      Result := soma(Result, subtotal);
+
+      Application.title := inttostr(i) + ' - ' + TimeToStr(time - t);
+      Application.MainForm.Caption := Application.Title;
+      Application.ProcessMessages;
+
+      if i mod 5 = 0 then // auto save
+      begin
+        AssignFile(f, dir + 'calcula_AutoSave.ini');
+        rewrite(f);
+        for j := 2 to 9 do
+        begin
+          writeln(f, '[' + inttostr(j) + ']');
+          writeln(f, multAlgarismo[j]);
+        end;
+
+        writeln(f, '[i]');
+        writeln(f, i);
+        writeln(f, '[Result]');
+        ZeroLTrim(Result);
+        writeln(f, Result);
+        CloseFile(f);
+      end;
+
+      if FileExists(dir + 'fechar.txt') then
+      begin
+        AssignFile(f, dir + 'calcula.ini');
+        rewrite(f);
+        for j := 2 to 9 do
+        begin
+          writeln(f, '[' + inttostr(j) + ']');
+          writeln(f, multAlgarismo[j]);
+        end;
+
+        writeln(f, '[i]');
+        writeln(f, i);
+        writeln(f, '[Result]');
+        ZeroLTrim(Result);
+        writeln(f, Result);
+        CloseFile(f);
+        Application.Terminate;
+        Result := 'HALT';
+        exit;
+      end;
+    end;
+
+  ZeroLTrim(Result);
+
+  if minus and (result <> '0') then
+    Result := '-' + Result;
+
+  DeleteFile(PChar(dir + 'calcula.ini'));
+end;
+
+procedure Divide(a, b: string; var q, r: string);
+var minusa, minusb: boolean;
+  x: byte;
+  index: integer;
+begin
+  if b = '0' then
+  begin
+    q := '0';
+    r := '0';
+    exit;
+  end;
+  if copy(a, 1, 1) = '0' then
+  begin
+    q := '0';
+    r := '0';
+    exit;
+  end;
+  if b = '1' then
+  begin
+    q := a;
+    r := '0';
+    exit;
+  end;
+  if a = b then
+  begin
+    q := '1';
+    r := '0';
+    exit;
+  end;
+  if SNumOposto(a) = b then
+  begin
+    q := '-1';
+    r := '0';
+    exit;
+  end;
+  if b = '-1' then
+  begin
+    q := a;
+    r := '0';
+    exit;
+  end;
+
+  minusa := (copy(a, 1, 1) = '-');
+  minusb := (copy(b, 1, 1) = '-');
+  if minusa then delete(a, 1, 1);
+  if minusb then delete(b, 1, 1);
+
+  q := '';
+  index := length(b);
+  r := copy(a, 1, index);
+  repeat
+    x := 0;
+    while SNumCompare(r, b) >= 0 do
+    begin
+      inc(x);
+      r := Subtrai(r, b);
+    end;
+    q := q + char(x + 48);
+    if index >= length(a) then break;
+
+   // "baixar" o próximo
+    inc(index);
+    if r = '0' then r := ''; // zero de resto nao vai virar zero aa esq
+    r := r + a[index];
+  until false;
+
+  ZeroLTrim(q);
+
+//  7 /  4 = ( 1, 3)     a < 0, r > 0:  incrementar o módulo do quociente
+// -7 /  4 = (-2, 1)                   complementar o resto
+//  7 / -4 = (-1, 3)     exatamente um negativo: sinal '-' no quociente
+// -7 / -4 = ( 2, 1)
+  if minusa and (r <> '0') then
+  begin
+    q := Soma(q, '1');
+    r := Subtrai(b, r);
+  end;
+  if minusa xor minusb then
+    q := '-' + q;
+end;
+
+function DivideDizima(fracn, fracd: string; algarismos: integer): string;
+var d, // dividendo
+  alg, // algarismo quociente
+    restos: string;
+  i, posicao: integer;
+begin
+  if snumcompare(fracn, '0') = 0 then
+  begin
+    result := '0';
+    exit;
+  end;
+
+  if fracd[1] = '-' then
+  begin
+    fracn := snumoposto(fracn);
+    fracd := snumoposto(fracd);
+  end;
+
+  if fracn[1] = '-' then
+  begin
+    result := snumoposto(divideDizima(snumoposto(fracn), fracd, algarismos));
+    exit;
+  end;
+
+  while pos('.', fracd) > 0 do // uses Gambis vagarosis;
+  begin
+    fracn := FloatMultiplica(fracn, '10');
+    fracd := FloatMultiplica(fracd, '10');
+    while copy(fracd, length(fracd) - 1, 2) = '00' do
+      fracd := copy(fracd, 1, length(fracd) - 2);
+    if (pos('.0', fracd) > 0) and (pos('.0', fracd) = length(fracd) - 1) then
+      fracd := copy(fracd, 1, length(fracd) - 2);
+    if (pos('.', fracd) > 0) and (pos('.', fracd) = length(fracd)) then
+      fracd := copy(fracd, 1, length(fracd) - 1);
+  end;
+
+  if pos('.', fracn) = 0 then
+    fracn := fracn + '.0';
+
+  i := pos('.', fracn);
+  delete(fracn, i, 1);
+  i := length(fracn) + 1 - i;
+
+  Divide(fracn, fracd, result, d);
+
+   //result := result + '.';
+  if Result[1] = '-' then
+    posicao := 2
+  else
+    posicao := 1;
+  while length(result) < i + posicao do
+    insert('0', Result, posicao);
+
+  insert('.', result, length(result) - i + 1);
+  dec(algarismos, i);
+  if algarismos <= 0 then
+  begin
+    while copy(result, length(result) - 1, 2) = '00' do
+      result := copy(result, 1, length(result) - 2);
+    if (pos('.0', result) > 0) and (pos('.0', result) = length(result) - 1) then
+      result := copy(result, 1, length(result) - 2);
+    if (pos('.', result) > 0) and (pos('.', result) = length(result)) then
+      result := copy(result, 1, length(result) - 1);
+    exit;
+  end;
+
+  restos := '.'; // é preciso ser entre pontos pq senao pega pedaço (4 de 14 p.ex.)
+  posicao := 0; // só p/ nao dar warning
+
+// achar o resto que se repete
+{  exemplo:
+       1/7 = (0,1)
+      10/7 = 1,3
+      30/7 = 4,2
+      20/7 = 2,6
+      60/7 = 8,4
+      40/7 = 5,5
+      50/7 = 7,1
+      logo 1/7 = 0,(142857)
+}
+  if d <> '0' then
+    repeat
+      restos := restos + d + '.'; //.1.3.2.6.4.5.
+      d := d + '0';
+      Divide(d, fracd, alg, d);
+      result := result + alg; //142857
+      dec(algarismos);
+      if algarismos <= 0 then
+      begin
+        while copy(result, length(result) - 1, 2) = '00' do
+          result := copy(result, 1, length(result) - 2);
+        if (pos('.0', result) > 0) and (pos('.0', result) = length(result) - 1) then
+          result := copy(result, 1, length(result) - 2);
+        if (pos('.', result) > 0) and (pos('.', result) = length(result)) then
+          result := copy(result, 1, length(result) - 1);
+        exit;
+      end;
+      posicao := pos('.' + d + '.', restos);
+    until (posicao > 0) or (d = '0');
+
+  if d <> '0' then
+  begin
+      // contar os '.' da posiçao em diante (nro de algs da dízima)
+    delete(restos, 1, posicao);
+    posicao := 0;
+    for i := 1 to length(restos) do
+      if restos[i] = '.' then
+        inc(posicao);
+
+         //insert('(', result, length(result) - posicao + 1);
+         //result := result + ')';
+
+    restos := copy(result, length(result) - posicao + 1, length(result));
+    i := length(restos);
+    repeat
+      Result := result + restos;
+      dec(algarismos, i);
+    until algarismos <= 0;
+  end;
+
+  while copy(result, length(result) - 1, 2) = '00' do
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.0', result) > 0) and (pos('.0', result) = length(result) - 1) then
+    result := copy(result, 1, length(result) - 2);
+  if (pos('.', result) > 0) and (pos('.', result) = length(result)) then
+    result := copy(result, 1, length(result) - 1);
+end;
+
+function FloatOposto(s: string): string;
+begin
+  if floatcompare(s, '0') = 0 then
+    s := '0'
+  else if copy(s, 1, 1) = '-'
+    then delete(s, 1, 1)
+  else insert('-', s, 1);
+
+  Result := s;
+end;
+
+function SNumOposto(s: string): string;
+begin
+  if snumcompare(s, '0') = 0 then
+    s := '0'
+  else if copy(s, 1, 1) = '-'
+    then delete(s, 1, 1)
+  else insert('-', s, 1);
+
+  Result := s;
+end;
+
+function SNumAbs(a: string): string;
+begin
+  if SNumCompare(a, '0') >= 0 then
+    result := a
+  else
+    result := snumOposto(a);
+end;
+
+function FloatAbs(a: string): string;
+begin
+  if FloatCompare(a, '0') >= 0 then
+    result := a
+  else
+    result := floatOposto(a);
+end;
+
+function FracAbs(a: string): string;
+begin
+  if FracCompare(a, '0') >= 0 then
+    result := a
+  else
+    result := FracOposto(a);
+end;
+
+function Potencia(a, b: string): string;
+begin
+  if SNumCompare(b, '0') <= 0 then
+    Result := '1'
+  else begin
+    Result := a;
+    while b <> '1' do
+    begin
+      Result := Multiplica(result, a);
+      b := Subtrai(b, '1');
+    end
+  end;
+end;
+
+function FracPower(x, y: string): string;
+var
+  s: SFrac;
+  n: string;
+begin
+  if FracCompare(y, '0') = 0 then
+  begin
+    Result := '1';
+    exit;
+  end;
+
+  s := Str2Frac(y);
+  if s.d <> '1' then // sqrt
+  begin
+    n := s.d;
+    Result := FracPower(x, s.n);
+    s := Str2Frac(Result);
+    s.n := sqrt(n, s.n);
+    s.d := sqrt(n, s.d);
+    Result := s.n;
+    if (s.d <> '1') and (s.n <> '0') then
+      Result := Result + '/' + s.d;
+    exit;
+  end;
+
+  if FracCompare(y, '0') < 0 then
+  begin
+    x := FracDiv('1', x);
+    y := SNumOposto(y);
+  end;
+
+  Result := x;
+  while y <> '1' do
+  begin
+    Result := FracMul(result, x);
+    y := Subtrai(y, '1');
+  end;
+end;
+
+function FracAdd(x, y: string): string;
+var a, b: SFrac;
+begin
+  a := Str2Frac(x);
+  b := Str2Frac(y);
+  Result := Soma(Multiplica(a.n, b.d), Multiplica(a.d, b.n)) + '/' + Multiplica(a.d, b.d);
+  FracReduz(Result);
+end;
+
+function FracSub(x, y: string): string;
+var a, b: SFrac;
+begin
+  a := Str2Frac(x);
+  b := Str2Frac(y);
+  b.n := snumOposto(b.n);
+  Result := Soma(Multiplica(a.n, b.d), Multiplica(a.d, b.n)) + '/' + Multiplica(a.d, b.d);
+  FracReduz(Result);
+end;
+
+function FracMul(x, y: string): string;
+var a, b: SFrac;
+begin
+  a := Str2Frac(x);
+  b := Str2Frac(y);
+  Result := Multiplica(a.n, b.n) + '/' + Multiplica(a.d, b.d);
+  FracReduz(Result);
+end;
+
+function FracDiv(x, y: string): string;
+var
+  a, b: SFrac;
+  aux: string;
+begin
+  a := Str2Frac(x);
+  b := Str2Frac(y);
+  aux := b.n;
+  b.n := b.d;
+  b.d := aux;
+  if SNumCompare(b.d, '0') < 0 then
+  begin
+    b.n := SNumOposto(b.n);
+    b.d := SNumOposto(b.d);
+  end;
+  Result := Multiplica(a.n, b.n) + '/' + Multiplica(a.d, b.d);
+  FracReduz(Result);
+  Result := FracValida(Result);
+end;
+
+procedure FracReduz(var x: string);
+var
+  a, b: SFrac;
+  m, r: string;
+begin
+  a := Str2Frac(x);
+  m := mdc(a.n, a.d);
+  Divide(a.n, m, b.n, r);
+  Divide(a.d, m, b.d, r);
+  if b.d = '1' then
+    x := b.n
+  else
+    x := b.n + '/' + b.d;
+end;
+
+function SFracDizima(frac: SFrac): string;
+var d, // dividendo
+  alg, // algarismo quociente
+    restos: string;
+  i, posicao: integer;
+begin
+  Divide(frac.n, frac.d, result, d);
+  result := result + ',';
+  restos := '.'; // é preciso ser entre pontos pq senao pega pedaço (4 de 14 p.ex.)
+  posicao := 0; // só p/ nao dar warning
+
+// achar o resto que se repete
+{  exemplo:
+       1/7 = (0,1)
+      10/7 = 1,3
+      30/7 = 4,2
+      20/7 = 2,6
+      60/7 = 8,4
+      40/7 = 5,5
+      50/7 = 7,1
+      logo 1/7 = 0,(142857)
+}
+  if d <> '0' then
+    repeat
+      restos := restos + d + '.'; //.1.3.2.6.4.5.
+      d := d + '0';
+      Divide(d, frac.d, alg, d);
+      result := result + alg; //142857
+      posicao := pos('.' + d + '.', restos);
+    until (posicao > 0) or (d = '0');
+
+  if d <> '0' then
+  begin
+      // contar os '.' da posiçao em diante (nro de algs da dízima)
+    delete(restos, 1, posicao);
+    posicao := 0;
+    for i := 1 to length(restos) do
+      if restos[i] = '.' then
+        inc(posicao);
+
+    insert('(', result, length(result) - posicao + 1);
+    result := result + ')';
+  end;
+end;
+
+function FatoresPrimos(x: string): string;
+var fatorado, ps, q, r: string;
+  f: file of longword;
+  p: longword;
+  expo: integer;
+{
+var x, ps, q, r, fatorado: string;
+    p, p2: int64;
+    n, counter, expo: integer;
+}
+begin
+  if SNumCompare(x, '2') < 0 then
+  begin
+    Result := x;
+    exit;
+  end;
+
+  fatorado := '';
+  AssignFile(f, PRIMOS_SOURCE);
+  reset(f);
+
+  p := 2;
+  ps := IntToStr(p);
+  expo := 1;
+
+  repeat
+    Divide(x, ps, q, r);
+    if (r = '0') and (x <> '0') then
+    begin
+      if pos(ps + ' * ', fatorado) > 0 then
+      begin
+        inc(expo);
+        if q = '1' then
+        begin
+          fatorado := copy(fatorado, 1, length(fatorado) - 3);
+          fatorado := fatorado + ' ^ ' + IntToStr(expo) + ' * ';
+        end
+      end
+      else if expo = 1 then
+        fatorado := fatorado + ps + ' * '
+      else
+      begin
+        fatorado := copy(fatorado, 1, length(fatorado) - 3);
+        fatorado := fatorado + ' ^ ' + IntToStr(expo) + ' * ' + ps + ' * ';
+        expo := 1;
+      end;
+
+      x := q;
+    end
+    else
+      // próximo primo
+      if eof(f) or (p > PRIMO_LIMITE) then
+        ps := x
+      else
+      begin
+        read(f, p);
+        ps := inttostr(p);
+      end;
+
+    if (SNumCompare(x, ps) > 0) and (SNumCompare(x, Multiplica(ps, ps)) < 0) then
+      ps := x;
+  until x = '1';
+
+  CloseFile(f);
+
+  Result := copy(fatorado, 1, length(fatorado) - 3);
+end;
+
+function trunc(x: string): string;
+var i: integer;
+begin
+  i := pos('.', x);
+  if i > 0 then
+    Result := copy(x, 1, i - 1)
+  else
+    Result := x;
+end;
+
+function Valida(s: string): string;
+var i: integer;
+begin
+  i := 1;
+  if s = '' then s := '0';
+  if s[1] = '-' then inc(i);
+  while i <= length(s) do
+  begin
+    if s[i] in ['0'..'9']
+      then inc(i)
+    else delete(s, i, 1);
+  end;
+
+  Result := s;
+  ZeroLTrim(Result);
+  if result = '-0' then
+    result := '0';
+end;
+
+function FracValida(s: string): string;
+var i: integer;
+  frac: SFrac;
+begin
+  i := 1;
+  if s = '' then s := '0';
+  if s[1] = '-' then inc(i);
+  while i <= length(s) do
+  begin
+    if s[i] in ['0'..'9', '/']
+      then inc(i)
+    else delete(s, i, 1);
+  end;
+
+  if copy(s, 1, 2) = '-0' then
+    delete(s, 1, 1);
+
+  i := pos('/', s);
+  if i > 0 then
+    s[i] := #32;
+
+  i := 1;
+  if copy(s, 1, 1) = '-' then inc(i);
+  while i <= length(s) do
+  begin
+    if s[i] in ['0'..'9', #32]
+      then inc(i)
+    else delete(s, i, 1);
+  end;
+
+  i := pos(#32, s);
+  if i > 0 then
+    s[i] := '/';
+
+  Result := s;
+  ZeroLTrim(Result);
+  frac := Str2Frac(Result);
+  if (frac.n <> '') and (frac.n <> '-') and (frac.d <> '') then
+    FracReduz(result)
+  else
+    Result := '';
+  if pos('/0', Result) > 0 then // division by zero
+    Result := '0';
+end;
+
+function SNumCompare(a, b: string): shortint;
+var minus: boolean;
+begin
+  if b = '0' then
+  begin
+    if copy(a, 1, 1) = '-' then
+      Result := -1
+    else if a = '0' then
+      Result := 0
+    else
+      Result := 1;
+    exit;
+  end;
+
+  Result := 0;
+  if a = b then exit;
+  minus := false;
+  if copy(a, 1, 1) = '-' then
+    if copy(b, 1, 1) = '-'
+      then minus := true
+    else Result := -1
+  else if copy(b, 1, 1) = '-' then
+    Result := 1;
+
+  if Result <> 0 then exit;
+
+  if minus then
+  begin
+    delete(a, 1, 1);
+    delete(b, 1, 1);
+  end;
+
+  while length(b) < length(a) do
+    b := '0' + b;
+  while length(a) < length(b) do
+    a := '0' + a;
+
+// positivos
+  if a > b
+    then Result := 1
+  else Result := -1;
+
+// negativos inverte
+  if minus then Result := -Result;
+end;
+
+function Str2Frac(x: string): SFrac;
+var i: integer;
+begin
+  i := pos('/', x);
+  if i > 0 then
+  begin
+    Result.n := copy(x, 1, i - 1);
+    delete(x, 1, i);
+    Result.d := x;
+  end
+  else
+  begin
+    result.n := x;
+    result.d := '1';
+  end;
+end;
+
+function mdc(x, y: string): string;
+var q, r: string;
+begin
+  if (pos('/', x) > 0) or (pos('/', y) > 0) then // only integers allowed
+  begin
+    result := '1';
+    exit;
+  end;
+  if snumcompare(x, '0') = 0 then
+  begin
+    result := y;
+    exit;
+  end;
+  if snumcompare(y, '0') = 0 then
+  begin
+    result := x;
+    exit;
+  end;
+
+  if x[1] = '-' then
+    x := snumoposto(x);
+  if y[1] = '-' then
+    y := snumoposto(y);
+  if SNumCompare(y, x) > 0 then
+  begin
+    q := x;
+    x := y;
+    y := q;
+  end;
+
+  repeat
+    Divide(x, y, q, r);
+    if (r = '1') or (r = '0') then
+      break;
+    x := y;
+    y := r;
+  until false;
+
+  if r = '1' then
+    result := '1'
+  else
+    result := y;
+end;
+
+function mmc(x, y: string): string;
+var r: string;
+begin
+  Divide(x, mdc(x, y), Result, r);
+  Result := Multiplica(Result, y);
+end;
+
+function FracOposto(s: string): string;
+var a: SFrac;
+begin
+  a := Str2Frac(s);
+  a.n := snumoposto(a.n);
+  if a.d = '1' then
+    result := a.n
+  else
+    result := a.n + '/' + a.d;
+end;
+
+function FracCompare(x, y: string): shortint;
+var s: SFrac;
+begin
+  if y = '0' then
+    s := Str2Frac(x)
+  else s := Str2Frac(FracSub(x, y));
+  result := snumcompare(s.n, '0');
+end;
+
+function Gamma(n: string): string;
+var j: string;
+begin
+  result := '1';
+  if pos('/', n) > 0 then
+    exit;
+  n := Subtrai(n, '1'); // Gamma(n) = (n - 1)!
+  if SNumCompare(n, '0') <= 0 then
+    exit;
+
+  result := n;
+  j := FracSub(n, '1');
+  while SNumCompare(j, '1') >= 0 do
+  begin
+    result := FracMul(result, j);
+    j := FracSub(j, '1');
+  end;
+end;
+
+function binom(n, p: string): string;
+var inti, j: string;
+begin
+  result := '1';
+  if n = p then
+    exit;
+
+  if pos('/', p) > 0 then
+  begin
+    if pos('/', n) > 0 then
+      p := FracSub(n, p);
+  end
+  else if FracCompare(p, '0') < 0 then
+    p := FracSub(n, p);
+
+  if p = '0' then
+    exit;
+  if FracCompare(p, '0') < 0 then
+  begin
+    result := '-pi'; // factorial of negative
+    exit;
+  end;
+  if pos('/', p) > 0 then
+  begin
+    result := 'pi'; // Gamma solves
+    exit;
+  end;
+
+  //binom(21/2, 6) = 21/2/1 * 19/2/2 * 17/2/3 * 15/2/4 * 13/2/5 * 11/2/6
+  result := n;
+  inti := '2';
+  j := FracSub(n, '1');
+  while (result <> '0') and (FracCompare(inti, p) <= 0) do
+  begin
+    result := FracDiv(FracMul(result, j), inti);
+    inti := Soma(inti, '1');
+    j := FracSub(j, '1');
+  end;
+end;
+
+function sqrt(n, x: string): string;
+var i, min, max, qq, rr: string;
+begin
+  if x[1] = '-' then
+  begin
+    result := '0';
+    exit;
+  end;
+
+  min := '';
+  max := '';
+  Divide(inttostr(length(x)), n, qq, rr);
+  i := Subtrai('1', rr);
+  if SNumCompare(i, '0') < 0 then
+    i := '0';
+  while SNumCompare(i, qq) <= 0 do
+  begin
+    max := max + '9';
+    min := min + '0';
+    i := Soma(i, '1');
+  end;
+  min[1] := '1';
+
+  repeat
+    Divide(Soma(min, max), '2', Result, rr);
+    rr := Potencia(Result, n);
+    if rr = x then
+      exit;
+    if SNumCompare(rr, x) < 0 then
+      min := Soma(Result, '1')
+    else
+      max := Subtrai(Result, '1');
+    //application.MainForm.Caption := inttostr(length(Subtrai(max, min)));
+    application.processmessages;
+  until SNumCompare(min, max) > 0;
+
+  Result := max;
+end;
+
+function ln(erro, x: string; var cancelar: boolean): string;
+var
+  n, termo, s, L: string;
+begin
+  if FracCompare(x, '2') >= 0 then
+  begin
+    L := inttostr(length(FracFloor(x)));
+    result := FracSub(
+      ln(erro, FracDiv(x, Potencia('10', L)), cancelar),
+      FracMul(L, ln(erro, '1/10', cancelar)));
+    exit;
+  end;
+
+// ln (x + 1) = Sigma_1 (-1)^{n + 1} / n * x^n
+  x := FracSub(x, '1');
+  n := '1';
+  termo := x;
+  Result := termo;
+  repeat
+    n := Soma(n, '1');
+    termo := FracOposto(termo);
+    termo := FracMul(termo, x);
+    s := FracDiv(termo, n);
+    Result := FracAdd(Result, s);
+    application.processMessages;
+  until ((termo[1] = '-') and (FracCompare(FracOposto(s), erro) < 0)) or CANCELAR;
+end;
+
+function FracLog(b, erro, x: string; var CANCELAR: boolean): string;
+begin
+  result := '0';
+  if (x[1] = '-') or (x = '0') then
+    exit;
+  if (b[1] = '-') or (b = '0') or (b = '1') then
+    exit;
+  if b = x then
+  begin
+    result := '1';
+    exit;
+  end;
+  if FracCompare(erro, '0') <= 0 then
+    exit;
+  result := ln(erro, x, cancelar);
+  if b <> 'e' then
+    result := FracDiv(result, ln(erro, b, cancelar));
+end;
+
+function FracFloor(x: string): string;
+var
+  s: SFrac;
+  r: string;
+begin
+  s := Str2Frac(x);
+  Divide(s.n, s.d, Result, r);
+end;
+
+begin
+  PRIMO_LIMITE := 90000000;
+end.
+

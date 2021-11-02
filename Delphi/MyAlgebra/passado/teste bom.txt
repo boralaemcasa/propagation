@@ -1,0 +1,23 @@
+A1 is term;
+w_x is term;
+A1_y is term;
+w_(yz) w_x w_z is term;
+w_x w_(zz) is term;
+A2 is term;
+A2_z is term;
+w_(xy) ( I1 + A1 ) + w_x ( I1_y + A1_y ) = ( frac(( I3_z - A3_z ) w_(xy) + ( I3 - A3 ) w_(xyz) +
+w_(yz) w_x w_z)(w_y^2) - 2 w_(xy) w_(yz) frac(I3 - A3)(w_y^3) - frac(w_(xz) w_z + w_x w_(zz))
+(w_y) ) ( I2 + A2 ) + ( w_(xy) frac(I3 - A3)(w_y^2) - frac(w_x w_z)(w_y) ) ( I2_z + A2_z );
+solve for  I3;
+exit;
+Derivate on x;
+solve for  I3_z;
+Derivate on x;
+solve for  I1;
+Derivate on x ;
+solve for  I2;
+Derivate on x;
+solve for  I1_y;
+Derivate on x;
+solve for  I2_y;
+Derivate on x;

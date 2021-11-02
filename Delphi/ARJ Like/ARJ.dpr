@@ -1,0 +1,28 @@
+program ARJ;
+VAR
+  F, G: FILE OF BYTE;
+  B: BYTE;
+CONST
+  TAM1: INTEGER = 733999104;
+  ARQ1 = 'O:\HD04.PQI.P01';
+  ARQ2 = 'O:\HD04.PQI.P02';
+begin
+  ASSIGNFILE(F, ARQ1);
+  RESET(F);
+
+  ASSIGNFILE(G, ARQ2);
+  REWRITE(G);
+
+  SEEK(F, TAM1);
+  WHILE NOT EOF(F) DO
+    BEGIN
+      READ(F, B);
+      WRITE(G, B);
+    END;
+
+  CLOSEFILE(G);
+
+  SEEK(F, TAM1);
+  TRUNCATE(F);
+  CLOSEFILE(F)
+end.

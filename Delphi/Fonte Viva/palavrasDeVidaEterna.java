@@ -1,0 +1,4701 @@
+novoCapitulo("Palavras de Vida Eterna 1 - RECOMECEMOS");
+novoVersiculo("Mateus 9, 16");
+processar("\" Ninguém põe remendo de pano novo em vestido velho \" - Jesus.<br>" +
+"(Mateus, 9 : 16.)<br>" +
+"Não conserves lembranças amargas.<br>" +
+"Viste o sonho desfeito.<br>" +
+"Escutaste a resposta de fel.<br>" +
+"Suportaste a deserção dos que mais amas.<br>" +
+"Fracassaste no empreendimento.<br>" +
+"Colheste abandono.<br>" +
+"Padeceste desilusão.<br>" +
+"Entretanto, recomeçar é benção na Lei de Deus.<br>" +
+"A possibilidade da espiga ressurge na sementeira.<br>" +
+"A água, feita vapor, regressa da nuvem para a riqueza da fonte.<br>" +
+"Torna o calor da primavera, na primavera seguinte.<br>" +
+"Inflama-se o horizonte, cada manhã, com o fulgor do Sol, reformando o valor do dia.<br>" +
+"Janeiro a Janeiro, renova-se o ano, oferecendo novo ciclo ao trabalho.<br>" +
+"É como se tudo estivesse a dizer : \"Se quiseres, podes recomeçar \".<br>" +
+"Disse, porém , o Divino Amigo que ninguém aproveita remendo novo em pano velho.<br>" +
+"Desse modo, desfaze-te do imprestável.<br>" +
+"Desvencilha-te do inútil.<br>" +
+"Esquece os enganos que te assaltaram.<br>" +
+"Deita fora as aflições improfícuas.<br>" +
+"Recomecemos, pois, qualquer esforço com firmeza, lembrando-nos , todavia, de que tudo " +
+"volta, menos a oportunidade esquecida, que será sempre uma perda real.");
+novoCapitulo("Palavras de Vida Eterna 2 - CRESÇAMOS PARA O BEM");
+novoVersiculo("João 3, 34.");
+processar("\"Porque aquele que Deus enviou fala as palavras de Deus, " +
+"pois não lhe dá Deus o Espírito por medida\"<br>" +
+"JESUS (JOÃO, 3:34.).<br>" +
+"Observa a munificência das concessões Divinas por toda a parte.<br>" +
+"Enquanto o homem raciona a distribuição desse ou daquele recurso, Deus não altera as " +
+"suas Leis de abundância.<br>" +
+"Anota na Terra em torno de ti:<br>" +
+"O Sol magnificente nutrindo a vida em todas as direções...<br>" +
+"O ar puro e sem medida...<br>" +
+"A fonte que se dá sem reservas...<br>" +
+"Tudo infinitamente doado a todos.<br>" +
+"Tudo liberalmente repartido.<br>" +
+"Qual ocorre às concessões do Senhor na ordem material, acontece no Reino do Espírito.<br>" +
+"As portas da sabedoria e do Amor jazem constantemente abertas. Os tesouros da Ciência " +
+"e as alegrias da compreensão humana, as glórias da arte e as luzes da sublimação " +
+"interior são acessíveis a todas as criaturas.<br>" +
+"No entanto, do rio de graças da vida, cada alma somente retira a porção de riquezas que " +
+"possa perceber e utilizar proveitosamente.<br>" +
+"Estuda, observa, trabalha e renova-te para o bem.<br>" +
+"Amplia a visão que te é própria e auxilia os outros, ajudando a ti mesmo.<br>" +
+"Recorda que Deus a ninguém dá seus dons por medida, contudo, cada alma traz consigo " +
+"a medida que instalou no próprio íntimo para recepção dos dons de Deus.");
+novoCapitulo("Palavras de Vida Eterna 3 - EVITANDO A TENTAÇÃO");
+novoVersiculo("Marcos 14, 38");
+processar("“Vigiai e orai para não entrardes em tentação”. JESUS " +
+"(MARCOS, 14:38.)<br>" +
+"Vigiar não quer dizer apenas guardar. Significa também precaver-se e cuidar. E quem diz " +
+"cuidar, afirma igualmente trabalhar e defender-se.<br>" +
+"Orar, a seu turno, não exprime somente adorar e aquietar-se, mas, acima de tudo, " +
+"comungar com o Poder Divino, que é crescimento incessante para a luz, e com o Divino " +
+"Amor, que é serviço infatigável no bem.<br>" +
+"Tudo o que repousa em excesso é relegado pela Natureza à inutilidade.<br>" +
+"O tesouro escondido transforma-se em cadeia de usura.<br>" +
+"A água estagnada cria larvas de insetos patogênicos.<br>" +
+"Não te admitas na atitude de vigilância e oração, fugindo à luta com que a Terra te " +
+"desafia.<br>" +
+"Inteligência parada e mãos paradas impõem paralisia ao coração que, da inércia, cai na " +
+"cegueira.<br>" +
+"Vibra com a vida que escoa, sublime, ao redor de ti, e trabalha infatigavelmente, dilatando " +
+"as fronteiras do bem, aprendendo e ajudando aos outros em teu próprio favor.<br>" +
+"Essa é a mais alta fórmula de vigiar e orar para não cairmos em tentação.");
+novoCapitulo("Palavras de Vida Eterna 4 - AMOR E TEMOR");
+novoVersiculo("1_João 4, 18");
+processar("\"O perfeito amor lança fora o temor\".<br>" +
+"(I JOÃO, 4:18.)<br>" +
+"Para que nossa alma se expanda sem receio, através das realizações que o Senhor " +
+"nos confia, não basta o imperfeito Amor que estipula salários de gratidão ou que se isola " +
+"na estufa do carinho particular, reclamando entendimento alheio.<br>" +
+"É necessário rendamos culto ao perfeito amor que tudo ilumina e a todos se estende " +
+"sem distinção.<br>" +
+"O imperfeito Amor, procurando o gozo próprio no concurso dos outros, é quase " +
+"sempre o egoísmo em disfarce brilhante, buscando a si mesmo nas almas afins para " +
+"atormentá-las sob múltiplas formas de temor, quais sejam a exigência e o ciúme, a " +
+"crueldade e o desespero, acabando ele próprio no inferno da amargura e da frustração.<br>" +
+"O perfeito Amor, contudo, compreende que o Pai Celeste traçou caminhos infinitos " +
+"para a evolução e aprimoramento das almas, que a felicidade não é a mesma para todos " +
+"e que amar significa entender e ajudar, abençoar e sustentar sempre os corações " +
+"queridos, no degrau de luta que lhes é próprio.<br>" +
+"Para que te libertes, assim, das algemas do medo, não basta te acolhas no anseio " +
+"de ser ardentemente querido e auxiliado pelos outros, segundo as disposições do Amor " +
+"incompleto.<br>" +
+"É indispensável saibas amar, com abnegação e ternura, entre a esperança " +
+"incansável e o serviço incessante pela vitória do bem, sob a tutela dos quais viverás " +
+"sempre amando, segundo o Amor equilibrado e perfeito pela força Divina que nos ergue " +
+"triunfante, dos abismos da sombra para os cimos da luz.");
+novoCapitulo("Palavras de Vida Eterna 5 - FÉ E OBRAS");
+novoVersiculo("Tiago 2, 17");
+processar("“A fé se não tiver obras, é morta em si mesma”.<br>" +
+"TIAGO 2:l7 " +
+"Imaginemos o mundo transformado num templo vasto, respeitável sem dúvida, mas " +
+"plenamente superlotado de criaturas em perene adoração ao Céu.<br>" +
+"Por dentro, a fé reinando sublime: Orações primorosas...<br>" +
+"Discursos admiráveis... Louvores e cânticos...<br>" +
+"Mas, por fora, o trabalho esquecido: Campos ao desamparo...<br>" +
+"Enxadas ao abandono... Lareiras em cinza...<br>" +
+"De que teria valido a exaltação exclusiva da fé, senão para estender a morte no mundo " +
+"que o SENHOR nos confiou para a glória da vida ?<br>" +
+"Não te creias, desse modo, em comunhão com a Divina Majestade, simplesmente porque " +
+"te faças cuidadoso no culto externo da religião a que te afeiçoas.<br>" +
+"Conhecimento nobre exige atividade nobre.<br>" +
+"Elevação espiritual é também dever de servir ao Eterno Pai na pessoa dos semelhantes.<br>" +
+"É por isso que fé e obras se completam no sistema de nossas relações com a vida " +
+"superior.<br>" +
+"Prece e trabalho.<br>" +
+"Santuário e oficina.<br>" +
+"Cultura e caridade.<br>" +
+"Ideal e realização.<br>" +
+"Nesse sentido, Jesus é o nosso exemplo indiscutível.<br>" +
+"Não se limitou o Senhor a simples glorificação de DEUS nos Paços Divinos, quanto à " +
+"edificação dos homens. Por amor infinitamente a Deus, na Sublime Tarefa que lhe foi " +
+"cometida, desceu à esfera dos homens e entregou-se à obra do Amor infatigável, " +
+"levantando-nos da sombra terrestre para a Luz Espiritual.");
+novoCapitulo("Palavras de Vida Eterna 6 - NO RUMO DO AMANHÃ");
+novoVersiculo("Marcos 8, 36");
+processar("\"Pois que aproveitaria ao homem ganhar todo o " +
+"mundo e perder a sua alma ?\" Jesus " +
+"(Marcos, 8:36.)<br>" +
+"Lembra-te de viver, conquistando a glória eterna do Espírito.<br>" +
+"Diariamente retiram-se da Terra criaturas cujo passo se imobiliza nos angustiosos " +
+"tormentos da frustração...<br>" +
+"Estendem os braços para o ouro que amontoaram, contudo... esse ouro apenas lhes " +
+"assegura o mausoléu em que se lhes guardam as cinzas.<br>" +
+"Alongam a lembrança para o nome em que se ilustraram nos eventos humanos, " +
+"todavia... quase sempre a fulguração pessoal de que se viram objeto apenas lhes acorda " +
+"o coração para a dor do arrependimento tardio.<br>" +
+"Contemplam o campo de luta em que desenvolveram transitório domínio, mas... não " +
+"enxergam senão a poeira da desilusão que lhes soterra os sonhos mortos.<br>" +
+"Sim, em verdade, passaram no mundo em carros de triunfo na política, na fortuna, " +
+"na ciência, na religião, no poder...<br>" +
+"No entanto, incapazes do verdadeiro serviço aos semelhantes, enganaram tão " +
+"somente a si próprios, no culto ao egoísmo e ao orgulho, à intemperança e à vaidade que " +
+"lhes devastaram a vida.<br>" +
+"E despertaram, além da morte, sem recolher-lhe a renovadora luz.<br>" +
+"Recorda os que padecem na derrota de si mesmos, depois de se acreditarem " +
+"vencedores, dos que choram as horas perdidas, e procura, enquanto é hoje, enriquecer o " +
+"próprio espírito para o amanhã que te aguarda, porque, consoante o ensino do Senhor, " +
+"nada vale reter por fora o esplendor de todos os impérios do mundo, conservando a treva " +
+"por dentro do coração.");
+novoCapitulo("Palavras de Vida Eterna 7 - MELHORAR PARA PROGREDIR");
+novoVersiculo("Mateus 25, 15");
+processar("\"E a um deu cinco talentos e a outro dois e a outro um, " +
+"a cada um segundo a sua capacidade...\" - Jesus.<br>" +
+"(MATEUS, 25:15.)<br>" +
+"Melhorar para progredir - eis a senha da evolução.<br>" +
+"Passa o rio dos dons divinos em todos os continentes da vida, contudo, cada ser lhe " +
+"recolhe as águas, segundo o recipiente de que se faz portador.<br>" +
+"Não olvides que os talentos de Deus são iguais para todos, competindo a nós outros a " +
+"solução do problema alusivo à capacidade de recebê-los.<br>" +
+"Não te percas, desse modo, na lamentação indébita.<br>" +
+"Uma hora anulada na queixa é vasto patrimônio perdido no preparo da justa habilitação " +
+"para a meta a alcançar.<br>" +
+"Muitos suspiram por tarefas de amor, confiando-se à aversão e à discórdia, enquanto que " +
+"muitos outros sonham servir à luz, sustentando-se nas trevas da ociosidade e da " +
+"ignorância.<br>" +
+"A alegria e o fulgor dos cimos jazem abertos a todos aqueles que se disponham à jornada " +
+"da ascensão.<br>" +
+"Se te afeiçoas, assim, aos ideais de aprimoramento e progresso, não te afastes do " +
+"trabalho que renova, do estudo que aperfeiçoa, do perdão que ilumina, do sacrifício que " +
+"enobrece e da bondade que santifica...<br>" +
+"Lembra-te de que o Senhor nos concede tudo aquilo de que necessitamos para " +
+"comungar-Lhe a glória divina, entretanto, não te esqueças de que as dádivas do Criador " +
+"se fixam, nos seres da Criação, conforme a capacidade de cada um.");
+novoCapitulo("Palavras de Vida Eterna 8 - VIDA E POSSE");
+novoVersiculo("Mateus 6, 25");
+processar("\"Não é a vida mais que o alimento ?\" – Jesus – " +
+"(Mateus, 6:25.)<br>" +
+"Aconselha-te com a prudência para que teu passo não ceda à loucura.<br>" +
+"Há milhares de pessoas que efetuam a ramagem carnal, amontoando posses exteriores, " +
+"à gana de ilusória evidência.<br>" +
+"Senhoreiam terras que não cultivam.<br>" +
+"Acumulam ouro sem proveito.<br>" +
+"Guardam larga cópia de vestimenta sem qualquer utilidade.<br>" +
+"Retém grandes arcas de pão que os vermes devoram.<br>" +
+"Disputam remunerações e vantagens de que não necessitam.<br>" +
+"E imobilizam-se no medo ou no tédio, no capricho maligno ou nas doenças imaginárias, " +
+"até que a morte lhes reclama a devolução do próprio corpo.<br>" +
+"Não olvides, assim, a tua condição de usufrutuário do mundo, e aprende a conservar no " +
+"próprio íntimo os valores da grande vida.<br>" +
+"Vale-te dos bens passageiros para estender o bem eterno.<br>" +
+"Aproveita os obstáculos para incorporar a riqueza da experiência " +
+"Não retenhas recursos externos de que não careças.<br>" +
+"Não desprezes lição alguma.<br>" +
+"Começa a luta de cada dia, com o deslumbramento de quem observa a beleza pela " +
+"primeira vez e agradece a paz da noite como quem se despede do mundo para transferirse " +
+"de residência.<br>" +
+"Ama pela glória de amar.<br>" +
+"Serve sem prender-te.<br>" +
+"Lembra-te de que amanhã restituirás à vida o que a vida te emprestou, em nome de " +
+"DEUS, e que os tesouros de teu espírito serão apenas aqueles que houveres amealhado " +
+"em ti próprio, no campo da educação e das boas obras.");
+novoCapitulo("Palavras de Vida Eterna 9 - SOCORRO E CONCURSO");
+novoVersiculo("Marcos 8, 5");
+processar("“Quantos pães tendes?” – Jesus.<br>" +
+"(Marcos, 8:5.)<br>" +
+"Observemos que o Senhor, diante da multidão faminta, não pergunta aos companheiros: - " +
+"\" de quantos pães necessitamos?\" mas, sim, \"quantos pães tendes?\".<br>" +
+"A passagem denota a precaução de Jesus no sentido de alertar as discípulos para a " +
+"necessidade de algo apresentar a Providência Divina como base para o socorro que " +
+"suplicamos.<br>" +
+"Em verdade, o Mestre conseguiu alimentar milhares de pessoas, mas não prescindiu das " +
+"migalhas que os apóstolos lhe ofereciam.<br>" +
+"O ensinamento é precioso para a nossa experiência de oração " +
+"Não vale rogar as concessões do Céu, alongando mãos vazias, com palavras brilhantes e " +
+"comoventes, mas sim pedir a proteção de que carecemos, apresentando, em nosso favor, " +
+"as possibilidades ainda que diminutas de nosso esforço próprio.<br>" +
+"Não adianta solicitar as bênçãos do pão imobilizando os braços no gelo da preguiça, " +
+"como é de todo Impróprio rogar aos talentos do amor, calcinando o coração no fogo do " +
+"ódio.<br>" +
+"Decerto, o Senhor operara maravilhas, no amparo a todos aqueles que te partilham a " +
+"marcha...<br>" +
+"Dispensará socorro aos que amas, transformará o quadro social em que te situas e " +
+"exaltará o templo doméstico em que respiras...<br>" +
+"Contudo, para isso, e necessário lhe ofereças os recursos que já conseguiste amontoar " +
+"em ti mesmo para a extensão do progresso e para a vitória do bem.<br>" +
+"Não te esqueças, pois, de que no auxilio aos outros não prescindirá o Senhor do auxilio, " +
+"pequenino embora, que deve encontrar em ti.");
+novoCapitulo("Palavras de Vida Eterna 10 - VENCER O MAL");
+novoVersiculo("Romanos 12, 21");
+processar("“Não te deixes vencer pelo mal, mas vence o mal com o bem.” – Paulo.<br>" +
+"(Romanos, 12:21.)<br>" +
+"Comumente empregamos a expressão “guerrear o mal”, como se bastassem nossas " +
+"atitudes mais fortes para exterminá-lo e vencê-lo.<br>" +
+"Sem dúvida, semelhante conceituação não é de todo imprópria, porque, em muitas " +
+"circunstâncias, para limitá-lo não podemos dispensar vigilância e firmeza.<br>" +
+"Ainda assim, muitas vezes, zurzindo-lhe as manifestações com violência, criamos outros " +
+"males a se expressarem através de feridas que apenas o bálsamo do tempo consegue " +
+"cicatrizar.<br>" +
+"O apóstolo, contudo, é claro na fórmula precisa ao verdadeiro triunfo.<br>" +
+"“Não te deixes vencer pelo mal, mas vence o mal com o bem”.<br>" +
+"Perseguir, quase sempre, é fomentar.<br>" +
+"O melhor processo de extinguir a calúnia e a maledicência é confiar nosso próprio verbo à " +
+"desculpa e à bondade. O recurso mais eficiente contra a preguiça é o nosso exemplo " +
+"firme no trabalho constante. O meio mais seguro de reajustar aqueles que desajudam ao " +
+"próximo é ajudar incessantemente. O remédio contra a maldição é a bênção. Os antídotos " +
+"para o veneno da injúria são a paz do silêncio e o socorro da prece.<br>" +
+"Por isso mesmo, Jesus ensinou:<br>" +
+"“Amai os vossos inimigos.<br>" +
+"Bendizei os que vos maldizem.<br>" +
+"Orai por aqueles que vos maltratam e caluniam.<br>" +
+"Perdoai setenta vezes sete.<br>" +
+"Ofertai amor aos que vos odeiam”.<br>" +
+"Podemos, pois, muitas vezes, combater o mal para circunscrever-lhe a órbita de ação, " +
+"mas a única maneira de alcançar a perfeita vitória sobre ele será sempre a nossa perfeita " +
+"consagração ao bem irrestrito.");
+novoCapitulo("Palavras de Vida Eterna 11 - AJUDEMOS TAMBÉM");
+novoVersiculo("Marcos 6, 37");
+processar("\"Ele respondeu e disse: Daí-lhes vós, de comer...\"<br>" +
+"(MARCOS, 6:37.)<br>" +
+"Em muitas ocasiões propomos a Benfeitores Espirituais determinados serviços que, " +
+"acima de tudo, são oportunidades de trabalho que o Senhor, abnegado e vigilante, nos " +
+"oferece.<br>" +
+"Enunciamos rogativas e relacionamos diversos quadros de ação para a caridade.<br>" +
+"O doente de certa rua.<br>" +
+"O parente necessitado.<br>" +
+"O obsesso que sofre não distante.<br>" +
+"A casa conflagrada do vizinho.<br>" +
+"O companheiro algemado ao leito.<br>" +
+"O amigo em prova inquietante.<br>" +
+"Os obreiros da Espiritualidade movimentam-se e ajudam, devotados e operosos; contudo, " +
+"em suplicando o socorro alheio, não nos cabe olvidar o socorro que podemos prestar por " +
+"nós mesmos.<br>" +
+"É indispensável acionar as possibilidades da nossa cooperação fraterna, os recursos " +
+"ainda que reduzidos de nossa bolsa, o nosso concurso pessoal, o nosso suor e as nossas " +
+"horas, a benefício daqueles que a sabedoria Divina situou em nossa estrada para " +
+"testemunharmos a própria fé.<br>" +
+"Diante da turba faminta, ouvindo as alegações dos discípulos que lhe solicitavam a " +
+"atenção para as necessidades do povo, disse-lhes o Senhor:<br>" +
+"- \"Dai-lhes vós, de comer...”.<br>" +
+"E os discípulos angariaram diminuta porção de alimentos, antes que o Mestre a " +
+"convertesse em pão para milhares.<br>" +
+"A lição é expressiva.<br>" +
+"Não basta rogar a intervenção do céu, em favor dos outros, com frases bem feitas, a fim " +
+"de que venhamos a cumprir o nosso dever cristão. Antes de tudo, é necessário fazer a " +
+"nossa parte, quanto nos seja possível, para que o bem se realize, de modo a entrarmos " +
+"em sintonia com os poderes do bem eterno.");
+novoCapitulo("Palavras de Vida Eterna 12 - PERANTE JESUS");
+novoVersiculo("Mateus 26, 22");
+processar("“Porventura sou eu, Senhor?”<br>" +
+"(MATEUS, 26:22.)<br>" +
+"Diante da palavra do Mestre, reportando-se ao espírito de leviandade e defecção que o " +
+"cercava, os discípulos perguntaram afoitos :<br>" +
+"– “Porventura sou eu, Senhor?”<br>" +
+"E quase todos nós, analisando o gesto de Judas, incriminamo-la em pensamento.<br>" +
+"Por que teria tido a coragem de vender o Divino Amigo por trinta moedas?<br>" +
+"Entretanto, bastará um exame mais profundo em nós mesmos, a fim de que vejamos " +
+"nossa própria negação à frente do Cristo.<br>" +
+"Judas teria cedido à paixão política dominante, enganado pelas insinuações de grupos " +
+"famintos de libertação do jugo romano... Teria imaginado que Jesus, no Sinédrio, avocaria " +
+"a posição de emancipador da sua terra e da sua gente, exibindo incontestável triunfo " +
+"humano...<br>" +
+"E, apenas depois da desilusão dolorosa e terrível, teria assimilado toda a verdade!...<br>" +
+"Mas nós?<br>" +
+"Em quantas existências e situações tê-lo-emos vendido no altar do próprio coração, ao " +
+"preço mesquinho de nosso desvairamento individual?<br>" +
+"Nos prélios da vaidade e do orgulho...<br>" +
+"Nas exigências do prazer egoísta...<br>" +
+"Na tirania da opinião...<br>" +
+"Na crueldade confessa...<br>" +
+"Na caça da fortuna material...<br>" +
+"Na rebeldia destruidora...<br>" +
+"No olvido de nossos deveres...<br>" +
+"No aviltamento de nosso próprio trabalho...<br>" +
+"Na edificação íntima do Reino de Deus, meditemos nossos erros conscientes ou não, " +
+"definindo nossas responsabilidades e débitos para com a vida, para com a Natureza e " +
+"para com os semelhantes e, em todos os assuntos que se refiram à deserção perante o " +
+"Cristo, teremos bastante força para desculpar as faltas do próximo, perguntando, com " +
+"sinceridade, no âmago do coração:<br>" +
+"– “Porventura existirá alguém mais ingrato para contigo do que eu, Senhor?”");
+novoCapitulo("Palavras de Vida Eterna 13 - BOAS OBRAS");
+novoVersiculo("Mateus 5, 16");
+processar("\"Assim brilhe também a vossa luz diante dos homens para que vejam " +
+"as vossas boas obras e glorifiquem a vosso Pai que estás nos Céus.\"<br>" +
+"JESUS (MATEUS, 5:16.)<br>" +
+"“Brilhe vossa luz” – disse-nos o MESTRE - e muitas vezes julgamo-nos unicamente " +
+"no dever de buscar as alturas mentais. E suspiramos inquietos pela dominação do " +
+"cérebro.<br>" +
+"Contudo, o CRISTO foi claro e simples no ensinamento: “brilhe também a vossa luz " +
+"diante dos homens para que vejam as vossas boas obras e glorifiquem o vosso Pai que " +
+"está nos céus”.<br>" +
+"Não apenas pela cultura intelectual. Não somente pela frase correta. Nem só pelo " +
+"verbo flamejante. Não apenas pela interpretação eficiente das Leis Divinas. Não somente " +
+"pela prece labial, apurada e comovedora. Nem só pelas palavras e pelos votos brilhantes.<br>" +
+"É indiscutível que não podemos menosprezar a educação da inteligência, mesmo " +
+"porque escola, em todos os planos, é obra sublime com que nos cabe honrar o Senhor, " +
+"mas JESUS, com a referência, convidava-nos ao exercício constante das boas obras, " +
+"seja onde for, pois somente o coração tem o poder de tocar o coração e, somente " +
+"aperfeiçoando os nossos sentimentos, conseguiremos nutrir a chama espiritual em nós, " +
+"consoante o Divino apelo.<br>" +
+"Com o amor estimularemos o amor...<br>" +
+"Com a humildade geraremos a humildade...<br>" +
+"Com a paz em nos ajudaremos a construir a paz dos outros...<br>" +
+"Com a nossa paciência edificaremos a paciência alheia.<br>" +
+"Com a caridade em nosso passo, semearemos a caridade nos passos do próximo.<br>" +
+"Com a nossa fé garantiremos a fé ao redor de nós mesmos.<br>" +
+"Atendamos, pois, ao nosso próprio burilamento, porquanto apenas contemplando a " +
+"luz das boas obras em nós, é que os outros entrarão no caminho das boas obras, " +
+"glorificando a bondade e a sabedoria de Deus.");
+novoCapitulo("Palavras de Vida Eterna 14 - BENIGNIDADE");
+novoVersiculo("Efésios 4, 32.");
+processar("“Sede uns para com os outros benignos, compassivos, " +
+"perdoando-vos uns aos outros, como também DEUS " +
+"em Cristo vos perdoou” - PAULO (Efésios, 4:32.).<br>" +
+"Meditemos na Tolerância Divina, para que não venhamos a cair nos precipícios da " +
+"violência.<br>" +
+"Basta refletir na desculpa incessante do Céu às nossas fraquezas e crueldades, à " +
+"frente do Cristo, para que abracemos a justa necessidade da compaixão infatigável uns " +
+"para com os outros.<br>" +
+"Desce Jesus da Espiritualidade Solar, dissipando-nos a sombra. Negamos-lhe " +
+"guarida. O Supremo Senhor, porém, não nos priva de Sua Augusta Presença.<br>" +
+"O Divino Benfeitor exemplifica o Amor incondicional, sanando-nos as mazelas do " +
+"corpo e da alma, a ensinar-nos a bondade e a renúncia como normas de justa felicidade; " +
+"contudo, recompensamo-lo com a saliva do escárnio e com a cruz da morte. A Infinita " +
+"Sabedoria, no entanto, não nos recusa a herança do Seu Evangelho renovador.<br>" +
+"Em nome do Mestre Sublime, protótipo do Amor e da Paz fizemos guerras de ódio, " +
+"acendendo fogueiras de perseguição e extermínio; todavia, o Altíssimo Pai não nos cassa " +
+"a oportunidade de prosseguir caminhando no tempo e no espaço, em busca da evolução.<br>" +
+"Reflete na magnanimidade de Deus e não coleciones desapontamentos e mágoas, " +
+"para que o bem te encontre à feição de canal seguro e limpo.<br>" +
+"Guardar ressentimento e vingança, melindre e rancor, é o mesmo que transformar o " +
+"coração num vaso de fel.<br>" +
+"Segundo a advertência do Apóstolo Paulo, usemos constante benignidade uns para " +
+"com os outros, porque somente assim viveremos no clima de Jesus, que nos trouxe à " +
+"vida a ilimitada compaixão, e o auxílio incessante da Providência Celestial.");
+novoCapitulo("Palavras de Vida Eterna 15 - NO ROTEIRO DA FÉ");
+novoVersiculo("Lucas 9, 23");
+processar("\"Se alguém quer vir após mim, negue a si mesmo, tome cada " +
+"dia a sua cruz e siga-me.\" Jesus - LUCAS 9:23 " +
+"O aviso do Senhor é insofismável.<br>" +
+"\"Siga-me\" - diz o Mestre.<br>" +
+"Entretanto, há muita gente a lamentar-se de fracassos e desilusões, em matéria de " +
+"fé, nas escolas do Cristianismo, por não Lhe acatarem o conselho.<br>" +
+"Buscam Jesus, fazendo a idolatria em derredor de seus intermediários humanos e, " +
+"como toda criatura terrestre, os intermediários humanos do Evangelho não podem " +
+"substituir o Cristo, junto à sede das almas.<br>" +
+"Aqui, é o padre católico, caridoso e sincero, contudo, incapaz de oferecer a " +
+"santidade perfeita.<br>" +
+"Ali, é o pastor da Igreja Reformada, atento e nobre, mas inabilitado à demonstração " +
+"de todas as virtudes.<br>" +
+"Acolá, é o médium espírita, abnegado e diligente, todavia distante da própria " +
+"sublimação.<br>" +
+"Mais além, surgem doutrinadores e comentaristas, companheiros e parentes, " +
+"afeiçoados ao estudo e excelentes amigos, mas ainda longe da integração com o " +
+"Benfeitor Eterno.<br>" +
+"E quase sempre aqueles que o acompanham, na suposição de buscarem o Cristo, " +
+"ante os mínimos erros a que se arrojam, por força da invigilância ou inexperiência, " +
+"retiram-se, apressados, do serviço espiritual, alegando desapontamento e amargura.<br>" +
+"O convite do Senhor, no entanto, não deixa margem à dúvida.<br>" +
+"Não desconhecia Jesus que todos nós, os Espíritos encarnados ou desencarnados " +
+"que suspiramos pela comunhão com Ele, somos portadores de cicatrizes e aflições, " +
+"dívidas e defeitos, muitas vezes escabrosos. Daí o recomendar-nos: - \"Se alguém quer vir " +
+"após mim, negue-se a si mesmo, tome cada dia a sua cruz e siga-me\".<br>" +
+"Se te dispõe, desse modo, a encontrar o Senhor para a edificação da tua felicidade, " +
+"renuncia com desassombro às bagatelas da estrada, suporta corajosamente as " +
+"conseqüências dos teus atos de ontem e de hoje e procura Jesus por Divino Modelo.<br>" +
+"Não olvides que há muita diferença entre seguir o Cristo e seguir os cristãos.");
+novoCapitulo("Palavras de Vida Eterna 16 - NA SENDA DO CRISTO");
+novoVersiculo("Mateus 5, 44");
+processar("“Amai os vossos inimigos e orai pelos que vos perseguem.”<br>" +
+"– Jesus. (Mateus. 5:44.)<br>" +
+"O caminho de Jesus é de vitória da luz sobre as trevas e, por isso mesmo, repleto de " +
+"obstáculos a vencer.<br>" +
+"Senda de espinhos gerando flores, calvário e cruz indicando ressurreição...<br>" +
+"O próprio Mestre, desde o início do apostolado, desvenda às criaturas o retiro da " +
+"elevação pelo sacrifício.<br>" +
+"Sofre, renunciando ao divino esplendor do Céu, para acomodar-se à sombra terrestre na " +
+"estrebaria.<br>" +
+"Experimenta a incompreensão de sua época.<br>" +
+"Auxilia sem paga.<br>" +
+"Serve sem recompensa.<br>" +
+"Padece a desconfiança dos mais amados.<br>" +
+"Depois de oferecer sublime espetáculo de abnegação e grandeza, é içado ao madeiro por " +
+"malfeitor comum.<br>" +
+"Ainda assim, perdoa aos verdugos, olvida as ofensas e volta do túmulo para ajudar.<br>" +
+"Todos os seus companheiros de ministério, restaurados na confiança, testemunharam a " +
+"Boa Nova, atravessando dificuldade e luta, martírio e flagelação.<br>" +
+"Inúteis, desse modo, nos círculos de nossa fé, os petitórios de protecionismo e vantagens " +
+"inferiores.<br>" +
+"Ressurgindo no Espiritismo, o Evangelho faz-nos sentir que tornamos à carne para " +
+"regenerar e reaprender.<br>" +
+"Com o corpo físico, retomamos nossos débitos, nossas deficiências, nossas fraquezas e " +
+"nossas aversões...<br>" +
+"E não superaremos os entraves da própria liberação, providenciando ajuste inadequado " +
+"com os nossos desejos inconseqüentes.<br>" +
+"Acusar, reclamar, queixar-se, não são verbos conjugáveis no campo de nossos princípios.<br>" +
+"Disse-nos o Senhor -\"Amai os vossos inimigos e orai pelos que vos perseguem.”<br>" +
+"Isso não quer dizer que devamos ajoelhar em pranto de penitência pé de nossos " +
+"adversários, mas sim que nos compete viver de tal modo que eles se sintam auxiliados " +
+"por nossa atitude e por nosso exemplo, renovando-se para a o bem, de vez que, " +
+"enquanto houver crime e sofrimento, ignorância e miséria no mundo, não podemos " +
+"encontrar sobre a Terra a luz do Reino do Céu.");
+novoCapitulo("Palavras de Vida Eterna 17 - EXALTAÇÃO DO REINO DIVINO");
+novoVersiculo("João 15, 8");
+processar("“Nisto é glorificado meu Pai, em que deis muito fruto e " +
+"assim tornar-vos-eis meus discípulos.”<br>" +
+"– Jesus. (João, 15:8.)<br>" +
+"Glorificarás o Senhor Supremo e serás discípulo do Grande Mestre...<br>" +
+"Contudo, não apenas porque te mostres entendido nas Divinas Escrituras...<br>" +
+"Não somente porque saibas apregoar os méritos da Sublime Revelação, comovendo a " +
+"quem te ouve...<br>" +
+"Não apenas por guardares de cor as tradições dos antepassados...<br>" +
+"Não somente por te sustentares no culto externo...<br>" +
+"Não apenas pelo reconforto recebido de mensageiros da Vida Superior...<br>" +
+"Não somente por escreveres páginas brilhantes...<br>" +
+"Não apenas porque possuas dons espirituais...<br>" +
+"Não somente porque demonstres alevantadas aspirações...<br>" +
+"A palavra do Evangelho é insofismável.<br>" +
+"Glorifiquemos a Deus e converter-nos-emos em discípulos do Cristo, produzindo frutos da " +
+"paz e aperfeiçoamento. Regeneração e progresso, luz e misericórdia.<br>" +
+"A semente infecunda, por mais nobre, é esperança cadaverizada no seio da terra.<br>" +
+"Assim também, por mais ardente, a fé que não se exprime em obras de educação e de " +
+"amor, redenção e bondade, é talento morto.<br>" +
+"Se te dizes seguidor de Jesus, segue -lhe os passos.<br>" +
+"Ajuda, ampara, consola, instrui, edifica e serve sempre.<br>" +
+"Façamos algo na extensão do bem de todos.<br>" +
+"Somente assim, cresceremos para o Céu, na construção do Reino de Deus.");
+novoCapitulo("Palavras de Vida Eterna 18 - ATITUDES ESSENCIAIS");
+novoVersiculo("Lucas 15, 27");
+processar("“Qualquer que não tomar a sua cruz e vier após mim, " +
+"não pode ser meu discípulo.” Jesus. (LUCAS, 15:27.)<br>" +
+"Neste passo do Novo Testamento, encontramos a verdadeira fórmula para o ingresso ao " +
+"Sublime Discipulado.<br>" +
+"“Qualquer que não tomar a sua cruz e vier após mim, não pode ser meu discípulo” – " +
+"afirma-nos o Mestre.<br>" +
+"Duas atitudes fundamentais recomenda -nos o Eterno Benfeitor se nos propomos " +
+"desfrutar-lhes a intimidade – tomar a cruz redentora de nossos deveres e seguir-lhe os " +
+"passos.<br>" +
+"Muitos acreditam receber nos ombros o madeiro das próprias obrigações, mas fogem ao " +
+"caminho do Cristo; e muitos pretendem perlustrar o caminho do Cristo, mas recusam o " +
+"madeiro das obrigações que lhes cabem.<br>" +
+"Os primeiros dizem aceitar o sofrimento, todavia, andam agressivos e desditosos, " +
+"espalhando desânimo azedume por onde passam.<br>" +
+"Os segundos crêem respirar na senda do Cristo, mas abominam a responsabilidade e o " +
+"serviço aos semelhantes, detendo-se no escárnio e na leviandade , embora saibam " +
+"interpretar as lições do Evangelho, apregoando-as com arrazoado enternecedor.<br>" +
+"Uns se agarram à lamentação e ao aviltamento das horas.<br>" +
+"Outros se cristalizam na ironia e na ociosidade, menosprezando os dons da vida.<br>" +
+"Não nos esqueçamos, assim, de que é preciso abraçar a cruz das provas indispensáveis " +
+"à nossa redenção e burilando, com amor e alegria,marchando no espaço e no tempo, " +
+"com o verdadeiro espírito cristão de trabalho infatigável no bem, se aspiramos a alcançar " +
+"a comunhão com o Divino Mestre.<br>" +
+"Não vale apenas sofrer.É preciso aproveitar o sofrimento.<br>" +
+"Nem basta somente crer e mostrar o roteiro da fé. É imprescindível viver cada dia, " +
+"segundo a fé salvadora que nos orienta o caminho.");
+novoCapitulo("Palavras de Vida Eterna 19 - AÇÃO DE GRAÇAS");
+novoVersiculo("Mateus 26, 27");
+processar("\"Tomou o cálice e, tendo dado graças, o deu aos discípulos, " +
+"dizendo: Bebei dele todos”. (MATEUS, 26:27).<br>" +
+"No mundo, as festividades gratulatórias registram invariavelmente os triunfos " +
+"passageiros da experiência física.<br>" +
+"Lautos banquetes comemoram reuniões da família consangüínea, músicas alegres " +
+"assinalam o término de contendas na justiça dos homens, nas quais, muitas vezes, há " +
+"vítimas ignoradas, soluçando na sombra.<br>" +
+"Com JESUS, no entanto, vemos um ato de ação de graças que parece estranho à " +
+"primeira vista.<br>" +
+"O Mestre Divino ergue hosanas ao Pai, justamente na hora em que vai partir ao " +
+"encontro do sacrifício supremo.<br>" +
+"Conhecerá desoladora solidão no Jardim das Oliveiras...<br>" +
+"Padecerá injuriosa prisão...<br>" +
+"Meditará na incompreensão de Judas...<br>" +
+"Ver-se-á negado por Simão Pedro...<br>" +
+"Experimentará o escárnio público...<br>" +
+"Será preterido por Barrabás, o delinqüente infeliz...<br>" +
+"Sorverá fel, sob a coroa de espinhos...<br>" +
+"Recolherá o abandono e o insulto.<br>" +
+"Sofrerá injustificável condenação...<br>" +
+"E receberá a morte na cruz entre dois malfeitores...<br>" +
+"Entretanto, agradece...<br>" +
+"É que na lógica do senhor, acima de tudo, brilham os valores eternos do espírito.<br>" +
+"O CRISTO louva o Todo-Misericordioso pela oportunidade de completar com " +
+"segurança o seu Divino Apostolado na Terra, rendendo graças pela confiança com que o " +
+"Pai o transforma em exemplo vivo para a redenção das criaturas humanas, embora essa " +
+"redenção lhe custe martírio e flagelação, suor e lágrimas.<br>" +
+"Não te percas desse modo, em lances festivos sobre pretensas conquistas na carne " +
+"que a morte confundirá hoje ou amanhã, mas, no turbilhão da luta que santifica e " +
+"aperfeiçoa, saibamos agradecer os recursos com que Deus nos aprimora para a beleza " +
+"da luz e para a glória da vida.");
+novoCapitulo("Palavras de Vida Eterna 20 - VIGIANDO");
+novoVersiculo("Filipenses 4, 8");
+processar("“...Se alguma virtude há e se algum louvor existe, " +
+"seja isso o que ocupe o vosso pensamento.”<br>" +
+"– Paulo. (FILIPENSES, 4:8.)<br>" +
+"Trabalhemos vigiando.<br>" +
+"Aquilo que nos ocupa o pensamento é a substância de que se nos constituirá a própria " +
+"vida.<br>" +
+"Retiremos, dessa forma, o coração de tudo o que não seja material de edificação do " +
+"Reino Divino, em nós próprios.<br>" +
+"Em verdade, muita sugestão criminosa buscará enevoar-nos a mente, muito lodo da " +
+"estrada procurar-nos-á as mãos na jornada de cada dia e muito detrito do mundo tentará " +
+"imobiliza-nos os pés.<br>" +
+"É a nuvem da incompreensão conturbando-nos o ambiente doméstico...<br>" +
+"É a acusação indébita de permeio com a calúnia destruidora...<br>" +
+"É a maledicência convidando-nos à mentira e à leviandade...<br>" +
+"É o amigo de ontem que se rende às requisições da treva, passando à condição de " +
+"censor das nossas qualidades ainda em processo de melhoria...<br>" +
+"Entretanto, à frente de todos os percalços, não te prendas às teias da perturbação e da " +
+"sombra.<br>" +
+"Em todas as situações e em todos os assuntos, guardemos a alma nos ângulos em que " +
+"algo surja digno de louvor, fixando o bem e procurando realiza-lo com todas as energias " +
+"ao nosso alcance.<br>" +
+"Aos mais infelizes, mais amparo.<br>" +
+"Aos mais doentes, mais socorro.<br>" +
+"E, ocupando o nosso pensamento com os valores autênticos da vida, aprenderemos a " +
+"sorrir para as dificuldades, quaisquer que sejam, construindo gradativamente, em nós " +
+"mesmos, o templo vivo da luz para a comunhão constante com o nosso Mestre e Senhor.");
+novoCapitulo("Palavras de Vida Eterna 21 - COMPREENDENDO");
+novoVersiculo("2_Coríntios 4, 7");
+processar("Temos, porém, este tesouro em vasos de barro para que a excelência do poder " +
+"seja de DEUS e não de nós.\"–Paulo (II Coríntios, 4,7)<br>" +
+"Sigamos compreendendo.<br>" +
+"Lembra-te de que os talentos da fé e o conhecimento superior, o Dom de consolar, e a " +
+"capacidade de servir, não obstante laboriosamente conquistados por teu esforço, " +
+"constituem bençãos do Criador em teu coração de criatura.<br>" +
+"Não te furtes, desse modo, à lavoura do bem, a pretexto de te sentires ainda sob a " +
+"influência do mal.<br>" +
+"Até alcançarmos triunfo pleno sobre nossos desejos malsãos, sofreremos na vida, seja " +
+"no corpo de carne ou além dele, os flagelos da tentação.<br>" +
+"Tentação da luxúria...<br>" +
+"Tentação da vingança...<br>" +
+"Tentação da cobiça...<br>" +
+"Tentação da crueldade...<br>" +
+"Tentações de todos os matizes que emergem do poço de nossos impulsos instintivos " +
+"ainda não dominados...<br>" +
+"Se a tentação, contudo, nasce de nós, a flama da educação e do aprimoramento vem de " +
+"DEUS, conduzindo-nos para a Esfera Superior.<br>" +
+"Não te espantes, assim, à frente do conflito da luz e da treva em ti mesmo...<br>" +
+"Segue a luz e acertarás o caminho.<br>" +
+"Riqueza mediúnica, fulgurações da inteligência, recursos geniais e consagração à virtude " +
+"são tesouros do Senhor que, na feliz definição do Apóstolo Paulo, transportamos no vaso " +
+"de barro de nossa profunda inferioridade, a fim de que saibamos reconhecer que todo " +
+"amor, toda sabedoria, toda santificação, toda excelência e toda beleza da vida, não nos " +
+"pertencem de modo algum, mas sim à glória de Nosso Pai, a quem nos cabe obedecer e " +
+"servir, hoje e sempre.");
+novoCapitulo("Palavras de Vida Eterna 22 - NA PALAVRA E NA AÇÃO");
+novoVersiculo("Colossenses 3, 17");
+processar("“E tudo o que fizerdes, seja em palavra, seja em ação, fazei-o em nome do " +
+"Senhor Jesus, dando por ele graças a Deus Pai.” – " +
+"Paulo. (COLOSSENSES, 3:17.)<br>" +
+"Dizes-te cristão, declaras-te seguidor de Jesus, afirmas-te cultor do Evangelho...<br>" +
+"Isso quer dizer que o nome do Senhor se encontra empenhado em tuas mãos.<br>" +
+"Se buscamos o Cristo, decerto é necessário refleti-lo.<br>" +
+"É imprescindível, assim, saibamos agir como se lhe fôssemos representantes fiéis, no " +
+"caminho em que estagiamos.<br>" +
+"Lembra-te de semelhante obrigação e, cumprindo-a, libertar-te-ás com facilidade das " +
+"sombras que te atormentam a marcha.<br>" +
+"Assevera-nos o Apóstolo: - “ e tudo o que fizerdes, seja em palavra, seja em ação, fazei-o " +
+"em nome do Senhor Jesus, dando por ele graças a Deus Pai.”<br>" +
+"Efetivamente, a palavra e os atos representam a força de exteriorização dos nossos " +
+"sentimentos e pensamentos.<br>" +
+"O coração inspira o cérebro.O cérebro dirige a existência.<br>" +
+"A emoção cria a idéia. A idéia plasma as ações.<br>" +
+"É preciso, pois, sentir com Jesus para que aprendamos a raciocinar e a servir com ele.<br>" +
+"Alguém nos sugere a extensão da maledicência, nas teias do julgamento precipitado? Há " +
+"quem nos chame à contemplação das chagas e cicatrizes alheias? Surgem desavenças e " +
+"mágoas em nosso campo de ação?<br>" +
+"Usemos a palavra nos moldes do Benfeitor Sublime, ajudando para o bem de todos, entre " +
+"a bondade e o perdão.<br>" +
+"Somos tentados ao revide por ofensas inesperadas? Sofremos preterição e calúnia, " +
+"apodo e perseguição? Padecemos íntimo desencanto ou desgostos e angústias no " +
+"templo familiar?<br>" +
+"Usemos a conduta do Sublime Benfeitor, ajudando para o bem de todos, entre o perdão e " +
+"a bondade.<br>" +
+"Seja onde for e com quem for, busca o lado luminoso das criaturas, mobilizando o amor " +
+"puro, a fim de que estejas em verdade na companhia do Excelso Cultivador, purificando a " +
+"eira do mundo.<br>" +
+"Não basta declarar a nossa condição de aprendizes do Mestre dos mestres. É " +
+"indispensável estejamos realmente com ele, para com ele colaborar na construção da " +
+"Vida Melhor.");
+novoCapitulo("Palavras de Vida Eterna 23 - ADORAÇÃO E FRATERNIDADE");
+novoVersiculo("1_João 4, 21");
+processar("“Ora, temos da parte dele este mandamento, que aquele " +
+"que ama a Deus, ame também a seu irmão.”<br>" +
+"– João. ( I JOÃO, 4:21.)<br>" +
+"Construirás santuários primorosos no culto ao Senhor da Vida...<br>" +
+"Pronunciarás orações sublimes, exaltando-Lhe a glória excelsa...<br>" +
+"Tecerás com cintilações divinas a palavra comovente e bela com que Lhe definirás a " +
+"grandeza...<br>" +
+"Combinarás com mestria os textos da Escritura Divina para provar-Lhe a existência...<br>" +
+"Exibirás dons mediúnicos dos mais excelentes de modo a falares d¢Ele, com eficiência e " +
+"segurança, às criaturas irmãs...<br>" +
+"Escreverás livros admiráveis, comentando-Lhe a sabedoria...<br>" +
+"Comporás poemas preciosos, tentando ornamentar-Lhe a magnificência...<br>" +
+"Clamarás por Ele, em súplicas ardentes, revelando confiança e fidelidade...<br>" +
+"Adora-Lo-ás com a tua prece, com a tua arte, com o teu carinho e com a tua inteligência...<br>" +
+"Contudo, se não amas a teu irmão, por amor a Ele, Pai Amoroso e Justo, de que te vale o " +
+"culto filial, estéril e egoísta?<br>" +
+"Um simples pai de família, no campo da Humanidade imperfeita, alegra-se e dilata-se nos " +
+"filhos que, em lhe compreendendo a dedicação, se empenham no engrandecimento da " +
+"própria casa, através do amparo constante aos irmãos menos felizes.<br>" +
+"Incontestavelmente, a lealdade de tua fé representa o perfume de alegria nas tuas " +
+"relações com o Eterno Senhor, mas não olvides que o teu incessante serviço, na " +
+"plantação e extensão do bem, é a única maneira pela qual podes realmente servi- Lo.<br>" +
+"Seja qual for a igreja em que externas a tua reverência à Majestade Divina, guarda, pois, " +
+"a oração por lâmpada acesa em tua luta de cada dia, mas não te esqueças de que " +
+"somente amparando os nossos irmãos inexperientes e frágeis, caídos e desditosos, é " +
+"que, de fato, honraremos a Bênção de Nosso Pai.");
+novoCapitulo("Palavras de Vida Eterna 24 - LIBERDADE EM CRISTO");
+novoVersiculo("Gálatas 5, 1");
+processar("“Estais pois firmes na liberdade com que o Cristo nos libertou " +
+"e não vos submetais de novo ao jugo da escravidão.”<br>" +
+"– Paulo. (GÁLATAS, 5:1.)<br>" +
+"Meditemos na liberdade com que o Cristo nos libertou das algemas da ignorância e da " +
+"crueldade.<br>" +
+"Não lhe enxergamos qualquer traço de rebeldia em momento algum.<br>" +
+"Através de todas as circunstâncias, sem perder o dinamismo da própria fé, submete-se, " +
+"valoroso, ao arbítrio de nosso Pai.<br>" +
+"Começa a Missão Divina, descendo da Glória Celestial para o estreito recinto da " +
+"manjedoura desconhecida.<br>" +
+"Não exibe uma infância destacada no burgo em que se acolhe a sua equipe familiar; " +
+"respira o ambiente da vida simples, não obstante a Luz Sublime com que supera o nível " +
+"intelectual dos doutores de sua época.<br>" +
+"Inicia o apostolado da Boa Nova, sem constranger as grandes inteligências a lhe " +
+"aceitarem a doutrina santificante, contentando-se a adesão dos pescadores de existência " +
+"singela.<br>" +
+"Fascinando as multidões com a sua lógica irresistível, não lhes açula qualquer impulso de " +
+"reivindicação social, ensinando-as a despertar no próprio coração os valores do espírito.<br>" +
+"Impondo-se pela grandeza única que lhe assinala a presença, acenam-lhe com uma " +
+"coroa de rei, que Ele não aceita.<br>" +
+"Observando o povo jugulado por dominadores estrangeiros, não lhe aconselha qualquer " +
+"indisciplina, recomendado-lhe, ao invés disso, “dar a César o que é de César e a Deus o " +
+"que é de Deus”.<br>" +
+"Sabe que Judas, o companheiro desditoso, surge repentinamente possuído por " +
+"desvairada ambição política, firmando conchavos com perseguidores da sua Causa " +
+"Sublime, contudo, não lhe promove a expulsão do círculo mais íntimo.<br>" +
+"Não ignora que Simão Pedro traz no âmago da alma a fraqueza com que o negará diante " +
+"do mundo, mas não se exaspera, por isso, e ajuda-o cada vez mais.<br>" +
+"Ele, que limpara leprosos e sarara loucos, que restituíra a visão aos cegos e o movimento " +
+"aos paralíticos, não se exime à prisão e ao escárnio público, à flagelação e à cruz da " +
+"morte.<br>" +
+"Reflitamos, pois, que a liberdade, segundo o Cristo, não é o abuso da faculdade de " +
+"raciocinar, empreender e fazer, mas sim a felicidade de obedecer a Deus, construindo o " +
+"bem de todos, ainda mesmo sobre o nosso próprio sacrifício, porque somente nessa base " +
+"estamos enfim livres para atender aos desígnios do Eterno Pai, sem necessidade de " +
+"sofrer o escuro domínio das arrasadoras paixões que nos encadeiam o espírito por tempo " +
+"indeterminado ás trevas expiatórias.");
+novoCapitulo("Palavras de Vida Eterna 25 - OUVIRÁS DECERTO");
+novoVersiculo("Marcos 15, 30");
+processar("“Salva-te a ti mesmo e desce da cruz.”<br>" +
+"(MARCOS, 15:30.)<br>" +
+"Se te encontras realmente empenhado na execução do bem, ouvirás, decerto, as " +
+"provocações do mal em todos os instantes de testemunho.<br>" +
+"- “Se, em verdade, vives à procura do Cristo, por que choras sob o fardo das provações?”<br>" +
+"-“De que te serve a fé para o caminho de tanta dor?”<br>" +
+"- “Se és médium com tarefa na caridade, onde estão os Espíritos protetores que te não " +
+"aliviam as amarguras?”<br>" +
+"- “Se guardas confiança em Jesus, mostra-te livre dos obstáculos...”<br>" +
+"- “Se louvas o Espiritismo como Doutrina de luz, por que te demoras na sombra das " +
+"aflições?”<br>" +
+"Registrarás interrogações como essas a cada passo.<br>" +
+"É necessário te reveres à altura do conhecimento superior com que a Bondade Divina te " +
+"favorece, demonstrando que os princípios sublimes de tua fé não se movimentam na " +
+"direção do conforto imediatista da carne, mas sim no rumo do burilamento espiritual, elos " +
+"tempos afora.<br>" +
+"Ensinarás com o teu exemplo que o Evangelho não é oficina de vantagens na experiência " +
+"material, mas sim templo de trabalho redentor para que venhamos a consertar nós " +
+"mesmos, diante da Vida Eterna.<br>" +
+"Farás da mediunidade instrumento para a lavoura do bem, ainda mesmo te custe " +
+"imensuráveis sacrifícios , ajudando aos outros sem cogitar de auxílio a ti mesmo, como " +
+"quem sabe que a Lei do Amor é o sustentáculo do Universo, providenciando socorro " +
+"natural a quem se consagra ao socorro dos semelhantes.<br>" +
+"Converterás o Espiritismo, na tua senda, em força educativa da alma, sem exigir que o " +
+"mundo se te afeiçoe às conveniências.<br>" +
+"Buscarás a luz onde a luz se encontre.<br>" +
+"Desculparás toda ofensa.<br>" +
+"Elegerás na fraternidade a tua bandeira.<br>" +
+"Conjugarás o verbo servir onde estiveres.<br>" +
+"Começarás o trabalho de redenção em ti mesmo.<br>" +
+"Orarás por quem te fira ou calunie.<br/>" +
+"Amarás os próprios adversários.<br>" +
+"Ajudarás sem exigência.<br>" +
+"Contudo, para o exercício de semelhante apostolado, não passarás sobre a Terra sem o " +
+"assédio da incompreensão e do escárnio, porque o próprio Cristo foi por eles visado, " +
+"através daqueles que, em lhe rodeando o madeiro de sacrifício, lhe gritavam, zombeteiros " +
+"e irônicos:<br>" +
+"- “Salva-te a ti mesmo e desce da cruz”.");
+novoCapitulo("Palavras de Vida Eterna 26 - AÇOITANDO O AR");
+novoVersiculo("1_Coríntios 9, 26");
+processar("“Eu por minha parte assim corro, não como na incerteza; " +
+"de tal modo combato, não como açoitado o ar.”<br>" +
+"- Paulo. ( I CORÍNTIOS, 9:26.)<br>" +
+"Definindo o trabalho intenso que lhe era peculiar na extensão do Evangelho, disse o " +
+"apóstolo Paulo com inegável acerto: ¾ “Eu por minha parte assim corro, não como na " +
+"incerteza; de tal modo combato, não como açoitado o ar”.<br>" +
+"Hoje como ontem, milhares de aprendizes da Boa Nova gastam-se inutilmente, " +
+"através da vida agitada, asseverando-se em atividade do Mestre, quando apenas " +
+"simbolizam números vazios nos quadros da precipitação.<br>" +
+"Possuem planos admiráveis que nunca realizam.<br>" +
+"Comentam, apressados, os méritos do amor, guardando lamentável indiferença para " +
+"com determinados familiares que o Senhor lhes confia.<br>" +
+"Exaltam a tolerância, como fator de equilíbrio no sustento da paz, contudo se " +
+"queixam amargamente do chefe que lhes preside o serviço ou do subordinado que lhes " +
+"empresta concurso.<br>" +
+"Recebem os problemas que o mundo lhes oferece, buscando o escape mental.<br>" +
+"Expressam-se, acalorados, em questões de fé, alimentando dúvidas íntimas quanto " +
+"à imortalidade da alma.<br>" +
+"Exigem a regeneração plena dos outros, sem cogitar de reajustamento a si mesmos.<br>" +
+"Clamam, acusam, projetam, discutem, correm, sonham...<br>" +
+"Mas, visitados pela crise que afere em cada Espírito os valores que acumulou em si " +
+"próprio, diante da vida eterna, vacilam, desencantados, nas sombras da incerteza, e, " +
+"quando chamados pela morte do corpo à grande renovação, reconhecem, aflitos, que em " +
+"verdade estiveram na carne combatendo improficuamente, como quem passa na Terra " +
+"açoitando o ar.");
+novoCapitulo("Palavras de Vida Eterna 27 - LIBERDADE EM JESUS");
+novoVersiculo("Gálatas 5, 1");
+processar("“Para a liberdade Cristo nos libertou; permanecei, pois, " +
+"firmes e não vos dobreis novamente a um jugo de escravidão.”<br>" +
+"- Paulo. (GÁLATAS, 5:1.)<br>" +
+"Disse o apóstolo Paulo, com indiscutível acerto, que “para a liberdade Cristo nos libertou”.<br>" +
+"E não são poucos aqueles que na opinião terrestre definem o Senhor como sendo um " +
+"revolucionário comum.<br>" +
+"Não raro, pintam-no à feição de petroleiro vulgar, ferindo instituições e derrubando " +
+"princípios.<br>" +
+"Entretanto, ninguém no mundo foi mais fiel cultor do respeito e da ordem.<br>" +
+"Através de todas as circunstâncias, vemo-lo interessado, acima de tudo, na lealdade a " +
+"Deus e no serviço aos homens.<br>" +
+"Não exige berço dourado para ingressar no mundo.<br>" +
+"Aceita de bom grado a infância humilde e laboriosa.<br>" +
+"Abraça os companheiros de ministério, quais se mostram, sem deles reclamar certidão de " +
+"heroísmo e de santidade.<br>" +
+"Nunca se volta contra a autoridade estabelecida.<br>" +
+"Trabalha na extinção da crueldade e da hipocrisia, do simonismo e da delinqüência, mas " +
+"em momento algum persegue ou golpeia os homens que lhes sofrem o aviltante domínio.<br>" +
+"Vai ao encontro dos enfermos e dos aflitos para ofertar - lhes o coração.<br>" +
+"Serve indistintamente.<br>" +
+"Sofre a incompreensão alheia, procurando compreender para ajudar com mais " +
+"segurança.<br>" +
+"Não espera recompensa, nem mesmo aquela que surge em forma de simpatia e " +
+"entendimento nos círculos afetivos.<br>" +
+"Padece a ingratidão de beneficiados e seguidores, sem qualquer idéia de revide.<br>" +
+"Recebe a condenação indébita e submete-se aos tormentos da cruz, sem recorrer à " +
+"justiça.<br>" +
+"E ninguém se fez mais livre que Ele - livre para continuar servindo e amando, através dos " +
+"séculos renascentes.<br>" +
+"Ensinou-nos, assim, não a liberdade que explode de nossas paixões indomesticadas, mas " +
+"a que verte, sublime, do cativeiro consciente às nossas obrigações, diante do Pai Excelso.<br>" +
+"Nas sombras do “eu”, a liberdade do “faço o que quero” freqüentemente cria a desordem " +
+"e favorece a loucura.<br>" +
+"Na luz do Cristo, a liberdade do “devo servir” gera o progresso e a sublimação.<br>" +
+"Assimilemos do Mestre o senso da disciplina.<br>" +
+"Se quisermos ser livres, aprendamos a obedecer.<br>" +
+"Apenas através do dever retamente cumprido, permaneceremos firmes, sem nos " +
+"dobrarmos diante da escravidão a que, muitas vezes, somos constrangidos pela " +
+"inconseqüência de nossos próprios desejos.");
+novoCapitulo("Palavras de Vida Eterna 28 - NA CONQUISTA DA LIBERDADE");
+novoVersiculo("Gálatas 5, 13");
+processar("“Porque vós, irmãos, fostes chamados à liberdade, porém, " +
+"não useis da liberdade para dar ocasião à carne; sede, antes, " +
+"servos uns dos outros pelo amor.” - Paulo. (GÁLATAS, 5:13.)<br>" +
+"A mente humana, antes do contato com o Cristo, o Divino Libertador, padecia milenárias " +
+"algemas de servidão.<br>" +
+"Era o cativeiro da violência, convertendo o mundo em arena de senhores e escravos...<br>" +
+"Era o grilhão implacável do ódio garantindo impunidade aos crimes de raça...<br>" +
+"Era a treva da ignorância aprisionando a inteligência nas teias do vício dourado...<br>" +
+"Era a obsessão da guerra permanente, encarcerando os povos em torrentes de sangue e " +
+"lama...<br>" +
+"Cristo veio, porém, e conquistando a libertação espiritual do mundo, a preço de sacrifício, " +
+"descerra novos horizontes à Humanidade.<br>" +
+"Da Manjedoura à Cruz, movimenta-se o Amigo Divino, reintegrando o homem na posse " +
+"da simplicidade, do equilíbrio, da esperança, da alegria e da vida eterna que constituem " +
+"fatores essenciais da justa libertação do espírito.<br>" +
+"Devemos, pois, ao Senhor, a felicidade de nossa gradativa independência, para a " +
+"imortalidade; entretanto, para atingir a glória divina a que estamos destinados, é preciso " +
+"saibamos renunciar conscientemente à nossa própria emancipação, sustentando-nos no " +
+"serviço espontâneo em favor dos outros, porquanto somente através da nossa voluntária " +
+"rendição ao dever, por amor aos nossos próprios deveres, é que realmente alcançaremos " +
+"a auréola da liberdade vitoriosa.");
+novoCapitulo("Palavras de Vida Eterna 29 - NO ESTUDO DA SALVAÇÃO");
+novoVersiculo("Atos 2, 47");
+processar("“E todos os dias acrescentava o Senhor à Igreja aqueles " +
+"que se encontravam em salvação.” (ATOS, 2:47.)<br>" +
+"A expressão fraseológica do texto varia por vezes, acentuando que o Senhor " +
+"acrescentava à comunidade apostólica todos aqueles “que estavam se salvando” ou “que " +
+"se iam salvar”.<br>" +
+"De qualquer modo, porém, a notícia serve de base a importante estudo da salvação.<br>" +
+"Muita gente acredita que salvar-se será livrar-se de todos os riscos, na conquista da " +
+"suprema tranqüilidade.<br>" +
+"Entretanto, vemos o Cristo apartando as almas em processo de salvação para " +
+"testemunho incessante no sacrifício.<br>" +
+"Muitos daqueles que foram acrescentados, ao serviço da Igreja nascente, " +
+"conheceram aflição e martírio, lapidação e morte.<br>" +
+"Designados por Jesus para a Obra Divina, não se forraram à dor.<br>" +
+"Mãos calejadas em duro trabalho, conheceram sarcasmos soezes e vigílias atrozes.<br>" +
+"Encontraram no Excelso Amigo não apenas o Benfeitor que lhes garantia a " +
+"segurança, mas também o Mestre ativo que lhes oferecia a lição em troca do " +
+"conhecimento e a luta como preço da paz.<br>" +
+"É que salvar não será situar alguém na redoma da preguiça, à distância do suor na " +
+"marcha evolutiva; tanto quanto triunfar não significa deserção do combate.<br>" +
+"Consoante o ensinamento do próprio Cristo, que não isentou a si mesmo do selo " +
+"infamante da cruz, salvar é, sobretudo, regenerar, instruir, educar e aperfeiçoar para a " +
+"Vida Eterna.");
+novoCapitulo("Palavras de Vida Eterna 30 - PARA VENCER O MAL");
+novoVersiculo("Romanos 12, 21");
+processar("“Não te deixes vencer pelo mal, mas vence o mal com o bem.\"<br>" +
+"- Paulo. (Romanos, 12:21.)<br>" +
+"Muita gente quando não se mostre positivamente inclinada à vingança, perante o mal que " +
+"recebe, demonstra atitudes de hostilidade indireta, como sejam o favor adiado, o fel da " +
+"reprovação de permeio com o mel do elogio, o deliberado esquecimento quando se trate " +
+"da honra ao mérito ou a diminuição do entusiasmo na prestação de serviço, em favor da " +
+"pessoa menos simpática...<br>" +
+"Entretanto, para vencer o mal não basta essa \"meia-bondade\", peculiar a quantos se " +
+"devotam à desculpa cortês sem adesão do campo íntimo...<br>" +
+"Todas as nossas manifestações que acusem essa ou aquela percentagem de mal, são " +
+"sempre plantação do mal, gerando insucesso e desgosto contra nós mesmos.<br>" +
+"O Evangelho é claro na fórmula apresentada para a extinção do flagelo.<br>" +
+"Para que estejamos libertos da baba sinistra do antigo dragão que trava o progresso da " +
+"Humanidade, é indispensável guardemos paciência contra as suas investidas, procurando " +
+"esquecê-lo, perdoá-lo e fazer-lhe o bem tanto quanto nos seja possível, porque o bem " +
+"puro é a única força suscetível de desarmar-lhe as garras inconscientes.<br>" +
+"Não nos esqueçamos de que para anular a sombra noturna não basta arremeter os " +
+"punhos cerrados contra o domínio da noite.<br>" +
+"É preciso acender uma luz.");
+novoCapitulo("Palavras de Vida Eterna 31 - COMBATENDO A SOMBRA");
+novoVersiculo("Romanos 12, 2");
+processar("“E não vos conformei com este mundo, mas transformai-vos...”<br>" +
+"– Paulo- (Romanos, 12:2.)<br>" +
+"O aviso evangélico é demasiado eloqüente, todavia é imperioso observar-lhe a " +
+"expressão profunda.<br>" +
+"O apóstolo devidamente inspirado adverte-nos de que em verdade, não nos será " +
+"possível a tácita conformação com os enganos do mundo do mundo, tanta vez abraçados " +
+"espontaneamente pela maioria dos homens, no entanto, não nos induz a qualquer atitude " +
+"de violência.<br>" +
+"Não nos pede rebelião e gritaria.<br>" +
+"Não nos aconselha azedume e discussão.<br>" +
+"Na palavra da Boa Nova solicita-nos simplesmente a nossa transformação.<br>" +
+"Não nos cabe, a pretexto de seguir o Mestre, sair de azorrague em punho, golpeando " +
+"aqui e ali, na pretensão de estender-lhe a influência.<br>" +
+"É imprescindível adotar a conduta dele próprio que, em nos conhecendo as viciações e " +
+"fraquezas, suportou-nos a rijeza de coração, orientando-nos para o bem, cada dia, com o " +
+"esforço paciente da caridade que tudo compreende para ajudar.<br>" +
+"Não movimentes, desse modo, o impulso da força, constrangendo os semelhantes a " +
+"determinadas regras de conduta, diante da ilusão em que se comprazem.<br>" +
+"Renovemo-nos para o melhor.<br>" +
+"Eleva o padrão vibratório das emoções e dos pensamentos.<br>" +
+"Cresce para a Vida Superior e revela-te em silêncio, na altura de teus propósitos, " +
+"convertendo-te em auxiliar precioso da divina iluminação do espírito, na convicção de que " +
+"a sementeira do exemplo é a mais duradoura plantação no solo da alma.<br>" +
+"Não te resignes aos hábitos da treva. Mas, clareia-te por dentro, purificando-te sempre " +
+"mais, a fim de que a tua presença irradie, em favor do próximo, a mensagem persuasiva " +
+"do amor, para que se estabeleça entre os homens o domínio da eterna luz.");
+novoCapitulo("Palavras de Vida Eterna 32 - O AMOR TUDO SOFRE");
+novoVersiculo("1_Coríntios 13, 7");
+processar("“Tudo sofre...”- Paulo " +
+"(I CORÍNTIOS, 13:7.)<br>" +
+"O noticiário terrestre reporta-se diariamente a desvarios cometidos em nome do " +
+"amor.<br>" +
+"Homicídios são perpetrados publicamente.<br>" +
+"Suicídios sulcam de pranto e desolação a rota de lares esperançosos.<br>" +
+"Furto, contenda, injúria e perversidade aprecem todos os dias invocando a " +
+"inspiração do sentimento sublime.<br>" +
+"Mulheres indefesas, homens dignos, jovens promissores e infelizes crianças, em " +
+"toda a parte, sofrem abandono e aflição sob a legenda celeste.<br>" +
+"Entretanto, só o egoísmo, traduzindo apego da alma ao bem próprio, é que " +
+"patrocina os golpes da delinqüência, os enganos da posse, os erros da impulsividade e os " +
+"desacertos da pressa... Apenas o egoísmo gera ciúme e despeito, vingança e discórdia, " +
+"acusação e cegueira.<br>" +
+"O amor, longe disso, sabe rejubilar-se com a alegria dos corações amados, " +
+"esposando-lhes as lições e dificuldades, as dores e os compromissos.<br>" +
+"Não se atropela, nem se desmanda.<br>" +
+"Abraça o sacrifício próprio, em favor da felicidade da criatura a quem ama, a razão " +
+"da própria felicidade.<br>" +
+"Por esse motivo, o amor verdadeiro não há sinal de qualquer precipitação " +
+"conclamando à imoderação ou à loucura.<br>" +
+"O Apóstolo Paulo afirmou divinamente inspirado: - “O amor tudo sofre...”.<br>" +
+"E, de nossa parte, acrescentamos: - O amor genuíno jamais se desregra ou se " +
+"cansa, porque realmente sabe esperar.");
+novoCapitulo("Palavras de Vida Eterna 33 - ACALMA-TE");
+novoVersiculo("Mateus 19, 26");
+processar("“...a Deus tudo é possível...” Jesus " +
+"MATEUS 19:26 " +
+"Seja qual for a perturbação reinante, acalma-te e espera, fazendo o melhor que possas.<br>" +
+"Lembra-te de que o Senhor Supremo pede serenidade para exprimir-se com segurança.<br>" +
+"A terra que te sustenta o lar é uma faixa de forças tranqüilas.<br>" +
+"O fruto que te nutre representa um ano inteiro de trabalho silencioso da árvore generosa.<br>" +
+"Cada dia que se levanta é convite de Deus para que lhe atendamos à Obra Divina, em " +
+"nosso próprio favor.<br>" +
+"Se te exasperas, não Lhe assimilas o plano.<br>" +
+"Se te afeiçoas à gritaria, não Lhe percebes a voz.<br>" +
+"Conserva-te, pois, confiante, embora a preço de sacrifício.<br>" +
+"Decerto, encontrarás ainda hoje, corações envenenados que destilam irritação e " +
+"desgosto, medo e fel.<br>" +
+"Ainda mesmo que te firam e apedrejem, aquieta-te e abençoa-os com a tua paz.<br>" +
+"Os desesperados tornarão à harmonia, os doentes voltarão à saúde, os loucos serão " +
+"curados, os ingratos despertarão...<br>" +
+"É da Lei do Senhor que a luz domine a treva, sem ruído, sem violência.<br>" +
+"Recorda-te que toda dor, como toda nuvem, forma-se, ensombra-se e passa...<br>" +
+"Se outros gritam e oprimem, espancam e amaldiçoam, acalma-te e espera..<br>" +
+"Não olvides a palavra do Mestre quando nos afirmou que a Deus tudo é possível, e, " +
+"garantindo o teu próprio descanso, refugia-te em Deus.");
+novoCapitulo("Palavras de Vida Eterna 34 - PROSSIGAMOS");
+novoVersiculo("Filipenses 3, 13");
+processar("“Irmãos, quanto a mim não julgo que o haja alcançado; mas, uma " +
+"coisa faço, e é que, esquecendo-me das coisas que atrás ficam e " +
+"avançando para as que estão diante de mim...”- Paulo.<br>" +
+"(FILIPENSES, 3:13.)<br>" +
+"Se te imobilizas na estrada, a pretexto de amarguras acumuladas ou de ofensas " +
+"recebidas, lembra-te de Paulo, o apostolo intrépido, que, sobrecarregado de problemas, " +
+"não se resignava a interromper o trabalho que o Mestre lhe conferira.<br>" +
+"O amigo providencial da gentilidade não se entretinha a escutar os remorsos que " +
+"trazia do seu tempo de adversário e perseguidor do Evangelho.<br>" +
+"Não lamentava os amigos descrentes da renovação de que fornecia testemunho.<br>" +
+"Não se queixava dos parentes que o recebiam, empunhando o azorrague da " +
+"expulsão.<br>" +
+"Não se detinha para lastimar a alteração dos afetos que a incompreensão azedara " +
+"no vaso do tempo.<br>" +
+"Não cultivava a volúpia da solidão porque lhe faltasse a benção do tálamo " +
+"doméstico.<br>" +
+"Não se fixava nos espinhos que lhe ferreteavam a alma e a carne, não obstante " +
+"reconhecer-lhes a existência.<br>" +
+"Não parava com o objetivo de reclamar contra as pedradas do caminho.<br>" +
+"Não se concedia férias de choro inútil, ante as arremetidas do mal.<br>" +
+"Não se demorava na rede de elogios, sob o fascínio da ilusão.<br>" +
+"Não se cristalizava nos próprios impedimentos.<br>" +
+"Seguia sempre na direção do alvo que lhe cabia atingir.<br>" +
+"Assim, também nós, endividados ou pecadores, pobres ou doentes, fracos ou inábeis, " +
+"desiludidos ou torturados, uma coisa façamos... Acima de todos os tropeços inibições, " +
+"prossigamos sempre adiante, olvidando o mal e fazendo o bem.");
+novoCapitulo("Palavras de Vida Eterna 35 - OBSERVEMOS AMANDO");
+novoVersiculo("Mateus 7, 3");
+processar("“Por que vês o argueiro no olho do teu irmão?”- Jesus " +
+"(MATEUS, 7:3.)<br>" +
+"Habitualmente, guardamos o vezo de fixar as inibições alheias, com absoluto " +
+"esquecimento das nossas.<br>" +
+"Exageremos as prováveis fraquezas do próximo, prejulgamos com rispidez e " +
+"severidade o procedimento de nossos irmãos...<br>" +
+"A pergunta do Mestre acorda-nos para a necessidade de nossa educação, de vez " +
+"que, de modo geral, descobrimos nos outros somente aquilo que somos.<br>" +
+"A beneficio de nossa edificação recordemos a conduta do Cristo na apreciação de " +
+"quantos lhe defrontavam a marcha.<br>" +
+"Para muitos, Maria de Magdala era a mulher obsidiada e inconveniente; mas para " +
+"ele surgiu como sendo um formoso coração feminino, atribulado por indizíveis angustias, " +
+"que, compreendido e amparado, lhe espalharia no mundo o sol da ressurreição.<br>" +
+"No conceito da maioria, Zaqueu era usurário de mãos azinhavradas e infelizes; para " +
+"ele, no entanto, era o amigo do trabalho a quem transmitiria alevantadas noções de " +
+"progresso e riqueza.<br>" +
+"Aos olhos de muita gente, Simão Pedro era fraco e inconstante; para ele, contudo, " +
+"representava o brilhante entrando nas sombras do preconceito que fugiria à luz do " +
+"Pentecoste para veicular-lhe o Evangelho.<br>" +
+"Na opinião do seu tempo, Saulo de Tarso era rijo doutor da lei mosaica, de espírito " +
+"endurecido e tiranizante; para ele, porem, era um companheiro mal conduzido que " +
+"buscaria em pessoa, às portas de Damasco para ajudar-lhe a Doutrina.<br>" +
+"Observemos amando, porque apenas o amor puro arrancará por fim as escamas de " +
+"treva dos nossos olhos para que os outros nos apareçam na Benção de Deus que, " +
+"invariavelmente, trazem consigo.");
+novoCapitulo("Palavras de Vida Eterna 36 - CORAÇÃO PURO");
+novoVersiculo("João 14, 1");
+processar("“Não se turbe o vosso coração...”- Jesus " +
+"(JOÃO, 14:1.)<br>" +
+"Guarda contigo o coração nobre e puro.<br>" +
+"Não afirmou o Senhor: -“não se vos obscureça o ambiente”, ou “não se vos " +
+"ensombre o roteiro”, porque criatura alguma na experiência terrestre poderá marchar " +
+"constantemente a céu sem nuvens.<br>" +
+"Cada berço é início de viagem laboriosa para a alma necessitada de experiência.<br>" +
+"Ninguém se forrará aos obstáculos.<br>" +
+"O pretérito ominoso para a grande maioria de nós outros, os viandantes da Terra, " +
+"levantará no território de nosso próprio íntimo os fantasmas que deixamos para trás, " +
+"vaguentes e insepultos, a se exprimirem naqueles que ferimos e injuriamos nas " +
+"existências passadas e que hoje se voltam pra nós, a feição de credores inflexíveis, " +
+"solicitando reconsideração e resgate, serviço e pagamento.<br>" +
+"Não passarás, assim, no mundo, sem tempestades e nevoeiros, sem o fel das " +
+"provas ásperas ou sem o assédio das tentações.<br>" +
+"Buscando o bem, jornadearás, como é justo, entre pedras e abismos, pantanais e " +
+"espinheiros.<br>" +
+"Todavia, recomendou-nos o Mestre: - “não se turbe o vosso coração”, porque o " +
+"coração puro e intimorato é garantia de consciência limpa e reta e quem dispõe da " +
+"consciência limpa e reta vence toda perturbação e toda treva, por trazer em si mesmo a " +
+"luz irradiante para o caminho.");
+novoCapitulo("Palavras de Vida Eterna 37 - REPAREMOS NOSSAS MÃOS");
+novoVersiculo("Mateus 8, 3");
+processar("“E Jesus, estendendo a mão, tocou-o dizendo: quero, sê limpo.”<br>" +
+"(MATEUS, 8:3.)<br>" +
+"Meditemos na grandeza e na sublimidade das mãos que se estendem para o bem...<br>" +
+"Mãos que aram a terra, preparando a colheita...<br>" +
+"Mãos que constroem lares e escolas, cidades e nações...<br>" +
+"Mãos que escrevem, amando em louvor do conhecimento...<br>" +
+"Mãos que curam na medicina, que plasmam a riqueza da ciência e da indústria, que " +
+"asseguram o reconforto e o progresso...<br>" +
+"Todas elas se abrem, generosas, na direção do Infinito, gerando aperfeiçoamento e " +
+"tranqüilidade, reconhecimento e alegria, conjugando-se , abnegadas, para a extensão das " +
+"bênçãos da Sabedoria e de Amor na Obra de Deus.<br>" +
+"Mas pensemos também nas mãos que se estendem para as sombras do mal...<br>" +
+"Mãos que recolhem o ouro devido ao trabalho em favor de todos, transformando-se " +
+"em garras de usura...<br>" +
+"Mãos que acionam apetrechos de morte, convertendo-se em conchas de sangue e " +
+"lagrimas...<br>" +
+"Mãos que se agitam na mímica estudada de quantos abusam da multidão para " +
+"conduzi-la à indisciplina em proveito próprio...<br>" +
+"Mãos que ferem, que coagulam o fel da calúnia em forma de letras, que " +
+"amaldiçoam, que envenenam e que cultuam a inércia...<br>" +
+"Todas elas se cerram sobre si mesmas em círculos de aflição e remorsos pelos " +
+"quais se aprisionam às trevas do sofrimento.<br>" +
+"Reparemos, assim, a que forças da vida estendemos as nossas mãos.<br>" +
+"Jesus, o Mestre Divino, passou no mundo estendendo-as no auxilio de todos, ensinando e " +
+"ajudando, cirando e afagando, aliviando corpos enfermos e levantando almas caídas, e, " +
+"para mostrar-nos o supremo valor das mãos consagradas ao bem constante, preferiu " +
+"morrer na cruz, de mãos estendidas, como que descerrando o coração pleno de amor à " +
+"Humanidade inteira.");
+novoCapitulo("Palavras de Vida Eterna 38 - SALVAR - SE");
+novoVersiculo("1_Timóteo 1, 15");
+processar("“Palavra fiel é esta e digna de toda a aceitação:<br>" +
+"que Cristo Jesus veio ao mundo para salvar os pecadores...”- " +
+"Paulo. (I TIMÓTEO, 1:15.)<br>" +
+"É digna de nota a afirmativa do Apóstolo, asseverando que Jesus veio ao mundo " +
+"salvar os pecadores, para reconhecermos que salvar não significa arrebatar os filhos de " +
+"Deus à lama da Terra para que fulgurem, de imediato, entre os anjos do Céu.<br>" +
+"Assinalemos que, logo após a passagem do Senhor entre as criaturas, a fisionomia " +
+"íntima dos homens, de modo geral, era a mesma do tempo que lhe antecedera a vinda " +
+"gloriosa.<br>" +
+"Mantinham-se os romanos no galope de conquista ao poder, os judeus " +
+"permaneciam algemados a racismo infeliz, os egípcios desciam à decadência, os gregos " +
+"demoravam-se sorridentes e impassíveis, em sua filosofia recamada de dúvidas e " +
+"prazeres.<br>" +
+"Os senhores continuavam senhores, os escravos prosseguiam escravos...<br>" +
+"Todavia, o espírito humano sofrera profunda alterações.<br>" +
+"As criaturas, ao toque do exemplo e da palavra do Cristo, acordavam para a " +
+"verdadeira fraternidade, e a redenção, por chama divina, começou a clarear os obscuros " +
+"caminhos da Terra, renovando o semblante moral dos povos...<br>" +
+"Salvar-se, pois, não será subir ao Céu com alparcas do favoritismo religioso, mas " +
+"sim converter-se ao trabalho incessante do bem, para que o mal se extinga no mundo.<br>" +
+"Salvou-nos o Cristo ensinando-nos como reerguer-nos da treva para a luz.<br>" +
+"Salvar é, portanto, levantar, iluminar, ajudar e enobrecer, e salvar-se é educar-se alguém " +
+"para educar os outros.");
+novoCapitulo("Palavras de Vida Eterna 39 - NO AUXÍLIO DE TODOS");
+novoVersiculo("1_Timóteo 2, 2");
+processar("“Pelos reis e por todos que estão em eminência, para que tenhamos " +
+"uma vida justa e sossegada em toda a piedade e honestidade.”<br>" +
+"– Paulo. (I TIMÓTEO, 2:2.)<br>" +
+"Comumente, em nossos recintos de conversação e prece, voltamo-nos " +
+"compassivamente para os nossos companheiros menos felizes do mundo.<br>" +
+"Apiedamo-nos sem dificuldade dos enfermos e dos desesperados, dos que se " +
+"afundaram nas águas lodosas da miséria ou que foram vitimados por flagelos públicos.<br>" +
+"Oramos por eles, relacionando-lhes as necessidades que tentamos socorrer na " +
+"medida de nossos recursos.<br>" +
+"Entretanto, o Apóstolo Paulo, em suas recomendações à Timóteo, lembra-nos o " +
+"amparo espiritual que devemos a quantos suportam na fronte a coroa esfogueante da " +
+"autoridade, comandando, dirigindo, orientando, esclarecendo e instruindo...<br>" +
+"São eles, os nosso irmãos conduzidos à eminência do poder e da fortuna, da " +
+"administração ou da liderança, que carregam tentações e provas ocultas de toda espécie, " +
+"padecendo vicissitudes que, muita vez re retratam de lamentável maneira nas " +
+"coletividades que influenciam.<br>" +
+"A feição de pastores dementados, quando se não, compenetram dos deveres que " +
+"lhe são próprios, sofrem perturbações aflitivas que se projetam sobre as ovelhas que lhes " +
+"recolhem a atuação, criando calamidades morais e moléstias coletivas de longo curso, " +
+"que atrasam a evolução e atormentam a vida.<br>" +
+"Não nos esqueçamos, pois, da oração pelos que dirigem, auxiliando-nos com a " +
+"benção da simpatia e da compaixão, não só para que se desincumbam zelosamente dos " +
+"compromissos que lhes selam a rota, mas também para que vivamos, com o sadio " +
+"exemplo deles, na verdadeira caridade uns para com os outros, sob a inspiração da " +
+"honestidade, que é base de segurança em nosso caminho.");
+novoCapitulo("Palavras de Vida Eterna 40 - ENQUANTO PODES");
+novoVersiculo("Romanos 14, 10");
+processar("“Tu, porém, por que julgas teu irmão ? e tu, por que desprezas o teu ?<br>" +
+"pois todos compareceremos perante o Tribunal de Cristo”.<br>" +
+"PAULO (ROMANOS, 14:10.)<br>" +
+"Constrangido a examinar a conduta do companheiro, nessa ou naquela " +
+"circunstância difícil, não lhe condenes os embaraços morais.<br>" +
+"Lembra-te dos dias de cinza e pranto em que o Senhor te susteve a queda a poucos " +
+"milímetros da derrota.<br>" +
+"Não te acredites a cavaleiro dos novos problemas que surgirão no caminho ...<br>" +
+"Todo serviço incompleto, que deixaste na retaguarda, buscar-te-á, de novo, o " +
+"convívio para que lhe ofereças acabamento. E o remate legal de todas as nossas lutas " +
+"pede o fecho do Amor puro como selo da Paz Divina.<br>" +
+"As pedras que arremessaste ao telhado alheio voltarão como tempo sobre o teto em " +
+"que te asilas, e os venenos que destilastes sobre a esperança dos outros tornarão,no " +
+"hausto da vida, ao clima de tua própria esperança, testando-te a resistência.<br>" +
+"Aprende, pois, desde hoje, a ensaiar tolerância e entendimento, para que o remédio " +
+"por ti mesmo encomendado às mãos do “agora” não te amargue a existência, destruindote " +
+"o coração.<br>" +
+"Toda semente produz no solo do tempo e as almas imaculadas não povoam ainda a " +
+"Terra.<br>" +
+"Distribui, portanto, a paciência e a bondade com todos aqueles que se enganaram " +
+"sob a neblina do erro, para que te não faltem a paciência e a bondade do irmão a que te " +
+"arrimarás no dia em que a sombra te ameace o campo das horas.<br>" +
+"Auxilia, enquanto podes.<br>" +
+"Ampara, quanto possas.<br>" +
+"Socorre, quanto possível.<br>" +
+"Alivia, quanto puderes.<br>" +
+"Procura o bem, seja onde for.<br>" +
+"E, enquanto podes, desculpa sempre, porque ninguém fugirá do exato julgamento " +
+"na eterna lei.");
+novoCapitulo("Palavras de Vida Eterna 41 - SE ANDARMOS NA LUZ");
+novoVersiculo("1_João 1, 7");
+processar("Se andarmos na luz como Ele está, temos comunhão uns com os outros...\"<br>" +
+"- João (I João, 1:7.)<br>" +
+"Tanta vez, dissensões e incompreensões nos separam..<br>" +
+"Resoluções da vida particular, incompatibilidades, interpretações discordantes, " +
+"ressentimentos " +
+"E, com isso, consideráveis perdas de tempo e trabalho nos arruínam as tarefas e " +
+"perturbam a vida " +
+"Retiramo-nos do campo de serviço, prejulgamos erroneamente pessoas e fatos, " +
+"complicamos os problemas que nos dizem respeito e desertamos da obra a realizar..<br>" +
+"Contudo, não nos sobrevirão semelhantes desastres, se andarmos na luz, porque, na " +
+"claridade irradiante do Mestre, compreenderemos que todos partilhamos as mesmas " +
+"esperanças e as mesmas necessidades " +
+"Se nos movimentamos ao Sol do Evangelho, saberemos identificar o infortúnio, onde " +
+"cremos encontrar simplesmente rebeldia e desespero, e a chaga de ignorância, onde " +
+"supomos existir apenas maldade e crime..<br>" +
+"Percebemos que o erro de muitos se deve à circunstância de não haverem colhido as " +
+"oportunidades que nos felicitam a existência, e reconheceremos que, situados nas provas " +
+"que motivaram a dor de nossos irmãos caídos em delinqüência, talvez não tivéssemos " +
+"escapado à dominação da sombra " +
+"É que a luz do Senhor nos fará sentir o entendimento real..<br>" +
+"Não bastará, no entanto que ela fulgure tão-somente em nossa razão e pontos de vista " +
+"É necessário andarmos nela, assimilando-lhe os sagrados princípios, para que " +
+"assinalemos em nós a presença da verdadeira caridade, a alavanca divina que, por " +
+"agora, é a única força capaz de sustentar-nos em abençoada comunhão uns com os " +
+"outros.");
+novoCapitulo("Palavras de Vida Eterna 42 - NO SERVIÇO MEDIÚNICO");
+novoVersiculo("1_Coríntios 12, 4");
+processar("“Há diversidade de dons, mas o espírito é o mesmo” – Paulo.<br>" +
+"(I CORÍNTIOS, 12:4)<br>" +
+"Examinando os dons espirituais ou, mais propriamente, as faculdades mediúnicas, entre " +
+"os aprendizes do evangelho, o apóstolo Paulo afirma categórico no capítulo doze de sua " +
+"primeira Epístola aos Coríntios:<br>" +
+"- “Há diversidade de dons, mas o espírito é o mesmo, há diversidade de ministérios, " +
+"mas o senhor é o mesmo e há diversidade de operações, mas é o mesmo deus que opera " +
+"tudo em todos.<br>" +
+"A manifestação do Espírito, porém, é concedida a cada um para o que for útil, pois " +
+"que a um, pelo Espírito, é dada a palavra da sabedoria, e a outro, pelo mesmo Espírito, a " +
+"palavra da Ciência; a outro, pelo mesmo Espírito, a fé, e a outro, pelo mesmo Espírito, os " +
+"dons de curar; a outro, a operação de fenômenos e a outro a profecia; a outro, o dom de " +
+"discernir os Espíritos e a outro a variedade de línguas, e, ainda a outro, a interpretação " +
+"das línguas. Mas um só e o mesmo Espírito opera todas essas coisas, repartindo " +
+"particularmente a cada um como lhe apraz.”<br>" +
+"Parece incrível que explicações tão claras ao redor da mediunidade tenham vindo à " +
+"luz há dezenove séculos, traçando diretrizes e especificando deveres, pela mão firme " +
+"daquele que se constitui em amigo fiel da gentilidade.<br>" +
+"Qual disse outrora Paulo, relembremos hoje que a mediunidade é cedida a cada um " +
+"para o que for útil.<br>" +
+"É por isso que, nos quadros da ação espírita, temos instrumentos mediúnicos para o " +
+"esclarecimento, para a informação, para o reconforto, para a convicção, para o fenômeno, " +
+"para o socorro aos enfermos, para as manifestações idiomáticas, para a interpretação e " +
+"para o discernimento, tanto quanto para numerosas outras peculiaridades de serviço; " +
+"entretanto, nós todos, tarefeiros encarnados e desencarnados que procuramos a nossa " +
+"regeneração do Evangelho, devemos saber que o Bem de Todos é a luz do Espírito " +
+"Glorioso de Jesus Cristo que precisamos refletir, nesse ou naquele setor do trabalho.<br>" +
+"Abstenhamo-nos, assim do contato com as forças que operam a perturbação e a " +
+"desordem, visíveis ou invisíveis, na certeza de que daremos conta dos dotes mediúnicos " +
+"com que fomos temporariamente felicitados, porque o espírito do senhor, por seus " +
+"mensageiros, nos aquinhoa com esse ou aquele empréstimo de energias medianímicas, a " +
+"título precário, para a nossa própria edificação e segundo as nossas necessidades.");
+novoCapitulo("Palavras de Vida Eterna 43 - NA MEDIUNIDADE");
+novoVersiculo("2_Coríntios 4, 7");
+processar("\"Temos, porém, este tesouro em vasos de barro, " +
+"para que a excelência do poder seja de DEUS e não de nós”.<br>" +
+"- PAULO (II CORÍNTIOS, 4:7.)<br>" +
+"Utilizando as faculdades mediúnicas de que foste dotado, não olvides que funcionas à " +
+"guisa de refletor, cujo material de estrutura nada tem de comum com a luz que retrata.<br>" +
+"O espelho, seja de metal ou de vidro, detém os raios solares, sem comungar-lhes a " +
+"natureza, e o fio simples transmite o remoinho eletrônico, sem partilhar-lhe o poder.<br>" +
+"Entretanto, se o espelho jaz limpo consegue reter a benção da claridade e se o fio " +
+"obedece à inteligência que o norteia converte-se em portador da energia.<br>" +
+"Assim também a mediunidade, pela qual, sem maior obstáculo, te eriges em mensageiro " +
+"de instrução e refazimento, esperança e consolo. Através dela, recolhes o influxo da " +
+"Esfera Superior sem compartilhar-lhe a grandeza, mas se guardas contigo humildade e " +
+"correção, converter-te-ás no instrumento ao socorro moral de muitos.<br>" +
+"Todavia, assim como, às vezes, o espelho se turva e o fio se rompe, exigindo " +
+"reajustamentos, também a força mediúnica em tua alma é suscetível de rupturas diversas, " +
+"reclamando trabalho restaurativo.<br>" +
+"Não te afaças, assim, ao desânimo ou à negação se essa ou aquela dificuldade aparece " +
+"na obra do intercâmbio.<br>" +
+"O erro, no clima da sinceridade, é sempre lição.<br>" +
+"Afervora-te no trabalho do bem e recolhe-te à humildade do aprendiz atencioso e " +
+"vigilante, gastando severidade contigo e benevolência para com os outros, porque " +
+"qualquer dom da Luz Divina na obscuridade do ser humano, qual se expressa na " +
+"conceituação apostólica, é um “tesouro em vaso de barro, para que a excelência do poder " +
+"seja de deus e não de nós”.");
+novoCapitulo("Palavras de Vida Eterna 44 - AÇÃO");
+novoVersiculo("1_Coríntios 15, 58");
+processar("“Portanto, meus amados irmãos, sede firmes, " +
+"inabaláveis e sempre abundantes na obra do Senhor, " +
+"sabendo que, no Senhor, o vosso trabalho não é vão.”<br>" +
+"PAULO (Coríntios, 15:58.)<br>" +
+"Nas lutas do dia-a-dia, todos somos impelidos a várias operações para avançar no " +
+"caminho...<br>" +
+"Sentimos.<br>" +
+"Desejamos.<br>" +
+"Falamos.<br>" +
+"Estudamos.<br>" +
+"Aprendemos.<br>" +
+"Conhecemos.<br>" +
+"Ensinamos.<br>" +
+"Analisamos.<br>" +
+"Trabalhamos.<br>" +
+"Entretanto, é preciso sentir a necessidade do bem de todos para que saibamos desejar " +
+"com acerto;Desejar com acerto para pensar honestamente; pensar honestamente para " +
+"falar aproveitando; falar aproveitando para estudar com clareza; estudar com clareza para " +
+"aprender com entendimento; aprender com entendimento para conhecer discernindo; " +
+"conhecer discernindo para ensinar com bondade; ensinar com bondade para analisar com " +
+"justiça e analisar com justiça para trabalhar em louvor do bem, porque, em verdade, todos " +
+"somos diariamente constrangidos à ação e pelo que fazemos é que cada um de nós " +
+"decide quanto ao próprio destino, criando para si mesmo a inquietante descida à treva ou " +
+"a sublime ascensão à luz.");
+novoCapitulo("Palavras de Vida Eterna 45 - NO SUSTENTO DA PAZ");
+novoVersiculo("1_Tessalonicenses 5, 13");
+processar("\"Vivei em Paz uns com os outros\".<br>" +
+"-Paulo (I Tessalonicenses, 5:13.)<br>" +
+"Costumamos referir-nos à guerra, qual se ela fosse um fenômeno de teratologia política, " +
+"exclusivamente atribuível aos desmandos de ditadores cruéis, quando todos somos " +
+"intimados pela vida ao sustento da Paz.<br>" +
+"Todos agimos uns sobre os outros e, ainda que a nossa influência pessoal se nos figure " +
+"insignificante, ela não é menos viva na preservação da harmonia geral.<br>" +
+"A floresta é um espetáculo imponente da natureza, mas não se agigantou sem o concurso " +
+"de sementes pequeninas.<br>" +
+"Nossa deficiência de análise, quanto à contribuição individual no equilíbrio comum, nasce, " +
+"via de regra, da aflição doentia com que aguardamos ansiosamente os resultados de " +
+"nossas ações, sequiosos de destaque pessoal no imediatismo da Terra; isso faz com que " +
+"procedamos, à maneira de alguém que se decidisse a levantar uma casa com total " +
+"menosprezo pelas pedras, tijolos, parafusos e vigas, aparentemente sem importância, " +
+"quando isoladamente considerados, mas indispensáveis à construção.<br>" +
+"Habituamo-nos, freqüentemente, a maldizer o irmão que se fez delinqüente, com absoluta " +
+"descaridade para com a debilitação de caráter a que chegou, depois de longo processo " +
+"obsessivo que lhe corroeu a resistência moral, quase sempre após fugirmos da " +
+"providência fraterna ou da simples conversação esclarecedora, capazes de induzí-lo à " +
+"vitória sobre as tentações que o levaram à falta consumada.<br>" +
+"Lideramos reclamações contra o estridor de buzinas na via pública e não nos pejamos " +
+"das maneiras violentas com que abalamos os nervos de quem nos ouve.<br>" +
+"Todos somos chamados à edificação da Paz que, aliás, prescinde de qualquer impulso " +
+"vinculado às atividades de guerra e que, paradoxalmente, depende de nossa luta por " +
+"melhorar-nos e educar-nos, de vez que Paz não é inércia e sim esforço, devotamento, " +
+"trabalho e vigilância incessantes a serviço do bem. Nenhum de nós está dispensado de " +
+"auxiliar-lhe a defesa e a sustentação, porquanto, muitas vezes, a tranqüilidade coletiva jaz " +
+"suspensa de um minuto de tolerância, de um gesto, de uma frase, de um olhar...<br>" +
+"Não te digas, pois, inabilitado a contribuir na Paz do mundo. Se não admites o poder e o " +
+"valor dos recursos chamados menores no engrandecimento da vida, faze um palácio " +
+"diante de vigorosa central elétrica e procura dotá-lo de luz e força sem a tomada.");
+novoCapitulo("Palavras de Vida Eterna 46 - NA TAREFA DA PAZ");
+novoVersiculo("João 14, 27");
+processar("...\"A minha paz vos dou\"... (Jesus)<br>" +
+"Todos ambicionam a paz. Raros ajudam-na.<br>" +
+"Que fazes por sustentá-la?<br>" +
+"Recorda que a segurança dos aparelhos mais delicados depende, quase sempre, de " +
+"parafusos pequeninos ou de junturas inexcedivelmente singelas.<br>" +
+"Não haverá tranqüilidade no mundo, sem que as nações pratiquem a tolerância e a " +
+"fraternidade.<br>" +
+"E se a nação é conjunto de cidades, a cidade é um agrupamento de lares, tanto quanto o " +
+"lar é um ninho de corações.<br>" +
+"A harmonia da vida começará, desse modo, no íntimo de nossas próprias almas ou toda " +
+"harmonia aparente na paisagem humana será sempre simples jogo de inércia.<br>" +
+"Comecemos, pois, a sublime edificação no âmago de nós mesmos.<br>" +
+"Não transmitas o alarme da crítica, nem estendas o fogo da crueldade.<br>" +
+"Inicia o teu apostolado de paz, calando a inquietação no campo do próprio ser.<br>" +
+"Onde surjam razões de queixa, sê a cooperação que restaura o equilíbrio; onde medrem " +
+"espinhos de sofrimento, sê a consolação que refaz a esperança.<br>" +
+"Detém-te na Tolerância Divina, e renova para todas as criaturas de teu círculo as " +
+"oportunidades do bem.<br>" +
+"Reafirma o compromisso de servir, silenciando sempre onde não possas agir em socorro " +
+"do próximo.<br>" +
+"Ao preço da própria renunciação, disse-nos o Senhor:<br>" +
+"- \"A minha paz vos dou\"...<br>" +
+"E para que a paz se faça, na senda em que marchamos, é preciso que à custa de nosso " +
+"próprio esforço se faça a paz em nós, a fim de que possamos irradiá-la, em tudo, no " +
+"amparo vivo aos outros.");
+novoCapitulo("Palavras de Vida Eterna 47 - ESTEJAMOS EM PAZ");
+novoVersiculo("João 20, 19");
+processar("“Paz seja convosco”. – Jesus.<br>" +
+"(JOÃO, 20:19.)<br>" +
+"Rujam tempestades em torno de teu caminho, tranqüiliza o coração e segue em paz na " +
+"direção do bem.<br>" +
+"Não carregues no pensamento o peso morto da aflição inútil.<br>" +
+"Refugia-te na cidadela interior do dever retamente cumprido e entrega à Sabedoria Divina " +
+"a ansiedade que te procura, à feição de labareda invisível.<br>" +
+"Se alguém te recusa, aquieta-te e ora em favor dos irmãos desorientados e infelizes.<br>" +
+"Se alguma circunstância te contraria, asse-rena tua alma e espera que os acontecimentos " +
+"te favoreçam.<br>" +
+"Lembra-te de que és chamado a viver um só dia de cada vez, sempre que o Rol se " +
+"levante.<br>" +
+"E por mais amplas se te façam as possibilidades, tornarás uma só refeição e vestirás um " +
+"só traje de cada vez nas tarefas de cada dia.<br>" +
+"Embora te atormentes pela claridade diurna,, a alvorada não brilhará antes da hora " +
+"prevista, e embora te interesses pelo fruto de determinada árvore, não chegarás a colhêla, " +
+"antes do justo momento.<br>" +
+"A pretexto, porém, de garantir a própria serenidade, não te demores na inércia.<br>" +
+"Mentaliza o bem e prossegue na construção do melhor, como quem sabe que a colheita " +
+"farta pede terra abençoada pela charrua.<br>" +
+"Sejam quais forem as tuas dificuldades, lembra-te de que a paz é a segurança da vida.<br>" +
+"Não nos esqueçamos de que, na hora da Manjedoura, as vozes celestiais, após o louvor " +
+"aos Céus, expressaram votos de paz à Terra e, depois da ressurreição, voltando, " +
+"gloriosamente, ao convívio das criaturas, antes de qualquer plano de trabalho disse Jesus " +
+"aos discípulos espantados:<br>" +
+"– “A paz seja convosco”.");
+novoCapitulo("Palavras de Vida Eterna 48 - DINHEIRO E ATITUDE");
+novoVersiculo("1_Timóteo 6, 10");
+processar("“Porque a paixão do dinheiro é a raiz de toda a espécie " +
+"de males e, nessa cobiça, alguns se desviaram da " +
+"fé e se traspassaram a si mesmos com muitas dores.”<br>" +
+"Paulo. (I TIMÓTEO, 6:10)<br>" +
+"Não encarceres o dinheiro para que o dinheiro não te encarcere.<br>" +
+"Bênção da vida que o Senhor permite circule na organização da comunidade, qual " +
+"sangue no corpo, converte-se em perigoso tirano de quem o escraviza.<br>" +
+"Deforma, por isso mesmo, os corações que o segregam no vício, como se faz verdugo " +
+"implacável do avarento que o trancafia nos cofres da usura.<br>" +
+"Algemado à inteligência perversa, transforma-se em arma destruidora, e extorquido às " +
+"lágrimas de viúvas e órfãos, vinga-se daqueles que o recolhem, instilando-lhes " +
+"enfermidades e cegueira de espírito.<br>" +
+"Libertado, porém, no campo do progresso e da bondade, converte-se em oculto libertador " +
+"daqueles que o libertam.<br>" +
+"E por essa razão que se faz alegria na colher de leite à criança desamparada ou no leito " +
+"simples que agasalha o doente sem teta, voltando em forma de paz àqueles que o " +
+"distribuem.<br>" +
+"Orientado -na direção dos que sofrem é prece de gratidão em louvor dos braços que o " +
+"movimentam e conduzido aos círculos de aflição é cântico inarticulado de amor para as " +
+"almas que o semeiam na gleba castigada do sofrimento.<br>" +
+"Não é a moeda que envilece o homem e sim o homem que a envilece, no desvario das " +
+"paixões que o degradam.<br>" +
+"Deixa, pois, que o dinheiro de passagem por tuas mãos se faça bênção de trabalho e " +
+"educação, caridade e socorro, à feição do ar que respiras sem furtá-lo aos pulmões dos " +
+"outros, e perceberás que o dinheiro, na origem, é propriedade simples de Deus.");
+novoCapitulo("Palavras de Vida Eterna 49 - CARIDADE E RIQUEZA");
+novoVersiculo("Efésios 2, 10");
+processar("“ Pois somos a feitura dele, criados em Jesus Cristo " +
+"para boas obras.” – Paulo – (EFÉSIOS, 2:10)<br>" +
+"Se acreditas que apenas o ouro é base corrente da caridade, lembra-te de Jesus, " +
+"que enriqueceu a terra sem possuir uma pedra onde repousar a cabeça.<br>" +
+"Descerrando o próprio coração, ei-lo a espalhar os bens imarcescíveis do Espírito.<br>" +
+"Fez luzir a estrela da humildade à frente dos poderosos.<br>" +
+"Ensinou aos discípulos a verdade sem afetação.<br>" +
+"Deu assistência aos enfermos.<br>" +
+"Forneceu coragem aos desalentados.<br>" +
+"Ministrou consolação aos aflitos.<br>" +
+"Imprimiu visão nova aos olhos de Madalena.<br>" +
+"Acendeu súbita claridade no ânimo de Zaqueu. Envolveu em compassivo " +
+"entendimento a incompreensão de Judas.<br>" +
+"Cercou de bondade o esmorecimento de Simão Pedro.<br>" +
+"Endereçou bênçãos de compaixão à turba desenfreada aos pés da cruz.<br>" +
+"Brindou o mundo com o esquecimento do mal, retomando-lhe o convívio, depois do " +
+"túmulo.<br>" +
+"Recorda, pois, que também podes distribuir das riquezas que fluem de ti próprio, " +
+"cuja aquisição é inacessível à moeda comum.<br>" +
+"Oferece aprovação e estímulo ao bem, apoio e conforto à dor...<br>" +
+"Estende ternura e simpatia, concurso e fraternidade...<br>" +
+"Espalha compreensão e esperança entre aqueles com quem convives e recebe com " +
+"gentileza e bondade aqueles que te procuram...<br>" +
+"Não aguardes sobras na bolsa para atender aos planos da caridade.<br>" +
+"Lembra-te de que o amor é inesgotável na fonte do coração, e de que Jesus, ainda " +
+"hoje, com Deus e com o amor, vem multiplicando, dia a dia, os eternos tesouros da " +
+"Humanidade.");
+novoCapitulo("Palavras de Vida Eterna 50 - CONFIEMOS ALEGREMENTE");
+novoVersiculo("1_Tessalonicenses 5, 16");
+processar("“Regozijai-vos sempre.” – Paulo.<br>" +
+"(I TESSALONICENSES, 5:16.)<br>" +
+"Lembra-te das mercês que o Senhor te concede pelos braços do tempo e espalha " +
+"gratidão e alegria onde estiveres...<br>" +
+"Repara as forças da Natureza, a emergirem, serenas, de todos os cataclismos.<br>" +
+"Corre a fonte cantando pelo crivo do charco ..<br>" +
+"Sussurra a brisa melodias de confiança após a ventania destruidora...<br>" +
+"A árvore multiplica flores e frutos, além da poda...<br>" +
+"Multidões de estrelas rutilam sobre as trevas da noite...<br>" +
+"E cada manhã, ainda mesmo que os homens se tenham valido da sombra para " +
+"enxovalhar a terra com o sangue do crime, volve o Sol, em luminoso silêncio, acalentando " +
+"homens e vermes, montes e furnas.<br>" +
+"Ainda mesmo que o mal te golpeie transitoriamente o corarão, recorda os bens que te " +
+"compõem a riqueza da saúde e da esperança, do trabalho e do amor, e rejubila-te, " +
+"buscando a frente...<br>" +
+"Tédio é deserção.<br>" +
+"Pessimismo é veneno.<br>" +
+"Encara os obstáculos de ânimo firme e estampa o otimismo em tua alma para que não " +
+"fujas aos teus próprios compromissos perante a vida.<br>" +
+"Serenidade em nós é segurança nos outros.<br>" +
+"O sorriso de paz é arco-íris no céu de teu semblante.<br>" +
+"“Regozijai-vos sempre” – diz-nos o apóstolo Paulo.<br>" +
+"E acrescentamos :<br>" +
+"– Rejubilemos-nos em tudo com a Vontade de Deus, porque a Vontade de Deus significa " +
+"Bondade Eterna.");
+novoCapitulo("Palavras de Vida Eterna 51 - NO SOLO DO ESPÍRITO");
+novoVersiculo("Mateus 13, 8");
+processar("\"E outra caiu em boa terra e deu fruto; um a cem, " +
+"outro a sessenta e outro a trinta\" - " +
+"Jesus ( Mateus, 13:8)<br>" +
+"Referindo-nos à parábola do semeador, narrada pelo Divino Mestre, lembremo-nos de " +
+"que o campo da vida é assim como a terra comum.<br>" +
+"Nele encontramos criaturas que expressam glebas espirituais de todos os tipos.<br>" +
+"Homens-calhaus...<br>" +
+"Homens-espinheiros...<br>" +
+"Homens-milhafres...<br>" +
+"Homens-parasitas...<br>" +
+"Homens-charcos...<br>" +
+"Homensfurnas...<br>" +
+"Homens-superfícies...<br>" +
+"Homens-obstáculos...<br>" +
+"Homens-venenos...<br>" +
+"Homens-palhas...<br>" +
+"Homens-sorvedouros...<br>" +
+"Homens-erosões...<br>" +
+"Homens-abismos...<br>" +
+"Mas surpreendemos também, com alegria, os homens-searas, aqueles que reunindo " +
+"consigo o solo produtivo do caráter reto, a água pura dos sentimentos nobres, o adubo da " +
+"abnegação, a charrua do esforço próprio e o suor do trabalho constante, sabem albergar " +
+"as sementes divinas do conhecimento superior, produzindo as colheitas do bem para os " +
+"semelhantes.<br>" +
+"Reparemos a vasta paisagem que nos rodeia, através da meditação, e, com facilidade, " +
+"por nossa atitude perante os outros, reconheceremos de pronto que espécie de terreno " +
+"estamos sendo nós.\"");
+novoCapitulo("Palavras de Vida Eterna 52 - PALAVRA FALADA");
+novoVersiculo("Lucas 8, 17");
+processar("“Porque não há coisa oculta que não haja de manifestar-se, " +
+"nem escondida que não haja de saber-se e vir à luz. Vede, " +
+"pois, como ouvis.” – Jesus. (LUCAS, 8:17-18.)<br>" +
+"A palavra é vigoroso fio da sugestão.<br>" +
+"É por ela que recolhemos o ensinamento dos grandes orientadores da Humanidade, na " +
+"tradição oral, mas igualmente com ela recebemos toda espécie de informações no plano " +
+"evolutivo em que se nos apresenta a luta diária.<br>" +
+"Por isso mesmo, se é importante saber como falas, é mais importante saber como ouves, " +
+"porquanto segundo ouvimos, nossa frase semeará, bálsamo ou veneno, paz ou discórdia, " +
+"treva ou luz.<br>" +
+"No templo doméstico ou fora dele, escutarás os mais variados apontamentos.<br>" +
+"Apreciações acerca da Natureza...<br>" +
+"Críticas em torno da autoridade constituída... Notas alusivas à conduta dos outros...<br>" +
+"Opiniões diferentes nesse ou naquele acém...<br>" +
+"Cada registro falado traz consigo o impacto da ação. Contudo, a reação mora em ti " +
+"mesmo, solucionando os problemas ou agravando-lhes a estrutura.<br>" +
+"Por tua resposta, converter-se-á o bem na lição ou na alegria dos que te comungam a " +
+"experiência ou transformar-se-á o mal no açoite ou no sofrimento daqueles que te " +
+"acompanham.<br>" +
+"Saibamos, assim, lubrificar as engrenagens da audição com o óleo do amor puro, a fim de " +
+"que a nossa língua. traduza o idioma da compreensão e da paciência, do otimismo e da " +
+"caridade, porque nem sempre o nosso julgamento é o julgamento da Lei Divina e, " +
+"conforme asseverou o Cristo de Deus, não há propósito oculto ou atividade " +
+"transitoriamente escondida que não hajam de vir à luz, " +
+novoCapitulo("Palavras de Vida Eterna 53 - PALAVRA ESCRITA");
+novoVersiculo("1_Tessalonicenses 5, 21");
+processar("“Examinai tudo. Retende o bem”. – Paulo.<br>" +
+"(I TESSALONICENSES, 5:21.)<br>" +
+"Disse o apóstolo Paulo: – “examinai tudo”, mas não se esqueceu de acrescentar: – " +
+"retende o bem”.<br>" +
+"Muita gente se prevalece do texto para afirmar que os aprendizes do Evangelho devem " +
+"ler indiscriminadamente, ainda mesmo quando se trate de ingerir os corrosivos da opinião " +
+"em letras de jornal ou as fezes do pensamento em forma de livro.<br>" +
+"Sim, é natural que a mente amadurecida e equilibrada possa ler tudo e tudo observar, " +
+"mas não é aconselhável que as crianças e os doentes, os fracos e alienados potenciais " +
+"da razão tudo experimentem e tudo vejam.<br>" +
+"Sabiamente, a Lei Divina dispõe sobre o assunto, sugerindo o levantamento de zonas " +
+"indispensáveis à justa segregação.<br>" +
+"Meninos encontram lares e escolas a fim de que se habilitem para as lutas da vida.<br>" +
+"Doentes são encaminhados ao hospital para que se refaçam. Loucos se candidatam aos " +
+"serviços do manicômio em busca de reequilíbrio. Criaturas fracas que o crime assinalou " +
+"com estigmas dolorosos recolhem-se à penitenciária em cuja aspereza se reajustam.<br>" +
+"Assim, pois, se te reconheces em plenitude de robustez espiritual, analisa tudo, sabendo " +
+"que é preciso reter o bem capaz de ajudar na edificação ou na cura dos outros.<br>" +
+"Se possuis o necessário discernimento e se dispões do tempo preciso, lê tudo, usando o " +
+"crivo da compreensão e da utilidade, mas não olvides escolher o que seja bom e apenas " +
+"prestigiar o que seja bom, em favor daqueles que ainda não pensam com segurança " +
+"quanto já podes pensar.");
+novoCapitulo("Palavras de Vida Eterna 54 - APRIMOREMOS");
+novoVersiculo("1_Tessalonicenses 5, 19");
+processar("“Não extingais o Espírito.” – Paulo.<br>" +
+"(I TESSALONICENSES, 5:19.)<br>" +
+"Saibamos estender os valores do espírito.<br>" +
+"Observa a estrada nobre que te oferece passagem com segurança e lembra-te de que " +
+"ainda ontem era trato de terra inculta.<br>" +
+"Serpentes insidiosas aí acalentavam a pessoinha que se lhes acumulava no seio, " +
+"enquanto vermes famintos se amontoavam no mato agreste.<br>" +
+"Mas chegaram braços amigos e abnegados, atentos à disciplina...<br>" +
+"Maquinaria enorme trabalhou a cabeleira verde da gleba, harmonizando-lhe as linhas; " +
+"picaretas extraíram-lhe os pedrouços semelhantes a flegmões cristalizados; o cimento " +
+"pavimentou a trilha aberta, e a organização lhe imprimiu determinada ordem aos " +
+"movimentos.<br>" +
+"Quantos semblantes suarentos para que a obra surgisse, quantos dedos quebrados, " +
+"quantos lidadores rendidos aos acidentes inevitáveis e quantas inquietações por eles " +
+"vencidas, não podes realmente saber, mas podes reconhecer que foi o trabalho " +
+"inteligente – luz divina do espírito humano – a força que te facultou a vitória sobre a " +
+"distância.<br>" +
+"Cada vez que a viagem te suprime ansiedades e poupa aflições, ainda mesmo que, por " +
+"agora, não saibas agradecer, a estrada te partilha a tranquilidade e o contentamento, " +
+"envolvendo os operários anônimos que a construíram em sublime coro de bênção.<br>" +
+"Analisa semelhante lição, encontradiça em cada canto de rua, e não olvides que a " +
+"ignorância é também aflitiva selva no mundo. Abracemos o serviço da educação. e da " +
+"bondade, com alicerces na disciplina do Cristo, que é para nós outros, o Engenheiro " +
+"Celeste, e tracemos novos caminhos de evolução e de entendimento, em que as almas se " +
+"aproximem na exaltação da alegria e na ascensão do progresso.<br>" +
+"Não importa sejamos hoje artífices sem nome. Vale o serviço feito.<br>" +
+"Humilde réstia de luz que acendermos envolver-nos-á em seu clarão e a pequenina " +
+"semente de fraternidade que venhamos a lançar no solo da vida abençoar-nos-á com os " +
+"seus frutos.");
+novoCapitulo("Palavras de Vida Eterna 55 - SUPORTEMOS");
+novoVersiculo("Tiago 1, 4");
+processar("\"Tenha, porém, a paciência a sua obra perfeita...\"<br>" +
+"(Tiago 1:4)<br>" +
+"Detém-te um minuto no torvelinho das preocupações costumeiras e repara que deves o " +
+"próprio equilíbrio à Paciência divina, a sustentar-nos em cada instante da vida, através de " +
+"mil modos.<br>" +
+"Muita gente, talvez, em te fitando na ternura do recém -nato, duvidasse da tua capacidade " +
+"de sobreviver para a existência terrestre, mas Deus teve paciência contigo e conferiu-te o " +
+"devotamento materno que te ajudou a ativar as energias do próprio corpo.<br>" +
+"Entendidos em psicologia, em te anotando a intempestividade infantil, provavelmente " +
+"desconfiaram da tua possibilidade de alfabetização, mas Deus teve paciência contigo e " +
+"concedeu-te a heróica ternura de professores abnegados que te abriram novos horizontes " +
+"no campo da educação.<br>" +
+"E a paciência do Senhor, cada dia, permite, generosa, que tales plantas inermes, que te " +
+"assenhoreis do suor e do sangue dos animais, que te apropries das forças da Natureza e " +
+"que te valhas, indiscriminadamente, do concurso dos semelhantes para que te alimentes " +
+"e mediques, restaures e instruas.<br>" +
+"Lembra-te dessa Paciência Perfeita que te beneficia, e cultiva paciência para com os " +
+"outros.<br>" +
+"O companheiro cuja aspereza te ofende e o aprendiz cuja insipiência te irrita são irmãos " +
+"que te rogam cooperação, e entendimento, e quantos te caluniem ou apedrejem são " +
+"doentes que te pedem simpatia e consolo...<br>" +
+"as para que colabores e compreendas, harmonizes e reconfortes é necessário que a " +
+"tolerância construtiva te alente os passos.<br>" +
+"À frente dos óbices de todo gênero, guarda a paciência que ajuda, e, diante dos ataques " +
+"de toda ordem, cultiva a paciência que esquece.<br>" +
+"Escuda-te, pois, na paciência para com todos, sem jamais te esqueceres de que a alegria " +
+"dos homens é a Paciência de Deus.");
+novoCapitulo("Palavras de Vida Eterna 56 - JESUS E DIFICULDADE");
+novoVersiculo("João 14, 27");
+processar("“... Não se vos turbe o coração...”. JESUS (JOÃO, 14:27)<br>" +
+"Jesus nunca prometeu aos discípulos qualquer isenção de dificuldades, mas com " +
+"freqüência reclamava-lhes o coração para a confiança.<br>" +
+"No cenáculo, descerrando, afetuoso, o coração para os aprendizes, dentre muitas " +
+"palavras de esperança e de amor, asseverou com firmeza: - “Não se turbe o vosso " +
+"coração, nem se atemorize”.<br>" +
+"Pacificava o ânimo dos companheiros timoratos, entre quatro paredes, sabendo que, em " +
+"derredor, se agigantava a trama das sombras.<br>" +
+"Lá fora, Judas era atraído aos conchavos da deserção; sacerdotes confabulavam com " +
+"escribas e fariseus sobre o melhor processo de enganarem o povo, para que o povo " +
+"pedisse a morte d’Ele; agentes do Sinédrio penetravam pequenos agrupamentos de rua " +
+"açulando contra Ele as forças da opinião; perseguidores desencarnados excitavam o " +
+"cérebro dos guardas que o deteriam no cárcere, e, quantos Lhe seguiam a atividade, " +
+"regurgitando ódio gratuito, prelibavam-Lhe o suplício...<br>" +
+"Jesus, percuciente, não desconhecia a conspiração das trevas...<br>" +
+"Entretanto, lúcido e calmo, findo o entendimento com os irmãos de apostolado, dirige-se à " +
+"oração no jardim, para, além da oração, confiar-se aos testemunhos supremos...<br>" +
+"Não procures, assim fugir à luta que te afere o valor.<br>" +
+"Aceita os desafios da senda, como quem se reconhece chamado a batalhar pela vitória " +
+"do bem, com a obrigação permanente de extinguir o mal em nós mesmos.<br>" +
+"E não apeles para o Senhor como advogado da fuga calculada ao dever.<br>" +
+"Lembra o Mestre que a ninguém prometeu avenidas de sonho e horizontes azuis na " +
+"Terra, mas, sim, convicto de que a tempestade das contradições humanas não poupariam " +
+"nem a Ele próprio, advertiu-nos, sensatamente:<br>" +
+"- “Não se vos turbe o coração”.");
+novoCapitulo("Palavras de Vida Eterna 57 - JESUS E PAZ");
+novoVersiculo("João 14, 27");
+processar("“Deixo-vos a paz, a minha paz vos dou; " +
+"não vo-la dou como o mundo a dá...”<br>" +
+"– Jesus. (JOAO, 14:27.)<br>" +
+"A paz do mundo costuma ser preguiça rançosa.<br>" +
+"A paz do espírito é serviço renovador.<br>" +
+"A primeira é inutilidade.<br>" +
+"A segunda é proveito constante.<br>" +
+"Vejamos o exemplo disso em nosso Divino Mestre.<br>" +
+"Lares humanos negaram-lhe o berço.<br>" +
+"Mas o Senhor revelou-se em paz na estrebaria.<br>" +
+"Herodes perseguiu-lhe, desapiedado, a infância tenra.<br>" +
+"Jesus, porém, transferindo-se de residência, em favor do apostolado que trazia, sofreu, " +
+"tranqüilo, a imposição das circunstâncias.<br>" +
+"Negado pela fortuna de Jerusalém, refugiou-se, feliz, em barcas pobres da Galiléia, " +
+"Amando e servindo os necessitados e doentes recebia, a cada passo, os golpes da " +
+"astúcia de letrados e casuístas de teu tempo;, contudo, jamais deixou, por isso, de " +
+"exercer, imperturbável, o ministério do amor.<br>" +
+"Abandonado pelos próprios amigos, entregou-se serenamente à prisão injusta.<br>" +
+"Sob o cuspo injurioso da multidão foi açoitado em praça pública e conduzido à " +
+"crucificação, mas voltou da morte, aureolado de paz sublime, para fortalecer os " +
+"companheiros acovardados e ajudar os próprios verdugos.<br>" +
+"Recorda, assim, o exemplo do Benfeitor Excelso e não procures segurança íntima fora do " +
+"dever corretamente cumprido, ainda mesmo que isso te custe o sacrifício supremo.<br>" +
+"A paz do mundo, quase sempre, é aquela que culmina com o descanso dos cadáveres a " +
+"se dissociarem na inércia, mas a paz do Cristo é o serviço do bem eterno, em permanente " +
+"ascensão.");
+novoCapitulo("Palavras de Vida Eterna 58 - EM HONRA DA LIBERDADE");
+novoVersiculo("Colossenses 2, 8");
+processar("\"Tende cuidado para que ninguém vos faça presa sua, " +
+"por meio de filosofias e vãs sutilezas, segundo a " +
+"tradição dos homens, conforme os rudimentos do " +
+"mundo, e não segundo o Cristo.” –Paulo.<br>" +
+"(COLOSSENSES, 2:8.)<br>" +
+"Se alcançaste um raio de luz do Evangelho, avança na direção do Cristo, o Divino " +
+"Libertador.<br>" +
+"Não julgues seja fácil semelhante viagem do espírito.<br>" +
+"Encontrarás, em caminho, variados apelos à indisciplina e à estagnação.<br>" +
+"Serás surpreendido a cada passo pelos sofistas da Religião, pelos falsários da Filosofia, " +
+"pelos paranóicos da Ciência e pelos dilapidadores da História, empavesados nas " +
+"engenhosas criações mentais em que encarceram a própria vida, buscando atrelar-te o " +
+"pensamento ao carro da argumentação filauciosa a que se acolchetam, famintos de " +
+"louvor e da vassalagem.<br>" +
+"Mutilando a revelação divina, desfigurando preceitos da verdade, abusando da " +
+"inteligência ou fantasiando episódios furtados ao registro fiel do tempo, armam ciladas ou " +
+"levantam castelos teóricos, em que a sugestão menos digna te inclina a existência à " +
+"rebelião e ao pessimismo, à viciação e à inutilidade.<br>" +
+"Atendendo, quase sempre, a interesses excusos, lisonjeiam-te a insipiência, incensandote " +
+"o nome, quando não se desmandam na vaidade, aliciando-te a decisão para que lhes " +
+"engrosses o séqüito de loucura.<br>" +
+"Acompanhando-os, porém, não te farás senão presa deles, fâmulo desditoso das idéias " +
+"desequilibradas que emitem, no temerário propósito de se anteporem ao próprio Deus.<br>" +
+"Querem escravos para os sistemas falaciosos que mentalizam, quando Jesus deseja te " +
+"faças livre para a conquista da própria felicidade.<br>" +
+"Acautela-te no trato com todos os que tudo te pedem, no campo da independência " +
+"espiritual, limitando-te a capacidade de sentir e pensar, empreender e construir, " +
+"porquanto, em nos fazendo tributários da falsa glória em que se encasulam, relegam-nos " +
+"a existência a planos de subnível, quando o Cristo de Deus, tudo nos dando em amor e " +
+"sabedoria, nos ampliou a emoção e o conhecimento, a iniciativa e o trabalho, " +
+"convertendo-nos em filhos emancipados da Criação, para que tenhamos não apenas a " +
+"vida, mas Vida Santificada e Abundante.");
+novoCapitulo("Palavras de Vida Eterna 59 - EM LOUVOR DO EQUILÍBRIO");
+novoVersiculo("Efésios 4, 31");
+processar("“Toda a amargura, cólera, ira, gritaria e blasfêmia sejam retiradas dentre vós, " +
+"bem como toda a malícia” PAULO (Efésios, 4:31)<br>" +
+"Na própria senda comum, surpreendemos a ação do equilíbrio que exclui todo assalto da " +
+"violência e qualquer devoção à imundície.<br>" +
+"Nas cidades litorâneas, diques reprimem o mar furioso prevenindo calamidades e " +
+"arrasamentos.<br>" +
+"Nos grandes edifícios modernos, pára-raios seguros coíbem o impacto fulminatório das " +
+"faíscas elétricas.<br>" +
+"Desde tempos longevos, esgotos sólidos extraem detritos do pouso humano.<br>" +
+"Cada templo doméstico possui sistemas habituais de limpeza.<br>" +
+"Entretanto, no campo do Espírito, o Homem desavisado acalenta nas fibras do próprio ser " +
+"o lodo da maledicência e o lixo da mágoa, libertando os raios da blasfêmia e a onda letal " +
+"da ira, ferindo os outros e atormentando a si mesmo ...<br>" +
+"Quantas enfermidades nascem dos pântanos da amargura e quantos crimes se " +
+"configuram no extravasamento da cólera ! Impossível enumerá-los ...<br>" +
+"Se a mensagem do Evangelho te anuncia as Boas Novas da redenção, foge, assim, ao " +
+"domínio da viciação e da crueldade.<br>" +
+"À frente da irritação e do desalento, da agressividade e da injúria, oferece o dom inefável " +
+"de tua Paz, falando para o bem ou silenciando na grande compreensão, porque em ti, que " +
+"guardas o nome do Cristo empenhado na própria vida, o reino do amor deve começar.");
+novoCapitulo("Palavras de Vida Eterna 60 - TERRA - BENÇÃO DIVINA");
+novoVersiculo("João 3, 16");
+processar("“Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, " +
+"para que todo aquele que nele crê não pereça, mas tenha a vida eterna.”<br>" +
+"– Jesus.(JOAO, 3:16.)<br>" +
+"Não amaldiçoes o mundo que te acolhe.<br>" +
+"Nele encontras a Bênção Divina, envolvente e incessante, nas bênçãos que te rodeiam.<br>" +
+"O regaço materno...<br>" +
+"O refúgio do corpo...<br>" +
+"O calor do berço...<br>" +
+"O conforto do lar...<br>" +
+"O privilégio da oração...<br>" +
+"O apoio do alfabeto...<br>" +
+"A luz do conhecimento...<br>" +
+"A alegria do trabalho...<br>" +
+"A riqueza da experiência...<br>" +
+"O amparo das afeições...<br>" +
+"Do mundo recebes o pão que te alimenta e o fio que te veste.<br>" +
+"No mundo respiraram os heróis de teu ideal, os santos de tua fé, os apóstolos de tua " +
+"inspiração e as inteligências que te traçaram roteiro.<br>" +
+"O Criador não no-la ofertou por exílio ou prisão, mas por escola regenerativa e abrigo " +
+"santo, qual divino jardim a pleno céu, esmaltado de sol, durante o dia, e envolvido de " +
+"estrelas, durante a noite.<br>" +
+"Se algo nele existe que o tisna de lágrimas e empesta de inquietação, é a dor de nossos " +
+"erros...<br>" +
+"Não te faças, assim, causa do mal no mundo, que, em todas as expressões essenciais, " +
+"consubstancia o Bem Maior em si mesmo.<br>" +
+"Lembra-te de que “Deus amou o mundo de tal maneira que deu o seu Filho unigênito, " +
+"para que todo aquele que nele crê não pereça, mas tenha a vida eterna.”");
+novoCapitulo("Palavras de Vida Eterna 61 - PERDÃO - REMÉDIO SANTO");
+novoVersiculo("Lucas 23, 34");
+processar("“Pai, perdoa-lhes porque não sabem o que fazem...” – Jesus.<br>" +
+"(LUCAS, 23:34.)<br>" +
+"Toda vez que a moléstia te ameaça, recorres necessariamente aos remédios que te " +
+"liberem da apreensão.<br>" +
+"Agentes calmantes para a dor... Sedativos para a ansiedade...<br>" +
+"Em suma, à face de qualquer embaraço físico, procuras reabilitar as funções do órgão " +
+"lesado.<br>" +
+"Lembra-te de semelhante impositivo e recorda que há pensamentos enfermiços de queixa " +
+"e mágoa, de prevenção e antipatia, a te solicitarem adequada medicação para que se te " +
+"restaure o equilíbrio.<br>" +
+"E se nas doenças vulgares reclamas despreocupação, em favor da cura, é natural que " +
+"nos achaques do espírito necessites de esquecimento para que se te refaçam as forças.<br>" +
+"O perdão é, pois, remédio santo para a euforia da mente na luta cotidiana.<br>" +
+"Tanto quanto não deves conservar detritos e infecções no vaso orgânico, não mantenhas " +
+"aversão e rancor na própria alma.<br>" +
+"Perdoa a quantos te aborreçam, perdoa a quantos te firam.<br>" +
+"Perdoa agora, hoje e amanhã, incondicionalmente.<br>" +
+"Recorda que todas as criaturas trazem consigo as imperfeições e fraquezas que lhes são " +
+"peculiares, tanto quanto, ainda desajustados, trazeis mos também as nossas.<br>" +
+"E por isso que Jesus, o Emissário Divino, crucificado pela perseguição gratuita, rogou a " +
+"Deus, ante os próprios algozes :<br>" +
+"– “Pai, perdoa-lhes porque não sabem o que fazem...”<br>" +
+"E, deixando os ofensores nas inibições próprias a cada um, sustentou em si a luz do amor " +
+"que dissolve toda sombra, induzindo-nos à conquista da luz eterna.");
+novoCapitulo("Palavras de Vida Eterna 62 - NO CAMPO DO VERBO");
+novoVersiculo("Tito 2, 1");
+processar("“Tu, porém, fala o que convém à sã doutrina.”<br>" +
+"– Paulo. (TITO, 2:1.)<br>" +
+"Na atividade verbalista, emprega o homem grande parte da vida. E, com a palavra, " +
+"habitualmente se articulam os bens e os males que lhe marcam a rota.<br>" +
+"É de se lamentar, entretanto, o desperdício de força nesse sentido.<br>" +
+"Quase sempre, computada a conversação de to pela riqueza de um dia claro; todavia, " +
+"basta a parcela de proveito, com largo coeficiente de prejuízo e inutilidade.<br>" +
+"Muitas vezes, ninguém denota agradecimento pela riqueza de um dia claro; todavia basta " +
+"a passagem de uma nuvem com leve garoa a cair, para que muita gente destile " +
+"exclamações vinagrosas, em longas tiradas inconseqüentes. De maneira geral, não " +
+"existem olhos para a contemplação de grandes serviços públicos; no entanto, vaga " +
+"incerteza do trabalho administrativo gera longos debates da opinião.<br>" +
+"Há criaturas que guardam barômetros em casa para criticarem o tempo, tanto quanto há " +
+"pessoas que adquirem pontualmente o jornal para a censura ao governo.<br>" +
+"Muitos dormem tranqüilos quando se trate de ouvir ensinamentos edificantes, declarandose " +
+"enfermos da memória, mas revelam admirável controle de si mesmos, quando o rádio " +
+"anuncia calamidades, gastando vastas horas de comentário eloquente.<br>" +
+"Esmaece a atenção quando é preciso aprender o bem, contudo, o olhar flameja interesse " +
+"quando o mal surge à vista.<br>" +
+"O mundo em si é sempre um parlatório de proporções gigantescas onde as almas se " +
+"encontram para falar combinando fazer...<br>" +
+"Raras, no entanto, conversam para ajudar...<br>" +
+"Desborda-se a maioria no espinheiral da reprovação, no tormento da inveja, na fogueira " +
+"da crítica ou no labirinto da queixa.<br>" +
+"Para nós outros, no entanto, o Evangelho é seguro na advertência.<br>" +
+"“Tu, porém – diz-nos o apóstolo –, fala o que convém à sã doutrina.”<br>" +
+"Não olvides, assim, que de sentimento a sentimento chegamos à idéia. De idéia em idéia, " +
+"alcançamos a palavra. De frase a frase, atingimos a ação. E de ato em ato, acendemos a " +
+"luz ou estendemos a treva dentro de nós.");
+novoCapitulo("Palavras de Vida Eterna 63 - NO CAMPO DA VIDA");
+novoVersiculo("1_Timóteo 6, 19");
+processar("“Entesourando para si mesmos um bom fundamento para " +
+"o futuro, para que possam alcançar a verdadeira vida”.-Paulo.<br>" +
+"( I Timóteo, 6:19)<br>" +
+"Se te encontras interessado no próprio aperfeiçoamento, aproveitar é a palavra de ordem.<br>" +
+"Repara o exemplo da natureza.<br>" +
+"O pão que te serve é a essência de muitos envoltórios que tornaram para o quimismo da " +
+"gleba.<br>" +
+"O clima reconfortante do lar é produto da limpeza constante.<br>" +
+"Se pretendes avançar ao encontro do melhor, despoja-te do inútil.<br>" +
+"Muitos aspiram á tranqüilidade apegando-se à inquietação, enquanto outros muitos " +
+"pretendem a primazia da fé, rendendo preito à negação de si próprios.<br>" +
+"Querem a paz, guardando-se irritadiços, e anseiam pela segurança do bem, afirmandose, " +
+"eles mesmos, tão endividados com o mal que não lhes sobra leve possibilidade de " +
+"consagração à virtude.<br>" +
+"É natural estejamos nós sob a carga de avelhantados problemas. Herdeiros de passado " +
+"culposo, è preciso revisar as próprias tendências e ajuizar quanto às nossas " +
+"necessidades para que não estejamos tateando na sombra. Contudo, se aspiramos a " +
+"melhorar amanhã, é forçoso sermos melhores ainda hoje.<br>" +
+"Para isso não vale simplesmente partilhar o trabalho geral, mas selecionar a experiência " +
+"comum, assimilando-lhe o ensinamento.<br>" +
+"Não sintonizarás a antena do coração com as mensagens de toda a parte.<br>" +
+"Recolherás aquelas que te enobreceram.<br>" +
+"Não comprarás aflições.<br>" +
+"Preocupar-te-ás com o que for justo.<br>" +
+"Não te esqueças, pois, de que viver é atributo de todos, mas viver bem é o caminho de " +
+"quantos se dirigem, leais ao Bem, para a divina luz da Vida Real.");
+novoCapitulo("Palavras de Vida Eterna 64 - ÊXITO");
+novoVersiculo("João 15, 7");
+processar("“Se vós estiverdes em mim e as minhas palavras estiverem em v6s, " +
+"pedireis tudo o que quiserdes, e vos será feito.”<br>" +
+"– Jesus. (JOÃO, 15:7.)<br>" +
+"Muitos companheiros perdem recurso, oportunidade, tempo e força na preocupação " +
+"desmedida em torno do êxito.<br>" +
+"Sonhando realizações mirabolantes, acabam frustrados na mania de grandeza.<br>" +
+"Dizem-se interessados na lavoura do bem, mas, para cultivá-la, esperam a execução de " +
+"negócios imaginários, a aquisição de poder, a posse de ouro fácil ou a chegada de " +
+"prêmios fortuitos... E, complicando a própria estrada, observam-se, de chofre, em " +
+"presença da morte, quando menos contavam com semelhante visita.<br>" +
+"Entretanto, o conquistador do maior êxito de todos os tempos não se ausentou do mundo " +
+"como quem triunfara...<br>" +
+"Não recebeu heranças amoedadas, não governou princípios políticos, não escreveu " +
+"livros, não se enfileirou entre os maiorais de sua época...<br>" +
+"Aprisionado como vulgar malfeitor, foi sentenciado à morte e passou como sendo vítima d " +
+"pavoroso fracasso.<br>" +
+"Contudo, as sementes de amor puro que colocou na alma do povo transformaram o " +
+"mundo.<br>" +
+"Repara Jesus e perceberás que o nosso problema não é de ganhar para fazer, mas de " +
+"fazer para ganhar.<br>" +
+"A colheita não precede a sementeira, tanto quanto o teta não se antepõe à base.<br>" +
+"Sirvamos ao bem, simplificando o caminho, de vez que a vitória real é a vitória de todos, " +
+"convictos de que não precisamos gastar as possibilidades da existência em expectativa e " +
+"tensão, porquanto, se estivermos em Cristo, tudo quanto de que necessitamos será feito " +
+"em nosso favor, no momento oportuno.<br>" +
+"“Quando pois vos conduzirem para vos entregarem, não estejais solícitos de antemão " +
+"pelo que haveis de dizer, mas, o que vos for confiado naquela hora, isso falai, porque não " +
+"sois vós os que falais e sim o Espírito Santo.” – Jesus.");
+novoCapitulo("Palavras de Vida Eterna 65 - DEFESA");
+novoVersiculo("Marcos 13, 11");
+processar("“Quando pois vos conduzirem para vos entregarem, não estejais " +
+"solícitos de antemão pelo que haveis de dizer, mas, o que vos " +
+"for confiado naquela hora, isso falai, porque não sois vós os " +
+"que falais e sim o Espírito Santo.” – Jesus.(MARCOS, 13:11)<br>" +
+"Se tens a consciência tranqüila no cumprimento do próprio dever, guardas em ti mesmo " +
+"cidadela e refúgio.<br>" +
+"Não te percas em conflitos inúteis, nem te emaranhes nas explicações infindáveis.<br>" +
+"Acusado de mistificador, responde com o devotamento à verdade.<br>" +
+"Acusado de malfeitor, responde fazendo o bem.<br>" +
+"Por todas as culpas imaginárias em que te cataloguem o nome, oferece por resposta a " +
+"prestação de serviço.<br>" +
+"O fruto revela a árvore. A obra fala do homem.<br>" +
+"Quem te provoca, através do escárnio, mostra-se mal informado ou doente; e quem te " +
+"fere, através do insulto, traz consigo pensamentos ele ódio e destruição.<br>" +
+"Não lhes sanarias o mal à força de palavras somente.<br>" +
+"Dá-lhes a conhecer a própria rota no trabalho edificante que realizas e a Luz Divina " +
+"inspirar-te-á o verbo justo, no instante certo.<br>" +
+"Meditando sobre a atitude do Cristo, ao deixar justiçar-se, nos tribunais terrenos, ante a " +
+"sanha dos cruéis detratores que o içaram à cruz, somos induzidos a pensar que o Mestre " +
+"– centralizando-se nas construções da Vontade do Pai – teria agido assim por ter mais " +
+"que fazer que gastar tempo em defesas desnecessárias.");
+novoCapitulo("Palavras de Vida Eterna 66 - O PRIMEIRO PASSO");
+novoVersiculo("Mateus 7, 12");
+processar("“Portanto, tudo o que quiserdes que os homens vos façam, " +
+"fazei-o assim também vós a eles, porque esta é a Lei e os Profetas.”<br>" +
+"– Jesus. (MATEUS, 7:12.)<br>" +
+"A regra áurea recebe citações em todos os países.<br>" +
+"Em torno dela gravitam livros, poemas, apelos e sermões preciosos.<br>" +
+"Entretanto, raros se lembram do primeiro passo para que se desvele toda a sua grandeza.<br>" +
+"Não podemos reclamar a ajuda dos outros. Antes, é justo prestar auxílio.<br>" +
+"Não será lícito exigir a desculpa de alguém. Antes, é imperioso saibamos desculpar.<br>" +
+"Convidados a compreender, muitos dizem “não posso”, e instados a auxiliar, respondem " +
+"muitos “ainda não...”<br>" +
+"Esquecem-se, porém, de que amanhã serão talvez os necessitados e os réus, carecentes " +
+"de perdão e socorro. E, muitas vezes, ainda quando não " +
+"precisem de semelhantes bênçãos para si mesmos, por elas suspirarão em favor dos que " +
+"mais amem, à face das sombras que lhes devastam a vida.<br>" +
+"Se um exemplo pode ser invocado, como bússola, recordemos Jesus.<br>" +
+"O Mestre dos mestres faz o bem, despreocupado de considerações, alivia sem paga, " +
+"acende a esperança sem que os homens lha peçam e perdoa espontaneamente aos que " +
+"injuriam e apedrejam, sem aguardar-lhes retratação.<br>" +
+"Veneremos, assim, a regra áurea e estendamos o espírito de amor de que se toca, divina; " +
+"contudo, estejamos certos de que ela somente valerá para nós se lhe dermos a aplicação " +
+"necessária.<br>" +
+"O texto do ensinamento é vivo e franco :<br>" +
+"“Tudo o que quiserdes que os homens vos façam, fazei-o assim também vós a eles.”<br>" +
+"Querer o bem é impulso de todos, mas, na prática do estatuto sublime, é forçoso sejamos " +
+"nós quem se adiante a fazê-lo.");
+novoCapitulo("Palavras de Vida Eterna 67 - A MELHOR MEDIDA");
+novoVersiculo("Tiago 1, 4");
+processar("\"Tenha, porém, a paciência a sua obra perfeita, " +
+"para que sejais perfeitos e completos, sem falar em coisa alguma.\"<br>" +
+"(TIAGO, 1:4)<br>" +
+"Mais que as doenças vulgares do corpo, sofres os problemas da alma, agravando-te a " +
+"tensão, a cada dia.<br>" +
+"Mais que os micróbios patogênicos a assaltarem-te os tecidos do instrumento físico, " +
+"padeces a intromissão de agentes mentais inquietantes, atormentando-te as fibras da " +
+"alma.<br>" +
+"Levantas-te, cada manhã, muita vez, com as lutas da véspera e antes que se te " +
+"rearmonizem as forças, cambaleias mentalmente ao impacto da irritação de familiares " +
+"incompreensivos.<br>" +
+"Prestas longas explicações a benefício da tranqüilidade ambiente; contudo, mal terminas " +
+"o arrazoado afetuoso, há quem te malsine a palavra, complicando as questões em torno...<br>" +
+"Movimentas correção e sinceridade, honrando os próprios deveres; todavia, quando te " +
+"julgas a cavaleiro de toda a crítica, aparece alguém arrastando-te o coração ao mercado " +
+"da injúria...<br>" +
+"Empenhas carinho e abnegação no cultivo do amor ao lado de alguém; contudo, quando " +
+"te crês em segurança no caminho do entendimento, observas que a ingratidão te " +
+"envenena os melhores gestos...<br>" +
+"Entretanto, há frente de toda a dificuldade não te lastimes, nem desfaleças...<br>" +
+"Para toda a perturbação, a paciência é a melhor medida.<br>" +
+"Não profiras qualquer palavra de que te possas arrepender.<br>" +
+"Silencia e abençoa sempre, porque, amanhã, quantos hoje se precipitam na sombra " +
+"voltarão novamente à luz.<br>" +
+"Esquecido, usa a paciência e ajuda sem exigir.<br>" +
+"Insultado, recorre à paciência e esquece o mal.<br>" +
+"Em todas as dores, arrima-te à paciência.<br>" +
+"Em todo o embaraço, espera com paciência.<br>" +
+"Todo o progresso humano surge da paciência Divina. Conserva-te, pois, na força da " +
+"paciência e, onde estejas, farás sempre o melhor.");
+novoCapitulo("Palavras de Vida Eterna 68 - AGUARDEMOS");
+novoVersiculo("Hebreus 6, 15");
+processar("“ E assim, esperando com paciência, " +
+"alcançou a promessa.” – Paulo " +
+"(HEBREUS, 6:15)<br>" +
+"Em qualquer circunstância, espera com paciência.<br>" +
+"Se alguém te ofendeu, espera.<br>" +
+"Não tomes desforço a quem já carrega a infelicidade em si mesmo.<br>" +
+"Se alguém te prejudicou, espera.<br>" +
+"Não precisas vingar-te de quem já se encontra assinalado pela justiça.<br>" +
+"Se sofres, espera.<br>" +
+"A dor é sempre aviso santificante.<br>" +
+"Se o obstáculo te visita, espera.<br>" +
+"O embaraço de hoje, muita vez, é benefício amanhã.<br>" +
+"A fonte, ajudando onde passa, espera pelo rio e atinge o oceano vasto.<br>" +
+"A árvore, prestando incessante auxílio, espera pela flor e ganha a bênção do fruto.<br>" +
+"Todavia, a enxada que espera, imóvel, adquire a ferrugem que a desgasta.<br>" +
+"O poço que espera, guardando águas paradas, converte a si próprio em vaso de " +
+"podridão.<br>" +
+"Sejam, pois, quais forem as tuas dificuldades, espera, fazendo em favor dos outros o " +
+"melhor que puderes, a fim de que a tua esperança se erga sublime, em luminosa " +
+"realização.");
+novoCapitulo("Palavras de Vida Eterna 69 - NA LUZ DA COMPAIXÃO");
+novoVersiculo("Mateus 5, 7");
+processar("\"Bem-aventurados os misericordiosos, porque " +
+"alcançarão misericórdia\" Jesus (MATEUS, 5:7)<br>" +
+"Deixa que a luz da compaixão te clareie a rota para que a sombra te não envolva.<br>" +
+"Sofres a presença dos que te pisam as esperanças?<br>" +
+"Compaixão para eles.<br>" +
+"Ouves a palavra dos que te ironizam?<br>" +
+"Compaixão para eles.<br>" +
+"Padeces o assalto moral dos que te perturbam?<br>" +
+"Compaixão para eles.<br>" +
+"Recebes a farpa dos que te perseguem?<br>" +
+"Compaixão para eles.<br>" +
+"A crueldade e o sarcasmo, a demência e a vileza são chagas que o tempo cura.<br>" +
+"Rende graças a Deus por lhes suportares assédio sem que partam de ti.<br>" +
+"No fundo são males que surgem da ignorância, como a cegueira nasce das trevas.<br>" +
+"Não sanarás o desequilíbrio do louco, zurzindo-lhe a cabeça, nem expulsarás a " +
+"criminalidade do malfeitor, cortando-lhe os braços.<br>" +
+"Diante de todos os desajustamentos alheios, compadece-te e ampara sempre.<br>" +
+"Perante todos os disparates do próximo, compadece-te e faz o melhor que possas.<br>" +
+"Todos somos alunos do educandário da vida e todos somos susceptíveis de queda moral " +
+"no erro.<br>" +
+"Usa, pois, a misericórdia com os outros e acharás nos outros a misericórdia para contigo.");
+novoCapitulo("Palavras de Vida Eterna 70 - PACIFICA SEMPRE");
+novoVersiculo("Mateus 5, 9");
+processar("\"Bem-aventurados os pacificadores, porque serão " +
+"chamados filhos de Deus.\" - Jesus (MATEUS, 5:9)<br>" +
+"Por muitas sejam as dores que te aflijam a alma, asserena-te na oração e pacifica os " +
+"quadros da própria luta.<br>" +
+"Se alguém te fere, pacifica desculpando.<br>" +
+"Se alguém te calunia, pacifica servindo.<br>" +
+"Se alguém te menospreza, pacifica entendendo.<br>" +
+"Se alguém te irrita, pacifica silenciando.<br>" +
+"O perdão e o trabalho, a compreensão e a humildade são as vozes inarticuladas de tua " +
+"própria defesa.<br>" +
+"Golpes e golpes são feridas e mais feridas.<br>" +
+"Violência com violência somam loucura.<br>" +
+"Não ergas o braço para bater, nem abras o verbo para humilhar.<br>" +
+"Diante de toda perturbação, cala e espera, ajudando sempre.<br>" +
+"O tempo sazona o fruto verde, altera a feição do charco, amolece o rochedo e cobre o " +
+"ramo fanado de novas flores.<br>" +
+"Censura é clima de fel.<br>" +
+"Azedume é princípio de maldição.<br>" +
+"Onde estiveres, pacifica.<br>" +
+"Seja qual for a ofensa, pacifica.<br>" +
+"E perceberás, por fim, que a paz do mundo é dom de Deus, começando de ti.");
+novoCapitulo("Palavras de Vida Eterna 71 - OLHOS");
+novoVersiculo("Mateus 6, 22");
+processar("\" ...Se os teus olhos forem bons, todo o teu corpo terá luz...\"<br>" +
+"- Jesus. (Mateus, 6:22.)<br>" +
+"Olhos...Patrimônio de todos.<br>" +
+"Encontramos, porém, olhos diferentes em todos os lugares.<br>" +
+"Olhos de malícia...<br>" +
+"Olhos de crueldade...<br>" +
+"Olhos de ciúme...<br>" +
+"Olhos de ferir...<br>" +
+"Olhos de desespero...<br>" +
+"Olhos de desconfiança...<br>" +
+"Olhos de atrair a viciação...<br>" +
+"Olhos de perturbar...<br>" +
+"Olhos de registrar males alheios...<br>" +
+"Olhos de desencorajar as boas obras...<br>" +
+"Olhos de frieza...<br>" +
+"Olhos de irritação...<br>" +
+"Se aspiras, no entanto, a enobrecer os recursos da visão, ama e ajuda, aprende e " +
+"perdoa sempre, e guardarás contigo os \"olhos bons\", a que se referia o Cristo de Deus, " +
+"instalando no próprio espírito a grande compreensão suscetível de impulsionar-te à glória " +
+"da Eterna Luz.");
+novoCapitulo("Palavras de Vida Eterna 72 - OUVIDOS");
+novoVersiculo("Mateus 11, 15");
+processar("“Quem tem ouvidos de ouvir, ouça.” – Jesus.<br>" +
+"(MATEUS, 11 : 15.)<br>" +
+"Ouvidos... Toda gente os possui.<br>" +
+"Achamos, no entanto, ouvidos superficiais em toda a parte.<br>" +
+"Ouvidos que apenas registram sons.<br>" +
+"Ouvidos que se prendem a noticiários escandalosos.<br>" +
+"Ouvidos que se dedicam a boatos perturbadores.<br>" +
+"Ouvidos de propostas inferiores.<br>" +
+"Ouvidos simplesmente consagrados à convenção.<br>" +
+"Ouvidos de festa.<br>" +
+"Ouvidos de mexericos.<br>" +
+"Ouvidos de pessimismo.<br>" +
+"Ouvidos de colar às paredes.<br>" +
+"Ouvidos de complicar.<br>" +
+"Se desejas, porém, sublimar as possibilidades de acústica da própria alma, estuda e " +
+"reflete, pondera e auxilia, fraternalmente, e terás contigo os \"ouvidos de ouvir”, a que se " +
+"reportava Jesus, criando em ti mesmo o entendimento para a assimilação da Eterna " +
+"Sabedoria.");
+novoCapitulo("Palavras de Vida Eterna 73 - EXCESSO");
+novoVersiculo("Marcos 8, 36");
+processar("Pois que aproveitaria ao homem ganhar o mundo todo e " +
+"perder a sua alma?\" - JESUS (Marcos, 8:36)<br>" +
+"Enquanto a criatura permanecer no corpo terrestre, é natural que se preocupe com o " +
+"problema da própria manutenção.<br>" +
+"Vigilância não exclui previdência.<br>" +
+"Mas não podemos olvidar que o apego ao supérfluo será sempre introdução à loucura.<br>" +
+"Tudo aquilo que o homem ajunta abusivamente, no campo exterior, é motivo para aflição " +
+"ou inutilidade.<br>" +
+"Patrimônios físicos sem proveito, isca de sombra atraindo inveja e discórdia.<br>" +
+"Alimentos guardados, valores a caminho da podridão.<br>" +
+"Roupa em desuso, asilo de traças.<br>" +
+"Demasiados recursos amoedados, tentações para os descendentes.<br>" +
+"Todo excesso é parede mental isolando aqueles que o criam, em cárceres de orgulho, " +
+"egoísmo, vaidade e mentira.<br>" +
+"Observa, assim, o material que amontoas.<br>" +
+"Tudo o que está fora de ti representa caminho em que transitas.<br>" +
+"Agarrar-se, pois, ao efêmero é prender-se à ilusão.<br>" +
+"Mas todos os bens espirituais que ajuntares em ti mesmo, como sejam virtude e " +
+"educação, constituem valores inalienáveis a brilharem contigo, aqui ou alhures, " +
+"sublimação para a vida eterna.");
+novoCapitulo("Palavras de Vida Eterna 74 - NOSSA CRUZ");
+novoVersiculo("Marcos 8, 34");
+processar("“Se alguém quiser vir após mim, negue-se a si mesmo, " +
+"tome a sua cruz e siga-me” - JESUS (MARCOS, 8:34)<br>" +
+"Ninguém se queixe inutilmente.<br>" +
+"A dor é processo.<br>" +
+"A perfeição é fim.<br>" +
+"Assim sendo, caminheiros da evolução ou da redenção têm, cada qual, a sua cruz.<br>" +
+"Esse almeja, aquele deve.<br>" +
+"E para realizar ou ressarcir, a vida pede preço.<br>" +
+"Ninguém conquista algo, sem esforçar-se de algum modo; e ninguém resgata esse ou " +
+"aquele débito, sem sofrimento.<br>" +
+"Enquanto a criatura não adquire consciência da própria responsabilidade, movimenta-se " +
+"no mundo à feição de semi-racional, amontoando problemas sobre a própria cabeça.<br>" +
+"Entretanto, acordando para a necessidade da paz consigo mesma, descobre de imediato " +
+"a cruz que lhe cabe ao próprio burilamento.<br>" +
+"Encarnados e desencarnados, jungidos à Terra, vinculam-se todos ao mesmo impositivo " +
+"de progresso e resgate.<br>" +
+"No círculo carnal, a cruz é a dificuldade orgânica, o degrau social,o parente infeliz...<br>" +
+"No plano espiritual, é a vergonha do defeito íntimo não vencido, a expiação da culpa,o " +
+"débito não pago...<br>" +
+"Tenhamos, pois, a coragem precisa de seguir o Senhor em nosso anseio de ressurreição " +
+"e vitória.<br>" +
+"Para isso, porém, não nos esqueçamos de que será preciso olvidar o egoísmo " +
+"enquistante e tomar a nossa cruz.");
+novoCapitulo("Palavras de Vida Eterna 75 - LIBERTEMOS");
+novoVersiculo("João 11, 44");
+processar("“Disse-lhes Jesus: desatai-o e deixai-o ir.”<br>" +
+"(JOÃO, 11:44.)<br>" +
+"É importante pensar que Jesus não apenas arrancou Lázaro à sombra do túmulo.<br>" +
+"Trazendo-o, de volta, à vida, pede para que seja restituído à liberdade.<br>" +
+"“Desatai-o e deixai-o ir” – diz o Senhor.<br>" +
+"O companheiro redivivo deveria estar desalgemado para atender às próprias " +
+"experiências.<br>" +
+"Também nós temos, no mundo da própria alma, os que tombam na fossa da negação.<br>" +
+"Os que nos dilaceram os ideais, os que nos arrastam à desilusão, os que zombam de " +
+"nossas esperanças e os que nos lançam em abandono assemelham-se a mortos na cripta " +
+"de nossas agoniadas recordações.<br>" +
+"Lembrá-los é como reavivar velhas úlceras.<br>" +
+"Entretanto, para que nos desvencilhemos de semelhantes angústias, é imperioso retirálos " +
+"do coração e devolvê-los ao sol da existência.<br>" +
+"Não basta, porém, esse gesto de libertarão para nós. É imprescindível haja de nossa " +
+"parte auxílio a eles, para que se desagrilhoem.<br>" +
+"Nem condená-los, nem azedar-lhes o sentimento, mas sim exonerá-los de todo " +
+"compromisso, ajustando-os a si próprios.<br>" +
+"Aqueles que libertamos de qualquer obrigação para conosco, entregando-os à bondade " +
+"de Deus, mais cedo regressam à luz da compreensão.<br>" +
+"Se alguém, assim, caiu na morte do mal, diante de ti, ajuda-o a refazer-se para o bem; " +
+"entretanto, além disso, é preciso também desatá-lo de qualquer constrangimento e deixála " +
+"ir.");
+novoCapitulo("Palavras de Vida Eterna 76 - SOCORRAMOS");
+novoVersiculo("Mateus 7, 2");
+processar("“...Com a medida com que tiverdes medido vos hão de medir.”<br>" +
+"–Jesus. (Mateus, 7:2.)<br>" +
+"Decerto observarás , em toda parte, desacordos, desentendimentos, desajustes, " +
+"discórdias...<br>" +
+"Junto do próprio coração, surpreenderás os que parecem residir em regiões morais " +
+"diferentes. Entes amados desertam da estrada justa, amigos queridos abraçam perigosas " +
+"experiências.<br>" +
+"Como ajudar aos que nos parecem mergulhados no erro?<br>" +
+"Censurar é fazer mais distância, desprezá-los será perdê-los.<br>" +
+"É imprescindível saibamos socorrê-los, através do bem efetivo e incessante.<br>" +
+"Para começar, sintamo-nos na posição deles, a comungar-lhes a luta.<br>" +
+"Situemo-nos aos pés dos problemas em que se encontram e atendamos à prestação do " +
+"serviço silencioso.<br>" +
+"Se aparece oportunidade, algo façamos para testemunhar-lhes apreço.<br>" +
+"No pensamento, guardemo-los todos em vibrações de entendimento e carinho.<br>" +
+"Na palavra, envolvamo-los na benção do verbo nobre.<br>" +
+"Na atitude, amparemo-los quanto seja possível.<br>" +
+"Em todo e qualquer processo de ação, fortalecê-los para o bem é o nosso dever maior.<br>" +
+"À frente, pois, daqueles que se te afiguram desnorteados, estende o coração e as mãos " +
+"para auxiliar, porque todos estamos no caminho da evolução e, segundo a assertiva do " +
+"nosso Divino Mestre, \"com a medida com que tivermos medido nos hão-de medir a nós\".");
+novoCapitulo("Palavras de Vida Eterna 77 - SE PROCURAS O MELHOR");
+novoVersiculo("Tiago 1, 4");
+processar("“Tenha, porém, a paciência a sua obra perfeita para que " +
+"sejais perfeitos e completos, sem faltar em coisa alguma.”<br>" +
+"(TIAGO, 1:4)<br>" +
+"A paciência vive na base de todas a.s boas obras.<br>" +
+"Acalentarás sublime ideal; contudo, se não tens paciência de realizá-lo...<br>" +
+"Sonhas cumprir elevada missão; mas, se não tens paciência de sofrê-la...<br>" +
+"Levantarás preciosa instituição; contudo, se não tens paciência de sustentá-la...<br>" +
+"Queres a felicidade no lar; mas, se não tens paciência de construí-la...<br>" +
+"Planejas belo futuro para teu filho, contudo, se não tens paciência de educá-lo...<br>" +
+"Aspiras a determinada profissão; mas, se não tens paciência de aprendê-la...<br>" +
+"Sem paciência, os mais altos projetos resultam em frustração.<br>" +
+"Observa o pomicultor que deseja fruto na árvore.<br>" +
+"Primeiro, a paciência de preparar a, gleba. Em seguida, a paciência de plantar, de " +
+"cultivar, de defender, de auxiliar e de esperar a colheita madura.<br>" +
+"O tempo não respeita as edificações que não ajudou a fazer.<br>" +
+"Se procuras o melhor, não desprezes a paciência de trabalhar para que o melhor te " +
+"encontre e ilumine.<br>" +
+"Em todo caminho, sem paciência perfeita, não há possibilidade de perfeição.");
+novoCapitulo("Palavras de Vida Eterna 78 - MELHORANDO SEMPRE");
+novoVersiculo("2_Coríntios 13, 7");
+processar("“Estamos orando a Deus para que não façais mal algum, " +
+"não para que simples-mente pareçamos aprovados, mas " +
+"para que façais o bem...” – Paulo. (II CORÍNTIOS, 13:7).<br>" +
+"Evidentemente, não podes garantir a felicidade do mundo que se encontra, de maneira " +
+"constante, sob o impacto das lutas evolutivas que lhe orientam a marcha, entanto, " +
+"ninguém está impedido de cultivar o trato de terra em que vive, amparando uma árvore " +
+"amiga ou alentando uma flor.<br>" +
+"Certo, não podes curar as chamadas chagas sociais, indesejáveis mas compreensíveis " +
+"numa coletividade de espíritos imperfeitos quais somos ainda todos nós, em regime de " +
+"correção e aperfeiçoamento, contudo, ninguém está impossibilitado de proceder " +
+"honestamente e apoiar os semelhantes com a força moral do bom exemplo.<br>" +
+"Sem dúvida, não podes socorrer a todos os enfermos que choram na Terra, entretanto, " +
+"ninguém está proibido de atenuar a provação de um amigo ou de um vizinho, propiciandolhe " +
+"a certeza de que o amor não desapareceu dos caminhos humanos.<br>" +
+"Indiscutivelmente, não podes sanar as dificuldades totais da família em que nasceste, " +
+"todavia, ninguém está interditado, no sentido de ajudar a um parente menos feliz ou " +
+"cooperar na tranqüilidade que se deve manter em casa.<br>" +
+"Não te afastes da cultura do bem, sob o pretexto de nada conseguires realizar contra o " +
+"domínio das atribulações que lavram no Planeta.<br>" +
+"O Senhor nunca nos solicitou o impossível e nem nunca exigiu da criatura falível " +
+"espetáculos de grandeza compulsória.<br>" +
+"Conquanto existam numerosos desertos, a fonte pequenina corre, confiante, fecundando " +
+"a gleba em que transita.<br>" +
+"Não nos é facultado corrigir todos os erros e extinguir todas as aflições que campeiam " +
+"nas trilhas da existência, mas todos podemos atravessar o cotidiano, melhorando a vida e " +
+"dignificando-a, em nós e em torno de nós.");
+novoCapitulo("Palavras de Vida Eterna 79 - PACIFIQUEMOS");
+novoVersiculo("Mateus 5, 9");
+processar("\"Bem-aventurados os pacificadores,porque serão .<br>" +
+"chamados filhos de Deus.\" JESUS (MATEUS, 5:9)<br>" +
+"Não adianta estender a guerra nervosa.<br>" +
+"A contradita esperar-te-á em cada canto, porque a paz é fundamento da Lei de Deus.<br>" +
+"Observa as catástrofes que vão passando...<br>" +
+"Vezes sem conta, o homem faz-se o lobo do próprio homem, destruindo o campo " +
+"terrestre; mas Deus, em silêncio, determina que a erva cubra de novo o solo, colocando a " +
+"flor na erva e formando o fruto no corpo da própria flor.<br>" +
+"Vulcões arruínam extensas regiões, mas Deus restaura as paisagens dilaceradas.<br>" +
+"Maremotos varrem cidades, mas Deus indica-lhes outro lugar e ressurgem mais belas.<br>" +
+"Terremotos trazem calamidades, aqui e ali, mas Deus reajusta a fisionomia do Globo.<br>" +
+"Moléstias estranhas devastam populações inteiras, mas Deus inspira a cabeça de " +
+"cientistas abnegados e liquida as epidemias.<br>" +
+"Tempestades, de quando em quando, sacodem largas faixas da Terra, mas Deus, pelas " +
+"forças da Natureza, faz o reequilíbrio de tudo.<br>" +
+"Não te entregues ao pessimismo em circunstância alguma.<br>" +
+"Tudo pode ser, agora, diante de ti, aflição e convulsão; contudo, tranqüiliza a vida em " +
+"torno, quanto puderes, porque a paz chegará pelas mãos de Deus.");
+novoCapitulo("Palavras de Vida Eterna 80 - BENDIGAMOS");
+novoVersiculo("1_Pedro 3, 10");
+processar("\"Porque quem quer amar a vida e ver os dias bons, " +
+"refreie a sua língua contra o mal..” – Pedro.<br>" +
+"( IPEDRO. 3:10.)<br>" +
+"Não vale condenar.<br>" +
+"O desmentido talvez chegue hoje, de maneira imprevista, porque a misericórdia é " +
+"alicerce da lei de Deus.<br>" +
+"Reflete quantas vezes já observaste o socorro invisível ao que era tido em conta de " +
+"mal irremediável.<br>" +
+"Viste doentes graves voltarem repentinamente à saúde, quando já se achavam " +
+"sentenciados à morte.<br>" +
+"Conheceste malfeitores que se transformaram em homens de bem, quando " +
+"pareciam totalmente afundados na delinqüência.<br>" +
+"Tateaste problemas complexos que encontraram equação de improviso, quando se " +
+"te afiguravam plenamente insolúveis.<br>" +
+"Choraste sobre situações inquietantes que tomaram rumo salvador, quando tudo te " +
+"fazia crer em tragédia.<br>" +
+"Seja qual seja a provação em curso, refreia a língua para que a tua língua não " +
+"amaldiçoe.<br>" +
+"É possível estejas vendo tudo em derredor de teus passos pelo prisma do " +
+"desespero...<br>" +
+"Entretanto, asserena-te e aguarda, confiante, porque,se a Misericórdia de Deus " +
+"ainda não está alcançando o teu quadro de luta,permanece a caminho.");
+novoCapitulo("Palavras de Vida Eterna 81 - PROSSEGUINDO");
+novoVersiculo("Filipenses 3, 14");
+processar("“Prossigo para o alvo...” – Paulo.<br>" +
+"(FILIPENSES, 3:14.)<br>" +
+"Encontras o semblante amargo da solidão no momento em que as circunstâncias te " +
+"compelem a deixar o conhecido.<br>" +
+"Supõe que a construção de toda a existência desaba sobre ti mesmo, como se a ausência " +
+"da moldura familiar te rasgasse o quadro da própria alma.<br>" +
+"Corações amigos, atraídos por outras sendas, abandonaram-te os ideais; pessoas " +
+"queridas deixaram-te a sós; aposentaram-te a distância do trabalho de muitos anos, ou a " +
+"morte, de passagem, ceifou o sorriso dos companheiros que te eram mais caros...<br>" +
+"Sentes, por vezes, que estás deixando para trás tudo o que te parece mais valioso, " +
+"entretanto, não mais é verdade.<br>" +
+"Basta jornadeies corajosamente adiante e, buscando expressar-te em novas formas, " +
+"reconhecerás que o amor e o trabalho são mais belos em teu caminho:<br>" +
+"Compreenderás, então, que podes adicionar novas parcelas de alegria à felicidade dos " +
+"que mais amas e que podes servir com mais entendimento às aspirações que te inspiram " +
+"a marcha.<br>" +
+"Se a vida te apresenta a fisionomia triste da solidão, recorda a própria imortalidade e não " +
+"te detenhas.<br>" +
+"O menino deixa a infância para entrar na mocidade, o jovem deixa a mocidade para entrar " +
+"na madureza, o adulto deixa a madureza para entrar na senectude e o ancião deixa a " +
+"extrema velhice para entrar no mundo espiritual, não como quem perde os valores " +
+"adquiridos, mas sim prosseguindo para o alvo que as Leis de Deus nos assinalam a cada " +
+"um...");
+novoCapitulo("Palavras de Vida Eterna 82 - TUA OBRA");
+novoVersiculo("Gálatas 6, 4");
+processar("“Mas prove cada um a sua própria obra e terá " +
+"glória só em si mesmo e não noutro.”<br>" +
+"– Paulo. (GALATAS, 6:4.)<br>" +
+"Ainda mesmo que te sintas em lugar impróprio às tuas aptidões e mesmo que as tuas " +
+"atividades pareçam sem qualquer importância, lembra-te de que a Lei do Senhor te " +
+"coloca presentemente na condição em que podes produzir melhor e aprender com mais " +
+"segurança.<br>" +
+"Tens, assim, a tua obra particular e intransferível na execução do plano universal de " +
+"Deus.<br>" +
+"Não aspires, desse modo, a assumir, de imediato, as responsabilidades daqueles que se " +
+"encontram expostos à multidão, a pretexto de desempenhares mandato especial, ante a " +
+"Providência Divina.<br>" +
+"A tarefa de que te incumbes, nos últimos degraus ou no plano mais obscuro do lar, é de " +
+"suma importância nos desígnios do Senhor. A folha de papel que te sai das mãos pode " +
+"ser aquela em que se grafarão palavras destinadas ao consolo de toda a comunidade, e o " +
+"menino que te obriga a pesadas noites de insônia pode trazer consigo o trabalho de " +
+"auxílio providenciai a um povo inteiro. A fonte que proteges, em muitas ocasiões, será o " +
+"alimento para milhares de criaturas, e a árvore que plantas dar-te-á, talvez amanhã, o " +
+"remédio de que precises.<br>" +
+"Tua obra de hoje é o serviço que o Senhor te deu hoje a realizar. Faze-o do melhor modo, " +
+"recordando que, apesar da grandeza divina do nosso Divino Mestre, foi ele, um dia, na " +
+"Terra, humilde criança, constituindo obra de abnegação e de amor para os braços de " +
+"pobre mãe, recolhida temporariamente à estrebaria, sem conforto e sem lar.");
+novoCapitulo("Palavras de Vida Eterna 83 - PRESENÇA DIVINA");
+novoVersiculo("Mateus 28, 20");
+processar("\"Eis que estou convosco até o fim dos séculos...\"<br>" +
+"- Jesus ( Mateus, 28:20)<br>" +
+"Pastores religiosos dos diversos templos cristãos declaram, todos os dias e por toda a " +
+"parte, que Jesus está com os lideres mundiais, com os cientistas da Terra, com os " +
+"orientadores da mente popular e com todas as linhas da civilização; entretanto, vemos a " +
+"maioria dos condutores e dos conduzidos do mundo, em franca discórdia, exibindo aqui e " +
+"ali conflitos de sangue e ódio.<br>" +
+"Tudo parece desmentir a boca otimista dos pregadores, tal a ventania de desavenças que " +
+"sopra de todas as direções.<br>" +
+"Os expositores do Evangelho, no entanto, conservam precisão matemática em " +
+"semelhantes afirmativas.<br>" +
+"Jesus não formulou promessas frustradas...<br>" +
+"Estará, sim, com todos os corações na Terra, sempre e sempre: contudo a Doutrina " +
+"Espírita, suplementando as anotações do Testamento do Cristo, vem explicar, sem " +
+"sombra de dúvida, que o Mestre está e estará com toda a Humanidade, mas apenas " +
+"conheceremos fruto visível e imediatamente aproveitável de sua presença sublime, na " +
+"criatura terrestre, dessa ou daquela posição, que esteja também com Ele.");
+novoCapitulo("Palavras de Vida Eterna 84 - DIVINOS DONS");
+novoVersiculo("2_Timóteo 1, 7");
+processar("“Porque Deus não nos deu o Espírito de temor, " +
+"mas de fortaleza, de Amor e de Moderação”.<br>" +
+"PAULO (II TIMÓTEO, 1:7.)<br>" +
+"Realmente, não foi o Pai Excelso quem nos instilou o Espírito do medo. Ao revés disso, " +
+"conferiu-nos largamente a fortaleza da coragem, o amor e a moderação.<br>" +
+"Todos somos, assim, dotados de recursos para desenvolver, ao infinito, os dons divinos " +
+"de fortaleza que é valor moral, do Amor que é serviço incessante no bem e da moderação " +
+"que define equilíbrio.<br>" +
+"Entretanto, à maneira do operário que foge à máquina, acreditando receber impunemente " +
+"o salário da oficina, sem o suor do trabalho, desertamos da responsabilidade, supondo " +
+"obter sem paga os benefícios da vida, sem o esforço do próprio burilamento. O operário, " +
+"nessas circunstâncias, ganha vantagens materiais; contudo, na intimidade, permanece no " +
+"nível da incompetência; e nós outros, em semelhante atitude,podemos desfrutar " +
+"considerações do plano terrestre,mas por dentro, estamos na sombra da ignorância.<br>" +
+"È por isso que geramos, em nosso prejuízo, o clima de medo, em que os monstros do " +
+"egoísmo, da discórdia, do desespero e da crueldade se desenvolvem, tanto quanto a " +
+"cultura de várias enfermidades prolifera na podridão.<br>" +
+"Não te percas, desse modo, nas idéias Inquietante ou destruidoras do medo, capazes de " +
+"operar a ruína dos melhores impulsos, porque se utilizas a fortaleza da coragem, o amor e " +
+"a moderação - talentos de que o Senhor te investiu em favor do próprio aperfeiçoamento - " +
+"seguirás para diante, na Terra e além da Terra, com a luz do coração e a paz da " +
+"consciência.");
+novoCapitulo("Palavras de Vida Eterna 85 - SE ASPIRAS A SERVIR");
+novoVersiculo("Filipenses 4, 11");
+processar("“Aprendi a contentar-me com o que tenho.” – Paulo " +
+"(FILIPENSES, 4:11.)<br>" +
+"Afirmas-te no veemente propósito de servir; entretanto, para isso, apresenta cláusulas " +
+"diversas.<br>" +
+"Dispões de recursos próprios, conquanto humildes, para as tarefas do socorro material; " +
+"contudo, esperas pelo dinheiro dos outros.<br>" +
+"Tens contigo vastas possibilidades para alfabetizar os necessitados de instrução, mas " +
+"esperas um título oficial que talvez nunca chegue.<br>" +
+"Mostras pés e braços livres que te garantem o auxílio aos irmãos em prova; entretanto, " +
+"esperas acompanhantes que provavelmente jamais se decidam ao concurso fraterno.<br>" +
+"Relacionas talentos múltiplos, a fim de cumprires abençoada missão de amor puro entre " +
+"os homens; todavia, esperas em família pelo companheiro ideal.<br>" +
+"Se acordaste para a cooperação com Jesus, recorda a afirmativa de Paulo: “Aprendi a " +
+"contentar-me com o que tenho”.<br>" +
+"Quando o apóstolo escreveu essa confissão, estava preso em Roma.<br>" +
+"Em torno dele, o ambiente doloroso do cárcere. Guardiães desalmados, companheiros " +
+"infelizes, pragas e palavrões. Nem sempre pão à mesa, nem sempre água pura, nem " +
+"sempre consolação, nem sempre voz amiga...<br>" +
+"No entanto, ao invés de desanimar, o pioneiro do Evangelho cede vida e força, " +
+"serenidade e bom ânimo de si próprio.<br>" +
+"Se aspiras a servir aos outros, servindo a ti mesmo, no reino do Espírito, não percas " +
+"tempo na expectativa inútil, pois todo aquele que sente, e age com o Cristo, vive satisfeito " +
+"e procura melhorar-se, melhorando a vida com aquilo que tem.");
+novoCapitulo("Palavras de Vida Eterna 86 - NÃO TE INQUIETES");
+novoVersiculo("Filipenses 4, 6");
+processar("“Não estejais inquietos por coisa alguma”.– Paulo " +
+"(FILIPENSES, 4:6.)<br>" +
+"A observação do apóstolo Paulo é importante para todos os dias.<br>" +
+"Ninguém esteja inquieto por coisa alguma.<br>" +
+"Em verdade, a inquietação é fator desencadeante de numerosas calamidades.<br>" +
+"Na maioria das vezes, está presente no erro de cálculo que compromete a construção, na " +
+"dosagem inadequada do remédio que se transforma em veneno, no acidente infeliz ou no " +
+"desastre da via pública.<br>" +
+"É quase sempre um espinho no lar, um cáustico no ponto de vista, uma brasa no caminho " +
+"e uma pedra na profissão.<br>" +
+"É por ela que, muitas vezes, pronunciamos a expressão descabida e articulamos o " +
+"julgamento falso a respeito dos outros.<br>" +
+"Com ela, geramos preocupações enfermiças e arruinamos a estrada própria.<br>" +
+"Contudo, a pretexto de aboli-la, é indispensável não venhamos a cair na preguiça.<br>" +
+"Muita gente, a pretexto de evitar a inquietação, asila-se em comodismo deplorável, " +
+"alegando que foge de trabalhar para não se afligir.<br>" +
+"Entendamos, porém, no verdadeiro sentido, a recomendação judiciosa de Paulo. Ele que " +
+"disse “não estejais inquietos por coisa alguma” nunca esteve ocioso.");
+novoCapitulo("Palavras de Vida Eterna 87 - ALIMENTO VERBAL");
+novoVersiculo("Tiago 3, 17");
+processar("“Más a sabedoria que vem do alto é primeiramente pura, " +
+"depois pacífica, moderada, tratável.,cheia de misericórdia " +
+"e de bons frutos...” (Tiago, 3:17.)<br>" +
+"Encontrarás a frase brilhante, repontando de toda a parte.<br>" +
+"Empregam-na cientistas eméritos, articulando as interpretações que lhes vêm à cabeça, " +
+"tomam-na filósofos variados para a exaltação dos princípios que esposam, usam-na os " +
+"sofistas de todas as procedências para expressarem as idéias que lhes são próprias, " +
+"apossam-se dela artistas diversos, colorindo as criações que lhes fluem da alma; " +
+"entretanto, é preciso recebê-la na pauta do discernimento justo.<br>" +
+"Há frases seguras e primorosas, ocultando imagens repelentes, assim como tecidos de " +
+"ouro e pérolas, escondendo o monturo.<br>" +
+"Examina o campo que te fornece alimento verbal.<br>" +
+"Seja na escrita de mãos hábeis ou na fala de pessoas distintas, assinala o que recolhes.<br>" +
+"A inspiração do Alto nasce na fonte dos sentimentos puros. Busca a edificação da paz, " +
+"através do equilíbrio e da afabilidade para com todos, manifesta-se no veículo da " +
+"compreensão fraternal, exprimindo misericórdia, e produz bons frutos onde esteja.<br>" +
+"Não te enganes com discursos preciosos, muita vez desprovidos de qualquer sinal " +
+"construtivo.<br>" +
+"É possível não consigas identificar, de pronto, as intenções de quem fala; entretanto, " +
+"podes observar os resultados positivos da ação de cada conversador. E pelos frutos que " +
+"pendem na árvore da vida de cada um, sabes perfeitamente a escolha que te convém.");
+novoCapitulo("Palavras de Vida Eterna 88 - VASOS DE BARRO");
+novoVersiculo("2_Coríntios 4, 7");
+processar("“Temos, porém, este tesouro em vasos de barro, " +
+"para que na sublimidade seja da virtude de Deus e não de nós”.– Paulo " +
+"(II CORINTIOS, 4:7.)<br>" +
+"Não te furtes a transmitir os dons do Evangelho.<br>" +
+"Se caíste, levanta-te e estende as mãos, construindo o melhor.<br>" +
+"Se estiveste em erro até ontem, reconsidera o gesto impensado e ajuda aos semelhantes.<br>" +
+"Se doente, permanece na confiança, encorajando e esclarecendo a quem te ouve a " +
+"palavra.<br>" +
+"Se cansado, recompõe as próprias forças na fé, e prossegue amparando sempre.<br>" +
+"Caluniado, perdoa e esquece o golpe, procurando servir.<br>" +
+"Menosprezado, não firas ninguém e esforça-te por ser útil.<br>" +
+"Perseguido, esquece o mal e faze o bem que possas.<br>" +
+"Insultado, olvida toda ofensa e auxilia sem mágoa.<br>" +
+"Em meio de todas as fraquezas e vicissitudes que nos rodeiam a alma, " +
+"estejamos convictos com o apóstolo Paulo de que possuímos o conhecimento da verdade " +
+"e a flama do amor, como quem transporta um tesouro em vasos de barro, para que a " +
+"excelência da virtude resplandeça por luz de Deus e não nossa.");
+novoCapitulo("Palavras de Vida Eterna 89 - INESQUECÍVEL ADVERTÊNCIA");
+novoVersiculo("João 21, 22");
+processar("“...Que te importa a ti? Segue-me tu.” – JESUS.<br>" +
+"(JOÃO, 21:22.)<br>" +
+"Viste, sim, as desilusões com que não contávamos.<br>" +
+"Muitos daqueles mesmos amigos que nos exortavam à estrada certa, enovelaram-se nos " +
+"cipoais da perturbação, como que petrificados na indiferença.<br>" +
+"Companheiros que supúnhamos estandartes vivos nas trilhas da verdade, renderam-se a " +
+"deslavadas mentiras.<br>" +
+"Irmãos que nos prometeram fidelidade inquebrantável deixaram-nos a sós, na primeira " +
+"dificuldade.<br>" +
+"Parentes que nos deviam proteção e respeito bandearam-se para campos de sombra e " +
+"vício, hostilizando-nos o ideal.<br>" +
+"E multiplicam-se tropeços para que a nossa caminhada se obstrua.<br>" +
+"Converteram-se estímulos em sarcasmos.<br>" +
+"Quem nos dava esperança, fornece negação.<br>" +
+"Quem ontem nos ajudava, hoje nos desajuda.<br>" +
+"Mãos que nos atiravam flores de aplauso fazem agora chover sobre nós as farpas da " +
+"incompreensão.<br>" +
+"Sozinhos, sim...<br>" +
+"Muita vez, encontrar-nos-emos, desse modo, entre a expectativa e a solidão.<br>" +
+"Nosso primeiro impulso é o de reclamar naquilo que supomos nosso direito; contudo, " +
+"buscando a palavra do evangelho, surpreendemos a inesquecível advertência do Senhor:<br>" +
+"- ...”Que te importa a ti? Segue-me tu”.");
+novoCapitulo("Palavras de Vida Eterna 90 - EM CONSTANTE RENOVAÇÃO");
+novoVersiculo("Efésios 4, 23");
+processar("“Renovai-nos no espírito...” – Paulo " +
+"(EFÉSIOS, 4:23.)<br>" +
+"Aperfeiçoar para o bem é impositivo da Lei.<br>" +
+"Em muitas ocasiões, afirmas-te cansado, sem qualquer recurso para empreender a tua " +
+"transformação.<br>" +
+"Acreditas-te doente, incapaz...<br>" +
+"Dizes-te inabilitado, semimorto...<br>" +
+"No entanto, agora, como há séculos de séculos, a natureza em tudo é sublime " +
+"renascimento.<br>" +
+"Renovam-se os dias.<br>" +
+"Renovam-se as estações.<br>" +
+"Velhas árvores decepadas deitam vergônteas novas.<br>" +
+"Pedras multimilenárias dão forma diferente aos serviços da evolução.<br>" +
+"Na própria química do corpo em que temporariamente resides, a renovação há de ser " +
+"incessante.<br>" +
+"Renova-se o ar que respiras.<br>" +
+"Renova-se o alimento que te nutres.<br>" +
+"Renova-se a organização celular em que te apóias.<br>" +
+"Renova-se a limpeza que te acalenta a saúde.<br>" +
+"Deixa, assim, que a tua emoção e a tua idéia se transfigurem para fazer o melhor.<br>" +
+"Estuda, raciocina, observa e medita...<br>" +
+"Mais tarde, é certo que a reencarnação te conduzirá para novas lutas e novos " +
+"ensinamentos; entretanto, permanece convicto de que toda lição nobre, aprendida hoje, " +
+"por mais obscura e mais simples, será sempre facilidade a sorrir-te amanhã.");
+novoCapitulo("Palavras de Vida Eterna 91 - APREÇO");
+novoVersiculo("Efésios 5, 20");
+processar("“Dando sempre graças a Deus por tudo em " +
+"Nosso Senhor Jesus Cristo.” – Paulo " +
+"(EFÉSIOS, 5:20.)<br>" +
+"O Universo é uma corrente de amor, em movimento incessante. Não lhe interrompas a " +
+"fluência de vibrações.<br>" +
+"Nesse sentido, recorda que ninguém é tão sacrificado pelo dever que não possa, de " +
+"quando em quando, levantar os olhos ou dizer uma frase, em sinal de agradecimento.<br>" +
+"Considera sagradas as tuas obras de obrigação, mas não te esqueças do minuto de " +
+"apreço aos outros.<br>" +
+"Os pais não te discutem o carinho, entretanto, multiplicarão as próprias forças com o teu " +
+"gesto de entendimento; os filhos anotam-te a bondade, no entanto, experimentarão novo " +
+"alento com o teu sorriso encorajador; os colegas de ação conhecem-te a solidariedade, " +
+"mas serão bafejados por renovadora energia, perante a reafirmação de teu concurso " +
+"espontâneo, e os companheiros reconhecem-te a amizade, contudo, entesouram " +
+"estímulos santos, em te ouvindo a mensagem fraterna.<br>" +
+"Ninguém pode avaliar a importância das pequeninas doações.<br>" +
+"Uma prece, uma saudação afetuosa, uma flor ou um bilhete amistoso conseguem apagar " +
+"longo fogaréu da discórdia ou dissipar rochedos de sombra.<br>" +
+"Não nos reportamos aqui ao elogia que estraga ou à lisonja que envenena. Referimo-nos " +
+"à amizade e à gratidão que valorizam o trabalho e alimentam o bem.<br>" +
+"Por mais dura seja a estrada, aprende a sorrir e a abençoar, para que a alegria seja " +
+"adiante, incentivando os corações e as mãos que operam a expansão da Bondade " +
+"Infinita.<br>" +
+"O próprio Deus nunca se encontra tão excessivamente ocupado que não se lembre de " +
+"sustentar o Sol, para que o Sol aqueça, em seu nome, o último verme, na última " +
+"reentrância abismal.");
+novoCapitulo("Palavras de Vida Eterna 92 - SOLIDARIEDADE");
+novoVersiculo("Romanos 12, 15");
+processar("“Alegrai-vos com os que se alegram e chorai com " +
+"os que choram.” – Paulo. (ROMANOS, 12:15.)<br>" +
+"Realmente, na Terra, é mais fácil chorar com os que choram.<br>" +
+"Em muitas circunstâncias, mágoas alheias servem de consolação para nossas mágoas.<br>" +
+"Quem carrega fardos enormes como que nos estimula a suportar os estorvos leves.<br>" +
+"Num desastre qualquer, que nos teria colhido, inclinamo-nos, comovidamente, para as " +
+"vítimas, guardando, muita vez, a ilusão de que fomos agraciados por Deus, como se a " +
+"responsabilidade de moratórias e empréstimos, que nos são concedidos pela Misericórdia " +
+"Divina, dentro da Lei, fosse para nós regime de favoritismo e exceção.<br>" +
+"Ajudar aos que se encontram em provocações maiores que as nossas é caridade " +
+"sublime; no entanto, é forçoso reconhecer que aconselhar paciência aos que choram, na " +
+"posição de superiores tranqüilos, é o mesmo que falar à margem de um problema, sem " +
+"estar dentro dele.<br>" +
+"Com isso, não queremos diminuir o valor da beneficência. Sem ela, nossas mãos se " +
+"fariam garras de usura e o egoísmo transformaria a Terra num manicômio.<br>" +
+"Desejamos simplesmente afirmar que é mais fácil chorar com os que choram, que " +
+"alegrar-se alguém com os que se alegram; porquanto, ajudar com o pão ou com a alegria " +
+"que nos sobram é ato que podemos realizar sem dificuldade, ao passo que, para " +
+"regozijar-se com o regozijo dos outros, sem qualquer ponta de inveja ou despeito, é " +
+"preciso trazermos suficiente amor puro no coração.");
+novoCapitulo("Palavras de Vida Eterna 93 - SERVIÇO E INVEJA");
+novoVersiculo("1_Coríntios 13, 4");
+processar("“... A caridade não é invejosa...” – Paulo " +
+"(I CORÍNTIOS, 13:4.)<br>" +
+"Muitos companheiros asseveram a disposição de ajudar, em nome da caridade; " +
+"entretanto, para isso, exigem os recursos que pertencem aos outros.<br>" +
+"Querem amparar os necessitados...<br>" +
+"Mas dizem aguardar vencimento igual ao do colega que lhes tomou a frente na " +
+"organização de trabalho.<br>" +
+"Declaram-se inclinados ao socorro de meninos desprotegidos...<br>" +
+"Alegam, todavia, que apenas assumirão a iniciativa quando possuírem casa semelhante à " +
+"do amigo mais próspero.<br>" +
+"Afirmam-se desejosos de colaborar na construção da fé, amando e esclarecendo a quem " +
+"sofre...<br>" +
+"Interpõem, no entanto, a condição de desfrutarem a autoridade dos irmãos que se " +
+"encarregam dessa ou daquela instituição, antes deles.<br>" +
+"Expõem a intenção de escrever, na difusão da luz espiritual...<br>" +
+"Contudo, somente entrarão em atividade quando dispuserem da competência de quantos " +
+"já despenderam larga parte da vida, na estruturação da palavra escrita.<br>" +
+"Se aspiras a servir ao bem, não te detenhas na cobiça expectante, a pedir que a " +
+"possibilidade dos outros te passe às mãos.<br>" +
+"A caridade não é invejosa.<br>" +
+"Façamos a nossa parte.");
+novoCapitulo("Palavras de Vida Eterna 94 - BENEFICÊNCIA E PACIÊNCIA");
+novoVersiculo("1_Coríntios 13, 4");
+processar("“A caridade é paciente e benigna...” – Paulo " +
+"(I CORÍNTIOS, 13:4.)<br>" +
+"Beneficência, sim, para com todos:<br>" +
+"Prato dividido.<br>" +
+"Veste aos nus.<br>" +
+"Remédio aos doentes.<br>" +
+"Asilo aos que vagueiam sem teto.<br>" +
+"Proteção à criança sem teto.<br>" +
+"Auxílio ao ancião em desvalimento.<br>" +
+"Socorro às viúvas.<br>" +
+"Refúgio aos indigentes.<br>" +
+"Consolo aos tristes.<br>" +
+"Entretanto, é preciso estender a bondade igualmente noutros setores:<br>" +
+"Compreensão em família.<br>" +
+"Trabalho sem queixa.<br>" +
+"Cooperação sem atrito.<br>" +
+"Pagamento sem choro.<br>" +
+"Atenção a quem fale, ainda mesmo sem qualquer propósito edificante.<br>" +
+"Respeito aos problemas dos outros.<br>" +
+"Serenidade às provocações.<br>" +
+"Tolerância para com as idéias alheias.<br>" +
+"Gentileza na rua.<br>" +
+"A beneficência pode efetuar prodígios, levantando a generosidade e conquistando a " +
+"gratidão; contudo, em nome da caridade, toda beneficência, para completar-se, não pode " +
+"viver sem a paciência.");
+novoCapitulo("Palavras de Vida Eterna 95 - APRENDENDO");
+novoVersiculo("Tiago 1, 22");
+processar("“Tornai-vos, pois, praticantes de palavra e não somente ouvintes, " +
+"enganando-vos a vós mesmos”. (TIAGO, 1:22.)<br>" +
+"Cada vez que as circunstâncias te induzam a ouvir as verdades do Evangelho, não " +
+"admitas que o acaso esteja presidindo a semelhantes eventos. Forças ocultas estarão " +
+"acionando a oportunidade, a fim de que te informes quanto ao teu próprio caminho.<br>" +
+"Não te faças, pois, desatento, porquanto, a breve espaço, serás naturalmente chamado " +
+"pela vida para testemunhar.<br>" +
+"Observa a escola e as disciplinas com que se formam determinados profissionais.<br>" +
+"Acadêmicos de Medicina ouvem lições para curar os doentes ou auxilia-los; estudantes " +
+"de Engenharia escutam ensinamentos para que os apliquem à técnica das construções " +
+"no plano terrestre; contabilistas gastam tempo, de modo a garantirem a sustentação do " +
+"comércio, na arte de fazer contas; tecelões assimilam princípios, em torno de certas " +
+"máquinas, para atenderem, oportunamente, à indústria do fio...<br>" +
+"Qualquer estudo nobre é aquisição inapreciável, mas se mora estanque, na alma de " +
+"quem aprende, assemelha-se a pão escondido aos que choram de fome.<br>" +
+"Ouvir, sim, os preceitos da Espiritualidade Superior, mas agir, segundo nos orientam, " +
+"porque, se sabemos e não fazemos o que o bem nos ensina, melhor fora não saber, para " +
+"não sermos tributados, com taxas de maior sofrimento, nas grades da culpa.");
+novoCapitulo("Palavras de Vida Eterna 96 - NAS PALAVRAS");
+novoVersiculo("Tiago 5, 9");
+processar("“Irmãos, não vos queixeis uns dos outros, para não serdes julgados...”<br>" +
+"(TIAGO, 5:9.)<br>" +
+"Mergulhar o divino dom da palavra no vaso lodoso da queixa é o mesmo que inflamar " +
+"preciosa lâmpada no conteúdo da lata de lixo.<br>" +
+"Não transformes a própria frase em lama sobre chagas abertas.<br>" +
+"Podes mobilizar a maravilha do verbo, para reajustar o bem, sem necessidade de " +
+"estender o mal.<br>" +
+"Ergue a esperança, ao pé dos que desfaleceram na luta. Exalta a excelência do amor, " +
+"perante aqueles que o ódio intoxica. Louva as perspectivas da fé, ao lado dos que choram " +
+"no desencanto. Aponta as qualidades nobre do amigo que caiu em desvalimento. Destaca " +
+"as possibilidades de auxiliar onde os outros somente encontram motivos para censura.<br>" +
+"Desdobra o trabalho restaurador onde o pessimismo condena. Procura o lado melhor das " +
+"situações para que o melhor seja feito. E, quando os obstáculos morais se agigantem, " +
+"como se a maldade estivesse a ponto de triunfar em definitivo, se não podes algo dizer " +
+"em louvor da bondade, cala-te e ora.<br>" +
+"Pensa no bem, quando não puderes falar nele.<br>" +
+"A semente muda, renova a terra.<br>" +
+"A gota silenciosa de sedativo, asserena o corpo martirizado.<br>" +
+"Nunca te queixes dos outros, mesmo porque, em nos queixando de alguém, é preciso " +
+"consultar o próprio íntimo para saber se em algum lugar desse alguém não estaríamos " +
+"fazendo isso ou aquilo de maneira pior.");
+novoCapitulo("Palavras de Vida Eterna 97 - PAI E AMIGO");
+novoVersiculo("Lucas 15, 20");
+processar("“ E levantando-se, foi para seu pai; e quando ainda estava " +
+"longe, o pai chegou a vê-lo, moveu-se de íntima compaixão " +
+"e, correndo, lançou-se lhe ao pescoço e o beijou.” - Jesus " +
+"(LUCAS, 15:20.)<br>" +
+"É possível que essa ou aquela falta te sombreie o coração, impelindo-te ao desânimo.<br>" +
+"Anseias respirar a fé pura, entregar-te aos misteres do bem, contudo, trazes remorso e " +
+"tristeza.<br>" +
+"Dissipaste as forças da vida, extraviaste votos santificantes, erraste, caíste na negação, " +
+"qual viajor que perdesse a luz..<br>" +
+".Entretanto, recorda a Providência Divina a reerguer-te.<br>" +
+"O amor de Deus nunca falta.<br>" +
+"Para toda ferida haverá remédio adequado " +
+".Para todo desequilíbrio aparecerá o reajuste " +
+".Fixa-te no ensinamento do Cristo, enunciando o retorno do filho pródigo.<br>" +
+"O reencontro não se deu em casa, com remoques e humilhações para o moço em " +
+"desvalimento.<br>" +
+"Assinalando-o no caminho de volta \" e, quando ainda estava longe, o pai, ao vê-lo, " +
+"moveu-se de íntima compaixão e, correndo, lançou-se-lhe ao pescoço e o beijou.<br>" +
+"O pai não esperou que o filho se penitenciasse o rojo, não exigiu excusas, não solicitou " +
+"justificativas e nem impôs condições de qualquer natureza para estender-se os braços; " +
+"apenas aguardou que o filho se levantasse e lhe desejasse o calor do coração.");
+novoCapitulo("Palavras de Vida Eterna 98 - FILHO E CENSOR");
+novoVersiculo("Lucas 15, 29");
+processar("“Mas, respondendo ele, disse ao pai: “eis que te sirvo, há tantos anos, " +
+"sem nunca transgredir o teu mandamento, e nunca me deste " +
+"um cabrito para alegrar-me com meus amigos...” – Jesus " +
+"(LUCAS,15:29.)<br>" +
+"Na parábola do filho pródigo, não encontramos somente o irmão que volta experiente e " +
+"arrependido ao convício do lar.<br>" +
+"Nela, surge também o irmão correto, mas egoísta, remoendo censura e reclamação.<br>" +
+"Ele observa a alegria paternal, abraçando o irmão recuperado; entretanto, reprova e " +
+"confronta. Procede como quem lastima o dever cumprido, age à feição de um homem que " +
+"desestima a própria nobreza.<br>" +
+"É fiel aos serviços do pai; contudo, critica-lhe os gestos. Trabalha com ele; no entanto, " +
+"anseia escravizá–lo aos próprios caprichos.<br>" +
+"Atende-lhes aos interesses, vigiando-lhe o pão e a prata.<br>" +
+"Guarda lealdade, mergulhando-se na idéia de evidência e de herança.<br>" +
+"Se o coração paterno demonstra grandeza de sentimento, explode em ciúme e queixa. Se " +
+"perdoa e auxilia, interpõe o merecimento de que se julga detentor, tentando limitar-lhe a " +
+"bondade.<br>" +
+"Perde-se num misto de crueldade e carinho, sombra e luz.<br>" +
+"É justo e injusto, terno e agressivo, companheiro e censor.<br>" +
+"Deseja o pai somente para si, a fazenda e o direito, o equilíbrio e a tranqüilidade somente " +
+"para si.<br>" +
+"No caminho da fé, analisa igualmente a tua atitude.<br>" +
+"Se te sentes ligado à Esfera Superior por teus atos e diretrizes, palavras e pensamentos, " +
+"não te encarceres na vaidade de ser bom. Não te esqueças, em circunstância alguma, de " +
+"que Deus é Pai de todos, e, se te ajudou para estares com ele, é para que estejas com " +
+"ele, ajudando aos outros.");
+novoCapitulo("Palavras de Vida Eterna 99 - RECLAMAÇÕES");
+novoVersiculo("Tiago 4, 17");
+processar("“Portanto, aquele que sabe que deve fazer o bem e " +
+"não o faz, nisso esta pecando”. (TIAGO, 4:17.)<br>" +
+"Censuras com grande alarde os que se oneraram, nos delitos do furto; entretanto, se " +
+"acumulas, inutilmente, os recursos necessários ao sustento do próximo, não podes alegar " +
+"inocência.<br>" +
+"Acusas os que desceram à criminalidade, mas, se nada realizas pela extinção da " +
+"delinqüência, não te cabe o direito de reprovar.<br>" +
+"Apontas o egoísmo dos governantes; no entanto se te afervoras no egoísmo dos dirigidos, " +
+"deitas apenas conversa vã.<br>" +
+"Criticas todos aqueles que instruem os seus irmãos de maneira deficiente; contudo, se " +
+"dispões de competência e foges ao plantio da educação, não estarás tranqüilo contigo " +
+"mesmo.<br>" +
+"Clamas contra aqueles companheiros que categorizas por rebeldes e viciados, quando " +
+"lhes anotas a presença no trabalho de socorro aos semelhantes; todavia, se te sentes " +
+"virtuoso e não levantas se quer uma palha em favor dos que sofrem, as sentenças que te " +
+"saem da boca não passarão de injustiça.<br>" +
+"Entra no serviço da alma e coração, para que possas comentá-lo.<br>" +
+"Ninguém pode exigir dos outros o que não dá de si mesmo.<br>" +
+"Quem sabe o que deve fazer, e não faz, deserta dos deveres que lhe competem, caindo " +
+"em omissão lamentável, e, se atrapalhar quem procura fazer, certamente responderá com " +
+"dobradas obrigações pelo que não fizer.");
+novoCapitulo("Palavras de Vida Eterna 100 - QUEIXUMES");
+novoVersiculo("Tiago 5, 9");
+processar("“Irmãos, não vos queixeis uns dos outros, " +
+"para que não sejais reprovados.”<br>" +
+"(TIAGO, 5:9.)<br>" +
+"Cada vez que nossos lábios cedem ao impulso da queixa, quase sempre estamos " +
+"simplesmente julgando a vida que nos é própria.<br>" +
+"Observa, assim, a ti mesmo e deixa que a consciência te vigie a palavra.<br>" +
+"Se viste uma pessoa em falta contra outra, não lhe exageres a culpa, recordando quantas " +
+"vezes terás faltado igualmente contra o próximo. E assim como agradeceste a quantos te " +
+"desculparam os senões da conduta, confiando em que te melhorarias com o tempo, " +
+"ampara também o irmão caído em erro, através de teu otimismo fraternal, para que se " +
+"levante e te bendiga.<br>" +
+"Se um companheiro te ofendeu, não te confies a reações descabidas, refletindo nas " +
+"ocasiões em que terás igualmente ferido os semelhantes. E assim como te rejubilaste, " +
+"diante de todos os que te esqueceram os golpes, na certeza de que saberias reconsiderar " +
+"a própria atitude, auxilia também o amigo que se fez instrumento de tua dor, através do " +
+"olvido de todo mal, a fim de que ele se restaure e te abençoe a grandeza de espírito.<br>" +
+"Em toda conversação, na qual sejamos induzidos a examinar o comportamento do " +
+"próximo submetido à censura alheia, vasculhemos o íntimo, concluindo se não teríamos " +
+"praticado incorreções iguais ou maiores no lugar dele. E, em todas as circunstâncias, não " +
+"nos esqueçamos de que, estaremos intimando, automaticamente, a nós mesmos a viver " +
+"em nível mais alto e a fazer coisa melhor.");
+novoCapitulo("Palavras de Vida Eterna 101 - DE ACORDO");
+novoVersiculo("Romanos 2, 6");
+processar("“O qual recompensará a cada um, segundo as suas obras.” – Paulo.<br>" +
+"(ROMANOS, 2:6.)<br>" +
+"A vida, exprimindo os desígnios do Criador, assumirá para contigo atitudes que assumes " +
+"para com ela.<br>" +
+"Honra aos títulos que procuras honrar.<br>" +
+"Tratamento correto à conduta correta.<br>" +
+"Dignidade ao que dignificas.<br>" +
+"Experiência na pauta de tua escolha.<br>" +
+"Instrução no nível que te colocas.<br>" +
+"Confiança no grau de tua fé.<br>" +
+"Distinção naquilo em que te distingues.<br>" +
+"Respeito em tudo o que te faças respeitável.<br>" +
+"Versão disso ou daquilo, conforme os teus desejos.<br>" +
+"Clareza ao que alimpes.<br>" +
+"Isso significa, igualmente, que seja qual for a posição em que te situes, tens a resposta da " +
+"Vida na vida que procuras.<br>" +
+"É assim que dor ou alegria, paz ou inquietação, merecimento ou desvalia, sombra ou luz, " +
+"em nosso caminho, será sempre salário moral, de acordo com as nossas próprias obras.");
+novoCapitulo("Palavras de Vida Eterna 102 - NAS CONTAS");
+novoVersiculo("Romanos 14, 12");
+processar("\"De maneira que cada um de nós dará conta de si mesmo a Deus.\"<br>" +
+"Paulo (Romanos, 14:12)<br>" +
+"Benfeitores garantem.<br>" +
+"Instrutores educam.<br>" +
+"Pastores guiam.<br>" +
+"Amigos amparam.<br>" +
+"Companheiros alentam.<br>" +
+"Adversários avisam.<br>" +
+"Relações ajudam.<br>" +
+"Preces iluminam.<br>" +
+"Lições preparam.<br>" +
+"Dificuldades adestram.<br>" +
+"Provas definem.<br>" +
+"Dores corrigem.<br>" +
+"Lutas renovam.<br>" +
+"Problemas propõem.<br>" +
+"Soluções indicam.<br>" +
+"Atitudes revelam.<br>" +
+"Lágrimas purificam.<br>" +
+"Experiências marcam.<br>" +
+"Entretanto, segundo a palavra do Apóstolo Paulo, todas as criaturas e todas as " +
+"situações, todas as circunstâncias e todas as coisas foram dispostas, nas contas da Lei, " +
+"de \"maneira que cada um de nós dará conta de si mesmo a Deus.\"");
+novoCapitulo("Palavras de Vida Eterna 103 - PRODUZIMOS");
+novoVersiculo("João 15, 4");
+processar("“Permanecei em mim e eu permanecerei em vós.<br>" +
+"Como não pode o ramo produzir fruto de si mesmo, " +
+"se não permanecer na videira, assim nem vós o podeis " +
+"dar, se não permanecerdes em mim.” – Jesus. (JOÃO, 15:4,)<br>" +
+"Produzimos.<br>" +
+"Tudo o que é alguma coisa produz algo.<br>" +
+"Elementos considerados desprezíveis estão fazendo isso ou aquilo.<br>" +
+"Pedras produzem aspereza.<br>" +
+"Espinhos produzem lacerações.<br>" +
+"Lama produz sujidade.<br>" +
+"Martelo produz. golpes.<br>" +
+"Entretanto, se produzimos para o bem, esses mesmos recursos, em nossas mãos, vêemse " +
+"promovidos a instrumentos -valiosos, porquanto, pedras ajudam nas construções, " +
+"espinhos de natureza técnica podem colaborar no serviço cirúrgico, lama devidamente " +
+"tratada é terra de sementeira, e martelo controlado é auxiliar prestimoso.<br>" +
+"Cada criatura, desse modo, produz conforme os agentes em que se inspira.<br>" +
+"Os seres mais lastimáveis, ainda que não queiram, estão produzindo sempre.<br>" +
+"O delinqüente produz o desequilíbrio.<br>" +
+"O viciado produz o desregramento.<br>" +
+"O preguiçoso produz a miséria.<br>" +
+"O pessimista produz o desânimo.<br>" +
+"Onde estiveres, estás produzindo, de acordo com as influências a que te afeiçoas, e " +
+"atuando mecanicamente sobre todos aqueles que se afeiçoam ao teu medo de ser.<br>" +
+"Todos produzimos, inevitavelmente.<br>" +
+"Aprendizes do Evangelho, na escola espírita-cristã, recordemos, pois, a lição do Cristo :<br>" +
+"“Permanecerei convosco se permanecerdes em mim.”");
+novoCapitulo("Palavras de Vida Eterna 104 - EXISTIMOS");
+novoVersiculo("João 10, 10");
+processar("\"Vim para que tenhais vida e vida em abundância.\"<br>" +
+"- Jesus (João, 10:10)<br>" +
+"Existimos.<br>" +
+"Existem todas as criaturas saídas do Hálito Criador.<br>" +
+"A pedra existe, a planta existe, o animal existe...<br>" +
+"Existem almas nos passos diversos da evolução.<br>" +
+"Em sentido espiritual, no entanto, viver é algo diferente de existir.<br>" +
+"A vida é a experiência digna da imortalidade.<br>" +
+"Há muita gente que se esfalfa, perdendo saúde e possibilidades em movimento vazio, " +
+"quando não se mergulha nas tramas do mal, entretecendo reencarnações dolorosas.<br>" +
+"Há muita gente que destrói o próprio cérebro, escrevendo sem proveito, quando não " +
+"expressa o pensamento para inspirar negação e crueldade, entrando em sofrimentos " +
+"reparadores.<br>" +
+"Há muita gente que aniquila as horas, falando a esmo, quando não se utiliza do verbo " +
+"para ferir e enlouquecer os semelhantes, adquirindo débitos escabrosos.<br>" +
+"Há muita gente que pede essa ou aquela concessão para frustrá-la em atividades sem " +
+"sentido, quando não a maneja em prejuízo dos outros, criando lágrimas que empregará " +
+"longo tempo para enxugar.<br>" +
+"Todos esses agentes da inutilidade e da delinqüência existem como todos nós existimos.<br>" +
+"Observa, assim, o que fazes.<br>" +
+"O berço confere a existência, mas a vida é obra nossa.");
+novoCapitulo("Palavras de Vida Eterna 105 - ESTEJAMOS ATENTOS");
+novoVersiculo("Tiago 4, 15");
+processar("“... Se o Senhor quiser, e se vivermos, faremos isto ou aquilo.”<br>" +
+"(TIAGO, 4:15.)<br>" +
+"Age para o bem, sabendo que apenas o bem guarda força bastante para o sustento da " +
+"paz.<br>" +
+"Além disso, se o conhecimento superior já te clareia o espírito, não desconheces que " +
+"todas as nossas realizações estão subordinadas à Divina Supervisão.<br>" +
+"A criatura humana dispõe de livre arbítrio para criar o destino, porém, cada " +
+"individualidade, nesse ou naquele plano de existência, atua num campo determinado de " +
+"tempo.<br>" +
+"Tiranos e santos, malfeitores e heróis atingem sempre um limite da estrada em que o " +
+"Mundo Maior lhes impõe a pausa de exame.<br>" +
+"Todas as grandes figuras de ontem e todas as grandes personalidades, na Terra de hoje, " +
+"conheceram e conhecerão o momento em que a vida lhes adverte: \"não mais além”.<br>" +
+"Forma, pois, os teus planos de ação, usa a inteligência, maneja a autoridade, cunha as " +
+"palavras, mobiliza as relações, aproveita os laços afetivos, aplica o dinheiro, desenvolve o " +
+"trabalho e assinala a tua presença, onde estiveres, atendendo ao bem para o bem de " +
+"todos, porquanto, creiamos ou não, aceitemos a verdade ou recusemo-la, seja errando " +
+"para aprender ou acertando paira elevar, a nossa tarefa chegará simplesmente até o " +
+"ponto que o Senhor permitir.");
+novoCapitulo("Palavras de Vida Eterna 106 - CONFIEMOS SERVINDO");
+novoVersiculo("Tiago 2, 17");
+processar("\"Assim também a fé, se não tiver obras, está morta em si mesma.”<br>" +
+"(TIAGO, 2:17.)<br>" +
+"Asseguras o mérito da semente, valorizando--lhe as qualidades, mas, se alguém foge de " +
+"plantá-la, todo o teu esforço verbal terá sido vão.<br>" +
+"Gabas-te de possuir primorosos talentos artísticos; no entanto, se não trabalhas por " +
+"expressá-los, descerás fatalmente ao ridículo diante dos que te ouvem.<br>" +
+"Esboças valioso projeto para o levantamento de largo edifício; entretanto, se não " +
+"promoves a construção, os teus planos, por mais belos, estarão relegados ao mofo.<br>" +
+"Confias plenamente no credor que te emprestou recursos determinados; todavia, se não " +
+"pagas a dívida, serás levado à insolvência.<br>" +
+"Apregoas as vantagens de certa máquina, mas, se ninguém lhe experimenta os " +
+"mecanismos na atividade, o engenho, por mais precioso, acabará esquecido por traste " +
+"inútil.<br>" +
+"Assim também nos assuntos da alma. Em verdade, reverenciamos a Providência Divina, " +
+"depositamos em Cristo a nossa esperança, admiramos a virtude e acreditamos na força " +
+"do bem; contudo, se nada realizamos, na esfera das boas obras, a nossa fé pode ser " +
+"vigorosa e resplendente, mas não adianta.");
+novoCapitulo("Palavras de Vida Eterna 107- COMPAIXÃO EM FAMÍLIA");
+novoVersiculo("1_Timóteo 5, 8.");
+processar("\"Mas se alguém não tem cuidado dos seus e, principalmente " +
+"dos da sua família, negou a fé ...\" Paulo. (I Timóteo, 5:8. )<br>" +
+"São muitos assim, " +
+"Descarregam primorosa mensagem nas assembléias, exortando o povo à compaixão; " +
+"bordam conceitos e citações, a fim de que a brandura seja lembrada; Entretanto, no " +
+"instituto doméstico, são carrascos de sorriso na boca.<br>" +
+"Traçam páginas de subido valor, em honra da virtude, comovendo multidões; mas não " +
+"gravam a mínima gentileza nos corações que os cercam entre as paredes familiares.<br>" +
+"Promovem subscrições de auxílio público, em socorro das vítimas de calamidades " +
+"ocorridas em outros continentes, transformando-se em titulares da grande benemerência; " +
+"contudo, negam simples olhar de carinho ao servidor que lhes pões a mesa.<br>" +
+"Incitam a comunidade aos rasgos de heroísmo econômico, no levantamento de albergues " +
+"e hospitais, disputando créditos publicitários em torno do próprio nome; entretanto, não " +
+"hesitam exportar, no rumo do asilo, o avô menos feliz que a provação expões à " +
+"caducidade.<br>" +
+"Não seremos nós quem lhes vá censurar semelhante procedimento.<br>" +
+"Toda migalha de amor está registrada na lei, em favor de quem a emite.<br>" +
+"Mais vale fazer bem aos que vivem longe, que não fazer bem algum.<br>" +
+"Ajudemos, sim, ajudemos aos outros, quanto nos seja possível; entretanto, sejamos " +
+"igualmente bons para com aqueles que respiram em nosso hálito. Devedores de muitos " +
+"séculos, temos em casa, no trabalho, no caminho, no ideal ou na parentela, as nossas " +
+"principais testemunhas de quitação.");
+novoCapitulo("Palavras de Vida Eterna 108 - PAZ EM CASA");
+novoVersiculo("Lucas 10, 5");
+processar("...e em qualquer casa onde entrardes,dizei antes:<br>" +
+"“paz seja nesta casa” – Jesus (Lucas 10:5)<br>" +
+"Compras na terra o pão e a vestimenta, o calçado e o remédio, menos a paz.<br>" +
+"Dar-te-á o dinheiro residência e conforto, com exceção da tranqüilidade de espírito.<br>" +
+"Eis porque nos recomenda Jesus venhamos a dizer, antes de tudo, ao entramos numa " +
+"casa: \"paz seja nesta casa\".<br>" +
+"A lição exprime vigoroso apelo à tolerância e ao entendimento.<br>" +
+"No limiar do ninho doméstico, unge-te de compreensão e de paciência, a fim de que não " +
+"penetres o clima dos teus, à feição de inimigo familiar.<br>" +
+"Se alguém está fora do caminho desejável ou se te desgostam arranjos caseiros, mobiliza " +
+"a bondade e a cooperação para que o mal se reduza.<br>" +
+"Se problemas te preocupam ou apontamentos te humilham, cala os próprios " +
+"aborrecimentos, limitando as inquietações.<br>" +
+"Recebe a refeição por bênção divina.<br>" +
+"Usa portas e janelas, sem estrondos brutais.<br>" +
+"Não movas objetos, de arranco.<br>" +
+"Foge à gritaria inconveniente.<br>" +
+"Atende ao culto da gentileza.<br>" +
+"Há quem diga que o lar é ponto do desabafo, o lugar em que a pessoa se desoprime.<br>" +
+"Reconhecemos que sim; entretanto, isso não é razão para que ele se torne em praça " +
+"onde a criatura se animalize.<br>" +
+"Pacifiquemos nossa área individual para que a área dos outros se pacifique.<br>" +
+"Todos anelamos a paz do mundo; no entanto, é imperioso não esquecer que a paz do " +
+"mundo parte de nós.");
+novoCapitulo("Palavras de Vida Eterna 109 - NA ESFERA DA LÍNGUA");
+novoVersiculo("1_Pedro 3, 10");
+processar("“Quem quer amar a vida e ver os dias felizes, " +
+"refreie a sua língua do mal...”<br>" +
+"Pedro. (I PEDRO, 3:10.)<br>" +
+"Reflete no bem que esperas na palavra dos outros, para que a tua palavra não se " +
+"converta em agente do mal.<br>" +
+"Necessitando desse ou daquele concurso, agradeces ao companheiro que te endossa as " +
+"solicitações com apontamentos de simpatia.<br>" +
+"No instante do erro, quando muitos te malsinam a invigilância, assinalas, feliz, a frase de " +
+"entendimento do irmão que te justifica ou desculpa.<br>" +
+"De Espírito desarvorado, ante as provas que chegam em monte, na luta de cada dia, " +
+"consideras por recurso do Céu a indicação generosa daqueles que te induzem à " +
+"paciência.<br>" +
+"De coração obrigado a atitudes constrangedoras, observas que a ansiedade se te alivia, " +
+"perante a referência confortadora dos que te ofertam apoio e compreensão.<br>" +
+"Entre dificuldades amargas, diante da queixa ou da desesperação que te escampam da " +
+"boca, bendizes o amparo de quantos te acalmam, usando notas de tolerância.<br>" +
+"Sempre que estiveres a ponto de complicar os problemas ou azedar o ânimo de alguém, " +
+"através da palavra, lembra o auxílio verbal de que precisas, por intermédio dos " +
+"semelhantes.<br>" +
+"Se aspiramos a desfrutar os tesouros da vida e do tempo, apliquemos a regra áurea, na " +
+"esfera de nossa língua.<br>" +
+"Insuflemos nos ouvidos alheios a tranqüilidade que ambicionamos e falemos dos outros " +
+"aquilo que desejamos que os outros falem de nós.");
+novoCapitulo("Palavras de Vida Eterna 110 - NO CAMPO DO AFETO");
+novoVersiculo("Gálatas 6, 7");
+processar("“... Tudo o que o homem semear, isso também ceifará.”<br>" +
+"Paulo. (Gálatas, 6:7.)<br>" +
+"Quase sempre, anelamos trato diverso e melhor, por parte daqueles que nos rodeiam.<br>" +
+"Ansiamos pela afeição que nos compreenda os intentos mais íntimos; que se mantenha " +
+"invariável, sejam quais sejam as circunstâncias; que nos escute sem reclamar, nos " +
+"momentos mais duros; que nos releve todas as faltas; que não nos exija tributações de " +
+"carinho; que não nos peça impostos de gratidão; que nos encoraje e sustente nos dias " +
+"tristes e nos partilhe o contentamento nas horas de céu azul ...<br>" +
+"Suspiramos pelo entendimento integral e pela amizade perfeita; entretanto, se rogamos " +
+"afetos marcados por semelhantes valores, é indispensável comecemos a ser para os " +
+"outros esse amigo ideal.<br>" +
+"Se desejamos recolher amor e paciência, nas manifestações do próximo, saibamos " +
+"distribuí-los com todos aqueles que nos partilham a marcha.<br>" +
+"Bondade forma bondade.<br>" +
+"Abnegação gera abnegação.<br>" +
+"A palavra do apóstolo Paulo é clara e franca nesse sentido: “tudo o que o homem semear, " +
+"isso também ceifará”.");
+novoCapitulo("Palavras de Vida Eterna 111 - PERANTE OS INIMIGOS");
+novoVersiculo("Mateus 5, 25");
+processar("“Reconcilia-te sem demora com o teu adversário...” – Jesus.<br>" +
+"(MATEUS, 5:25.)<br>" +
+"Diante dos inimigos, preservemos a própria serenidade.<br>" +
+"Reconciliar-se alguém com os adversários, nos preceitos do Cristo, é reconhecer-lhes, " +
+"acima de tudo, o direito de opinião.<br>" +
+"Exigir a estima ou o entendimento dos outros e preocuparmo-nos em demasia com os " +
+"apontamentos depreciativos que se façam em torno de nós, será perder tempo valioso, " +
+"quando nos constitui sadio dever garantir a nós próprios tranquilidade de consciência.<br>" +
+"Harmonizar-nos com todos aqueles que nos perseguem ou caluniam será, pois, anotarlhes " +
+"as qualidades nobres e desejar sinceramente que triunfem nas tarefas em cuja " +
+"execução nos reprovam, aprendendo a aproveitar-lhes as advertências e as críticas " +
+"naquilo que mostrem de útil e " +
+"construtivo, prosseguindo ativamente no caminho e no trabalho em que a vida nos situou.<br>" +
+"Renunciemos, assim, à presunção de viver sem adversários que, em verdade, funcionam " +
+"sempre por fiscais e examinadores de nossos ato, mas saibamos continuar em serviço, " +
+"aproveitando-lhes o concurso sob a paz em nós mesmos.<br>" +
+"Nem o próprio Cristo escapou de semelhantes percalços.<br>" +
+"Ninguém conseguiu furtar a paz do Mestre, em momento algum; entretanto, ele, que nos " +
+"exortou a amar os inimigos, nasceu, cresceu, lutou, serviu e partiu da Terra, com eles e " +
+"junto deles.");
+novoCapitulo("Palavras de Vida Eterna 112 - DIANTE DA JUSTIÇA");
+novoVersiculo("Mateus 5, 20");
+processar("“...Se a vossa justiça não exceder a dos escribas e fariseus, " +
+"de modo nenhum entrareis no reino dos céus.”<br>" +
+"– Jesus. (MATEUS, 5:20.)<br>" +
+"Escribas e fariseus assumiam atitudes na pauta da Lei Antiga.<br>" +
+"Olho por olho, dente por dente.<br>" +
+"Atacados, devolviam insulto.<br>" +
+"Perseguidos, revidavam, cruéis.<br>" +
+"Com Jesus, porém, a justiça fez-se a virtude de conferir a cada qual o que lhe compete, " +
+"segundo a melhor consciência.<br>" +
+"Ele mesmo começou por aplicá-la a si próprio.<br>" +
+"Enredado nas trevas pela imprudência de Judas, não endossa condenação ou desforço.<br>" +
+"Abençoa-o e segue adiante, na certeza de que o amigo inconstante já carregava, consigo " +
+"mesmo, infortúnio suficiente para chorar.<br>" +
+"Ainda assim, porque o Mestre nos haja ensinado o amor sem lindes, isso não significa " +
+"que os discípulas do Evangelho devam caminhar sem justiça, na esfera das próprias " +
+"lutas.<br>" +
+"Apenas é forçoso considerar que, no padrão de Jesus, a justiça não agrava os problemas " +
+"do devedor, reconhecendo-lhe, ao invés disso, as necessidades que o recomendam à " +
+"compaixão, sem furtar-lhe as possibilidades de reajuste.<br>" +
+"Se ofensas, pois, caírem-te na alma, compadece-te do agressor e prossegue à frente, " +
+"dando ao mundo e à vida o melhor que possas.<br>" +
+"Aos que tombam na estrada, basta o ferimento da queda; e aos que fazem o mal, chega o " +
+"fogo do remorso a comburir-lhes o coração.");
+novoCapitulo("Palavras de Vida Eterna 113 - AGRADEÇAMOS SEMPRE");
+novoVersiculo("Efésios 5, 20");
+processar("\"Dando sempre graças a Deus por tudo, em nome de " +
+"Nosso Senhor Jesus Cristo...\" PAULO (Efésios 5:20)<br>" +
+"Muita gente pergunta como se pode render graças a Deus pelas dores que sacodem a " +
+"vida; entretanto, basta leve reflexão para que venhamos a reconhecer a função " +
+"renovadora do sofrimento.<br>" +
+"Atravessaste longo período de enfermidade, da qual te refazes, dificilmente, e se ouvires " +
+"a própria consciência, perceberás que a moléstia física foi socorro valioso para que te não " +
+"arrojasses a tremendas lutas de espírito.<br>" +
+"Foste surrupiado na vantagem financeira que te colocava em destaque no trabalho que te " +
+"assegura a subsistência, e se meditas severamente no assunto, observarás que a " +
+"suposta humilhação te livrou de compromissos perigosos e arrasadores.<br>" +
+"Perdeste recursos materiais que apenas te acrescentariam o reconforto desnecessário, " +
+"no carro da própria existência, e se te deres ao exame desapaixonado da própria " +
+"situação, verificarás que alijaste o peso dourado de enfeites suntuosos que te fariam, " +
+"provavelmente, a vítima de criminosos assaltos.<br>" +
+"Amargaste a deserção do amigo em cujo afeto depositavas a maior esperança, e se " +
+"estudares a ocorrência, com plena isenção de ânimo, concluirás que o tempo te libertou " +
+"de um laço impróprio, que se transfiguraria, talvez, de futuro, em pesado grilhão.<br>" +
+"Não te confies às aparências.<br>" +
+"Louva o céu azul que te imprime euforia ao pensamento, mas agradece, também, a " +
+"nuvem que te garante a chuva, mensageira do pão.<br>" +
+"Mesmo que não entendas, de pronto, os desígnios da Providência Divina, recebe a " +
+"provação como sendo o melhor que merecemos hoje, em favor do amanhã, e, ainda que " +
+"lágrimas dolorosas te lavem a alma toda, rende graças a Deus.");
+novoCapitulo("Palavras de Vida Eterna 114 – FRATERNALMENTE AMIGOS");
+novoVersiculo("1_Pedro 3, 8");
+processar("“Finalmente sede todos de igual sentimento, compassivos, " +
+"amando os irmãos, entranhavelmente misericordiosos e afáveis.”<br>" +
+"– Pedro. (I PEDRO, 3:8.)<br>" +
+"Que a experiência te conferiu degrau diverso na interpretação da vida, pode não haver " +
+"qualquer dúvida.<br>" +
+"Amadureceste o raciocínio e percebes determinados aspectos da realidade que os " +
+"circunstantes ainda não conseguem assinalar.<br>" +
+"Estudaste, conquistando títulos de que, por enquanto muita gente não dispõe.<br>" +
+"Ouviste a ciência e alcançaste visões renovadoras, presentemente defesas a quantos não " +
+"senhorearam oportunidades iguais às tuas.<br>" +
+"Viajaste anotando problemas que muitos dos melhores amigos estão distantes de " +
+"conhecer.<br>" +
+"Sofreste, aprendendo lições, por agora inapreensíveis pelos companheiros acomodados a " +
+"inocentes enganos da retaguarda.<br>" +
+"Trabalhaste e adquiriste habilitações que os próprios familiares gastarão muito tempo " +
+"para atingir.<br>" +
+"Decerto que a tua posição é inconfundível, tanto quanto o lugar do próximo é " +
+"caracteristicamente individual; entretanto, seja qual seja a condição em que te encontres, " +
+"podes estender os braços, unindo-te aos semelhantes, através da compreensão e do " +
+"auxílio mútuo.<br>" +
+"O apóstolo não nos diz: “sede todos da mesma altura”, mas sim: “sede todos " +
+"fraternalmente unidos”. Não nos exige, pois, o Evangelho venhamos a ser censores ou " +
+"escravos uns dos outros, e, sim, nos exorta a que sejamos irmãos.");
+novoCapitulo("Palavras de Vida Eterna 115 - COM FIRMEZA");
+novoVersiculo("1_Coríntios 15, 58");
+processar("Portanto, meus amados irmãos, sede firmes, inabaláveis " +
+"e sempre abundantes na obra do Senhor, sabendo que " +
+"no Senhor, o vosso trabalho não é em vão.\"<br>" +
+"– (Paulo) I CORINTIOS, 15:58.<br>" +
+"Nos dias de aflição e desencanto, o trabalho no bem é semelhante à marcha do viajor, " +
+"sob tempestade alternada em fogo e gelo.<br>" +
+"Conheces, possivelmente, dias assim...<br>" +
+"Desilusões alcançaram-te a alma, à feição de granizo arrasador.<br>" +
+"Calúnias espancaram-te o sentimento, como brasas chamejantes.<br>" +
+"Perseguições gratuitas apareceram, quais correntes de enxurro grosso, dificultando-te " +
+"os movimentos.<br>" +
+"Crises morais repontaram da estrada, à guisa de labaredas, incendiando-te o refúgio.<br>" +
+"É como se todas as circunstâncias te induzissem ao entorpecimento e ao desânimo.<br>" +
+"Às vezes, quase só, perguntas pelas esperanças, pelas promessas, pelos sonhos, " +
+"pelos amigos...<br>" +
+"Ainda assim, persevera no serviço e segue adiante.<br>" +
+"Os companheiros que exterminaram intentos nobres e votos edificantes, tanto quanto " +
+"os que desprezaram projetos superiores e abandonaram as boas obras, voltarão, mais " +
+"tarde, ao labor reconstrutivo, retomando o serviço que a vida lhes assinala, no ponto justo " +
+"em que praticaram a deserção.<br>" +
+"Ninguém se eleva sem atender às imposições da subida. À face disso, todo esforço no " +
+"bem, por mínimo que seja, redundará, invariavelmente, a favor de quem o realiza, porque " +
+"toda ação, pela felicidade geral, é concurso na Obra Divina.<br>" +
+"Desse modo, mesmo que todos os acontecimentos exteriores conspirem contra nós, " +
+"permaneçamos fiéis ao trabalho do Senhor, estendendo o bem a todos os que nos " +
+"cercam, na certeza de que o trabalho, em nome do Senhor, não é em vão.");
+novoCapitulo("Palavras de Vida Eterna 116 - NA EXECUÇÃO DO MELHOR");
+novoVersiculo("Hebreus 10, 24");
+processar("\"Consideremo-nos uns aos outros para nos estimularmos " +
+"à caridade e às boas obras.\" Paulo - HEBREUS, 10:24.<br>" +
+"Desertaram companheiros dos quais contávamos receber apoio e incentivo para a " +
+"realização do serviço que nos compete.<br>" +
+"Determinados amigos tomaram destaque nos interesses do mundo e empreendem " +
+"grandes negócios materiais.<br>" +
+"Outros granjearam influência política e como que se afastam da senda que palmilhamos.<br>" +
+"Outros ainda adquiriram prolongados compromissos de natureza familiar e jazem " +
+"aparentemente agrilhoados às paredes domésticas.<br>" +
+"Surgem os que receberam encargos públicos e distanciaram-se transitoriamente de nós.<br>" +
+"Vemos os que conquistaram títulos profissionais, depois de aturados estudos, figurandose- " +
+"nos arremessados a vínculos outros, compelidos a centralizar atenções e energias, em " +
+"assuntos que nos escapam.<br>" +
+"Assinalamos os que sofreram pequeninos desenganos, bandeando-se para novas esferas " +
+"de atividade.<br>" +
+"Aparecem os que se dizem necessitados de mais dinheiro e despedem-se no rumo de " +
+"aquisições que não mais se coadunam com o nosso modo de pensar e de ser.<br>" +
+"Abraçamos, sensibilizados, os que se afirmam tangidos por imposições particulares, " +
+"largando-nos o convívio por se transferirem de residência.<br>" +
+"Em muitas ocasiões, somos naturalmente induzidos a lastimar essa ou aquela " +
+"modificação, premidos pela nossa fraqueza humana, entretanto, para todos os casos de " +
+"semelhante expressão, a palavra do apóstolo Paulo é uma advertência ao otimismo e à " +
+"serenidade.<br>" +
+"Seja qual for a posição a que nossos companheiros sejam chamados, consideremo-nos " +
+"uns aos outros por irmãos necessitados de apoio recíproco e saibamos estimulá-los à " +
+"caridade e às boas obras, sustentando-lhes o ânimo no trabalho e auxiliando, quanto nos " +
+"seja possível, a cada um deles na execução do melhor.");
+novoCapitulo("Palavras de Vida Eterna 117 - ESPERA POR DEUS");
+novoVersiculo("João 14, 10");
+processar("\"Mas o Pai que está em mim é quem faz as obras.\" - Jesus " +
+"Saibamos buscar o Pensamento Divino, atuante em todas as formas da vida, trabalhando " +
+"na construção do bem, mesmo que os quadros da luta humana se nos mostrem tisnados " +
+"pela sombra do mal.<br>" +
+"Observa a planta frágil, muita vez desfigurada pelo bote de insetos daninhos, ao surgir da " +
+"semente. Parece uma excrescência no barro de que se envolve; entretanto, encerra " +
+"consigo as potencialidades que a transformarão em árvore vigorosa.<br>" +
+"Fita a criança recém-nata, em muitas circunstâncias tocada por enfermidade inquietante.<br>" +
+"Vagindo nos braços maternos, mais se assemelha a pobre farrapo humano, guardado " +
+"pela morte; todavia, traz na própria formação orgânica, aparentemente comprometida, a " +
+"força que a transfigurará, talvez, num condutor de milhões de pessoas.<br>" +
+"Não julgues o sofrimento por mal.<br>" +
+"A tempestade carreia a higiene da atmosfera.<br>" +
+"A doença do corpo é renovação do espírito.<br>" +
+"Em todos os sucessos desagradáveis e em todas as condições adversas da existência, " +
+"acalma-te e aguarda a intervenção da Infinita Bondade.<br>" +
+"Disse Jesus: \"Mas o Pai que está em mim é quem faz as obras\".<br>" +
+"O criador está igualmente na Criação.<br>" +
+"Diante do nevoeiro não condenes as trevas.<br>" +
+"Acende a luz do serviço e espera por Deus.");
+novoCapitulo("Palavras de Vida Eterna 118 - ANTE A PALAVRA DO CRISTO");
+novoVersiculo("João 6, 63");
+processar("\"...As palavras que eu vos disse, são espírito e vida.\"<br>" +
+"Jesus (João, 6:63).<br>" +
+"Em todos os tempos surgem no mundo grandes Espíritos que manejam a palavra, " +
+"impressionando multidões; entretanto, falam em âmbito circunscrito, ainda quando se " +
+"façam ouvidos em vários continentes.<br>" +
+"Dante define uma época.<br>" +
+"Camões exalta uma raça.<br>" +
+"Shakespeare configura as experiências de um povo.<br>" +
+"Voltaire exprime determinada transformação social " +
+"A palavra de Jesus, no entanto, transcende lavores artísticos, jóias literárias, plataformas " +
+"políticas, postulados filosóficos, fórmulas estanques. Dirige-se a todas as criaturas da " +
+"Terra, com absoluta oportunidade, estejam elas nesse ou naquele campo de evolução.<br>" +
+"É por isso que a Doutrina Espírita a reflete, não por mera reforma dos conceitos " +
+"superficiais do movimento religioso, à maneira de quem desmontasse antigo prédio para " +
+"dar disposição diferente aos materiais que o integram, em novo edifício destinado a " +
+"simples efeitos exteriores.<br>" +
+"Os ensinamentos do Mestre, nos princípios espíritas-cristãos, constituem sistema " +
+"renovador, indicação de caminho, roteiro de ação, diretriz no aperfeiçoamento de cada " +
+"ser.<br>" +
+"Quando os manuseies, não te julgues, assim apenas como quem se vê à frente de um " +
+"espetáculo de beleza, junto do qual devas tão somente chorar, seja nutrindo a fonte da " +
+"própria emotividade ou penitenciando-te, quanto aos próprios erros.<br>" +
+"Além das lágrimas, aprendamos igualmente a pensar, a purificar-nos, a reerguer-nos e " +
+"servir.<br>" +
+"A necessidade da alma é semelhante à sede ou à fome, ao desajuste moral ou à " +
+"moléstia, que são iguais em qualquer clima.<br>" +
+"A lição do Cristo é também comparável à fonte e ao pão, ao fator equilibrante e ao " +
+"medicamento, que são fundamentalmente os mesmos, em toda parte.<br>" +
+"No trato, pois, de nós ou dos outros, é forçoso não olvidar que o próprio Senhor nos " +
+"avisou de que as suas palavras são espírito e vida.");
+novoCapitulo("Palavras de Vida Eterna 119 - NOS PROBLEMAS DA POSSE");
+novoVersiculo("Timóteo 6, 7");
+processar("“Porque nada trouxemos para este mundo e manifesto é que " +
+"nada podemos levar dele”. PAULO (Timóteo, 6:7.)<br>" +
+"Não encarceres o próprio Espírito ao apego aos patrimônios transitórios do plano material " +
+"que, muitas vezes, não passam de sombra coagulada em torno do coração.<br>" +
+"Observa o infortúnio de quantos se agrilhoaram à paixão da posse, nos territórios do " +
+"sentimento.<br>" +
+"Muitos não se contentaram com a própria ruína, convertendo os semelhantes em vítimas " +
+"dos desvarios a que se confiaram, insanos.<br>" +
+"Supunham-se donos das criaturas que amavam e, ante os primeiros sinais de " +
+"emancipação a que se mostraram dispostas, não vacilaram em abatê-las sob golpe " +
+"homicida.<br>" +
+"Julgavam-se proprietários absolutos de bens passageiros e transformaram as lágrimas " +
+"dos órfãos e das viúvas em cadeias de fome e vínculos da morte.<br>" +
+"Presumiam-se mandantes exclusivos da autoridade e fortaleceram o império da violência.<br>" +
+"Superestimavam os próprios recursos e, enceguecidos na megalomania do poder " +
+"transviado, agravaram, junto de si,os perigos da ignorância e os processos de crueldade.<br>" +
+"Todos eles, porém, dominados pelo orgulho, despertaram, desorientados e infelizes, nas " +
+"trevas que amontoaram em si mesmos, com imenso trabalho a fazer para a própria " +
+"libertação.<br>" +
+"Usa as possibilidades da vida, sem a presunção de te assenhoreares daquilo que Deus te " +
+"empresta.<br>" +
+"Nessa ou naquela vantagem efêmera, que te felicite o caminho entre os homens, recorda, " +
+"com o Apóstolo Paulo, que os Espíritos reencarnados não trazem consigo quaisquer " +
+"propriedades materiais para este mundo e manifesto é que nenhuma delas poderão levar " +
+"dele.");
+novoCapitulo("Palavras de Vida Eterna 120 - NOS DOMÍNIOS DO BEM");
+novoVersiculo("Filemon 1, 14");
+processar("\"Mas nada quis fazer sem o teu parecer, para que o teu benefício " +
+"não fosse compor obrigação, mas espontâneo\"<br>" +
+"- Paulo (Filemon, 1:14.)<br>" +
+"É das Leis evolutivas que todos os agentes inferiores da Natureza sirvam em regime " +
+"de compulsória.<br>" +
+"Pedras são arrancadas ao berço multimilenário para que obedeçam nas " +
+"construções.<br>" +
+"Tombam vegetais, a duros lances de força para se fazerem mais úteis.<br>" +
+"Animais sofrem imposições e pancadas, afim de se entregarem à prestação de " +
+"serviço.<br>" +
+"Alcançando, no entanto, a razão, por atestado de madureza própria, o espírito é " +
+"chamado ao livre arbítrio, por filho do criador que atingiu a maioridade na criação.<br>" +
+"Chegado a essa fase, ilumina-se pela chama interior do discernimento para a aquisição " +
+"das experiências que lhe cabem realizar, de modo a erguer seus méritos, podendo, em " +
+"verdade, escolher o caminho reto ou sinuoso, claro ou escuro, em que mais se apraza.<br>" +
+"Reflete, pois, na liberdade íntima e pessoal de que dispões para fazer o bem, " +
+"amplamente, ilimitadamente, constantemente ...<br>" +
+"Escrevendo a Filêmon, disse Paulo: \"mas nada quis fazer sem o teu parecer, para " +
+"que o teu benefício não fosse como por obrigação, mas espontâneo\".<br>" +
+"Assim, também, o Divino Mestre para conosco.<br>" +
+"Aqui e ali, propõe-nos, de maneira direta ou indireta, ensinamentos e atitudes, " +
+"edificações e serviços, mas espera sempre por nossa resposta voluntária, de vez que a " +
+"obra da verdadeira sublimação espiritual não comporta servos constrangidos.");
+novoCapitulo("Palavras de Vida Eterna 121 - CHAMAMENTO AO AMOR");
+novoVersiculo("2_Pedro 1, 6");
+processar("“... E à ciência temperança, e à temperança paciência e " +
+"à paciência piedade.” – Pedro. (II PEDRO, 1: 6.)<br>" +
+"Aprender sempre, instruir-nos, abrilhantar o pensamento, burilar a palavra,, analisar a " +
+"verdade e procurá-la são atitudes de que, efetivamente, não podemos prescindir, se " +
+"aspirarmos à obtenção do conhecimento elevado; entretanto, milhões de talentosos " +
+"obreiros da evolução terrestre, nos séculos que se foram, esposaram a cultura intelectual, " +
+"em sentido único, e fomentaram opressões que culminaram em pavorosas guerras de " +
+"extermínio.<br>" +
+"Incapazes de controlar apetites e paixões, desvairaram-se na corrida ao poder, " +
+"encharcando a terra com o sangue e o pranto de quantos lhes foram vítimas das " +
+"ambições desregradas.<br>" +
+"Toda grandeza de inteligência exige moderação e equilíbrio para não desbordar-se em " +
+"devassidão e loucura.<br>" +
+"Ainda assim, a temperança e a paciência, por si só, não chegam para enaltecer o lustre " +
+"do cérebro.<br>" +
+"A própria diplomacia, aliás sempre venerável, embora resida nos cimos da suavidade e da " +
+"tolerância, pelos gestos de sobriedade e cortesia com que se manifesta, em muitos casos " +
+"não é senão a arte de contemporizar com o rancor existente entre as nações, segurando, " +
+"calma, o estopim do ódio e da belicosidade para a respectiva explosão, na época que " +
+"julga oportuna a calamitosas conflagrações.<br>" +
+"O apontamento do Evangelho, no entanto, é claro e preciso.<br>" +
+"Não vale a ciência sem temperança e toda temperança pede paciência para ser " +
+"proveitosa, mas para que esse trio de forças se levante no campo da alma, descerrandolhe " +
+"o suspirado acesso aos mundos superiores, é necessário que o amor esteja presente, " +
+"a enobrecer-lhes o impulso, de vez que só o amor dispõe de luz bastante para clarear o " +
+"presente a santificar o porvir.");
+novoCapitulo("Palavras de Vida Eterna 122 - CONVITE AO ESTUDO");
+novoVersiculo("2_Pedro 1, 5");
+processar("\"E vós também, pondo nisto mesmo toda a diligência, " +
+"acrescentei à vossa fé a virtude e à virtude a ciência...\"<br>" +
+"– Pedro (II PEDRO, 1:5.)<br>" +
+"Milhões de criaturas possuíram a fé no passado, revelando extremada confiança em " +
+"Deus; mas, porque a bondade lhes desertasse dos corações, ergueram suplícios " +
+"inomináveis para quantos não lhes comungassem o modo de sentir e de ser.<br>" +
+"Diziam-se devotadas ao culto do Supremo Senhor; entretanto, alçavam fogueiras e postes " +
+"de martírio, perseguindo ou exterminando pessoas sensíveis e afetuosas em seu nome.<br>" +
+"Milhões de criaturas evidenciaram admirável bondade no pretérito, demonstrando " +
+"profunda compreensão fraternal no trabalho que foram chamadas a desenvolver entre os " +
+"homens; no entanto, porque a educação lhes escasseasse no espírito, caíram em " +
+"terríveis enganos, favorecendo a tirania e a escravidão sobre a Terra.<br>" +
+"Denotavam obediência a Deus, no exercício da própria generosidade, entretanto, " +
+"compraziam-se na ignorância, estimulando delitos e abusos, a pretexto de submissão à " +
+"Providência Divina.<br>" +
+"Nesse sentido, porém, a palavra do apóstolo Pedro é de notável oportunidade em todos " +
+"os tempos.<br>" +
+"Procuremos alicerçar a fé na bondade, para que a nossa fé não se converta em " +
+"fanatismo, mas isso ainda não basta.<br>" +
+"É forçoso coroar a fé e a bondade com a luz do conhecimento edificante.<br>" +
+"Todos necessitamos esperar no Infinito Amor, todavia, será justo aprender \"como\"; todos " +
+"devemos ser bons, contudo, é indispensável saber \"para quê\".<br>" +
+"Eis a razão pela qual se nos impõe o estudo em todos os lances da vida, porquanto, " +
+"confia realizando o melhor e auxiliar na extensão do eterno bem, realmente demanda " +
+"discernir.");
+novoCapitulo("Palavras de Vida Eterna 123 - NO PÃO ESPIRITUAL");
+novoVersiculo("João 21, 17");
+processar("“Disse-lhe terceira vez: Simão, filho de Jonas, amas-me?<br>" +
+"Simão entristeceu-se por lhe ter dito terceira vez: ‘amas-me?”<br>" +
+"e disse-lhe: “Senhor, tu sabes que eu te amo.” Jesus disse-lhe:<br>" +
+"“Apascenta as minhas ovelhas.” (JOAO, 21:17.)<br>" +
+"Assinalando a preocupação do Divino Pastor, em se dirigindo a Simão Pedro para " +
+"recomendar-lhe as ovelhas, é importante observar que o Mestre solicita qualquer " +
+"atividade maravilhosa.<br>" +
+"Não ordena que o apóstolo lhes converta os balidos em trechos de música.<br>" +
+"Não determina se lhes transforme o pelo em fios de ouro.<br>" +
+"Não aconselha se transfigure o redil em palácio.<br>" +
+"Não exige se lhes conceda regime de exceção.<br>" +
+"Não manda se lhes dê asas.<br>" +
+"Roga simplesmente para que o apóstolo lhes administre alimento, a fim de que " +
+"vivam e produzam para o bem geral, sem fugir aos preceitos do trabalho e sem abolir os " +
+"ditames da evolução.<br>" +
+"Certo, no entanto, o Excelso Condutor não sentia necessidade de advertir o " +
+"companheiro quanto ao cuidado justo de não se adicionarem agentes tóxicos aos " +
+"bebedouros e à forragem normal.<br>" +
+"Assim também, no domínio das criaturas humanas.<br>" +
+"Trabalhadores das idéias, chamados a nutrir o pensamento da multidão, em " +
+"verdade, o Cristo não espera mudeis os vossos leitores e ouvintes em modelos de " +
+"heroísmo e virtude. Conta com o vosso esforço correto para que a refeição do " +
+"conhecimento superior seja distribuída com todos aguardando, porém que a mesa de " +
+"vossas atitudes se mostre asseada e que o alimento de vossas palavras esteja limpo.");
+novoCapitulo("Palavras de Vida Eterna 124 - PERMANEÇAMOS FIEIS");
+novoVersiculo("1_Coríntios 4, 2");
+processar("“Alem disso, requer-se no dispenseiros que cada " +
+"um se ache fiel.” – Paulo. (I CORINTIOS, 4:2.)<br>" +
+"Num aparelho, a segurança da produção exige que cada peça funcione, o lugar próprio.<br>" +
+"Numa orquestra, para que a sinfonia alcance todo o vigor melódico, é forçoso se localize " +
+"cada instrumento na função que lhe cabe.<br>" +
+"Na obra do Evangelho, é imprescindível também que cada tarefeiro se compenetre " +
+"das atribuições de que foi investido.<br>" +
+"Dirás que o senhor liquidará todas as necessidades, que Ele não dorme sobre as " +
+"promessas, feitas, que a Sua Infinita Bondade solucionará todos os problemas, que a " +
+"nossa fé precisa sustentar-se incondicional, e estarás proclamando a verdade não " +
+"endossa a preguiça ou a imprudência dos servos.<br>" +
+"O comandante de um grande navio pode ser um gênio de sabedoria e bondade, " +
+"mas toda a direção se compromete de imediato, se o mais obscuro cooperador da " +
+"embarcação coloca uma bomba na casa de maquinas.<br>" +
+"Seja, qual seja a nossa posição, a serviço do Mestre, é imperioso refletir que, se " +
+"esperamos por Ele, é natural que Ele igualmente espere por nós.<br>" +
+"Não obstante os erros que ainda nos assinalem o coração, sejamos sinceros em " +
+"nós mesmos e estejamos decididos a cumprir o dever que posamos, diante de " +
+"consciência.<br>" +
+"Desistamos de alegar tropeços e culpas, inibições e defeitos para a fuga das " +
+"responsabilidades que nos competem.<br>" +
+"O próprio boi, mostrando os cascos empastados de lama, para servir no arado, junto " +
+"ao homem, deve ser um animal fiel.");
+novoCapitulo("Palavras de Vida Eterna 125 - NO CONVÍVIO DO CRISTO");
+novoVersiculo("2_Coríntios 5, 17");
+processar("“Assim que, se alguém está em Cristo, nova criatura é:<br>" +
+"as coisas velhas já Passaram; eis que tudo se fez novo”<br>" +
+"Paulo (II Coríntios, 5:17.)<br>" +
+"É comum ouvirmos a cada passo observações de companheiros desarvorados e " +
+"abatidos, a fixarem emoções e pensamentos em pessimismo e azedume, qual se " +
+"acalentassem espinheiros e charcos submersos neles mesmos.<br>" +
+"Respiram e caminham, transportando consigo enorme submundo de mágoas e " +
+"desilusões, deixando, onde pisem, escuro rastro de fel.<br>" +
+"Falam de experiências dolorosas da própria vida íntima, empregando mil frases tortuosas " +
+"e contundentes no apontamento que poderiam encaixar em algumas poucas palavras " +
+"claras e simples.<br>" +
+"Dramatizam desencantos.<br>" +
+"Reconstituem doenças passadas, com a volúpia de que lhes procura o indesejável " +
+"convívio.<br>" +
+"Queixam-se de ingratidões.<br>" +
+"Apontam preterições e prejuízos que sofreram em épocas precedentes.<br>" +
+"Historiam episódios tristes que a vida já relegou aos arquivos do tempo.<br>" +
+"E, com isso, envenenam a vida e enceguecem a própria alma, incapazes de perceber que " +
+"o evangelho é luz e renovação nos campos do espírito.<br>" +
+"Se antigas dores e problemas superados te voltam à imaginação,esquece-os e segue " +
+"adiante...<br>" +
+"Pensa no melhor que te espera e busca voluntariamente o trabalho a fazer.<br>" +
+"Consoante a assertiva do Apóstolo, se alguém permanece em Cristo, nova criatura é, " +
+"porque, efetivamente, quando a nossa vida está em Jesus, tudo em nós e diante de nós " +
+"se faz novo.");
+novoCapitulo("Palavras de Vida Eterna 126 - NA ROTA DO EVANGELHO");
+novoVersiculo("2_Coríntios 7, 2");
+processar("“Recebei-nos em vossos corações ...”<br>" +
+"Paulo (II Coríntios, 7:2.)<br>" +
+"É razoável a vigilância na recepção dos ensinamentos evangélicos.<br>" +
+"Tanto quanto possível, é imperioso manejar as ferramentas do maior esforço para " +
+"verificar-lhes a clareza, de modo a transmiti-las a outrem com a autenticidade precisa.<br>" +
+"Exatidão histórica. Citação escorreita. Lógica natural.<br>" +
+"Linguagem limpa. Comentários edificantes. Ilustrações elevadas.<br>" +
+"Atentos à respeitabilidade do assunto, não será justo perder de vista a informação segura, " +
+"a triagem gramatical, a imparcialidade do exame e a conceituação digna, a fim de que " +
+"impropriedades e sofismas não venham turvar a fonte viva e pura da verdade que se " +
+"derrama originariamente do cristo para esclarecimento da humanidade.<br>" +
+"Ainda assim, urge não esquecer que as instruções do divino mestre se nos dirigem acima " +
+"de tudo, aos sentimentos, diligenciando amparar-nos a renovação interior para que nos " +
+"ajustemos aos estatutos do bem eterno.<br>" +
+"Eis o motivo pelo qual, em todos os serviços da educação evangélica, é importante " +
+"reflitamos no apontamento feliz do apóstolo Paulo:- “recebei-nos em vossos corações ...”");
+novoCapitulo("Palavras de Vida Eterna 127 - CHAMAMENTO DIVINO");
+novoVersiculo("Lucas 14, 21");
+processar("\"... Disse ao servo: sai depressa pelas ruas e bairros da cidade e " +
+"traze aqui os pobres, os aleijados, mancos e cegos.”<br>" +
+"– Lucas, 14:21.<br>" +
+"Muita gente alega incapacidade de colaborar nos serviços do bem, sob a égide do " +
+"Cristo, relacionando impedimentos morais.<br>" +
+"Há quem se diga errado em excesso; há quem se afirme sob fardos de remorsos e " +
+"culpas; há quem se declare portador de graves defeitos, e quem assevere haver sofrido " +
+"lamentáveis acidentes da alma...<br>" +
+"Entretanto, a palavra de Jesus se dirige a todos, sem qualquer exceção.<br>" +
+"Pobres de virtude, aleijados do sentimento, coxos do raciocínio e cegos do " +
+"conhecimento superior são chamados à edificação da era nova. Isso porque, em Jesus, " +
+"tudo é novo para que a vida se renove.<br>" +
+"Espíritos viciados, inibidos, desorientados e ignorantes de ontem, ao toque do " +
+"Evangelho, fazem-se hoje cooperadores da Grande Causa, esquecendo ilusões, " +
+"desfazendo cárceres mentais, suprimindo desequilíbrios e dissipando velhas sombras.<br>" +
+"Se a realidade espiritual te busca, ofertando-te serviço no levantamento das boas " +
+"obras, não te detenhas, apresentando deformidades e frustrações. No clima da Boa Nova, " +
+"todos nós encontramos recursos de cura e reabilitação, reerguimento e consolo. Para " +
+"isso, basta sejamos sinceros, diante da nossa própria necessidade de corrigenda, com o " +
+"espírito espontaneamente consagrado ao privilégio de trabalhar e servir.");
+novoCapitulo("Palavras de Vida Eterna 128 - DESCULPISMO");
+novoVersiculo("LUCAS 14, 18");
+processar("“ E todos a uma vez começaram a escusar-se. Disse lhe o primeiro:<br>" +
+"comprei um campo e importa ir vê-lo;rogo-te que haja escusado.”<br>" +
+"Jesus – ( LUCAS, 14:18)<br>" +
+"Desculpismo sempre foi a porta de escape dos que abandonam as próprias " +
+"obrigações.<br>" +
+"Irmãos nossos que tiveram a infelicidade de escorregar na delinqüência costumam " +
+"justificar-se com vigoroso poder de persuasão, mas isso não lhes exonera a consciência " +
+"do resgate preciso.<br>" +
+"Companheiros que arruínam o corpo em hábitos viciosos arquitetam largo sistema " +
+"de escusas, tentando legitimar as atitudes infelizes que adotam, comovendo a quem os " +
+"ouve, entretanto, acabam suportando em si mesmos as conseqüências das " +
+"responsabilidades a que se afeiçoam.<br>" +
+"E, ainda agora, quando a Doutrina Espírita revive o Evangelho, concitando os " +
+"homens à construção do bem na Terra, surgem às pencas desculpas disfarçando " +
+"deserções:<br>" +
+"- Estou muito jovem ainda...<br>" +
+"- Sou velho demais...<br>" +
+"- Assumi compromissos de monta e não posso atender...<br>" +
+"- Minhas atribulações são enormes...<br>" +
+"- Obrigações de família estão crescendo...<br>" +
+"- Os negócios não me permitem qualquer atividade espiritual...<br>" +
+"- Empenhei-me a débitos que me afligem...<br>" +
+"- Os filhos tomam tempo...<br>" +
+"- Problemas são muitos...<br>" +
+"Tantas são as evasivas e tão veementes aparecem que os ouvintes mais argutos " +
+"terminam convencidos de que se encontram à frente de grande sofredores ou de criaturas " +
+"francamente incapazes, passando até mesmo a sustentá-los na fuga.<br>" +
+"Os convidados para a lavoura de luz, no entanto, engodados por si próprios, " +
+"acordam para a verdade no momento oportuno e, atados às ruinosas conseqüências da " +
+"própria leviandade, não encontram outra providência restauradora senão a de esperarem " +
+"por outras reencarnações.");
+novoCapitulo("Palavras de Vida Eterna 129 - NA FONTE DO BEM");
+novoVersiculo("Gálatas 6, 19");
+processar("“Então, enquanto temos tempo, façamos bem a todos...”<br>" +
+"PAULO (GÁLATAS, 6:19.)<br>" +
+"Muita gente só admite auxílio eficiente, quando o dinheiro aparece.<br>" +
+"Entretanto, há serviços que o ouro não consegue remunerar.<br>" +
+"Há vencimentos justos para os encargos do professor; todavia, ninguém pode estabelecer " +
+"pagamento aos sacrifícios com que ele abraça os misteres da escola.<br>" +
+"Existem honorários para as atividades do médico; no entanto,pessoa alguma logrará " +
+"recompensar em valores amoedados o devotamento a que se entrega o missionário da " +
+"cura, no socorro aos enfermos.<br>" +
+"Não se compra estímulo ao trabalho. Não se vende esperança nos armazéns.<br>" +
+"O sorriso fraternal não é matéria de negócio. Gentileza não é artigo de mercado.<br>" +
+"Onde a vida te situe, aí recolherás, todo dia, múltiplas ocasiões de fazer o bem.<br>" +
+"Nem sempre movimentarás bolsa farta para mitigar a penúria alheia, mas sempre " +
+"disporás da frase confortadora, da oração providencial, da referência generosa, do gesto " +
+"amigo.<br>" +
+"O Apóstolo Paulo reconhece que, às vezes, atravessamos grandes ou pequenos períodos " +
+"de inibições e provações, pelo que nos recomenda: “enquanto temos tempo, façamos o " +
+"bem a todos”; contudo, mesmo nas circunstâncias difíceis, urge endereçar aos outros o " +
+"melhor ao nosso alcance, porque segundo as leis da vida, aquilo que o homem semeia, " +
+"isso mesmo colherá.");
+novoCapitulo("Palavras de Vida Eterna 130 - NA LUZ DA VERDADE");
+novoVersiculo("João 8, 32");
+processar("\"E conhecereis a verdade e a verdade vos libertará.\"<br>" +
+"(JOÃO, 8:32.)<br>" +
+"Nenhuma espécie de amor humano pode comparar-se ao Divino Amor.<br>" +
+"Semelhante apontamento deve ser mencionado, toda vez que nos inclinemos a violentar " +
+"o pensamento alheio.<br>" +
+"A Bondade Suprema, que é sempre a bondade invariável, deixa livres as criaturas para a " +
+"aquisição do conhecimento.<br>" +
+"A vontade do Espírito é acatada pela Providência, em todas as manifestações, incluindo " +
+"aquelas em que o homem se extravia na criminalidade, esposando obscuros " +
+"compromissos.<br>" +
+"A pessoa converte, pois, a vida naquilo que deseje, sob a égide da Justiça Perfeita que " +
+"reina em todos os distritos do Universo, determinando seja concedido a cada um por suas " +
+"obras.<br>" +
+"Elegemos os tipos de experiência em que nos propomos estagiar, nessa ou naquela fase " +
+"da evolução. Discórdia e tranqüilidade, ação e preguiça, erro e corrigenda, débito e " +
+"resgate são frutos de nossa escolha.<br>" +
+"Respeitemo-nos, assim, uns aos outros.<br>" +
+"Não intentes constranger o próximo a ler a cartilha da realidade por teus olhos, nem a " +
+"interpretar os ensinamentos do cotidiano com a cabeça que te pertence.<br>" +
+"A emancipação intima surgirá para a consciência, à medida que a consciência se " +
+"disponha a buscá-la.<br>" +
+"Rememoremos as palavras do Cristo: \"conhecereis a verdade e a verdade vos libertará\".<br>" +
+"Note-se que o Mestre não designou lugar, não traçou condições, não estatuiu roteiros, " +
+"nem especificou tempo. Prometeu simplesmente — \"conhecereis a verdade\", e, para o " +
+"acesso à verdade, cada um tem o seu dia.");
+novoCapitulo("Palavras de Vida Eterna 131 - DIANTE DO CONFORMISMO");
+novoVersiculo("Romanos 12, 2.");
+processar("“E não vos conformeis com este mundo, mas transformai-vos pela renovação " +
+"do vosso entendimento, para que experimenteis qual seja a boa, " +
+"agradável e perfeita vontade de Deus”.<br>" +
+"PAULO (Romanos, 12:2.).<br>" +
+"Há conformação e conformismo.<br>" +
+"Conformismo é o sistema de ajustar-se alguém a todas as circunstâncias.<br>" +
+"Conformação é a submissão voluntária e serena da pessoa às aperturas da vida.<br>" +
+"Existem, por isso, diante de Jesus, os discípulos conformados e conformistas.<br>" +
+"Os conformados são fiéis às disciplinas que o Mestre lhes aconselha.<br>" +
+"Os conformistas, porém, adaptam-se, mecanicamente, às convenções e ilusões que " +
+"lubrificam os mecanismos das conveniências humanas.<br>" +
+"Confessam respeito ao Cristo, mas não hesitam no desacato aos ensinamentos Dele, " +
+"quando se trate de preservar o conforto material excessivo em que se amolecem.<br>" +
+"Dizem que Jesus é a única estrada para a regeneração do mundo; no entanto, esposam " +
+"qualquer expediente da maioria em que a astúcia ou a clandestinidade lhes favoreçam o " +
+"interesse individual.<br>" +
+"Adotam exterior irrepreensível nos templos, e diretrizes inconfessáveis no intercâmbio " +
+"com o próximo.<br>" +
+"Distinguem-se na rua pela cortesia e pelas frases ponderosas, e andam, em casa, " +
+"destemperados e agressivos, à maneira de furacões pensantes.<br>" +
+"Entendamos, desse modo, o sábio apontamento do apóstolo Paulo, aprendendo a " +
+"suportar com paciência os enganos do mundo, sem nos acomodarmos com eles, certos " +
+"de que é preciso manter indefectível lealdade à aplicação dos preceitos evangélicos a fim " +
+"de que se nos renove o entendimento.<br>" +
+"Apenas abraçando semelhante orientação básica, ser-nos-á possível desintegrar as " +
+"escamas do egoísmo cronificado em que respiramos, há séculos, para compreender os " +
+"desígnios de Deus, na construção de nossa felicidade.");
+novoCapitulo("Palavras de Vida Eterna 132 - DIANTE DA PROVIDÊNCIA");
+novoVersiculo("2_Timóteo 2, 15");
+processar("“Procura apresentar-te a Deus, aprovado como obreiro " +
+"que não tem de que se envergonhar...”<br>" +
+"– Paulo. (II TIMÓTEO, 2:15.)<br>" +
+"Digna de registro a observação do apóstolo Paulo a Timóteo, sobre a melhor maneira de " +
+"mostrar-se a Deus.<br>" +
+"Contrariamente à inquietação de muitos religiosos do mundo que aspiram ao supremo " +
+"destaque espiritual, o amigo da gentilidade, cuja fé amadurecera em ásperos " +
+"testemunhos de sofrimento, não recomenda ao discípulo qualquer aquisição de atributos " +
+"especiais.<br>" +
+"Não lhe pede entretecer láureas de herói para a cabeça e nem lhe aconselha demandar o " +
+"excelso encontro, alardeando certidões de santidade.<br>" +
+"Não articula regras, a fim de que se sobreponha à presença dos outros e nem lhe traça " +
+"penitências ou rituais, tendentes a bajular a Paternidade Divina.<br>" +
+"Roga-lhe simplesmente viver de tal modo que possa comparecer, diante de Deus, na " +
+"posição do trabalhador de reta consciência, honrado nas obrigações bem cumpridas.<br>" +
+"Se queres, por tua vez, atingir a Esfera Superior, para compartilhar as alegrias dos que se " +
+"identificaram com o, Infinito Amor, não te percas em fantasiosa expectativa de imunidade " +
+"perante a Lei.<br>" +
+"Atende, cada dia, aos deveres que a vida te prescreveu, leal ao serviço e à paciência, e " +
+"estejamos convencidos de que a mais alga forma de apresentar-nos à Providência será " +
+"sempre a do obreiro honesto, aprovado na tarefa de que foi incumbido e que nada tenha " +
+"de que se envergonhar.");
+novoCapitulo("Palavras de Vida Eterna 133 - EM TORNO DA LIBERDADE");
+novoVersiculo("Gálatas 5, 13");
+processar("“Porque vós, irmãos, fostes chamados à liberdade.<br>" +
+"Mas não useis da liberdade para dar ocasião à carne; antes, pelo amor, " +
+"servi-vos uns aos outros”. – PAULO. (Gálatas, 5:13.)<br>" +
+"Quanto mais se agiganta a evolução intelectual da Terra, mais se propalam reclamos em " +
+"torno da Liberdade.<br>" +
+"Há povos que se batem por Liberdade mais ampla.<br>" +
+"Aparecem os chamados campeões da liberdade, levantando quartéis de opressão e " +
+"esfogueadas legendas de rebeldia.<br>" +
+"Fala-se em mais Liberdade para a juventude.<br>" +
+"No entanto, basta uma vista de olhos, nas máquinas aperfeiçoadas do mundo moderno, " +
+"para que se reconheça o impositivo inevitável da disciplina.<br>" +
+"O automóvel chispa, vencendo barreiras, mas, se o motorista foge do equilíbrio ao volante " +
+"ou se desobedece aos sinais do trânsito, o acidente sobrevém.<br>" +
+"O avião devora distâncias, transportando o homem, através de todos os continentes, no " +
+"espaço de poucas horas; todavia, se o piloto não atende aos planos traçados na direção, " +
+"o desastre não se faz retardio.<br>" +
+"Louvemos a liberdade, sim, mas a liberdade de construir, melhorar, auxiliar, elevar...<br>" +
+"Ninguém, na Terra, foi mais livre que o Divino Mestre. Livre até mesmo da posse, da " +
+"tradição, da parentela, da autoridade. Entretanto, ninguém mais do que ele se fez escravo " +
+"dos Desígnios Superiores, para beneficiar e iluminar a comunidade.<br>" +
+"Eis porque nos adverte o apóstolo Paulo, sensatamente: “fostes chamados à liberdade, " +
+"mas não useis a liberdade, favorecendo a devassidão; ao invés disso, santifiquemos a " +
+"liberdade, através do amor, procurando servir.”");
+novoCapitulo("Palavras de Vida Eterna 134 - PÃO");
+novoVersiculo("João 6, 48");
+processar("“Eu sou o pão da vida.” – Jesus.<br>" +
+"(JOÃO, 6:48.)<br>" +
+"Importante considerar a afirmativa de Jesus, comparando-se ao pão.<br>" +
+"Todos os povos, em todos os tempos, se ufanam dos pratos nacionais.<br>" +
+"As mesas festivas, em todas as épocas, banqueteiam-se com viandas exóticas.<br>" +
+"Condimentação excitante, misturas complicadas, confeitos extravagantes, grande cópia " +
+"de animais sacrificados.<br>" +
+"Às vezes, depois das iguarias tóxicas, as libações de entontecer.<br>" +
+"O pão, no entanto, é o alimento popular. Ainda mesmo quando varie nos ingredientes que " +
+"o compõem e nos métodos de confecção em que se configura, é constituído de farinha " +
+"amassada e vulgarmente fermentada e que, depois de submetida ao calor do forno, se " +
+"transforma em fator do sustento mundial. Sempre o mesmo, na avenida ou na favela, na " +
+"escola ou no hospital. Se lhe adicionam outra espécie de quitute, entre duas fatias, deixa " +
+"de ser pão. I sanduíche. Se lançado à formação de acepipe que o absorva, naturalmente " +
+"desaparece.<br>" +
+"O pão é invariavelmente pão.<br>" +
+"Quando alguém te envolva no confete da lisonja, insuflando-te vaidade, não te dês à " +
+"superestimação dos próprios valores. Não te acredites em condições excepcionais e nem " +
+"te situes acima dos outros.<br>" +
+"Abraça nos deveres diários o caminho da ascensão, recordando que Jesus – o Enviado " +
+"Divino e Governador Espiritual da Terra – não achou para si mesmo outra imagem mais " +
+"nobre e mais alta que a do pão puro e simples.");
+novoCapitulo("Palavras de Vida Eterna 135 - DIANTE DO MESTRE");
+novoVersiculo("João 15, 14");
+processar("“Vós sereis meus amigos se fizerdes o que vos mando.\"<br>" +
+"- Jesus - " +
+"Aspirando ao titulo de amigos do Senhor, urge não lhe perdermos as instruções.<br>" +
+"Imbuídos e entusiasmo, somos pródigos em manifestações exteriores, quanto a esse " +
+"propósito, acrescendo notar que quase todas elas se caracterizam por alto valor indutivo.<br>" +
+"Esforçamo-nos por estudar-lhe palavras e atitudes: e, claramente, não dispomos de " +
+"quaisquer recursos outros para penetrar-lhes o luminoso sentido.<br>" +
+"Administramos conselhos preciosos, em nome dele, sem que nos seja permitido manejar " +
+"veiculo mais adequado às circunstâncias, a fim de que irmãos nossos consigam encontrar " +
+"a direção ou o caminho de que se mostram carecedores.<br>" +
+"Escrevemos páginas que lhe expressam as diretrizes; e não nos cabe agir de outro modo " +
+"para que se nos amplie, na Terra, a cultura de espírito.<br>" +
+"Levantamos tribunais, em que lhe retratamos o ensino pelo verbo bem-posto, sendo " +
+"necessário que assim procedamos, difundindo esclarecimentos edificantes que nos " +
+"favoreçam a educação dos sentimentos.<br>" +
+"Realizamos pesquisas laboriosas, ajustando as elucidações inspiradas por ele aos " +
+"preceitos gramaticais em voga, competindo-nos reconhecer que não existe outra via " +
+"senão essa para fazer-lhe a orientação respeitada nas assembléias humanas.<br>" +
+"Entretanto, isso não basta.<br>" +
+"Ele mesmo não se limitou a induzir. demonstrando a própria união com o Eterno Bem, " +
+"consagrou-se a substancializá-lo na construção do bem de todos.<br>" +
+"Em verdade, podemos reverenciar o Cristo, aqui e ali, dessa ou daquela forma, " +
+"resultando, invariavelmente, alguma vantagem de semelhante norma externa; mas, para " +
+"sabermos como usufruir-lhe a sublime intimidade, é forçoso lhe ouçamos a afirmação " +
+"categórica: \"Vós sereis meus amigos se fizerdes o que vos mando\".");
+novoCapitulo("Palavras de Vida Eterna 136 - NA VITÓRIA REAL");
+novoVersiculo("João 16, 33");
+processar("“Tende bom ânimo; eu venci o mundo.”<br>" +
+"- Jesus (JOÃO 16:33)<br>" +
+"É importante enumerar algumas das circunstâncias difíceis em que se encontrava " +
+"Jesus, quando asseverou perante os discípulos: “tende bom ânimo; eu venci o mundo”.<br>" +
+"Ele era alguém que, na conceituação do mundo, não passava de vencido vulgar.<br>" +
+"Sabia-se no momento de entrar em amarga solidão.<br>" +
+"Confessava que fora incompreendido pelos homens aos quais se propusera servir.<br>" +
+"Não ignorava que os adversários lhe haviam assaltado a comunidade em formação, " +
+"através de um amigo invigilante.<br>" +
+"Dirigia-se aos companheiros, anunciando que eles próprios seriam dispersos.<br>" +
+"Falava, sem rebuços, da flagelação de que seria vítima.<br>" +
+"Via-se malquisto pela maioria, perseguido, traído.<br>" +
+"Não desconhecia que lhe envenenavam as intenções.<br>" +
+"Certificara-se de que as pessoas mais altamente colocadas eram as primeiras a " +
+"examinar o melhor processo de confundi-lo.<br>" +
+"Percebera o ódio de que se tornara objeto, principalmente por parte daqueles que " +
+"pretendiam açambarcar o nome de Deus, a serviço de interesses inferiores.<br>" +
+"Reconhecia-se a poucos passos da morte, a que se inclinaria, condenado sem " +
+"culpa.<br>" +
+"Entretanto ele dizia: “tende bom ânimo; eu venci o mundo”.<br>" +
+"Quanto te encontres em crise, lembra-te do Mestre.<br>" +
+"Subjugado, seria o conquistador inesquecível.<br>" +
+"Batido, passaria à condição de senhor da vitória.<br>" +
+"Assim ocorre, porque os construtores do aperfeiçoamento espiritual não estão na " +
+"Terra para vencer no mundo, mas notadamente para vencer o mundo, em si mesmos, de " +
+"modo a servirem ao mundo, sempre mais, e melhor.");
+novoCapitulo("Palavras de Vida Eterna 137 - CRENÇA");
+novoVersiculo("Tiago 2, 19");
+processar("“Crês que há um só Deus e fazes o bem.<br>" +
+"Mas os demônios também o crêem e Estremecem.”<br>" +
+"(Thiago, 2:19).<br>" +
+"Alguns momentos de reflexão no Evangelho sacodem-nos o raciocínio, para que " +
+"venhamos despertar no reconhecimento de nossas responsabilidades em matéria de " +
+"crença.<br>" +
+"Asseveramos, a cada passo, a convicção iniludível, quanto à existência de Deus.<br>" +
+"Habitualmente, enquadramos à vida mental a determinado tipo de interpretação religiosa, " +
+"a fim de reverenciá-lo, através do modo que supomos mais digno.<br>" +
+"Construímos santuários para honrar-lhe a munificência.<br>" +
+"Pretendemos enobrecê-lo em obras de arte.<br>" +
+"Sabemos admirar-lhe a sabedoria, seja na grandeza do firmamento ou na simplicidade do " +
+"chão.<br>" +
+"Certificamo-nos de que as suas leis são inelutáveis, desde as que foram estatuídas para a " +
+"semente até as que traçam caminho às constelações.<br>" +
+"Articulamos preces em louvor ou de súplica, nas quais lhe endereçamos os anseios mais " +
+"íntimos.<br>" +
+"Receitamos confiança em Deus para todos aqueles que ainda não conseguiram " +
+"entesourá-la.<br>" +
+"Ás vezes, chegamos até mesmo ao entusiasmo infantil dos que imaginam adivinhar " +
+"as opiniões de Deus, nisso ou naquilo.<br>" +
+"Todas essas atitudes nascem da pessoa que reconhece a imanência de Deus.<br>" +
+"Entretanto, os Espíritos perversos também sabem que Deus existe.<br>" +
+"Crença por crença, há crença nos planos superiores, e há crença nos planos inferiores.<br>" +
+"Meditemos nisso para considerar que, acima de tudo, importa saber o que estamos " +
+"fazendo de nossa fé.");
+novoCapitulo("Palavras de Vida Eterna 138 - ORDEM");
+novoVersiculo("1_Corintios 14, 40");
+processar("“Mas faça-se tudo decentemente e com ordem”<br>" +
+"Paulo (Corintios, 14:40)<br>" +
+"Todos os êxitos da ciência humana se verificam na base da ordem estabelecida " +
+"pela Sabedoria Divina, em todas as esferas da Criação.<br>" +
+"A Astronomia assinala com antecedência determinados fenômenos que se " +
+"verificarão no Cosmo, à face do equilíbrio em que se regem os movimentos do Universo.<br>" +
+"A Medicina formula prognósticos exatos, em vista de contar com a regularidade das " +
+"ocorrências orgânicas no veículo físico.<br>" +
+"Em qualquer região da Terra, é possível prever as horas de sombra e de luz.<br>" +
+"Cultivadores orientam atividades na gleba, segundo as estações.<br>" +
+"A planta produz, conforme a espécie, e toda enxertia praticada pelo homem se " +
+"caracteriza por limitações definidas, nas estruturas do reino vegetal.<br>" +
+"Tudo na Obra Divina se engrena em princípios de harmonia.<br>" +
+"Abstenhamos-nos, pois, de tumultuar as construções do espírito, com a desculpa de " +
+"exaltar a caridade ou com o pretexto de cumprir a vontade de Deus.<br>" +
+"Evolução e aperfeiçoamento constituem realização de todos, atribuindo tarefas a " +
+"cada um.<br>" +
+"A primeira mostra do Desígnio da providência, seja onde for, aparece no dever a " +
+"que somos chamados na construção do bem comum.<br>" +
+"Sejamos assim, leais ao encargo que nos compete.<br>" +
+"Qualquer engenho, para atender com segurança, pede ordem. E a ordem solicita se " +
+"afirme cada peça em seu justo lugar.");
+novoCapitulo("Palavras de Vida Eterna 139 - RELIGIÃO PURA");
+novoVersiculo("Tiago 1, 27");
+processar("“A religião pura e imaculada para com Deus, o Pai, " +
+"é esta:visitar os órfãos e as viúvas nas suas tribulações " +
+"e guardar-se da corrupção do mundo”. (Tiago, 1:27)<br>" +
+"Religião, diante das criaturas humanas, pode envolver atitudes diversas:<br>" +
+"Polemicar em torno dos atributos de Deus...<br>" +
+"Aditar interpretações individuais às revelações sublimes...<br>" +
+"Centralizar a mente na exegese ...<br>" +
+"Consumir a existência em casuísmo ...<br>" +
+"Reexaminar princípios veneráveis em horas certas...<br>" +
+"Atender a ritualismos ...<br>" +
+"Enriquecer a simbologia ...<br>" +
+"Adotar posturas convencionais ...<br>" +
+"Cultivar penitências vazias...<br>" +
+"Levantar monumentos de pedra...<br>" +
+"Ninguém nega que essas manifestações deixem de ser atestados de religião e " +
+"religiosidade entre nós outros, as criaturas encarnadas e desencarnadas na Terra; e " +
+"ninguém recusa o valor relativo que apresentem para determinadas pessoas, em certos " +
+"estágios de evolução.<br>" +
+"Entretanto, o Evangelho nos ensina que a religião pura, diante de Deus, é outra " +
+"coisa.<br>" +
+"Tiago traça a definição correta, afirmando: “A religião pura e imaculada para com " +
+"Deus, o Pai, é esta: visitar os órfãos e as viúvas nas suas tribulações e guardar-se da " +
+"corrupção do mundo.”<br>" +
+"Em suma, a religião irrepreensível da alma, perante a Divina Providência, segundo " +
+"no-la confirma a Doutrina Espírita em seus postulados, repousa, acima de tudo, no " +
+"serviço ao próximo e no caráter ilibado, ou melhor, na caridade incessante e na " +
+"tranqüilidade da consciência.");
+novoCapitulo("Palavras de Vida Eterna 140 - DIANTE DA JUSTIÇA");
+novoVersiculo("Tiago 2, 14");
+processar("“Meus irmãos, que aproveita alguém disser que tem fé e não tiver obras?<br>" +
+"Porventura, a fé pode salva-lo?” (Tiago, 2:14).<br>" +
+"Estranha a norma do homem, quando julga possuir as chaves da Vida Superior, " +
+"simplesmente por manter a fé, como se bastasse apenas à convicção para que se realize " +
+"serviço determinado.<br>" +
+"Comparemos fé e obras com a planta e as construções.<br>" +
+"Sem plano adequado, não se ergue edifício em linhas corretas.<br>" +
+"Note-se, porém, que o aleijão arquitetônico, improvisado sem plano, ainda serve, em " +
+"qualquer parte, para albergar os que jornadeiam sem rumo, e o projeto mais nobre, sem a " +
+"concretização que lhe corresponda, não passa de preciosidade geométrica, sentenciada " +
+"ao arquivo.<br>" +
+"Um viajante transportará consigo vasta coleção de croquis pelos quais se levantará toda " +
+"uma cidade, mas, se não dispõe de uma tenda a que se abrigue durante o aguaceiro, " +
+"decerto que os desenhos, conquanto respeitáveis, não impedirão que a chuva lhe " +
+"encharque os ossos.<br>" +
+"Possuir uma fé será reter uma crença religiosa; no entanto, cultivar a fé significa observar " +
+"segurança e pontualidade, na execução de um compromisso.<br>" +
+"Ninguém resgata uma dívida unicamente por louvar ao credor.<br>" +
+"À vista disso, não nos iludamos.<br>" +
+"Asseguremos-nos de que não faltará a Bondade Divina, mas construamos em nós a " +
+"humana bondade.<br>" +
+"Por muito alta a confiança de alguém no Poder Maior do Universo, isso, por si só, não lhe " +
+"confere o direito de reclamar o bem que não fez.");
+novoCapitulo("Palavras de Vida Eterna 141 - HOSPITALIDADE");
+novoVersiculo("Hebreus 13, 2");
+processar("“Não vos esqueçais da hospitalidade, porque, " +
+"por ela, alguns, não o sabendo, hospedaram os anjos.”<br>" +
+"– Paulo. (Hebreus, 13:2)<br>" +
+"É provável que nem sempre disponhas dos recursos necessários à hospedagem " +
+"de companheiros da casa.<br>" +
+"Obstáculos e vínculos domésticos, em muitas ocasiões, determinam " +
+"impedimentos.<br>" +
+"Se a parentela ainda não se compraz contigo, na cultura da gentileza, não é justo " +
+"violentes a harmonia do lar, estabelecendo discórdia, em nome do Evangelho que te " +
+"recomenda servi-los.<br>" +
+"Nada razoável empilhar amigos, em espaço irrisório, impondo-lhes " +
+"constrangimentos, à conta do bem-querer.<br>" +
+"Todos nós, porém, conseguimos descerrar as portas da alma e oferecer " +
+"acolhimento moral.<br>" +
+"Nem todos os desabrigados se classificam entre os que jornadeiam sem teto.<br>" +
+"Aqui e ali, surpreendemos os que vagueiam, deserdados do apoio e convivência...<br>" +
+"Observa e tê-lo-ás no caminho, a te pedirem asilo ao entendimento.<br>" +
+"Dá-lhes uma frase de coragem, um pensamento de paz, um gesto de amizade, um " +
+"momento de atenção.<br>" +
+"Às vezes, aquele que hoje se reergue com a tua migalha de amor é quem te vai " +
+"solucionar as necessidades de amanhã, num carro de bênçãos. Não te digas inútil, nem " +
+"te afirmes incapaz.<br>" +
+"Ninguém existe que não possa auxiliar alguém, estendendo o agasalho da " +
+"simpatia pelos fios do coração.");
+novoCapitulo("Palavras de Vida Eterna 142 - NO BEM DE TODOS");
+novoVersiculo("Hebreus 13, 5");
+processar("“Sejam vossos costumes sem avareza, " +
+"contentando-vos com o que tendes, porque ele disse:<br>" +
+"“não te deixarei, nem te desampararei.” – Paulo. (HEBREUS, 13:5.)<br>" +
+"Encarna-se e reencarna-se o Espírito na Terra, a fim de aperfeiçoar-se no rumo das " +
+"Estâncias Superiores do Universo.<br>" +
+"Não te encarceres, assim, nos tormentos do supérfluo que a avareza retém, como sendo " +
+"recurso indispensável à vida, na cegueira com que inventa fantasiosas necessidades.<br>" +
+"O dono do pomar não correrá dos frutos senão a quota compatível com os recursos do " +
+"estômago.<br>" +
+"O atacadista de algodão vestirá uma camisa de cada vez.<br>" +
+"Entretanto, o cultivador e o negociante serão abençoados nos Céus se libertam os valores " +
+"que administram, em louvor do trabalho que dignifica, da educação que eleva, da " +
+"beneficência que restaura ou da, fraternidade que sublima.<br>" +
+"Atendamos aos deveres que as circunstâncias nos atribuem, acalentando ideais de " +
+"melhoria, mas aprendamos a contentar-nos com o que temos, sem ambicionar o que não " +
+"possuímos, em matéria de aquisições passageiras, a fim de conquistarmos, sem atritos " +
+"desnecessários, os talentos que nos faltam.<br>" +
+"Ainda não se viu homem no mundo, cercado de tesouros infrutíferos, que se livrasse, tãosomente " +
+"por isso, das leis que regem o sofrimento e a enfermidade, a velhice e a morte.<br>" +
+"Respeitemos os princípios divinos do bem para todos.<br>" +
+"Confiemos, trabalhando. Caminhemos, servindo.<br>" +
+"“Não te deixarei, nem te desampararei” – disse-nos o Senhor.<br>" +
+"Sim, o Senhor jamais nos deixará, nem nos desamparará, mas, se não queremos " +
+"experiências dolorosas, espera naturalmente que não nos releguemos à ilusão, nem lhe " +
+"desprezemos a companhia.");
+novoCapitulo("Palavras de Vida Eterna 143 - AO CLARÃO DA VERDADE");
+novoVersiculo("Efésios 5, 8");
+processar("“Porque noutro tempo éreis trevas, mas agora sois luz do Senhor; " +
+"andai como filhos da luz.” – Paulo (Efésios, 5:8).<br>" +
+"Curiosas estatísticas mencionam aproximadamente as quotas de tempo que a " +
+"criatura humana despende com a vigília e com o sono, com o trabalho e com o " +
+"entretenimento.<br>" +
+"Muito importante para cada um de nós, porém, um balanço pessoal, de quando em " +
+"quando, acerca das horas gastas com lamentações prejudiciais.<br>" +
+"Óbvio que quase todos nós atravessamos obscuros labirintos, antes de atingirmos " +
+"adequado roteiro espiritual.<br>" +
+"Em múltiplas circunstâncias, erros e enganos povoaram-nos a mente com remorsos " +
+"e arrependimentos tardios.<br>" +
+"Isso, todavia, não justifica o choro estanque.<br>" +
+"Motorista sensato não larga um carro, atravancando a pista, porque haja perdido os " +
+"freios ou sofrido desajustes. O desleixo deporia contra ele, acrescentando-se, ainda, a " +
+"circunstância de criar, com isso, perigoso empeço ao trânsito.<br>" +
+"É possível tenhamos estado em treva até ontem...<br>" +
+"Provavelmente, quedas temerosas ter-nos-ão assinalado experiências " +
+"transcorridas...<br>" +
+"Achávamos, contudo, na condição de viajor que jornadeia circulado de sombras, " +
+"tropeçando aqui e além, sem o precioso discernimento. Hoje, no entanto, que tudo se faz " +
+"claro em derredor, fujamos de dramatizar desencantos ou fixar desacertos, através de " +
+"queixas e recriminações que complicam e desajudam, ao invés de simplificar e auxiliar.<br>" +
+"Assevera Paulo, refletidamente: “Porque noutro tempo éreis trevas, mas agora sois " +
+"a luz do Senhor; andai como filhos da luz.”.<br>" +
+"Raras pessoas conseguirão afirmar que desconhecem as tentações e os riscos do " +
+"nevoeiro, mas todos nós, presentemente transformados ao clarão da verdade, podemos " +
+"caminhar trilha adiante, renascidos na alvorada do conhecimento superior para o trabalho " +
+"da luz.");
+novoCapitulo("Palavras de Vida Eterna 144 - EXEMPLIFICAR");
+novoVersiculo("Lucas 7, 22");
+processar("“Respondendo, então, disse-lhes Jesus " +
+"“Ide e anunciai...” (Lucas, 7:22)<br>" +
+"Através de todas as nações, o homem levanta realizações notáveis, nas quais se lhe " +
+"exalça (exaltar: tornar alto, levantar, elevar) o egoísmo inteligente.<br>" +
+"Em toda a parte, repontam obras santuárias, solicitando moderação e corrigenda, para " +
+"que o abuso de poucos não agrave as aflições e as necessidades de muitos.<br>" +
+"Entretanto, porque o raciocínio rogue confrontações claras para estudos corretos, " +
+"reconheçamos o realce, conquanto vazio e por vezes ruinoso (prejudicial, mau, nocivo), " +
+"de semelhantes cometimentos.<br>" +
+"Ninguém nega a amenidade do edifício caprichosamente construído para festas inúteis, " +
+"embora não se lhe possa louvar o destino.<br>" +
+"É indiscutível a preciosidade do iate de luxo, não obstante seja tão-somente dedicado ao " +
+"excesso.<br>" +
+"Inegável a feição deleitosa de um jardim suspenso, mesmo quando não passe de " +
+"apêndice arquitetônico.<br>" +
+"Belo o espetáculo da fonte luminosa por distração na praça pública, apesar de se manter " +
+"muito longe do proveito de um simples chafariz.<br>" +
+"Analisando essas empresas, na lógica do Espiritismo, somos, contudo, impelidos a " +
+"reconhecer que os amigos afeiçoados ao supérfluo estarão agindo dessa forma por falta " +
+"de esclarecimento e orientação.<br>" +
+"A experiência terrestre na atualidade não desconhece que é preciso ensinar aos homens " +
+"a arte de alimentar e vestir, conversar e conviver, a fim de que haja saúde, euforia, " +
+"compreensão e harmonia na Humanidade.<br>" +
+"Disse Jesus, em várias ocasiões, aos seguidores: “Ide e pregai...”<br>" +
+"Nada justo, assim, reprovar sem consideração os companheiros que ainda se encontram " +
+"involuntariamente distantes das realidades do espírito. Onde o desperdício apareça por " +
+"flagelo da ignorância, iniciemos a construção da verdade pelo exemplo da sobriedade, na " +
+"certeza de que, em toda tarefa de educação, exemplificar é explicar.");
+novoCapitulo("Palavras de Vida Eterna 145 - ENQUANTO TEMOS TEMPO");
+novoVersiculo("Gálatas 6, 10");
+processar("“... Enquanto temos tempo, façamos bem a todos...”<br>" +
+"– Paulo.(Gálatas, 6:10).<br>" +
+"Às vezes, o ambiente surge tão perturbado que o único meio de auxiliar é fazer " +
+"silêncio com a luz íntima da prece.<br>" +
+"Em muitas circunstâncias, o companheiro se mostra sob o domínio de enganos tão " +
+"extensos que a forma de ajuda-lo é esperar que a vida lhe renove o campo do espírito.<br>" +
+"Aparecem ocasiões em que determinado acontecimento surge tão deturpado que não " +
+"dispomos de outro recurso senão contemporizar com a dificuldade, aguardando melhores " +
+"dias para o trabalho esclarecedor.<br>" +
+"Repontam males na estrada com tanta força de expansão que, em muitos casos, não " +
+"há remédio senão entregar os que se acumpliciam com eles às conseqüências " +
+"deploráveis que se lhes fazem seguidas.<br>" +
+"Entretanto, as ocasiões de construir o bem se destacam às dezenas, nas horas do diaa- " +
+"dia.<br>" +
+"Uma indicação prestada com paciência...<br>" +
+"Uma palavra que inspire bom ânimo...<br>" +
+"Um gesto que dissipe a tristeza...<br>" +
+"Um favor que renova a aflição...<br>" +
+"Analisemos a trilha cotidiana.<br>" +
+"A paz e o concurso fraterno, a explicação e o contentamento são obras morais que " +
+"pedem serviço edificante como as realizações da esfera física.<br>" +
+"Ergue-se a casa, elemento a elemento.<br>" +
+"Constrói-se a oportunidade para a vitória do bem, esforço a esforço.<br>" +
+"E, tanto numa quanto noutra, a diligência é indispensável.<br>" +
+"Não vale esperança com inércia.<br>" +
+"O tijolo serve na obra, mas nossas mãos devem buscá-lo.");
+novoCapitulo("Palavras de Vida Eterna 146 - SIRVAMOS EM PAZ");
+novoVersiculo("Filipenses 4, 6");
+processar("\"Não estejais inquietos por coisa alguma...\"<br>" +
+"- Paulo. (Filipenses, 4:6)<br>" +
+"Quase que em toda a parte encontramos pessoas agoniadas, sem motivo, ou exaustas, " +
+"sem razão aparente.<br>" +
+"Transitam nos consultórios médicos, recorrem a casas religiosas, suplicando prodígios, " +
+"isolam-se na inutilidade, choram de tédio. Confessam desconhecer a causa dos males " +
+"que as assoberbam; clamam, infundadamente, contra o meio em que vivem...<br>" +
+"É que, via de regra, ao invés de situarem a mente no caminho natural da evolução, " +
+"atiram-na aos despenhadeiros da margem.<br>" +
+"Que a Terra hospeda multidões de companheiros endividados, tanto quanto nós mesmos, " +
+"todos sabemos... A imprensa vulgar talha colunas e colunas dedicadas à tragédia, certas " +
+"publicações cultivam o hábito de instalar a delinquência, conflitos explodem insuflando a " +
+"rebeldia dessa ou daquela camada social, profetas do pessimismo adiantam escuras " +
+"previsões...<br>" +
+"Isso tudo acontece, isso tudo é inevitável.<br>" +
+"Urge, no entanto, não dar, aos acontecimentos contrários à harmonia da vida, qualquer " +
+"atenção, além da necessária. Basta empregar exageradamente a energia mental, num " +
+"escândalo ou num crime, para entrar em relação com os agentes destrutivos que os " +
+"provocaram. Ofereçamos ao repouso restaurativo ou à resistência ao mal mais tempo que " +
+"o tempo indispensável e cairemos na preguiça ou na cólera que nos desgasta as forças.<br>" +
+"Se consumimos alimento deteriorado, rumamos para a doença; se repletamos o cérebro " +
+"de preocupações descontroladas, inclinamo-nos, de imediato, ao desequilíbrio.<br>" +
+"Imunizando-nos contra semelhantes desajustes, exortou-nos o apóstolo Paulo: \"não " +
+"estejais inquietos por coisa alguma\", como a dizer-nos que compete a nós outros, os que " +
+"elegemos Jesus por Mestre, a obrigação de andar no mundo, ainda conturbado e " +
+"sofredor, sem gastar tempo e vida em questões supérfluas, prosseguindo, firmes, na " +
+"estrada de entendimento e serviço que o Senhor nos traçou.");
+novoCapitulo("Palavras de Vida Eterna 147 - MÃOS EM SERVIÇO");
+novoVersiculo("Mateus 8, 3");
+processar("“E Jesus, estendendo as mãos, tocou-o dizendo; “quero, sê limpo...”.<br>" +
+"( Mateus, 8:3).<br>" +
+"Mãos estendidas!...<br>" +
+"Quando estiverdes meditando e orando, recorda que todas as grandes idéias se " +
+"derramaram, através dos braços, para concretizarem as boas obras.<br>" +
+"Cidades que honram a civilização, indústrias que sustentam o povo, casa que alberga " +
+"a família, gleba que produz, são garantidas pelo esforço das mãos " +
+"Médicos despendem largo tempo em estudo para a conquista do título que lhes " +
+"confere o direito de orientar o doente; no entanto, vivem estendendo as mãos no amparo " +
+"aos enfermos.<br>" +
+"Educadores mergulham vários lustros na corrente das letras, adquirindo a ciência de " +
+"manejá-las; contudo, gastam longo trecho da existência, estendendo as mãos no trabalho " +
+"da escrita.<br>" +
+"Cada reencarnação de nosso espírito, exige braços abertos do regaço maternal que " +
+"nos acolhe.<br>" +
+"Toda refeição, para surgir, pede braços em movimento.<br>" +
+"Cultivemos a reflexão para que se nos aclare o ideal, sem largar o trabalho que no-lo " +
+"realiza.<br>" +
+"Jesus, embora pudesse representar-se por milhões de mensageiros, escolheu vir ele " +
+"próprio até nós, colocando mãos no serviço, de preferência em direção aos menos felizes.<br>" +
+"Pensemos nele, o Senhor. E toda vez que nos sentirmos cansados, suspirando por " +
+"repouso indébito, lembremo-nos de que as mãos do Cristo, após socorrer-nos e levantarnos, " +
+"longe de encontrarem apoio repousante, foram cravadas no lenho do sacrifício, do " +
+"qual, conquanto escarnecidas e espancadas, ainda se despediram de nós entre a palavra " +
+"do perdão e a serenidade da bênção.");
+novoCapitulo("Palavras de Vida Eterna 148 - NO BOM COMBATE");
+novoVersiculo("2_Timóteo 4, 7");
+processar("“Combater o bom combate, acabei a carreira, guardei a fé”- Paulo.<br>" +
+"( II Timóteo, 4:7.)<br>" +
+"Nas lides da evolução, há combate e bom combate.<br>" +
+"No combate, visamos aos inimigos externos. Brandimos armas, inventamos ardis, " +
+"usamos astúcias, criamos estratégia e, por vezes, saboreamos a derrota de nossos " +
+"adversários, entre alegrias falsas, ignorando que estamos dilapidando a nós mesmos.<br>" +
+"No bom combate, dispomo-nos a lutar contra nós próprios, assestando baterias de " +
+"vigilância em oposição aos sentimentos e qualidades inferiores que nos deprimem a alma.<br>" +
+"O combate chumba-nos o coração à crosta da Terra, em aflitivos processos de " +
+"reajuste, na lei de causa e efeito.<br>" +
+"O bom combate liberta-nos o espírito para a ascensão aos planos superiores.<br>" +
+"Paulo de Tarso, escrevendo a Timóteo, nos últimos dias da experiência terrestre, " +
+"forneceu-nos preciosa definição nesse sentido. Ele, que andara em combate até o " +
+"encontro pessoal com o Cristo, passou a viver no bom combate, desde a hora de " +
+"entrevista com o Mestre. Até o caminho de Damasco, estivera em função de louros " +
+"mundanos, ávido de dominações transitórias, mas, desde o instante em que Ananias o " +
+"recolheu enceguecido e transtornado, entrou em subalternidade dolorosa.<br>" +
+"Incompreendido, desprezado, apedrejado, perseguido, encarcerado várias vezes, abatido " +
+"e doente, jamais deixou de servir à causa do bem que abraçara com Jesus, olvidando " +
+"males e achaques, constrangimentos e insultos. Ao término, porém, da carreira de " +
+"semeador da verdade, o ex-conselheiro do Sinédrio, aparentemente arrasado e vencido, " +
+"saiu da Terra na condição de verdadeiro triunfador.");
+novoCapitulo("Palavras de Vida Eterna 149 - TODOS OS DIAS");
+novoVersiculo("Mateus 28, 20");
+processar("“...e eis eu que estou convosco, todos os dias, até a " +
+"consumação dos séculos.”-Jesus. ( Mateus, 28:20 ).<br>" +
+"Não te digas sem a inspiração de Jesus para adotar rumo certo.<br>" +
+"A atualidade terrestre mostra cientificamente que a comunhão espiritual não depende " +
+"do espaço ou do tempo.<br>" +
+"Podes fitar um orientador da comunidade e colher-lhe a palavra, a longa distância, " +
+"através da televisão...<br>" +
+"Conversar com um amigo, de um continente a outro, com o auxílio do telefone...<br>" +
+"Escutar o cantor predileto, que atua de longe, por intermédio do rádio...<br>" +
+"Recolher a mensagem de alguém, na tira de um telegrama...<br>" +
+"Acompanhar, nas colunas da imprensa, o cronista simpático que nunca viste em " +
+"pessoa...<br>" +
+"Assim também, nossas ligações com o Cristo de Deus.<br>" +
+"Jesus não é o mestre ausente ou símbolo morto. Ainda e sempre, é para nós, os que " +
+"declaramos aceitar-lhe a governança, o mentor vigilante e o exemplo vivo.<br>" +
+"Basta recapitular-lhe as lições para refleti-lo. E, ao retrata-lo em nós, segundo as " +
+"nossas acanhadas concepções, receberemos dele a idéia ou o socorro de que " +
+"careçamos, a fim de escolher com acerto e agir com justiça.<br>" +
+"Prometeu-nos o Mestre, ao falar aos discípulos:<br>" +
+"- “Eis que eu estou convosco, todos os dias, até à consumação dos séculos.”<br>" +
+"Como é fácil de perceber, o Senhor está conosco, esperando, porém, que estejamos com " +
+"ele.");
+novoCapitulo("Palavras de Vida Eterna 150 - SEMPRE AGORA");
+novoVersiculo("2_Coríntios 6, 2");
+processar("“... eis aqui agora o tempo aceitável, eis aqui agora o " +
+"dia da salvação.”-Paulo. (II Coríntios, 6:2 ).<br>" +
+"Há também uma sinonímia para as estâncias da vida e oportunidades da alma.<br>" +
+"Todas as circunstâncias significam ocasiões para o cultivo de valores do espírito, como " +
+"sejam :<br>" +
+"saúde - edificação; " +
+"moléstia – aprimoramento; " +
+"juventude- preparo; " +
+"madureza – juízo; " +
+"prosperidade – construção; " +
+"penúria – diligência; " +
+"êxito – serviço; " +
+"fracasso – experiência; " +
+"direção – exemplo; " +
+"subalternidade – cooperação; " +
+"regozijo – prudência; " +
+"tristeza – coragem; " +
+"liberdade – disciplina; " +
+"compromisso – fidelidade; " +
+"casamento – aprendizado; " +
+"celibato – abnegação; " +
+"trabalho – dever; " +
+"repouso – proveito.<br>" +
+"As mais diversas situações do cotidiano expressam a vinda de momento adequado " +
+"para que venhamos a realizar o melhor.<br>" +
+"Não te ponhas, assim, a aguardar o futuro para atender à procura da verdade e à " +
+"lavoura do bem.<br>" +
+"O apóstolo Paulo, profundo conhecedor das necessidades humanas, indica " +
+"acertadamente o tempo da elevação espiritual como sendo sempre agora.");
+novoCapitulo("Palavras de Vida Eterna 151 - ROGAR");
+novoVersiculo("Lucas 22, 42");
+processar("“ ...Não se faça a minha vontade, mas a tua.” – Jesus.<br>" +
+"(Lucas, 22:42).<br>" +
+"É comum a alteração de votos que formulamos, de planos que fazemos.<br>" +
+"Vários propósitos que se nos erigiam na alma, por anseios aflitivos do " +
+"sentimento, caem, após realizados, nos domínios do trivial, dando lugar a novos anseios.<br>" +
+"Petições que endereçamos à Vida Maior, em muitas ocasiões, quando " +
+"atendidas, já nos encontram modificados por súplicas diferentes. O que ontem era " +
+"importante para nós costuma descer para linhas da vulgaridade e o que desprezávamos " +
+"antigamente, não poucas vezes passa à condição de essencial.<br>" +
+"Forçoso, desse modo, rogar com prudência as concessões da vida.<br>" +
+"Poderes superiores velam por nossas necessidades, facultando-nos aquilo que " +
+"nos é efetivamente proveitoso.<br>" +
+"Em circunstâncias diversas, acontecimentos que nos parecem males são bens " +
+"que não chegamos a entender, de pronto, e basta analisar as ocorrências da vida para " +
+"percebermos que muitas daquelas que se nos afiguram bens resultam em males que nos " +
+"dilapidam a consciência e golpeiam o coração.<br>" +
+"Todos possuímos amigos admiráveis que se comovem à frente de nossas " +
+"rogativas, empenhando influência e recurso por satisfazer-nos, prejudicando-se, " +
+"freqüentemente, em nome do amor, por nossa causa, de vez que nem sempre estamos " +
+"habilitados a receber o que desejamos, no que se refere a conforto e vantagem.<br>" +
+"Aprendamos, assim, a trabalhar, esperado pelos desígnios da Justiça Divina " +
+"sobre os nossos impulsos.<br>" +
+"Importante lembrar que o próprio Cristo, na fidelidade a Deus, foi constrangido " +
+"também a dizer: “Pai, não se faça a minha vontade, mas a tua”.");
+novoCapitulo("Palavras de Vida Eterna 152 - DESCANSAR");
+novoVersiculo("Marcos 6, 31");
+processar("“E ele disse-lhes: vinde vós, aqui à parte, a um lugar deserto, " +
+"e repousai um pouco; porque havia muitos que iam e vinham " +
+"e não tinham tempo para comer.” ( Marcos, 6:31 )<br>" +
+"Pressa e agitação caracterizam o ambiente das criaturas menos avisadas em " +
+"todos os tempos.<br>" +
+"Na época de Jesus, muita gente já ia e vinha aqui e acolá, sofrendo a pressão " +
+"de exigências da ida material, acreditando não dispor de tempo para pensar.<br>" +
+"Isso fez que o Mestre se dirigisse à multidão, exortando: “vinde vós, aqui à " +
+"parte, a um lugar deserto, e repousai um pouco”.<br>" +
+"Entretanto, assim como aparecem os que exageram as próprias necessidades, " +
+"caindo em precipitação, temos os companheiros que se excedem no descanso, " +
+"encontrando, a cada passo, motivos para a fuga do dever a cumprir. À vista de " +
+"embaraços mínimos, declaram-se fatigados, desiludidos, deprimidos ou enfermos, e " +
+"param a máquina do serviço que lhes compete, recolhendo-se à inércia, com o pretexto " +
+"de meditação, refazimento, virtude ou prece. Para isso, muitos dizem que o próprio Jesus " +
+"aconselhou o repouso e a oração, esquecendo-se de que o Senhor reconstituía as forças " +
+"no retiro, a fim de tornar ao serviço e prosseguir trabalhando...<br>" +
+"Nesse sentido, convém recordar as palavras textuais do Evangelho. Jesus não " +
+"afirmou: repousai quanto quiserdes, mas sim, repousai em pouco.");
+novoCapitulo("Palavras de Vida Eterna 153 - CONCEITO DE SALVAÇÃO");
+novoVersiculo("2_Coríntios 6, 2");
+processar("“... Eis agora o tempo sobremodo oportuno, " +
+"eis agora o dia da salvação.”<br>" +
+"– Paulo. (II Coríntios, 6:2).<br>" +
+"Salvar, em sinonímia correta, não é divinizar, projetar ao céu, conferir santidade a alguém " +
+"através de magia sublimatória ou fornecer passaporte para a intimidade com Deus.<br>" +
+"Salvar, em legítima significação, é “livrar de ruína ou perigo”, “conservar”, “defender”, " +
+"“abrigar” e nenhum desses termos exime a pessoa da responsabilidade de se conduzir e " +
+"melhorar-se.<br>" +
+"Navio salvo de risco iminente não está exonerado da viagem, na qual enfrentará " +
+"naturalmente perigos novos, e doente salvo da morte não se forra ao imperativo de " +
+"continuar nas tarefas da existência, sobrepujando percalços e tentações.<br>" +
+"O Evangelho não deixa dúvidas quanto a isso. Pedro, salvo da indecisão, é impelido a " +
+"sustentar-se em trabalho até a senectude das forças físicas. Paulo, salvo da crueldade, é " +
+"constrangido a esforço máximo, na própria renovação, até o último sacrifício " +
+"Se experimentas o coração chamado à verdade pela Doutrina Espírita, compreendamos " +
+"que a salvação terá efetivamente chegado até nós. Não aquela que pretende investir-nos, " +
+"ingenuamente, na posse de títulos angélicos, quando somos criaturas humanas, com " +
+"necessidade de aprender, evoluir, acertar e retificar-nos, mas sim a salvação no " +
+"verdadeiro sentido, isto é, como auxílio do Alto para que estejamos no conhecimento de " +
+"nossas obrigações, diante da Lei, dispostos a esposá-las e a cumpri-las.<br>" +
+"Sobretudo, não nos detenhamos em frases choramingueiras, perdendo mais tempo sobre " +
+"o tempo perdido. Reconheçamos com o apóstolo eu “o tempo sobremodo oportuno” para " +
+"a salvação ou, melhor, para a corrigenda de nossos Eros e aproveitamento da nossa vida, " +
+"chama-se agora.");
+novoCapitulo("Palavras de Vida Eterna 154 - NAS TRILHAS DA FÉ");
+novoVersiculo("2_Pedro 1, 1");
+processar("“Simão Pedro, servo e apóstolo de Jesus Cristo, " +
+"aos que conosco obtiveram fé igualmente preciosa...”<br>" +
+"– Pedro. (II Pedro, 1:1)<br>" +
+"Em muitas ocasiões, admitimos erroneamente que os grandes vultos do " +
+"Cristianismo terão obtido privilégios nas Leis Divinas; entretanto, basta a reflexão nas " +
+"realidades do Evangelho, para que nos capacitemos da sem-razão de semelhante " +
+"conceito.<br>" +
+"Simão Pedro nos fala da fé “igualmente preciosa” e raros vultos da história do " +
+"Cristo poderão competir com ele em matéria de renovação pessoal.<br>" +
+"Era ele pescador de vida humilde, homem quase iletrado, comprometido em " +
+"obrigações de família, habitante de aldeola paupérrima, seguidos do Evangelho " +
+"submetido a tentações e vacilações que, por algumas vezes, o fizeram cair; entretanto, " +
+"guindou-se à posição de apóstolo da causa mais alta da Humanidade, ampliou seus " +
+"conhecimentos, adquiriu importância fazendo-se condutor e irmão da comunidade, liderou " +
+"a idéia cristã, nas metrópoles do teu tempo e, de cada vez que se viu incurso em erro, " +
+"procurou corrigir-se e seguir adiante, no desempenho das obrigações que lhe eram " +
+"atribuídas.<br>" +
+"Realmente, não possuímos qualquer justificativa para isentar-nos do serviço de " +
+"auto-educação, à frente do Cristo, sob a alegação de que não recolhemos recursos " +
+"imprescindíveis à solução dos problemas do próprio burilamento para a vitória espiritual.<br>" +
+"Pedro, com a autoridade do exemplo, afirma-nos que, diante da providência " +
+"Divina, todos nós obtivemos valores iguais para as realizações da me " +
+novoCapitulo("Palavras de Vida Eterna 155 - PAZ EM NÓS");
+novoVersiculo("2_Coríntios 1, 12");
+processar("“Porque a nossa glória é esta: o testamento da nossa consciência...”<br>" +
+"-Paulo. (II Coríntios, 1:12.).<br>" +
+"Abraçando a renovação espiritual para a conquista da luz, quase sempre somos " +
+"contraditados pelas forças da sombra, qual se tivéssemos o coração exposto a todas as " +
+"críticas destrutivas.<br>" +
+"Cultivas bondade e afirmam-te idiota.<br>" +
+"Mostras paciência e imaginam-te poltrão.<br>" +
+"Esqueces golpes sofridos e chamam-te covarde.<br>" +
+"Praticas a humildade e apontam-te por tolo.<br>" +
+"Falas a verdade e supõem-te obsesso.<br>" +
+"Exerces brandura e julgam-te preguiçoso.<br>" +
+"Auxilias fraternalmente e envenenam-te o gesto.<br>" +
+"Confias e dizem-te fanático.<br>" +
+"Cumpres obrigações e há quem zombe de ti.<br>" +
+"Entretanto, a despeito de todas as dúvidas e impugnações que te cerquem os " +
+"passos, segue para diante, atendendo aos deveres que a vida te preceitua, conforme o " +
+"testemunho da consciência, na convicção de que felicidade verdadeira significa, em tudo, " +
+"paz em nós.");
+novoCapitulo("Palavras de Vida Eterna 156 - SEGUNDO AGIMOS");
+novoVersiculo("2_Coríntios 2, 1");
+processar("“Mas deliberei isto consigo mesmo: não ir mais ter " +
+"convosco em tristeza”.-Paulo. (II Coríntios, 2:1.).<br>" +
+"Cautela com a tristeza, capaz de converter-se em lama de fel ou em labareda de " +
+"angústia no coração.<br>" +
+"Sentimento, idéias, palavras e atitudes são agentes magnéticos de indução para " +
+"o melhor ou o pior, conforme o rumo que se lhes traça.<br>" +
+"Queixa inútil enfraquece o otimismo, gerando desconfiança e perturbação.<br>" +
+"Azedume corta o impulso de generosidade, aniquilando boas obras no " +
+"nascedouro.<br>" +
+"Irritação abate as forças da alma, trazendo a exaustão prematura.<br>" +
+"Mágoa anula a esperança, arrasando possibilidades de trabalho.<br>" +
+"Desespero queima o solo do ideal, exterminando a sementeira do bem.<br>" +
+"Se aspiras a construir, planta benevolência e serenidade, entendimento e " +
+"abnegação na gleba da própria alma.<br>" +
+"Todos dependemos uns dos outros, na desincumbência dos compromissos que " +
+"nos competem. A vida, porém, através de todos aqueles que nos partilham a marcha, " +
+"reage sobre nós, segundo agimos; em vista disso, para a execução da tarefa que nos " +
+"cabe, quantos caminham ao nosso lado apenas colaboram conosco, na pauta de nosso " +
+"auxílio, dando-nos isso ou aquilo, no tanto e na espécie daquilo ou disso que venham a " +
+"receber.");
+novoCapitulo("Palavras de Vida Eterna 157 - NA CONSTRUÇÃO DO MESTRE");
+novoVersiculo("1_Coríntios 12, 27");
+processar("“Ora, vós sois o corpo do Cristo e seus membros em particular”.<br>" +
+"– Paulo.(I Coríntios, 12:27).<br>" +
+"O Evangelho não nos convida à confiança preguiçosa nos poderes do Cristo, " +
+"qual se estivéssemos assalariados para funcionar em claques de adoração vazia.<br>" +
+"O apóstolo Paulo faz-nos sentir toda a extensão da responsabilidade que nos " +
+"compete à frente da Boa Nova.<br>" +
+"Cada cristão é parte viva do corpo de princípios do Mestre, com serviço em " +
+"particular.<br>" +
+"Não te iludas, assim, fixando-te exclusivamente em afirmações labiais de fé no " +
+"Senhor, sem adesão do próprio esforço ao trabalho edificante que nos foi reservado.<br>" +
+"Sentindo, pensando, falando e ainda nessa ou naquela ocorrência, é " +
+"indispensável compreender que é preciso sentir, pensar, falar e agir, como se o Mestre " +
+"estivesse sentido, pensando, falando e agindo em nós e por nós.<br>" +
+"Alguém provavelmente dirá que isso seria atrevida superestimação de nós " +
+"próprios; entretanto, apesar de nossas evidentes imperfeições, é forçoso começar a viver " +
+"no Senhor para que o Senhor viva onde nos cabe viver.<br>" +
+"Para isso, perguntemos diariamente a nós mesmos como faria Jesus o que " +
+"estamos fazendo, porque, sendo o Cristo o dirigente e mentor de nossa fé, todos nós, " +
+"servos dele, somos chamados, no setor da atividade individual, a defini-lo e tratá-lo com " +
+"fiel expressão.");
+novoCapitulo("Palavras de Vida Eterna 158 - VONTADE DIVINA");
+novoVersiculo("Romanos 12, 2");
+processar("“E não vos conformeis com este mundo, mas transformai-vos " +
+"pela renovação do vosso entendimento para que experimenteis " +
+"qual seja a boa, agradável e perfeita vontade de Deus”.<br>" +
+"– Paulo.(Romanos, 12:2.).<br>" +
+"Expressa-se a Vontade de Deus pelas circunstâncias da existência; todavia, " +
+"devemos apreendê-la na essência e no rumo, o que nos será claramente possível.<br>" +
+"Não só pelos avisos religiosos que nos ajudam a procurá-la.<br>" +
+"Nem pelos constrangimentos da Terra, que nos impelem a compromissos " +
+"determinados.<br>" +
+"Nem pelos preceitos sociais que nos resguardam em disciplina.<br>" +
+"Nem pela voz dos amigos que nos apóiam a caminhada.<br>" +
+"Nem pelos acicates da prova que nos corrigem os sentimentos.<br>" +
+"A fé ilumina, o trabalho conquista, a regra aconselha, a afeição reconforta e o " +
+"sofrimento reajusta; no entanto, para entender os Desígnios Divinos a nosso respeito, é " +
+"imperioso renovar-nos em espírito, largando a hera do conformismo que se nos arraia no " +
+"íntimo, alentada pelo adubo do hábito, em repetidas experiências no plano material.<br>" +
+"Recebamos o auxílio edificante que o mundo nos ofereça, mas fujamos de " +
+"contemporizar com os enganos do mundo, diligenciando burilar-nos cada vez mais, " +
+"porque educação conosco é clarão no âmago da própria alma e por muito brilhemos por " +
+"fora, no jogo das ocorrências temporárias da estância física, nada entenderemos da luz " +
+"de Deus que nos sustenta a vida, sem luz em nós.");
+novoCapitulo("Palavras de Vida Eterna 159 - APRENDAMOS, NO ENTANTO...");
+novoVersiculo("1_Timóteo 4, 15");
+processar("“Medita estas coisas, ocupa-te nelas para que o teu " +
+"aproveitamento seja manifesto a todos”.<br>" +
+"– Paulo. (I Timóteo, 4:15.).<br>" +
+"Em muitas reencarnações passadas, adotamos igualmente a estranha maneira " +
+"de muitos dos nossos irmãos, vinculados hoje ao Cristianismo, cujo comportamento " +
+"religioso a vida reajustará, qual aconteceu a nós outros.<br>" +
+"Buscávamos o Evangelho e pregávamos o Evangelho, atendendo a sentido " +
+"demagógico.<br>" +
+"Queríamos o Cristo para que o Cristo nos servisse.<br>" +
+"Cultivávamos a oração, pretendendo subornar a Justiça Divina.<br>" +
+"Compartíamos demonstrações e expressões de fé, à caça de vantagens " +
+"pessoais, no imediatismo das gratificações terrestres.<br>" +
+"À face disso, temos entrado múltiplas vezes no renascimento físico e " +
+"atravessando os pórticos da reencarnação, carreando a consciência pesada de culpas, à " +
+"maneira de aposento recheado de lixo e sucata da experiência humana, incapaz de se " +
+"abrir ao sol da Bondade Divina.<br>" +
+"O apóstolo Paulo, no entanto, escrevendo a Timóteo – ele que foi o campeão " +
+"impertérrito da fé viva – traça a diretriz que nos é necessária, à frente das lições do " +
+"Senhor.<br>" +
+"Após valiosa série de considerações soe os princípios evangélicos, nas quais " +
+"persuade o companheiro a ler, instruir, exortar e exemplificar em boas obras, pede não " +
+"apenas para que o amigo e aprendiz medite nas doutrinas que aceita, mas recomenda-lhe " +
+"aplicar-se a elas, a fim de que o aproveitamento pessoal dele seja manifesto a todos.<br>" +
+"A assertiva de Paulo não deixa dúvidas.<br>" +
+"Quanto nos seja possível, estudemos as lições do Senhor e reflitamos em torno " +
+"delas. Aprendamos, no entanto, a praticá-las, traduzindo-as em ação, no cotidiano, para " +
+"que a nossa palavra não se faça vazia e a nossa fé não seja vã.");
+novoCapitulo("Palavras de Vida Eterna 160 - RECONHEÇAMOS, PORÉM");
+novoVersiculo("Romanos 8, 9");
+processar("“... Mas se alguém não tem o Espírito do Cristo, esse tal não é dele”.<br>" +
+"– Paulo. (ROMANOS, 8:9)<br>" +
+"Todos necessitamos de chamamento ao Evangelho, todos atravessamos o período da " +
+"fome de informações, acerca de Cristo. E, aderindo às interpretações do ensinamento " +
+"cristão a que mais nos ajustamos, não raro confiamos apaixonadamente as " +
+"manifestações superficiais de nossa fé.<br>" +
+"Partilhamos assembléias seletas ou humildes, nos templos materiais, o que, sem dúvida, " +
+"nos dignifica o pensamento religioso.<br>" +
+"Integramos equipes de propaganda dos pontos de vista que esposamos, o que, " +
+"realmente, nos evidencia o zelo das atitudes.<br>" +
+"Cultivamos discussões acirradas, por demonstrar a validade de nossas opiniões, o que, " +
+"na essência, nos revela o fervor.<br>" +
+"Adotamos hábitos exteriores, às vezes até mesmo em assuntos de alimentação e " +
+"convenção social, com o decidido propósito de testemunhar, publicamente, a nossa " +
+"maneira de sentir, o que, no fundo, nos patenteia a sinceridade de sempre louvável.<br>" +
+"Em muitas circunstâncias, oramos, segundo fórmulas especiais, obrigamo-nos a " +
+"devoções particulares; formamos círculos de atividades afins, a isolar-nos dentro deles; " +
+"ou carregamos dísticos que nos especificam a confissão...<br>" +
+"Todas as manifestações externas, que lembrem o nome de Jesus e que se reportem, de " +
+"qualquer modo, às lições de Jesus, são recursos preciosos, constituindo-se em sugestões " +
+"edificantes para o caminho. Reconheçamos, porém, que a palavra do Evangelho é " +
+"demasiado clara ao proclamar a necessidade do Cristo em nossa vida, sentimento, idéia, " +
+"ação e conduta, quando afirma convincente: “Mas se alguém não tem o Espírito do Cristo, " +
+"esse tal não é dele”.");
+novoCapitulo("Palavras de Vida Eterna 161 - NOS PADRÕES DE JESUS");
+novoVersiculo("Efésios 4, 23");
+processar("\"E renovai-vos pelo espírito do vosso sentir.\"<br>" +
+"- Paulo. (EFÉSIOS, 4:23)<br>" +
+"Transformações ocorrem muitas.<br>" +
+"Temos aquelas, devidas às usanças do tempo, em que somos convidados a seguir " +
+"conforme as prescrições da moda...<br>" +
+"Entramos, habitualmente, em algumas, capazes de aprovisionar-nos com facilidades de " +
+"ordem humana, através de corporações que nos valorizem os interesses...<br>" +
+"Conhecemos outras que nos atingem os costumes, por imposição da família terrestre, " +
+"para que se não percam determinadas conveniências...<br>" +
+"Experimentamos várias outras ainda, em que o recurso a certas legendas exteriores nos " +
+"faculta o apoio de autoridades transitórias do mundo...<br>" +
+"Todas essas mudanças são suscetíveis de enriquecer-nos com abençoadas ocasiões de " +
+"melhorar e reconstruir os valores que nos cercam, com vista ao cultivo do bem e à vitória " +
+"do bem.<br>" +
+"Metamorfose essencial, entretanto, para nós será sempre aquela que nos alcance o imo " +
+"da alma.<br>" +
+"O apóstolo Paulo impele-nos à renovação pelo sentimento, à luz do Evangelho. Isso " +
+"equivale a dizer que, para renovar-nos, em verdade, no modelo do Cristo, é necessário, " +
+"acima de tudo, sentir nos padrões do Cristo, para pensar, observar, ouvir, ver e agir com " +
+"acerto, na realização da tarefa que o Cristo nos reservou.");
+novoCapitulo("Palavras de Vida Eterna 162 - TENDE FÉ EM DEUS");
+novoVersiculo("Marcos 11, 12");
+processar("\"E Jesus, respondendo, disse-lhes: tende fé em Deus.\"<br>" +
+"- (Marcos, 11:12.)<br>" +
+"Bastas vezes, as dificuldades na concretização de um projeto elevado se nos afiguram " +
+"inamovíveis.<br>" +
+"Começamos por reconhecer-lhes o peso inquietante e estimáveis companheiros acabam " +
+"por destacar-nos a importância delas, como a dizer-nos que é preciso renunciar ao bem " +
+"que pretendemos fazer.<br>" +
+"Tudo, aparentemente, é obstáculo intransponível...<br>" +
+"Mas Deus intervém e uma porta aparece.<br>" +
+"Há circunstâncias, nas quais o problema com que somos defrontados, numa questão " +
+"construtiva, " +
+"é julgado insolúvel.<br>" +
+"Passamos a inquietar-nos e, não raro, especialistas no assunto comparecem junto de " +
+"nós, apontando-nos a impraticabilidade da solução.<br>" +
+"As obscuridades crescem por sombras indevassáveis...<br>" +
+"Mas Deus interfere e desponta uma luz.<br>" +
+"Em certas ocasiões, uma pessoa querida, ao perturbar-se de chofre, fornece a impressão " +
+"de doente irrecuperável.<br>" +
+"Afligimo-nos ao vê-la assim em desequilíbrio e, quase sempre, observadores amigos " +
+"comentam a inexequibilidade de qualquer melhoria, induzindo-nos a largá-la ao próprio " +
+"infortúnio.<br>" +
+"Avoluma-se a prova que lembra angústia inarredável...<br>" +
+"Mas Deus determina e surge um remédio.<br>" +
+"Ocorrem-te no mundo as mesmas perplexidades, em matéria de saúde, família, " +
+"realizações.<br>" +
+"Salientam-se fases de trabalho em que a luta é suposta invencível, com absoluto " +
+"desânimo daqueles que te rodeiam, mas Deus providencia e segues, tranqüilo, à frente.<br>" +
+"Por mais áspera a crise, por maior a consternação, não percas o otimismo e trabalha, " +
+"confiante.<br>" +
+"Ouçamos, nós todos, a indicação de Jesus:<br>" +
+"- \"Tende fé em Deus\".");
+novoCapitulo("Palavras de Vida Eterna 163 - NO PLANO DO BEM");
+novoVersiculo("Efésios 4, 28");
+processar("“...Trabalhe, fazendo com as mãos o que é bom, " +
+"para que tenha que repartir com o que tiver necessidade”.<br>" +
+"– Paulo (EFÉSIOS, 4:28)<br>" +
+"Acreditas na fraternidade e esperas que ela reine sobre as criaturas sem a imposição de " +
+"conflitos quaisquer.<br>" +
+"Aspiras, como é natural, a viver num mundo sem rixa de classes.<br>" +
+"Almejas a luz da nova era em que o homem seja espontaneamente o irmão do homem, " +
+"liquidando, sem exigência, as dificuldades um do outro.<br>" +
+"Dói-te ao coração ver o supérfluo e a penúria, lado a lado, estimulando a loucura do " +
+"excesso e o martírio da fome.<br>" +
+"Queres que a abastança suprima a carência.<br>" +
+"Reclamas a melhoria do nível de vida, principalmente para os que choram em privação.<br>" +
+"Para que o bem apareça, contudo, não aguardemos que semelhantes luzes venham " +
+"inicialmente dos outros. Comecemos de nós, sem demandar com alguém ou contra " +
+"alguém.<br>" +
+"O apóstolo Paulo, nesse sentido, nos ofereceu, há quase dois milênios, indicação das " +
+"mais valiosas.<br>" +
+"Cada um, diz ele, “trabalhe, fazendo com as mãos o que seja bom, para que tenha que " +
+"repartir com o que tiver necessidade”.<br>" +
+"Sejamos honestos e reconheçamos com a verdade que se nos consagrarmos ao serviço, " +
+"produzindo, de nós mesmos, o que seja proveitoso para o bem geral, cada um de nós terá " +
+"o que dividir a benefício dos outros, sem a mínima idéia de queixa e sem qualquer motivo " +
+"à rebelião.");
+novoCapitulo("Palavras de Vida Eterna 164 - ASSEIO VERBAL");
+novoVersiculo("Efésios 4, 29");
+processar("“Não saia da vossa boca nenhuma palavra torpe, " +
+"mas só a que for boa para promover a edificação.”<br>" +
+"– Paulo. (EFÉSIOS, 4:29)<br>" +
+"Quanto mais se adianta a civilização, mais se amplia o culto à higiene.<br>" +
+"Reservatórios, são tratados, salvaguardando-se o asseio das águas.<br>" +
+"Mercados sofrem fiscalização rigorosa, com vistas à pureza das substâncias alimentícias.<br>" +
+"Laboratórios são continuamente revistos, a fim de que não surjam medicamentos " +
+"deteriorados.<br>" +
+"Instalações sanitárias recebem, diariamente, cuidadosa assepsia.<br>" +
+"Será que não devemos exercer cautela e diligência para evitar a palavra torpe, capaz de " +
+"situar-nos em perturbação e ruína moral?<br>" +
+"Nossa conversação, sem que percebamos, age por nós em todos aqueles que nos " +
+"escutam.<br>" +
+"Nossas frases são agentes de propaganda dos sentimentos que nos caracterizam o modo " +
+"de ser; se respeitáveis, trazem-nos a atenção de criaturas respeitáveis; se menos dignas, " +
+"carreiam em nossa direção o interesse dos que se fazem menos dignos; se " +
+"indisciplinadas, nos sintonizam com representantes da disciplina; se azedas, afinam-nos, " +
+"de imediato, com os campeões do azedume, " +
+"Controlemos o verbo, para que não venhamos a libertar essa ou aquela palavra torpe.<br>" +
+"Por muito esmerada nos seja a educação, a expressão repulsiva articulada por nossa " +
+"língua é sempre uma brecha perigosa e infeliz, pela qual perigo e infelicidade nos " +
+"ameaçam com desequilíbrio e perversão.");
+novoCapitulo("Palavras de Vida Eterna 165 - NOS DOMÍNIOS DA AÇÃO");
+novoVersiculo("Filemom 1, 14");
+processar("“Mas nada quis fazer sem o teu parecer, para que o teu benefício " +
+"não fosse por obrigação, e sim de livre vontade”.<br>" +
+"– Paulo. (FILÉMON, 1:14)<br>" +
+"Orgulha-se o homem de teres e haveres e costuma declarar, às vezes com excelentes " +
+"razões, que os ajuntou à custa de esforço enorme... Entretanto, o Senhor é quem lhe " +
+"emprestou os meios para adquiri-los, esperando que ele os administre sensatamente.<br>" +
+"Envaidece-se da cultura intelectual e, freqüentemente, assevera, em algumas " +
+"circunstâncias com seguras justificativas, que deve os tesouros do pensamento aos " +
+"sacrifícios que despendeu para estudar... Todavia, o Senhor é quem lhe confiou os " +
+"valores da inteligência para que ele os abrilhante na construção da felicidade comum a " +
+"todos.<br>" +
+"Ensoberbece-se do poder de que dispõe, afirmando, em determinados casos não sem " +
+"motivo, que efetuou semelhante aquisição a preço de trabalho e sofrimento... No entanto, " +
+"é o Senhor quem lhe propiciou os recursos para a conquista da autoridade, na expectativa " +
+"de que ele a exerça dignamente.<br>" +
+"Ufana-se com respeito à saúde que usufrui e proclama, em certas ocasiões com base " +
+"respeitável que mantém a euforia orgânica a expensas de rigorosa disciplina pessoal...<br>" +
+"Contudo, o Senhor é quem lhe faculta os elementos essenciais de sustentação do próprio " +
+"equilíbrio, a fim de que ele empregue o corpo no levantamento do bem geral.<br>" +
+"Rejubila-te, pois, com as possibilidades de auxiliar, instruir, determinar e agir, mas, " +
+"consoante o ensinamento do Apóstolo, não olvides que a bondade do Senhor vige nos " +
+"alicerces de tudo o que tens e reténs, a fim de que te consagres ao serviço dos " +
+"semelhantes, na edificação do Mundo Melhor, não como quem assim procede, através de " +
+"constrangimento, mas de livre vontade.");
+novoCapitulo("Palavras de Vida Eterna 166 - NO ATO DE ORAR");
+novoVersiculo("Mateus 7, 9");
+processar("“Qual dentre vós é o homem que se o filho lhe pede um " +
+"pão lhe dará uma pedra?” – Jesus.(MATEUS, 7:9)<br>" +
+"Um pai terrestre, conquanto as deficiências compreensíveis da condição humana, jamais " +
+"oferece pedra ao filho que pede pão.<br>" +
+"Certamente que, em lhe examinando essa ou aquela solicitação, considerará os " +
+"imperativos de tempo, circunstância, necessidade ou lugar.<br>" +
+"Se o filho é ainda criança, não lhe entrega dinamite para brincar, porque o menino formule " +
+"a rogativa ensopando-se de lágrimas; se o filho jaz perturbado, não lhe confere a direção " +
+"da família, pelo fato de recolher-lhe petitórios comoventes; se o filho, por várias vezes, " +
+"deixou a casa em ruína, por desperdício delituoso, não lhe restituirá, de pronto, o governo " +
+"dos assuntos domésticos, só pelo motivo de se ver rodeado de súplicas; e, se o filho " +
+"permanece atrasado no progresso escolar, não lhe autoriza regalos prolongados, " +
+"unicamente porque lhe ouça enternecedores requerimentos.<br>" +
+"Em hipótese alguma, aniquilará as esperanças dos descendentes, mas,no interesse deles " +
+"próprios, lhe concederá isso ou aquilo, consultando-lhes a conveniência e a segurança, " +
+"até que se ergam ao nível da madureza, responsabilidade, merecimento e habilitação, " +
+"suscetíveis de lhes assegurar a liberdade de pedir o que desejem.<br>" +
+"Isso acontece aos pais terrenos...<br>" +
+"Desse modo, se experimentas desconfiança e inquietação, no ato de orar, simplesmente " +
+"porque choras e sofres, lembra-te da compaixão e do discernimento que já presidem o lar " +
+"humano e não descreias da perfeita e infinita misericórdia do Pai Celestial.");
+novoCapitulo("Palavras de Vida Eterna 167 - LEGIÃO");
+novoVersiculo("Marcos 5, 9");
+processar("\"E perguntou-lhe: Qual é o teu nome? Respondeu ele:<br>" +
+"Legião é o meu nome, porque somos muitos.\"<br>" +
+"(Marcos, 5:9.)<br>" +
+"Consciências oneradas em culpas e desacertos de numerosas reencarnações, ser-nos-á " +
+"justo ponderar a resposta do espírito conturbado e infeliz à pergunta do Mestre.<br>" +
+"\"Legião é o meu nome, — disse ele, — porque somos muitos.\"<br>" +
+"Iniludivelmente, ainda hoje, em nos aproximando do Senhor, reconhecemo-nos, não " +
+"apenas afinados com vários grupos de companheiros tão devedores quanto nós, mas " +
+"igualmente em lamentável dispersão íntima, qual se encerrássemos um feixe de " +
+"personalidades contraditórias entre si.<br>" +
+"Ao contato das lições de Jesus, é que, habitualmente, nos vemos versáteis e " +
+"contraproducentes, qual ainda somos...Acreditamos na força da verdade, experimentando " +
+"sérios obstáculos para largar a mentira; ensinamos beneficência, vinculados a profundo " +
+"egoísmo; destacamos os méritos do sacrifício pela felicidade alheia, agarrados a " +
+"vantagens pessoais;manejamos brandura em se tratando de avisos para os outros e " +
+"estadeamos cólera imprevista se alguém nos causa prejuízo ligeiro; proclamamos a " +
+"necessidade do espírito de serviço, reservando ao próximo tarefas desagradáveis; " +
+"pelejamos pela paz nos lares vizinhos, fugindo de garantir a tranqüilidade na própria casa; " +
+"queremos que o irmão ignore os golpes do mal que lhe estraçalham a existência e " +
+"estamos prontos a reclamar contra a alfinetada que nos fira de leve; salientamos o " +
+"acatamento que se deve aos Desígnios Divinos e pompeamos exigências disparatadas, " +
+"em se apresentando o menor de nossos caprichos.<br>" +
+"Sim, de modo geral, somos individualmente, diante de Jesus, a legião dos erros que já " +
+"cometemos no pretérito e dos erros que cultivamos no presente, dos erros que " +
+"assimilamos e dos erros que aprovamos para nos acomodarmos às situações que nos " +
+"favoreçam.");
+novoCapitulo("Palavras de Vida Eterna 168 - TESTE");
+novoVersiculo("Marcos 5, 19");
+processar("\"Jesus, porém, não lho permitiu, mas ordenou-lhe:<br>" +
+"vai para tua casa, para os teus. Anuncia-lhes tudo " +
+"o que o Senhor te fez e como teve compaixão de ti.\"<br>" +
+"(Marcos, 5:19.)<br>" +
+"A exortação de Cristo ao obsidiado, restituído ao próprio equilíbrio, dá que pensar.<br>" +
+"Jesus, inicialmente, não lhe permite acompanhá-lo, no apostolado das Boas Novas, " +
+"alardeando, de público, a alegria de que se vê possuído. Ao invés de júbilos antecipados, " +
+"recomenda-lhe o retorno ao ambiente caseiro, para revelar aos familiares os benefícios de " +
+"que se fizera depositário, ante a Providência Divina.<br>" +
+"Indiscutivelmente, com semelhante lição, impele-nos o Senhor a reconhecer que é no " +
+"circulo mais íntimo, seja no lar ou na profissão, que nos cabe patentear a solidez das " +
+"virtudes adquiridas. Isso porque anunciar princípios superiores, através da aplicação " +
+"prática à renovação e ao aperfeiçoamento que nos impõem, diante daqueles que nos " +
+"conhecem as deficiências e falhas, é a fórmula verdadeira de testar a nossa capacidade " +
+"de veiculá-los, com êxito, em plano mais vasto e mais elevado.<br>" +
+"A indicação não deixa dúvidas.<br>" +
+"Se já nos aproximamos do Cristo, assimilando-lhes as mensagens de vida eterna, " +
+"procuremos comunicá-las, pelo idioma do exemplo, primeiramente aos nossos, aos que " +
+"nos compartilham as maneiras e os hábitos, as dificuldades e as alegrias. Se aprovados " +
+"na escola doméstica, onde somos mais rigorosamente policiados, quanto ao " +
+"aproveitamento real dos ensinamentos nobilitantes que admitimos e apregoamos, decerto " +
+"que nos acharemos francamente habilitados para o testemunho do Senhor, junto da " +
+"Humanidade, nossa família maior.");
+novoCapitulo("Palavras de Vida Eterna 169 - TESTEMUNHO DOMÉSTICO");
+novoVersiculo("Gálatas 6, 10");
+processar("\"Por isso, enquanto tivermos oportunidade, façamos o bem a " +
+"todos, mas principalmente aos da família da fé - Paulo.<br>" +
+"(Gálatas, 6:10.)<br>" +
+"Decerto que o apóstolo Paulo, em nos recomendando carinho especial para com a família " +
+"da nossa fé, mantinha em vista a obrigação inarredável da assistência imediata aos que " +
+"convivem conosco.<br>" +
+"Se não formos úteis e compreensivos, afáveis e devotados, junto de alguns " +
+"companheiros, como testemunhar a vivência das lições de Jesus, diante da Humanidade?<br>" +
+"Admitimos, porém, à luz da Doutrina Espírita, que o aviso apostólico se reveste de " +
+"significação mais profunda.<br>" +
+"É que, entre os nossos domésticos, estão particularmente os laços de existências " +
+"passadas, muitos deles reclamando reajuste e limpeza.<br>" +
+"Na equipe dos familiares do dia a dia formam, comumente, aqueles Espíritos que, por " +
+"força de nossos compromissos do pretérito, nos fiscalizam, criticam, advertem e " +
+"experimentam.<br>" +
+"Sempre fácil dar boa impressão a quem não prive intimamente conosco. Num gesto ou " +
+"numa frase, arrancamos, de improviso, o aplauso ou a admiração de quantos nos " +
+"encontram exclusivamente na paisagem escovada dos atos sociais.<br>" +
+"Diante dos amigos que se despedem de nós, depois de uma solenidade ou de qualquer " +
+"encontro formal, nada difícil cairmos desastradamente sob a hipnose de lisonja com que " +
+"se pretende exagerar as nossas virtudes de superfície.<br>" +
+"Examinemos, contudo, as nossas conquistas morais, demonstrando-as perante aqueles " +
+"que nos conhecem os pontos fracos.<br>" +
+"Não nos iludamos.<br>" +
+"Façamos o bem a todos, mas provemos, a nós mesmos, se já somos bons, fazendo o " +
+"bem, a cavaleiro de todos os embaraços, diante daqueles que diariamente nos " +
+"acompanham a vida, policiando o nosso comportamento entre o bem e o mal.");
+novoCapitulo("Palavras de Vida Eterna 170 - CONTA PESSOAL");
+novoVersiculo("Romanos 14, 12");
+processar("\"Assim pois cada um de nós dará contas de si mesmo a Deus.\"<br>" +
+"- Paulo. (Romanos, 14.12.)<br>" +
+"Se te propões à renovação com o Cristo, é imperioso suportes, pacientemente, as " +
+"opiniões contraditórias em torno da diretriz diferente a que te afeiçoes.<br>" +
+"Se algum erro te assinala o passado, muitos te acreditarão de pés chumbados à sombra " +
+"que, há muito, lá desterraste do espírito; se expressas algum voto de melhoria íntima, não " +
+"obstante as deficiências naturais que ainda te marquem o início no aprendizado " +
+"evangélico, há quem te exija espetáculos de grandeza, de um instante para outro; se te " +
+"dispões a trabalhar no auxílio aos semelhantes. de modo mais intenso, há quem veja " +
+"desperdício em teus gestos de generosidade e beneficência; se nada mais podes dar ao " +
+"necessitado além da migalha de tuas escassas reservas materiais, aparece quem te " +
+"acuse de sovinice; se te corriges decididamente perante a verdade com o propósito de " +
+"servi-la, há quem te interprete a espontaneidade por fanatismo; se te recolhes à gentileza " +
+"e à serenidade, na execução da tarefa que o serviço do Senhor te atribui, surge quem te " +
+"aponte por exemplar de pieguice ou indolência...<br>" +
+"Apesar de todos os palpites antagônicos, acerca de teu esforço e conduta, entra no imo " +
+"da própria alma, observa se a sinceridade te preside as resoluções e os atos, no foro da " +
+"consciência e, se te reconheces, diante, do Senhor, fazendo o melhor que podes, guarda " +
+"o coração tranqüilo e prossegue, de esforço limpo e atitude reta, caminho adiante, na " +
+"convicção de que \"cada um de nós dará conta de si mesmo a Deus\".");
+novoCapitulo("Palavras de Vida Eterna 171 - PACIÊNCIA EM ESTUDO");
+novoVersiculo("Lucas 2, 19");
+processar("“É na vossa paciência que ganhareis as vossas almas.”<br>" +
+"– Jesus (LUCAS, 2:19)<br>" +
+"Todos necessitamos de paciência uns para com os outros, mas compete-nos igualmente " +
+"a todos estudar a paciência em sua função educativa.<br>" +
+"Paciência!<br>" +
+"É serenidade; calma, porém, não é aprovação ao desequilíbrio.<br>" +
+"È compreensão; entendimento, no entanto, não é passaporte ao abuso.<br>" +
+"È harmonização; ajuste, todavia, não é apoio à delinqüência.<br>" +
+"È tolerância; brandura, entretanto, não é coonestação com o erro deliberado.<br>" +
+"Paciência, sobretudo, é a capacidade de verificar a dificuldade ou o desacerto nas " +
+"engrenagens do cotidiano, buscando a solução do problema ou a transposição do " +
+"obstáculo, sem toques de alarde e sem farpas de irritação.<br>" +
+"Em todos os aspectos da paciência, recordamos Jesus.<br>" +
+"O Mestre foi, no mundo, o paradigma de semelhante virtude, mas não foi conformista.<br>" +
+"Nunca se apassivou diante do mal, conquanto lhe suportasse as manifestações, " +
+"diligenciando meios de tudo renovar para o bem; e, em lhe lembrando a sinceridade e a " +
+"franqueza, não nos será lícito esquecer que o Cristo se revelou tão paciente que não " +
+"hesitou em regressar, depois da morte, ao convívio das criaturas humanas que o haviam " +
+"abandonado. Ainda assim, é forçoso reconhecer que ele se materializou perante os " +
+"discípulos que, em maioria, podiam ser iletrados e medrosos, mas suficientemente " +
+"sinceros para continuar-lhe a obra libertadora, e não diante dos fariseus, altamente " +
+"intelectualizados e profundos conhecedores das revelações divinas, mas habitualmente " +
+"atolados em conveniências e preconceitos e, por isso mesmo, capazes de omitir a " +
+"verdade e estabelecer a perturbação.");
+novoCapitulo("Palavras de Vida Eterna 172 - ORAÇÃO E COOPERAÇÃO");
+novoVersiculo("Mateus 6, 6");
+processar("“Quando quiserdes orar, entrai para o vosso quarto e, cerrada a porta, " +
+"orai a vosso Pai em secreto; e vosso Pai que vê o que se passa em " +
+"secreto vos recompensará”. – Jesus. (MATEUS, 6:6)<br>" +
+"Se a resposta que esperamos à oração parece tardia, habitualmente nos destemperamos " +
+"em amargura.<br>" +
+"Proclamamos haver hipotecado todas as forças de espírito à confiança na Providência " +
+"Divina e gritamos, ao mesmo tempo, que as tribulações ficaram maiores.<br>" +
+"Dizemo-nos fiéis a Deus e afirmamo-nos esquecidos.<br>" +
+"Convém observar, porém, que a provação não nos alcança de maneira exclusiva.<br>" +
+"As nossas dificuldades são as dificuldades de nosso grupo.<br>" +
+"Familiares e companheiros sofrem conosco o impacto das ocorrências desagradáveis, " +
+"tanto quanto a fricção do cotidiano pela sustentação da harmonia comum.<br>" +
+"Se para nós, que nos asseveramos alicerçados em conhecimento superior, as " +
+"mortificações do caminho assumem a feição de suplícios lentos, que não serão elas para " +
+"aqueles de nossos entes queridos, ainda inseguros da própria formação espiritual.<br>" +
+"Compreendamos que, se na extinção dos nosso problemas pequeninos, requisitamos o " +
+"máximo de proteção ao Senhor, é natural que o Senhor nos peça o mínimo de concurso " +
+"na supressão dos grandes infortúnios que abatem o próximo.<br>" +
+"Em quantos lances embaraçosos, somos, de fato, a pessoa indicada à paciência e à " +
+"tolerância, ao entendimento e ao serviço?<br>" +
+"Com semelhante raciocínio, reconhecemos que a pior atitude, em qualquer adversidade, " +
+"será sempre aquela da dúvida ou da inquietação que venhamos a demonstrar.<br>" +
+"Em supondo que a solução do Auto demora a caminho, depois de havermos rogado o " +
+"favor da Infinita Bondade, recordemos que se a hora de crise é o tempo de luta, é também " +
+"a ocasião para os melhores testemunhos de fé; e que se exigimos o amparo do Senhor, " +
+"em nosso benefício, é perfeitamente justo que o Senhor nos solicite algum amparo, em " +
+"favor dos que se afligem, junto de nós.");
+novoCapitulo("Palavras de Vida Eterna 173 - RIXAS E QUEIXAS");
+novoVersiculo("Tiago 3, 10");
+processar("“De uma só boca procede bênção e maldição.<br>" +
+"Meus irmãos, não é conveniente que estas cousas sejam assim”.<br>" +
+"(TIAGO, 3:10)<br>" +
+"Julgamos comumente que os problemas de justiça apenas se manifestam, quando " +
+"questões graves nos lavam a tribunal.<br>" +
+"Justiça, porém, é assunto palpitante de todos os dias e, a cada hora, precisamos dela " +
+"para a garantia da paz, quanto necessitamos de ar para a sustentação da existência.<br>" +
+"Nos mínimos atos, usamos justiça para assegurar a harmonia geral.<br>" +
+"Conhecemos a significação do lugar que ocupamos numa fila simples e sabemos " +
+"respeitá-lo para a conservação da ordem.<br>" +
+"Todos estamos acordes em obedecer, espontaneamente, aos preceitos do trânsito, " +
+"conformando-nos às paradas indispensáveis para segurança da via pública.<br>" +
+"Não ignoramos a obrigação de acatar as advertências que regem o emprego da energia " +
+"elétrica em aparelho determinado, a fim de que não venhamos a comprometer a " +
+"integridade doméstica.<br>" +
+"Em sã consciência, ninguém desdenhará os direitos do vizinho, se não deseja os seus " +
+"próprios direitos menosprezados.<br>" +
+"Lembramo-nos de semelhantes imagens do cotidiano para recordar que em nossas " +
+"indisposições e ressentimentos, há que pensar igualmente na tranqüilidade dos outros, de " +
+"todos aqueles que nos partilham a experiência diária, a fim de que não venhamos a furtarlhes " +
+"a esperança e a coragem, golpeando-lhes o ânimo e conturbando-lhes o serviço.<br>" +
+"Evitemos rixas e queixas.<br>" +
+"Para resguardar o equilíbrio da vida coletiva e da vida caseira, atendemos a instruções e " +
+"sinais, regulamentos e avisos, baseados na experiência dos homens, e para imunizar-nos " +
+"a vida íntima contra distúrbios e prejuízos concedeu-nos a Divina Providência o controle " +
+"do pensamento e o governo da língua.");
+novoCapitulo("Palavras de Vida Eterna 174 - AMIGOS DE JESUS");
+novoVersiculo("João 15, 14");
+processar("“Vós sois meus amigos se fizerdes o que eu vos mando”<br>" +
+"JESUS (JOÃO, 15:14.).<br>" +
+"Em toda parte, CRISTO possui:<br>" +
+"legiões de admiradores, mas os tiranos da Humanidade também as adquiriram; " +
+"multidões de partidários, entanto, os verdugos de nações igualmente as tiveram; " +
+"grupos de incensadores, todavia os promotores das guerras de assalto e de extermínio " +
+"também lhes conheceram a adulação; " +
+"filas de defensores intransigentes, contudo, os inimigos do progresso igualmente as " +
+"enumeraram junto de si; " +
+"assembléias de analista, no entanto, os chefes transviados, que passaram nas " +
+"eminências da História, ainda hoje contam com elas.<br>" +
+"JESUS, até agora, é cercado entre os povos mais cultos da Terra de inúmeros crentes e " +
+"fanáticos, seguidores e intérpretes, adoradores e adversários, mas os empreiteiros da " +
+"desordem e da crueldade também os encontram.<br>" +
+"Fácil reconhecer que os comandantes da perturbação e da delinqüência não conhecem " +
+"amigos, de vez que o tempo se incumbe de situá-los no ponto certo que lhes cabe na " +
+"vida, extinguindo a hipnose de ilusão com que se jungem aos companheiros. Cristo, " +
+"porém, dispõe de amigos reais, que se multiplicam em todas as regiões do planeta " +
+"terrestre, à medida que os séculos se lhe sobrepõem à crucificação. E esses amigos que " +
+"existem, no seio de todas as filosofias e crenças, não se distinguem tão-só por legendas " +
+"exteriores, mas, acima de tudo, porque se associam a Ele, em Espírito e Verdade, " +
+"entendendo-lhe as lições e praticando-lhe os ensinos.");
+novoCapitulo("Palavras de Vida Eterna 175 - NO CONVÍVIO DE CRISTO I");
+novoVersiculo("João 14, 15");
+processar("“Se me amais, guardareis os meus mandamentos.” – Jesus.<br>" +
+"(JOÃO, 14:15.)<br>" +
+"Sem dúvida que são várias as atitudes pelas quais denotamos a nossa posição, diante do " +
+"Cristo.<br>" +
+"Ser-nos-á sempre fácil:<br>" +
+"admitir-lhe a grandeza e tributar-lhe honrarias; " +
+"estudar-lhe as lições e transmitir-lhe os ensinos; " +
+"apaixonar-nos por seu apostolado e exaltar-lhe a personalidade nos valores artísticos; " +
+"aceitar-lhe as revelações e defendê-la com veemência; " +
+"receber-lhe as concessões e entoar-lhe louvores; " +
+"identificar-lhe o poder e respeitar-lhe a influência; " +
+"reconhecer-lhe a bondade e formar, no culto a ele, entre os melhores adoradores; " +
+"perceber-lhe a tolerância e abusar-lhe do próprio nome...<br>" +
+"Tudo isso, realmente, ser-nos-á possível, sem o menor constrangimento, no campo das " +
+"manifestações exteriores.<br>" +
+"Entretanto, para usufruir a intimidade de Jesus e senti-la no coração, é imprescindível " +
+"amá-lo, compartilhando-lhe a obra e a vida. Eis porque o Divino Mestre foi claro e " +
+"insofismável, quando asseverou para os aprendizes que tão-somente os que o amem " +
+"saberão trilhar-lhe o caminho e guardar-lhe os mandamentos.");
+novoCapitulo("Palavras de Vida Eterna 176 - NO DIA DA INCERTEZA");
+novoVersiculo("1_Coríntios 2, 16");
+processar("“Nós, porém, temos a mente de Cristo”.<br>" +
+"– Paulo (I CORÍNTIOS, 2:16)<br>" +
+"Para qualquer de nós, chega o minuto das grandes hesitações.<br>" +
+"Trabalhamos, por tempo enorme, no encalço de determinada realização e eis que, de " +
+"chofre, todo o nosso esforço parece perdido...<br>" +
+"Buscávamos diretrizes no exemplo de alguém, que aceitávamos como possuindo " +
+"bastante virtude para guiar-nos a vida e esse alguém falha desastradamente no instante " +
+"preciso em que mais lhe requisitamos as luzes...<br>" +
+"Contávamos com certos recursos para o atendimento a compromissos diversos e esses " +
+"recursos como que se evaporam, deixando-nos amarguradamente frustrados...<br>" +
+"Retínhamos elementos valiosos que nos garantiam segurança e tranqüilidade e, por " +
+"circunstâncias inelutáveis, nos vemos privados deles, largados à prova, sem alegria e " +
+"sem direção...<br>" +
+"Todos somos surpreendidos pelo dia nublado de incerteza em que nos reconhecemos " +
+"perplexos.<br>" +
+"Por dentro, ansiedade; por fora, consternação...<br>" +
+"Não nos sintamos, porém, sozinhos.<br>" +
+"Dispomos da mente de Cristo, o Divino Mestre da Alma.<br>" +
+"Roguemos a Jesus caminho e sustento.<br>" +
+"A hora da incerteza, é, sobretudo, a hora da prece.<br>" +
+"Quando a sombra chega é o momento de fazer luz.");
+novoCapitulo("Palavras de Vida Eterna 177 - NA ESFERA DO REAJUSTE");
+novoVersiculo("João 3, 7");
+processar("“Não te admires de eu te dizer: importa-vos nascer de novo”<br>" +
+"– Jesus (JOÃO, 3:7)<br>" +
+"Empeços e provações serão talvez os marcos que te assinalem a estrada hoje.<br>" +
+"Diligenciemos, porém, com a reencarnação a retificar os erros e a ressarcir os débitos de " +
+"ontem, para que a luz da verdade e o apoio da harmonia nos felicitem o caminho, " +
+"amanhã...<br>" +
+"A questão intrincada que te apoquenta agora, quase sempre, é o problema que " +
+"abandonaste sem solução entre os amigos que, em outro tempo, se rendiam, confiantes, " +
+"ao teu arbítrio.<br>" +
+"O parente complicado que julgas carregar, por espírito de heroísmo, via de regra, é a " +
+"mesma criatura que, em outra época, arrojaste ao desespero e à perturbação.<br>" +
+"Ideais nobilitantes pelos quais toleras agressões e zombarias, considerando-te " +
+"incompreendido seareiro do progresso, em muitas ocasiões, são aqueles mesmos " +
+"princípios que outrora espezinhaste, insultando a sinceridade dos companheiros que a " +
+"eles se associavam.<br>" +
+"Calúnias que arrostas, crendo-te guindado aos píncaros da virtude pela paciência que " +
+"evidencias, habitualmente nada mais são que o retorno das injúrias que assacaste, " +
+"noutras eras, contra irmãos indefesos.<br>" +
+"Falhas do passado procuram-te responsável, no corpo, na família, na sociedade ou na " +
+"profissão, pedindo-te reajuste.<br>" +
+"“Necessário vos é nascer de novo” – disse-nos Jesus.<br>" +
+"Bendizendo, pois, a reencarnação, empenhemo-nos a trabalhar e aprender, de novo, com " +
+"atenção e sinceridade, para que venhamos a construir e acertar em definitivo.");
+novoCapitulo("Palavras de Vida Eterna 178 - ADVERSÁRIOS E DELINQÜENTES");
+novoVersiculo("Mateus 5, 25");
+processar("“Reconcilia-te depressa com o teu adversário, enquanto " +
+"estás a caminho com ele...” – Jesus. (MATEUS, 5:25)<br>" +
+"Jesus nos solicitou a imediata reconciliação com os adversários, para que a nossa oração " +
+"se dirija a Deus, escolmada de qualquer sentimento aviltante.<br>" +
+"Não ignoramos que os adversários são nossos opositores ou, mais apropriadamente, " +
+"aqueles que alimentam pontos de vista contrários aos nossos. E muitos deles, " +
+"indiscutivelmente, se encontram em condições muito superiores às nossas, em " +
+"determinados ângulos de serviço e merecimento. Não nos cabe, assim, o direito de " +
+"espezinhá-los e sim o dever de respeitá-los e cooperar com eles, no trabalho do bem " +
+"comum, embora não lhes possamos abraçar o quadro integral das opiniões.<br>" +
+"Há companheiros, porém, que, atreitos ao comudismo sistemático, a pretexto de " +
+"humildade, se ausentam de qualquer assunto em que se procura coibir a dominação do " +
+"mal, esquecidos de que os nossos irmãos delinqüentes são enfermos necessitados de " +
+"amparo e intervenção compatíveis com os perigos que apresentem para a comunidade.<br>" +
+"Todos aqueles que, exercem algum encargo de direção sabem perfeitamente que é " +
+"preciso velar em defesa da obra que a vida lhes confiou.<br>" +
+"Imperioso manter-nos em harmonia com todos os que não pensam por nossos princípios, " +
+"entretanto, na posição de criaturas responsáveis, não podemos passar indiferentes diante " +
+"de um irmão obsidiado, que esteja lançando veneno em depósitos de água destinada à " +
+"sustentação coletiva.<br>" +
+"Necessitamos acatar os condôminos do edifício que nos serve de residência, toda vez " +
+"que não consigam ler os problemas do mundo pela cartilha de nossas idéias, todavia, não " +
+"será justo desinteressar-nos da segurança geral, se vemos um deles ateando fogo no " +
+"prédio.<br>" +
+"Cristo, em verdade, no versículo 25 do capítulo 5, do Evangelho de Mateus, nos afirma:<br>" +
+"“reconcilia-te depressa com o teu adversário”, mas no versículo 2 do capítulo 16, do " +
+"Evangelho de Lucas, não se esqueceu de acrescentar: “dá conta de tua mordomia”.");
+novoCapitulo("Palavras de Vida Eterna 179 - DISCERNIR E CORRIGIR");
+novoVersiculo("Mateus 7, 2");
+processar("“... com o critério com que julgardes sereis julgados; " +
+"e com a medida com que tiverdes medido vos medirão também”.<br>" +
+"– Jesus (MATEUS, 7:2)<br>" +
+"Viste o companheiro em necessidade e comentaste-lhe a posição...<br>" +
+"Possuía ele recursos expressivos e, talvez por imprevidência, caiu em penúria dolorosa...<br>" +
+"Usufrui conhecimentos superiores e feriu-te a sensibilidade por arrojar-se em terríveis " +
+"despenhadeiros do coração que, às vezes, os últimos dos menos instruídos conseguem " +
+"facilmente evitar...<br>" +
+"Detinha oportunidades de melhoria, com as quais milhares de criaturas sonham debalde e " +
+"procedeu impensadamente, qual se não retivesse as vantagens que lhe brilham nas " +
+"mãos...<br>" +
+"Desfruta ambiente distinto, capaz de guindá-lo às alturas e prefere desconhecer as " +
+"circunstâncias que o favorecem, mergulhando-se na sombra das atitudes negativas...<br>" +
+"Mantinha valiosas possibilidades de elevação espiritual, no levantamento de apostolados " +
+"sublimes, e emaranhou-se em tramas obsessivas que lhe exaurem as forças...<br>" +
+"Tudo isso, realmente, podes observar e referir.<br>" +
+"Entra, porém, na esfera do próprio entendimento e capacita-te de que te não é possível a " +
+"imediata penetração no campo das causas.<br>" +
+"Ignoramos qual teria sido o nosso comportamento na trilha do companheiro em " +
+"dificuldade, com a soma dos problemas que lhe pesam no espírito.<br>" +
+"Não te permitas, assim, pensar ou agir, diante dele, sem que a fraternidade te comande " +
+"as definições.<br>" +
+"Ainda mesmo no esclarecimento absoluto que, em casos numerosos, reclama " +
+"austeridade sobre nós mesmos, é possível propiciar o remédio da fraqueza a doentes da " +
+"alma pelo veículo da compaixão, como se administra piedosamente a cirurgia aos " +
+"acidentados.<br>" +
+"Se conseguimos discernir o bem do mal, é que já conhecemos o mal e o bem, e se o " +
+"Senhor nos permite identificar as necessidades alheias, é porque, de um modo ou de " +
+"outro, já podemos auxiliar.");
+novoCapitulo("Palavras de Vida Eterna 180 - DEUS TE ABENÇOA");
+novoVersiculo("2_Coríntios 8, 1");
+processar("\"Também, irmãos, vos fazemos conhecer a graça de Deus...\"<br>" +
+"- Paulo (II CORÍNTIOS, 8:1.)<br>" +
+"Acreditas-te frágil, mas Deus te suprirá de energias.<br>" +
+"Reconheces a própria limitação, mas Deus te conferirá crescimento.<br>" +
+"Afirmas-te sem ânimo, mas Deus te propicia coragem.<br>" +
+"Declaras-te pobre, mas dispões das riquezas infinitas de Deus.<br>" +
+"Entendamos, porém, que o processo de assimilar os recursos divinos será sempre o " +
+"serviço prestado aos outros.<br>" +
+"Não alegues, assim, fraqueza, inaptidão, desalento ou penúria para desistir do lugar que " +
+"te cabe no edifício do bem.<br>" +
+"Pela hora do otimismo com que amparas o trabalho dos companheiros, Deus te abençoa.<br>" +
+"Pelo gesto silencioso com que escoras o equilíbrio geral, Deus te abençoa.<br>" +
+"Pela frase caridosa e esclarecedora com que asseguras o entendimento fraterno, Deus te " +
+"abençoa.<br>" +
+"Pela migalha de socorro ou de tempo despendes no apoio aos necessitados, Deus te " +
+"abençoa.<br>" +
+"Pela atitude de tolerância e serenidade, à frente da incompreensão, Deus te abençoa.<br>" +
+"Convivemos, sem dúvida, com almas heróicas, habilitadas aos mais altos testemunhos de " +
+"fé em Deus, através do sacrifício pela felicidade dos semelhantes, mas Deus que " +
+"abençoa o rio capaz de garantir as searas do campo, abençoa também a gota de orvalho " +
+"que ameniza a sede da rosa.<br>" +
+"Se erros e desacertos nos marcaram a estrada até ontem, voltemo-nos para Deus com " +
+"sinceridade, refazendo a esperança e suportando sem mágoa, as acusações do caminho.<br>" +
+"O homem, às vezes, passa enojado, à frente do charco, sem perceber que Deus alentou " +
+"no charco os lírios que lhe encantam a mesa.<br>" +
+"A face disso, se alguém te censura ouve com paci6encia. Se existe sensatez na " +
+"repreensão, aproveita o conselho; se for injusto o reproche, conserva a alma tranqüila, na " +
+"limpeza da consciência.<br>" +
+"Em qualquer dificuldade, arrima-te a confiança, trabalhando e servindo com alegria, na " +
+"certeza invariável de que Deus te vê e te abençoa.<br>" +

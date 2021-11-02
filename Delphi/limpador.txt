@@ -1,0 +1,6 @@
+cd "%1"
+del *.exe
+del *.~*
+del *.dcu
+del *.ddp
+del *.dsk

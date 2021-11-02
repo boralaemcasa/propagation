@@ -1,0 +1,1 @@
+solve for j_1: n_1 = ( frac(( i_1 - a_1 ) b_1 + c_1)(d_1^2) - e_1 frac(i_1 - a_1)(d_1^3) - f_1 ) g_1 + ( h_1 frac(i_1 - a_1)(d_1^2) - j_1 ) m_1
