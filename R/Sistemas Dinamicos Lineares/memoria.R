@@ -1,0 +1,6 @@
+sem memória depende somente do presente.
+
+y(t) = 3x(t) sem memória
+
+3x(t - 1) com memória
+
