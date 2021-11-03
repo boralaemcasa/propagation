@@ -1,0 +1,2949 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Joanna 2012</title>
+<style type="text/css">
+#customers
+{
+font-family:Arial;
+border-collapse:collapse;
+}
+#customers td, #customers th
+{
+font-size:1em;
+border:1px solid green;
+padding:3px 7px 2px 7px;
+height:10px;
+}
+#customers th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+#customers tr.alt td 
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+</style>
+<style id="wrc-middle-css" type="text/css">.wrc_whole_window{	display: none;	position: fixed; 	z-index: 2147483647;	background-color: rgba(40, 40, 40, 0.9);	word-spacing: normal;	margin: 0px;	padding: 0px;	border: 0px;	left: 0px;	top: 0px;	width: 100%;	height: 100%;	line-height: normal;	letter-spacing: normal;}.wrc_middle_main {	font-family: Segoe UI, Arial Unicode MS, Arial, Sans-Serif;	font-size: 14px;	width: 600px;	height: auto;	margin: 0px auto;	margin-top: 15%;    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/background-body.jpg) repeat-x left top;	background-color: rgb(39, 53, 62);}.wrc_middle_logo {    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/logo.jpg) no-repeat left bottom;    width: 140px;    height: 42px;    color: orange;    display: table-cell;    text-align: right;    vertical-align: middle;}.wrc_icon_warning {	margin: 20px 10px 20px 15px;	float: left;	background-color: transparent;}.wrc_middle_title {    color: #b6bec7;	height: auto;    margin: 0px auto;	font-size: 2.2em;	white-space: nowrap;	text-align: center;}.wrc_middle_hline {    height: 2px;	width: 100%;    display: block;}.wrc_middle_description {	text-align: center;	margin: 15px;	font-size: 1.4em;	padding: 20px;	height: auto;	color: white;	min-height: 3.5em;}.wrc_middle_actions_main_div {	margin-bottom: 15px;	text-align: center;}.wrc_middle_actions_blue_button {	-moz-appearance: none;	border-radius: 7px;	-moz-border-radius: 7px/7px;	border-radius: 7px/7px;	background-color: rgb(0, 173, 223) !important;	display: inline-block;	width: auto;	cursor: Pointer;	border: 2px solid #00dddd;}.wrc_middle_actions_blue_button:hover {	background-color: rgb(0, 159, 212) !important;}.wrc_middle_actions_blue_button:active {	background-color: rgb(0, 146, 200) !important;	border: 2px solid #00aaaa;}.wrc_middle_actions_blue_button div {	display: inline-block;	width: auto;	cursor: Pointer;	margin: 3px 10px 3px 10px;	color: white;	font-size: 1.2em;	font-weight: bold;}.wrc_middle_action_low {	font-size: 0.9em;	white-space: nowrap;	cursor: Pointer;	color: grey !important;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action_low:hover {	color: #aa4400 !important;}.wrc_middle_actions_rest_div {	padding-top: 5px;	white-space: nowrap;	text-align: center;}.wrc_middle_action {	white-space: nowrap;	cursor: Pointer;	color: red !important;	font-size: 1.2em;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action:hover {	color: #aa4400 !important;}</style><script id="wrc-script-middle_window" type="text/javascript" language="JavaScript">var g_inputsCnt = 0;var g_InputThis = new Array(null, null, null, null);var g_alerted = false;/* we test the input if it includes 4 digits   (input is a part of 4 inputs for filling the credit-card number)*/function is4DigitsCardNumber(val){	var regExp = new RegExp('[0-9]{4}');	return (val.length == 4 && val.search(regExp) == 0);}/* testing the whole credit-card number 19 digits devided by three '-' symbols or   exactly 16 digits without any dividers*/function isCreditCardNumber(val){	if(val.length == 19)	{		var regExp = new RegExp('[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}');		return (val.search(regExp) == 0);	}	else if(val.length == 16)	{		var regExp = new RegExp('[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}');		return (val.search(regExp) == 0);	}	return false;}function CheckInputOnCreditNumber(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'text')	{		if(is4DigitsCardNumber(value))		{			var cont = true;			for(i = 0; i < g_inputsCnt; i++)				if(g_InputThis[i] == self)					cont = false;			if(cont && g_inputsCnt < 4)			{				g_InputThis[g_inputsCnt] = self;				g_inputsCnt++;			}		}		g_alerted = (g_inputsCnt == 4);		if(g_alerted)			g_inputsCnt = 0;		else			g_alerted = isCreditCardNumber(value);	}	return g_alerted;}function CheckInputOnPassword(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'password')	{		g_alerted = (value.length > 0);	}	return g_alerted;}function onInputBlur(self, bRatingOk, bFishingSite){	var bCreditNumber = CheckInputOnCreditNumber(self);	var bPassword = CheckInputOnPassword(self);	if((!bRatingOk || bFishingSite == 1) && (bCreditNumber || bPassword) )	{		var warnDiv = document.getElementById("wrcinputdiv");		if(warnDiv)		{			/* show the warning div in the middle of the screen */			warnDiv.style.left = "0px";			warnDiv.style.top = "0px";			warnDiv.style.width = "100%";			warnDiv.style.height = "100%";			document.getElementById("wrc_warn_fs").style.display = 'none';			document.getElementById("wrc_warn_cn").style.display = 'none';			if(bFishingSite)				document.getElementById("wrc_warn_fs").style.display = 'block';			else				document.getElementById("wrc_warn_cn").style.display = 'block';			warnDiv.style.display = 'block';		}	}}</script><script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+<table id="customers" class="fix" width="100%">
+  <colgroup><col width="50%">
+  <col width="50%">
+</colgroup><tbody><tr class="alt">
+<td>A seguir ela afirma que Deus se esforça. E O compara a um jardineiro.<br>
+O espiritismo, ao valorizar a resignação diante do sofrimento, aproxima-se do estoicismo.<br>
+Você se esforçou no reino mineral, no vegetal e no animal.<br>
+A agressividade, enquanto preservação da vida, se transforma em precaução.<br>
+Não te detenhas "na marcha direcionada para a plenitude."<br>
+Se não se esforça, se não enfrenta, então não cresce. (Entrega-te a Deus)<br>
+<br>
+Como Deus jardina as almas: Você pede a ele paciência. Utilizando-se do externo, do outro, nos atinge. E eu devo ser a "flor que se cheire" no jardim do outro. Deus nunca burla a Lei de Amor e Caridade. E <font style="background-color: blue;" color="white">faz a todo mundo, Igualmente, o mesmo Trabalho.</font> Só que com a mesma lei de crescimento, algumas plantinhas crescem mais que as outras. Falou, bonsai?!
+</td>
+<td>"Ao serem descobertos os quasares azuis, o conceito do Universo infinito passou a ser modificado, porquanto se começou a crer que as partículas que saíram da grande explosão fugindo do epicentro, terminaram por alcançar-lhe a borda que as faz retornar, produzindo esse efeito por ocasião do encontro com as que ainda estão avançando na direção de onde aquelas voltam" Joanna de Angelis, Libertação do Sofrimento, item Reflexões sobre Deus
+</td>
+</tr>
+<tr>
+<td>"Quanto mais aumenta a população terrestre mais se amplia a área da solidão, impondo grande silêncio aos relacionamentos, em decorrência da desconfiança que assalta zombeteira as criaturas, armando-as, quase sempre, umas contra as outras, quando se deveriam amar umas às outras." Joanna de Angelis, Liberta-te do Mal [item] Pelas trilhas de Jesus
+</td>
+<td>"vadearam o Letes mitológico e aportaram na Realidade..." J.A. / D.P.F. Liberta-te do Mal p. 35
+</td>
+</tr>
+<tr class="alt">
+<td>"O ser humano autodesconhece-se enquanto permanece atento aos acontecimentos exteriores que envolvem outras pessoas, cujas imagens são mecanismos de transferência das próprias aflições e insegurança, tomando-as como ídolos ou modelos, invejados uns, enquanto detestados outros, por parecerem inalcançáveis..." J.A. / D.P.F. Liberta-te do Mal p.40
+</td>
+<td>"Juventude (...) é quadra primaveril preparatória para a grandeza do verão da vida, e logo, o outono e o inverno existencial." Liberta-te do Mal p. 50
+</td>
+</tr>
+<tr>
+<td>"Quando despertaram na Espiritualidade, após a prática de muitos delitos e males, recambiados pela desencarnação, havendo-se dado conta dos prejuízos que se causaram, rogaram à Divindade a oportunidade própria para a recuperação, mesmo que envoltos pelas vestes do sofrimento. Agora colhem a sementeira de espinhos deixada pela via do progresso, que trilharam com atrevimento e desrespeito aos soberanos códigos da Vida..." J.A. Liberta-te do Mal p. 134
+</td>
+<td>"Os maus de hoje, aqueles que se apresentam ditosos sem mérito, experimentarão, oportunamente, igual processo de aflição, porque as leis que dirigem o Universo são as mesmas para todos." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Herdando as experiências transatas em seus conteúdos bons e maus, por um largo período predominam aqueles de natureza primitiva, por estarem mais fixados nos paineis dos hábitos morais, mantendo os instintos agressivos-defensivos que se vão transformando em emoções, prioritariamente egoicas, em contínuos conflitos com o Si-mesmo e com todos aqueles que fazem parte do grupo social onde se movimentam. Inevitavelmente, as imposições inferiores são muito mais fortes do que aquelas que proporcionam a ascensão espiritual, liberando o orgulho, a inveja, o ressentimento, a agressividade, o despotismo, a perseguição, a calúnia e outros perversos comportamentos que defluem do ego atormentado." Liberta-te do Mal p. 64
+</td>
+<td>"Recusando-se, consciente ou inconscientemente, a crescer e a se igualar àqueles que estão conquistando os tesouros do discernimento, da verdade, do Bem, transforma-se, na ociosidade mental e moral em que permanece, em seu cruel perseguidor, não lhe dando trégua e se retroalimentando com a própria insânia." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"A calúnia é a arma poderosa de que se utilizam esses enfermos do Espírito, que a esgrimem de maneira covarde para tisnar a reputação do seu próximo, a quem eles não conseguem se equiparar, optando pelo seu rebaixamento, quando seria muito mais fácil a própria ascensão rumo à felicidade." Liberta-te do Mal
+</td>
+<td>"Nada obstante, a calúnia é também uma névoa que o sol da verdade dilui, não conseguindo ir além da sombra que dificulta a marcha e das acusações aleivosas que afligem a quem lhe ofereça consideração e perca tempo em contestá-la." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Quando, porém, surgirem na imprensa ou nas correspondências, nas comunicações verbais ou nos veículos da mídia, ou na Internet acusações graves contra ti, sem que antes haja havido a possibilidade de um esclarecimento de tua parte, permanece tranquilo, porque esse adversário não deseja informações cabíveis, mas mantém o interesse subalterno de projetar a própria imagem, utilizando-se de ti..." Liberta-te do Mal
+</td>
+<td>"Somente acreditam em maledicências aqueles que se alimentam da fantasia e da mentira." Liberta-te do Mal p. 67
+</td>
+</tr>
+<tr>
+<td>"Alegras-te, de certo modo, porque te encontras sob a alça de mira dos contumazes inimigos do progresso." Liberta-te do Mal
+</td>
+<td>"A força do ideal que abraças dar-te-á coragem e valor para o prosseguimento do serviço a que te dedicas, e quanto mais ferido, mais caluniado, certamente mais convicto da excelência dos teus propósitos, da tua vinculação com o Sumo Bem." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Sucede que o veu da carne obnubila o discernimento mesmo em alguns Espíritos nobres e as injunções sociais, culturais, emocionais neles produzem atitudes desconsertantes, em antagonismos terríveis às convicções mantidas na mente e no coração." Liberta-te do Mal
+</td>
+<td>"Assim, não julgues ninguém, entregando-te em totalidade Àquele que nunca se enganou, jamais tergiversou, e se deu em absoluta renúncia do ego, para demonstrar que é <i>o Caminho da Verdade e da Vida</i>." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"A reencarnação é o método sublime de evolução com que a Divindade honra os Seus filhos, arrancando-os da ignorância para conduzi-los ao rumo da sabedoria." Liberta-te do Mal
+</td>
+<td>"Narra-se que Gerson, chanceler merovíngio, enunciou, oportunamente, que Deus, em nossa vida, olha mais para os <font style="background-color: blue;" color="white">advérbios</font> do que para os verbos." Liberta-te do Mal p. 111
+</td>
+</tr>
+<tr class="alt">
+<td>"A Divindade considera mais o <font style="background-color: blue;" color="white">modo enobrecido</font> com que as ações são praticadas do que elas em si mesmas." Liberta-te do Mal
+</td>
+<td>"Não são poucas as ações dignas que se apresentam em expressões agressivas, em formas primitivas, perdendo em significado tudo quanto desejariam em realização." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"Desse modo, os advérbios que enobrecem e dignificam têm por objetivo embelezar as ações." Liberta-te do Mal
+</td>
+<td>"Os valores da dignidade escasseando tornaram o indivíduo banalizado, desconfiado, inseguro, insensível, desnorteado... Todas essas mentes em desalinho, conduzidas pelo egoísmo exacerbado, geram uma psicosfera mórbida e tóxica, que interfere nos processos de acomodação das placas terrestres, assim como dos demais fenômenos do Planeta, que estrugem, destrutivos..." Liberta-te do Mal p. 117
+</td>
+</tr>
+<tr class="alt">
+<td>Hedonismo: "Irrisão dos instintos primários, porque todo gozo experimentado produz alegria enquanto dura, deixando, logo após, reassaibos de frustração e anseios de repetição contínua." J.A. Liberta-te do Mal p. 79
+</td>
+<td>"Qualquer tentativa de <font style="background-color: blue;" color="white">submeter o infinito</font> aos limites da finitude, assim como o absoluto às dimensões do relativo, redundará em frustração ou lamentáveis conclusões sem fundamento." Liberta-te do Mal p. 87
+</td>
+</tr>
+<tr>
+<td>"Uma observação singela pode cooperar para o entendimento dessa análise, quando o conteúdo de qualquer vasilhame anele por identificar todo o exterior e dimensioná-lo no tempo e no espaço." Liberta-te do Mal
+</td>
+<td>"Na sua incomparável condição de psicoterapeuta, Jesus nunca excluía o infeliz da oportunidade autorrenovadora, e quando Lhe eram trazidos aqueles que haviam tropeçado nos deveres e infligido os códigos da justiça para que Ele determinasse a punição cabível, Ele observava os acusadores e os interrogava a respeito da própria responsabilidade, das condições morais em que se encontravam... Nada obstante, orientava o enfermo espiritual, ensejando-lhe a reparação do mal praticado através do Bem que lhe competia fazer." J.A. Liberta-te do Mal p. 53
+</td>
+</tr>
+<tr class="alt">
+<td>"Desse modo, examina com outra óptica as tuas aflições e, por mais difícil se te apresentem, agradece a Deus seres tu quem ora sofre." Liberta-te do Mal
+</td>
+<td>"Recorda que a pérola rara e bela é resultado do mecanismo da ostra que sofre, defendendo-se do grão de areia que a fere..." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"Ocultando a gema preciosa que se está consolidando no íntimo, o ser humano avança sob os camartelos do sofrimento necessário à libertação do seu <i>deus interno</i>." Liberta-te do Mal
+</td>
+<td>"Pensa-se que a falta de amor no comportamento seja resultado do desconhecimento da verdade. E tem razão aquele que se permite a reflexão, porque uma conquista conduz a outra, e através do discernimento do Bem e do mal que faculta a ação generosa surgem as bênçãos da afetividade." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Age desse modo, consciente de que te estás deslindando dos nós perversos com o passado, a caminho da liberdade, conduzindo aqueles aos quais magoaste a alcançarem o patamar superior da paz." Liberta-te do Mal
+</td>
+<td>"Jesus, que não tinha qualquer tipo de dívida, ofereceu-se espontaneamente em holocausto, para nos ensinar amor até o sacrifício da própria vida." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>Efeito Tocha Olímpica: "Todo aquele que mantém ressentimento anelando pelo desforço <font style="background-color: blue;" color="white">carrega uma brasa viva na mão</font>, objetivando atirá-la no adversário. Em sua aflição doentia, que faculta o anelo de vingança, não se dá conta que, enquanto conduz o elemento responsável pelo desforço tem a mão queimada." Liberta-te do Mal p. 142
+</td>
+<td>"O teu ofensor é infeliz e não tem dimensão da própria desdita, permitindo-se a conduta que o assinala. Provavelmente, alguns outros que se facultam o direito de afligir os outros conhecem o abismo em que tombaram e, por isso mesmo, desforçam-se invejosos naqueles que consideram felizes, com o fim único de atormentá-los." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Muitos que te combatem em determinado ângulo do comportamento gostariam de estar no teu lugar ou de realizar o que fazes, mas defrontando a impossibilidade de realizá-lo, ao invés de crescerem moralmente, enxovalham-te o nome, desse modo, diminuindo, aparentemente, a tua grandeza." Liberta-te do Mal
+</td>
+<td>"Alças-te às regiões espirituais da Paz e do Bem perdoando sempre, seja qual for o gravame que te foi imposto." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"Recordarás, sem dúvida, da ofensa, sofrerás ainda o seu dardo venenoso, porém não terás desejo de realizar qualquer tipo de desforço, nem revolta, como se te considerasses injustiçado..." Liberta-te do Mal
+</td>
+<td>"Jamais poderás mudar o mundo, impondo-lhe regras de conduta, no entanto, quando te modificares para melhor, o mundo também estará menos agressivo e menos infeliz." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Usa a terapia do perdão e conseguirás a inefável leveza da consciência tranquila." Liberta-te do Mal
+</td>
+<td>"A chaga aberta pela ingratidão ou pela perversidade de outrem cicatrizará no teu íntimo com o penso balsâmico do perdão." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"Após o périplo carnal, feliz ou desventurado, quando sucede a desencarnação, o Espírito quase sempre retoma a consciência dos seus atos e mede, quando se encontra lúcido, os resultados do nobre cometimento." Liberta-te do Mal, p. 145
+</td>
+<td>"Os limites e desafios que te afligem fazem parte das disposições evolutivas que estabeleceste, porque reconheceste que eram os melhores mestres de que necessitavas para poder te recuperar." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Os conflitos íntimos, a culpa e os complexos perturbadores que te assinalam, resultam das análises a que te dedicaste no Além, de forma que possas reencontrar o equilíbrio no silêncio, no esforço íntimo que te facultará pelo amor e pela resignação a autoiluminação." Liberta-te do Mal
+</td>
+<td>"O passado sempre ressurge no presente que organiza as paisagens do futuro." Liberta-te do Mal
+</td>
+</tr>
+<tr>
+<td>"Ninguém que se encontre em desvalimento, ao abandono, e nada que aconteça sem um fim útil." Liberta-te do Mal
+</td>
+<td>"A jornada é necessária nessas condições, porque somente elas te facultarão entender o objetivo das reencarnações e os deveres que tens em relação à Vida, assim como a ti mesmo e ao teu próximo." Liberta-te do Mal
+</td>
+</tr>
+<tr class="alt">
+<td>"Sempre que te vejas a braços com dificuldades e desafios, pensa que estás sendo <font style="background-color: blue;" color="white">homenageado</font> pela vida, a fim de alcançares a libertação que te aguarda." Liberta-te do Mal, p. 155 
+</td>
+<td>"Elegendo a face numinosa da existência, os enfrentamentos e as dificuldades estarão de mãos dadas em forma de <font style="background-color: blue;" color="white">conspiração</font> contra os teus propósitos." Liberta-te do Mal p. 162
+</td>
+</tr>
+<tr>
+<td>Para nós, os espíritos, os ETs e Jesus, o sentido psicológico da existência terrestre "pode ser reduzido a três fatores essenciais: o <font style="background-color: blue;" color="white">amor</font> em todos os seus aspectos, o <font style="background-color: blue;" color="white">trabalho</font> de dignificação pessoal e da sociedade e, por fim, a transformação de qualquer tragédia — mortes prematuras, processos de injustiça, doenças irreversíveis, dificuldades econômicas e acontecimentos infelizes — em <font style="background-color: blue;" color="white">triunfo pessoal</font> no largo jornadear pelas sinuosas estradas físicas, como prescrevia o admirável psiquiatra austríaco Viktor Frankl." Liberta-te do Mal p. 167
+</td>
+<td>"Quando o Mestre se instala em um coração, o primeiro movimento desse indivíduo, agora esclarecido, é o de auxiliar o seu próximo, por entender que o significado existencial mais poderoso é amar, sevindo sempre e sem cessar." Liberta-te do Mal, p. 191
+</td>
+</tr>
+<tr class="alt">
+<td>"Lembra-te de servir e de ajudar, não te preocupando muito com as técnicas, mas agindo de imediato, isto porque <i>a caridade quando é muito discutida, o socorro chega sempre atrasado</i>." Liberta-te do Mal
+</td>
+<td>Os demonistas seguem hipnotizados "pela ilusão das compensações concedidas pelo arrependimento antes da morte, aguardando um céu de ociosidade e contemplação eterna, ou receando o terrível inferno onde não vigem a misericórdia nem a compaixão." Liberta-te do Mal p. 194
+</td>
+</tr>
+<tr>
+<td>"Como hoje não mais existem as perseguições declaradas, públicas e legais, tem em mente que as arenas são muito mais amplas e perigosas, porque se iniciam nas fronteiras do sentimento pessoal, alargando-se em direção ao mundo inteiro." Liberta-te do Mal p. 198
+</td>
+<td>"Permite, dessa forma, que ele te liberte da opressão da ignorância, facultando-te a alegria da felicidade." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>Aquela história de não combater o mal com o mal: "Evita o mal, compreendendo que a sua existência não é real, mas fruto da ignorância e do primitivismo. O mau é um doente que requer cuidados especiais e não o revide à sua conduta insana." Joanna de Angelis, Entrega-te a Deus, p. 24<br>
+<br>
+O mal não é essência. Não se mistura com Deus. Não existe no ponto único essencial. No mundo essencial que está além do espaço e do tempo.<br>
+O mal só existe no mundo das formas. Na Matrix das ilusões.<br>
+<font style="background-color: blue;" color="white">O mal é a ausência do bem. E o nada não existe.</font><br>
+Eu pessoalmente ainda tenho males imaginários.<br>
+"O bem e o mal não existem, o pensamento é que os cria." Hamlet @ Shakespeare
+</td>
+<td>"Compadece-te, desse modo, daqueles que te crucificam no ridículo, no desprezo e na agressividade." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"A agressividade é herança cruel do medo ancestral, que remanesce no Espírito desde priscas eras." Entrega-te a Deus
+</td>
+<td>"Não diluído pela segurança psicológica adquirida mediante a fé religiosa, a reflexão, a psicoterapia acadêmica, a oração, domina os recônditos do sentimento e exterioriza-se de forma infeliz na agressividade." Entrega-te a Deus p. 28
+</td>
+</tr>
+<tr class="alt">
+<td>"a pérola pálida e preciosa é uma defesa do organismo da ostra à agressividade do grão de areia no seu organismo. Silenciosa e continuamente, o animálculo envolve o invasor na exsudação da sua mucosa ferida e abençoa-o com deslumbrante beleza." Entrega-te a Deus p. 186
+</td>
+<td>"A humildade realiza o mesmo, quando o egoísmo tenta espezinhá-la, submetê-la e destruí-la." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"a inferioridade moral é chaga predominante em a natureza humana, por carregá-la cicatrizada com o bálsamo da dignidade que se soube aplicar enquanto transitava nos vales sombrios dos tormentos psicológicos." Entrega-te a Deus, p. 76
+</td>
+<td>Se eu interpretei bem, o espírito inferior sofre por dignidade auto-imposta. Se alguém entendeu diferente, que se manifeste.
+</td>
+</tr>
+<tr class="alt">
+<td>o apóstolo Paulo "era sempre o mesmo, na alegria ou na dificuldade, no júbilo ou no sofrimento, porque encontrara Jesus." p. 78
+</td>
+<td>"Se, por acaso, ainda não encontraste Jesus, qual ocorreu a Francisco de Assis que, depois de o haver (re)conhecido, tornou-se o <i>Irmão Alegria</i>, busca-o na reflexão profunda ou na oração destituída de atavios, abrindo-te à magia desse <i>Homem Incomparável</i> que dividiu a história da humanidade, e a tua existência adquirirá sentido e significado." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"A alegria de viver é a maneira adequada de agradecer a Deus a bênção da reencarnação." Entrega-te a Deus
+</td>
+<td>A vida de Jesus foi "a mensagem da total alegria de uma vida saudável e rica de bênçãos." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>"As almas nascem gêmeas nos sentimentos universais, nos ideais de engrandecimento, na grande família, na qual se destacam os Espíritos mais evoluídos, capazes dos gestos nobres da renúncia e da abnegação em favor daqueles a quem amam e, por extensão, por todas as criaturas..." Entrega-te a Deus, p. 82
+</td>
+<td>"Se alguém espera receber, é frágil ou fragiliza-se, tornando o outro seu protetor, que também tem necessidade de beneficiar-se, e não encontrando esse concurso na pessoa com quem se relaciona, consciente ou inconscientemente parte em busca de outrem." Entrega-te a Deus p. 84
+</td>
+</tr>
+<tr>
+<td>"Somente lobos caem em armadilhas para lobos." Entrega-te a Deus
+</td>
+<td>"Não se pode abarcar o mundo com os braços." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>Santa Mônica, "dominada pelo amor a Jesus, vivendo o martírio de um matrimônio infeliz, e genitora de Agostinho, rebelde e vulgar, então orou por vinte e sete anos em favor da conversão do filho, até o momento em que ele se tornou cristão, quando, concluída a sua tarefa, desencarnou em paz." Entrega-te a Deus, p. 130
+</td>
+<td>"Ninguém ficará à margem da lei do progresso, sendo arrastado, quando se obstina em permanecer avançando contra a correnteza." Entrega-te a Deus, p. 112
+</td>
+</tr>
+<tr>
+<td>"O seixo e o troço de madeira que tentam dificultar o curso d'água permanecem obstaculizando-o até o momento em que a correnteza se torna forte e dominadora." Entrega-te a Deus
+</td>
+<td>Exulta "por teres adversários, mestres desconhecidos, a seres adversário de quem quer que seja." Entrega-te a Deus p. 121
+</td>
+</tr>
+<tr class="alt">
+<td>"Por amor ao seu próximo, Maximiliano Kolbe, o sacerdote polonês, trocou a sua pela vida de um operário, quando os nazistas iam enviá-lo para uma casamata no campo de extermínio, onde deveria morrer, salvando-o..." Entrega-te a Deus
+</td>
+<td>Sem a presença do amor, "a natureza seria árida e a beleza que brilha em toda parte ficaria reduzida ao desencanto e à degradação..." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"<font style="background-color: blue;" color="white">Nunca te canses, portanto, de amar.</font>" Entrega-te a Deus
+</td>
+<td>"Não fosse o amor de Nosso Pai, e a vida seria um fenômeno espúrio do acaso, candidata à desintegração, por absoluta falta de finalidade." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>"Portanto, <font style="background-color: blue;" color="white">nunca te queixes pelo fato de amares.</font>" Entrega-te a Deus
+</td>
+<td>"O amor é espontâneo, e, por isso mesmo, é imbatível." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"Espontâneo, torna-se um rio que se faz caudaloso, à medida que se alonga pelo curso, na direção do Oceano Celestial..." Entrega-te a Deus
+</td>
+<td>"Estimula a generosidade dessa fonte que é inexaurível, e verificarás que, à medida que mais distribuíres a linfa sublime, mais ela produzirá." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>Em Joanna de Angelis, o mundo pós-moderno tenta nos deixar doentes nos seguintes aspectos:<br>
+• utilitarismo;<br>
+• consumismo;<br>
+• imediatismo;<br>
+• perda de identidade;<br>
+• igualdade de padrões de comportamento;<br>
+• busca de salvação do caos;<br>
+• ausência de objetivos relevantes p/ existência;<br>
+• valorização dos meios (essa foi a que eu + achei engraçado. vc tem o dinheiro, tem o diploma, mas nao tem fins.);<br>
+• valorização do prazer;<br>
+• narcisismo;<br>
+• estresse nas dificuldades, ou, senão, tédio.<br>
+(Entrega-te a Deus, p. 140)
+</td>
+<td>Quando não se abraça a doutrina de Jesus em todos os momentos, "certamente é o que dela fizeram os seres humanos, não o que foi ensinado por Jesus." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>"A luta é o clima dos herois e dos vencedores." Joanna, Entrega-te a Deus, p. 147
+</td>
+<td>"Nada se encontra sob os camartelos do acaso, que seria a negação da racionalidade da Criação." Entrega-te a Deus<br>
+Ou <font style="background-color: blue;" color="white">o universo tem uma causa inteligente</font>, ou tem uma causa que ignora a si mesma.
+</td>
+</tr>
+<tr class="alt">
+<td>"Nunca esperes facilidades que entorpecem os sentimentos e enfraquecem as resistências que a luta exige." Entrega-te a Deus
+</td>
+<td>Os abusos da religião tornaram o mundo materialista. Entrega-te a Deus p. 154
+</td>
+</tr>
+<tr>
+<td>A ilusão da autossuficiência faz o individual intensificar a vã cultura milenar. Ou o senso comum. Ou o coletivo. (Entrega-te a Deus)
+</td>
+<td>Verdadeira riqueza:<br>
+• sabedoria;<br>
+• compreensão dos limites do próximo e de si mesmo;<br>
+• elevação moral;<br>
+• despertamento para a realidade profunda.<br>
+Entrega-te a Deus p.159
+</td>
+</tr>
+<tr class="alt">
+<td>Se eu aplico bem as horas, deixo um rastro luminoso pelo caminho e dou significado interior ao ato de viver. (Entrega-te a Deus)
+</td>
+<td>"Diz-se com certo pessimismo que <i>aquele que não vive para servir não serve para viver</i>, o que sem dúvida é pejorativo, e poderia ser proposto como <i><font style="background-color: blue;" color="white">aquele que não vive para servir ainda não aprendeu a viver</font></i>." Entrega-te a Deus p. 160
+</td>
+</tr>
+<tr>
+<td>"No passado estabeleceu-se a necessidade de adorar a Deus, renunciando-se à convivência social, ao trabalho ativo, entregando-se à meditação." Entrega-te a Deus p. 162
+</td>
+<td>"Quase todos aqueles que se permitiram essa fuga da realidade terrestre perderam-se em penosos conflitos que os afligiam e que acreditavam ser interferência demoníaca. Sem nenhuma dúvida, nas mentes ociosas, os Espíritos frívolos e perversos encontram campo fácil para perturbações variadas." Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>Quem ama, compreende. Quem compreendeu, não acha mais seu sofrimento absurdo. Entrega-te a Deus p. 168
+</td>
+<td>Só não é filho pródigo quem cumprir sua responsabilidade e dever. Entrega-te a Deus p. 174<br>
+No final, todos voltam ao Pai.<br>
+Vai chegar o dia que vc não vai precisar se arrepender.
+</td>
+</tr>
+<tr>
+<td>Poder <font face="lucida sans unicode">&#8658;</font> Insegurança <font face="lucida sans unicode">&#8658;</font> Ambiçao <font face="lucida sans unicode">&#8658;</font> Domínio <font face="lucida sans unicode">&#8658;</font> Desrespeito à lei. Entrega-te a Deus p. 176
+</td>
+<td>A dicotomia poder/ética é como a saúde, que evolui se vc se cuidar, e a doença, que evolui se vc não cuidar. (Entrega-te a Deus)
+</td>
+</tr>
+<tr class="alt">
+<td>O ser humano está cada vez menos ignorante, menos selvagem e menos violento. É inexorável. Entrega-te a Deus p. 178<br>
+Agora Joanna tá de brincadeira cmg! Fala que é piada, vai.
+</td>
+<td>O tempo dilui todas as ilusões e marcha para a Realidade. Entrega-te a Deus<br>
+E a ilusão da sabedoria é tão fugaz quanto a névoa do amanhecer...
+</td>
+</tr>
+<tr>
+<td>Cai o império romano e ergue-se o império católico. O que vem depois do capital? Entrega-te a Deus p. 180
+</td>
+<td>Servir sem o poder ilusório. Esse foi o exemplo de Jesus. Entrega-te a Deus
+</td>
+</tr>
+<tr class="alt">
+<td>"As garantias para o exercício consciente ou não desse destaque são a estrutura moral, a capacidade de discernimento, a fim de não se permitirem a bajulação que envilece o caráter nem entrarem em competições que corrompem." Entrega-te a Deus p. 179
+</td>
+<td>"A sã consciência dos valores que os caracterizam dá-lhes robustez para prosseguirem no rumo elegido, sem tornar-se presunçoso ou temerário, reconhecendo os limites que possuem e a grande necessidade de mais desenvolverem a capacidade que lhe confere os títulos de enobrecimento." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>Desfarces do ego e do egoísmo:<br>
+• não altruísmo<br>
+• não solidariedade<br>
+• insegurança (verdadeira segurança encontra-se no ser, e não no poder)<br>
+• insatisfaçao<br>
+• morbidez<br>
+• vigilante e dominador<br>
+• agressivo<br>
+• receoso<br>
+• complexo de inferioridade<br>
+• presunçao<br>
+• avareza<br>
+• ciúme<br>
+• desfaçatez<br>
+• suspeitas<br>
+• censuras<br>
+• autopromoçao<br>
+• exibicionismo<br>
+• intrigas<br>
+• maledicência<br>
+• divisão dos grupos<br>
+• medo<br>
+• incerteza<br>
+• prepotência<br>
+Entrega-te a Deus
+</td>
+<td>"Cabe ais cristãos novos proceder de maneira compatível com os ensinamentos do Mestre de Nazaré, revividos a atualizados pelos embaixadores espirituais, de forma que a dor e o desespero fujam por fim, envergonhados da Terra, cedendo o lugar à alegria e à felicidade que estão reservadas para todos os servidores do bem." Entrega-te a Deus p. 192
+</td>
+</tr>
+<tr class="alt">
+<td>Deixe de "tergiversar ante o dever ou negociar com a mentira e o ultraje, somente para manter-se entre os triunfadores da ilusão, com eles conivindo." Entrega-te a Deus
+</td>
+<td>"Não mais existem os circos, as praças para as execuções dos <i>hereges e infieis</i>, as fogueiras e os cárceres sombrios para aqueles que são dedicados a Jesus. Pelo menos na forma, no entanto permanecem no conteúdo, pela maneira como são vistos e considerados os seus servidores autênticos, sorvendo os amargos frutos da intriga e da insensatez, da perseguição por inveja e das tribulações morais..." Entrega-te a Deus
+</td>
+</tr>
+<tr>
+<td>O obsessor quer modificar a pessoa ou para o desserviço, ou pelo poder. Entrega-te a Deus p. 181
+</td>
+<td>"O verdadeiro poder vem do alto, qual o que foi conferido ao Mestre pelo pai que o enviou." Entrega-te a Deus p. 180
+</td>
+</tr>
+</tbody></table>
+
+<h2>Encontro com a Paz e a Saúde</h2>
+
+<table id="customers" class="fix" width="100%">
+  <colgroup><col width="50%">
+  <col width="50%">
+</colgroup><tbody><tr class="alt">
+<td>"A arrogância de uns poderosos e a submissão humilhante de outros deles dependentes, demonstram a predominância da força bruta sobre a inteligência e os valores morais, proclamando a vitória da insensatez sobre o equilíbrio..." p. 10
+</td>
+<td>"Como a sociedade influi no comportamento individual, este, por sua vez, é o aglutinador do grupo social, interdependendo-se mutuamente, em incessante fluxo de energias."
+</td>
+</tr>
+<tr>
+<td>desarmar-se para amar
+</td>
+<td><a href="https://en.wikipedia.org/wiki/Lyall_Watson">O centésimo macaco</a>
+</td>
+</tr>
+<tr class="alt">
+<td>"o sacrifício mais agradável a Deus é o da transformação moral do indivíduo." p. 27
+</td>
+<td>"Ninguém pode deter o amanhecer", nem o progresso.
+</td>
+</tr>
+<tr>
+<td>O tempo do Self "é o tempo atual, rico de possibilidades de auto-iluminação e não o linear, em face da amplitude de entendimento da vida e das suas inestimáveis contribuições. O ontem converteu-se-lhe em hoje e o amanhã estagia num incessante momento atual de compreensão do papel que lhe cabe desempenhar a benefício pessoal e social." p. 31
+</td>
+<td>"o Self sai da escuridão no rumo da luz, qual o diamante que se liberta do envoltório grosseiro em que se esconde, a fim de poder refletir na sua face límpida após a lapidação o brilho das estrelas."
+</td>
+</tr>
+<tr class="alt">
+<td>Crisol: Caldeira onde se derrete o metal para fundição da linha.
+O parto é uma crise. De toda crise vem o que é bão.
+</td>
+<td>A palavra homem se deriva de húmus — terra fértil.
+</td>
+</tr>
+<tr>
+<td>"Há, inevitavelmente, em todo processo de evolução, uma forma de descontinuidade, que se encarrega de gerar o seu prosseguimento. O método utilizado durante um período em que revelou resultados saudáveis, torna-se inaceitável em outra conjuntura, exigindo reestruturação e mudança, conforme os padrões do conhecimento, dos processos ora vigentes."
+</td>
+<td>"A psique humana tem quase a mesma idade do universo." p. 41
+</td>
+</tr>
+<tr class="alt">
+<td>"a crise social é uma descontinuadora do modus vivendi e do modus operandi vigentes, ensejando novos métodos de comportamento para que ocorram as mudanças necessárias ao equilíbrio do todo social." p. 45
+</td>
+<td>"Na atual crise social, o fenômeno parece repetir-se" (a queda dos impérios assírio-babilônico, persa, cartaginês, grego, romano, otomano, austro-húngaro...) "e dar-se-á, sem dúvida, o mesmo, no momento adequado, quando forem requisitados cidadãos para preservar as conquistas da civilização e esses escassearem, convocando-se, então, soldados para atender a fome do monstro da guerra, última alternativa do poder em estertor." p. 48
+</td>
+</tr>
+<tr>
+<td>"É inevitável que, somadas essas crises individuais presentes nas criaturas com dificuldades interiores não resolvidas, apareçam em volume, cada vez maior, as crises gerais, na sociedade, na política, na religião, na cultura, na arte, nos relacionamentos humanos, desbordando nas lutas infelizes em que os mais atormentados e mais hábeis fazem-se vitoriosos, passando a impor suas patologias, e tornando-se invejados como vitoriosos."
+</td>
+<td>Harmonizar o ego com o Self
+</td>
+</tr>
+<tr class="alt">
+<td>A responsabilidade decorrente de cada ação moral praticada, gera a reação (multiplicada e contrária) correspondente.
+A faz força F em B. A é responsável. B faz força -F em A.
+O universo é responsável. p. 69
+</td>
+<td>Setenta trilhões de células aglutinam-se em torno do modelo organizador biológico.
+</td>
+</tr>
+<tr>
+<td>O Infinito nos desafia. p. 64
+</td>
+<td>"O ser humano psicológico é muito mais complexo do que a sua constituição física encarregada, muitas vezes, de refletir o seu estado interior." p. 67
+</td>
+</tr>
+<tr class="alt">
+<td>numinoso: Segundo a filosofia da religião de Rudolf Otto, aplica-se ao estado religioso da alma inspirado pelas qualidades transcendentais da divindade.
+</td>
+<td>L.E. q. 122 "O livre arbítrio se desenvolve à medida que o Espírito adquire a consciência de si mesmo."
+</td>
+</tr>
+<tr>
+<td>Ninguém pode impedir a luminosidade do Sol. p. 78
+</td>
+<td>"o Self abrange todos os demais arquétipos ou é o responsável pela sua existência, especialmente harmonizando a anima e o animus, cujos conteúdos constituem-lhe a síntese perfeita no que diz respeito às manifestações sexuais do ser, armazenando as experiências vividas anteriormente, ora em uma organização biológica ora em outra." p. 83
+</td>
+</tr>
+<tr class="alt">
+<td>"Sendo o Self na sua estrutura psicológica assexuado, avança na escalada humana em busca da individuação, assimilando os méritos transcendentes do animus e da anima, de modo a superar os impositivos biológicos da anatomia fisiológica, resultando em harmonia psicológica e de comportamento emocional."
+</td>
+<td>"Trabalhando-se pela conquista da individuação de cada ser, o processo de evolução se encarregará de unir as criaturas em perfeita identificação de propósitos e de objetivos morais, dando lugar a uma geração nova, conforme anelada por todos." p. 86
+</td>
+</tr>
+<tr>
+<td>Quando a gente sai da ilusão "surgem a realidade e o dever, derrubando as máscaras da conquista pessoal de cada um, assim desnudando a individualidade que passa a ocupar o lugar da personalidade." p. 92
+</td>
+<td>"É impraticável esperar-se que a união de dois indivíduos que se amam seja sempre tranquila, sem sinuosidade ou sem desafios emocionais." p. 94
+</td>
+</tr>
+<tr class="alt">
+<td>"porque normalmente se teme aquilo que se desconhece, há uma reação inconsciente para equacionar-se os enigmas interiores, deixando-se que eles permaneçam com a sua dominação arbitrária."
+</td>
+<td>"A imaturidade emocional (...) prefere as atitudes agressivas" p. 96
+</td>
+</tr>
+<tr>
+<td>Necessidade de auto-realização
+</td>
+<td>"A união afetiva é (...) uma empresa das mais complexas, pelo fato de a convivência contínua ser de natureza íntima, intransferível, interpessoal, exigindo responsabilidade e compreensão de ambos os membros." p. 100
+</td>
+</tr>
+<tr class="alt">
+<td>"O tempo (...) somente é desperdiçado, quando passa em vão, na futilidade dourada, no jogo dos interesses mesquinhos, porquanto dele nada se obtém de útil, senão o tédio e o desencanto."
+</td>
+<td>"o espírito é sempre o encarregado de modelar a existência que lhe é mais favorável" p. 112
+</td>
+</tr>
+<tr>
+<td>"Ninguém consegue atingir um nível de consciência mais elevado, enquanto se encontre moralmente aprisionado nos compromissos negativos que procedem das experiências anteriores." p. 113
+</td>
+<td>Diariamente o cérebro do ser humano "é bombardeado por incessantes informações de toda natureza, aqui incluindo, também, as procedentes do mundo espiritual." p. 116
+</td>
+</tr>
+<tr class="alt">
+<td>Consciência: seletiva, contínua e pessoal. Nuclear ou primária, superior ou secundária.
+</td>
+<td>Seletiva: o que mais nos interessa ou se nos torna "preponderante passa a merecer maior fulcro de atenção."
+</td>
+</tr>
+<tr>
+<td>Contínua: conexões de memórias.
+</td>
+<td>Pessoal: cada qual vê o mundo conforme a sua própria óptica, "o que resulta na identidade de cada qual."
+</td>
+</tr>
+<tr class="alt">
+<td>Nuclear ou primária: são traduzidas as informações recebidas, aturdida, inicial, indispensável para a eclosão da superior, animais a utilizam na caça para a sobrevivência.
+</td>
+<td>"as criaturas terrenas encontram-se em campos experimentais da evolução" p. 122
+</td>
+</tr>
+<tr>
+<td>"necessidade de evoluir, a fim de encontrar a felicidade perdida"
+</td>
+<td>L.E. q. 474 a subjugação "não se efetua nunca sem que aquele que a sofre o consinta, quer por sua fraqueza, quer por desejá-la."
+</td>
+</tr>
+<tr class="alt">
+<td>A emoção é automática e orgânica, o sentimento é consciente.
+Emoções negativas, hemisfério direito do cérebro. Positivas, esquerdo.
+"Tudo quanto é agradável e prazenteiro é arquivado no" esquerdo.
+"as questões perturbadoras e afligentes repousam no lado direito."
+Controle sobre as emoções do cotidiano ==&gt; desenvolvem o direito ==&gt; tornam-se introspectivos, inseguros, insatisfeitos, pessimistas ==&gt; exsuda infelicidade
+Quem estimula o esquerdo ==&gt; melhor humor, alegria, autoconfiança ==&gt; convivência agradável, inspira alegria ==&gt; quantidade maior de linfócitos, riso terapêutico.
+</td>
+<td>"o processo da evolução é inestancável" p. 133
+</td>
+</tr>
+<tr>
+<td>"o espírito elabora o seu destino, sendo o semeador e o colhedor de tudo quanto realize." p. 136
+</td>
+<td>Self: Arquétipo Primordial.
+</td>
+</tr>
+<tr class="alt">
+<td>Felicidade do esforço: "o empreendimento em si mesmo para lográ-la" é "que faculta, por antecipado, a satisfação de bem-estar."
+É "de fácil conquista, quando se ama e não se espera a retribuição." p. 128
+É "um significativo sentimento de gratidão à vida." p. 131
+É a sabedoria de interpretar as situações mais difíceis como propostas educativas, e permanecer fiel. Diluir as emoções negativas "como um sol benfazejo desfazendo a névoa que obscurece a paisagem." (~ a ilusão da sabedoria é tão fugaz...)
+A do agricultor, e de Deus, "apresenta-se quando o mesmo contempla a plantação enriquecida de flores, frutos, sementes, abrindo-se à colheita." p. 134
+Ela "apresenta-se com simplicidade, destituída de atavios e complexidades que somente a enfeitariam sem produzi-la em realidade, qual mecanismo de fuga em relação à sua conquista verdadeira. " p. 137
+Ela "advém do autoconhecimento, da identificação do Self com o ego" p. 138
+</td>
+<td>Aprender a ser feliz é <i>independente</i> de outrem, "sendo construção própria e intransferível". p. 132
+Há a ilusão de que interromper a dependência é infelicidade.
+</td>
+</tr>
+<tr>
+<td>Como boa freira, faz oposição com o prazer, após o qual "o corpo fica em lassidão", enquanto "a felicidade nunca proporciona cansaço, mal-estar ou estresse por novos logros."
+</td>
+<td>"O prazer induz à posse, ao acúmulo, à obstinação pela conquista de coisas, enquanto que a felicidade deflui da superação dos tormentos de possuir, de preservar, de multiplicar." p. 139
+</td>
+</tr>
+<tr class="alt">
+<td>L.E. q. 917 O homem está por compreender que no egoísmo reside uma das causas de seus males, que esse vício é incompatível com a sua felicidade e com a sua segurança.
+</td>
+<td>Sem a reencarnação, a vida mais não seria "que resultado de processos neuroquímicos, definindo os seres e submetendo-os aos seus caprichos ilógicos" p. 150
+</td>
+</tr>
+<tr>
+<td>"Os saudáveis relacionamentos sexuais favorecem o equilíbrio emocional entre o ego e o Self, proporcionando real alegria de viver." p. 151
+</td>
+<td>"Tudo quanto violenta a natureza em si mesma, nas suas finalidades orgânicas, transforma-se em motivo de desordem, afetando o ser humano de maneira significativa." p. 153
+</td>
+</tr>
+<tr class="alt">
+<td>Vida antiética, suicídio indireto.
+</td>
+<td>O pai não deve ter ciúme do filho, porque o amor da mãe "mais se enriquece, por liberar-se da injunção de direcionado em relação apenas a uma pessoa."
+</td>
+</tr>
+<tr>
+<td>"Os filhos enriquecem o lar, ampliam a capacidade de dever nos pais, dão um significado profundo à união dos adultos, o que proporcional a real felicidade na união." p. 157
+</td>
+<td>"Sexo e saúde são termos da mesma equação da vida."
+</td>
+</tr>
+<tr class="alt">
+<td>A consciência se encontra em germe no próprio ser, como a pérola.
+</td>
+<td>Para que a musicalidade do Universo possa dele espraiar-se, "o Self, quando entendido e trabalhado, liberta a melodia do sentimento de afeição que se vincula ao Amor Divino, facultando a identificação com a felicidade." p. 162
+</td>
+</tr>
+<tr>
+<td>Teilhard de Chardin: "complexificação da consciência, mediante a agregação dos recusros cósmicos diante de uma força externa, que é tangencial, auxiliando a consciência que favorece com novos estados de ser."
+</td>
+<td>O inconsciente humano é um oceano quase infinito.
+</td>
+</tr>
+<tr class="alt">
+<td>Self: herdeiro de Deus
+</td>
+<td>"os hábitos são uma segunda natureza (...) porque eles impõem comportamentos não necessariamente racionais, mas automáticos, repetindo-se em sucessão interminável..." p. 169
+</td>
+</tr>
+<tr>
+<td>"os indivíduos que permanecem nos hábitos sem alteração coisificam-se, perdendo o sentido de humanidade."
+</td>
+<td>"qualquer variação de humor, do intempestivo gargalhar ao profundo cismar, sempre expressa desequilíbrio no vasto campo da emoção." p. 171
+</td>
+</tr>
+<tr class="alt">
+<td>"o significado real da caminhada humana é alcançar a plenitude pela autodoação." p. 173
+</td>
+<td>"A imortalidade desenha-se na consciência e após esforços hercúleos, o ser alcança o nível objetivo, transcendental, cósmico..."
+</td>
+</tr>
+<tr>
+<td>"O mal tem existência relativa, enquanto o bem não lhe toma o lugar. Procede, portanto, da prática equivocada e egoística em relação ao bem, não tendo, desse modo, legitimidade, qual ocorre com a sombra que é a ausência da luz e com a imperfeição, que é a cópia distorcida da perfeição." p. 175
+</td>
+<td>"A consciência objetiva transcende a razão linear, cotidiana, e se identifica com o Uno, participando da harmonia cósmica." p. 176
+</td>
+</tr>
+<tr class="alt">
+<td>"Alcançado o estágio numinoso (...) já não é mais a personalidade que vive, mas a essência divina consubstanciada no ser que se liberta do cárcere das reencarnações para iniciar novos ciclos de evolução transcendental." p. 177
+</td>
+<td>Consciência objetiva: "visão coletiva desde o alto, ao invés da limitada capacidade do verme que enxerga apenas o que se encontra à sua frente"
+</td>
+</tr>
+<tr>
+<td>"O desaparecimento do eu apaixonado e perverso deu-se (...) através da <i>autodiluição</i> das estratificações dos alicerces atávicos procedentes das experiências primárias da evolução."
+</td>
+<td>Êxtase: <a href="https://www.youtube.com/watch?v=KJHqriXhK7Y">Handel</a>
+</td>
+</tr>
+<tr class="alt">
+<td>"Teresa de Ávila diluiu-se na Consciência cósmica, deixando-se consumir pelo total amor por Jesus..."
+</td>
+<td>Já foi possível identificar no homem "um gene específico, encarregado da crença no Soberano Genitor." p. 181
+</td>
+</tr>
+<tr>
+<td>Alguns fazem sacrifício com o corpo, "como se ele fosse o obstáculo <i>(shatan)</i> à realização que busca afanosamente."
+</td>
+<td>"É, certamente, através do amor, da autonegação, isto é, da identificação do Self soberano ante as imposições relativas do ego, que ocorre a iluminação de dentro para fora" p. 183
+</td>
+</tr>
+<tr class="alt">
+<td>Santo Agostinho iluminou-se ouvindo os sermões de Santo Ambrósio.
+</td>
+<td>Iluminação: Tranquila, consciente, pode ocorrer de um para outro momento.
+</td>
+</tr>
+<tr>
+<td>"Inúmeros são os caminhos para consegui-la (...). Aquele que possui maior capacidade de concentração, de reflexão, de vida interior, mais facilmente pode iluminar-se do que outro, inexperiente e inquieto, ansioso ou tomado de receios injustificáveis." p. 186
+</td>
+<td>Denominações: Buda, Cristo e Messias, satori (zen-budismo), samadhi (yoga), auto-realização, libertação, nirvana, plenitude, autotranscendência...
+</td>
+</tr>
+<tr class="alt">
+<td>Símbolos: estrela de Davi, lótus de mil pétalas (hinduísmo), Santo Graal, rosa mística, chama eterna, chama violeta, lago tranquilo...
+</td>
+<td>"O encontro das diferentes águas sempre se dá através de um choque." Alguns, como Saulo de Tarso, auto-iluminam-se dessa forma.
+</td>
+</tr>
+<tr>
+<td>Auto-iluminação pode ser "resultado das tendências universais resultantes do processo da evolução moral, manifestando-se nesse expressivo sentimento de compaixão, dos mais altos que a psique humana pode exteriorizar." p. 188
+</td>
+<td>A biologia demonstra que as individualidades — células, órgãos — sucumbem a benefício do conjunto que formam, eliminando os interesses de cada uma. Cada qual falece para que o organismo continue vivo, até (...) a energia vital mantenedora da totalidade" se extinguir.
+</td>
+</tr>
+<tr class="alt">
+<td>Uma pessoa pensa/raciocina em média 50 000 vezes/dia.
+</td>
+<td>Gene de Deus, espiritualidade inata, autotranscendência hereditária.
+</td>
+</tr>
+<tr>
+<td>Ou degrau a degrau, ou, se preparado, como a "catapulta de um relâmpago, anulando tudo de uma vez e permanecendo-se como claridade inconfundível." p. 191
+</td>
+<td>Trata-se "de um jorro interno, como de uma explosão, ou como efeito de uma projeção externa, procedente do Mundo transcendental, instalando-se no íntimo do ser e fluindo para fora sem cessar."
+</td>
+</tr>
+<tr class="alt">
+<td>Todo o ser "é um archote que arde sem crepitar, sem oscilar, mantendo a mesma luminosidade."
+</td>
+<td>"a autoconsciência conduz à autotranscendência"
+</td>
+</tr>
+<tr>
+<td>Transumanização!
+</td>
+<td>"o ser, mesmo adulto, torna-se inocente, em estado de infância, de pureza, de não-perturbação, não-malícia..." p. 194
+</td>
+</tr>
+<tr class="alt">
+<td>"Rompe-se a máscara que oculta o que se é, impondo a aparência que não corresponde aos valores morais internos, mas que deve impressionar"
+</td>
+<td>Cada qual "entrega-se à ação operosa e triunfante da verdade adormecida no imo e necessitada de expandir-se..."
+</td>
+</tr>
+<tr>
+<td>"Iluminado, já não existe no ser o ego separado do Self, mas uma perfeita integração de ambos, num processo de cristificação infinita."
+</td>
+<td>O ser humano "possui todos os atributos da sua Causa, embora em finitude e relatividade" p. 197
+</td>
+</tr>
+<tr class="alt">
+<td>"Mesmo adormecido nos minerais", o princípio inteligente "encerra o mistério da vida em suas diversas manifestações, desdobrando os recursos gloriosos de que se faz portador."
+</td>
+<td>A semente desperta e enfrenta a agressividade do meio externo. O ser humano cria resistência e supera as <i>mesmas</i> agressões.
+</td>
+</tr>
+<tr>
+<td>"Tudo em a Natureza transforma-se" e só há "expressões diversas de uma só realidade."
+</td>
+<td>"a energia que sempre a tudo movimenta mantém a constituição causal, apenas alterando-se em expressões variadas." p. 199
+</td>
+</tr>
+<tr class="alt">
+<td>Self: "conjunto ultra-sensível de energia que pensa"
+</td>
+<td>Enquanto a transcorre, o tempo "pode parecer longo, abreviando-se, desde que seja ultrapassado o tempo linear..." p. 203
+</td>
+</tr>
+<tr>
+<td>Ninguém "que se possa esconder daquilo que se encontra no seu mundo interior" p. 205
+</td>
+<td>"Desde os primeiros influxos de energia que se aglutinam em faixas vibratórias até ao elevado nível da razão e da consciência cósmica, tudo decorre em forma de complexidades inteligentes que defluem da Causa Absoluta, sempre se apresentando mais organizada e lúcida." p. 207
+</td>
+</tr>
+<tr class="alt">
+<td>"o progresso, sob todos os aspectos considerados, ocorre em expressão geométrica"
+</td>
+<td>"A inteligência existe sem os mecanismos cerebrais que a exteriorizam, da mesma forma que as estrelas antes da descoberta dos telescópios, e a vida microorgânica antes dos sofisticados microscópios." p. 209
+</td>
+</tr>
+<tr>
+<td>Materialização: "evocação de Samuel, último dos Juízes de Israel, pelo rei Saul, através da pitonisa do En-Dor. (I Samuel 28, 7--20)"
+</td>
+<td>Prendam o pastor, o padre, o bispo, o arcebispo, o cardeal e o papa.
+</td>
+</tr>
+</tbody></table>
+
+<h2>Atitudes Renovadas</h2>
+
+<table id="customers" class="fix" width="100%">
+  <colgroup><col width="50%">
+  <col width="50%">
+</colgroup><tbody><tr class="alt">
+<td>Logo no primeiro capítulo, Joanna fataliza: Todo mundo já foi convidado. Todo mundo um dia vai aceitar o convite de Deus e vestirá a túnica nupcial. Apenas pode demorar um bilhão de anos.<br>
+Eu, porém, imagino todo mundo nas núpcias pelados(as). Os anjos praticam nudismo. E não põem maldade nas belas Anjinhas.
+</td>
+<td>A resistência de uma corrente encontra-se no seu elo mais fraco, também no organismo social a sua grandeza ou miséria está presente no ser mais frágil. p. 22
+</td>
+</tr>
+<tr>
+<td>Num incêndio, ninguém deve permanecer indiferente, esperando que venham os bombeiros para solucionar a problemática. Enquanto esses especialistas não chegam, faze algo, por mais insignificante que te pareça, que terá sempre um sentido de apoio e de solução para o grave problema.
+</td>
+<td>Os incêndios nas almas aguardam pela gota de água dos corações afetuosos e pacíficos. p. 22
+</td>
+</tr>
+<tr class="alt">
+<td><b>Iluminação:</b> Mesmo os missionários do amor, da caridade, da ciência, da religião, da política e das realizações humanas aceitaram a experiência do retorno, por gratidão às conquistas passadas, oferecendo-se para auxiliar todos aqueles que se encontram na retaguarda, à semelhança de <i>estrelas</i> em noite escura. p. 28
+</td>
+<td><b>Social:</b> Deus concede o parcial olvido do passado, por compreender que as lembranças boas ou más não se restringem apenas ao indivíduo, mas ao grupo no qual se movimentou, facultando-lhe, então, caso recordasse, tomar conhecimento das ocorrências que foram praticadas pelos demais da <b>esfera</b> fraternal.
+</td>
+</tr>
+<tr>
+<td>Inscreve-te, de imediato, emocionalmente, nos compromissos de <b>iluminação</b> interior, e trabalha para que a luz divina de onde procedes desenvolva-se no âmago do teu ser, clareando-te totalmente e tornando-te uma chama que esparze claridade e alegria. p. 29
+</td>
+<td>A marcha do progresso obedece a <b>códigos</b> que não podem ser desconsiderados. p. 29
+</td>
+</tr>
+<tr class="alt">
+<td>Para que seja conseguido o tentame [renovação moral], faz-se mister a elaboração de um <b>código</b> de bem proceder, dentro do eixo <i>ego-self</i> em perfeita sintonia. p. 32
+</td>
+<td>És o que cultivas no mundo íntimo através dos teus pensamentos. p. 33
+</td>
+</tr>
+<tr>
+<td>Aquele que prefere a preservação dos comportamentos afligentes, com os quais parece adaptado, responde pelos próprios insucessos, sem as escusas de que é a má sorte que o persegue, o destino que lhe é revel. p. 34
+</td>
+<td>Os pensamentos tomam forma e plasmam os aspectos correspondentes aos teores vibratórios de que se constituem. / Vivendo nessa psicosfera, serás feliz ou desventurado por livre eleição. p. 35
+</td>
+</tr>
+<tr class="alt">
+<td>Quando puderes utilizar da força do pensamento com sabedoria e proveito, transformá-lo-ás em uma alavanca tão poderosa que será fácil <i>mover o mundo</i>.
+</td>
+<td>O ser humano vem controlando as forças da Natureza com relativo êxito, conquistando os espaços e melhorando a existência. Quando, porém, controlar o pensamento terá descoberto por segunda vez o fogo, vivenciando atitudes renovadas! p. 35
+</td>
+</tr>
+<tr>
+<td>Quando se tem a preocupação de exteriorizar alegria contínua, tal fenômeno caracteriza insegurança, portanto, interesse de teatralizar as emoções. p. 38
+</td>
+<td>A felicidade expressa-se no <b>conjunto</b> tristeza-alegria, na condição de ponte que une distâncias <i>aparentemente</i> opostas. p. 39
+</td>
+</tr>
+<tr class="alt">
+<td>Na cultura grega a melancolia era considerada, ora como punição dos deuses, noutras circunstâncias, como condição necessária para receber-lhes a inspiração. p. 39
+</td>
+<td>Quando o Espírito, que tem sede de paz e de plenitude, descobre que está engessado nos compromissos sociais, atrelado ao relógio que lhe comanda todos os momentos, obrigado a comportar-se de maneira padronizada, livre, mas escravo das imposições dos <i>multiplicadores de opinião</i> da mídia mercantilizada, mas interessada nos mecanismos do consumo do que na criatura em si mesma, desperta desse letargo, dessa ilusão que se permite, experimenta tristeza pelo tempo malconduzido. p. 40
+</td>
+</tr>
+<tr>
+<td>Preocupados com as imposições do mercado de consumo, os valores éticos lentamente cedem lugar àqueles de natureza imediata, que resultam em poder e em prazer, como se a existência não tivesse outro objetivo, com total olvido da <b>intemporalidade</b> do corpo físico, da sua fácil desintegração, das transformações que nele se operam a todo instante, rumando para a morte... p. 43<br>
+O corpo físico é (in)<b>temporal</b>???
+</td>
+<td>As pessoas não se importam com as emoções superiores, que se tornam frias, indiferentes ao que acontece com o outro, o seu próximo, desde que não lhe cause imediato problema ou mesmo preocupação, como se o incêndio na casa vizinha não lhe ameaçasse o próprio lar de ser comburido pelas mesmas chamas. p. 44
+</td>
+</tr>
+<tr class="alt">
+<td>O narcisismo é prática antissocial, que degenera em corrupção moral e insensibilidade emocional. p. 45
+</td>
+<td>O objetivo real da vida é proporcionar ao Espírito o desenvolvimento dos recursos divinos nele ínsitos e adormecidos, que são capazes de guindá-lo à real alegria e à saúde integral. p. 45
+</td>
+</tr>
+<tr>
+<td>Vivendo-se artificialmente, o tédio e o desespero dão-se as mãos e saem em busca da harmonia e da confiança perdida, do amor, ou derrubam as suas vítimas nos poços profundos da alucinação. p. 46
+</td>
+<td>Quem elege a solidão, candidata-se ao abandono. / Quando se escolhe a solidariedade, encontra-se a retribuição. p. 47
+</td>
+</tr>
+<tr class="alt">
+<td>O amor é dinâmico e produtivo. Caso alguém o desrespeite ou lhe traia a confiança, ele permanece intocável, à semelhança de luz solar que beija o pântano e a pétala da rosa, mantendo-se integral, inatingível. p. 47
+</td>
+<td>É o ego presunçoso que responde pelo sofrimento que se lhe aninha no íntimo, quando não compensado pelos esforços desprendidos em qualquer área do comportamento evolutivo. p. 50
+</td>
+</tr>
+<tr>
+<td>A insistência no reto proceder, sem a preocupação do aplauso, nem o receio da crítica destrutiva, deve constituir meta a ser alcançada por todo aquele que se propõe à edificação do reino de Deus entre as demais pessoas, ou à simples tarefa de reverdecer o solo dos corações ressequidos.
+</td>
+<td>Na essência de si mesmo, cada qual é o que realmente construiu e fixou com a segurança da consciência tranquila. p. 51
+</td>
+</tr>
+<tr class="alt">
+<td>Aquele que não consegue vencer a noite escura, dificilmente conseguirá saudar a madrugada de luz que chega após a sombra aparentemente vencedora. p. 52
+</td>
+<td>Em momento algum [Jesus] deixou-se desanimar ou sucumbir, mesmo quando as sombras poderosas povoaram a Sua noite de amargura e de solidão, legando-nos o exemplo de que, por mais terríveis sejam as trevas, sempre surge a luz que as dilui em ósculos contínuos de claridade. p. 53
+</td>
+</tr>
+<tr>
+<td><b>Complexos e Projeções</b><br>
+<br>
+Procedentes dos comportamentos ancestrais e dos conflitos que se insculpem no Espírito, quando a conduta se fez caracterizar pelos desastres morais, eis que ressumam dos arquivos do inconsciente pessoal as marcas danosas em forma de complexos e projeções da imagem.<br>
+<br>
+É comum, nos portadores dessas debilidades, examinar o próximo como se ele fosse um espelho no qual a imagem própria apresenta-se inversa, refletindo as suas lamentáveis feridas espirituais. Por consequência, as observações sempre representam aquele que se dedica a fazê-lo, ao ver-se em forma oposta ao que pensa de si mesmo.<br>
+<br>
+Assinalado pela culpa ínsita na consciência, é normal que a todos considere como se a ele próprio fora.<br>
+<br>
+Em razão de ser-lhe conhecidas as aflições e distonias, as imperfeições e defeitos, com muita facilidade projeta-os no seu próximo como se lhe pertencessem. Como lhe escasseiam as virtudes, os valores éticos raramente o identificam no espelho em que se mira.<br>
+<br>
+Quando se trata de um ser mesquinho ou atormentado, projeta o seu complexo, inconsciente ou não, de inferioridade, retratando o outro de maneira infeliz, conforme se sente, e não de acordo com a realidade da observação.<br>
+<br>
+Quando é pulcro e organizado, admirador da ordem e do belo, vivenciando os valores edificantes, com facilidade projeta-se e identifica noutrem esses conteúdos, embora possa também assinalar algumas das deficiências que ele possui.<br>
+<br>
+Os primeiros sempre assumem a postura de vítimas ou de mártires, quando não aceitos, fugindo para a astúcia com que buscam mascarar os conflitos, tornando-se hábeis na censura e nos comentários maliciosos.<br>
+<br>
+Facilmente comportam-se de maneira contrária à realidade interior, comprazendo-se em exibir as ulcerações íntimas dos outros, o que lhes parece minimizar o autodesamor, os conceitos depreciativos que formulam de si mesmos.<br>
+<br>
+Os segundos, em face de viverem desarmados e afetuosos, não se fixam nas deficiências daqueles com os quais convivem, e quando as detectam, comprazem-se em exaltar-lhes as conquistas logradas, estimulando-os ao prosseguimento dos tentames em busca das vitórias sobre as dificuldades.<br>
+<br>
+Os complexos no comportamento sempre refletem a <i>sombra</i> dominante no ser, que tenta ignorá-la, impedindo-lhe o enfrentamento com o <i>si-mesmo</i>, o que a diluiria facilmente, por incorporá-la à sua realidade. Enquanto assim procede, age como alguém que não considera a necessidade do autoconhecimento para a descoberta dos recursos que facultam o bom proceder, o ser feliz.<br>
+<br>
+Ignorar a <i>sombra</i>, ao invés de evitar-lhe a interferência, mais lhe facilita a influência, a dominação na personalidade.<br>
+<br>
+Em outras circunstâncias, luta-se contra a sua ação vigorosa, como se lhe constituísse adversário que deva ser combatido. A atitude indevida propicia o desperdício de energias, que poderiam ser canalizadas de maneira proveitosa em favor da autoiluminação.<br>
+<br>
+Aquele que assim procede é semelhante a alguém que empurra um objeto que se encontra sustentado por um mecanismo elástico e resistente, que reage a qualquer impulso na razão direta da força que lhe é direcionada.<br>
+<br>
+O êxito seria fácil, bastando que se lhe desmontasse a mola do artefato no lado oposto.<br>
+<br>
+Enfrentar cordialmente a <i>sombra</i>, considerando-a parte integrante da conduta, constitui recurso psicoterapêutico eficaz para diluí-la mediante a integração eixo <i>ego-si-mesmo</i>.<br>
+<br>
+Os complexos, desse modo, revelam-se problemas que se agravam nos caracteres presunçosos, tiranos de si mesmos, disfarçados de honoráveis e retos.<br>
+<br>
+Aqueles que assim procedem constituem elementos perniciosos no grupo social em que se encontram.<br>
+<br>
+São fiscais impiedosos dos outros, censores rigorosos das falhas alheias, que lhes são normais e as arremessam nos demais por se julgarem merecedores da consideração que se atribuem sem qualquer crédito para tanto.<br>
+<br>
+<hr>
+<br>
+Sê o companheiro autenticamente gentil com todos aqueles com os quais convives. Não te preocupes com as suas imperfeições e defeitos morais, porque a tua não é a tarefa da fiscalização, mas a contribuição da amizade.<br>
+<br>
+Para tanto, mantém-te sereno, superando os desafios existenciais, particularmente aqueles que fazem parte da tua agenda moral de natureza interior.<br>
+<br>
+O que ora sofres tem raízes no passado. Resolve-te pelo enfrentamento natural, trabalhando a dificuldade e transformando-a em conquista.<br>
+<br>
+Por outro lado, não estimes as pessoas generosas pelo que te podem oferecer, tendo o cuidado de ser aquele que tem o interesse em ofertar.<br>
+<br>
+Evita, porém, quando assim procederes, a postura de benfeitor ou de anjo socorrista, conduzindo-te com a naturalidade que gostarias te fosse oferecida, caso a situação se apresentasse diferente.<br>
+<br>
+Quando te sintas tentado à censura, à crítica mordaz, à reclamação ou à queixa, recorda que o problema não é do outro, mas se constitui uma projeção da tua imagem, manifestação do teu complexo conflitivo que se exterioriza.<br>
+<br>
+Educa a observação para registrar o lado edificante e bom de cada criatura, porque o êxito dos relacionamentos estrutura-se na amizade sincera e desinteressada.<br>
+<br>
+Não te faças a pessoa desagradável que todos suportam, mas não simpatizam, aceitam no seu círculo, mas não estimam, e vão descartando-a delicadamente.<br>
+<br>
+O gesto deles não é perverso nem injusto, mas cauteloso e resultado do cansaço da presença perturbadora.<br>
+<br>
+Todos amam a jovialidade natural e digna sem a bajulação verbal nem as atitudes fingidas que são facilmente percebidas.<br>
+<br>
+Preserva-te como és, esforçando-te para seres melhor.<br>
+<br>
+Evita o elogio inoportuno e insensato.<br>
+<br>
+Cada pessoa digna sabe e conhece o próprio valor, sem que estejas a exaltá-lo a cada momento. É certo que algumas gostam desse comportamento insano, detestando, porém, esse <i>doente</i> que reconhece como hipócrita.<br>
+<br>
+Quando quiseres referir-te aos valores de alguém, não lhe firas a modéstia com exageros de linguagem. Há muitas maneiras de demonstrar-se apreço e respeito por outrem.<br>
+<br>
+Insiste em conhecer esses adversários soezes do teu bem-estar, reflexionando em torno dos teus complexos e projeções.<br>
+<br>
+<hr>
+<br>
+Jesus, sempre modelar, utilizou-se das coisas simples para exaltar a Vida e tecer considerações sublimes em torno do reino de Deus.<br>
+<br>
+Nunca se deteve a apontar os erros humanos e, quando usava a linguagem com que analisava os desaires das criaturas, fazia-o genericamente, estimulando aqueles que estavam com eles comprometidos. Tampouco exaltou as qualidades rais ou aparentes de quem quer que fosse.<br>
+<br>
+A todos chamou para o Seu rebanho, sem complexo ou transferência de <i>sombra</i>, porque se constituía de luz.<br>
+<br>
+Faze o mesmo, e integrarás a tua <i>sombra</i> no Espírito que és, da Divina Luz gerado.
+</td>
+<td>Quando não se vivencia o presente em sua profundidade, perdem-se as experiências que ficaram arquivadas no passado. E todo aquele que não possui o passado nos arquivos da memória atual é destituído de futuro, por faltarem-lhe alicerces para a sua edificação. p. 63
+</td>
+</tr>
+<tr class="alt">
+<td>Existe uma fatalidade impostergável no renascimento do Espírito na organização carnal, que se constitui da oportunidade para o autoburilamento por <i>colisões</i> e atritos, qual ocorre com as gemas preciosas que necessitam da lapidação para libertar a luminosidade adormecida no seu interior. p. 64
+</td>
+<td>Uma releitura atenta dos <b>códigos</b> de ética e de justiça de todos os tempos proporciona o reencontro com os reais valores que devem nortear a vida humana. p. 64
+</td>
+</tr>
+<tr>
+<td>Reflexiona na correria louca para lugar nenhum e considera a vida a oportunidade de sorrir e produzir, descobrindo-te útil a ti mesmo e à comunidade. p. 65
+</td>
+<td>Mas, se insistir essa estranha sensação, faze mais e melhor, esquecendo-te de ti mesmo, auxilia outrem a lograr aquilo por que anela, e descobrirás que, ao fazê-lo feliz, preenchido de paz, estarás ditoso também. p. 65
+</td>
+</tr>
+<tr class="alt">
+<td>Tudo encontra-se <b>codificado</b> de maneira sábia pelas Leis de Amor que vigem no universo, manifestando-se nos momentos oportunos, facilitadores do mecanismo da evolução moral do ser. p. 69
+</td>
+<td>A árvore robustece-se na tempestade, vergando-se, a fim de que passem os ventos fortes, e logo recuperando a postura. (...)<br>
+<br>
+Também o Espírito calceta é convidado a refazer os caminhos percorridos com impunidade quando delinquiu, recuperando-se emocionalmente dos atentados praticados contra a ordem e o dever. p. 69
+</td>
+</tr>
+<tr>
+<td>Recorda-te, por exemplo, de Jesus, que não encontrou sequer um lugar no mundo para nascer, optando por uma estrebaria, e antes de partir, em vez de fazê-lo em uma carruagem gloriosa na direção do Pai, preferiu a cruz da hediondez, ensinando que o amor a tudo supre e que, por amor, tudo se consegue...<br>
+<br>
+Essa, a Sua dor, foi a mais extraordinária saga de amor jamais oferecida à humanidade, mediante a qual o Homem ímpar doou-se totalmente, a fim de que todos que O amassem não tivessem justificativa para fugir do carreiro das aflições, porque, se Ele, sem qualquer culpa, experimentou as máximas dilacerações, o que não devem vivenciar aqueles que estão comprometidos com o erro?! p. 70
+</td>
+<td>Não faltarão aqueles que afirmam tratar-se de uma patologia masoquista, essa, a do sofrimento voluntário. Nada obstante, as mais variadas opções do prazer não passam de exibicionismo, de covardia ante a realidade que se apresenta sempre mais severa do que as ilusões passadistas. p. 70
+</td>
+</tr>
+<tr class="alt">
+<td>Diferindo de outras doutrinas filosóficas e religiosas, o <i>Espiritismo é a ciência da filosofia, a filosofia da religião e a religião da ciência,</i> conforme o definiu o gentil amigo <a href="" target="_blank">Manuel Vianna de Carvalho</a> quando ainda se encontrava na indumentária carnal... p. 71
+</td>
+<td>Mede-se a capacidade da fé religiosa pela maneira como são enfrentadas as vicissitudes e recebidas as provações por aquele que a possui. p. 85
+</td>
+</tr>
+<tr>
+<td>Ninguém se reencarna apenas para desfrutar. Quando se acerca da fé, logo percebe que essa luz interior deve ser dirigida para a noite, quando essa acontecer. Utilizar-se, portanto, do recurso renovador e poderoso de que se constitui, é o <b>dever</b> de todos quantos ingressam em qualquer escola religiosa, especialmente na abençoada e lúcida academia do Espiritismo. p. 86
+</td>
+<td>A fé é tesouro que se cultiva, sustentada pela oração, que se lhe torna a seiva mantenedora, ensejando-lhe o brilho <b>continuamente</b>. p. 87
+</td>
+</tr>
+<tr class="alt">
+<td>As tuas aquisições atuais, os teus resgates morais servem de base para futuros empreendimentos evolutivos, cabendo-te a santa alegria do ressarcimento dos erros através das silenciosas conquistas da coragem e do valor, avançando no rumo da libertação plena. p. 87
+</td>
+<td>O conhecimento do Espiritismo liberta a consciência da culpa, o indivíduo de qualquer temor, facultando-lhe uma existência risonha com esperança e realizações edificantes pelos atos. Não apenas enseja as perspectivas ditosas do porvir, mas sobretudo ajuda a trabalhar o momento que se vive, preparando aquele que virá. p. 88
+</td>
+</tr>
+<tr>
+<td>É compreensível que diante das preocupações que assaltam a existência humana, coloque-se o indivíduo em uma atitude de reserva, mesmo de tristeza passageira, enquanto resolve o impasse, recuperando logo que se lhe faça possível a alegria de viver e de liberar-se na <b>contabilidade</b> espiritual. p. 88
+</td>
+<td>A fé deve ser trabalhada, testada, reflexionada, de modo a robustecer-se cada vez mais, não permanecendo estagnada num conjunto de crenças que não resistem ao fogo do testemunho. Dinâmica, é atuante, conseguindo superar as circunstâncias que tem o <b>dever</b> de enfrentar corajosamente. p. 89
+</td>
+</tr>
+<tr class="alt">
+<td>A fé espírita, desse modo, fortalece-se quando posta à prova, ensejando àquele que a possui satisfações inigualáveis, porque centrada na coragem e no bem fazer. p. 89
+</td>
+<td>Jesus deu-nos a <b>demonstração</b> dessa fé que remove montanhas, enfrentando as situações mais graves de que se tem notícia, mantendo-se sempre irretocável, por cujo exemplo demonstrou a Sua procedência. p. 89
+</td>
+</tr>
+<tr>
+<td>Costuma-se dizer que Ele é o exemplo máximo e, que, por isso mesmo, nEle são naturais as reservas de coragem e de harmonia em todas as situações. p. 89
+</td>
+<td>Sem dúvida, assim é; no entanto, <b>todos</b> podemos fazer o que Ele fez, se tivermos fé, se nos empenharmos em sintonizar com Ele e o Pai, a fim de seguirmos fieis até a conclusão da jornada. p. 89
+</td>
+</tr>
+<tr class="alt">
+<td>Jesus recomendou que não se <i>resistisse ao mal</i>, equivalendo dizer que as questões inferiores, as forças negativas, aquelas que conspiram contra o bem e o progresso são destituídas de ética, de nobreza, portanto, devendo ser evitadas por aqueles que se vinculam aos ideais de enobrecimento e de paz. p. 91
+</td>
+<td>Evitar o encontro corpo-a-corpo é um <b>dever</b> de prudência, considerando-se que o mal se utiliza de armas traiçoeiras, de recursos indignos, que o <b>homem de bem</b> não pode aplicar em condição de igualdade. Por isso, não resistir, no sentido de enfrentar, deve ser levado em conta, em natural estado de vigilância. No entanto, quando se torna necessária a empresa de definir rumos, jamais fugir, deixando campo à sua proliferação. p. 92
+</td>
+</tr>
+<tr>
+<td>É necessário que os maus saibam que lavram em terra ocupada, que não pode ser deixada ao abandono, para que ali proliferem as manifestações doentias e perturbadoras do seu curso infeliz. p. 92
+</td>
+<td>O mal procede da ignorância das Leis de Deus e os maus são-lhes as vítimas de preferência pelo recusar-se a iluminação, o esclarecimento libertador. p. 92
+</td>
+</tr>
+<tr class="alt">
+<td>Os atavismos e vícios a que se encontra vinculado o ser mantêm-no nessa torpe e cômoda situação de recusar o conhecimento, temendo o esforço da mudança de atitude, o inevitável sacrifício da condição à qual se acostumou. p. 92
+</td>
+<td>Romper as grosseiras camadas vibratórias que o envolvem, é a finalidade da reencarnação, que acena com o crescimento para Deus. p. 92
+</td>
+</tr>
+<tr>
+<td>A viagem da treva na direção da luz é o objetivo da evolução. p. 93
+</td>
+<td>Não resistir ao mal, despertando-o, aceitando-he as provocações perversas, precatando-se dos maus, constitui bênçãos de sabedoria, mesmo quando possa parecer atitudes de fuga. p. 93
+</td>
+</tr>
+<tr class="alt">
+<td>Como os maus bem pouco têm a perder, conforme asseveram nos seus momentos de insânia, deixa-os com eles mesmos e o tempo se encarregará de fazer o que o momento ainda não pode realizar. p. 93
+</td>
+<td>O progresso moral é logrado de maneira geométrica, em razão de cada vitória facultar outra mais expressiva, multiplicando-se por si mesmo, desenvolvendo-se na horizontal do intelecto, assim como na vertical do amor. p. 94
+</td>
+</tr>
+<tr>
+<td>Considera Jesus, todo amor e bondade, confundido na multidão dos desesperados, na malta perturbada e ansiosa, desejando solução para as suas infelicidades sem a contribuição do esforço pessoal, gritando e reclamando atenção que não mereciam, enquanto Sua paciência e misericórdia distribuíam compaixão e entendimento... p. 94
+</td>
+<td>Os maus e perversos, os zombadores e incréus, que sempre os houve em todas as épocas da humanidade, chasquinando e menosprezando o Seu poder, eram constante provocação do mal, que Jesus evitava enfrentar, porquanto já eram demasiadamente desditosos para terem ampliada a carga de aflições com o Seu reproche, a Sua severa reprimenda... p. 94
+</td>
+</tr>
+<tr class="alt">
+<td>Faze a tua parte de maneira correta e constante, consciente de que a vida a ninguém esquece ou abandona. p. 94
+</td>
+<td>Quanto a ti, produze da melhor forma possível, aproveitando cada momento da tua existência para armazenar sabedoria e realizações nobilitantes, assim desenvolvendo o teu <i>deus interno</i> e vencendo o mal que ainda se homizia nos recônditos do teu ser. p. 94
+</td>
+</tr>
+<tr>
+<td>... E naquilo que se refere ao mal, jamais te esqueças que ele somente faz mal àquele que sintoniza com as suas expressões. p. 94
+</td>
+<td>Jamais, qualquer treva, por mais densa, conseguiu vencer a claridade, por mais tênue que se apresente. p. 94
+</td>
+</tr>
+<tr class="alt">
+<td>Enquanto te encontres na roupagem física defrontarás lutas e processos desafiadores, a fim de que se desenvolvam os divinos recursos que possuis e de que nem sequer te dás conta. Através dessas rudes pelejas, irás desbastando as camadas grosseiras que os ocultam, ensejando-te a descoberta desses tesouros enriquecedores. p. 95
+</td>
+<td>Faze o que te cumpre, deixando que o tempo, na sua sabedoria, encarregue-se de modificar as estruturas de que [os maus] se utilizam para insistirem na sua insana atividade. p. 95
+</td>
+</tr>
+<tr>
+<td>Apoia-te no bem, e não disporás de tempo para pensar nas artimanhas impiedosas dos inimigos, em razão do muito que podes produzir e das infinitas possibilidades que se encontram ao teu alcance. p. 95
+</td>
+<td>A luz chama a atenção, gerando sentimentos controvertidos naqueles que, no momento, ainda não a desejam. É claro que se empenharão por apagar-lhe a claridade, facilitando a continuação da desordem, do crime, da revolta em que se deleitam. p. 98
+</td>
+</tr>
+<tr class="alt">
+<td>Lucigênito, possuis a divina luz em teu mundo interior, e após o teu encontro com Jesus, a <i>Luz do mundo</i>, amplias a claridade com os sublimes combustíveis do amor e da abnegação. p. 98
+</td>
+<td>Enquanto conduzes o luminoso facho da esperança e permaneces no trabalho ensementando os paradigmas de amor e de sabedoria que libertam as consciências, aqueles Espíritos inferiores de ambos os planos da vida se voltarão contra ti, esquecidos de que estás a serviço dAquele que te enviou. p. 99
+</td>
+</tr>
+<tr>
+<td>Corresponde-Lhe à confiança e deixa que brilhe a tua luz! p. 99
+</td>
+<td>Os indivíduos ociosos encontram-se tão atarefados com o nada fazer, que dispõem de tempo suficiente para vigiar os demais e gerar-lhes embaraços. p. 99
+</td>
+</tr>
+<tr class="alt">
+<td>Aqueles que te hostilizam, assim procedem porque reconhecem os teus valores que <b>os magoam</b> na inferioridade em que se demoram. p. 99
+</td>
+<td>É natural que cada indivíduo julgue outrem conforme sua óptica emocional e os recursos morais que o caracterizam, não concedendo o respeito que não tem <b>por si mesmo</b>, nem a confiança que inspiras e neles é escassa. p. 99
+</td>
+</tr>
+<tr>
+<td>A intemperança, a rebeldia sistemática, o atraso emocional, a culpa não assimilada, o egotismo transformam-se durante o trânsito carnal em <b>desafios</b> a cada indivíduo, impondo-lhe as situações doentias que tipificam essa fase da evolução. p. 106
+</td>
+<td>Os problemas <b>internos</b> apresentam-se hoje ou mais tarde no mundo <b>exterior</b>, em razão da necessidade de serem eliminados. p. 107
+</td>
+</tr>
+<tr class="alt">
+<td>Jesus referiu-se que em as <i>nascentes do coração</i> brotam as boas como as más ocorrências, referindo-se ao ser interno que se é, em vez da argamassa celular em que se movimenta. p. 107
+</td>
+<td>Jesus recomendou que não se deve resistir à <i>tentação</i> dos maus, <b>sintonizando</b> com eles, entrando em parceria mental, permitindo-se agasalhar os sentimentos negativos que lhes são habituais, porque isso é <b>muito pior</b> que a ocorrência em si mesma. p. 112
+</td>
+</tr>
+<tr>
+<td>Se o mal não receber a contribuição da revolta da vítima, da sua mágoa, do seu desalento, eis que perde o significado infeliz por falta de sustentação vibratória e emocional. p. 112
+</td>
+<td>O perdão àquele que é o responsável pela desgraça que infligiu a outrem <b>não o exonera</b> da responsabilidade da ação perniciosa, que terá de responder pelos danos causados, mas proporciona um grande <b>bem à vítima</b>, sem <b>sobrecarregar</b> o responsável pela sua infelicidade. p. 112
+</td>
+</tr>
+<tr class="alt">
+<td>Não há outra alternativa, exceto considerar que, diante da magnitude do feito mau, não sendo possível perdoar, porque as resistências morais não o permitem, pelo menos se deve <font style="background-color: blue;" color="white">desculpar</font>, facultando ao calceta o direito de ser um <font style="background-color: blue;" color="white">transtornado</font>... Ainda assim, havendo dificuldade e resistência psicológica para a desculpa, tal o impacto do ato infeliz, existe uma última possibilidade de não se vincular ao déspota, que é ter <font style="background-color: blue;" color="white">compaixão</font> dele. p. 112
+</td>
+<td>A compaixão é o passo <font style="background-color: blue;" color="white">último</font> ou <font style="background-color: blue;" color="white">primeiro</font> que deve ser dado por qualquer pessoa que foi vítima de injunção malévola e destrutiva. p. 112 
+</td>
+</tr>
+<tr>
+<td>Esse sentimento de <font style="background-color: blue;" color="white">compreensão</font> da miséria do outro permite que se lhe não deseje mais dsventura além daquela em que fossiliza. p. 113
+</td>
+<td>Numa reflexão que deve ser feita com espontaneidade, aquele que sofre deve colocar-se <font style="background-color: blue;" color="white">no lugar</font> do perseguidor e considerar quanto ele <font style="background-color: blue;" color="white">padece</font> interiormente, vitimado por distúrbios de vária ordem e como é <font style="background-color: blue;" color="white">desventurado</font> por anelar felicidade produzindo a desdita de outrem. p. 113
+</td>
+</tr>
+<tr class="alt">
+<td>Mediante essa atitude, que dá a medida possível do infortúnio do algoz, a sua vítima pode, sim, <font style="background-color: blue;" color="white">compadecer</font>-se do desditoso, não mais se permitindo vencer pelo ressentimento, <font style="background-color: blue;" color="white">desculpando-o</font> em relação ao crime cometido, e, por fim, <font style="background-color: blue;" color="white">perdoando</font>-o... p. 113
+</td>
+<td><b>Triedro:</b> Compaixão, desculpa e perdão costituem a trilogia terapêutica a que se devem entregar aqueles que sofrem as situações dolorosas referidas. p. 114
+</td>
+</tr>
+<tr>
+<td>Invariavelmente, na raiz dos desastres orgânicos, das infecções, das instalações de sintomas e das doenças encontra-se o indivíduo em si mesmo desajustado, dominado por conflitos conscientes ou ignorados, <font style="background-color: blue;" color="white">autopunindo</font>-se ou buscando mecanismos de <font style="background-color: blue;" color="white">fuga</font> dos problemas, desse modo, mesmo sem o saber, abrindo campo à sua instalação. p. 115
+</td>
+<td>As exigências descabidas que fazem parte do cotidiano das criaturas, os impositivos de natureza socioeconômica, as extravagâncias que adquirem cidadania, a falta do necessário tempo para a reflexão e o relaxamento, a solidão e o desamor transformam-se em conflitos perversos que não são <font style="background-color: blue;" color="white">diluídos</font> pela consciência, que se <font style="background-color: blue;" color="white">bloqueia</font> ou tenta <font style="background-color: blue;" color="white">ignorá</font>-los, avançando no rumo das enfermidades através das quais chama a atenção e recebe cuidados... p. 116
+</td>
+</tr>
+<tr class="alt">
+<td>Preocupado sempre em parecer ao invés de ser, transita entre uma ansiedade malcontida e outra <font style="background-color: blue;" color="white">não realizada</font>, dissimulando as preocupações ou delas fugindo através dos mecanismos viciosos que a sociedade estabelece como recurso para proporcionar <i>status</i>. A desenfreada busca por essa conquista que chama a atenção, gerando bajulação e destaque na comunidade, <font style="background-color: blue;" color="white">amarfanha o ser real</font>, que perde o contato com a sua realidade, e quando não mais pode suportar a tensão longamente mantida, deixa-se arrastar pelos transtornos de afetividade ou as doenças de natureza orgânica. p. 116
+</td>
+<td>Cuidando-se dos sintomas e das enfermidades no seu aspecto de apresentação, olvida-se da realidade causal de natureza vibratória que provém do próprio paciente. p. 117
+</td>
+</tr>
+<tr>
+<td>Quando se instalam as doenças, faltam os comandos morais que desenvolvem os processos vitalizadores capazes de expulsar ou msmo instalar os agentes patológicos destrutivos. p. 118
+</td>
+<td>Quando o enfermo se resolve pela recuperação real e aceita a orientação saudável do seu médico ou da sabedoria universal, muda de comportamento mental, psicológico e social, aplicando de forma salutar o pensamento que é o construtor das redes energéticas que se espraiam por todo o organismo, experimentando os salutares resultados. p. 118
+</td>
+</tr>
+<tr class="alt">
+<td><font style="background-color: blue;" color="white">És o de que tens feito.</font> p. 119
+</td>
+<td>Em qualquer situação, ama e faze todo o bem ao teu alcance, enriquecendo-te de <font style="background-color: blue;" color="white"><i>talentos</i> de luz</font>, que saberás multiplicar para a correta devolução Àquele que te facultou a tua posse temporária. p. 119
+</td>
+</tr>
+<tr>
+<td>A saúde, sem dúvida, é um desses fabulosos <i>talentos</i> que são oferecidos aos transeuntes da evolução dos quais terão que dar contas. p. 119
+</td>
+<td>Podemos considerar a felicidade como resultado de pensamentos corretos, de atos honestos e de sentimentos enobrecidos. p. 121
+</td>
+</tr>
+<tr class="alt">
+<td>O asceta, o mártir, o idealista, quanto <font style="background-color: blue;" color="white">mais enfrentam</font> dificuldades, <font style="background-color: blue;" color="white">melhor sentem-se</font>, agradecendo à vida as aflições que os elevam, que os ajudam a concretizar os objetivos que abraçam e os santificam. No entanto, para o indivíduo comum, as sensações bem-atendidas, o conforto, a conquista de valores amoedados, o experimentar de prazeres contínuos são fenômenos que se convertem em expressões de felicidade... Certamente, uma situação, a primeira postura, tem que ver com as <font style="background-color: blue;" color="white">emoções superiores</font> da alma, enquanto que a outra diz respeito às sensações dos sentidos físicos de <font style="background-color: blue;" color="white">efêmera</font> duração. p. 122
+</td>
+<td>A felicidade, portanto, desse modo, não está adstrita a determinados padrões, de maneira que seja a mesma para todos os indivíduos. p. 122
+</td>
+</tr>
+<tr>
+<td>O véu que oculta o discernimento da felicidade real é colocado pelo ego, na sua feição <font style="background-color: blue;" color="white">imediatista</font>, vinculado aos <font style="background-color: blue;" color="white">interesses</font> pessoais e movimentando-se somente em torno deles, o que não corresponde à <font style="background-color: blue;" color="white">realidade</font> dos valores que tipificam o estado de harmonia real, de plenitude. É provável que a felicidade para muitos não seja mais do que algumas alegrias derivadas das <font style="background-color: blue;" color="white">ambições</font> que se fizeram palpáveis, após algum esforço por consegui-las. Para outros, podem se ras satisfações <font style="background-color: blue;" color="white">hedonistas</font>, em que o gozo foi transformado em finalidade primordial da existência, embora fugidio e cansativo. p. 123
+</td>
+<td>A felicidade, porém, não se afirma como o trânsito fácil pelos <font style="background-color: blue;" color="white">altibaixos</font> da experiência carnal, tornando-se necessário que sejam eliminados os tóxicos mentais e a ignorância em torno das leis de solidariedade e de compaixão, que devem ser vivenciadas no <font style="background-color: blue;" color="white">íntimo</font>, de forma a melhor compreender-se o <font style="background-color: blue;" color="white">sentido psicológico do existir</font>. p. 123
+</td>
+</tr>
+<tr class="alt">
+<td>Uma das razões dominantes para a presença da infelicidade é a ambição desmedida, que confunde o ter com o ser, o poder com o <font style="background-color: blue;" color="white">realizar-se</font>. p. 124
+</td>
+<td>A educação social na Terra, infelizmente, ainda tem a predominância pela exaltação do mais forte, pelo triunfo do mais rico ou mais belo, pela coragem do mais hábil na arte de <font style="background-color: blue;" color="white">projetar a imagem</font>, estabelecendo a felicidade como a glória externa, o brilho fácil nas rodas socioeconômicas dominantes... p. 124
+</td>
+</tr>
+<tr>
+<td>Como efeito, quando não se conseguem esses padrões de <font style="background-color: blue;" color="white">falsa felicidade</font>, pensa-se em desdita, em fracasso. p. 124
+</td>
+<td>Não é raro encontrar-se pessoas ricas e que alcançaram o topo, invejadas e copiadas, cercadas de fãs ardorosos e perseguidas pelo noticiário da <font style="background-color: blue;" color="white">frivolidade</font>, que lamentam interiormente a fama e o alto escalão em que se deparam nos <b>círculos</b> em que se movimentam. p. 124
+</td>
+</tr>
+<tr class="alt">
+<td><i>(Aqui começa a influência budista.)</i><br/>
+A verdadeira educação deve ter como meta formar cidadãos, criar condições dignificadoras para o indivíduo, fortalecimento dos valores ético-morais, porque os padrões exteriores mudam de situação a cada momento, enquanto os de natureza íntima <font style="background-color: blue;" color="white">permanecem</font> como diretrizes de sabedoria geradora de paz interior. p. 124
+</td>
+<td>Considerando-se, porém, que é <font style="background-color: blue;" color="white">inevitável</font>, que sempre surgirá momento em que se apresentará, em razão da circunstância em que o Espírito evolui, ainda apegado aos débitos de ontem como às intercorrências desequilibradoras de hoje, o recurso preciso para o <font style="background-color: blue;" color="white">enfrentamento</font> é a constatação da sua <font style="background-color: blue;" color="white">transitoriedade</font>, em face da maneira como deve ser encarado, dando-lhe qualidades positivas de aperfeiçoamento moral, de metodologia que leva à autorreflexão, ao <font style="background-color: blue;" color="white">aprimoramento interior</font>. p. 125
+</td>
+</tr>
+<tr>
+<td>A felicidade real tem muito a ver com a felicidade que produz <font style="background-color: blue;" color="white">em torno</font>, com aquela que diz respeito aos outros. p. 125
+</td>
+<td>A <font style="background-color: blue;" color="white">chave</font> para ser viabilizada está no amor a si mesmo e ao próximo, nessa deferência que deve ser dedicada ao esforço de autoaprimoramento, de elevação de qualidades morais, de significados emocionados, tendo em vista as demais criaturas. Quem apenas se ama, sm tempo de <font style="background-color: blue;" color="white">ampliar o círculo</font> da afetividade com os outros, sofre de miopia moral e, no seu egotismo, perde o sentido existencial. p. 125
+</td>
+</tr>
+<tr class="alt">
+<td>Somente quando se <font style="background-color: blue;" color="white">ama aos demais</font> caminhantes da estrada da evolução, é que se desenvolvem os sentimentos de nobreza, especialmente os de compaixão, de misericórdia, de solidariedade e caridade no seu sentido mais elevado. p. 125
+</td>
+<td>Nesse amor que <font style="background-color: blue;" color="white">se expande</font>, absorvem-se a harmonia e a <font style="background-color: blue;" color="white">certeza</font> de que após a transição do corpo pelo fenômeno da morte biológica, haverá o despertamento do Espírito em forma de <font style="background-color: blue;" color="white">consciência livre de culpa</font>, em estado de real felicidade.
+</td>
+</tr>
+<tr>
+<td>Atendendo a pedidos, a <a href="ditadura.pdf">Ditadura</a> do Ego eu já escaneei. (<a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxtYXRoc3Bpcml0dWFsaXR5MnxneDo3MTlhZjZiMTcxZDEwMzM0">Estou sem</a> o software de pdf.)
+</td>
+<td>Raramente alguém é capaz de permanecer emocionalmente neutro em uma situação conflitiva, especialmente quando o seu égo é atingido. Irrompe, automaticamente, a hostilidade, em forma de autodefesa, de acusação defensiva, de revide... p. 141
+</td>
+</tr>
+<tr class="alt">
+<td>Diluir-se em novas experiências todas aquelas que causaram dor e hostilidade é possível mediante o cultivo de pensamentos de paz e de solidariedade, criando um <b>campo mental</b> de harmonia capaz de manifestar-se por automatismo diante de qualquer ocorrência geradora de aflição. p. 141
+</td>
+<td>Eis por que a resistência passiva consegue os resultados excelentes da harmonia. Provavelmente, o outro, o inimigo, não entenderá de momento a não-violência daquele a quem aflige, mas isso não é importante, sendo valioso para aquele que assim procede, porque não permite que a insânia de fora alcance o país da sua tranquilidade interior. p. 142
+</td>
+</tr>
+<tr>
+<td>Não se torna suficiente, portanto, libertar-se daquilo que gera mal-estar e produz decepção, mas agir de maneira correta, a fim de que se consigam alegria e estímulo para uma vida produtiva. p. 142
+</td>
+<td>Viver por viver é fenômeno biológico, automático, no entanto, é imprescindível viver-se em paz, bem viver-se, em vez do tradicional conceito de viver de bem com tudo e com todos, apoiado em reservas financeiras e em posições relevantes sempre transitórias... p. 142
+</td>
+</tr>
+<tr class="alt">
+<td>Quando se alcançar o amor altruísta, haverá o sentimento da real fraternidade e o equilíbrio se estabelecerá no ser em busca de si mesmo e de Deus. p. 143
+</td>
+<td>A criatura humana pode ser considerada conforme os seus apegos e renúncias. p. 148
+</td>
+</tr>
+<tr>
+<td><i>Bem-aventurados,</i> disse Jesus, <i>os puros e os simples de coração.</i><br/>
+A simplicidade é etapa evolutiva que se deve alcançar, treinando-se renúncia e abnegação.<br/>
+A felicidade, na Terra, independe do que se tem, mas se constitui de tudo aquilo que se cultiva interiormente em amor e simplicidade. p. 149
+</td>
+<td>O ser humano encontra-se programado para o amor e para a plenitude. p. 152
+</td>
+</tr>
+<tr class="alt">
+<td>Constituem exemplos de dignidade e de elevação espiritual as vítimas que não se alegram com as desgraças dos seus algozes, ou que, contribuindo com a justiça, não têm como meta torná-los infelizes, objetivando somente recuperá-los sob as determinações e impositivos das leis que regem a sociedade. p. 153
+</td>
+<td>O cão raivoso que desejas matar, quando ameaçador, passados os anos, debilitado pelas doenças e pela idade, é inofensivo, inspirando compaixão e não mais temor.<br/>
+Analogamente, são as criaturas humanas. Esse arrivista perverso e agressivo, soberbo e prepotente, também envelhece e decompõe-se. O tempo toma-lhe a vitalidade da valentia, deixando-o inerme e dependente. p. 153
+</td>
+</tr>
+<tr>
+<td>A vida é severa para com todos os indivíduos, especialmente para com os seus dilapidadores. p. 153 [dilapidaram a Vida, ora pois.]
+</td>
+<td>Tudo quanto ocorre tem uma razão de ser, e somente acontece contigo aquilo que se encontra no desenho reencarnacionista da tua evolução. p. 154
+</td>
+</tr>
+<tr class="alt">
+<td>De maneira alguma sintonizes na mesma onda de malquerença com aquele que te prejudica, mantendo-te em atitude equilibrada, porque o mal que te façam, realmente não te fará mal, se não permitires que te afete. Poderão, talvez, criar-te embaraços, dificultando a tua existência, gerando incompreensões em torno da tua conduta, produzindo complexas situações de dor e angústia, tudo, porém, dentro do esquema do teu processo evolutivo. p. 154
+</td>
+<td>Nenhum mal consegue infelicitar aquele que se entrega a Deus e confia na Sua justiça. p. 154
+</td>
+</tr>
+<tr>
+<td>Doando a sua vida, para que todos tivéssemos <i>vida em abundância</i>, Jesus ofereceu-nos o mais sublime gesto de altruísmo de que a humanidade tem notícia. p. 161
+</td>
+<td>Vagarosa, porém, seguramente, a marcha de quem pretende alcançar as alturas espirituais é feita de pequenas realizações no círculo humano onde se encontra.<br/>
+O céu ambicionado e que parece distante encontra-se ao alcance do primeiro passo, onde têm lugar as suas fronteiras. p. 165
+</td>
+</tr>
+<tr class="alt">
+<td>A conquista real da felicidade somente se torna factível quando se compreende o de que se constitui. p. 165
+</td>
+<td>Vestindo a indumentária da humildade e revestindo-te com a couraça da fé em Deus, todos os teus esforços se coroarão de bênçãos e as tuas pegadas ficarão na retaguarda como setas de luz apontando o rumo seguro para aqueles que virão depois.<br/>
+A tua é a missão de construir a Terra melhor e mais feliz, iniciando o labor em teu mundo íntimo e ampliando-o além das fronteiras que te limitam. p. 166
+</td>
+</tr>
+<tr>
+<td>O de Jesus é o equilíbrio máximo: na elevação do amor sublime e no momento de adentrar-se na esplêndida e permanente madrugada luminosa da imortalidade através da ressurreição. p. 167
+</td>
+<td>Oferecer a outra face é mais do que expor o lado contrário, a fim de sofrer nova investida da perversidade.<br/>
+Trata-se da face moral, nobre, que se encontra oculta, aquela rica de sentimentos elevados que distingue uma de outra criatura. (...)<br/>
+Ao seres alcançado por qualquer ocorrência desagradável que te golpeie a emoção, ferindo a delicadeza das tuas reservas íntimas, ao invés de reagires, desvela a outra face, a do amor, da compaixão, da misericórdia, agindo com serenidade.<br/>
+A outra face é o anjo adormecido nas paisagens luminescentes do teu mundo interior.<br/>
+Ali possuis tesouros de amizade e de ternura que desconheces. (...)<br/>
+Imerge, desse modo, no rio de águas silenciosas do teu mundo íntimo e refresca-te com o seu contributo. Logo depois, deixa que os tesouros do amor do Pai que se encontram adormecidos fluam suavemente e se incorporem aos conteúdos habituais, substituindo-os ao longo do tempo e predominando por fim.<br/>
+À medida que tal aconteça, renascerás dos escombros como a Fénix da mitologia, que se renovava e renascia das cinzas que a consumiam... (...)<br/>
+És responsável pelos teus atos, qual semeador que avança, seara dentro, atirando os grãos que irão germinar com o tempo.<br/>
+Certamente muitos se perderão, outros, no entanto, produzirão multiplicadamente, ensejando colheita superior ao volume ensementado.<br/>
+Necessário cuidar do tipo das sementes que serão distribuídas pelas tuas mãos. (...)<br/>
+A outra face encontra-se coberta por camadas de experiências desastrosas.<br/>
+Retira esse lixo mental e permite que se apresente irisada de sol espiritual a outra face, para que o amor real seja a marca do teu comportamento em qualquer circunstância ou ocorrência difícil. p. 171-173
+</td>
+</tr>
+<tr class="alt">
+<td>As emoções básicas do ser humano são três: o amor, a ira e o medo. Delas se derivam todas as outras: a ternura, a tristeza, a excitação sexual, a abnegação, a caridade, a renúncia, a raiva, o ódio, o ressentimento, a vingança, a revolta, a ansiedade, o temor, o pavor, a angústia... p. 177
+</td>
+<td>Não transfiras os teus conflitos para os outros, sempre justificando as tuas mazelas e apontando-as nos demais. p. 179
+</td>
+</tr>
+<!--
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>Prendam o pastor gay, o padre gay, o bispo gay, o arcebispo gay, o cardeal gay e o papa gay.
+</td>
+<td>Prendam o pastor, o padre, o bispo, o arcebispo, o cardeal e o papa.
+</td>
+</tr>
+-->
+</tbody></table>
+<br>
+<br>
+<i>in <a href="http://www.claudino.webs.com/index.html">principio</a></i>...
+<br>
+<a href="http://www.claudino.webs.com/citacoes/joanna.htm"><font color="red" face="lucida sans unicode">&#8656;</font></a><br>
+<a href="http://www.claudino.webs.com/citacoes/espiritismo2013.htm"><font color="blue" face="lucida sans unicode">&#8658;</font></a>
+<br/>
++55 19 999 17 36 50<br/>
++55 31 98526 7474
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6a87676458765210',m:'O7Q4.e.2tdyocA458v7c._xXqvy_O6nATHrmjoI3I2k-1635961396-0-AShUZ+4G+jXtr3kwWGGEsOv1iZXiRbuzxw0zwGZ9rm7wXSV9WdeUoBPnh88189zTjtuGYrcS9L4+iYq/UJb4oZjRQIo69jCargC5bx0lR5GMBUr5k/p2qEkiRdgZ9+n4HUdyMETTFAQK4axHMcRs3Qw=',s:[0x9fe1e8ca73,0x764361e5af],}})();</script><a href="

@@ -1,0 +1,151 @@
+Definição de subvariedade M^m contido N^n.
+
+É necessário e suficiente que para cada p pertence M, 
+existe aberto V em N, p pertence V
+e um difeomorfismo psi: V -> psi(V) contido R^n
+                   tal que psi(M inter V) contido R^m cartesiano {0}
+
+f: M -> N é mergulho ==> f(M) contido N é subvariedade.
+
+M é subvariedade de dimensão n <=> M é aberto em N
+
+f: N^n -> Z^L aplicação diferenciável tal que o posto de f em p é igual a L,
+para todo p pertence M = f^-1(a), a pertence Z^L. Então ou M = vazio ou M^(n-L) é subvariedade de N
+
+Lema: M contido N tal que para cada p pertence M existe aberto  V contido N, p pertence V,
+V inter M é subvariedade de N de dimensão m,
+então M é subvariedade de dimensão m.
+
+forma local das imersões
+f : M -> N aplicação diferenciável, tal que o posto em p pertence M é m.
+Então existem cartas locais fi: U -> fi(U) contido R^m,
+psi: V -> psi(V) contido R^n, p pertence U.
+psi o f o fi^-1 (x) = (x,0) forall x pertence fi(U).
+Em particular, se f é imersão, então f é localmente injeiva (mergulho).
+
+Além disso, B = {p pertence M ; posto de f ém p é m} é um aberto de M.
+
+forma local das submersões
+f : M -> N com posto igual a m em p pertence M.
+Então existem cartas fi : U -> fi(U) = W cartesiano Z contido R^(m-n) cartesiano R^n,
+                    psi : V -> psi(V) contido R^n, tais que psi o f o fi^-1 (x,p) = p
+Em particular, se f é submersão, então f é aplicação aberta
+
+Além disso, A = {p pertence M ; f tem posto n em p} é um aberto de M.
+
+Teorema da aplicação inversa
+f : M -> N de classe C^k, k >=1. Se o posto de f em p pertence M é igual a n,
+então existe aberto U contido M, p pertence U, V contido N, f(p) pertence V,
+tais que f restrito U : U -> V é difeomorfismo.
+Em particular, se f é imersão/submersão, então f é difeomorfismo local.
+
+Espaço tangente
+
+C_p = {c : intervalo aberto I -> M ; c(0) = p}
+
+c ~ gama pertence C_p iff existe carta local fi: U -> fi(U) contido R^m tal que
+                                      (fi o c)'(0) = (fi o gama)'(0)
+
+T_p M = C_p/~
+
+Seja fi : U -> fi(U) contido R^m uma carta tal que p pertence U.
+
+fi_p barra : T_p M -> R^m
+              [c] |-> (fi o c)'(0)
+
+G = fi_p barra é bem definida e bijetiva
+
+Estrutura de espaço vetorial
+
+[c] + [gama] = G^-1( G([c]) + G([gama]) ), forall [c], [gama] pertence T_p M
+
+alfa [c] = G^-1 ( alfa G([c]) ), forall alfa pertence R, [c] pertence T_p M
+
+T_p M é espaço vetorial real, dado que G é isomorfismo linear
+
+Defina del fi \ del x_i (p) = G^-1(e_i), e_i = (0,...,1,...,0)
+
+Se fi: U -> fi(U) contido R^m, psi: V -> psi(V) contido R^m são cartas locais, p pertence U inter V,
+então a matriz de mudança de base, de B1 = {del fi \ del x_i (p)}, i pertence {1,...,m}
+para B2 = {del psi \ del y_j (p)} é a matriz Jacobiana D _fi(p) (psi o fi^-1)
+
+Seja f: M^m -> N^n uma aplicação diferenciável. Para cada p pertence M defina a aplicação
+df_p: T_p M -> T_f(p) N
+       [c] |-> [f o c]
+
+df_p está bem definida
+df_p é linear
+
+O posto da função f no ponto p pertence M é o posto da transformação linear df_p: T_p M -> T_f(p) N.
+De fato, basta observar que a mariz de transformação df_p, nas bases canônicas {del fi \ del x_i (p)}
+e {del psi \ del y_j (p)}, é a matriz Jacobiana D_fi(p) (psi o f o fi^-1)
+
+Considere agora o espaço F~_p := {f: U_p -> R; f é diferenciável e U_p contido M é aberto com p pertence M}.
+Um vetor tangente à variedade M em p é uma derivação sobre F~_p.
+
+Dizemos que uma aplicação X_p : F~_p -> R é uma derivação iff
+X_p(af+ bg) = a X_p(f) + b X_p(g), forall f,g pertence F~_p, forall a,b pertence R
+se f pertence F~_p é plana em p, então X_p(f) = 0
+
+Dizemos que f é plana em p se existe uma carta local fi: U -> fi(U), p pertence U, tal que D_fi(p) (f o fi^-1) = 0.
+
+Isso implica que X_p(f g) = f(p) X_p(g) + g(p) X_p(f), forall f, g pertence F~_p.
+
+O espaço vetorial real T~_p M é o conjunto de todas as derivações X_p : F~_p -> R munido das operações
+X_p + Y_p : F~_p -> R, (X_p + Y_p)(f) = X_p(f) + Y_p(f)
+a X_p : F~_p -> R, (a X_p) (f) = a X_p(f)
+
+dim T~_p M = m
+
+Sejam S : T_p M -> T~_p M             S([c]) : F~_p -> R
+           [c] |-> S([c])                        f |-> (f o c)'(0)
+A aplicação S é um isomorfismo linear.
+
+Base para T~_p M = {del fi \ del x_i : F~_p -> R; f |-> del (f o fi^-1) \ del x_i (fi(p)) }
+
+Se X_p pertence T~_p M, então X_p(f) = Sigma{i} X_p (fi_i) del fi \ del x_i (f)
+
+S é bem definida
+S é linear
+S é injetora
+S é sobrejetora
+
+Seja M^m uma variedade diferenciável (C^k, k >= 1) de dimensão m. Considere o conjunto 
+TM := {Reunião{p pertence M} T_p M} = {(p, v); p pertence M, v pertence T_p M}
+
+Seja A = {(U_alfa, fi_alfa)}_alfa pertence I um atlas sobre M.
+Considere o conjunto T U_alfa = pi^-1(U_alfa), em que pi: TM -> M
+                                                      (p,v) |-> p
+
+Dizemos que A pertence TM é aberto iff T fi_alfa(A inter T U_alfa) contido R^m x R^n é aberto
+para todo alfa pertence I, em que T fi_alfa : T U_alfa -> fi_alfa(U_alfa) x R^m
+                                                (p,v) |-> (fi_alfa(p), d fi_alfa_p v)
+
+Se T U_alfa inter T U_beta diferente vazio, então
+T fi_beta = (T fi_alfa)^-1 (x,v) = T fi_beta (fi_alfa^-1(x), d fi_alfa^-1 v) =
+= (fi_beta o fi_alfa^-1(x), d fi_beta o d fi_alfa^-1 (v))
+
+O conjunto TM possui estrutura de variedade diferenciável (C^k, k >= 1) e dimensão 2m.
+T A = {(T U_alfa, T fi_alfa)}
+
+A projeção pi(p,v) = p é uma submersão.
+
+Um campo vetorial contínuo (diferenciável) sobre M é uma aplicação contínua (diferenciável) X : M -> TM tal que
+pi o X = Id_M, ou seja, X_p pertence T_p M, forall p pertence M.
+
+Dizemos que M é paralelizável se existem m campos vetoriais diferenciáveis X_i: M -> TM tais que
+{X_1(p), ..., X_m(p)} contido T_p M é uma base de T_p M, forall p pertence M.
+
+M é paralelizável <=> TM é trivial
+
+TM é trivial se existe um difeomorfismo F : TM -> M x R^m tal que
+F|_T_p M : T_p M -> {p} x R^m é um isomorfismo linear
+
+Suponha que TM seja trivial. Defina X_i: M -> TM
+                                        p |-> F^-1(p, e_i)
+Suponha que M seja paralelizável. Defina T : M x R^m -> TM
+                              (p,v = Sigma v_i e_i) |-> (p, Sigma v_i X_i(p))
+
+Teorema de Poincaré
+
+Teorema de Whitney

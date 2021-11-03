@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--<base>--><base href=".">
+  <title>#swiftirc - SwiftIRC Web IRC</title>
+  
+  
+  <link rel="stylesheet" href="./20140830_files/qui-516de557ddc7.css" type="text/css">
+  <script type="text/javascript" src="./20140830_files/qui-516de557ddc7.js"></script>
+  <script type="text/javascript">
+    var ui = new qwebirc.ui.Interface("ircui", qwebirc.ui.QUI, {"appTitle":"SwiftIRC Web IRC","dynamicBaseURL":"","baseURL":"http://qwebirc.swiftirc.net","validateNickname":false,"networkServices":["Q!TheQBot@CServe.quakenet.org"],"nickValidation":{"maxLen":15,"validSubChars":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|0123456789-","validFirstChar":"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_[]{}`^\\|","minLen":2},"staticBaseURL":"","loginRegex":"^You are now logged in as [^ ]+\\.$","networkName":"SwiftIRC"});
+  </script>
+<script type="text/javascript" src="./20140830_files/soundmanager2-nodebug-jsmin.js"></script><style type="text/css" media="all">
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Verdana, sans-serif;
+}
+
+html {
+  overflow: hidden;
+}
+
+#ircui {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.qwebirc-qui .dynamicpanel {
+  position: absolute;
+}
+.qwebirc-qui .widepanel, .leftboundpanel {
+  left: 0px;
+}
+.qwebirc-qui .widepanel {
+  width: 100%;
+}
+.qwebirc-qui .topboundpanel {
+  top: 0px;
+}
+.qwebirc-qui .rightboundpanel {
+  /*right: 0px;*/
+}
+.qwebirc-qui .bottomboundpanel {
+  color: red;
+}
+
+.qwebirc-qui .lines {
+  color: rgb(0,0,0);
+  overflow: auto;
+  font-size: 0.8em;
+  background: rgb(240,247,255);
+}
+
+.qwebirc-qui .lines .timestamp {
+  display: inline;
+}
+
+.qwebirc-qui .ircwindow div {
+  font-family: Consolas, "Lucida Console", monospace;
+  text-indent: -7px;
+  padding-left: 7px;
+  word-wrap: break-word;
+}
+
+.qwebirc-qui .tab-invisible {
+  display: none;
+}
+
+.qwebirc-qui .input input.keyboard-input {
+  border: 0px;
+  margin: 2px 0px 0px 0px;
+  width: 99%;
+}
+
+.qwebirc-qui .input input.mobile-input {
+  border: 0px;
+  margin: 2px 0px 0px 0px;
+}
+
+.qwebirc-qui .input input.mobile-button {
+  position: absolute;
+  top: 0px;
+}
+
+.qwebirc-qui form {
+  margin: 0px;
+  padding: 0px;
+}
+
+.qwebirc-qui .topic {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(240,247,255);
+  border-bottom: 1px dashed rgb(200,209,219);
+}
+
+.qwebirc-qui .topic .emptytopic {
+  color: gray;
+}
+
+.qwebirc-qui .topic {
+  color: gray;
+  padding-left: 5px;
+  font-size: 0.7em;
+  cursor: default;
+}
+
+.qwebirc-qui .outertabbar {
+  border-bottom: 1px solid rgb(195,210,224);
+  background: rgb(227,239,250);
+}
+
+.qwebirc-qui .tabbar {
+  font-size: 0.8em;
+  color: rgb(0,0,0);
+  margin-left: 38px;
+  line-height: 24px;
+}
+
+.qwebirc-qui a.tab {
+  border: 1px solid rgb(200,209,219);
+  padding: 2px;
+  cursor: default;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  margin-right: -2px;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgb(0,0,0);
+}
+
+.qwebirc-qui .tab:hover {
+  background: rgb(255,255,254);
+  border: 1px solid #c8d2dc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.qwebirc-qui .tab-selected {
+  background: rgb(255,255,254);
+  border: 1px solid rgb(200,209,219);
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  color: rgb(51,51,51);
+}
+
+.qwebirc-qui div.input {
+  border-top: 1px solid rgb(195,210,224);
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.qwebirc-qui .tabclose {
+  margin-left: 5px;
+  font-size: 0.7em;
+  line-height: 150%;
+  vertical-align: top;
+  padding-left: 3px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.qwebirc-qui a.tab-hilight-activity {
+  color: #009900;
+}
+
+.qwebirc-qui a.tab-hilight-speech {
+  color: #0000ff;
+}
+
+.qwebirc-qui a.tab-hilight-us {
+  color: #ff0000;
+}
+
+.qwebirc-qui .nicklist {
+  border-left: 1px solid rgb(200,209,219);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 140px;
+  overflow: auto;
+  background: rgb(240,247,255);
+  color: rgb(0,0,0);
+  font-size: 0.7em;
+}
+
+.qwebirc-qui .nicklist a {
+  display: block;
+  color: rgb(0,0,0);
+  text-decoration: none;
+  cursor: default;
+  border-top: 1px solid rgb(240,247,255);
+  border-bottom: 1px solid rgb(240,247,255);
+  padding-left: 1px;
+}
+
+.qwebirc-qui .nicklist a.selected {
+  display: block;
+  color: rgb(0,0,0);
+  background: rgb(255,255,254);
+  text-decoration: none;
+  border-bottom: rgb(200,209,219) 1px solid;
+  cursor: default;
+}
+
+.qwebirc-qui .nicklist a.selected-middle {
+  border-top: rgb(200,209,219) 1px solid;
+}
+
+div#noscript {
+  text-align: center;
+  font-weight: bold;
+}
+
+.qwebirc-qui .nicklist div.menu {
+  margin: 0px 0px 0px 5px;
+}
+
+.qwebirc-qui .nicklist div.menu a {
+  border-bottom: 0;
+  border-top: 0;
+}
+
+.qwebirc-qui .hyperlink-whois, .hyperlink-qwhois, .hyperlink-channel {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.qwebirc-qui .hyperlink-whois:hover, .hyperlink-qwhois:hover, .hyperlink-channel:hover {
+  text-decoration: underline;
+}
+
+.qwebirc-qui .outertabbar .dropdown-tab {
+  cursor: pointer;
+  cursor: hand;
+  float: left;
+  padding: 4px;
+  width: 30px;
+}
+
+.qwebirc-qui .dropdownmenu {
+  z-index: 100;
+  border: 1px solid rgb(200,209,219);
+  position: relative;
+  top: 10px;
+  left: 10px;
+  background: rgb(240,247,255);
+}
+
+.qwebirc-qui .dropdownmenu a {
+  display: block;
+  font-size: 0.7em;
+  color: rgb(0,0,0);
+  cursor: pointer;
+  cursor: hand;  
+  padding-top: 1px;
+  padding-left: 3px;
+  padding-bottom: 1px;
+  padding-right: 3px;
+}
+
+.qwebirc-qui .dropdownmenu a:hover {
+  background: rgb(255,255,254); /* IE is rubbish and doesn't like #FFFFFF or white */
+}
+
+.qwebirc-qui .dropdownhint {
+  position: relative;
+  left: -500px;
+  z-index: 10;
+  white-space: nowrap;
+  font-size: 0.7em;
+}
+
+.qwebirc-qui hr.lastpos {
+  border: none;
+  border-top: 1px solid rgb(200,209,219);
+  margin-left: 3em;
+  margin-right: 3em;
+}
+</style><link rel="shortcut icon" type="image/png" href="https://qwebirc.swiftirc.net/images/favicon.png"><script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+  <div id="ircui" class="qwebirc qwebirc-qui">
+    <noscript>
+      &lt;div id="noscript"&gt;Javascript is required to use IRC.&lt;/div&gt;
+    </noscript>
+  <div class="dynamicpanel qwebirc-qui topboundpanel widepanel outertabbar"><div class="dropdown-tab" style="visibility: visible; zoom: 1; opacity: 1;"><img src="./20140830_files/icon.png" title="menu" alt="menu"></div><div class="tabbar"><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#" class="tab tab-unselected">Status</a> <a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#" class="tab tab-selected">#swiftirc<span class="tabclose">X</span></a> </div></div><div class="topic tab-invisible dynamicpanel qwebirc-qui widepanel colourline" style="display: block; top: 25px;"><span>[Welcome to the SwiftIRC IRC Network :: <a href="http://swiftirc.net/" target="_blank">http://swiftirc.net/</a> :: Forum: <a href="http://forum.swiftirc.net/" target="_blank">http://forum.swiftirc.net/</a> :: Wiki: <a href="http://wiki.swiftirc.net/" target="_blank">http://wiki.swiftirc.net/</a> :: For IRC help, join <span class="hyperlink-channel">#Help</span> :: For IRC operator assistance, join <span class="hyperlink-channel">#Support</span>]</span></div><div class="dynamicpanel qwebirc-qui leftboundpanel lines ircwindow" style="top: 52px; height: 551px; width: 883px;"><div class="linestyle1 colourline"><span class="timestamp">[19:21] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">tony``</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="71251e1f08310519145f341f16181f141403">[email&#160;protected]</a>] has quit [Quit: Page closed]</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:03] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">SwiftIRC065</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d0aea1a7b5b2b9a2b390e6e6e0e7e3e79591fe9692e0e095e993e6fee5e393e292e9e0e0fe9980">[email&#160;protected]</a>] has joined <span class="hyperlink-channel">#swiftirc</span></span></div><div class="linestyle1 colourline"><span class="timestamp">[20:03] </span><span class="Xc4">==</span><span> SwiftIRC065 has changed nick to <span class="hyperlink-whois">tony``</span></span></div><div class="linestyle2 colourline"><span class="timestamp">[20:05] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">tony``</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c094afaeb980b4a8a5ee85aea7a9aea5a5b2">[email&#160;protected]</a>] has left <span class="hyperlink-channel">#swiftirc</span> []</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:13] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">Sephiroth</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5a293f2a323328352e321a3b3e37333433292e283b2e352874292d333c2e33283974343f2e">[email&#160;protected]</a>] has quit [Quit: ]</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:26] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">SwiftIRC339</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed939c9a888f849f8eaddbdbdddadedaa8acc3abafdddda8d4aedbc3d8deaedfafd4ddddc3a4bd">[email&#160;protected]</a>] has joined <span class="hyperlink-channel">#swiftirc</span></span></div><div class="linestyle1 colourline"><span class="timestamp">[20:26] </span><span class="Xc4">==</span><span> SwiftIRC339 has changed nick to <span class="hyperlink-whois">tony``</span></span></div><div class="linestyle2 colourline"><span class="timestamp">[20:40] </span><span>&lt;</span><span class="Xc4"><span class="hyperlink-whois">Shawn</span></span><span>&gt; iAhweh | we have windows on 25,000 machines. how to chg to linux?</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:40] </span><span>&lt;<span class="hyperlink-whois">Shawn</span>&gt; Surely you don't have 25,000 windows machines in one department of whatever you're doing for work</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:41] </span><span>&lt;<span class="hyperlink-whois">Shawn</span>&gt; So segment them into smaller groups and change little by little.</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:41] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; uahah</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:41] </span><span>&lt;<span class="hyperlink-whois">tony``</span>&gt; l</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:42] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; it's institutional</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:46] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; when migrating from xp to 7, several trucks brought old machines and another fleet carried the new machines.</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:47] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; there was a bidding</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:47] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; i think judges don't like linux.</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:48] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; win7 arrived when win8 was being distribucted</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:49] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; the old machines are donated to state schools</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:50] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; can u see the bribery?</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:51] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; the system is stuck.</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:51] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; imagine how they did the backup...</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:52] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; there are application servers with durex.</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:53] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; ( ͡° ͜ʖ ͡°)</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:54] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; durex = adhesive tape</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:54] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; too late now pal</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:55] </span><span>&lt;<span class="hyperlink-whois">slash-7</span>&gt; the jig is up</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:55] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">tony``</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bde9d2d3c4fdc9d5d893f8d3dad4d3d8d8cf">[email&#160;protected]</a>] has quit [Quit: Page closed]</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:56] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; durex up your penis</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:57] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Whenever I hear the brandname Durex I think of Dulux and think why on earth are people putting paint on their penis</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:57] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">SwiftIRC208</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="611f101604030813022157575156525624204f27235151245822574f54522253235851514f2831">[email&#160;protected]</a>] has joined <span class="hyperlink-channel">#swiftirc</span></span></div><div class="linestyle1 colourline"><span class="timestamp">[20:57] </span><span class="Xc4">==</span><span> SwiftIRC208 has changed nick to <span class="hyperlink-whois">tony``</span></span></div><div class="linestyle2 colourline"><span class="timestamp">[20:57] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">tony``</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="edb9828394ad998588c3a8838a848388889f">[email&#160;protected]</a>] has left <span class="hyperlink-channel">#swiftirc</span> []</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:58] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; you're supposed to visit a sex shop frequently</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:58] </span><span>&lt;<span class="hyperlink-whois">slash-7</span>&gt;<span>&nbsp;&nbsp;</span>how frequently</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:59] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; are they're even any sex shops in Egypt </span></div><div class="linestyle2 colourline"><span class="timestamp">[20:59] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; ask zanith, i go to the drugstore</span></div><div class="linestyle1 colourline"><span class="timestamp">[20:59] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; klimgel is sufficient</span></div><div class="linestyle2 colourline"><span class="timestamp">[20:59] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Isn't it basically a Muslim Caliphate now</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:01] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; egypt is more known for their triangles of 4 sides.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:01] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; and their revolutions</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:01] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; and the muslim brotherhood</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:01] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; then getting rid of</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:02] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; can we respect isis?</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:02] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; no</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:02] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; there must be an alternative to democracy</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:03] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; How can you choose an alternative to democracy</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:03] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; usa wants everybody democrat</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:03] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; "Hey guys, we wanna choose not to choose"</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:03] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; this was good for old greeks.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:04] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Egypt seems at the moment to me to be "Whoever farts the best shall rule the country and decide what everyone wants"</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:05] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; clergy egyptians were not democrats. there were too many secrets.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:06] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; i fart well. do i have a chance?</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:06] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Ye</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:06] </span><span>&lt;@</span><span class="Xc4"><span class="hyperlink-whois">Zanith</span></span><span>&gt; iAhweh for president</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:06] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Because</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:06] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; Everyone hates America</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:06] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; but they strive for presidency </span></div><div class="linestyle2 colourline"><span class="timestamp">[21:07] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; these things must evolve.</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:07] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; arab rules are like 2,000 b.C.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:08] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; this way we can say animals evolve more than humans.</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:11] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; on the other hand, we have "siscom caracter" a ms-dos system for processual search</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:13] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; too many obstacles to new age of unix, ops, fedorenta</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:13] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; Traduções de fedorento adjetivo stinking fedorento, podre, pútrido, infecto, muito mau, nauseabundo foul imundo, desagradável, podre, abominável, nauseabundo, fedorento malodorous malcheiroso, fétido, fedorento offensive ofensivo, atacante, desagradável, agressivo, repugnante, fedorento putrescent putrescente, fétido, fedorento malodorant malcheiroso, fedorento, fétido</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:14] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; whoa man we just met</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:15] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; am i flooding you?</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:16] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; am i talking to the walls?</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:16] </span><span>&lt;@</span><span class="Xc4"><span class="hyperlink-whois">Zanith</span></span><span>&gt; iAhweh is posting nonsense </span></div><div class="linestyle2 colourline"><span class="timestamp">[21:16] </span><span>&lt;@<span class="hyperlink-whois">Zanith</span>&gt; that is anti non muslim</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:16] </span><span>&lt;<span class="hyperlink-whois">iAhweh</span>&gt; you let me talking alone, then they send me to psichiatric system.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:17] </span><span class="Xc4">==</span><span> iAhweh has changed nick to <span class="hyperlink-whois">Alah</span></span></div><div class="linestyle1 colourline"><span class="timestamp">[21:19] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; you should talk a little more :)</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:24] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">{Mikey}</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="561e37241e372416173a3a781f781239781f2578013f38">[email&#160;protected]</a>] has quit [Quit: ]</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:24] </span><span>&lt;@</span><span class="Xc4"><span class="hyperlink-whois">Zanith</span></span><span>&gt; do you want a muslim caliphate in Egypt Alah </span></div><div class="linestyle2 colourline"><span class="timestamp">[21:25] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i don't know what you're talking about</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:25] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i don't even know if they believe there is a hell.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:28] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; <a href="https://en.wikipedia.org/wiki/Khalifatul_Masih" target="_blank">http://en.wikipedia.org/wiki/Khalifatul_Masih</a></span></div><div class="linestyle1 colourline"><span class="timestamp">[21:28] </span><span class="Xc4">==</span><span> mode/<span class="hyperlink-channel">#swiftirc</span> [+o {Andrew}] by <span class="hyperlink-whois">ChanServ</span></span></div><div class="linestyle2 colourline"><span class="timestamp">[21:29] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i think there are guys who says they're christians, but they don't. catholicism and protestantism is far from christianism. but they like to be martyrs.</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:32] </span><span>&lt;<span class="hyperlink-whois">synapt</span>&gt; you're using pretty generalized religious names.<span>&nbsp;&nbsp;</span>Issue with saying just "Christians" or "Catholics" is that there are various branches of each, some of whom may conflict with each others general opinions</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:32] </span><span>&lt;<span class="hyperlink-whois">synapt</span>&gt; they simply share a base/root religion idea, such as Christians in general all believe there is some kind of supreme being and that Jesus existed/was his son</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:33] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; the same way there are confused interpretations from the bible, i think there may be several interpretations from quran. i'm confused</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:35] </span><span>&lt;<span class="hyperlink-whois">synapt</span>&gt; Basically, but speaking of the Qur'an, by all intents the basis of Islam is a near-christian religion, they believe the same with exception of Jesus wasn't specifically son of god, but instead he a prophet</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:35] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; <a href="https://i.imgur.com/vUr1YUr.png" target="_blank">http://i.imgur.com/vUr1YUr.png</a></span></div><div class="linestyle2 colourline"><span class="timestamp">[21:35] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; Let's talk about my new coffee mug</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:35] </span><span>&lt;<span class="hyperlink-whois">slash-7</span>&gt; that kawaii as **** dude</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:35] </span><span>&lt;<span class="hyperlink-whois">synapt</span>&gt; BBN: looks like it holds a small amount of coffee</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:36] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; More the reason to get up :-)</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:36] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; and get more..</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:36] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i'm paralized on the question of good and evil.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:38] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; <a href="https://www.facebook.com/video.php?v=546054902189419" target="_blank">https://www.facebook.com/video.php?v=546054902189419</a></span></div><div class="linestyle1 colourline"><span class="timestamp">[21:39] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; everything is resumed in mass manipulations.</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:42] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; jesus existed, then make charity, but don't manipulate the masses</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:42] </span><span>&lt;<span class="hyperlink-whois">BBN</span>&gt; but was jesus made in japan had the ability to hold coffee</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:43] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i think you'd like to talk about cats and vanity</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:44] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">Max</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87f9cae6ffe3e6eae6e9f3c7d4f0eee1f3aab6c5b0b7b3bfb4c1a9ede2f3f4f3f5e2e6eaa9fff3f5e6a9e4e8a9e9fd">[email&#160;protected]</a>] has quit [Ping timeout]</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:46] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; u know, rich cats die starving</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:49] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; they used to eat caviar, then get poor, reject everything</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:51] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; i think a good language has to improve surreal time, beyond past, present and future</span></div><div class="linestyle1 colourline"><span class="timestamp">[21:52] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; it-time</span></div><div class="linestyle2 colourline"><span class="timestamp">[21:52] </span><span>&lt;<span class="hyperlink-whois">Alah</span>&gt; neither a boy time, nor a girl time</span></div><div class="linestyle1 colourline"><span class="timestamp">[22:15] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">SwiftIRC860</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d7a9a6a0b2b5bea5b49784a0beb1a3fae291e6e5e2e0e3e3f9a5b6b9b0b2efe1fae6e2e4f9b5a3b4b2b9a3a5b6bba7bba2a4f9b4b8ba">[email&#160;protected]</a>] has quit [Quit: Page closed]</span></div><div class="linestyle2 colourline"><span class="timestamp">[22:17] </span><span class="Xc4">==</span><span> <span class="hyperlink-whois">Max</span> [<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90eeddf1e8f4f1fdf1fee4d0c3e7f9f6e4bda1d2a7a0a4a8a3d6befaf5e4e3e4e2f5f1fdbee8e4e2f1bef3ffbefeea">[email&#160;protected]</a>] has joined <span class="hyperlink-channel">#swiftirc</span></span></div><hr class="lastpos"></div><div class="nicklist tab-invisible dynamicpanel qwebirc-qui" style="display: block; height: 551px; top: 52px; left: 883px;"><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Ara</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Away</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Benjy</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Carl</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Dragon</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Emmett</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@eTch</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@iso</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Jake</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Jon</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Ryan</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@SwiftIRC</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Taylor</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@Zanith</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@{Andrew}</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>@{Andrew}|Mobile</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span></span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Alah</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Alex</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Angel|Away</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>BBN</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>burt</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Chow</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>codi|BNC</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Collin</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Emmett-</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Eng5trk[AWAY]</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>evilMonkey</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>fail</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>frackster</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>hellboysjd2</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>hutch</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>iPeer</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Ishaq</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Joker</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Josh</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Karl</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>KindOne</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Loggi</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Mark</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Matt-</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Max</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>nitemare</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Olivier</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>phoenix</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Qt</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Sara</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Shawn</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Simple|BNC</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>slash-7</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>synapt</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>techgeek</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>trip</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Tucker</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Unknown13676</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>Wade</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>zpoon</span></a><a href="http://qwebirc.swiftirc.net/?nick=iAhweh&channels=%23SwiftIRC#"><span>|</span></a></div><div class="dynamicpanel qwebirc-qui bottomboundpanel widepanel input" style="top: 603px; display: block;"><form class="input"><input maxlength="470" class="keyboard-input"></form></div><span class="dropdownmenu" style="display: none;"><a>Options</a><a>Add webchat to your site</a><a>Privacy policy</a><a>Feedback</a><a>Frequently asked questions</a><a>About qwebirc</a></span></div>
+
+
+<div id="sm2-container" class="movieContainer" style="position: absolute; width: 1px; height: 1px; top: -999px; left: -999px;"><embed name="sm2movie" id="sm2movie" src="sound/soundmanager2.swf" width="100%" height="100%" quality="high" allowscriptaccess="always" bgcolor="#ffffff" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" allowfullscreen="false"></div><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6a873d4a2ca1f693',m:'8XtXNPO78DqKMhI9RvOffgP.2itPQgRtDW5DJ6escoc-1635959672-0-AZbtzGDSIr6Jy2P4jZrClEcxJeSdffczAVbSDcniLSaagG9UhtzmHbKlcnoB4UwBBbaY3wd17srRKE9wbym8zax6up1hNWwZc8dAqaPU7L2yd/TWc2UZsHKPc/z7LgBRbQ==',s:[0xac1cdc2fb2,0x7bb6d3a3d7],}})();</script></body></html>

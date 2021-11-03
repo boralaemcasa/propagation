@@ -1,0 +1,2090 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Espiritismo 2014</title>
+<style type="text/css">
+#customers
+{
+font-family:Arial;
+border-collapse:collapse;
+}
+#customers td, #customers th
+{
+font-size:1em;
+border:1px solid green;
+padding:3px 7px 2px 7px;
+height:10px;
+}
+#customers th 
+{
+font-size:1.1em;
+text-align:left;
+padding-top:5px;
+padding-bottom:4px;
+background-color:#A7C942;
+color:#ffffff;
+}
+#customers tr.alt td 
+{
+color:#000000;
+background-color:#EAF2D3;
+}
+</style>
+<style id="wrc-middle-css" type="text/css">.wrc_whole_window{	display: none;	position: fixed; 	z-index: 2147483647;	background-color: rgba(40, 40, 40, 0.9);	word-spacing: normal;	margin: 0px;	padding: 0px;	border: 0px;	left: 0px;	top: 0px;	width: 100%;	height: 100%;	line-height: normal;	letter-spacing: normal;}.wrc_middle_main {	font-family: Segoe UI, Arial Unicode MS, Arial, Sans-Serif;	font-size: 14px;	width: 600px;	height: auto;	margin: 0px auto;	margin-top: 15%;    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/background-body.jpg) repeat-x left top;	background-color: rgb(39, 53, 62);}.wrc_middle_logo {    background: url(chrome-extension://icmlaeflemplmjndnaapfdbbnpncnbda/skin/images/logo.jpg) no-repeat left bottom;    width: 140px;    height: 42px;    color: orange;    display: table-cell;    text-align: right;    vertical-align: middle;}.wrc_icon_warning {	margin: 20px 10px 20px 15px;	float: left;	background-color: transparent;}.wrc_middle_title {    color: #b6bec7;	height: auto;    margin: 0px auto;	font-size: 2.2em;	white-space: nowrap;	text-align: center;}.wrc_middle_hline {    height: 2px;	width: 100%;    display: block;}.wrc_middle_description {	text-align: center;	margin: 15px;	font-size: 1.4em;	padding: 20px;	height: auto;	color: white;	min-height: 3.5em;}.wrc_middle_actions_main_div {	margin-bottom: 15px;	text-align: center;}.wrc_middle_actions_blue_button {	-moz-appearance: none;	border-radius: 7px;	-moz-border-radius: 7px/7px;	border-radius: 7px/7px;	background-color: rgb(0, 173, 223) !important;	display: inline-block;	width: auto;	cursor: Pointer;	border: 2px solid #00dddd;}.wrc_middle_actions_blue_button:hover {	background-color: rgb(0, 159, 212) !important;}.wrc_middle_actions_blue_button:active {	background-color: rgb(0, 146, 200) !important;	border: 2px solid #00aaaa;}.wrc_middle_actions_blue_button div {	display: inline-block;	width: auto;	cursor: Pointer;	margin: 3px 10px 3px 10px;	color: white;	font-size: 1.2em;	font-weight: bold;}.wrc_middle_action_low {	font-size: 0.9em;	white-space: nowrap;	cursor: Pointer;	color: grey !important;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action_low:hover {	color: #aa4400 !important;}.wrc_middle_actions_rest_div {	padding-top: 5px;	white-space: nowrap;	text-align: center;}.wrc_middle_action {	white-space: nowrap;	cursor: Pointer;	color: red !important;	font-size: 1.2em;	margin: 10px 10px 0px 10px;	text-decoration: none;}.wrc_middle_action:hover {	color: #aa4400 !important;}</style><script id="wrc-script-middle_window" type="text/javascript" language="JavaScript">var g_inputsCnt = 0;var g_InputThis = new Array(null, null, null, null);var g_alerted = false;/* we test the input if it includes 4 digits   (input is a part of 4 inputs for filling the credit-card number)*/function is4DigitsCardNumber(val){	var regExp = new RegExp('[0-9]{4}');	return (val.length == 4 && val.search(regExp) == 0);}/* testing the whole credit-card number 19 digits devided by three '-' symbols or   exactly 16 digits without any dividers*/function isCreditCardNumber(val){	if(val.length == 19)	{		var regExp = new RegExp('[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}');		return (val.search(regExp) == 0);	}	else if(val.length == 16)	{		var regExp = new RegExp('[0-9]{4}[0-9]{4}[0-9]{4}[0-9]{4}');		return (val.search(regExp) == 0);	}	return false;}function CheckInputOnCreditNumber(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'text')	{		if(is4DigitsCardNumber(value))		{			var cont = true;			for(i = 0; i < g_inputsCnt; i++)				if(g_InputThis[i] == self)					cont = false;			if(cont && g_inputsCnt < 4)			{				g_InputThis[g_inputsCnt] = self;				g_inputsCnt++;			}		}		g_alerted = (g_inputsCnt == 4);		if(g_alerted)			g_inputsCnt = 0;		else			g_alerted = isCreditCardNumber(value);	}	return g_alerted;}function CheckInputOnPassword(self){	if(g_alerted)		return false;	var value = self.value;	if(self.type == 'password')	{		g_alerted = (value.length > 0);	}	return g_alerted;}function onInputBlur(self, bRatingOk, bFishingSite){	var bCreditNumber = CheckInputOnCreditNumber(self);	var bPassword = CheckInputOnPassword(self);	if((!bRatingOk || bFishingSite == 1) && (bCreditNumber || bPassword) )	{		var warnDiv = document.getElementById("wrcinputdiv");		if(warnDiv)		{			/* show the warning div in the middle of the screen */			warnDiv.style.left = "0px";			warnDiv.style.top = "0px";			warnDiv.style.width = "100%";			warnDiv.style.height = "100%";			document.getElementById("wrc_warn_fs").style.display = 'none';			document.getElementById("wrc_warn_cn").style.display = 'none';			if(bFishingSite)				document.getElementById("wrc_warn_fs").style.display = 'block';			else				document.getElementById("wrc_warn_cn").style.display = 'block';			warnDiv.style.display = 'block';		}	}}</script><script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+<table id="customers" class="fix" width="100%">
+  <colgroup><col width="50%">
+  <col width="50%">
+</colgroup><tbody>
+<tr>
+<td>O homem atual é o somatório dos seus atos procedentes das reencarnações passadas.<br/>
+<br/>
+Joanna, Oferenda, p. 31
+</td>
+<td>Uma gruta e um céu descampado são os dois pontos culminantes de uma vida que não começou no berço nem se esvaiu numa cruz.<br/>
+<br/>
+Por isso, diante dEle, todos nos sentimos fremir, tocados pela Sua magnânima presença que venceu os séculos de desolação, de dor, de crime, de hediondez, em que se tentou ocultá-lO entre mentiras, fantasias e corrupções. Ressurgindo desses escombros morais, Ele sempre saiu ileso qual o sol, Sol Divino que é, clarificando cada madrugada, após a mentirosa vitória da noite em triunfo efêmero.<br/>
+<br/>
+Joanna, Oferenda, p. 83
+</td>
+</tr>
+<tr class="alt">
+<td>
+<p class="subtitulo"><strong><a href="http://www.bezerramenezes.org.br/estudos/fraternas/servico_hoje.htm" target="_blank">Servi&ccedil;o Hoje</a></strong></p>
+		<p style="text-align:justify;">
+			Fala-se muito em programas de erradica&ccedil;&atilde;o do analfabetismo, de modifica&ccedil;&atilde;o das atuais estruturas, de esquemas de educa&ccedil;&atilde;o das massas, de planejamento da fam&iacute;lia, de trabalhos de base, a fim de que a mis&eacute;ria se retire da Terra, em definitivo.<br />
+			<br />
+			T&eacute;cnicos em comportamento apresentam planos fant&aacute;sticos com que esperam resolver, sen&atilde;o diminuir, os altos &iacute;ndices da atual criminalidade.<br />
+			<br />
+			Estat&iacute;sticos bem intencionados levantam gr&aacute;ficos e &iacute;ndices sobre a delinqu&ecirc;ncia infanto-juvenil, propondo medidas que educadores e soci&oacute;logos estudam, projetando organogramas de atividades que mudariam a paisagem vigente, amarga, destes dias.<br />
+			<br />
+			Religiosos re&uacute;nem-se, preocupados, estabelecendo diretrizes para as massas sofridas e convidando &agrave; reflex&atilde;o, &agrave; responsabilidade governos e indiv&iacute;duos, para uma real modifica&ccedil;&atilde;o do panorama afligente que se vive no mundo...<br />
+			<br />
+			Aguardam-se verbas, tempo, disponibilidades, equipes, atualiza&ccedil;&otilde;es de m&eacute;todos, ensejo de experi&ecirc;ncias...<br />
+			<br />
+			Muito valiosos todos esses esfor&ccedil;os, de alta significa&ccedil;&atilde;o tais preocupa&ccedil;&otilde;es.<br />
+			<br />
+			Enquanto, por&eacute;m, n&atilde;o se realizam, n&atilde;o te detenhas &agrave; espera, ao tempo em que proliferam os males e as dores se multiplicam.<br />
+			<br />
+			A mis&eacute;ria n&atilde;o &eacute; s&oacute; de natureza econ&ocirc;mica.<br />
+			<br />
+			Pensa nos p&aacute;rias morais, igualmente merecedores de apoio e amparo.<br />
+			<br />
+			Age, portanto, aqui, e serve agora.<br />
+			<br />
+			Se n&atilde;o podes muito, faze o que podes e estar&aacute;s realizando o m&aacute;ximo ao teu alcance. <br />
+			<br />
+			Os tecn&oacute;logos pensam nas grandes solu&ccedil;&otilde;es; trabalha tu com o indiv&iacute;duo.<br />
+			<br />
+			Os expoentes do conhecimento prop&otilde;em as equa&ccedil;&otilde;es gerais; cuida, tu, das pessoas.<br />
+			<br />
+			Como demoram de chegar as respostas h&aacute;beis para os problemas dos homens, auxilia o teu irm&atilde;o mais pr&oacute;ximo com a luz da bondade.<br />
+		</p>
+		<p align="center">*</p>
+		<p style="text-align:justify;">
+			Uma frase gentil proferida com um sorriso af&aacute;vel, n&atilde;o tem pre&ccedil;o.<br />
+			<br />
+			O calor da amizade repartido com algu&eacute;m em pen&uacute;ria moral, excede os valores amoedados.<br />
+			<br />
+			O interesse fraterno por uma criatura em desvalimento, ultrapassa, em significa&ccedil;&atilde;o, as d&aacute;divas materiais.<br />
+			<br />
+			A presen&ccedil;a, ao lado de quem chora, &eacute; de relevante resultado.<br />
+			<br />
+			O sentimento espont&acirc;neo de solidariedade, para com uma pessoa ca&iacute;da em desvafor das circunst&acirc;ncias, dignifica e eleva o benefici&aacute;rio.<br />
+			<br />
+			O amor que se expande &eacute; a resposta da vida na dire&ccedil;&atilde;o de qualquer vida em deperecimento.<br />
+		</p>
+		<p align="center">*</p>
+		<p style="text-align:justify;">
+			Dir-te-&atilde;o muitas pessoas que nada significam esses contributos, em considerando o volume das desgra&ccedil;as socioecon&ocirc;micas que despeda&ccedil;am milh&otilde;es de seres. Talvez tenham raz&atilde;o.<br />
+			<br />
+			Malgrado n&atilde;o resolvam os problemas gerais, ajudam as dificuldades pessoais, exercitam-te no dever para com os homens.<br />
+			<br />
+			O importante n&atilde;o &eacute; solucionar ou mudar as dificuldades terrenas, mas servir.<br />
+		</p>
+		<p align="center">*</p>
+		<p style="text-align:justify;">
+			H&aacute; quem te desanimar&aacute; no servi&ccedil;o da fraternidade com os sofredores, escusando-se de seguir-te o exemplo. N&atilde;o lhe d&ecirc;s ouvidos.<br />
+			<br />
+			Aparecer&aacute; quem te censure a a&ccedil;&atilde;o generosa, fugindo ao dever de servir. N&atilde;o lhe concedas aten&ccedil;&atilde;o.<br />
+			<br />
+			Um gr&atilde;o que se arrebenta em vida oferece sementes que reverdecer&atilde;o um campo...<br />
+			<br />
+			A palavra que salva uma vida, desta far&aacute; um condutor de destinos humanos.<br />
+			<br />
+			N&atilde;o te preocupes com o volume do que possas e deves fazer. Atenta para a criatura a quem te dedicas, doando-lhe amor e vida hoje, porquanto o futuro &eacute; de Deus e Ele o resolver&aacute;, se ajudares desde agora.<br />
+		</p>
+		<br />
+		<p class="assinatura" style="text-align:right;"><em>Joanna de &Acirc;ngelis</em></p>
+		<p>FRANCO, Divaldo P. &ldquo;Oferenda&rdquo; Pelo Esp&iacute;rito  Joanna de &Acirc;ngelis. 4.ed. Salvador, BA:LEAL, 2000, p. 163-165.</p>
+</td>
+<td>Quando a razão não lograr convencer o homem a uma mudança de atitude perante a vida, ou o amor já o não sensibilizar, paradoxalmente, a dor conseguirá detê-lo, chamá-lo à razão, despertar-lhe o amor, atraí-lo à paz.<br/>
+<br/>
+Onde te encontres, por onde passes, com quem estejas, sê a lição viva anteparadoxal da vitória do Cristo sobre as sombras do momento, apontando os rumos da Eterna Luz.<br/>
+<br/>
+Joanna by Divaldo in Rumos Libertadores, p. 71
+</td>
+</tr>
+<tr>
+<td>
+Precata-te contra as urdiduras do orgulho, esse filho inditoso do egoísmo, que dizima tantas esperanças quanto o câncer.<br/>
+<br/>
+Rumos Libertadores, p. 79<br/>
+<br/>
+Se alguém não corresponde à tua dedicação e prefere ir adiante, ciumar e afligir de forma alguma produzirá resultado.<br/>
+Se te trai o ser a quem amas, ama ainda mais, sem propriedade nem perseguição.<br/>
+Se alguém te mente em nome da amizade ou do amor, reserva-te dignidade afetiva, fazendo o que te cabe.<br/>
+Nem ressentimento nem exigência.<br/>
+Quem vai adiante pelos ínvios caminhos, necessitará de tuas mãos e coração tornados concha de amor e caridade, logo mais...<br/>
+Desde que amas, não tenhas pressa. Chegará a tua vez de auxiliar o amor que se enganou e que necessita de ti, quando lograrás, então, recuperar o coração infiel, fruindo a paz que decorre de uma consciência reta e uma dedicação real.<br/>
+Ciumar, porém, nunca!<br/>
+<br/>
+Rumos Libertadores, p. 114<br/>
+<br/>
+Enriquece-te do ideal abrasador e transcendente da verdade, que te abre os pórticos da vida mais alta e triunfante, e não tergiverses, não te escuses, não te refugies na fragilidade que é síndrome da imperfeição que deve ser superada.<br/>
+<br/>
+Rumos Libertadores, p. 137<br/>
+<br/>
+Se meditares em profundidade, descobrirás as fortunas de amor que jazem no teu mundo íntimo, aguardando que a boa vontade e a abnegação se te façam garimpeiros e descubram as gemas da caridade maior de que podes dispor fartamente, endereçando-as a todas as criaturas do roteiro por onde transitas. Esta forma superior de dar, far-te-á bem e ditoso, porquanto perceberás que te estás dando, forma única de encontrar a felicidade.<br/>
+<br/>
+Rumos Libertadores, p. 141<br/>
+<br/>
+A caridade não pode ser dimensionada, porque é o hálito de Deus vivificando as criaturas nas altas expressões da evolução moral do ser.<br/>
+<br/>
+Rumos Libertadores, p. 144<br/>
+<br/>
+O cristão legítimo sobrepaira ao alcance das farpas da inveja, disfarçada de sutis ornamentos com que atraiçoa e malsina.<br/>
+A felicidade consiste não em sorrir, mas em não complicar a marcha ascencional com a adição de novas penas para o futuro...<br/>
+<br/>
+Rumos Libertadores, p. 150<br/>
+<br/>
+O homem se faz pelo que produz, não pelo em que crê, no que admira.<br/>
+<br/>
+Rumos Libertadores, p. 167<br/>
+<br/>
+Quando Jesus foi preso numa cruz, transformou-lhe os braços em asas sublimes, ensinando que somente na consciência reta e na conduta irreprochável encontra o homem, em qualquer circunstância, os meios para ser livre e feliz, rumando para os cimos da imortalidade triunfante.<br/>
+<br/>
+Rumos Libertadores, p. 171<br/>
+<br/>
+A fé é uma virtude intelectual que decorre do esforço racional, laborado a penates de sacrifícios e abnegação.<br/>
+Ao brotar espontânea, hoje, tem as suas nascentes no passado, quando foi iniciada e desenvolvida sob a custódia da confiança que a corroborou mediante a demonstração pelo fato.<br/>
+Necessidade imperiosa para o ser inteligente, já que ninguém se consegue realizar sem o contributo da sua vigência, impõe requisitos de valores morais que constituem o embasamento da sua fixação no cerne da alma.<br/>
+Alimenta-se de exercícios espirituais e reflexões, sem o que esmaece, deperecendo e apagando-se temporariamente.<br/>
+Atavismo primário da vida, é lâmpada acesa no imo do Espírito, a refletir através de renovações incessantes, até que os subsídios do testemunho pelos fatos lhe definam os contornos, estabelecendo suas diretrizes contra as quais força alguma logra êxito na tentativa de extirpá-la.<br/>
+Por questões imediatistas, o homem se deixa soçobrar nas ondas revoltas dos testemunhos e dos sofrimentos, abatendo-se na negação com que espera fugir das conjunturas numa ânsia de apagar-se, apagando os fatores perturbantes que induzem ao desespero. No entanto, dileta filha do amor, a fé renasce e estua na mente, dominando o coração, transformando-se em virtude do sentimento, mãe da esperança e da caridade, em cujos braços se nutre, ao mesmo tempo, vitalizando-as, porquanto, sem o seu contributo, aquelas não conseguiriam medrar ou sobreviver, quando repontassem...<br/>
+<br/>
+*<br/>
+<br/>
+Não te deixes assoberbar, no báratro das aflições, sem os teus momentos espirituais para a reflexão.<br/>
+A fé que não reflexiona perde vitalidade e se transforma em hábito de crer, sem os expressivos recursos da coragem na luta e do ânimo diante das vicissitudes inditosas, mas necessárias.<br/>
+Não te recuses, no afã que te absorve, os momentos de oração.<br/>
+A fé que se não nutre na prece, facultando o deleite da vivência espiritual, se converte em acomodação que não suporta os imperiosos testemunhos do caminho evolutivo por onde todos transitam.<br/>
+Não te receies, diante do volume de deveres por executar, de parar, para haurir na inspiração divina o pão mantenedor.<br/>
+A fé que não se faculta abrir à sintonia com as fontes inexauríveis do Mundo Espiritual, se entibia, porque desfalece ante as imposições do vaso carnal, transitório, a que o Espírito se jugula para o impositivo evolutivo.<br/>
+Reflexão, prece e inspiração - eis os recursos vitais para a problemática da fé espiritual, no campo de atividades entre as criaturas humanas.<br/>
+Se ainda não consegues a fé que remove montanhas, se te sentes desfalecido sob o fardo dos problemas, se os conflitos te despedaçam, às vezes, os sentimentos e não encontras o apoio total da fé, não recalcitres; começa o exercício da confiança, entrega-te às mãos de Deus e, sem reagir, sem arrojar-te aos dédalos da alucinação, perceberás que os débeis lucilares da claridade espiritual imortalista surgem, atestando a misericórdia do Pai, e, por fim, dominando-te em totalidade, a ponto de fazer-te "carta-viva" da fé legítima, clarificando o roteiro sombrio de todas as almas.<br/>
+<br/>
+Fé - Conquista, Rumos Libertadores, p. 181<br/>
+<br/>
+A fé é um alimento espiritual de que ninguém pode prescindir.<br/>
+Encontra-se insculpida nos recessos do Espírito e, mesmo quando solapada pelos interesses mesquinhos ou esmagada pelas circunstâncias inditosas, prossegue e revela-se com mil faces, em variadas expressões.<br/>
+Apresenta-se espontânea, natural, graças aos impositivos da própria vida.<br/>
+Inconscientemente se manifesta na tácita aceitação dos múltiplos fatores que organizam a existência humana, tanto quanto surge nas atividades, sem que o homem lhe perceba a injunção, sem a qual, suspeitoso e inconformado, se estiolaria, padecendo dominadores e injustificados receios.<br/>
+A fé humana está presente em todos os cometimentos da própria conjuntura física.<br/>
+A fé divina, no entanto, em considerando as frágeis expressões em que as organizações religiosas a têm apresentado, surge e esmaece no Espírito, conforme as disposições que o dominam no dia-a-dia da romagem carnal na busca do destino, da vida imperecível.<br/>
+A fé religiosa somente sobrevive se calcada na razão e na envergadura superior dos fatos que lhe servem de base.<br/>
+Conquista intelectual, se robustece, mediante exercício e análise, estudo e observação, com que se fixa, produzindo os milagres da transformação íntima da criatura que se encoraja à abnegação e mesmo ao sacrifício, ao holocausto. É elemento vitalizador dos ideais de enobrecimento e sustentáculo da caridade.<br/>
+*<br/>
+Transitam em muitas direções aqueles que iniciam as abençoadas experiências evolutivas e, destituídos da experiência da fé, se apresentam céticos e frios.<br/>
+Não tiveram tempo de vivê-la ou de comprová-la.<br/>
+Outrossim, alguns que se aninharam em muitas escolas religiosas do passado, formando nelas os conceitos espirituais, ao defrontarem a realidade do além-túmulo, decepcionaram-se por não encontrar as glórias de mentira que anelavam, tornando-se, lamentavelmente, descrentes desde então.<br/>
+Conquista que requer zelo e esforço, a fé, além de ser virtude preciosa, também se reveste do valor racional, sem o que não suporta as vicissitudes nem os sofrimentos.<br/>
+*<br/>
+Disse Jesus a Jairo, o chefe da sinagoga que Lhe rogava socorro para a filha considerada morta: "Não temas, crê somente", e chegando à casa da enferma, despertou-a para a saúde e a vida.<br/>
+Busca Jesus nos momentos difíceis, quando bruxuleiem os fulgores da tua fé e reveste-te da necessária humildade, a fim de submeter-te aos impositivos da evolução, embora o tributo de aflição e lágrima que seja necessário oferecer.<br/>
+Não duvides, porém, do auxílio divino, em todos os dias da tua vida.<br/>
+A fé é uma necessidade imprescindível para a felicidade, fator essencial para as conquistas íntimas nos rumos da evolução.<br/>
+<br/>
+A fé indispensável, Rumos Libertadores, p. 185<br/>
+<br/>
+Os condicionamentos atávicos do pretérito impelem o Espírito à queda, ao desalinho, com os quais mais facilmente aderes. Para tanto, basta que te deixes arrastar pela correnteza da acomodação e da indiferença ante o bem.<br/>
+<br/>
+Rumos Libertadores, p. 217<br/>
+<br/>
+O Espírito é o que se impõe, o a que se subordina.<br/>
+Se as aspirações a que te aferras parecem conspirar contra os ideais de felicidade, insiste com o mesmo entusiasmo, mil vezes, como se fora a primeira tentativa, de cada vez.<br/>
+<br/>
+Rumos Libertadores, p. 218<br/>
+<br/>
+As ambições de um dia, não obstante passem, deixando cinzas e aflições, fascinam as mentes desarvoradas que assomam, de quando em quando, em toda parte, gerando as dores superlativas que são obrigadas a carpir, posteriormente, graças às inderrogáveis leis da Soberana Justiça.<br/>
+<br/>
+Rumos Libertadores, p. 236
+</td>
+<td>
+És o senhor do teu destino, e ele tem para ti, como ponto de encontro, o infinito. Momentos de Saúde, item 2, Liberdade de Escolha.
+</td>
+</tr>
+<tr class="alt">
+<td>
+Afirma a sabedoria popular com propriedade: Pedra que rola não cria limo, sugerindo alteração de rota, movimento, realização. Momentos de Saúde, item 5, Saúde e Bem-estar.
+</td>
+<td>
+A pessoa irresponsável, quando não se esforça para alterar o que pode ser modificado, transfere a responsabilidade para as circunstâncias que acredita más, para as pessoas, ou culpa-se a si mesma, preferindo a queixa e a comiseração ao esforço profícuo. O tempo, o lugar, a sociedade, o governo, a inveja alheia, a competição malsã, a má sorte ou a fraqueza são os ingredientes para justificar a acomodação, o falso sofrimento de que se diz objeto. Momentos de Saúde, item 8, Insatisfação e Utopias.
+</td>
+</tr>
+<tr>
+<td>
+A Consciência Divina irriga-me com a paz.<br/>
+Atavismo de comportamentos religiosos, morais e sociais hipócritas, que não hesitavam em fazer um tipo de recomendação com diferente ação, [a consciência de culpa] deve ser eliminada com rigor e imediatamente.<br/>
+Fraco é todo aquele que assim se considera, não desenvolvendo o esforço para fortalecer-se.<br/>
+Quando justificas o teu erro com autoflagelação reparadora, logo mais retornarás a ele.<br/>
+Erradica da mente as ideias que consideras impróprias, prejudiciais, conflitivas. Substitui-as vigorosamente por outras saudáveis, equilibradas, dignificantes. Quando não dispões de um acervo de pensamentos superiores para a reflexão, vais colhido pelos de caráter venal, pueris, perniciosos, que se te fazem familiares, impulsionando-te à ação correspondente.<br/>
+Momentos de Saúde, item 9, Perante a Consciência.
+</td>
+<td>
+Desincumbe-te dos compromissos, sem preocupação com aquilo que os outros pensam sobre ti, tuas ações, tua vida. És livre para agir, assim como te tornarás escravo do que faças, colhendo conforme semeies. O mais não tem importância, exceto se preferes valorizá-lo.<br/>
+A verdade felicita sempre. Assim, deixa-te penetrar pela sua força dominadora e segue tranquilo, amparado por ela.<br/>
+Momentos de Saúde, item 10, A Verdade Libertadora.
+</td>
+</tr>
+<tr class="alt">
+<td>
+Ressalvadas algumas exceções que ocorrem nos idealistas não apaixonados nem extremistas, a maioria dos que vociferam contra seja o que for, mascara desejos subconscientes, que reprime por falta de valor moral para expressá-los com nobreza.<br/>
+O indivíduo puritano, que fiscaliza a <i>má conduta</i> alheia, projeta o estado interior que procura combater noutrem, porque não se dispõe a fazê-lo em si.<br/>
+Momentos de Saúde, item 17, Encontro com a Realidade.
+</td>
+<td>
+Qualquer pretensão de modificar o mundo e fazê-lo girar como te aprouver é aluciinação. Porém, se te dedicares à transformação íntima, que reflita em alteração de outros comportamentos para melhor, lograrás alcançar a verdadeira meta do amadurecimento psicológico.
+Momentos de Saúde, item 20, Amadurecimento Psicológico.
+</td>
+</tr>
+<tr>
+<td>
+Sendo a criatura um cosmo em miniatura, é regida pelas mesmas Leis do grande Universo.<br/>
+Desse perfeito entrosamento entre os pequenos e o grande Foco, surge a harmonia que é a sua mais nobre manifestação.<br/>
+Momentos de Consciência, item 4, Conflito e Consciência.
+</td>
+<td>
+Sendo a pessoa livre para preferir ser saudável ou enferma, cabe à consciência agir com liberdade profunda, isto é, a opção de ser feliz. Momentos de Consciência, item 5, Saúde e Consciência.
+</td>
+</tr>
+<tr class="alt">
+<td>
+A soma das tuas ações positivas quitará o débito moral que contraíste perante a Divina Consciência, porquanto o importante não é a quem se faz o bem ou o mal, e sim, a ação em si mesma em relação à harmonia universal. Momentos de Consciência, item 6, Culpa e Consciência.
+</td>
+<td>
+A consciência não é inteligência no sentido mental, mas a capacidade de estabelecer parâmetros para entender o bem e o mal, optando pelo primeiro e seguindo a diretriz do equilíbrio, das possibilidades latentes, desenvolvendo os recursos atuais em favor do seu vir-a-ser.<br/>
+Essas possibilidades que se encontram adormecidas são a presença de Deus em todos, aguardando o momento de desabrochar e crescer.<br/>
+Momentos de Consciência, item 8, Carma e Consciência.
+</td>
+</tr>
+<tr>
+<td>
+Estudo do livro pensamento e vida. Introdução. Eu sou sabedoria infinita. Eu sou amor infinito. U é reflexo de alfa_omega. Eu sou reflexo de alfa_omega. Pensamento reflete nós mesmos. Vida reflete pensamento. Pensamento cria vida. Eu na perfeição me identifico a alfa_omega. Pensamento(alfa_omega) cria a vida do universo. Nosso pensamento cria nossa vida.<br/>
+<br/>
+1) A mente é o espelho da vida, para todo local em U. O diamante sai do solo, é lapidado, e segue para a luz. A mente sai da terra, é trabalhada pelo Cristo e segue para alfa_omega. A mente passa pelo instinto, pelas ilusões da inteligência até retratar alfa_omega. Entre o reino animal e o angelical, a mente é a consciência desperta, com conhecimento adquirido. O coração é a face da mente. O cérebro é o centro das ondas mentais, que gera o pensamento, que move, cria, transforma, destroi, refaz, acrisola e sublima. Lei de influência recíproca, em todo U. Lei de interdependência. Lei de repercussão. Tudo se desloca. Tudo se renova. Reflexo mental => emotividade => ideia => atitude / palavra => ação. O reflexo é a causa. Dele nascem as circunstâncias, que obliteram ou libertam a existência. Ninguém improvisa um pensamento mais forte. Somos reflexos uns dos outros. Ninguém sai da lei de permuta incessante. Projetamos e recebemos imagens, e respiramo-las. Pelas imagens, estacionamos fascinados e escravizados. Através das imagens, adquirimos o influxo renovador daquilo que nos purifica / faz progredir. Logo, o reflexo é o alicerce da vida. s1 reflete-se em s2, reciprocamente. Criação reflete o objetivo de alfa_omega.<br/>
+<br/>
+2) A mente humana é comparável a um escritório com diversos departamentos. O do desejo, com o estímulo ao trabalho; o da inteligência (evolução, cultura); o da imaginação (ideal, sensibilidade); o da memória e outros.<br/>
+Acima de todos eles, o da vontade, a gerência que governa a ação mental.<br/>
+Alfa_omega concedeu a vontade, auréola da razão, após os reinos do instinto.<br/>
+Importante, ela é o leme de todos os tipos de força conhecidos: a eletricidade, o eletromagnetismo, o pensamento e a energia, que conjugam-se em <b>todas as formas de vida de U</b> e criam gravitação, afinidade e [des]assimilação.<br/>
+Vontade é impacto. No botão da vontade decidimos o movimento ou a inércia.<br/>
+O cérebro produz energia mental, no entanto, a vontade controla o rumo da energia mental, estabelecendo causas que comandam o destino.<br/>
+Sem a vontade, o desejo pode criar séculos de reparação e sofrimento, a inteligência pode servir à criminalidade, a imaginação pode criar sombras, e a memória pode relaxar.<br/>
+Somente a vontade é forte o bastante para sustentar a harmonia do espírito.<br/>
+A vontade não consegue impedir a lei de sintonia e conexão entre os semelhantes; mas pode disciplinar os departamentos e mantê-los coesos na corrente do bem.<br/>
+<br/>
+3) Para o êxito e a eficiência, não basta a nomeação. Exige-se do nomeado autoridade e discernimento. Mais que teoria e cultura, virtude e juízo claro de proporções.<br/>
+Se nas mãos há recursos e na cabeça não há rumo, são tesouros de insensato, riquezas sem orientação, navio à matroca.<br/>
+Se quer atingir os objetivos nobres, o governante age com justiça e bondade, trabalho e disciplina.<br/>
+Se o poder é intemperante, o povo é intranquilo. Se a inteligência não tem caráter, são espalhadas a miséria e a crueldade.<br/>
+Por isso os tiranos inteligentes e os gênios sensíveis e viciosos.<br/>
+A vontade é o capitão do mundo íntimo e não deve relaxar.<br/>
+O administrador de um serviço tem a ajuda de assessores. A vontade tem a ajuda da ponderação e da lógica, conselheiros nas decisões.<br/>
+O senso de cooperação sustenta os impulsos da vontade.<br/>
+Quem orienta com segurança conhece a hierarquia dos valores indispensáveis à vida.<br/>
+Para confeccionar um agasalho, a máquina apoia o fio, o operário usa a máquina, o operário é supervisionado pelo técnico, este pela diretoria e esta extrai da indústria o dinheiro necessário a todos os serviçais.<br/>
+A vontade satisfaz à governança sem desequilibrar, se houver colaboração a lhe clarear a atividade.<br/>
+Cooperação espontânea é 90% da ordem.<br/>
+De alfa_omega ao mundo subatômico, U pode ser definido como uma cadeia de vidas entrosadas na grande Vida.<br/>
+Cooperação é obediência ao impositivo que vem na frente e socorro às privações que vêm de trás.<br/>
+Quem ajuda é ajudado e encontra em silêncio o maior ajuste aos processos da evolução.<br/>
+<br/>
+4) O Amor e a Sabedoria conduzirão o homem à presença de Deus.<br/>
+O amor é serviço aos semelhantes. Por ele, a criatura se ilumina, se aformoseia e emite aos outros suas próprias virtudes. Pela sabedoria, os espíritos de luz impelem-na para o Alto.<br/>
+Através do amor e da sabedoria valorizamo-nos para a vida e somos por ela valorizados.<br/>
+Devem marchar juntas a inteligência e a bondade.<br/>
+Esta sem aquela é como poço que tira a sede, mas não ensina o caminho ao viajor.<br/>
+Aquela sem esta é como poste que informa o rumo certo, mas não mata a sede.<br/>
+Todos temos necessidade de instrução e amor.<br/>
+Estudar e servir é inevitável para evoluir.<br/>
+A cultura intelectual expande-se gradativamente.<br/>
+A arte evolui e se aprimora, através dos cultivadores do belo, que se inspiram uns nos outros.<br/>
+Na escola, os mestres de hoje continuam a tarefa dos de ontem.<br/>
+O livro plasma as emoções e concepções de que nascem os grandes movimentos da Humanidade. A imensas distâncias no espaço e no tempo incorporamos as ideias dos espíritos superiores que passaram por nós, há séculos.<br/>
+Livros com base em Sócrates e Jesus.<br/>
+Conhecer é autolibertar-nos, a caminho de novos horizontes na vida.<br/>
+É dever estudar sempre, a fim de que nossas ideias e exemplos reflitam as dos paladinos da luz.<br/>
+<br/>
+5) Jesus ensinou que nossa luz brilhasse. Jesus é nossa luz na evolução do planeta.<br/>
+Antigamente, era um culto externo, imaginavam uma côrte no céu, com deus sentado.<br/>
+Hoje, é para brilhar em todas as condições e dias.<br/>
+A ciência sabe que a luz está por toda parte.<br/>
+O corpo humano é energético. Suas partículas se atraem, repelem e emitem luz.<br/>
+O homem está num reino de raios, e quem afirma é a química, a física e a astronomia.<br/>
+Nesse império da energia, existem os raios mentais criando expressões de vida.<br/>
+Pensamento é força criativa que se exterioriza em ondas, que no espaço-tempo geram ação e reação. Pensamento é tão mensurável como o fóton.<br/>
+A mente é espelho de luz, emite raios e os assimila. Esse espelho fica preso na ignorância, como se fosse uma pedra valiosa numa caverna debaixo do precipício. Para retratar os raios celestes e brilhar, é indispensável o trabalho.<br/>
+A educação de todo s é de necessidade imprescritível.<br/>
+Jesus se utilizou do imperativo para nos advertir: brilhe vossa luz. Mateus 5, 16.<br/>
+Por isso, o potencial de luz do nosso espírito deve fulgurar, mostrando sua plena grandeza.<br/>
+Isso só pode ser atingido pela autoeducação e o autoburilamento.<br/>
+A educação, com inteligência e aperfeiçoamento íntimo, com conhecimento e bondade, saber e virtude, não se consegue em instruções de fora para dentro e sim com a vontade consciente de se consagrar ao bem, sem nenhum constrangimento. A educação é capaz de libertar e polir o coração, plasmando nele a face cristalina da alma, que refletirá a verdadeira vida, transformará o cérebro em preciosa usina de energia superior e projetará reflexos de beleza e sublimação.<br/>
+<br/>
+6) É indispensável buscar o bem com perseverança e fervor, depois de admitir a existência do bem, para encontrar o bem e assimilhar-lhe a luz.<br/>
+A eletricidade é indubitável, mas a lâmpada acende somente com os cabos da usina até a casa.<br/>
+Fotografia pra todo lado, mas a imagem se fixa somente com a sensibilização da placa.<br/>
+A voz humana vai de um continente a outro por ondas de rádio, mas somente com o remoinho eletrônico que transporta as ondulações.<br/>
+Realização plasmada somente com atitude positiva de confiança.<br/>
+A fé é força que nasce com a alma, certeza instintiva na sabedoria (alfa_omega) que é a sabedoria (vida). Todos os seres e todas as coisas têm fé. O cristal fraturado se recompõe via fé. A árvore decepada se refaz via fé. Lei de renovação.<br/>
+Tudo o que existe se desenvolve sob a energia da fé.<br/>
+O campo confia na primavera e se cobre de flores.<br/>
+O rio tem fé na fonte.<br/>
+O homem alimenta-se via a fé nas vísceras abdominais.<br/>
+A sociedade funciona via a fé no respeito às leis que regem a vida.<br/>
+Ao utilizarmos da energia da fé, torna-se possível evoluir em linha reta.<br/>
+Seja qual for a interpretação religiosa sobre alfa_omega, é imprescindível aumentar a confiança no bem para refletir a grandeza de alfa_omega.<br/>
+O sol distribui equitativamente seus recursos. A lente ao convergir os raios do sol amplia-lhes o poder.<br/>
+Alfa_omega é a mesma luz para todos, a fé é a lente que torna mais eficiente a segurança íntima.<br/>
+Busquemos o bem eterno, sem cansar e sem parar no mal.<br/>
+O tronco podado dá frutos da mesma forma que antes da poda.<br/>
+A fonte alcança o rio e desfaz em si mesmo as lamas atiradas.<br/>
+Sustentemos o coração na água viva de alfa_omega: o bem eterno e inexaurível.<br/>
+Procuremos a boa parte de tudo e o espelho da mente estará sempre voltado para o bem, e incorporará à mente os tesouros eternos. A felicidade que nasce da fé, generosa e operante, nos libertará da prisão do orgulho e do egoísmo, porque o bem, constante e puro, deve encontrar em nós o espelho mental.<br/>
+<br/>
+7) Se queremos espelhar a perfeição, nossa vontade deve trabalhar para ter o pão de cada dia.<br/>
+Antes, era só para os escravos injuriados. Aos braços livres estava reservada a inércia.<br/>
+Hoje, a lei do trabalho é o caminho da emancipação. Sem ela, a mente dorme. Fugir aos impositivos dela é ficar de fora do caminho da evolução, e se entregar à preguiça.<br/>
+O usurário cava a própria cova em que se lhe estiolarão as mais nobres faculdades do espírito.<br/>
+O umbral está repleto de quem age por agir.<br/>
+É preciso termos o prazer de servir.<br/>
+Na terra, o encarnado trabalha para sustentar o corpo físico. De graça recebe água, luz e calor solar, ar; mas sua e sofre em busca do pão.<br/>
+Prisioneiro da matéria, todo aquele que abra o espelho da própria alma aos reflexos da Esfera Divina pode fruir a ventura do voluntariado.<br/>
+A ação transforma o ambiente.<br/>
+O serviço transforma o homem.<br/>
+Trabalho por dinheiro permanece restrito às trocas do mundo.<br/>
+Voluntariado sem recompensa desdobra a influência da Bondade Celestial, que nos ampara sem pagamento.<br/>
+À medida que ascendemos, fica mais clara a necessidade de trabalhar por amor de servir.<br/>
+Quando começamos a ajudar o próximo, matriculamo-nos no acrisolamento da alma, entrando em sintonia com a Vida Abundante.<br/>
+Aos espíritos mais elevados, o trabalho não é imposto. Quem é consciente da verdade a ela se entrega por livre vontade, porque compreende que a ação no bem é ajustamento às Leis de Deus.<br/>
+Nos domínios superiores, quem serve sobe aos cimos da imortalidade, reproduzindo no interno as maravilhas do Céu que se espelha por toda a parte.<br/>
+<br/>
+8) Se o ser humano pudesse ver com os próprios olhos os pensamentos, teria certeza de que todos vivemos sob as leis da afinidade.<br/>
+A associação está em todas as coisas, preside a todos os acontecimentos e comanda a existência de todas as criaturas.<br/>
+Demócrito afirma que os átomos agrupam-se como pombos à cata de comida, formando os corpos.<br/>
+Ao penetrar a essência do microcosmo, simbolizamos no átomo um sistema solar em miniatura.<br/>
+Na Vida Maior, os sois carregam os mundos na imensidade, pela interação eletromagnética das forças universais.<br/>
+Também na vida comum, a alma entra em ressonância com os pensamentos em que respiram as almas semelhantes.<br/>
+Assimilamos os pensamentos dos que pensam como pensamos.<br/>
+Sentindo, mentalizando, falando ou agindo, sintonizamos com as emoções e ideias de todas as pessoas (des)encarnadas da nossa faixa de simpatia.<br/>
+Sempre estamos atraindo ou repelindo pensamentos que se agregam aos nossos, fortificando-nos para o bem ou para o mal, conforme escolhemos.<br/>
+Em qualquer providência e opinião, somos sempre a soma de muitos.<br/>
+Expressamos e somos expressados por milhares de criaturas.<br/>
+O desejo é a alavanca do sentimento, que gera a energia que consumimos, segundo nossa vontade.<br/>
+Quando nos detemos nos defeitos e falhas do próximo, o espelho mental reflete-os, absorvendo as imagens deprimentes de que se constituem. Nossa imaginação digere essa espécie de alimento, que mais tarde se incorpora a nossa alma. Com o tempo, nossa alma não raro passa a exprimir o que assimilara, fazendo-o ou pelo corpo físico entre os homens, ou pelo perispírito, depois do desenlace.<br/>
+Por essa razão, os censores do comportamento alheio acabam praticando as mesmas ações que condenam no próximo. Interessados em detalhar o mal, absorvem inconscientemente as emanações dele, surpreendendo-se, um dia, dominados pelas forças que o representam.<br/>
+Toda brecha de sombra em nossa personalidade retrata a sombra maior.<br/>
+A maledicência pode precipitar-nos no vício e a cólera pode nos arrastar aos labirintos da loucura ou às trevas do crime, tal qual o pequeno foco infeccioso abandonado a si mesmo pode tornar-se dentro de algumas horas na peste de imensas proporções.<br/>
+Pensando, conversando ou trabalhando, a força de nossas ideias, palavras e atos alcança em um instante um potencial tantas vezes maior quantas as pessoas (des)encarnadas que concordem conosco. Esse potencial tende a aumentar indefinidamente, impondo a nós as consequências de nossas próprias iniciativas, via lei de retorno.<br/>
+Procuremos incessantemente o bem, ajudando, aprendendo, servindo, desculpando e amando, porque com essa atitude refletiremos os cultivadores da luz e resolveremos seguramente o nosso problema de companhia.<br/>
+<br/>
+9) A sugestão mental não é privativa de gabinetes magnéticos específicos.<br/>
+Grasset de Montpellier classifica as sugestões em (A) intra-hipnóticas, no curso do sono provocado, e (B) pós-hipnóticas, além do despertar.<br/>
+Mas a sugestão é acontecimento de toda hora, na vida de todas as criaturas, com base na reflexão mental permanente.<br/>
+A magia se apropriou dela com empenho. O governo das forças ocultas tem sido o clima de todos os rituais religiosos na Terra, rituais esses em que se conjugam as mentes dos (des)encarnados, gerando sucessos que impressionam a mente do povo e disciplinando-lhe os impulsos.<br/>
+A sugestão é força mental pura e simples. Carrega a ideia por imagem viva. Como a eletricidade, o explosivo, o vapor e a desintegração atômica é amoral. Dependem seus efeitos da aplicação que se lhe confere. Está no altar da oração e nos símbolos religiosos. Aconselha a virtude e o progresso ao coração do povo. Está também nos espetáculos dos ritos bárbaros e na demagogia de arrastamento. Ressuma o psiquismo inferior que inspira a licenciosidade e a rebelião.<br/>
+Nossas emoções, pensamentos e atos são elementos dinâmicos de indução.<br/>
+Todos nós exteriorizamos a energia mental, influenciamos o próximo e somos afetados pelas mesmas formas, nascidas nos espíritos alheios.<br/>
+Cada uma de nossas atitudes polariza forças nos que se afinam com o nosso modo de ser, impelindo-os à imitação (in)consciente.<br/>
+O princípio de repercussão comanda a nossa atividade em todos os passos da vida.<br/>
+A escola é iniciática para as almas que começam a se autoburilar intelectualmente, simultaneamente constituindo um centro de reflexos condicionados para milhões de espíritos reencarnados para readquirir pelo alfabeto o trabalho das próprias conquistas na área da inteligência.<br/>
+Auxiliados pelos vários instrutores que nos guiam da cátedra, da tribuna, pelo livro e pela mídia, retomamos no mundo a nossa realidade psíquica, determinada pela soma de nossas aquisições emocionais e culturais no passado, com a possibilidade de mais ampla educação da vontade para ajustamento à Vida Superior.<br/>
+Somos hoje herdeiros positivos dos reflexos de nossas experiências de ontem, com recursos de alterar a direções delas para a verdadeira felicidade.<br/>
+Auxilando a outrem, sugerimos o auxílio em nosso favor. Suportando humildemente as vicissitudes da regeneração, instilamos paciência e solidariedade conosco em todos os que nos rodeiam.<br/>
+Ajudando, ajudamo-nos.<br/>
+Desservindo, desservimo-nos.<br/>
+Por meio da sugestão espontânea, plantamos os reflexos de nossa individualidade e colhemos os efeitos deles nas individualidades alheias conforme semeamos.<br/>
+Somos responsáveis pela nossa ligação com as forças construtivas do bem ou com as perturbadoras do mal.<br/>
+<br/>
+10) Quem cultiva o campo não passa sem o arado para sulcar a gleba.<br/>
+Quem faz estátua recorre ao buril para ligar o mármore à imagem idealizada.<br/>
+Quem se interessa em produzir reflexos mentais que protegem seu caminho não dispensa o alicerce do trabalho renovador: o entendimento.<br/>
+Esse simoliza fraternidade operante.<br/>
+Simpatia convertida em fonte de força atrativa, exteriorizando nossa melhor parte, a fim de que a melhor parte dos outros se exteriorize a nós.<br/>
+Existe um circuito natural: todos somos obrigados a nos envolver na onda mental que emitimos de nós.<br/>
+Somos bons ou maus, de acordo com o uso de nossos sentimentos e pensamentos. Esses no fundo são cargas eletromagnéticas. Com elas ferimos ou acalentamos, ajudamos ou prejudicamos, vitalizamos ou destruímos. Todas elas voltam a nós mesmos, cheias dos recursos (in)felizes com os quais marcamos a rota delas.<br/>
+Quando agimos com cólera e irritação, agressividade e aspereza para com os outros, criamos por <b>atividade reflexa</b> o desalento e a intemperança, a crueldade e a secura para nós mesmos. Quando agimos com generosidade e compreensão, préstimo e utilidade aos que nos cercam, a consequência criada é alegria e tranquilidade, segurança e bom ânimo a nós mesmos.<br/>
+A vida nos responde em tudo e em todos, segundo a natureza do nosso chamamento.<br/>
+Até que ingressemos na Consciência Cósmica, todos nós nos distinguimos pela face de luz com a qual nos alteiamos para o topo da evolução e pela face de sombra pela qual ainda sofremos a influência da retaguarda.<br/>
+A posição vulgar do homem na Terra é símbolo dessa condição específica: por cima o Sol claro, por baixo o abismo escuro.<br/>
+Todos nós recolhemos de Alfa_Omega os estímulos ao futuro e padecemos os reflexos dos passado a projetarem sobre nossa existência.<br/>
+Havemos de desatar as algemas do mal que forjamos em detrimento de nossas próprias almas, e de buscar o bem, senti-lo, mentalizá-lo e plasmá-lo com todos os potenciais de realização ao nosso alcance.<br/>
+O primeiro passo é separar o criminoso da criminalidade, o verme da plantação, para abolir o domínio do primeiro e enriquecer a utilidade da segunda. Assim como o lavrador extingue a praga e salva a lavoura, nosso entendimento tem que improvisar meios de auxiliar o companheiro que caiu em delinquência, sem alentá-la.<br/>
+Apequenarmo-nos para ajudar, sem perder altura, é assegurarmos a melhoria de todos e acentuar a própria sublimação.<br/>
+Mas só o culto infatigável do entendimento pode garantir o nosso equilíbrio, indispensável ao autoburilamento em que devemos empenhar nossos melhores sonhos, pois apenas o amor puro é capaz de criar em nossa mente a energia da luz divina, expandindo-se de nós em reflexos de renovação protetora.<br/>
+<br/>
+11) Todo berço de agora retrata o ontem que passou, exceto os planos organizados para as obras especiais, nos quais Espíritos missionários senhoreiam as reservas fisiológicas para a criação de reflexos da Vida Superior entre os homens, impelindo-os a maior ascenção.<br/>
+O caminho que iniciamos em cada existência é prolongamento dos caminhos precedentes.<br/>
+A investigação científica na Terra se cansa de estudar o continuísmo biológico.<br/>
+Geneticistas chamam núcleos de cromossomos e veículos do citoplasma, fatores de ambiente e genealogias familiares à equação dos problemas da origem e por isso de suas indagações surgem resultados notáveis como os sobre caracteres morfológicos e a adaptação.<br/>
+Mas a crítica da observação humana não consegue hoje ultrapassar a constituição orgânica, e se detém no exame da conformação e da estatura, da pigmentação e do grupo sanguíneo, que aludem à filiação corpórea, uma vez que as curvas da hereditariedade psíquica são hoje quase integralmente inacessíveis à sondagem da inteligência terrestre.<br/>
+As células germinais são sementes vivas e reproduzem nossos clichês da consciência no trabalho impalpável da formação de um novo corpo.<br/>
+No útero, o reflexo dominante de nossa individualidade impressiona o feto ou o conjunto de princípios germinativos que forjam os alicerces do nosso novo instrumento físico, selando a nossa destinação para as tarefas que somos chamados a executar no mundo, em pequena parcela de tempo.<br/>
+Nesse processo não vai nenhuma exaltação ao determinismo absoluto, porque não se pode suprimir o livre-arbítrio, com o qual articulamos as causas de sofrimento ou reparação em nossos destinos, dentro do determinismo relativo em que marchamos para mais altas formas de emoção e pensamento, a fim de conquistar a liberdade suprema.<br/>
+Pela morte física, voltamos à Vida Maior com a soma de realizações que nem sempre são aquelas que deveríamos efetuar. Em muitas circunstâncias, as imagens que trazemos da permanência na carne são fantasmas temidos que nasceram de nossas próprias culpas, exigindo reajuste e pagamento e modelando para nossos sentidos o inferno torturante em que as nossas queixas e aflições se revolvem.<br/>
+Mas a Justiça Fiel nos concede por misericórdia o retorno para a bênção do reinício. Retomamos aravés do berço o contato direto com os nossos credores e devedores para a liquidação dos débitos que contraímos. O balanço efetivo deles está devidamente contabilizado nas Leis Divinas.<br/>
+Desta maneira comumente renascemos na Terra: segundo as nossas dívidas ou conforme nossas necessidades, assimilando para esse fim a essência genética daqueles que se afinam com o nosso modo de proceder e de ser.<br/>
+Em razão disso, os problemas da hereditariedade descendem geralmente dos reflexos mentais que nos são próprios.<br/>
+Muitas vezes, corações abnegados, cultivando a linha do amor pelo sacrifício, trazem a si corações desditosos, guardando transitoriamente nos braços monstruosas aberrações que destoam do elevado nível em que já se instalaram. Mas devemos semelhantes exceções ao espírito de renúncia com o qual fazem emergir das regiões infernais velhos laços afetivos, usando o divino atributo da caridade.<br/>
+De conformidade com a regra, nosso berço no mundo é o reflexo de nossas necessidades. Cabe a cada um de nós, quando encarnados, honrar o berço com trabalho digno de restauração, melhoria ou engrandecimento, na certeza de que a ele fomos trazidos ou atraídos, segundo os problemas da regeneração ou da mordomia de que somos carentes para recompor nosso destino perante o futuro.<br/>
+<br/>
+12) Família consanguínea é o centro de nossos reflexos (des)agradáveis devolvidos pelo passado.<br/>
+Os missionários superam o ambiente comum imediatamente, criam o clima mental bom, e atendem à renovação de que são intérpretes.<br/>
+A criatura reencarna justamente no raio de ação de sua capacidade. Cada um de nós ultrapassará pouco a pouco o horizonte ao qual já estenda os seu reflexos.<br/>
+O índio não improvisa se afastar da taba. Aí renasce muitas vezes, e o homem relativamente civilizado fica longo tempo na raça em que assimila as experiências de que carece, até que suas aquisições o levem a outras realizações.<br/>
+Na família consanguínea, o reencarnado vai ao encontro dos laços entretecidos para si próprio, na linha mental de suas tendências.<br/>
+A hereditariedade psicológica é a natural aglutinação dos espíritos afinados nas mesmas atividades e manifestações.<br/>
+Um artista ou heroi podem nascer longe de seus sentimentos. É a manifestação do gênio elaborado milenarmente, impondo seus reflexos em trabalho criativo gigantesco.<br/>
+No caminho habitual, o templo do lar reúne os que se retratam uns nos outros.<br/>
+Uma família de músicos recebe facilmente artistas divinos em sua prole, porque os espíritos que assumem a posição de filhos são os mesmos amigos incentivadores da formação musical, refletindo-se reciprocamente na continuidade da ação em que se empenham secularmente.<br/>
+Escultores, poetas, políticos, médicos, comerciantes, agricultores dão-se as mãos, no culto dos melhores valores afetivos, continuam-se nos genes familiares, e preservam para si mesmos a evolução em que se exprimem no espaço e no tempo, mediante o trabalho em comum e segundo a lei do renascimento. Alcoólatras, cleptomaníacos, delinquentes, enfermos morais nascem daqueles que comungam espiritualmente as deficiências e as provas deles, porque muitas inteligências transviadas se ajustam ao campo genético daqueles que atraem a companhia deles, pela força dos sentimentos menos dignos ou das ações deploráveis com que se oneram perante a Lei.<br/>
+A família resulta da conjunção de débitos, situando-nos no plano genético enfermiço que merecemos, em face dos nossos comprimissos com o mundo e com a vida. Somos impelidos a padecer o retorno dos nossos reflexos tóxicos através de parentes, que nos devolvem os reflexos por processos de sofrimento.<br/>
+No grupo doméstico, conseguimos tecer os laços de elevação e alegria, por intermédio do amor, e temos também as algemas de constrangimento e aversão, nas quais recebemos de volta os clichês inquietantes que nós mesmos plasmamos no tempo e que precisamos desfazer, por trabalho, sacrifício, paciência e humildade, que são recursos novos para fazermos nova produção de reflexos espirituais, que estão sujeitos a anular os efeitos de nossa conduta anterior, conturbada e infeliz.<br/>
+<br/>
+13) A criança nasce e traz consigo a moral que marca a individualdade dela antes da reencarnação; mas receberá os reflexos dos pais e dos mestres que imprimirão na chapa cerebral dela as imagens que influenciarão ela a vida inteira.<br/>
+A instrução espera o espírito dela em nova fase e enriquece o caminho dela nesse ou naquele mister; mas reconhecemos que a palavra escrita confrontada com a palavra falada ou com o exemplo direto revela poderes de repercussão menos vivos, ainda mais quando torturada entre os preconceitos da gramática.<br/>
+A voz e a ação prática estão impregnadas do magnetismo indutivo que se desprende da reflexão imediata e operam transformações para o bem ou para o mal, segundo a natureza que personaliza as manifestações delas.<br/>
+As crianças confiadas na Terra ao nosso zelo portam cérebro novo em sua estrutura orgânica, como câmara fotográfica devidamente habilitada a recolher impressões. A objetiva que é constituída por um sistema de lentes apropriadas capazes de colher imagens corretas sobre recursos sensíveis, a objetiva é representada na mente infantil por um espelho renovado em que se conjugam visão, observação, atenção e meditação por lentes da alma que absorvem os reflexos das mentes que a rodeiam e fixam os reflexos em si própria, como elementos básicos de conduta.<br/>
+As crianças estão à mercê dos moldes espirituais dos que tecem o berço delas ou que asseguram a escola delas, do mesmo modo que a argila ante as ideias do oleiro.<br/>
+Não podemos esquecer na Terra que as crianças são companheiros que nos retornam ao convívio transitório, quase sempre para se reajustarem conosco aos impositivos da Lei Divina, isso embora carreando consigo a sedimentação das experiências passadas. Elas são necessitadas tanto quanto nós mesmos de provas e ensinamentos no que tange ao trabalho da regeneração desejada.<br/>
+Com exceção das crianças que transcendem nossos marcos evolutivos, em face da missão particular de que se investem na renovação do ambiente comum, todas elas sofrem os nossos reflexos, assimilando impressões perduráveis que acompanham os passos delas desde a infância até a morte do corpo.<br/>
+Tratar as crianças à conta de enfeites do coração será induzi-las a enganos funestos, porque em se tornando ineficientes para a luta redentora, quando se desenvolve o veículo orgânico delas facilmente se ajustam ao reflexo dominante das inteligências acostumadas com a sombra ou a rebeldia e se gravitam para a influência do passado que mais deveríamos evitar e temer.<br/>
+Toda criança entregue à nossa guarda é um vaso vivo a arrecadar as nossas imagens da experiência diária e compete-nos portanto o dever de traçar a elas noções de justiça, trabalho, fraternidade, ordem, e habituá-la desde cedo à disciplina e ao exercício do bem, com a força de nossas demonstrações, sem furtar o clima de otimismo e esperança delas. Acolhendo-a com amor, cabe a nós recordar que o coração da infância é urna preciosa que incorpora os nossos reflexos, é troféu que nos retratará no futuro, no qual passaremos todos igualmente a viver, na função de herdeiros das nossas próprias obras.<br/>
+<br/>
+14) Sem digressão científica, porque os livros técnicos são suficientemente esclarecedores no que reporta aos aspectos exteriores do corpo, lembremo-nos de que o Espírito que é inquilino da casa física preside à formação e à sustentação dele, consciente ou inconscientemente, desde a hora primeira da organização fetal, não obstante quase sempre sob os cuidados protetores de Mensageiros da Providênia Divina.<br/>
+O Espírito traz consigo mesmo a soma dos reflexos bons e maus de que é portador, segundo a colheita de méritos e prejuízos que plantou para si mesmo no solo do tempo. Assim incorporamos aos moldes reduzidos do próprio ser as células do corpo, associando-as à própria vida, desde o gérmen.<br/>
+Amparado na placenta, estrutura-se o corpo dele mediante as células do corpo, que em se multiplicando ao redor da matriz espiritual, como a limalha de ferro sobre o ímã, formam os folhetos blastodérmicos de que se derivam os órgãos.<br/>
+Depois, atendendo ao desenvolvimento espontâneo, o Espírito materializa-se na arena física, manifestando-se pelo corpo que o exprime. O corpo é constituído por bilhões de individuações microscópicas, que se ajustam aos tecidos da alma, partilhando a natureza eletromagnética delas. O corpo lembra uma oficina complexa, formada de bilhões de motores infinitesimais, movidos por oscilações eletromagnéticas, em lamba específico e emite irradiações próprias e assimila as irradiações do plano em que se encontram, sob o comando da mente diretora.<br/>
+Desde o embrião, o Espírito nele plasma os reflexos que são próprios a ele.<br/>
+Existem criaturas tão conturbadas no além com os problemas decorrentes do suicídio, homicídio, delinquência, viciação, que ao renascer demonstram de imediato os mais dolorosos desequilíbrios, pela disfunção vibratória que os cataloga nos quadros da patologia celular.<br/>
+As enfermidades congênitas são reflexos da posição infeliz a que nos conduzimos no passado próximo, reclamando a nossa internação na esfera física, por curto prazo, para tratar a desarmonia interior em que fomos comprometidos.<br/>
+Surgem outros intermediários dos reflexos do passado na existência do corpo. São plantações de tempo certo que a lei de ação e reação governa com segurança e precisão.<br/>
+Por isso, de acordo com os programas traçados antes do nascimento, na pauta da dívida e do resgate, a criatura é visitada por estranhas provações, em plena prosperidade material, ou por desastres físicos de comovente expressão, quando mais irradiante se mostra a saúde dela.<br/>
+Convém lembrar que reflexos geram reflexos e que não há pagamento sem atenuantes justos, quando o devedor se revela amigo da solução dos próprios débitos.<br/>
+A prática do bem simples e infatigável pode modificar a rota do tempo, porque o pensamento claro e correto, com ação edificante, interfere nas funções celulares e nos eventos humanos, atraindo em nosso favor por nosso reflexo melhorado e mais nobre amparo, luz e apoio, segundo a lei do auxílio.<br/>
+<br/>
+15) Saúde é como a posição de uma casa que denuncia as condições do morador, ou de um instrumento que reproduz em si o zelo ou a desídia das mãos que o manejam.<br/>
+A falta comedida opera em nossa mente um estado de perturbação ao qual não se reúnem as forças desvairadas de nosso arrependimento e as ondas de pesar e acusação da vítima e de quantos se associam ao sentimento dela, e instaura desarmonias de vastas proporções nos centros da alma, a repertucirem sobre a nossa própria instrumentação.<br/>
+Semelhante descontrole tem graus diferentes e provocam lesões funcionais diversas.<br/>
+A cólera, desespero, crueldade, intemperança criam zonas mórbidas de natureza particular no cosmo orgânico, impondo às células a distonia pela qual se anulam quase todos os recursos de defesa e abre-se leira fértil à cultura de micróbios patogênicos nos órgãos menos habilitados à resistência.<br/>
+Muitas vezes a tuberculose, câncer, lepra, ulceração aparecem como fenômenos secundários e mora a causa primária no desequilíbrio dos reflexos da vida interior.<br/>
+Todos os sintomas mentais depressivos influenciam as células em estado de mitose e estabelecem fatores de desagregação.<br/>
+Convém reconhecer que o relaxamento da nutrição constrange o corpo a tributos pesados de sofrimento.<br/>
+Em reencarnados, é natural que as vidas infinitesimais que constituem o nosso veículo de existência retratem as substâncias que ingerimos. Nesse trabalho de troca constante adquirimos quantidade imensa de bactérias patogênicas que ao se instalar com comodidade no mundo celular podem determinar moléstias infecciosas de variados caracteres, compelindo-nos a recolher de volta os resultados de nossa imprevidência.<br/>
+Não somente nas causas visíveis se originam os processos patológicos de muitas formas.<br/>
+Nossas emoções doentias quaisquer mais profundas geram estados enfermiços.<br/>
+Os reflexos dos sentimentos menos dignos que alimentamos voltam-se sobre nós mesmos, depos de convertidos em ondas mentais e tumultuam o serviço das células nervosas as quais instaladas na pele, vísceras, medula, tronco cerebral, desempenham as mais avançadas funções técnicas; acentue-se ainda que esses reflexos menos felizes ao se derramar sobre o córtex encefálico produzem alucinações que variam da fobia oculta à loucura manifesta, pelas quais os reflexos daqueles companheiros (des)encarnados, os quais se conjugam ao nosso modo de proceder e de ser e nos atingem com sugestões destruidoras (in)diretas e nos conduzem a deploráveis fenômenos de alienação mental na obsessão comum, mesmo quando no jogo das aparências possamos aparecer como pessoas espiritualmente sadias.<br/>
+Convém lembrar que apenas o sentimento reto pode esboçar o reto pensamento, sem os quais a alma adoece pela carência de equilíbrio interior e imprime no aparelho somático os desvarios e as perturbações que são consequentes a ele.<br/>
+<br/>
+16) 
+</td>
+<td>
+Esses inimigos queridos são afetos que distanciaste e agora retornam, magoados, em desajuste, carentes de amor, que deixaste em sofrimento no caminho já percorrido. Joanna, Luz da Esperança, p. 51<br/>
+<br/>
+Todos os que amam e sofrem porque são desprezados pelos que são amados, retornam ao regaço perverso com os limites que decorrem das dores que se impuseram, a fim de serem luarizados e erguidos ao altar da perfeita identificação com o bem.<br/>
+<br/>
+Se, no entanto, a dor os elevou às cumeadas da redenção, retornarão para recolher, na reencarnação dorida, o verdugo sitiado em amarguras e desesperos a que faz jus, ansiosos por se recuperarem do mal que praticaram. Joanna, Luz da Esperança, p. 88<br/>
+<br/>
+Em momento algum de tua vida, jamais te sentirás a sós, se aprenderes a identificar Jesus ao teu lado. Joanna, Luz da Esperança, p. 161
+</td>
+</tr>
+<tr class="alt">
+<td>
+Na tradução indiana, desde priscas eras, canta-se a frase: Leva-me à outra margem... Assim apelam vendedores, condutores, cancioneiros, pastores...<br/>
+A outra margem da vida é a imortalidade, a continuidade do existir, que as experiências conduzem de um para outro lado vibratório do processo evolutivo.<br/>
+O amor é o missionário que sempre se encarrega de levar aqueles que se deixam transportar pela sua canção. A mensagem de que é portador não se encontra no mercado ou em farmácias especializadas. Está no imo do coração, bastando, somente, que a pessoa a busque silenciosamente e a exteriorize.<br/>
+De sublime constituição, mais beneficia aquele que o oferta, que propriamente aquele que o recebe.<br/>
+É qual perfume que permanece nas mãos que o brindam, como sucede com todo aquele que doa rosas.<br/>
+Divaldo p/ Joanna, Jesus e Vida, p. 112
+</td>
+<td>
+Quando observamos uma rosa exteriorizando perfume carreado pela brisa, deparamo-nos com a gratidão do vegetal que transformou húmus e água em aroma delicado. Divaldo p/ Joanna, Psicologia da Gratidão, p. 17<br/>
+<br/>
+A batalha travada com a sombra é contínua e faz-se presente em todos os instantes da existência. Quando se ama, se respeita e se atende aos compromissos, a sombra perde, mas quando se reage, mantendo-se ressentimento, ódio, ciúme, sentimentos de amargura e de cólera assim como outros do mesmo gênero, a sombra triunfa... p. 42<br/>
+<br/>
+Diante do quadro de sombra individual e coletiva que domina a sociedade moderna, a gratidão assume um papel relevante, porque iniciando na emoção superior do reduto doméstico, no próprio indivíduo e por si mesmo, amplia-se na direção dos grupos sociais, considerando sempre tudo quanto a vida tem proporcionado gratuitamente sem nada pedir em volta, exceto que se mantenha o equilíbrio necessário para o prosseguimento do processo de evolução. p. 69<br/>
+<br/>
+Quem não tropeça jamais avança, porque todo caminho apresenta dificuldade e somente isso acontece a quem se encontra de pé, prosseguindo adiante. p. 73<br/>
+<br/>
+Cada ser humano é um cosmo específico, cuja origem perde-se nos penetrais do infinito. p. 79<br/>
+<br/>
+O único sentido de ser humano propõe como foco primordial a emoção do amor que será alcançada. No oceano do amor, tudo se confunde em plenitude, logo em superação do ego e dos arquétipos perturbadores. p. 81<br/>
+<br/>
+A astúcia é uma herança do instinto felino e não efeito da inteligência... p. 121<br/>
+<br/>
+
+</td>
+</tr>
+<!--
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr class="alt">
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>Prendam o pastor gay, o padre gay, o bispo gay, o arcebispo gay, o cardeal gay e o papa gay.
+</td>
+<td>Prendam o pastor, o padre, o bispo, o arcebispo, o cardeal e o papa.
+</td>
+</tr>
+-->
+</tbody></table>
+<br>
+<br>
+<i>in <a href="http://www.claudino.webs.com/index.html">principio</a></i>...
+<br>
+<a href="http://www.claudino.webs.com/citacoes/espiritismo2013.htm"><font color="red" face="lucida sans unicode">&#8656;</font></a><br>
+<a href="http://www.claudino.webs.com/citacoes/joanna_massif.htm"><font color="blue" face="lucida sans unicode">&#8658;</font></a>
+<br/>
++55 19 999 17 36 50<br/>
++55 31 98526 7474
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6a876756793f5210',m:'JozwHvJ.sAOYfRysMUaJg3Vo75_DzV5vNQrAlpi7GHA-1635961394-0-ATq/satUNEXyL7CkZZI79B1ASXSZ+sDZF0g3E8voIaCFMYqb1WVABGBeDtghWooNeEpGnhfXDfOzXxQkCQT9tbrZ7G7vSkxB9cwb2c4SLnCn2ZPkfGRBNVOUQ07wHRP439Eqx+9gF2SQpEU7fK3uTa0=',s:[0x0c28ad873a,0xfe3a7325df],}})();</script><a href="                 

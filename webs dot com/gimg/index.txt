@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Sem login no Google</title>
+<style type="text/css">
+table.fix {table-layout:fixed}
+</style>
+</head>
+
+<body>
+<table class="fix" width="100%">
+  <col width="50%"></col>
+  <col width="50%"></col>
+  <tr>
+    <td></td>
+    <td><h3>O Social</h3></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="ilson.jpg" width="601" height="398"/></td>
+    <td>Procura-se <a href="../ilson.htm">Ilson Ferreira</a>, pai de uma chegada. Por onde andará?</td>
+  </tr>
+  <tr>
+  <tr>
+    <td></td>
+    <td><h3>Bom Combate</h3></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="simbolico.jpg" width="461" height="336"/></td>
+    <td>2006. sonho profundo 3. simbólico</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><h3>Mediunidade</h3></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="lateral.jpg" width="90" height="87" /></td>
+    <td>vento na lateral</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="trespass.jpg"/></td>
+    <td>proibido trespassar</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="alargamento.gif"/></td>
+    <td>alargamento no centro</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><h3>A Mídia e Eu</h3></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="woody.png"/></td>
+    <td>Eu gosto d vc!</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="pinky.jpg" width="100" height="144" /></td>
+    <td>Está pensando o mesmo q eu? Bora lá em casa!</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="ele.gif"/></td>
+    <td>falamos em 3a pessoa <font face="lucida sans unicode">&#x21D2;</font> somos indiretos e não valorizamos o tu, o eu, muito menos o nós.</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="vigarista.jpg" width="105" height="79" /></td>
+    <td>Ventos! Ventos duplos! É ele!</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="http://v.claudino.vila.bol.com.br/gimg/juggernaut.jpg" width="150" height="150" /></td>
+    <td>tou bem de adversário 1: os cabeças-de-ferro me declarando guerra.</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="CrazyCatLady.jpg"/></td>
+    <td>tou bem de adversário 2: as psicopatas de todas as idades. se bem q tem umas cabeças de ferro e tem uns malucos também</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="storm.png"/></td>
+    <td>Eis q a tempestade cerebral se tornou real. oq + vcs tao esperando p/ me ajudar?</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="http://v.claudino.vila.bol.com.br/gimg/mummra.jpg"/></td>
+    <td>qual é o espírito mais antigo? heh, essa aí vale + doq hum bilhao! vale uma alma</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="http://v.claudino.vila.bol.com.br/gimg/matrix.jpg"/></td>
+    <td>As crianças nao precisam de ilusão. Muito pelo contrário, todos precisam sair da "escravidão" dela.</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="stormie.jpg"/></td>
+    <td>Procura-se quem quer pagar pra ver se o elemental da chuva está cmg. Basta a passagem.</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="chapolin.jpg"/></td>
+    <td>Sigam-me as boas</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="wuw.jpg" width="600" height="327"/></td>
+    <td><i>I don't remember the time. Now, Michael Jackson remembers that time.</i></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="dolores.jpg" width="600" height="480"/></td>
+    <td><i>What? When? Who? Why? How? Where is Dolores walking around?</i> Sorry! Eu nao guento esperar as bandas de abertura. <i>When do the saints go marching in?</i></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="apareceu.jpg"/></td>
+    <td>sbt pós lombardi = x</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><h3><a href="../gatherer/batelada.htm">Cartas</a> Defensivas</h3></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="green.jpg"/></td>
+    <td>Contra falsos naturebas...</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="blue.jpg"/></td>
+    <td>Contra falsos sábios...</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="realm.jpg"/></td>
+    <td>Contra os espíritos endurecidos, os que se comprazem no mal (<a href="../citacoes/Allan Kardec - O Evangelho Segundo o Espiritismo.pdf" target="_blank">E.S.E.</a>, cap. 28, itens 75 e 76)</td>
+  </tr>
+</table>
+
+<a href="../ag.pdf">L<sub>A</sub>T<sup>E</sup>X</a><br/>
+L<sub>A</sub>T<sup>E</sup>X <a href="../agimg.pdf">Ilustrado</a><br/>
+<br/>
+<i>in <a href="../index.html">principio</a>...
+</html>
