@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+\textbf{The exponential of Infinity}
+\end{center}
+
+\normalsize
+
+When (2) exists?
+
+\begin{align}
+  X(j\omega) &= \cfrac{1}{a + bj\omega} \\
+  x(t) &=\cfrac{1}{2\pi} \int_{-\infty}^{\infty} \cfrac{1}{a + bj\omega}\, e^{j\omega t} \,\mathrm{d}\omega \\
+  u &= j\omega t + \cfrac{at}{b} = p + qj \\
+  du &= jt\, d\omega = j\,dq \\
+  j\omega &= \cfrac{u}{t} - \cfrac{a}{b} \\
+  x(t) &= \cfrac{1}{2\pi} \int_{\alpha}^{\beta} \cfrac{1}{u}\,\cfrac{b}{t}\, e^{u - at/b} \,\mathrm{d}u\,\cfrac{1}{jt} \\
+  x(t) &= -\cfrac{bj}{2\pi t^2}\, e^{-at/b} \int_{\alpha}^{\beta} \cfrac{e^u}{u} \,\mathrm{d}u \\
+  \cfrac{e^u}{u} &= \cfrac{e^p (\cos q + j \sin q)}{p + qj} \\
+  \cfrac{e^u}{u} &= e^p \cfrac{(\cos q + j \sin q)(p - qj)}{p^2 + q^2} \\
+  \Re \cfrac{e^u}{u} &= e^p \cfrac{p \cos q + q \sin q}{p^2 + q^2} \stackrel{\text{wolfram}}{\longrightarrow} 2 \pi \\
+  \Im \cfrac{e^u}{u} &= e^p \cfrac{-q \cos q + p \sin q}{p^2 + q^2} \stackrel{\text{wolfram}}{\longrightarrow} 0 \\
+  -\infty \le q &\le +\infty \\
+  \therefore &\mathcal{F}\bigg( -\cfrac{bj}{t^2}\, e^{-at/b} \bigg) = \cfrac{1}{a + bj\omega}
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 3/Octo/2019
+
+\end{document}

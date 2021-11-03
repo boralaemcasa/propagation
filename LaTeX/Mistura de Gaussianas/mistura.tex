@@ -1,0 +1,242 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Reconhecimento de Padr\~oes | Aula 10 \\
+Misturas de Gaussianas
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+rm(list=ls())
+library('plot3D')
+library('mlbench')
+p<-mlbench.spirals(1000,cycles=1, sd=0.05)
+plot(p)
+
+n <- 1000
+totalM <- matrix(0,ncol=3,nrow=n)
+for (i in 1:n) {
+  totalM[i,1] <- p[1]$x[i,1]
+  totalM[i,2] <- p[1]$x[i,2]
+  totalM[i,3] <- p[2]$classes[i]
+}
+
+write.csv(totalM, file="e:\\_vinicius\\spirals.csv")
+
+#FIZ ISSO PARA LEVAR PARA O LABORATORIO ONDE NAO FUNCIONA mlbench
+
+heart <- read.csv("V:\\_46 reconhecimento padroes\\aula 10\\spirals.csv", sep=",",
+header=FALSE)
+tudo <- as.matrix(heart)
+
+n <- 1000
+totalM <- matrix(0,ncol=3,nrow=n)
+for (i in 1:n) {
+  totalM[i,1] <- tudo[i,2]
+  totalM[i,2] <- tudo[i,3]
+}
+
+nn <- 20
+totalM <- kmeans(nn, totalM, n, 3)
+
+cores <- rainbow(nn)
+
+
+	  for (j in 1:nn) {
+	    contador <- 0
+	    for (i in 1:n)
+	      if (totalM[i, 3] == j) {
+	        contador <- contador + 1
+	      }
+	    teste <- matrix(0,ncol=2,nrow=contador)
+	    contador <- 1
+	    for (i in 1:n)
+	      if (totalM[i, 3] == j) {
+	        teste[contador,1] = totalM[i,1]
+	        teste[contador,2] = totalM[i,2]
+	        contador <- contador + 1
+	      }
+
+	    plot(teste[,1],teste[,2],col = cores[j], xlim = c(-1,1),ylim = c(-1,1),
+    	    xlab = '' , ylab= '' )
+	    if (j < nn)
+  	    par(new=T)
+	  }
+
+
+linhas <- 1000
+colunas <- 2
+final <- 3
+
+acuracia <- matrix(0,10)
+offset <- 0
+
+cc <- matrix(0,nrow=nn)
+
+xc <- array(0, c(n,2,nn)))
+xc[,,1]
+cc[1]
+
+for (kk in 1:10) { #calcular acuracia[kk] da classe c1
+  for (jj in 1:nn)
+    for (i in 1:linhas) {
+      if (totalM[i, 3] == jj)
+        cc[jj] <- cc[jj] + 1
+      for (j in 1:2)
+          xc[cc[jj], j, jj] <- totalM[i, j]
+    }
+
+  testeN <- trunc(cc[1] * 0.1) + 1
+  if (offset + testeN > cc[1])
+    testeN <- cc[1] - offset
+
+  teste <- matrix(0,nrow=testeN,ncol=2)
+  trein <- matrix(0,nrow=cc[1]-testeN,ncol=colunas)
+
+  c <- 1
+  t <- 1
+  for (i in 1:linhas)
+    if (totalM[i, 3] == 1) {
+      flag <- 0
+      if ((c > offset) & (c - offset <= testeN)) {
+        for (j in 1:2)
+          teste[c - offset, j] <- totalM[i, j]
+        flag <- 1
+      }
+
+      if (flag == 0) {
+        if (t  <= cc[1] - testeN)
+          for (j in 1:2)
+            trein[t, j] <- totalM[i, j]
+        t <- t + 1
+      }
+
+      c <- c + 1
+    }
+
+  media <- matrix(0,nrow=nn,ncol=2)
+  #MEU nn EH 20 ==> EU VOU TER 20 * 2 MEDIAS (X, Y)
+
+  for (jj in 1:nn) {
+    somax <- 0
+    somay <- 0
+    for (j in 1:cc[jj]) {
+      somax <- somax + xc[j,1,jj]
+      somay <- somay + xc[j,2,jj]
+    }
+    media[jj,1] <- somax / cc[jj]
+    media[jj,2] <- somay / cc[jj]
+  }
+
+  p <- matrix(0,nrow=testeN,ncol=nn)
+  #AO INVES DE p E q ANTIGOS, AGORA TEMOS COLUNAS 1 E 2 DE p (DE 1 A nn = 20)
+
+  for (jj in 1:nn) {
+    K <- cov(xc[,,jj])
+    for (i in 1:testeN)
+      p[i,jj] <- pdfnvar(teste[i,], media[jj,], K, colunas)
+  }
+
+    acertos <- 0
+    for (i in 1:testeN) {
+      #SOMAR AS PROBABILIDADES DE 2 A 20
+      denom = 0
+      for (jj in 2:nn)
+	        denom <- denom + (p[i,jj] * cc[jj]/linhas)
+      if (denom == 0)
+        acertos <- acertos + 0
+      else {
+        #SOMAR AS PROBABILIDADES DE 1 A 1
+     	  numerador <- (p[i,1] * cc[1]/linhas)
+        #numerador <- numerador + (p[i,2] * cc12/linhas)
+        #numerador <- numerador + (p[i,3] * cc13/linhas)
+
+        f <- numerador / denom
+        if (f >= 1)
+          acertos <- acertos + 1
+      }
+    }
+
+    acuracia[kk] <- acertos * 100 / testeN
+    offset <- offset + testeN
+}
+
+mean(acuracia)
+sd(acuracia)
+#ZERO ACERTOS EM TOTAL
+
+dist <- function(x, y) { sqrt((x[1] - y[1])^2 + (x[2] - y[2])^2) }
+
+kmeans <- function(k, M, linhas, index) {
+  centro <- matrix(0,ncol=2,nrow=k)
+  for (i in 1:k) {
+    a <- sample(1:linhas, 1)
+    centro[i,1] <- M[a,1]
+    centro[i,2] <- M[a,2]
+  }
+
+	distancia <- matrix(0,k)
+  novoCentro <- matrix(0,ncol=2,nrow=k)
+
+  while (TRUE) {
+	  for (i in 1:linhas) {
+	    for (j in 1:k)
+	      distancia[j] <- dist(M[i,], centro[j,])
+	    M[i,index] <- 1
+	    min <- distancia[1]
+	    for (j in 2:k)
+	      if (distancia[j] < min) {
+	        M[i,index] <- j
+	        min <- distancia[j]
+	      }
+	  }
+
+	  for (j in 1:k) {
+	    sx <- 0
+	    sy <- 0
+	    contador <- 0
+	    for (i in 1:linhas)
+	      if (M[i, index] == j) {
+	        sx <- sx + M[i,1]
+	        sy <- sy + M[i,2]
+	        contador <- contador + 1
+	      }
+	    novoCentro[j,1] <- sx / contador
+	    novoCentro[j,2] <- sy / contador
+	  }
+
+    flag <- TRUE
+    for (j in 1:k)
+  	  if ((novoCentro[j,1] != centro[j,1]) | (novoCentro[j,2] != centro[j,2]))
+	      flag <- FALSE
+
+    if (flag)
+      return(M)
+
+    centro <- novoCentro
+  }
+}
+
+pdfnvar <- function(x,m,K,n) {1/sqrt((2*pi)^n * (det(K)))*exp(-0.5*(t(x - m)%*%(solve(K))%*%(x-m)))}
+\end{verbatim}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 18/Sep/2019, Release $1.0$
+
+\end{document}

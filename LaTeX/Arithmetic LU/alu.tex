@@ -1,0 +1,157 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+A.L.U.
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+-- alu - An arithmetic Logic Unit
+-- Copyright (C) 2018  Digital Systems Group - UFMG
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, see <https://www.gnu.org/licenses/>.
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity alu is
+    generic (
+        W       :       integer := 32
+    );
+    port (
+        CONTROL : in    std_logic_vector(3 downto 0);
+        SRC1    : in    std_logic_vector(W - 1 downto 0);
+        SRC2    : in    std_logic_vector(W - 1 downto 0);
+        RESULT  : out   std_logic_vector(W - 1 downto 0);
+        ZERO    : out   std_logic
+    );
+end alu;
+
+
+-- Define the architecture for this entity.
+-- Consider the following operations to calculate the value or RESULT:
+--      CONTROL             RESULT
+--      0000                SRC1 and SRC2
+--      0001                SRC1 or SRC2
+--      0010                SRC1 + SRC2
+--      0110                SRC1 - SRC2
+--      0111                SRC1 < SRC2 ? 1 : 0
+--      1100                NOT( SRC1 or SRC2 )
+
+-- Consider the following behavior for the ZERO output:
+--  ZERO <= RESULT == 0 ? 1 : 0
+
+architecture arch of alu is
+SIGNAL myzero : std_logic_vector(W - 1 downto 0);
+SIGNAL myResult : std_logic_vector(W - 1 downto 0);
+begin
+  myzero <= (others => '0');
+
+  myResult <= SRC1 and SRC2 WHEN CONTROL = "0000" ELSE
+            SRC1 or SRC2 WHEN CONTROL = "0001" ELSE
+	 		   std_logic_vector(unsigned(SRC1) + unsigned(SRC2))  WHEN CONTROL = "0010" ELSE
+	 		   std_logic_vector(unsigned(SRC1) - unsigned(SRC2))  WHEN CONTROL = "0110" ELSE
+	 		   (0 => '1', others => '0')  WHEN CONTROL = "0111" and (SRC1 < SRC2) else
+	 		   (others => '0')  WHEN CONTROL = "0111" and (SRC1 >= SRC2) else
+	 		   NOT( SRC1 or SRC2 ) WHEN CONTROL = "1100" else myzero;
+
+	ZERO <= '1' WHEN myResult = myzero ELSE '0';
+	result <= myResult;
+end arch;
+
+\end{verbatim}
+
+\vspace{10mm}
+
+\Large
+
+\begin{center}
+Test Bench
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_alu is
+--    generic (
+--        myW       :       integer := 16
+--    );
+end tb_alu;
+
+architecture teste of tb_alu is
+
+component alu is
+    generic (
+        W       :       integer := 16
+    );
+    port (
+        CONTROL : in    std_logic_vector(3 downto 0);
+        SRC1    : in    std_logic_vector(W - 1 downto 0);
+        SRC2    : in    std_logic_vector(W - 1 downto 0);
+        RESULT  : out   std_logic_vector(W - 1 downto 0);
+        ZERO    : out   std_logic
+    );
+end component;
+
+signal C : std_logic_vector(3 downto 0);
+signal S1,S2,R: std_logic_vector(16 - 1 downto 0);
+SIGNAL Z: STD_LOGIC;
+begin
+instancia_alu: alu     generic map (W => 16)	 port map(CONTROL=>C,
+                                          SRC1=>S1,
+                                          SRC2=>S2,
+                                          RESULT=>R,
+                                          ZERO=>Z);
+C <= x"0",
+     x"1" after 10 ns,
+	  x"2" after 20 ns,
+	  x"4" after 30 ns,
+	  x"7" after 40 ns,
+	  x"C" after 50ns;
+S1 <= (x"0000"),
+      (x"1111") after 10 ns,
+		(x"2222") after 20 ns,
+		(x"3333") after 30 ns,
+		(x"4444") after 40 ns,
+		(x"5555") after 50ns;
+S1 <= x"6666", x"7777" after 10 ns, x"8888" after 20 ns, x"9999" after 30 ns, x"AAAA" after 40 ns, x"BBBB" after 50ns;
+end teste;
+\end{verbatim}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 6/Sep/2019, Release $1.0$
+
+\end{document}

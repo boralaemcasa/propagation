@@ -1,0 +1,28 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{eucal}
+\usepackage{array,bm}
+\usepackage{graphicx} %jpg
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\newenvironment{myenum}
+{ \begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{enumerate}                  }
+\begin{document}
+
+		\begin{align*}
+    F: \mathbb{R}^p &\rightarrow \mathbb{R}^q \\
+    \mathrm{d}F_p &= [a]_{q \times p} \\
+    \mathrm{d}F_p(u) &= \sum_{i \le q} \sum_{j \le p} a_{ij} \cdot u_j \cdot e_i \\
+    \mathrm{d}^2F_p &= [a]_{q \times p \times p} \\
+    \mathrm{d}^2F_p(u,v) &= \sum_{i \le q} \sum_{j \le p} \sum_{k \le p} a_{ijk} \cdot u_j \cdot v_k \cdot e_i \\
+    \mathrm{d}^3F_p &= [a]_{q \times p \times p \times p} \\
+    \mathrm{d}^3F_p(u,v,w) &= \sum_{i \le q} \sum_{j \le p} \sum_{k \le p} \sum_{\ell \le p} a_{ijk\ell} \cdot u_j \cdot v_k \cdot w_\ell \cdot e_i
+		\end{align*}
+
+\end{document}

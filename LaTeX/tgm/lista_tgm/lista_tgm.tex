@@ -1,0 +1,382 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Listas de Teoria Geom\'etrica da Medida
+\end{center}
+
+\normalsize
+
+\textbf{Lista $1$}
+
+\vspace{3mm}
+
+(1)
+
+Seja $f : \mathbb{R}^n \to \mathbb{R}$ uma fun\c{c}\~ao Lebesgue mensur\'avel.
+
+Para todo $\epsilon > 0$, fixe $\ell < \sqrt[n]{\epsilon}$.
+
+Seja $A = B(0, \ell)$ cubo aberto de lado $\ell$.
+
+O conjunto $F = \mathbb{R}^n - A$ \'e fechado.
+
+$\mathcal{L}^n(\mathbb{R}^n - F) = \mathcal{L}^n(A) = \ell^n < \epsilon$.
+
+Agora queremos que $f$ seja cont\'inua em $F$.
+
+Simples: o conjunto de \{descontinuidades\} tem medida nula. Caso contr\'ario, $f$ n\~ao seria mensur\'avel.
+
+(Observa\c{c}\~ao: Existem m\'etricas tais que $f$ n\~ao seria mensur\'avel; n\~ao s\~ao todas as m\'etricas.
+
+$g$ \'e cont\'inua em $x_0$ se e s\'o se $\forall \epsilon > 0, \exists \delta > 0 ; |x - x_0|_1 < \delta \Rightarrow |g(x) - g(x_0)|_2 < \epsilon$.
+
+Tem a fun\c{c}\~ao $g: \mathbb{R} \to \mathbb{R} ; g(\mathbb{Q}) = y_q ; g(\mathbb{R} - \mathbb{Q}) = y_i$. Eu sei l\'a em que m\'etricas ela \'e mensur\'avel.)
+
+\vspace{3mm}
+
+(Coment\'arios) Considerar m\'etrica euclideana. Olhar a prova do teorema de Lusin. Considerar o fecho de $B_1(\epsilon/k),\cdots,(B_3 - B_2)(\epsilon/2^k)$.
+
+O erro \'e que \'e para toda $f$.
+
+\vspace{3mm}
+
+(2)
+
+*** Definir borel-mensur\'avel.
+
+\vspace{3mm}
+
+(3)
+
+A medida da bola \'e finita. A medida do bordo da bola \'e nula. O conjunto $\{ s \le r ; \mu(\partial B) > 0 \} = \emptyset$ \'e vazio.
+
+\vspace{3mm}
+
+(Coment\'arios) a medida $\delta_0$ do bordo de $[-1, 0]$ pode ser $1$.
+
+Provar que $\mu (\partial B) = 0$ q.t.p. $s \in \mathbb{R}$.
+
+\vspace{3mm}
+
+(4. Morreu.)
+
+Seja $\mu$ uma medida de Radon sobre $\mathbb{R}^n$ e $f : \mathbb{R}^n \to \mathbb{R}$ de suporte compacto.
+
+Isso quer dizer que podemos considerar um conjunto limitado $L \subset B(0, r)$ contido numa bola, tal que fora de $L$, $f$ \'e identicamente nula.
+
+Provar que $E = \{ t \in \mathbb{R} ; \mu(f^{-1}(t)) > 0 \}$ \'e enumer\'avel.
+
+Seja o valor regular $t_0$.
+
+A pr\'e-imagem de $t_0$ \'e $D \subset \mathbb{R}^n$, subconjunto do dom\'inio.
+
+Descartamos $\mu(D) = 0$. (curva do plano, superf\'icie de $\mathbb{R}^3$)
+
+Quando \'e que $\mu(D) > 0$ ? \'Area do plano, volume de $\mathbb{R}^3$.
+
+Queremos mostrar que $m := \mathcal{L}^1(E) = 0$.
+
+Gostar\'iamos que o conjunto $C = \{ (D, t_0) ; t_0 \in E \}$ fosse uma reuni\~ao enumer\'avel de volumes de $\mathbb{R}^n$.
+
+Por que \'e imposs\'ivel que $C$ seja uma reuni\~ao n\~ao enumer\'avel de volumes de $\mathbb{R}^n$?
+
+Simples, o gr\'afico $\Gamma f \subset \mathbb{R}^{n + 1}$ tem medida de Lebesgue nula.
+
+\vspace{3mm}
+
+\vspace{3mm}
+
+(5. Morreu.)
+
+Seja $\mu$ uma medida exterior, $A \subset B$, $B, C$ s\~ao $\mu$ mensur\'aveis. $m := \mu(A) = \mu(B) < \infty$.
+
+Sejam $p = \mu(A \cap C), q = \mu(B \cap C)$.
+
+Provar que $q = p$. Isso \'e evidente se $A \subset C \subset B$.
+
+Dividimos nosso diagrama de Venn em $5$ partes: $X_1 = B - A - C; X_2 = A - B - C ; X_3 = A \cap B \cap C ;$
+
+$X_4 = (B \cap C) - A ; X_5 = C - B - A$.
+
+$p = \mu(X_3) ; q = \mu(X_3 \cup X_4)$
+
+$s := \mu(X_4) = \mu((B - A) \cap C)) \le \mu(B - A) = 0$. Q.E.D.$\,\,\blacksquare$
+
+\vspace{100mm}
+
+(6. Morreu.)
+
+Se eu entendi bem, este problema em dimens\~ao $2$ se reduz a
+
+\begin{align}
+  b_1 y_1 + b_2 y_2 &= \cfrac{1}{k}\cdot \int_{\gamma}^{\theta} \int_{\alpha}^{\beta} (x_1 y_1 + x_2 y_2) \,\mathrm{d}x_1 \,\mathrm{d}x_2 \\
+  &= \cfrac{1}{k}\cdot \int_{\gamma}^{\theta} \bigg[\cfrac{x_1^2 y_1}{2} + x_1 x_2 y_2 \bigg]_{x_1 = \alpha}^{\beta} \,\mathrm{d}x_2 \\
+  &= \cfrac{1}{k}\cdot \bigg[\cfrac{(\beta^2 - \alpha)^2 y_1}{2}\cdot x_2 + \cfrac{(\beta - \alpha) x_2^2 y_2}{2} \bigg]_{x_2 = \gamma}^{\theta} \\
+  \therefore b_1 &= \cfrac{1}{k}\cdot \cfrac{(\beta^2 - \alpha)^2}{2}\cdot (\theta - \gamma) \\
+  b_2 &= \cfrac{1}{k}\cdot \cfrac{(\beta - \alpha) (\theta^2 - \gamma^2)}{2}
+\end{align}
+
+Generalizando, est\'a provado que
+
+\begin{align}
+  b_1 y_1 + \cdots + b_n y_n &= \cfrac{1}{k}\cdot \int_{\alpha_n}^{\beta_n} \cdots \int_{\alpha_1}^{\beta_1} (x_1 y_1 + \cdots + x_n y_n) \,\mathrm{d}x_1 \cdots \,\mathrm{d}x_n \\
+  b_i &= \cfrac{1}{2k}\cdot (\beta_1 - \alpha_1) \cdots (\beta_n - \alpha_n) (\beta_i + \alpha_i), \forall i \in \{1, \cdots, n\}
+\end{align}
+
+Portanto, existe $b(x,y)$ dado pelas coordenadas.
+
+\vspace{3mm}
+
+Weierstrass $\Rightarrow \int_U f = f(x_0)$.
+
+De gra\c{c}a. A fun\c{c}\~ao \'e $f(x) = x \cdot y$. Sua integral \'e $x_0 \cdot y$.
+
+Logo, sua integral vezes $1/k$ \'e $1/k \cdot x_0 \cdot y \therefore b = 1/k \cdot x_0$.
+
+Quais s\~ao as hip\'oteses, al\'em de conexidade? Enche\c{c}\~ao de lingui\c{c}a.
+
+\vspace{3mm}
+
+(7)
+
+*** Definir $\int_M f(x) \cdot \sigma(x) \,\mathrm{d}\mu(x)$
+
+\vspace{3mm}
+
+(Coment\'arios) Considere de novo, Lusin.
+
+Isso a\'i \'e alguma medida em particular, pelo teo. da representa\c{c}\~ao de Riesz. Por que $\mu$ coincide?
+
+\vspace{3mm}
+
+(8)
+
+Suponha $M^n$ um espa\c{c}o m\'etrico localmente compacto e separ\'avel.
+
+Seja $\mu$ uma medida de Radon em $M^n$. Ent\~ao para cada conjunto $A \subset M^n$, mensur\'avel ou n\~ao,
+
+\begin{align}
+\mu(A) &=  \inf \{ \mu(U)\,;\,A \subset U,\,U\text{ aberto} \}
+\end{align}
+
+E para cada $\mu$-mensur\'avel conjunto $A \subset M^n$,
+
+\begin{align}
+\mu(A) &=  \sup \{ \mu(K)\,;\,K \subset A,\,K\text{ compacto} \}
+\end{align}
+
+***
+
+\vspace{100mm}
+
+(9)
+
+Seja $M^n$ um espa\c{c}o m\'etrico localmente compacto e n\~ao separ\'avel.
+
+Seja $\mu$ uma medida de Radon em $M^n$. Ent\~ao existe conjunto $A \subset M^n$, mensur\'avel ou n\~ao,
+
+\begin{align}
+\mu(A) &\ne  \inf \{ \mu(U)\,;\,A \subset U,\,U\text{ aberto} \}
+\end{align}
+
+E existe $\mu$-mensur\'avel conjunto $A \subset M^n$,
+
+\begin{align}
+\mu(A) &\ne  \sup \{ \mu(K)\,;\,K \subset A,\,K\text{ compacto} \}
+\end{align}
+
+***
+
+\vspace{3mm}
+
+(10)
+
+Se eu entendi esta quest\~ao em uma dimens\~ao, $A \subset \mathbb{R}$ \'e no m\'inimo conjunto de irracionais, por ter medida de Lebesgue maior que zero.
+
+Seja $B = \{ x - y ; x,y \in A \}$ o conjunto das diferen\c{c}as entre irracionais, que cobre tanto irracionais quanto racionais.
+
+Logo, $B$ cont\'em um intervalo $(\alpha, \beta) \subset B(c, r) \subset \mathbb{R}$, contido em bola, contido na reta.
+
+\vspace{3mm}
+
+(Coment\'arios) Considere regularidade de $L^1$. Suporte. Abertos. ou convolu\c{c}\~ao. (Deve ser uma convolu\c{c}\~ao que vai me dar o $\iint_S F\cdot n\,\mathrm{d}S$.
+
+\vspace{3mm}
+
+(11. Morreu.)
+
+Subgrupos aditivos da reta s\~ao $(G,+) \ni 0$. $x \in G \Rightarrow \pm \lambda x \in G$. Logo s\~ao os m\'ultiplos $M(x) = \alpha_i \cdot G_i$, qualquer que seja $\alpha \in \mathbb{R}, G_i$ dentre $G_1 = \mathbb{Z} ; G_2 = \mathbb{Q} ; G_3 = \mathbb{R}$.
+
+Subgrupos aditivos de $\mathbb{R}^n$ est\~ao contidos em: $\alpha_1 G_{i_1} \times \alpha_2 G_{i_2} \times \cdots \times \alpha_n G_{i_n} ; i_j \in \{ 1, 2, 3 \}$.
+
+\vspace{3mm}
+
+Ou a medida de Lebesgue \'e zero, ou pelo exerc\'icio (10), ele cont\'em uma bola e por isso se iguala a $\mathbb{R}^n$.
+
+\vspace{3mm}
+
+(12)
+
+*** Definir $D_{\mu} \nu(x)$.
+
+\vspace{3mm}
+
+(13)
+
+*** Definir 2 medidas mutuamente singulares.
+
+\vspace{3mm}
+
+(14)
+
+Seja $(X, \sigma)$ um espa\c{c}o de medida. Seja $A \notin \sigma$ conjunto n\~ao mensur\'avel.
+
+A fun\c{c}\~ao dada por $h : X \to \mathbb{R} ; h(A) = 1 ; h(A^c) = 0$ n\~ao \'e mensur\'avel.
+
+Uma fun\c{c}\~ao \'e $f(x) = x + 1$, algebricamente mensur\'avel.
+
+$g : X \to Y ; g(A) = 0 ; g(A^c) = -1$.
+
+$f : Y \to \mathbb{R} ; f(0) = 1 ; f(-1) = 0$.
+
+$h = f \circ g$
+
+A fim de que $g$ seja mensur\'avel, exigimos que $A^c \in \sigma$ seja mensur\'avel.
+
+(Veio da wikipedia. Existe mesmo ou \'e absurdo?)
+
+\vspace{3mm}
+
+(15)
+
+*** Definir $X$ \'e $\sigma$-finito em rela\c{c}\~ao a $\mu$.
+
+\vspace{3mm}
+
+(16a)
+
+$(X, \sigma, \mu)$.
+
+$\forall E \in \sigma ; \mu(E) > 0, \exists F \in \sigma, F \subset E ; 0 < \mu(F) < \mu(E)$.
+
+$\forall \epsilon > 0, \exists X_1, \cdots, X_n $ mensur\'aveis tais que $X_1 \cup \cdots \cup X_n = X, \mu(X_i) \le \epsilon$.
+
+***
+
+\vspace{3mm}
+
+(16b)
+
+$\forall \alpha \in [0, \mu(X)], \exists E \in \sigma ; \mu(E) = \alpha$.
+
+***
+
+\vspace{3mm}
+
+\textbf{Lista $2$}
+
+\vspace{3mm}
+
+(1.a)
+
+$H^s$ em geral n\~ao \'e medida de Radon sobre $\mathbb{R}^n$ porque estoura para infinito em algum compacto $K$,
+
+construa $K$.
+
+***
+
+\vspace{3mm}
+
+(1.b)
+
+$(X, \sigma).\,A_n \notin \sigma$.
+
+***
+
+\vspace{3mm}
+
+(1.c)
+
+$A$ tem di\^ametro $2r$. Mas $A \not\subset B(x, r)$, para todos $x, r$.
+
+an\'alise funcional.
+
+***
+
+\vspace{3mm}
+
+(2.1)
+
+$\mu$ \'e absolutamente cont\'inua $\sim H^s \Rightarrow \Theta^*_s(\mu, x)$ \'e finito q.t.p.
+
+***
+
+\vspace{3mm}
+
+(2.2)
+
+$\mu$ \'e absolutamente cont\'inua $\sim H^s \Leftarrow \Theta^*_s(\mu, x)$ \'e finito q.t.p.
+
+***
+
+\vspace{3mm}
+
+(3)
+
+$B(x, r)$. $2r = \delta$. $0 \le s \le 1 \Rightarrow H^s_\delta$ \'e o mesmo calculado em $B$, fecho de $B$, bordo de $B$.
+
+***
+
+\vspace{3mm}
+
+(4)
+
+Se $\cdots$ borelianas regulares, separ\'avel $\cdots$ ent\~ao s\~ao diretamente proporcionais $\mu = \alpha \nu,\,\exists \alpha > 0$.
+
+***
+
+\vspace{3mm}
+
+(5)
+
+Mostrar que $\mu(x, \lambda)$ \'e uma medida boreliana.
+
+Decidir se $\mu(x, \lambda)$ \'e uma medida de Radon.
+
+Se [fra\c{c}\~ao] converge fracamente para $\theta \Omega$ quando $\lambda \to 0$, ent\~ao limite [outra fra\c{c}\~ao] $= \theta$.
+
+***
+
+\vspace{3mm}
+
+(6.a)
+
+Calcule o limite $\varphi(r)$ quando $r \to 0$.
+
+***
+
+\vspace{3mm}
+
+(6.b)
+
+Mostre que o limite $\psi(r, z)$ quando $r \to 0$ \'e igual a $1, \forall z$.
+
+***
+
+\vspace{3mm}
+
+Fora da caridade, n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.
+
+Vinicius Claudino Ferraz, vers\~ao $0.1.3$ de 28/fev/2020.
+
+\end{document}

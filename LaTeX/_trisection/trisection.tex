@@ -1,0 +1,536 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{cancel}
+\usepackage{hyperref} %a href
+\usepackage{gensymb}
+\usepackage{colortbl}
+\usepackage{amsthm}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{example}{Example}
+\newtheorem*{coro}{Main Corollary}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+Main Video on \href{https://www.youtube.com/watch?v=wio-6zjSsV4}{\color{blue}\underline{YouTube}}.
+
+\section{Introduction}
+
+We know, by Wolfram's and Alpha's powers that:
+
+\begin{align}
+\cos \cfrac{2 \pi}{5} &= \cfrac{\sqrt{5} - 1}{4} \Rightarrow \sin \cfrac{2 \pi}{5} = \cfrac{\sqrt{2}}{4} \sqrt{5 + \sqrt{5}} \\
+\cos 30\degree &= 2 \cos^2 15\degree - 1 \\
+a_1 &= 2 x_1^2 - 1 \Rightarrow x_1 = \sqrt{\cfrac{a_1 + 1}{2}} \\
+\cos 72\degree &= 2 \cos^2 36\degree - 1 \\
+a_2 &= 2 x_2^2 - 1 \Rightarrow x_2 = \sqrt{\cfrac{a_2 + 1}{2}} = \sqrt{\cfrac{\cfrac{\sqrt{5} - 1}{4} + 1}{2}} \\
+\cos 36\degree &= 2 \cos^2 18\degree - 1 \\
+a_3 &= 2 x_3^2 - 1 \Rightarrow x_3 = \sqrt{\cfrac{a_3 + 1}{2}} \\
+\cos 18\degree &= 2 \cos^2 9\degree - 1 \\
+a_4 &= 2 x_4^2 - 1 \Rightarrow x_4 = \sqrt{\cfrac{a_4 + 1}{2}} \\
+\cos 27\degree &= 4 x_4^3 - 3 x_4 = x_5 \\
+\cos 30\degree &= 1 - 2 \sin^2 15\degree \\
+a_1 &= 1 - 2 y_1^2 \Rightarrow y_1 = \sqrt{\cfrac{1 - a_1}{2}}\,;\,y_2 = \sqrt{\cfrac{1 - a_2}{2}}\,;\,y_3 = \sqrt{\cfrac{1 - a_3}{2}}\,;\,y_4 = \sqrt{\cfrac{1 - a_4}{2}} \\
+\sin 27\degree &= \sin 9\degree (3 - 4 \sin^2 9\degree) \\
+y_5 &= y_4 (3 - 4 y_4^2) \\
+\cos (30\degree - 27\degree) &= \cfrac{\sqrt{3}}{2} \cdot x_5 + \cfrac{1}{2} \cdot y_5 = x_6 \\
+\sin (30\degree - 27\degree) &= \cfrac{1}{2} \cdot x_5 - \cfrac{\sqrt{3}}{2} \cdot y_5 = y_6 \\
+\cos 3\degree &= 4 \cos^3 1\degree - 3 \cos 1\degree \\
+4z^3 - 3z - x_6 &= 0
+\end{align}
+
+\vspace{3mm}
+
+Now, let's use Cardano:
+
+\begin{align}
+x^3 + px + q &= 0 \\
+p &= - \cfrac{3}{4} \\
+q &= - \cfrac{1}{4} \cdot \left[\cfrac{\sqrt{3}}{2} \cdot \sqrt{\cfrac{a_4 + 1}{2}} \cdot \left(4 \cdot \cfrac{a_4 + 1}{2} - 3 \right) + \cfrac{1}{2} \cdot \sqrt{\cfrac{1 - a_4}{2}} \left(3 - 4 \cdot \cfrac{1 - a_4}{2} \right) \right] \\
+q &= - \cfrac{\sqrt{6}}{16} \cdot \sqrt{a_4 + 1} \cdot (2a_4 - 1 ) - \cfrac{\sqrt{2}}{16} \cdot \sqrt{1 - a_4} \cdot (1 + 2 a_4)
+\end{align}
+
+\begin{align}
+q &= - \cfrac{\sqrt{6}}{16} \cdot \sqrt{\sqrt{\cfrac{\sqrt{\cfrac{\cfrac{\sqrt{5} - 1}{4} + 1}{2}} + 1}{2}} + 1} \cdot \bigg(2\sqrt{\cfrac{\sqrt{\cfrac{\cfrac{\sqrt{5} - 1}{4} + 1}{2}} + 1}{2}} - 1 \bigg) -\\
+  &- \cfrac{\sqrt{2}}{16} \cdot \sqrt{1 - \sqrt{\cfrac{\sqrt{\cfrac{\cfrac{\sqrt{5} - 1}{4} + 1}{2}} + 1}{2}}} \cdot \bigg(1 + 2 \sqrt{\cfrac{\sqrt{\cfrac{\cfrac{\sqrt{5} - 1}{4} + 1}{2}} + 1}{2}}\bigg) \\
+\cfrac{q^2}{4} + \cfrac{p^3}{27} &= \cfrac{q^2}{4} - \cfrac{1}{64} = \cfrac{16q^2 - 1}{64} \\
+w &= - \cfrac{q}{2} + i \cdot \cfrac{\sqrt{1 - 16 q^2}}{8} = z^3\,;\, \arg w = \theta \\
+W &= \overline{w} = Z^3\,;\, \arg W = \overline{\theta} \\
+|w|^2 &= \cfrac{q^2}{4} + \cfrac{1 - 16 q^2}{64} = \cfrac{1}{64} \Rightarrow |z| = \cfrac{1}{2} \\
+\tan \theta &= - \cfrac{\sqrt{1 - 16q^2}}{4q}\,;\, \overline{\theta} = 360\degree - \theta \\
+\arg z &\in \{ \varphi_1, \varphi_1 + 120\degree, \varphi_1 + 240\degree \}\,;\, \varphi_1 = \cfrac{\theta}{3} \\
+\sqrt[3]{w} &= \cfrac{1}{2} \cdot \exp i (\varphi_1 + k_1) \\
+\arg Z &\in \{ \varphi_2, \varphi_2 + 120\degree, \varphi_2 + 240\degree \}\,;\, \varphi_2 = \cfrac{360\degree - \theta}{3} \\
+&= \{ 120\degree  - \varphi_1, 240\degree - \varphi_1, - \varphi_1 \} \\
+\sqrt[3]{W} &= \cfrac{1}{2} \cdot \exp i (k_2 - \varphi_1) \\
+x_1 &= \cfrac{1}{2} \cdot \exp i (1\degree) + \cfrac{1}{2} \cdot \exp i (-1\degree) = \cos 1\degree \\
+x_2 &= \exp i (120\degree) \cdot \cfrac{1}{2} \cdot \exp i (1\degree) + \exp i (240\degree) \cdot \cfrac{1}{2} \cdot \exp i (-1\degree) = - \cos 59\degree \\
+x_3 &= \exp i (240\degree) \cdot \cfrac{1}{2} \cdot \exp i (1\degree) + \exp i (120\degree) \cdot \cfrac{1}{2} \cdot \exp i (-1\degree) = - \cos 61\degree \\
+\cos \cfrac{t}{3} &= \cfrac{1}{2} \cdot \text{principal value of } \sqrt[3]{\cos 3t + i \cdot \sin 3t} + \cfrac{1}{2} \cdot \text{principal value of } \sqrt[3]{\cos 3t + i \cdot \sin 3t} \\
+\sin \cfrac{t}{3} &= \cfrac{1}{2} \cdot \text{principal value of } \sqrt[3]{- \sin 3t + i \cdot \cos 3t} + \cfrac{1}{2} \cdot \text{principal value of } \sqrt[3]{- \sin 3t - i \cdot \cos 3t} \,\,\blacksquare
+\end{align}
+
+\vspace{3mm}
+
+\section{Trisection Theorems}
+
+\begin{align}
+x^3 - \cfrac{3}{4} \cdot x - \cfrac{\cos 3t}{4} = 0 \Leftrightarrow x &\in \{ \cos t, \cos (t + 120\degree), \cos (t + 240\degree) \} \\
+x^3 - \cfrac{3}{4} \cdot x + \cfrac{\sin 3t}{4} = 0 \Leftrightarrow x &\in \{ \cos (90\degree - t), \cos (210\degree - t), \cos (330\degree - t) \} \\
+x &\in \{ \sin t, \sin (t - 120\degree), \sin (t - 240\degree) \} \\
+x^3 + \cfrac{3 \sin 3t}{4} \cdot x^2 + \cfrac{12 \sin^2 3t - 27}{64} \cdot x + \cfrac{\sin^3 3t}{64} = 0 \Leftrightarrow x &\in \{ \sin^3 t, \sin^3 (t - 120\degree), \sin^3 (t - 240\degree) \} \\
+x^3 - \cfrac{3 \cos 3t}{4} \cdot x^2 + \cfrac{12 \cos^2 3t - 27}{64} \cdot x - \cfrac{\cos^3 3t}{64} = 0 \Leftrightarrow x &\in \{ \cos^3 t, \cos^3 (t + 120\degree), \cos^3 (t + 240\degree) \}
+\end{align}
+
+\vspace{100mm}
+
+\textbf{Proof of the last equation: }
+
+\begin{align}
+\blacktriangleright\,\,(a + bi)^3 &= \cos 3t + i \sin 3t = k + si \\
+a^3 - 3ab^2 &= k \Rightarrow b^2 = \cfrac{a^3 - k}{3a} \\
+3a^2b - b^3 &= s \\
+b^2(3a^2 -b^2)^2 &= s^2 \\
+\cfrac{a^3 - k}{3a} \cdot \cfrac{(9a^3 - a^3 + k)^2}{9a^2} &= s^2\,;\,a^3 = x \\
+(x - k)(8x + k)^2 &= 27s^2 x \\
+(x - k)(64x^2 + 16kx + k^2) &= 27x - 27k^2x\,\,\blacksquare
+\end{align}
+
+\begin{exercise}
+$(a + bi)^3 = \exp i(270\degree - 3t)$.
+\end{exercise}
+
+\begin{exercise}
+$\cos^a (t/3)$ and $\sin^a (t/3)$.
+\end{exercise}
+
+\begin{example}
+$x^3 + 3/8 \cdot x^2 - 3/8 \cdot x + 1/512 = 0$.
+\end{example}
+
+\begin{example}
+$x^3 + 3/8 \cdot \sqrt{3} \cdot x^2 - 9/32 \cdot x + 3/512 \cdot \sqrt{3} = 0$.
+\end{example}
+
+\section{Any Degree | $n$-Section Theorem}
+
+The equations below are soluble by radicals:
+
+\begin{align}
+\cos \cfrac{t}{n} &= \cfrac{1}{2} \cdot \text{principal value of } \sqrt[n]{\cos nt + i \cdot \sin nt} + \cfrac{1}{2} \cdot \text{principal value of } \sqrt[n]{\cos nt + i \cdot \sin nt} \\
+\sin \cfrac{t}{n} &= \cfrac{1}{2} \cdot \text{principal value of } \sqrt[n]{- \sin nt + i \cdot \cos nt} + \cfrac{1}{2} \cdot \text{principal value of } \sqrt[n]{- \sin nt - i \cdot \cos nt} \\
+n > 0 \Rightarrow \cos nt &= \sum_{i = 0}^{\lfloor n/2 \rfloor} (-1)^i \cdot n \cdot \cfrac{(n - i - 1)!}{i! (n - 2i)!} \cdot 2^{n - 2i - 1} \cdot (\cos t)^{n - 2i} = p(\cos t) \\
+p_n(x) &= 0 \Leftrightarrow p(x) = \cos nt \Leftrightarrow x \in \left\{ \cos \left(t + \cfrac{2k\pi}{n} \right) \,;\, 0 \le k \le n - 1 \right\} \\
+q_n(x) &= 0 \Leftrightarrow p(x) = \cos \left(\cfrac{n\pi}{2} - nt \right) \Leftrightarrow x \in \left\{ \sin \left(t - \cfrac{2k\pi}{n} \right) \,;\, 0 \le k \le n - 1 \right\} \\
+p_n(x) &= \sum_{i = 0}^n \alpha(n, i)\cdot x^i
+\end{align}
+
+\begin{example}
+$\cos 2t = 2x^2 - 1\,;\, \cos 3t = 4x^3 - 3x\,;\, \cos 4t = 8x^4 - 8x^2 + 1\,;\, \cos 5t = 16x^5 - 20x^3 + 5x$.
+\end{example}
+
+Study with more details on this link to \href{https://en.wikipedia.org/wiki/Chebyshev_polynomials}{\color{blue}\underline{WikiPedia}}.
+
+\vspace{3mm}
+
+Cossines's and Chebyshev's triangle:
+
+\begin{equation}
+\left(\begin{matrix}
+- \cos 0t + 1 \\
+- \cos 1t & 1 \\
+- \cos 2t - 1 & 0  & 2 \\
+- \cos 3t     & -3 & 0  & 4 \\
+- \cos 4t + 1 & 0  & -8 & 0   & 8 \\
+- \cos 5t     & 5 & 0  & -20 & 0 & 16 \\
+- \cos 6t -1 & 0 & 18 & 0 & -48 & 0 & 32 \\
+- \cos 7t & -7 & 0 & 56 & 0 & -112 & 0 & 64
+\end{matrix}
+\right)
+\end{equation}
+
+\begin{exercise}
+$\cos 1t = x\,;\,\cos 0t = 1$.
+\end{exercise}
+
+\begin{exercise}
+$\cos^a (t/n)$.
+\end{exercise}
+
+\begin{exercise}
+$\sin^a (t/n)$.
+\end{exercise}
+
+Sines's and Chebyshev's triangle:
+
+\begin{equation}
+\left(\begin{matrix}
+- \cos 0t + 1 \\
+- \sin 1t & 1 \\
++ \cos 2t - 1 & 0  & 2 \\
++ \sin 3t     & -3 & 0  & 4 \\
+- \cos 4t + 1 & 0  & -8 & 0   & 8 \\
+- \sin 5t     & 5 & 0  & -20 & 0 & 16 \\
++ \cos 6t -1 & 0 & 18 & 0 & -48 & 0 & 32 \\
++ \sin 7t & -7 & 0 & 56 & 0 & -112 & 0 & 64
+\end{matrix}
+\right)
+\end{equation}
+
+\begin{exercise}
+To construct two tetrahedra for $\cos^a (t/n)$ and $\sin^a (t/n)$. For each $(a, n)$, there is a polynomial.
+\end{exercise}
+
+\section{Girard's Equations on Trisection}
+
+\begin{align}
+\cos t + \cos (t + 120\degree) + \cos (t + 240\degree) &= 0 \\
+\cos t \cos (t + 120\degree) + \cos t \cos (t + 240\degree) + \cos (t + 120\degree) \cos (t + 240\degree) &= - \cfrac{3}{4} \\
+\cos t \cos (t + 120\degree) \cos (t + 240\degree) &= \cfrac{\cos 3t}{4} \\
+\sin t + \sin (t - 120\degree) + \sin (t - 240\degree) &= 0 \\
+\sin t \sin (t - 120\degree) + \sin t \sin (t - 240\degree) + \sin (t - 120\degree) \sin (t - 240\degree) &= - \cfrac{3}{4} \\
+\sin t \sin (t - 120\degree) \sin (t - 240\degree) &= - \cfrac{\sin 3t}{4}
+\end{align}
+
+\vspace{3mm}
+
+He who trisects $3t$, also trisects $270\degree - 3t$ and finds $\{ t + 30\degree, t + 150\degree, t + 270\degree, t, t + 120\degree, t + 240\degree \}$ too.
+
+\section{Pentasection | Theorem and Girard}
+
+The equations below are soluble by radicals:
+
+\begin{align}
+&x^5 - \cfrac{20}{16} \cdot x^3 + \cfrac{5}{16} \cdot x - \cfrac{\cos 5t}{16} = 0 \Leftrightarrow x \in \{ \cos t, \cos (t + 72\degree), \cos (t + 144\degree), \cos (t + 216\degree), \cos (t + 288\degree) \} \\
+&x^5 - \cfrac{20}{16} \cdot x^3 + \cfrac{5}{16} \cdot x - \cfrac{\sin 5t}{16} = 0 \Leftrightarrow x \in \{ \sin t, \sin (t - 72\degree), \sin (t - 144\degree), \sin (t - 216\degree), \sin (t - 288\degree) \} \\
+0 &= S_1 = \sum c_i = S_1' = \sum s_i \\
+- \cfrac{20}{16} &= S_2 = \sum c_i c_j = S_2' = \sum s_i s_j \\
+0 &= S_3 = S_3' \\
+\cfrac{5}{16} &= S_4 = S_4'
+\end{align}
+
+\begin{align}
+- \cfrac{\cos 5t}{16} &= \cos t \cos (t + 72\degree) \cos (t + 144\degree) \cos (t + 216\degree) \cos (t + 288\degree) \\
+- \cfrac{\sin 5t}{16} &= \sin t \sin (t - 72\degree) \sin (t - 144\degree) \sin (t - 216\degree) \sin (t - 288\degree)
+\end{align}
+
+\vspace{3mm}
+
+\begin{exercise}
+$\cos^a (t/5)$.
+\end{exercise}
+
+Sketch of solution:
+
+\begin{align}
+x^5 &= \cfrac{20}{16} \cdot x^3 - \cfrac{5}{16} \cdot x + \cfrac{\cos 5t}{16} \\
+x - \cos^5 t &= x - \cfrac{20}{16} \cdot \cos^3 t + \cfrac{5}{16} \cdot \cos t - \cfrac{\cos 5t}{16} \\
+t' &= t + 72\degree \\
+(x - \cos^5 t)(x - \cos^5 t')(x - \cos^5 t'')(x - \cos^5 t''')(x - \cos^5 t'''') &= x^5 - \sigma_1 x^4 + \sigma_2 x^3 - \sigma_3 x^2 + \sigma_4 x - \sigma_5 = 0 \\
+a + b + c + d + e &= 0 \\
+ab + \cdots + de &= -20/16 \\
+abc + \cdots + cde &= 0 \\
+abcd + \cdots + bcde &= 5/16 \\
+abcde &= -1/16 \cdot \cos 5t \\
+a^5 + b^5 + c^5 + d^5 + e^5 &= \sigma_1 \\
+a^5b^5 + \cdots + d^5e^5 &= \sigma_2 \\
+a^5b^5c^5 + \cdots + c^5d^5e^5 &= \sigma_3 \\
+a^5b^5c^5d^5 + \cdots + b^5c^5d^5e^5 &= \sigma_4 \\
+(abcde)^5 &= \sigma_5 = -1/2^{20} \cdot \cos^5 5t \\
+\end{align}
+
+\begin{exercise}
+$\sin^a (t/5)$.
+\end{exercise}
+
+He who pentasects $5t$, also pentasects $450\degree - 5t$ and finds $t + k \degree\,;\, k \in \{ 0, 54, 72, 126, 144, 198, 216, 270, 288, 342 \}$ too.
+
+\section{$(x - r_1^a)\cdots(x - r_n^a) = 0$}
+
+\begin{thm}
+Let the polynomial equation be $p(x) = 0\,;\,\deg p = n$, whose roots are $r_i$. Let $a \ge 2$ be a natural. Then, it's always possible to construct another polynomial $q(x) = 0$, with the same degree $n$, whose roots are $r_i^a$, without solving the equation $p(x) = 0$ and only by using Girard's relations.
+\end{thm}
+
+\section{Heptasection}
+
+The equations below are soluble by radicals:
+
+\begin{align}
+&x^7 - \cfrac{112}{64} \cdot x^5 + \cfrac{56}{64} \cdot x^3 - \cfrac{7}{64} \cdot x - \cfrac{\cos 7t}{64} = 0 \Leftrightarrow x \in \left\{ \cos \left(t + \cfrac{2k\pi}{7} \right) \,;\, 0 \le k \le 6 \right\} \\
+&x^7 - \cfrac{112}{64} \cdot x^5 + \cfrac{56}{64} \cdot x^3 - \cfrac{7}{64} \cdot x + \cfrac{\sin 7t}{64} = 0 \Leftrightarrow x \in \left\{ \sin \left(t - \cfrac{2k\pi}{7} \right) \,;\, 0 \le k \le 6 \right\}
+\end{align}
+
+\vspace{3mm}
+
+\begin{coro}
+$A = \{ \cos^a (t/q)\,;\,\sin^a (t/q)\,\vert\,t \in \arccos \mathbb{Q}\,;\, q \in \mathbb{Q}\,;\,a \in \mathbb{N} \}$ is a subset of the algebrical numbers.
+\end{coro}
+
+\begin{exercise}
+Girard: \\
+\begin{align}
+0 &= S_1 \\
+- \cfrac{112}{64} &= S_2 \\
+0 &= S_3 \\
+\cfrac{56}{64} &= S_4 \\
+0 &= S_5 \\
+- \cfrac{7}{64} &= S_6 \\
+\cfrac{\cos 7t}{64} &= P
+\end{align}
+\end{exercise}
+
+\begin{exercise}
+$\cos^a (t/7)$.
+\end{exercise}
+
+\begin{exercise}
+$\sin^a (t/7)$.
+\end{exercise}
+
+He who heptasects $7t$, also heptasects $630\degree - 7t$ and finds $t + k \degree\,;\, k \in \{0, 90/7, 360/7, 450/7, 720/7, 810/7, 1080/7,$
+
+$1170/7, 1440/7, 1530/7, 1800/7, 270, 2160/7, 2250/7 \}$ too.
+
+\section{Girard's Equations on $n$-section}
+
+\begin{align}
+S_1 &= \sum c_i = - \cfrac{\alpha(n, n - 1)}{2^{n - 1}} \\
+S_2 &= \sum c_i c_j = + \cfrac{\alpha(n, n - 2)}{2^{n - 1}} \\
+S_i &= (-1)^i \cdot \cfrac{\alpha(n, n - i)}{2^{n - 1}} \\
+S_n &= P = (-1)^n \cdot \cfrac{\alpha(n, 0)}{2^{n - 1}}
+\end{align}
+
+\begin{exercise}
+To construct a polygon of $n = 11$ sides. $n = 13, 17, 19, 23, \cdots$
+\end{exercise}
+
+\begin{align}
+\cos nt = &+ 2^{n - 1} \cdot x^n + 0 \\
+&- n \cdot 2^{n - 3} \cdot x^{n - 2} + 0 \\
+&+ n(n-3)/2 \cdot 2^{n - 5} \cdot x^{n - 4} + 0 \\
+&- n(n-4)(n-5)/6 \cdot 2^{n - 7} \cdot x^{n - 6} + 0 \\
+&+ n(n-5)(n-6)(n-7)/24 \cdot 2^{n - 9} \cdot x^{n - 8} + 0 \\
+&- n(n-6)(n-7)(n-8)(n-9)/5! \cdot 2^{n - 11} \cdot x^{n - 10} + 0 \\
+&+ n(n-7,8,9,10,11)/6! \cdot 2^{n - 13} \cdot x^{n - 12} + 0 \\
+&- n(n-8,9,10,11,12,13)/7! \cdot 2^{n - 15} \cdot x^{n - 14} + 0 \\
+&+ n(n-9,10,11,12,13,14,15)/8! \cdot 2^{n - 17} \cdot x^{n - 16} + 0 \\
+&- n(n-10,11,12,13,14,15,16,17)/9! \cdot 2^{n - 19} \cdot x^{n - 18} + 0 \\
+&+ n(n-11,12,13,14,15,16,17,18,19)/10! \cdot 2^{n - 21} \cdot x^{n - 20} + 0 \\
+&- n(n-12,13,14,15,16,17,18,19,20,21)/11! \cdot 2^{n - 23} \cdot x^{n - 22} + 0
+\end{align}
+
+\section{$\cos z \in \mathbb{C}$}
+
+\begin{align}
+\cos z &= a + bi \\
+\cos(x + yi) &= \cos x \cosh y - i \sin x \sinh y \\
+\cos x \cosh y &= a \\
+- \sin x \sinh y &= b \\
+\cosh^2 y - \sinh^2 y &= 1 = \cfrac{a^2}{\cos^2 x} - \cfrac{b^2}{\sin^2 x}\,;\,u = \cos^2 x \\
+1 &= \cfrac{a^2}{u} + \cfrac{b^2}{u - 1} \\
+u^2 - u &= a^2(u - 1) + b^2 u \\
+u^2 + u(-a^2 - b^2 - 1) + a^2 &= 0 \\
+\Delta &= (a^2 + b^2 + 1)^2 - 4 a^2 \\
+\cos^2 x &= \cfrac{a^2 + b^2 + 1 \pm \sqrt{\Delta}}{2} \\
+\cos x &\in \{c_1, c_2, c_3, c_4\} \\
+x &\in \arccos c_i + 2 \pi \cdot \mathbb{Z} \\
+\cosh y &= \cfrac{a}{c_i}
+\end{align}
+
+\begin{example}
+$\arccos (3 + 4i) = \href{https://www.wolframalpha.com/input/?i=cos(cos\%5E(-1)(sqrt(13+\%2B+4+\%5Csqrt(10)))+\%2B+i+*+cosh\%5E(-1)(+3\%2Fsqrt(13+\%2B+4+\%5Csqrt\%7B10\%7D)))}{\color{blue}\underline{w}}$.
+\end{example}
+
+\begin{align}
+\cos^2 x &= 13 \pm \sqrt{13^2 - 9} \\
+\cos x &\in \{c_1, c_2, c_3, c_4\} \\
+\cosh y &= \cfrac{3}{c} \\
+x + yi &= \arccos \sqrt{13 + 4 \sqrt{10}} + i\cdot \text{argcosh } \left( \cfrac{3}{\sqrt{13 + 4 \sqrt{10}}} \right)
+\end{align}
+
+\begin{exercise}
+$\cos nz = 3 + 4i = \sin nw$.
+\end{exercise}
+
+\section{Third Degree | Reduction of order}
+
+\begin{equation*}
+x^3 - Sx^2 + Qx - P = 0 \Leftrightarrow \left\{\begin{aligned}
+x + y + z &= S \\
+x^2 + y^2 + z^2 &= S^2 - 2Q \\
+x^3 + y^3 + z^3 &= S^3 - 3SQ + 3P
+\end{aligned}\right.
+\end{equation*}
+
+\begin{align}
+z &= S - x - y \\
+w &= x + y \\
+x^2 + y^2 + \cancel{S^2} - 2Sw + w^2 &= \cancel{S^2} - 2Q \\
+x^2 + y^2 - 2Sx - 2Sy + x^2 + 2xy + y^2 &= - 2Q
+\end{align}
+
+\begin{align}
+2y^2 + y(- 2S + 2x) + 2x^2 - 2Sx + 2Q &= 0 \\
+y^2 + y(x - S) + (x^2 - Sx + Q) &= 0 \\
+\Delta &= x^2 - 2Sx + S^2 - 4x^2 + 4 Sx - 4Q
+\end{align}
+
+\vspace{3mm}
+
+\begin{thm}
+If we know a single root of the equation $x^3 - Sx^2 + Qx - P = 0$, \\
+then the other two roots are:
+\begin{align}
+f_1^2(x) &= \cfrac{S - x \pm \sqrt{\Delta}}{2},
+\end{align}
+where $\Delta = -3x^2 + 2Sx + S^2 - 4Q$.
+\end{thm}
+
+\vspace{3mm}
+
+\begin{example}
+We know $\cos 1\degree$.
+\end{example}
+
+\begin{align}
+x^3 + px + q &= 0 \\
+S &= 0\,;\,Q = -\cfrac{3}{4}\,;\,P = - \cos 3\degree \\
+\cos^2 1\degree + \cos^2 59\degree + \cos^2 61\degree &= \cfrac{3}{2} \\
+\cos^3 1\degree - \cos^3 59\degree - \cos^3 61\degree &= \cfrac{3}{4} \cdot \cos 3\degree \\
+x_0 &= \cos 1\degree \\
+\Delta &= -3 \cos^2 1\degree + 3 \\
+y &= \cfrac{- x \pm \sqrt{\Delta}}{2}
+\end{align}
+
+\begin{align}
+- \cos 61\degree &= \cfrac{- \cos 1\degree + \sqrt{3 - 3 \cos^2 1\degree}}{2} \\
+- \cos 59\degree &= \cfrac{- \cos 1\degree - \sqrt{3 - 3 \cos^2 1\degree}}{2}
+\end{align}
+
+\section{Any Degree | Reduction of Order}
+
+\begin{thm}
+By Galois's theorem, let $a \le 4$. If we know $b = n - a$ roots of the equation
+\begin{align}
+x^n - S_1 x^{n - 1} + \cdots + (-1)^{n - 1} S_{n - 1} x + (-1)^n S_n &= 0,
+\end{align}
+then the other $a$ roots are:
+\begin{align}
+f_{n - a}^i(x_1, \cdots, x_{n - a}) &\in \{ y_1, \cdots, y_a \}, \forall i \in \{ 1, \cdots, a \}.
+\end{align}
+\end{thm}
+
+\vspace{3mm}
+
+\textbf{Proof:} $\blacktriangleright\,\,$Divide the original $p = (1, -S_1, + S_2, \cdots)$ by $(x - x_1)$ to obtain $q = (1, -S_1', + S_2', \cdots)$,
+
+where $S_1' = S_1 - x_1$, $S_2' = S_2 - x_1 S_1'$ and so on. Now, solve $q(x) = 0$.$\,\,\blacksquare$
+
+\section{Variation of Parameters | From Polynomials to Equivalent Exponentials}
+
+\begin{align}
+\exp r_i t &= 1 f_1(t) + r_i f_2(t) + \cfrac{r_i^2}{2}\cdot f_3(t) + \cdots + \cfrac{r_i^n}{n!}\cdot f_{n + 1}(t) \\
+E &= T\cdot F \\
+\left[E^\top \right]_{1 \times n} &= [F^\top]_{1 \times n} \cdot \left[T^\top \right]_{n \times n} \\
+[E']^\top &= [F']^\top\cdot T^\top \text{ and all other }n\text{ derivatives} \\
+\left[E^\top \right]_{n \times n} &= [\exp M]_{n \times n} \cdot \left[T^\top \right]_{n \times n}
+\end{align}
+
+We have polynomial of $n$-th degree of $x$ with real coefficients equals to zero.
+
+\begin{align}
+p_n(x) &= 0 \Leftrightarrow x \in \{ r_1, \cdots, r_n \} = R
+\end{align}
+
+We have exponential of $xt$ plus polynomial of $(n-1)$-th degree of $x$ with coefficients $f_i(t)$ equals to zero.
+
+\begin{align}
+\varphi_{n - 1}(x, t) &= e^{xt} + p'_{n-1}(x, t) \\
+\varphi_{n - 1}(x, t) &= 0 \Leftarrow x \in R, \forall t \in \mathbb{R} \\
+\varphi_{n - 1}^{-1}(0) &\supset R \times \mathbb{R}
+\end{align}
+
+And for each term $a$ of the Taylor series $\exp rt = \sum \cfrac{r^a}{a!} \cdot t^a$,
+
+\begin{align}
+\psi_a(x, a) &= x^a + p''_{n-1}(x, n) \\
+\psi_a(x, a) &= 0 \Leftarrow x \in R, \forall a \in \mathbb{N} \\
+\psi_a^{-1}(0) &\supset R \times \mathbb{N}
+\end{align}
+
+\section{Hungerford's Algebra}
+
+\begin{definition}
+Let $E$ and $F$ be extension fields of a field $K$. A nonzero map $\sigma: E \to F$ which is both a field and a $K$-module homomorphism is called a $K$-homomorphism.
+\end{definition}
+
+\begin{definition}
+If a field automorphism $\sigma \in$ Aut $F$ is a $K$-homomorphism, then $\sigma$ is called a $K$-automorphism of $F$.
+\end{definition}
+
+\begin{definition}
+The group of $\{\sigma\,;\, \sigma$ is $K$-automorphism of $F\}$ is called the Galois group of $F$ over $K$ and is denoted $\text{Aut}_K\,F$.
+\end{definition}
+
+\begin{definition}
+Let $F$ be a field and $f \in F[x]$ a polynomial of positive degree. $f$ is said to split in $F[x]$ if $f$ can be written as a product of linear factors in $F[x]$; that is, $f = u_0(x - u_1)\cdots(x - u_n)$, with $u_i \in F$.
+\end{definition}
+
+\begin{definition}
+Let $K$ be a field and $f \in K[x]$ a polynomial of positive degree. An extension field $F$ of $K$ is said to be an splitting field over $K$ of the polynomial $f$ if $f$ splits in $F[x]$ and $F = K(u_1, \cdots, u_n)$, where $u_i$ are the roots of $f$ in $F$.
+\end{definition}
+
+\begin{definition}
+Let $K$ be a field. The Galois group of a polynomial $f \in K[x]$ is the group $\text{Aut}_K\,F$, where $F$ is a splitting field of $f$ over $K$.
+\end{definition}
+
+\begin{thm}
+If $p$ is prime and $f$ is an irreductible polynomial of degree $p$ over the field of rational numbers which has precisely two nonreal roots in the field of complex numbers, then the Galois group of $f$ is isomorphic to $S_p$, the group of permutations of $\{1, 2, \cdots, p \}$.
+\end{thm}
+
+\begin{thm}
+The Galois group of $x^5 - 4x + 2 = 0$ is $S_5$.
+\end{thm}
+
+\begin{thm}
+Every permutation is expressable as a composition of $n$ transpositions, where $n$ is even or odd.
+\end{thm}
+
+\begin{definition}
+$A_n = \{\sigma \in S_n \,;\, \sigma \text{ is even} \}$
+\end{definition}
+
+\begin{definition}
+The commutator of $A_n$ is defined as $A_n' = \{ ab a^{-1} b^{-1}\,;\,a, b \in A_n \}$.
+\end{definition}
+
+\begin{thm}
+$A_5$ is not solvable.
+\end{thm}
+
+\textbf{Proof:} $\blacktriangleright\,\,ab = ba \Rightarrow ab a^{-1} b^{-1} = e$ \\
+$A_5$ is not abelian. $A_5' \lhd A_5$. $A_5$ is simple. \\
+Therefore, $A_5' = A_5$. If $A_5^{(n)}$ were eventually equal to $(e)$, then $A_5$ would be solvable. \\
+Therefore, $A_5$ is not solvable. $\,\,\blacksquare$
+
+\begin{thm}
+$A_5 < S_5$ is not solvable.
+\end{thm}
+
+\begin{thm}
+Let $K$ be a field and $f \in K[x]$ a polynomial of degree $n > 0$, where char $K$ does not divide $n!$ (which is always true when char $K\,= 0$). Then the equation $f(x) = 0$ is solvable by radicals if and only if the Galois group of $f$ is solvable.
+\end{thm}
+
+\vspace{3mm}
+
+quod erat demonstrandum | Out of charity, there is no salvation at all.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 5/May/2019, Release 3.2.4
+
+\end{document}

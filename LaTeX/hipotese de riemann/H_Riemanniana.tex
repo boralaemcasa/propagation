@@ -1,0 +1,93 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{amsthm} %newtheorem
+\usepackage{hyperref} %a href
+\usepackage{graphicx} %jpg
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\title{Mathematics and Spirituality}
+\date{}
+\begin{document}
+	\maketitle
+
+	\tableofcontents
+	\addtocontents{}{\protect\rule{\textwidth}{.2pt}\par}
+
+	\section{In\'icio}
+
+	\begin{align}
+	s &= a + bi ; a > 0 \\
+	z = \zeta(s) &= \frac{1}{1-2^{1-s}} \sum _{n = 1} ^{\infty} \frac{(-1)^{n+1}}{n^s} \\
+	\exp{it} &= \mbox{cis}(t) \\
+	n^{-bi} &= \mbox{cis}(-b \ln n) \\
+	\theta &= b \ln 2; c = \cos \theta; s = \sin \theta \\
+	r &= 2^{1-a} \\
+	z = \frac{1}{1 - r \mbox{cis}(-\theta)} &\sum _{n = 1} ^{\infty} { \frac{(-1)^{n+1}}{n^a} \mbox{cis}(-b \ln n)} \\
+	S = &\sum _{n = 2} ^{\infty} {\frac{(-1)^n}{n^a} \sin(b \ln n)} \\
+	C = &\sum _{n = 2} ^{\infty} {\frac{(-1)^n}{n^a} \cos(b \ln n)} \\
+	z &= \frac{A + Bi}{D} (1 - C + Si) \\
+	A &= 1 - rc \\
+	B &= rs \\
+	D &= 1 + r^2 - 2rc \\
+	D = 0 &\Rightarrow c = \frac{1 + r^2}{2r} \Rightarrow b = \frac{\pm \theta_0 + 2k\pi}{\ln 2}; k \in \mathbb{Z}
+	\end{align}
+
+	S\~ao as singularidades. Depois vejamos a converg\^encia de $C$ e $S$, por compara\c{c}\~ao.
+
+	\begin{align}
+	D = 0 &\Rightarrow \Delta = 4c^2 - 1; 2^{1-a} = c \pm \frac{\sqrt\Delta}{2} = r_0 \Rightarrow a = 1 - \frac{\ln r_0}{\ln 2} \\
+	&\sum _{n = 1} ^{\infty} \frac{(-1)^n}{n^a} = \sum _{n = 1} ^{\infty} {\biggl[ \frac{1}{(2n)^a} - \frac{1}{(2n-1)^a} \biggr]} = \sum _{n = 1} ^{\infty} \frac{(2n-1)^a - (2n)^a}{(2n-1)^a(2n)^a} = \sum _{n = 1} ^{\infty} \frac{\alpha n^{a-1} + ... \pm 1}{\beta n^{2a} + ... \pm (2n)^a} \\
+	a + 1 > 1 \Rightarrow &\sum _{n = 1} ^{\infty} \frac{\alpha}{\beta n^{a+1}} \, \mbox{converge} \\
+	z = 0 &\Rightarrow 1 - C = S = 0 \vee \biggl( A = B = 0 \Leftrightarrow s = 1 + \frac{2\pi}{\ln 2}k \biggr) \\
+	S(-b) &= -S(b)
+	\end{align}
+
+	O produt\'orio dos primos de Euler elimina $a > 1$. O teorema dos n\'umeros primos elimina $a = 1$. Seja $b > 0$. Somas parciais:
+
+	\begin{multline}
+	\forall \epsilon > 0, \exists M \in \mathbb{N}, \forall p > M, \\
+	\bigg|{\sum _{n = 2} ^{p} {\frac{(-1)^n}{n^a} \sin(b \ln n)}} \bigg| < \epsilon \\
+	\wedge \bigg|{1 - \sum _{n = 2} ^{p} {\frac{(-1)^n}{n^a} \cos(b \ln n)}}\bigg| < \epsilon \\
+	\Rightarrow 1 - 2\epsilon < s_n + c_n < 1 + 2 \epsilon
+	\end{multline}
+
+	\begin{align}
+	z = 0 &\Rightarrow f(a,b) = S + C = 1 \\
+	b = 0 &\Rightarrow f(a,b) = \sum _{n = 1} ^{\infty} \frac{(-1)^n}{n^a} \neq 1 \Rightarrow z \neq 0
+	\end{align}
+
+	Queremos mostrar que
+	\begin{align}
+	\exists b ; a = \frac{1}{2} \Rightarrow S + C = 1 \\
+	z = 0, a \neq \frac{1}{2}, C = 1 &\Rightarrow S \neq 0 \\
+	z = 0, a \neq \frac{1}{2}, S = 0 &\Rightarrow C \neq 1
+	\end{align}
+
+	$S = 0$. J\'a que o neg\'ocio \'e zero, vamos separar os positivos e negativos:
+
+	\begin{align}
+	S &= \sum _{k = 0} ^{\infty} {} \biggl[ \sum _{i = 1; S+} ^{\infty} \frac{\sin (b \ln (2i))}{(2i)^a}
+		+ \sum _{j = 1; S-} ^{\infty} \frac{| \sin (b \ln (2j - 1)) |}{(2j-1)^a}
+		- \sum _{i = 1; S+} ^{\infty} \frac{ \sin (b \ln (2i - 1))}{(2i-1)^a}
+		- \sum _{j = 1; S-} ^{\infty} \frac{| \sin (b \ln (2j))|}{(2j)^a} \biggr]
+	\end{align}
+
+	Onde $S+$ satisfaz:
+	\begin{align}
+	\sin (b \ln n) &> 0 \\
+	2k \pi &< \ln n < \pi + 2k \pi \\
+	\lfloor \exp (2k\pi) \rfloor &< n \le \lfloor \exp(\pi + 2k\pi) \rfloor \\
+	S- \Rightarrow \lfloor \exp (\pi + 2k\pi) \rfloor &< n \le \lfloor \exp(2\pi + 2k\pi) \rfloor
+	\end{align}
+
+	\begin{flushright}
+	\end{flushright}
+
+\begin{verbatim}
+in principio erat verbum...
+\end{verbatim}
+
+	\addtocontents{}{\noindent\protect\rule{\textwidth}{.2pt}\par}
+
+\end{document}

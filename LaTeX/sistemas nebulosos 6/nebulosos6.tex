@@ -1,0 +1,507 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Sistemas Nebulosos 6
+\end{center}
+
+\normalsize
+
+\vspace{3mm}
+
+\section{Controlador qualquer de segunda ordem}
+
+\begin{flushleft}
+Entrada vetorial: $u(t) = (F,G,H)(t)$ \\
+Sa\'ida escalar: $y(t)$
+\end{flushleft}
+
+Se o erro for proporcional como vimos na simula\c{c}\~ao em MatLab, basta repetir a invers\~ao. \\
+
+Resolvemos a equa\c{c}\~ao diferencial $y'' = F(t) y + G(t) y' + H(t)$.
+
+A equa\c{c}\~ao caracter\'istica \'e $\lambda^2 = F + G\lambda$.
+
+\begin{align}
+ y' &= z \\
+ z' &= Fy + Gz + H \\
+ \begin{pmatrix} y \\ z \end{pmatrix}' &= \begin{pmatrix} 0 & 1 \\ F & G \end{pmatrix}\begin{pmatrix} y \\ z \end{pmatrix} + \begin{pmatrix} 0 \\ H \end{pmatrix} \\
+ Y' &= P Y + Q \\
+ Y &= e^{-tP} \int_{t_0}^t e^{\tau P} Q(\tau)\, \mathrm{d}\tau + Y(t_0) + (t-t_0) Y'(t_0)
+\end{align}
+
+Os autovalores s\~ao ra\'izes da equa\c{c}\~ao caracter\'istica.
+
+\begin{align}
+\lambda^2 - G\lambda - F &= 0 \\
+\lambda &= \cfrac{G \pm \sqrt{G^2 + 4F}}{2} \\
+\exp \begin{pmatrix} a & 0 \\ 0 & b \end{pmatrix} &= \begin{pmatrix} e^a & 0 \\ 0 & e^b \end{pmatrix} \\
+\exp \begin{pmatrix} a & -b \\ b & a \end{pmatrix} &= \begin{pmatrix} e^a\cos b & -e^a \sin b \\ e^a \sin b & e^a \cos b \end{pmatrix} \\
+\exp \begin{pmatrix} a & 1 \\ 0 & a \end{pmatrix} &= \begin{pmatrix} e^a & 1 \\ 0 & e^a \end{pmatrix} \\
+e^{tP} &= \begin{pmatrix} f(t) & g(t) \\ p(t) & q(t) \end{pmatrix} \\
+ Y &= \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix} \int_{t_0}^t \begin{pmatrix} f(\tau) & g(\tau) \\ p(\tau) & q(\tau) \end{pmatrix} \begin{pmatrix} 0 \\ H(\tau) \end{pmatrix} \mathrm{d}\tau + Y(t_0) + (t-t_0) Y'(t_0) \\
+ v(t) &= \int_{t_0}^t g(\tau) H(\tau) \,\mathrm{d}\tau \\
+ w(t) &= \int_{t_0}^t q(\tau) H(\tau) \,\mathrm{d}\tau \\
+ Y &= \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix}  \begin{pmatrix} v(t) \\ w(t) \end{pmatrix} + Y(t_0) + (t-t_0) Y'(t_0)  \\
+ y(t) &= f(-t)v(t) + g(-t)w(t) + y(t_0) + (t-t_0) y'(t_0)
+\end{align}
+
+\vspace{100mm}
+
+Pela soma de Riemann,
+
+\begin{align}
+  y(k) &= \sum_{n > 0}^k J(F,G,H,n) h + y(0) + k y'(0) \\
+  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  y_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
+  e &= y - y_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  y_{ref}'' &= F_{ref} y_{ref} + G_{ref} y'_{ref} + H_{ref}
+  \end{align}
+
+Queremos isolar $u_{ref}$ na express\~ao acima. Facilmente:
+
+\begin{align}
+  (F_{ref},G_{ref},H_{ref}) &= F_{ref}(1,0,-y_{ref}) + G_{ref}(0,1,-y'_{ref}) + (0,0,y''_{ref}) \\
+  \Delta F &= F - F_{ref} \\
+  \Delta G &= G - G_{ref} \\
+  \Delta H &= H - H_{ref} \\
+u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e
+\end{align}
+
+$e$ \'e escalar. $\alpha \mu$ \'e vetor igualado a $\alpha(\mu_k, \beta_k, \gamma_k)$. Veja bem, eu nao fa\c{c}o ideia do que significam nem mi nem alfa.
+
+\begin{align}
+u(k+1) &= \sum_{n = 0}^k \alpha \varphi(n,k) [y(n) - y_{ref}(n)] \\
+\varphi_1(n, k) &= 2 \mu_n \mu_k + 1 - \mu_k - \mu_n \\
+\varphi_2(n, k) &= 2 \beta_n \beta_k + 1 - \beta_k - \beta_n \\
+\varphi_3(n, k) &= 2 \gamma_n \gamma_k + 1 - \gamma_k - \gamma_n \\
+(F,G,H)(m) &= \sum_{n = 0}^{m - 1} \alpha [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \\
+y &\to y(k+ 1) = \sum_{m > 0}^{k+1} J(F,G,H,m) h + y(0) + k y'(0) + y'(0) \\
+&= \sum_{m > 0}^{k+1} J\bigg( \sum_{n = 0}^{m - 1} \alpha [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \bigg) h + y(0) + k y'(0) + y'(0) \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha \bigg[\sum_{n > 0}^m J(F,G,H,n) h + y(0) + m y'(0) - y_{ref}(m)\bigg] (\varphi_1, \varphi_2, \varphi_3) (m, k)
+\end{align}
+
+Queremos propor\c{c}\~ao direta, ou seja:
+
+\begin{align}
+  \cfrac{|y - y_{ref}|}{\alpha} &< M
+\end{align}
+
+Calculamos a partir da linha 37 em $k + 1$.
+
+Gostar\'iamos de cancelar alfa. Isso s\'o \'e poss\'ivel supondo quase-linearidade: $J(\alpha u) = \alpha J(u)$.
+
+\begin{align}
+ \bigg|\sum_{m > 0}^{k+1} &J\bigg( \sum_{n = 0}^{m - 1} [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \bigg) h + \nonumber \\
+&+ y(0) + k y'(0) + y'(0) - \cfrac{1}{\alpha}\cdot y_{ref}(k + 1)\bigg| < M
+\end{align}
+
+Nossa fun\c{c}\~ao \'e bem simples.
+
+\begin{align}
+ f(x) &= A - \cfrac{B}{x} \\
+ f(0+) &= - \infty \\
+ f(\infty) &= A \\
+ f(x) &= - M \Rightarrow Ax - B = - Mx \therefore x_{min} = \cfrac{B}{A + M} \\
+ f\bigg(\cfrac{B}{A - M}\bigg) &= M \Leftarrow M < A \Rightarrow x_{max} = \cfrac{B}{A - M} \\
+ \\
+ M \ge A &\Rightarrow x_{max} = \infty
+\end{align}
+
+Agora, na linha 39, $\epsilon = M\alpha $. Come\c{c}amos dele. PARA TODO $\epsilon > 0$, EXISTE $\alpha(\epsilon) > 0$.
+
+Queremos $M(\epsilon) > 0$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} > \cfrac{B}{A + M} \\
+ \cfrac{BM - \epsilon(A+M)}{A+M} &< 0 \\
+ M_1 &= - A \,;\, M_2 = \cfrac{A \epsilon}{B - \epsilon}
+\end{align}
+
+Caso $B - \epsilon > 0$, a par\'abola vira para cima. $M$ est\'a entre $M_1$ e $M_2$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} < x_{max} \\
+ M &\ge A \Rightarrow \text{acabaram as restri\c{c}\~oes} \\
+ M &< A \Rightarrow \cfrac{BM - \epsilon(A - M)}{A - M} > 0 \\
+ M_3 &= A \,;\, M_4 = \cfrac{A}{B + \epsilon}
+\end{align}
+
+Caso $B + \epsilon > 0$, a par\'abola vira para cima. $M$ est\'a entre $M_3$ e $M_4$.
+
+A conclus\~ao \'e que o erro m\'aximo de sa\'ida $M$ \'e fun\c{c}\~ao da ordem de grandeza $\epsilon$. No mundo Plat\^onico, existe o limite que vai al\'em da f\'isica qu\^antica.
+
+\begin{align}
+ \epsilon &= 10^{-N} \\
+ \lim_{N \to \infty} \epsilon &= 0
+\end{align}
+
+$B$ \'e f\'acil, $A$ nem tanto. $B = y_{ref}(k+1)$.
+
+\begin{align}
+ A_1 &= \sum_{m > 0}^{k+1} J\bigg( \sum_{n = 0}^{m - 1} [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \bigg) h + y(0) + k y'(0) + y'(0)
+\end{align}
+
+Cada $\varphi$ \'e menor ou igual a $3$. Seja $v_3 &= (3,3,3)$.
+
+$y'' = 3y + 3y' + 3 \Rightarrow y = \psi(m) = C_1 e^{a_1 m} + C_2 e^{a_2 m}$
+
+\begin{align}
+ A_1 < A_2 &= h \sum_{m > 0}^{k+1} \bigg( \sum_{n = 0}^{m - 1} [y(n) - y_{ref}(n)] \psi(m)   \bigg) + y(0) + k y'(0) + y'(0)
+\end{align}
+
+Tiramos a depend\^encia de $n$, pela soma inferior de Riemann e o teorema fundamental do C\'alculo.
+
+\begin{align}
+ A_2 < A_3 &= h \sum_{m > 0}^{k+1} \bigg\{ y(t_0) - y_{ref}(t_0) + \int_{t_0}^{t_{m - 1}} [y(t) - y_{ref}(t)]\,\mathrm{d}t \bigg\} \psi(m) + y(t_0) + k y'(t_0) + y'(t_0) \\
+ &= h \sum_{m > 0}^{k+1} [ y(t_0) - y_{ref}(t_0) + \Phi(m) - \Phi(1) ] \psi(m) + y(t_0) + k y'(t_0) + y'(t_0)
+\end{align}
+
+Analogamente, tiramos a depend\^encia de $m$. Seja $t_m = \xi$.
+
+\begin{align}
+ A_3 < A_4 &= h \int_{t_0}^{t_{k+1}} [ y(t_0) - y_{ref}(t_0) + \Phi(\xi) - \Phi(1) ] \psi(\xi)\,\mathrm{d}\xi + y(t_0) + k y'(t_0) + y'(t_0) \\
+ &= h \int_{t_0}^{t_{k+1}}  \omega(\xi) \,\mathrm{d}\xi + y(t_0) + k y'(t_0) + y'(t_0) \\
+ &= h [\Omega(k+1) - \Omega(0)] + y(t_0) + k y'(t_0) + y'(t_0)
+\end{align}
+
+\section{Refazer todo o racioc\'inio para $\alpha$ em fun\c{c}\~ao de $k$.}
+
+\begin{align}
+(31) \Rightarrow u(k+1) &= \sum_{n = 0}^k \alpha_n \varphi(n,k) [y(n) - y_{ref}(n)] \\
+(F,G,H)(m) &= \sum_{n = 0}^{m - 1} \alpha_n [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \\
+y \to y(k+ 1) &= \sum_{m > 0}^{k+1} J\bigg( \sum_{n = 0}^{m - 1} \alpha_n [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \bigg) h + y(0) + k y'(0) + y'(0) \\
+u \to u(k + 1) &= \sum_{m = 0}^k \alpha_m \bigg[\sum_{n > 0}^m J(F,G,H,n) h + y(0) + m y'(0) - y_{ref}(m)\bigg] (\varphi_1, \varphi_2, \varphi_3) (m, k)
+\end{align}
+\vspace{3mm}
+
+40 implica que:
+
+\begin{align}
+\bigg|\sum_{m > 0}^{k+1} &J\bigg( \sum_{n = 0}^{m - 1} \alpha_n [y(n) - y_{ref}(n)] (\varphi_1, \varphi_2, \varphi_3) (n, m-1) \bigg) h + \nonumber \\
+&+ y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1})\bigg| = |A_5| < \epsilon_{k + 1}  \\
+A_5 &< A_6 = h \sum_{m > 0}^{k+1} \psi(m) \sum_{n = 0}^{m - 1} \alpha_n [y(n) - y_{ref}(n)]  + y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) \\
+A_6 &< A_7 = h \sum_{m > 0}^{k+1} \psi(m) \bigg\{ \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \int_{t_0}^{t_{m - 1}} \alpha(t) [y(t) - y_{ref}(t)]\,\mathrm{d}t \bigg\} + \nonumber \\
+&+ y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) \\
+&= h \sum_{m > 0}^{k+1} \psi(m) \bigg\{ \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \Phi(m) - \Phi(1) \bigg\} + \nonumber \\
+&+ y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) \\
+A_7&< A_8 = h \int_{t_0}^{t_{k+1}} \psi(\xi) \bigg\{ \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \Phi(\xi) - \Phi(1) \bigg\}\,\mathrm{d}\xi + \nonumber \\
+&+ y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) \\
+&= h \int_{t_0}^{t_{k+1}} \omega(\xi) \,\mathrm{d}\xi + y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) \\
+&= h [\Omega(k + 1) - \Omega(0)] + y(t_0) + k y'(t_0) + y'(t_0) -  y_{ref}(t_{k+1}) = f(k+1)
+\end{align}
+
+Para todo $k \in \mathbb{N}$, fixamos $\epsilon_k >0$. Nossa desigualdade \'e do tipo:
+
+\begin{align}
+| y(k) - y_{ref}(k) | < | A_8 | &< \max_k \{ f(1), \cdots, f(k) \} = \epsilon_k
+\end{align}
+
+Conclus\~ao: $| y - y_{ref} | < \max \epsilon_k = \epsilon$ globalmente, se o m\'aximo existir.
+
+Existe como cada $f(k)$ ir para infinito? Como? Se $\psi$ \'e limitada, $\alpha$ \'e limitada, $y_{ref}$ \'e limitada e o pr\'oprio $y(k)$ \'e um n\'umero real. Somente seria divergente se pontualmente fosse infinito, n\~ao um n\'umero.
+
+\textbf{Exerc\'icio: Garantir que $f(k)$ n\~ao seja crescente em $k$.}
+
+$f'(k) = h \Omega'(k) + y'(t_0) -  y_{ref}'(t_k) \cdot t'(k) \le 0$
+
+\vspace{3mm}
+
+!`La garantia soy yo!
+
+\section{Melhorias}
+
+\begin{flushleft}
+(1) \\
+No circuito RL, fizemos $i(cu) = ci(u) < 4 i(u)$. Retirar isso do caso geral. \\
+Se $c < 3$, ent\~ao $y(cu) < y(3u)$? \\
+$(e^{-tP})^c [\Phi(ct) - \Phi(ct_0)] < (e^{-tP})^3 [\Phi(3t) - \Phi(3t_0)]$ ?? \\
+Linha 40, sem linearidade. \\
+Linha 57, sem $v_3$. \\
+Linha 68, sem $\psi$.
+\end{flushleft}
+
+(2)
+
+$t(k) = a + hk$ de $\mathbb{Z}$ em $\mathbb{R}$. $y(t(k)) = \overline{y}(k)$.
+
+Linhas 17, 66. $t - t_0 = hk$.
+
+\vspace{3mm}
+
+(3)
+
+Linhas 13, 14. Teorema fundamental do C\'alculo.
+
+\vspace{3mm}
+
+(4)
+
+Formalmente, $f(1) + f(2) + f(3) < \int_0^4 f(x) \,\mathrm{d}x$.
+
+Linhas 60, 71, sem $t_m = \xi$.
+
+\vspace{3mm}
+
+(5)
+
+Linha 67. Estudar maximizante das entradas. $|\Delta F| < \delta_1\,;\,|\Delta G| < \delta_2\,;\,|\Delta H| < \delta_3$.
+
+\vspace{3mm}
+
+(6)
+
+Linha 75. $| y - y_{ref} | < f(h,k)$. Limite quando $h \to 0$.
+
+Linha 74. Sobra $f(0, k + 1) = y(t_0) + y'(t_0) - y_{ref}(t_{k + 1})$.
+
+$f(0, k) = y(t_0) - y_{ref}(t_{k})$.
+
+Isso \'e limitado. Tudo se resolve controlando a ordem de grandeza de $h$.
+
+\section{Controlador qualquer de terceira ordem}
+
+\begin{flushleft}
+Vem a\'i exame de sistemas operacionais. J\'a dizia Renato Russo, n\~ao temos tempo a perder. \\
+Entrada vetorial: $U(t) = (u_0,u_1,u_2,u_3)(t)$ \\
+Sa\'ida escalar: $y(t)$
+\end{flushleft}
+
+Se o erro for proporcional como vimos na simula\c{c}\~ao em MatLab, basta repetir a invers\~ao. \\
+
+Resolvemos a equa\c{c}\~ao diferencial $y''' = u_0(t) y + u_1(t) y' + u_2(t) y'' + u_3(t)$.
+
+A equa\c{c}\~ao caracter\'istica \'e $\lambda^3 = u_0 + u_1\lambda + u_2 \lambda^2$.
+
+\begin{align}
+ y' &= z_1 \\
+ y'' &= z_2 \\
+ z_2' &= u_0 y + u_1 z_1 + u_2 z_2 + u_3 \\
+ \begin{pmatrix} y \\ z_1 \\ z_2 \end{pmatrix}' &= \begin{pmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ u_0 & u_1 & u_2 \end{pmatrix}\begin{pmatrix} y \\ z_1 \\ z_2 \end{pmatrix} + \begin{pmatrix} 0 \\ 0 \\ u_3 \end{pmatrix}\Leftrightarrow y = J(U) \Leftrightarrow U = J^{-1}(y) \\
+ Y' &= P Y + Q \\
+ Y &= e^{-tP} \int_{t_0}^t e^{\tau P} Q(\tau)\, \mathrm{d}\tau + Y(t_0) + (t-t_0) Y'(t_0) + \cfrac{(t - t_0)^2}{2}\cdot Y''(t_0)
+\end{align}
+
+Os autovalores s\~ao ra\'izes da equa\c{c}\~ao caracter\'istica.
+
+\begin{align}
+0 &= \lambda^3 - u_2\lambda^2 - u_1\lambda - u_0 \\
+e^{tP} &= T_{ij}(t) \\
+ Y &= T_{ij}(-t) \int_{t_0}^t T_{ij}(\tau) \begin{pmatrix} 0 \\ 0 \\ u_3(\tau) \end{pmatrix} \mathrm{d}\tau + Y(t_0) + (t-t_0) Y'(t_0) + \cfrac{(t - t_0)^2}{2}\cdot Y''(t_0)
+\end{align}
+
+\begin{align}
+v_1(t) &= \int_{t_0}^t T_{13}(\tau) u_3(\tau) \,\mathrm{d}\tau = w_1(t) - w_1(t_0) \\
+ Y &= T_{ij}(-t)  \begin{pmatrix} w_1(t) - w_1(t_0) \\ w_2(t) - w_2(t_0) \\ w_3(t) - w_3(t_0) \end{pmatrix} + Y(t_0) + (t-t_0) Y'(t_0)  + \cfrac{(t - t_0)^2}{2}\cdot Y''(t_0)  \\
+ y(t) &= \sum_j T_{1j} [w_j(t) - w_j(t_0)]  + y(t_0) + (t-t_0) y'(t_0)  + \cfrac{(t - t_0)^2}{2}\cdot y''(t_0)
+\end{align}
+
+Pela soma de Riemann,
+
+\begin{align}
+  \overline{y}(k) &= \sum_{n > 0}^k \overline{J}(U,n) h + \overline{y}(0) + hk \overline{y'}(0) + h^2k^2/2\cdot \overline{y''}(0) \\
+  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  y_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
+  e &= y - y_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  y_{ref}''' &= u^0_{ref} y_{ref} + u^1_{ref} y'_{ref} + u^2_{ref} y''_{ref} + u^3_{ref}
+  \end{align}
+
+Queremos isolar $u_{ref}$ na express\~ao acima. Facilmente:
+
+\begin{align}
+  U_{ref} &= u^0_{ref}(1,0,0,-y_{ref}) + u^1_{ref}(0,1,0,-y'_{ref}) + u^2_{ref}(0,0,1,-y''_{ref}) + (0,0,0,y'''_{ref}) \\
+  \Delta u_0 &= u_0 - u^0_{ref} \\
+  \Delta u_1 &= u_1 - u^1_{ref} \\
+  \Delta u_2 &= u_2 - u^2_{ref} \\
+  \Delta u_3 &= u_3 - u^3_{ref} \\
+u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e
+\end{align}
+
+$e$ \'e escalar. $\alpha \mu$ \'e vetor igualado a $\alpha_k(\mu_k, \beta_k, \gamma_k)$.
+
+\begin{align}
+\overline{u}(k+1) &= \sum_{n = 0}^k \alpha_n \varphi(n,k) [\overline{y}(n) - \overline{y_{ref}}(n)] \\
+\varphi_0(n, k) &= 2 \mu_n^0 \mu_k^0 + 1 - \mu_k^0 - \mu_n^0 \\
+\varphi_1(n, k) &= 2 \mu_n^1 \mu_k^1 + 1 - \mu_k^1 - \mu_n^1 \\
+\varphi_2(n, k) &= 2 \mu_n^2 \mu_k^2 + 1 - \mu_k^2 - \mu_n^2 \\
+\varphi_3(n, k) &= 2 \mu_n^3 \mu_k^3 + 1 - \mu_k^3 - \mu_n^3
+\end{align}
+
+\begin{align}
+\overline{U}(m) &= \sum_{n = 0}^{m - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0123} (n, m-1) \\
+\overline{y} &\to \overline{y}(k+ 1) = \sum_{m > 0}^{k+1} \overline{J}(U,m) h + \underbrace{\overline{y}(0) + h(k+1) \overline{y'}(0) + h^2(k+1)^2/2\cdot \overline{y''}(0)}_{\overline{\xi}(k+1)}  \\
+&= \sum_{m > 0}^{k+1} J\bigg( \sum_{n = 0}^{m - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0123} (n, m-1) \bigg) h + \overline{\xi}(k+1) \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha_m \bigg[\sum_{n > 0}^m \overline{J}(U,n) h + \overline{\xi}(m) - y_{ref}(m)\bigg] \varphi_{0123} (m, k)
+\end{align}
+
+H\'a 4 pend\^encias:
+
+\begin{align}
+|u_0 - u_{ref}^0| &< \delta_0 \\
+|u_1 - u_{ref}^1| &< \delta_1 \\
+|u_2 - u_{ref}^2| &< \delta_2 \\
+|u_3 - u_{ref}^3| &< \delta_3
+\end{align}
+
+
+\begin{align}
+  |&\overline{y}(k+1) - \overline{y_{ref}}(k+1)| = \\
+\bigg| &h \sum_{m > 0}^{k+1} J\bigg( \sum_{n = 0}^{m - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0123} (n, m-1) \bigg)  + \xi(t_{k+1})\bigg| < \\
+\bigg| &h \sum_{m > 0}^{k+1} J \bigg\{ \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \int_{t_0}^{t_{m - 1}} \alpha(t) [y(t) - y_{ref}(t)]\,\mathrm{d}t \bigg\} \varphi_{0123} (t_n, m-1)  + \xi(t_{k+1}) \bigg| < \\
+\bigg| &h \sum_{m > 0}^{k+1} J \bigg\{ \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \Phi(m) - \Phi(1) \bigg\} \varphi_{0123} (t_n, m-1)  + \xi(t_{k+1}) \bigg| < \\
+\bigg| &h \int_{0}^{k+2} \omega(m)\,\mathrm{d}m + \xi(t_{k+1}) \bigg| = | h[\Omega(k+2) - \Omega(0)] + \xi(t_{k+1}) | < \\
+| &h[\sup \Omega - \inf \Omega ] + \overline{y}(0) + \overline{y'}(0) +  \overline{y''}(0) | < \epsilon \\
+- &\epsilon < 2 M_{\Omega} h + c_1 < \epsilon \\
+&0 < h < \cfrac{\epsilon - c_1}{2 M_{\Omega}}
+\end{align}
+
+Na \'ultima linha, por hip\'otese $O(hk) \le O(1)$.
+
+Conclus\~ao: Tudo o de que precisamos \'e que a ordem de grandeza de $h$ seja menor que a ordem de grandeza de $\Omega(k)$. O supremo e o \'infimo t\^em que existir.
+
+\subsection{Quest\~ao Bomb\'astica}
+
+\begin{align}
+&\varphi(t, m)\,;\,m = \tau\,;\,k + 2 = t' \\
+y''' &= \varphi_0 y + \varphi_1 y' + \varphi_2 y'' + \varphi_3 \Leftrightarrow y_1(t,m) = J(\varphi) \\
+y''' &= \kappa \varphi_0 y + \kappa \varphi_1 y' + \kappa \varphi_2 y'' + \kappa \varphi_3 \Leftrightarrow y_2(t,m) = J(\kappa \varphi) \\
+\kappa(m) &= \alpha(t_0) [y(t_0) - y_{ref}(t_0)] + \int_{t_0}^{t_{m-1}} \alpha(t) [y(t) - y_{ref}(t)]\,\mathrm{d}t \\
+\cfrac{\mathrm{d}\kappa}{\mathrm{d}t} &= 0 \\
+\cfrac{\mathrm{d}Y_2}{\mathrm{d}\tau} &= y_2 = \omega \\
+Y_2 &= \Omega \\
+&\text{A bomba n\~ao explode se e s\'o se: }\bigg| \int_{\tau = 0}^{t'} y_2(t, \tau)\,\mathrm{d}\tau \bigg| = M_{\Omega}
+\end{align}
+
+J\'a tenho uma tentativa. O supremo temporal tem que existir em algum instante, seja $t_{\pi}$. Abstra\'ido o tempo, gostar\'iamos de achar uma fun\c{c}\~ao de $m$ absolutamente integr\'avel em todo o semi-eixo.
+
+\begin{align}
+M_{\Omega} &= \bigg| \int_0^{\infty} y_2(t + h, m)\,\mathrm{d}m \bigg| \\
+&\le \int_0^{\infty} \bigg| y_2(t) + h y_2'(t) + \cfrac{h^2}{2}\cdot y_2''(t) + \cfrac{h^3}{6}\cdot y_2'''(t) + \rho \bigg| \,\mathrm{d}m \\
+&\stackrel{(126)}{=} \int_0^{\infty} \bigg| y_2(t) + h y_2'(t) + \cfrac{h^2}{2}\cdot y_2''(t) + \cfrac{h^3}{6}\cdot \bigg( \kappa \varphi_0 y_2 + \kappa \varphi_1 y'_2 + \kappa \varphi_2 y_2'' + \kappa \varphi_3 \bigg) + \rho \bigg| \,\mathrm{d}m \\
+&= \int_0^{\infty} \bigg| \bigg(\cfrac{h^3}{6}\cdot \kappa \varphi_0 + 1 \bigg) y_2 + \bigg(\cfrac{h^3}{6}\cdot \kappa \varphi_1  + h \bigg) y'_2 + \bigg( \cfrac{h^3}{6}\cdot \kappa \varphi_2 + \cfrac{h^2}{2} \bigg) y_2'' + \cfrac{h^3}{6}\cdot \kappa \varphi_3 + \rho \bigg| \,\mathrm{d}m \\
+&\stackrel{\pi}{=} \int_0^{\infty} | f_2(m) | \,\mathrm{d}m = I_1\,;\,f_2(m) = \sup_{\forall t \ge t_0} f_1(t, m) = f_1(t_{\pi}, m) \\
+M_{\Omega} &\le I_1 \le \int \bigg| \cfrac{h^3}{6} \kappa \varphi_0 y_2 \bigg| + \int | y_2 | + \int \bigg| \cfrac{h^3}{6} \kappa \varphi_1 y_2' \bigg| + \int | h y_2' | + \int \bigg| \cfrac{h^3}{6} \kappa \varphi_2 y_2'' \bigg| + \int \bigg| \cfrac{h^2}{2} y_2'' \bigg| + \int \bigg|  \cfrac{h^3}{6} \kappa \varphi_3 \bigg|  \\
+&\le \cfrac{h^3}{6} \int | \kappa | \int |\varphi_0| \int |y_2 | + \int | y_2 | + \cfrac{h^3}{6} \int | \kappa| \int | \varphi_1 | \int | y_2' | + h \int | y_2' | + \nonumber \\
+&+ \cfrac{h^3}{6} \int | \kappa| \int | \varphi_2 | \int | y_2'' |+ \cfrac{h^2}{2} \int | y_2'' | + \cfrac{h^3}{6} \int | \kappa| \int | \varphi_3 |  \\
+&\le \cfrac{h^3}{6} M_{\kappa} M_{\varphi_0} M_{\Omega} + M_{\Omega} + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_1} M_{y_2'} + h M_{y_2'} +  \cfrac{h^3}{6} M_{\kappa} M_{\varphi_2} M_{y_2''} + \cfrac{h^2}{2} M_{y_2''} + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_3} = M_{\Delta}  \\
+0 &\le \cfrac{h^3}{6} M_{\kappa} M_{\varphi_0} M_{\Omega} + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_1} M_{y_2'} + h M_{y_2'} +  \cfrac{h^3}{6} M_{\kappa} M_{\varphi_2} M_{y_2''} + \cfrac{h^2}{2} M_{y_2''} + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_3}
+\end{align}
+
+Que faremos com a derivada segunda de $J(\kappa \varphi)$ em rela\c{c}\~ao a $t$? Bom, inicialmente precisamos que seja de classe $C^2$ e que $y_2, y_2', y_2''$ sejam limitadas no tempo.
+
+Seja $\rho$ infinitesimal. $h$ independe de $m$. $\kappa(m)$ cont\'em a sa\'ida $y$.
+
+Conclus\~ao: Suponha existir os supremos $M$, exceto $M_{\Omega}$. Ent\~ao utilize a equa\c{c}\~ao (139) para resolver (123) e escolher $h$.
+
+\begin{align}
+\epsilon - c_1 &> 2h\cdot M_{\Omega} \\
+&= 2h \cdot \cfrac{M_{\Delta}  - \bigg[\cfrac{h^3}{6} M_{\kappa} M_{\varphi_1} M_{y_2'} + h M_{y_2'} +  \cfrac{h^3}{6} M_{\kappa} M_{\varphi_2} M_{y_2''} + \cfrac{h^2}{2} M_{y_2''} + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_3}\bigg]}{1 + \cfrac{h^3}{6} M_{\kappa} M_{\varphi_0}}   \\
+6 c_2 &=  M_{\kappa} M_{\varphi_1} M_{y_2'} + M_{\kappa} M_{\varphi_2} M_{y_2''} + M_{\kappa} M_{\varphi_3} \\
+c_3 &= \cfrac{6}{ M_{\kappa} M_{\varphi_0}}\,;\,\Delta = \cfrac{M_{\Delta}}{2c_2} \\
+c_4 &= (\epsilon - c_1) \cfrac{M_{\kappa} M_{\varphi_0}/6}{2c_2} < \cfrac{h(-h^3 - c_5 h^2 - c_6 h + \Delta )}{h^3 + c_3} \\
+0 &< \cfrac{-h^4 - (c_4 + c_5) h^3 - c_6 h^2 + \Delta h - c_3 c_4}{h^3 + c_3} \\
+0 &< -h^4 - (c_4 + c_5) h^3 - c_6 h^2 + \Delta h - c_3 c_4 \\
+0 &> h^4 + (c_4 + c_5) h^3 + c_6 h^2 - \Delta h + c_3 c_4 \\
+&\therefore h \in \text{ intervalo }I_h \subset \mathbb{R}_+ \\
+\mathbb{R}_+ &= \lim_{\Delta \to \infty} I_h(\Delta)
+\end{align}
+
+A pend\^encia \'e kappa.
+
+\begin{align}
+\int_0^{\infty} |\kappa| &= \int_0^{\infty} \bigg| c(0) + \int_1^m f(z) \,\mathrm{d}z \bigg| \,\mathrm{d}m \\\
+&\le \int_0^{\infty} \underbrace{|c(0)|}_0 \,\mathrm{d}m + \int_0^{\infty} \int_1^m |f(z)| \,\mathrm{d}z \,\mathrm{d}m \\
+&= \int_0^{\infty} \int_1^z |f(z)| \,\mathrm{d}m \,\mathrm{d}z \\
+&= \int_0^{\infty} \bigg[ |f(z)| \cdot m\bigg]_{m = 1}^z \,\mathrm{d}z \\
+&= |\alpha| \int_0^{\infty}  | y(z) - y_{ref} | \cdot (z-1) \,\mathrm{d}z \\
+&\le |\alpha| \bigg[ \int_0^{\infty} z | y(z)| + \underbrace{\int_0^{\infty}  | y(z) |}_{M_{\Omega}}   + \underbrace{| y_{ref}|}_0 \int_1^{\infty} z \,\mathrm{d}z \bigg]
+\end{align}
+
+O degrau tem que come\c{c}ar do zero!
+
+Uma integral estourante, como n\~ao quer\'iamos demonstrar :-P
+
+A hip\'otese de pegar a pr\'opria sa\'ida $|y(t,m)|$ multiplicar pelo par\^ametro de ``tempo de entrada" $m$ e ser som\'avel sobre $m \in \mathbb{N}$ \'e meio grotesca.
+
+\begin{align}
+u &= x \Rightarrow \mathrm{d}u = \mathrm{d}x \\
+\mathrm{d}v &= |f(x)|\, \mathrm{d}x \Rightarrow v = F_1 \\
+\int u \,\mathrm{d}v &= xF_1 - \int F_1 \,\mathrm{d}x = x\underbrace{\int_0^{\infty} |f(x)| \,\mathrm{d}x}_{M_{\Omega}} - \int_0^{\infty} F_1(\tau) \,\mathrm{d}\tau
+\end{align}
+
+No m\'inimo, a antiderivada tem que ser integr\'avel...
+
+\vspace{3mm}
+
+Esta se\c{c}\~ao independe da dimens\~ao interna. Vale para qualquer E.D.O. sol\'uvel no lugar de (125) e (126).
+
+Para o caso da dimens\~ao externa $D = \dim \vec y$, suponha que $y_i$ independe de $y_j, 1 \le i \ne j \le D$ e controle cada coordenada.
+
+\section{Controlador qualquer de ordem $N \in \mathbb{N}$}
+
+$U(t) \in \mathbb{R}^{N+1}$. E.D.O. de ordem $N$. Equa\c{c}\~ao caracter\'istica: polin\^omio de grau $N$.
+
+Linha 80: $P$ \'e matriz $N \times N.\,Q \in \mathbb{R}^N$.
+
+Linhas 81, 121: a soma vai at\'e derivada de ordem $N - 1$ de $Y$ calculada em $t_0$.
+
+Linhas 84, 85: $3 \to N$.
+
+Linha 86: At\'e $w_N$.
+
+Linha 87: A soma \'e de $j = 1$ at\'e $N$.
+
+Linha 96.
+
+Linhas 100, 115: at\'e $u_N$.
+
+Linha 107: at\'e $\varphi_N$.
+
+\section{Controlador qualquer de ordem $\infty$}
+
+$U(t) \in \mathbb{R}^{\omega}$. E.D.O. $=$ s\'erie. Equa\c{c}\~ao caracter\'istica: s\'erie polinomial.
+
+Linha 80: $P$ \'e matriz $\omega \times \omega.\,Q \in \mathbb{R}^{\omega}$.
+
+Linhas 81, 121: a soma vai at\'e derivada de ordem $\infty$ de $Y$ calculada em $t_0$.
+
+Precisamos garantir que esta s\'erie converge no zero.
+
+Linha 84: Resolver a E.D.O. por m\'etodo de s\'eries.
+
+Linha 86: At\'e $w_{\omega}$.
+
+Linha 87: A soma \'e de $j = 1$ at\'e $\infty$.
+
+Linha 96.
+
+Linhas 100, 115: at\'e $u_{\omega}$.
+
+Linha 107: at\'e $\varphi_{\omega}$.
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. \href{https://drive.google.com/file/d/1l2XnHYek5VWSxtVVsIWLKNwLcKgxNieu/view?fbclid=IwAR22CEy05D_VdGCcmYBvwAkaPprEL7o-oM_FszihQ2DobT-rjrNCFqggamE}{\underline{With charity}}, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 25/Sep/2019, Release $1.1.\theta$
+
+\end{document}

@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Mean 4 Clocks
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+-- mean_4_clocks - A system that calculates the mean over four clocks
+-- Copyright (C) 2018  Digital Systems Group - UFMG
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, see <https://www.gnu.org/licenses/>.
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity mean_4_clocks is
+    generic (
+        W       :       integer := 16
+    );
+    port (
+        CLK     : in    std_logic;
+        RESET   : in    std_logic;
+        INPUT   : in    std_logic_vector(W - 1 downto 0);
+        OUTPUT  : out   std_logic_vector(W - 1 downto 0)
+    );
+end mean_4_clocks;
+
+-- Implement the testbench and find the errors in this model.
+-- Consider the following expected behavior:
+--      Every rising edge of CLK input, the content of INPUT
+--      is added to a register chain and used to calculate the
+--      mean value over 4 clock periods
+
+architecture arch of mean_4_clocks is
+        signal var1 : unsigned(W - 1 downto 0);
+        signal var2 : unsigned(W - 1 downto 0);
+        signal var3 : unsigned(W - 1 downto 0);
+        signal var4 : unsigned(W - 1 downto 0);
+begin
+	  var1 <= to_unsigned(0,W) when RESET = '1'
+	  else unsigned(INPUT) SRL 2 when (rising_edge(CLK));
+
+	  var2 <= to_unsigned(0,W) when RESET = '1'
+	  else var1 when (rising_edge(CLK));
+
+	  var3 <= to_unsigned(0,W) when RESET = '1'
+	  else var2 when (rising_edge(CLK));
+
+	  var4 <= to_unsigned(0,W) when RESET = '1'
+	  else var3 when (rising_edge(CLK));
+
+  OUTPUT <= std_logic_vector(var1 + var2 + var3 + var4);
+end arch;
+\end{verbatim}
+
+\vspace{10mm}
+
+\Large
+
+\begin{center}
+Test Bench
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_alu is
+--    generic (
+--        myW       :       integer := 16
+--    );
+end tb_alu;
+
+architecture teste of tb_alu is
+
+component mean_4_clocks is
+    generic (
+        W       :       integer := 16
+    );
+    port (
+        CLK     : in    std_logic;
+        RESET   : in    std_logic;
+        INPUT   : in    std_logic_vector(W - 1 downto 0);
+        OUTPUT  : out   std_logic_vector(W - 1 downto 0)
+    );
+end component;
+
+signal C, R : std_logic;
+signal Inpt, otpt : std_logic_vector(16 - 1 downto 0);
+begin
+instancia_alu: mean_4_clocks     generic map (W => 16)	 port map(
+   CLK=>C,
+   RESET=>R,
+   INPUT=>inpt,
+   OUTPUT=>otpt);
+C <= '0',
+     '1' after 10 ns,
+	  '0' after 20 ns,
+	  '1' after 30 ns,
+	  '0' after 40 ns,
+	  '1' after 50 ns,
+	  '1' after 60 ns;
+R <= '1',
+     '0' after 5 ns,
+	  '0' after 20 ns,
+	  '0' after 30 ns,
+	  '0' after 40 ns,
+	  '0' after 50 ns,
+	  '0' after 60 ns;
+inpt <= (x"00010101"),
+      (x"00001111") after 15 ns,
+		(x"00002222") after 25 ns,
+		(x"00003333") after 35 ns,
+		(x"00004444") after 45 ns,
+		(x"00005555") after 55 ns,
+		(x"0000CCCC") after 65 ns;
+end teste;
+\end{verbatim}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 13/Sep/2019, Release $1.0$
+
+\end{document}

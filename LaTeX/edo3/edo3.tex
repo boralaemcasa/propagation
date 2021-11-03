@@ -1,0 +1,415 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Sistemas Nebulosos 7 | Resum\~ao \& E.D.O.
+\end{center}
+
+\normalsize
+
+\vspace{3mm}
+
+\section{Degraus Suaves [de]Crescentes}
+
+Exijimos que todas as derivadas \`a esquerda e \`a direita sejam zero, como no degrau-rampa-degrau.
+
+\begin{align}
+  a \le t \le b \Rightarrow f_6(t) &= \int_a^t \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < y < f_6(b) \\
+  a \le t \le b \Rightarrow g(t) &= \cfrac{f_6(t)}{f_6(b)} (M - g_0) + g_0 \Rightarrow g_0 < y < M \\
+  a \le t \le b \Rightarrow f_7(t) &= \int_t^b \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < f_7(a) \to y \to 0 \\
+  a \le t \le b \Rightarrow h(t) &= \cfrac{f_7(t)}{f_7(a)} (M - h_0) + h_0 \Rightarrow h_0 < M \to y \to h_0
+\end{align}
+
+Conclus\~ao: o valor ideal que queremos \'e dado ou por $g(t)$ ou por $h(t)$.
+
+\section{Controlador RL de primeira ordem}
+
+\begin{align}
+  h &= 0,001\,;\,0 \le k \le 23000 h\,;\,a = 1 \le x \le 24 = 8b
+\end{align}
+
+Pela soma de Riemann,
+
+\begin{align}
+  i(u)(k) &= e^{-R/L (a + hk)}\cfrac{1}{L}\sum_{n > 0}^k e^{R/L (a + hn)} u(n) h \\  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  i_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
+  e &= i - i_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  u_{ref} &= R i_{ref} + L \cfrac{d}{dt} i_{ref} \\
+  \Delta u &= u - u_{ref}
+\end{align}
+
+Para cada alfa, conseguimos $| \Delta u | < \delta \Rightarrow | e | < \epsilon$. [Provar.]
+
+A primeira quest\~ao \'e se podemos inverter. Para \'epsilon = 0,08, ser\'a que o valor de alfa = 1 vai for\c{c}ar que o delta de entrada seja 2,5 e portanto garantir que o m\'odulo do erro de sa\'ida seja sempre menor que \'epsilon???
+
+\textbf{Conjectura 1: }$\alpha = 1 \Rightarrow |\Delta u| < 2,5 \Rightarrow |e| < 0,08$.
+
+\textbf{Conjectura 2: }$ |\Delta u| < 2,5\cdot \alpha \Rightarrow |e| < 0,08\cdot \alpha $.
+
+\textbf{Conjectura 3: }$ |\Delta u| < \delta \Rightarrow |e| < 0,032\cdot \delta$.
+
+\begin{align}
+u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e
+\end{align}
+
+\begin{align}
+u(i)(k+1) &= \sum_{n = 0}^k \alpha \varphi(n,k) [i(n) - i_{ref}(n)] \\
+\varphi(n, k) &= 2 \mu_n \mu_k + 1 - \mu_k - \mu_n
+\end{align}
+
+A equa\c{c}\~ao 6 passa de u para i. Combinamos com a equa\c{c}\~ao 17, que passa de i para u.
+
+\begin{align}
+i &\to i(k+ 1) = e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \alpha \varphi(n,m-1) [i(n) - i_{ref}(n)] h \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha \varphi(m,k) \bigg[e^{-R/L (a + hm)}\cfrac{1}{L}\sum_{n > 0}^m e^{R/L (a + hn)} u(n) h - i_{ref}(m)\bigg]
+\end{align}
+
+Seja $\mu$ medido em Volts. Para $\alpha$ = 1 Watt$^{-1}$, $\epsilon = 0,08V \cdot \alpha$ em Amp\`ere.
+
+(Aqui supomos um alfa constante. E se for um alfa para cada $k$?)
+
+Queremos propor\c{c}\~ao direta, ou seja:
+
+\begin{align}
+  \cfrac{|i - i_{ref}|}{\alpha} &< M \\
+  \left\vert e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \underbrace{\varphi(n,m-1)}_{<4} [i(t_n) - i_{ref}(t_n)] h - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \underbrace{\sum_{n = 0}^{m - 1} [i(t_n) - i_{ref}(t_n)]}_{<\text{ integral}} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le
+\end{align}
+
+\footnotesize
+
+\begin{align}
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + \int_a^{a + h(m - 1)} \underbrace{[i(t) - i_{ref}(t)]}_{\text{T.Fund.C\'alculo}} \mathrm{d}t \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + [I(a + hm - h) - I_{ref}(a + hm - h)] - [I(a) - I_{ref}(a)] \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=
+\end{align}
+
+\normalsize
+
+\begin{align}
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\sum_{m > 0}^{k + 1} e^{f(m)} [p(m) + q]}_{<\text{ integral}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\int_0^{k + 2} e^{f(m)} [p(m) + q] \,\mathrm{d}m}_{\text{T.Fund.C\'alculo}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} [G(k+2) - G(0)]  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &< M
+\end{align}
+
+\begin{align}
+  - M < A - \cfrac{B}{\alpha} &< M \\
+  - M\alpha < A\alpha - B &< M \alpha \\
+  (- M - A)\alpha < - B &< (M - A) \alpha \\
+  \cfrac{B}{A + M} &< \alpha < \cfrac{B}{A - M}
+\end{align}
+
+Nossa fun\c{c}\~ao \'e bem simples.
+
+\begin{align}
+ f(x) &= A - \cfrac{B}{x} \\
+ f(0+) &= - \infty \\
+ f(\infty) &= A \\
+ f(x) &= - M \Rightarrow Ax - B = - Mx \therefore x_{min} = \cfrac{B}{A + M} \\
+ f\bigg(\cfrac{B}{A - M}\bigg) &= M \Leftarrow M < A \Rightarrow x_{max} = \cfrac{B}{A - M} \\
+ \\
+ M \ge A &\Rightarrow x_{max} = \infty
+\end{align}
+
+Agora, na linha 21, $\epsilon = M\alpha $. Come\c{c}amos dele. PARA TODO $\epsilon > 0$, EXISTE $\alpha(\epsilon) > 0$.
+
+Queremos $M(\epsilon) > 0$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} > \cfrac{B}{A + M} \\
+ \cfrac{BM - \epsilon(A+M)}{A+M} &< 0 \\
+ M_1 &= - A \,;\, M_2 = \cfrac{A \epsilon}{B - \epsilon}
+\end{align}
+
+Caso $B - \epsilon > 0$, a par\'abola vira para cima. $M$ est\'a entre $M_1$ e $M_2$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} < x_{max} \\
+ M &\ge A \Rightarrow \text{acabaram as restri\c{c}\~oes} \\
+ M &< A \Rightarrow \cfrac{BM - \epsilon(A - M)}{A - M} > 0 \\
+ M_3 &= A \,;\, M_4 = \cfrac{A}{B + \epsilon}
+\end{align}
+
+Caso $B + \epsilon > 0$, a par\'abola vira para baixo. $M$ est\'a entre $M_3$ e $M_4$.
+
+A conclus\~ao \'e que o erro m\'aximo de sa\'ida $M$ \'e fun\c{c}\~ao da ordem de grandeza $\epsilon$. No mundo Plat\^onico, existe o limite que vai al\'em da f\'isica qu\^antica.
+
+Est\'a controlado: $y' = py + u(t)$, se $p$ for constante.
+
+Est\'a controlado: $y'' = p_0 y + p_1 y' + u(t)$, se $p_i$ forem constantes.
+
+Est\'a controlado: $y^{(n)} = p_0 y + p_1 y' + \cdots + p_{n-1} y^{(n-1)} + u(t)$, se $p_i$ forem constantes e se $n < \infty$.
+
+$n \to \infty$, descontrole. N\~ao usamos varia\c{c}\~ao de par\^ametros.
+
+A ideia \'e truncar $p$ por aproxima\c{c}\~ao, por exemplo: $p(t, n) = a_0 + a_1 (t - t_0) + \cdots + a_n (t - t_0)^n$.
+
+\section{NOVIDADE | Controlador qualquer de primeira ordem}
+
+\begin{flushleft}
+Entrada vetorial: $\vec u(t) = (u_0,u_1)(t)$ Mai\'usculo $U_0(t) = \int_0^t u(\tau) \,\mathrm{d}\tau$: antiderivada. \\
+Sa\'ida escalar: $y(t)$
+\end{flushleft}
+
+Se o erro for proporcional como vimos na simula\c{c}\~ao em MatLab, basta repetir a invers\~ao. \\
+
+Resolvemos a equa\c{c}\~ao diferencial $y' + u_0(t) y = u_1(t)$ por varia\c{c}\~ao de par\^ametros.
+
+A equa\c{c}\~ao caracter\'istica \'e $\lambda = u_0$.
+
+\begin{align}
+ y(t) &= e^{-U_0(t)} \int_{t_0}^t e^{U_0(\tau)} U_1(\tau)\, \mathrm{d}\tau + y(t_0)
+\end{align}
+
+Pela soma de Riemann,
+
+\begin{align}
+  \overline{y}(k) &= e^{-U_0(a + hk)} \sum_{n > 0}^k e^{U_0(n)} U_1(n)\, h + \overline{y}(0)  \\
+  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  y_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
+  e &= y - y_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  y_{ref}' &= u^0_{ref} y_{ref} + u^1_{ref}
+  \end{align}
+
+Queremos isolar $u_{ref}$ na express\~ao acima. Facilmente:
+
+\begin{align}
+  u_{ref} &= u^0_{ref}(1,-y_{ref}) + u^1_{ref}(0,y'_{ref}) \\
+  \Delta u_0 &= u_0 - u^0_{ref} \\
+  \Delta u_1 &= u_1 - u^1_{ref} \\
+\overline{u}(k+1) &= \vec\mu_k q_1(k+1) + (1 - \vec\mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e \\
+\overline{u}(k+1) &= \sum_{n = 0}^k \alpha_n  [\overline{y}(n) - \overline{y_{ref}}(n)] \vec\varphi(n,k) \\
+\varphi_0(n, k) &= 2 \mu_n^0 \mu_k^0 + 1 - \mu_k^0 - \mu_n^0 \\
+\varphi_1(n, k) &= 2 \mu_n^1 \mu_k^1 + 1 - \mu_k^1 - \mu_n^1 \\
+\overline{u}(\ell) &= \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{01} (n, \ell-1) \\
+\overline{U}(m) &= h \sum_{\ell = 0}^{m} \overline{u}(\ell) \\
+\overline{y} &\to \overline{y}(k+ 1) = h e^{- h \sum_{\ell = 0}^{k+1} \overline{u_0}(\ell)} \sum_{m > 0}^{k+1} e^{h \sum_{\ell = 0}^{m} \overline{u_0}(\ell)} \cdot \bigg[ h \sum_{\ell = 0}^{m} \overline{u_1}(\ell) \bigg] + \overline{y}(0) = \nonumber
+\end{align}
+
+\begin{align}
+\overline{y}(k+ 1) &= h e^{- h \sum_{\ell = 0}^{k+1} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0} (n, \ell-1)} \sum_{m > 0}^{k+1} e^{h \sum_{\ell = 0}^{m} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0} (n, \ell-1)} \cdot \nonumber \\
+&\cdot \bigg[ h \sum_{\ell = 0}^{m} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{1} (n, \ell-1) \bigg] + \overline{y}(0) \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha_m \bigg[ e^{-U_0(a + hm)} \sum_{n > 0}^m e^{U_0(n)} U_1(n)\, h + \overline{y}(0) - \overline{y_{ref}}(m) \bigg] \varphi_{01} (m, k)
+\end{align}
+
+H\'a 2 pend\^encias:
+
+\begin{align}
+|u_0 - u_{ref}^0| &< \delta_0 \\
+|u_1 - u_{ref}^1| &< \delta_1 \\
+  |&\overline{y}(k+1) - \overline{y_{ref}}(k+1)| = \\
+\bigg| &h e^{- h \sum_{\ell = 0}^{k+1} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0} (n, \ell-1)} \sum_{m > 0}^{k+1} e^{h \sum_{\ell = 0}^{m} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{0} (n, \ell-1)} \cdot \nonumber \\
+&\cdot \bigg[ h \sum_{\ell = 0}^{m} \sum_{n = 0}^{\ell - 1} \alpha_n [\overline{y}(n) - \overline{y_{ref}}(n)] \varphi_{1} (n, \ell-1) \bigg] + \overline{y}(0) - \overline{y_{ref}}(k+1) \bigg| = \sigma =
+\end{align}
+
+\begin{align}
+\bigg| &h e^{- F_0(\vec \alpha, k+1)} \sum_{m > 0}^{k+1} e^{F_0(\vec \alpha, m)} \cdot F_1(\vec \alpha, m) + \overline{y}(0) - \overline{y_{ref}}(k+1) \bigg| = \\
+\bigg| &h F_2( \vec \alpha, k+1) + \overline{y}(0) - \overline{y_{ref}}(k+1) \bigg| \le \\
+&h | F_2( \vec \alpha, k+1) | + M_1 \le \\
+&hM_2 + M_1 = M_3
+\end{align}
+
+Para algum alfa, $|F_2( \vec \alpha, k+1)| < M_2$. Qual? Outra tentativa \'e $\lim |e| = 0$, ou seja:
+
+\begin{align}
+  |&\overline{e}(k+1) - \overline{e}(k)| = \\
+  |&\overline{y}(k+1) - \overline{y_{ref}}(k+1) - [\overline{y}(k) - \overline{y_{ref}}(k)]| \le \\
+  | &h F_2( \vec \alpha, k+1) + \overline{y}(0) - \overline{y_{ref}}(k+1) - h F_2( \vec \alpha, k) - \overline{y}(0) + \overline{y_{ref}}(k) | \le \\
+  &h |F_3(\alpha, k +1)| + M_4 \le \\
+  &hM_5 + M_4 = M_6
+\end{align}
+
+Para algum alfa, $|F_2( \vec \alpha, k+1) - F_2( \vec \alpha, k)| < M_5$. Qual?
+
+$\alpha(k)$ pode ser anal\'itica. A ideia \'e truncar $\alpha$ por aproxima\c{c}\~ao, por exemplo: $\alpha(k, n) = a_0 + a_1 k + \cdots + a_n k^n$.
+
+Na linha (71), h\'a $2+3+3$ somat\'orias. Tomemos, grosseiramente, o m\'odulo de cada parcela.
+
+\begin{align}
+  &h |e^{- h \alpha_1 \varphi_1 y_1}e^{ h \alpha_2 \varphi_2 y_2} h \alpha_3 \varphi_3 y_3| \le h |e^{- 3h \alpha_1 y_1}e^{ 3h \alpha_2 y_2} 3h \alpha_3 y_3| = M_7
+\end{align}
+
+Exclu\'imos $\alpha$ negativo. Sempre que $e^{-\alpha_1} > 1 \Leftrightarrow e^{\alpha_2} < 1$. O m\'inimo \'e $1 = e^0$. Substitu\'imos $\alpha_1 := 0$.
+
+\begin{align}
+  M_7 &\le h |e^{ 3h \alpha_2 y_2} 3h \alpha_3 y_3| = h | \beta e^{\beta} |\,;\, \beta = 3h \alpha y
+\end{align}
+
+A sa\'ida deve divergir. Nesse caso, $\alpha \in \emptyset$.
+
+Sen\~ao, \'e poss\'ivel usar a fun\c{c}\~ao W de Lambert: $z e^z = w = W(w) \exp W(w) \Leftrightarrow z = W(w)$.
+
+\begin{align}
+  | \beta e^{\beta} | &\le \cfrac{M_8}{h}  \\
+  w_1 e^{w_1} = - w e^w \le \beta e^{\beta} &\le w e^w \\
+  z_1 \le \beta &\le z_2 \\
+  z_1 \le 3h \alpha y &\le z_2 \\
+  \cfrac{z_1}{3h\inf y} \le 0 \le \alpha &\le \cfrac{z_2}{3h\sup y} \\
+  \sigma &\le | \beta e^{\beta} | (1+2+\cdots+k+1)[1 + (1 + 2) + (1 + 2 + 3) + \cdots + (1 + 2 + \cdots + k + 1)]^2 \\
+  &\le \cfrac{M_8}{h} (k + 2)^{2+2+3}
+\end{align}
+
+Esta se\c{c}\~ao independe da dimens\~ao interna. Vale para qualquer E.D.O. sol\'uvel no lugar de (47).
+
+Para o caso da dimens\~ao externa $D = \dim \vec y$, suponha que $y_i$ independe de $y_j, 1 \le i \ne j \le D$ e controle cada coordenada.
+
+\section{EDO de ordem 1 | Quadr\'atica}
+
+\begin{align}
+ y' &= p_0 +  p_1 y + p_2 y^2 \\
+ y &= \sum_0 a_i x^i \\
+ p_1 &= \sum_0 b_i x^i \\
+ p_1 y &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i b_{k - i} x^k \\
+ y' &= \sum_0 (i + 1) a_{i + 1} x^i \\
+ y^2 &= \sum_0 a_i x^{2i} + 2 \sum_{k = 0}^{\infty} \underbrace{\sum_{i = 0}^{\lceil k/2 - 1 \rceil} a_i a_{k - i}}_{f(k)} x^k \\
+  p_2 &= \sum_0 c_i x^i \\
+ p_2 y^2 &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - 2i} x^k + 2 \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j f(L-j) x^L \\
+ p_0 &= \sum_0 d_i x^i \\
+ \sum_0 (i + 1) a_{i + 1} x^i &= \sum_0 d_i x^i + \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i b_{k - i} x^k + \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - 2i} x^k + 2 \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j f(L-j) x^L
+ \end{align}
+
+ \begin{align}
+ 1a_1 &= d_0 + a_0 b_0 + a_0 c_0 \\
+ 2 a_2 &= d_1 + a_0 b_1 + a_1 b_0 + a_0 c_1 + 2 c_0 a_0 a_1 \\
+ 3 a_3 &= d_2 + a_0 b_2 + a_1 b_1 + a_2 b_0 + a_0 c_2 + a_1 c_0 + 2 c_0 a_0 a_2 + 2 c_1 a_0 a_1
+ \end{align}
+
+\section{EDO de ordem 1 | C\'ubica}
+
+Seja $x(t) = t - t_0$. Todas as nossas s\'eries de Taylor est\~ao definidas em $t_0 - \delta < t < t_0 + \delta$.
+
+\begin{align}
+ y' &= p_0 +  p_1 y + p_2 y^2 + p_3 y^3 \\
+ y &= \sum_0 a_i x^i \\
+ p_0 &= \sum_0 b_i x^i \\
+ p_1 &= \sum_0 c_i x^i \\
+ p_1 y &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i} x^k \\
+ y' &= \sum_0 (i + 1) a_{i + 1} x^i \\
+ y^2 &= \sum_0 a_i x^{2i} + \sum_{k = 0}^{\infty} \underbrace{2 \sum_{i = 0}^{\lceil k/2 - 1 \rceil} a_i a_{k - i}}_{f_2(k)} x^k \\
+  p_2 &= \sum_0 d_i x^i \\
+ p_2 y^2 &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i d_{k - 2i} x^k + \sum_{L = 0}^{\infty}  \sum_{j = 0}^L d_j f_2(L-j) x^L
+\end{align}
+
+\begin{align}
+ y^3 &= \sum_0 a_i x^{3i} + \sum_{k = 0}^{\infty} \underbrace{3 \sum_{i = 0}^{\lceil k/2 - 1 \rceil} a_i^2 a_{k - i} + a_i a_{k - i}^2 + 6 \sum_{i \ne j \ne k} a_i a_j a_{k - i - j} }_{f_3(k)} x^k \\
+ p_3 &= \sum_0 g_i x^i \\
+  p_3 y^3 &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i g_{k - 3i} x^k + \sum_{L = 0}^{\infty}  \sum_{j = 0}^L g_j f_3(L-j) x^L \\
+ \sum_0 (i + 1) a_{i + 1} x^i &= \sum_0 b_i x^i + \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i} x^k + \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i d_{k - 2i} x^k + 2 \sum_{L = 0}^{\infty}  \sum_{j = 0}^L d_j f(L-j) x^L + \nonumber \\
+ &+ \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i g_{k - 3i} x^k + \sum_{L = 0}^{\infty}  \sum_{j = 0}^L g_j f_3(L-j) x^L
+ \end{align}
+
+Determinar $a(b,c,d,g)$.
+
+\section{EDO de ordem 1 | Grau $N$}
+
+\begin{align}
+ y' &= p_0 +  p_1 y + p_2 y^2 + \cdots + p_N y^N \\
+ y &= \sum_0 a_i x^i \\
+ p_0 &= \sum_0 c_i(0) x^i \\
+ &\vdots \\
+ p_N &= \sum_0 c_i(N) x^i \\
+ p_1 y &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i}(1) x^k \\
+ y' &= \sum_0 (i + 1) a_{i + 1} x^i \\
+ y^{\lambda} &= \sum_0 a_i x^{i\lambda} + \sum_{k = 0}^{\infty} f_{\lambda}(k) x^k \\
+ p_{\lambda} y^{\lambda} &= \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i\lambda}(\lambda) x^k + \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j(\lambda) f_{\lambda}(L-j) x^L \\
+\sum_0 (i + 1) a_{i + 1} x^i &= \sum_0 c_i(0) x^i + \sum_{\lambda = 1}^N \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i\lambda}(\lambda) x^k + \nonumber \\
+ & + \sum_{\lambda = 2}^N \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j(\lambda) f_{\lambda}(L-j) x^L
+ \end{align}
+
+Determinar $a(c)$. Comece aqui e determine at\'e o fim do arquivo.
+
+\section{EDO de ordem 1 | S\'erie}
+
+\begin{align}
+ y' &= \varphi(y) = p_0 +  p_1 y + p_2 y^2 + \cdots \\
+\sum_0 (i + 1) a_{i + 1} x^i &= \sum_0 c_i(0) x^i + \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i c_{k - i\lambda}(\lambda) x^k + \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j(\lambda) f_{\lambda}(L-j) x^L
+ \end{align}
+
+\section{EDO de ordem 2 | S\'erie}
+
+\begin{align}
+ y'' &= \varphi(y) + \psi(y') \\
+ y' &= z \\
+ z' &= \psi(z) + \varphi(y) \\
+ \begin{pmatrix} y \\ z \end{pmatrix}' &= \begin{pmatrix} z \\ \psi(z) \end{pmatrix} + \begin{pmatrix} 0 \\ \varphi(y) \end{pmatrix} \\
+ Y' &= \varphi(Y)
+\end{align}
+
+Ou, se preferir,
+
+\begin{align}
+ y'' &= p_0^0 + \sum p_i^0 y^i + \sum p_i^1 (y')^i  \\
+ p_N^0 &= \sum_0 c_i^0(N) x^i \\
+ p_N^1 &= \sum_0 c_i^1(N) x^i \\
+ y &= \sum_0 a_i^0 x^i \\
+ y' &= \sum_0 a_i^1 x^i \sim (i + 1)a_{i+1}^0 \\
+\sum_0 (i + 1) a_{i + 1}^1 x^i &= \sum_0 c_i^0(0) x^i + \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i^0 c_{k - i\lambda}^0(\lambda) x^k + \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j^0(\lambda) f_{\lambda}^0(L-j) x^L + \nonumber \\
+&+ \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i^1 c_{k - i\lambda}^1(\lambda) x^k + \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j^1(\lambda) f_{\lambda}^1(L-j) x^L
+\end{align}
+
+\section{EDO de ordem 3 | S\'erie}
+
+\begin{align}
+ y''' &= p_0^0 + \sum p_i^0 y^i + \sum p_i^1 (y')^i + \sum p_i^2 (y'')^i  \\
+ y''' &= \varphi(y) + \psi(y') + \xi(y'') \\
+ y' &= z_1 \\
+ z_1' &= z_2 \\
+ z_2' &= \xi(z_2) + \psi(z_1) + \varphi(y) \\
+ \begin{pmatrix} y \\ z_1 \\ z_2 \end{pmatrix}' &= \begin{pmatrix}0 \\ z_2 \\ \xi(z_2) \end{pmatrix} + \begin{pmatrix} z_1 \\ 0 \\ \psi(z_1) \end{pmatrix}+ \begin{pmatrix} 0 \\ 0 \\ \varphi(y) \end{pmatrix} \\
+ Y' &= \varphi(Y) \\
+ \sum_0 (i + 1) a_{i + 1}^2 x^i &= \sum_0 c_i^0(0) x^i + \sum_{\theta = 0}^2 \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i^{\theta} c_{k - i\lambda}^{\theta}(\lambda) x^k + \nonumber \\
+ &+ \sum_{\theta = 0}^2 \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j^{\theta}(\lambda) f_{\lambda}^{\theta}(L-j) x^L
+\end{align}
+
+\section{EDO de ordem $n$ | S\'erie}
+
+\begin{align}
+y^{(n)} &= p_0^0 + \sum_{j = 0}^{n-1} \sum_{i = 1}^{\infty} p_i^j (y^{(j)})^i \\
+ y^{(n)} &= \varphi_0(y) + \varphi_1(y') + \cdots + \varphi_{n-1}(y^{(n-1)}) \\
+ y' &= z_1 \\
+ z_1' &= z_2 \\
+ &\vdots \\
+ z_{n-1}' &= \varphi_{n-1}(z_{n-1}) + \cdots + \varphi_1(z_1) + \varphi_0(y)
+\end{align}
+
+\begin{align}
+ Y' &= \sum_{i=1}^{n-1} z_i e_i + \sum_{i=1}^{n-1} \varphi_i(z_i) e_n + \varphi(y) e_n \\
+ Y' &= \varphi(Y) \\
+ \sum_0 (i + 1) a_{i + 1}^{n-1} x^i &= \sum_0 c_i^0(0) x^i + \sum_{\theta = 0}^{n-1} \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i^{\theta} c_{k - i\lambda}^{\theta}(\lambda) x^k + \nonumber \\
+ &+ \sum_{\theta = 0}^{n-1} \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j^{\theta}(\lambda) f_{\lambda}^{\theta}(L-j) x^L
+\end{align}
+
+\section{EDO de ordem infinita}
+
+
+\begin{align}
+0 &= p_0^0 + \sum_{j = 0}^{\infty} \sum_{i = 1}^{\infty} p_i^j (y^{(j)})^i \\
+ 0 &= \varphi_0(y) + \varphi_1(y') + \cdots \\
+ 0 &= \sum_0 c_i^0(0) x^i + \sum_{\theta = 0}^{\infty} \sum_{\lambda = 1}^{\infty} \sum_{k = 0}^{\infty} \sum_{i = 0}^k a_i^{\theta} c_{k - i\lambda}^{\theta}(\lambda) x^k + \sum_{\theta = 0}^{\infty} \sum_{\lambda = 2}^{\infty} \sum_{L = 0}^{\infty}  \sum_{j = 0}^L c_j^{\theta}(\lambda) f_{\lambda}^{\theta}(L-j) x^L
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. \href{https://drive.google.com/file/d/1MvAjsOvsvSIq34uAFz_h16-yVIR3_MvM/view?fbclid=IwAR3cyh3IOcsgGE7M-1TIxh3ESL6IHZ_nAmcF8IGdtnWDZHa1o6mhybQ5eJU}{\underline{With charity}}, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 3/Octo/2019, Release $1.0.4$
+
+\end{document}

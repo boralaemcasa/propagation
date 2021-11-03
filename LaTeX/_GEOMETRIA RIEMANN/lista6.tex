@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+	\Large
+
+	\begin{center}
+	 Lista 5 de Geometria de Riemann \\
+	 Vin\'icius Claudino Ferraz, 19/May/2019 GMT -4
+	\end{center}
+
+	\normalsize
+
+	Main Video on \href{https://www.youtube.com/watch?v=Z3IXeWvEEa4}{\color{blue}\underline{YouTube}}.
+
+		\section{Grupos de Lie}
+		\begin{flushright}
+		\end{flushright}
+
+		Teorema 2.18: $L_p(h) = ph, R_p(h) = hp$ s\~ao difeomorfismos.
+
+		Defini\c{c}\~ao 2.19: Uma \'algebra de Lie sobre $\mathbb{R}$ \'e um espa\c{c}o vetorial $\mathcal{G}$ munido de um colchete de Lie bilinear de $\mathcal{G} \times \mathcal{G}$ em $\mathbb{R}$, anticomutativo $([X,Y] = -[Y,X])$ e com a identidade de Jacobi: $[[X,Y], Z] + [[Y,Z],X] + [[Z,X],Y] = 0$.
+
+		Defini\c{c}\~ao 2.23: $X \in \mathcal{T}(G)$ \'e invariante \`a esquerda se d$L_p X = X \circ L_p, \forall p \in G$.
+
+		Rela\c{c}\~ao 2.35: $X_p = (dL_p)_e X_e$. Um campo invariante \`a esquerda fica completamente determinado em algum ponto, por exemplo, $e$.
+
+		Teorema 2.24: Todo vetor tangente $X_e$ em $T_eG$ possui uma extens\~ao a um campo invariante \`a esquerda. $X \in \mathcal{T}(G)$, dado pela rela\c{c}\~ao 2.35.
+
+		Teorema 2.25: O colchete de Lie de campos invariantes \`a esquerda \'e invariante \`a esquerda. $\Leftrightarrow (dL_p)_h [X,Y]_h f = [X,Y]_{ph} f$.
+
+		$\mathcal{L} = \{$ campos invariantes \`a esquerda $\}$ \'e um subespa\c{c}o vetorial de $\mathcal{T}(G)$, perfazendo uma \'algebra de Lie.
+
+		Defini\c{c}\~ao 2.26: A \'algebra de Lie $\mathcal{G}$ de G \'e $T_eG$ munido de $[X_e, Y_e] := [X,Y]_e$ em que $X, Y \in \mathcal{T}(G)$ s\~ao extens\~oes invariantes \`a esquerda dos vetores tangentes $X_e, Y_e$.
+
+		Defini\c{c}\~ao 2.27: A m\'etrica \'e invariante \`a esquerda se $\langle V, W \rangle_h = \langle (dL_p)_h V, (dL_p)_h W \rangle_{L_p h}$. Para todos $p,h \in G\,; V, W \in T_eG$.
+
+		Teorema 2.28: Dado um produto interno em $T_eG$, a m\'etrica seguinte \'e invariante \`a esquerda.
+
+		Para todos $p \in G\,; V, W \in T_eG$: $\langle V, W \rangle_p = \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p W \rangle_e$.
+
+		Teorema 2.29: Seja a \'algebra de Lie $\mathcal{G} = T_eG$ do grupo de Lie G. A m\'etrica anterior \'e bi-invariante se e s\'o se
+
+		$\langle [V, X], W \rangle = - \langle V, [W, X] \rangle$. Para todos $V, W, X \in T_eG$. Traduzindo:
+
+		$\langle (dL_{p^{-1}})_p [V,X], (dL_{p^{-1}})_p W \rangle_e = - \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p [W,X] \rangle_e$.
+
+		\subsection{5-10: Constantes de estrutura}
+		\begin{flushright}
+		\end{flushright}
+
+		Em uma \'algebra de Lie $\mathcal{G}$, seja a base $(X_1, \cdots, X_n)$. Defina as constantes de estrutura $[X_i, X_j] = \sum_k c_{ij}^k X_k$. Compute Christoffel em termos de $c_{ij}^k, g_{ij}$.
+
+		\vspace{3mm}
+
+		Sejam $1 \le a,b,d \le n$. Basta computar de duas formas diferentes $\alpha = \langle \nabla_{X_a} X_b, X_d \rangle$.
+
+		\begin{align}
+		X_a &= X_a^1 \partial_1 + \cdots + X_a^n \partial_n \\
+		\nabla_{X_a} X_b &= \nabla_{(X_a^1 \partial_1 + \cdots + X_a^n \partial_n)} (X_b^1 \partial_1 + \cdots + X_b^n \partial_n) = \sum_{ijk} X_a^i X_b^j \Gamma_{ij}^k \partial_k \\
+		\alpha &= \sum_{ijk\ell} X_a^i X_b^j \Gamma_{ij}^k g_{k\ell} X_d^\ell \\
+		2 \alpha &= X_a\langle X_b,X_d\rangle + X_b\langle X_a,X_d\rangle - X_d\langle X_a,X_b\rangle -\\
+		&- \langle X_a, [X_b,X_d]\rangle - \langle X_b, [X_a,X_d]\rangle + \langle X_d, [X_a,X_b]\rangle
+		\end{align}
+
+		\begin{align}
+		u(a, b, d) &= X_a\langle X_b,X_d\rangle = \sum_k X_a^k \cfrac{\partial}{\partial_k} \left( \sum_{ij} X_b^i g_{ij} X_d^j \right) \\
+		v(a,b,d) &= \langle X_a, [X_b,X_d]\rangle = \langle X_a, \sum_k c_{bd}^k X_k\rangle = \sum_{ijk} c_{bd}^k X_k^j g_{ji} X_a^i \\
+		2 \sum_{ijk\ell} X_a^i X_b^j \Gamma_{ij}^k g_{k\ell} X_d^\ell &= u(a,b,d) + u(b,a,d) - u(d,a,b) - v(a,b,d) - v(b,a,d) + v(d,a,b)
+		\end{align}
+
+		S\~ao $n^3$ equa\c{c}\~oes para extrair $\Gamma_{ij}^k$.
+
+		\subsection{3-10: Em uma \'algebra de Lie, a m\'etrica $g$ \'e invariante \`a esquerda se e s\'o se $g_{ij}$ s\~ao constantes.}
+		\begin{flushright}
+		\end{flushright}
+
+		Suponha m\'etrica $g$ invariante \`a esquerda.
+
+		Se $\langle V, V \rangle_p = \langle (dL_{p^{-1}})_p V, dL_{p^{-1}})_p V\rangle_e$,
+
+		$V_p^\top G(p) V_p = (J_p V_e)^\top G(e) J_p V_e$.
+
+		Suponha agora $V$ invariante \`a esquerda.
+
+		Ou seja, $V_p = J_p V_e$.
+
+		$(J_p V_e)^\top G(p) J_p V_e = (J_p V_e)^\top G(e) J_p V_e$.
+
+		Portanto, $G(p) = G(e)$, ou seja, $G$ \'e constante.
+
+		\vspace{3mm}
+
+		E, na volta, caso $G(p) = G(e)$, \'e \'obvio que:
+
+		$(J_p V_e)^\top G(e) J_p V_e = (J_p V_e)^\top G(e) J_p V_e$.
+
+		$V_p^\top G(e) V_p = (J_p V_e)^\top G(e) J_p V_e$.
+
+		$\langle V, V \rangle_p = \langle (dL_{p^{-1}})_p V, dL_{p^{-1}})_p V\rangle_e$.
+
+		Portanto, a m\'etrica $g$ \'e invariante \`a esquerda.
+
+		\subsection{5-11: $2\, \nabla_X Y = [X, Y]$ sempre que $X, Y$ s\~ao invariantes \`a esquerda em $G$.}
+		\begin{flushright}
+		\end{flushright}
+
+		Sejam $X = X_a\,;\,Y = X_b\,;\,Z = X_d$. Voltando no resultado do primeiro exerc\'icio acima:
+
+		\begin{align}
+		u(a, b, d) &= X_a\langle X_b,X_d\rangle = \sum_k X_a^k \cfrac{\partial}{\partial_k} \left( \sum_{ij} X_b^i g_{ij} X_d^j \right) \\
+		v(a,b,d) &= \langle X_a, [X_b,X_d]\rangle = \langle X_a, \sum_k c_{bd}^k X_k\rangle = \sum_{ijk} c_{bd}^k X_k^j g_{ji} X_a^i \\
+		2 \sum_{ijk\ell} X_a^i X_b^j \Gamma_{ij}^k g_{k\ell} X_d^\ell &= u(a,b,d) + u(b,a,d) - u(d,a,b) - v(a,b,d) - v(b,a,d) + v(d,a,b)
+		\end{align}
+
+		Queremos mostrar que $2\alpha = v(d, a, b)$.
+
+		(O exerc\'icio pede para provar o teorema 2.29.)
+
+		A m\'etrica $g$ \'e bi-invariante. Pelo teorema 2.29, $\langle [X, Y], Z \rangle = - \langle X, [Z, Y] \rangle$. Para todos $X, Y, Z \in T_eG$. Traduzindo:
+
+		$\langle (dL_{p^{-1}})_p [X,Y], (dL_{p^{-1}})_p Z \rangle_e = - \langle (dL_{p^{-1}})_p X, (dL_{p^{-1}})_p [Z,Y] \rangle_e$.
+
+		$\therefore - v(a,b,d) = v(b,a,d) = -v(d,a,b)$.
+
+		\begin{align}
+		2 \alpha &= u(a,b,d) + u(b,a,d) - u(d,a,b) - v(a,b,d) - (- v(a,b,d)) + v(a,b,d) = v(a, b, d)
+		\end{align}
+
+		Queremos mostrar que $u(a,b,d) + u(b,a,d) - u(d,a,b) = 0$.
+
+		\begin{align}
+		X_p \langle Y, Z \rangle_p + Y_p \langle X, Z \rangle_p &= Z_p \langle X, Y \rangle_p \\
+		\text{pelo produto escalar euclideano,}&, \\
+		X_p \cdot \nabla (Y^\top_p G Z_p) + Y_p \cdot \nabla (X^\top_p G Z_p) &= Z_p \cdot \nabla (X^\top_p G Y_p) \\
+		\sum_k X_p^k u_k^1 + \sum_k Y_p^k v_k^1 &= \sum_k Z_p^k w_k^1 \\
+		u_k^1 &= \sum g_{ij} Z^j_p \partial x_k (Y^i_p) + \sum g_{ij} Y^i_p \partial x_k (Z^j_p) \\
+		v_k^1 &= \sum g_{ij} Z^j_p \partial x_k (X^i_p) + \sum g_{ij} X^i_p \partial x_k (Z^j_p) \\
+		w_k^1 &= \sum g_{ij} Y^j_p \partial x_k (X^i_p) + \sum g_{ij} X^i_p \partial x_k (Y^j_p)
+		\end{align}
+
+		\vspace{3mm}
+
+		$X$ \'e invariante \`a esquerda $\Rightarrow (dL_p)_h X_h = X_{ph}$. Analogamente, $(dL_p)_h Y_h = Y_{ph}$.
+
+		\begin{align}
+		J X_e \cdot \nabla ([J Y_e]^\top G Z_p) + J Y_e \cdot \nabla ([J X_e]^\top G Z_p) &= Z_p \cdot \nabla ([J X_e]^\top G J Y_e) \\
+		\sum_k U^k u_k^2 + \sum_k V^k v_k^2 &= \sum_k Z_p^k w_k^2 \\
+		u_k^2 &= \partial x_k (Y_e^\top J^\top G Z_p), \\
+		v_k^2 &= \partial x_k (X_e^\top J^\top G Z_p), \\
+		w_k^2 &= \partial x_k (X_e^\top J^\top G J X_e), \\
+		\text{e isso \'e uma bela de uma somat\'oria}&. \\
+		u_k^2 &= \partial x_k \left(\sum_{ij\ell} Y_e^\ell J_{j\ell} g_{ji} Z_p^i \right) \\
+		 &= \sum_{ij\ell} \partial x_k (Y_e^\ell) J_{j\ell} g_{ji} Z_p^i \\
+		 &+ \sum_{ij\ell} Y_e^\ell \partial x_k (J_{j\ell}) g_{ji} Z_p^i \\
+		 &+ \sum_{ij\ell} Y_e^\ell J_{j\ell} g_{ji} \partial x_k (Z_p^i) \\
+		v_k^2 &= \partial x_k \left(\sum_{ij\ell} X_e^\ell J_{j\ell} g_{ji} Z_p^i \right) \\
+		 &= \sum_{ij\ell} \partial x_k (X_e^\ell) J_{j\ell} g_{ji} Z_p^i \\
+		 &+ \sum_{ij\ell} X_e^\ell \partial x_k (J_{j\ell}) g_{ji} Z_p^i \\
+		 &+ \sum_{ij\ell} X_e^\ell J_{j\ell} g_{ji} \partial x_k (Z_p^i)
+		\end{align}
+
+		\begin{align}
+		w_k^2 &= \partial x_k \left(\sum_{ij\ell} X_e^\ell J_{j\ell} g_{ji} J_{im} X_e^m \right) \\
+		 &= \sum_{mij\ell} \partial x_k (X_e^\ell) J_{j\ell} g_{ji} J_{im} X_e^m  \\
+		 &+ \sum_{mij\ell} X_e^\ell \partial x_k (J_{j\ell}) g_{ji} J_{im} X_e^m  \\
+		 &+ \sum_{mij\ell} X_e^\ell J_{j\ell} g_{ji} \partial x_k (J_{im}) X_e^m  \\
+		 &+ \sum_{mij\ell} X_e^\ell J_{j\ell} g_{ji} J_{im} \partial x_k (X_e^m)  \\
+		 U^k &= \sum_m J_{ki} X_e^m \\
+		 V^k &= \sum_m J_{ki} Y_e^m \\
+		&\sum J_{ki} X_e^m \bigg(\partial x_k (Y_e^\ell) J_{j\ell} g_{ji} Z_p^i \\
+		 &+ Y_e^\ell \partial x_k (J_{j\ell}) g_{ji} Z_p^i \\
+		 &+ Y_e^\ell J_{j\ell} g_{ji} \partial x_k (Z_p^i) \bigg) \\
+		  + &\sum J_{ki} Y_e^m \bigg(\partial x_k (X_e^\ell) J_{j\ell} g_{ji} Z_p^i \\
+		 &+ X_e^\ell \partial x_k (J_{j\ell}) g_{ji} Z_p^i \\
+		 &+ X_e^\ell J_{j\ell} g_{ji} \partial x_k (Z_p^i) \bigg) \\
+		  &= \sum Z_p^k \bigg(\partial x_k (X_e^\ell) J_{j\ell} g_{ji} J_{im} X_e^m  \\
+		 &+ X_e^\ell \partial x_k (J_{j\ell}) g_{ji} J_{im} X_e^m  \\
+		 &+ X_e^\ell J_{j\ell} g_{ji} \partial x_k (J_{im}) X_e^m  \\
+		 &+ X_e^\ell J_{j\ell} g_{ji} J_{im} \partial x_k (X_e^m) \bigg)
+		\end{align}
+
+		\subsection{Fora da caridade, n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.}
+
+\end{document}

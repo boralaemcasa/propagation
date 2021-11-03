@@ -1,0 +1,46 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\date{}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Resum\~ao de \'Algebra A
+
+		Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+		\begin{align}
+			\varphi(p) &= p - 1 \\
+			\varphi(p^n) &= p^{n-1}(p - 1) \\
+			m &= p_1^{n_1} \cdots p_r^{n_r} \Rightarrow \varphi(m) = p_1^{n_1 - 1} \cdots p_r^{n_r - 1} (p_1 - 1) \cdots (p_r - 1) \\
+			(a, m) &= 1 \Rightarrow a^{\varphi(m)} \equiv 1 \mod m \\
+			(a, p) &= 1 \Rightarrow a^{p - 1} \equiv 1 \mod p \\
+			a^p &\equiv a \mod p \\
+			ax &\equiv b \mod m, (a, m) = 1 \Rightarrow x \equiv ba^{\varphi(m) - 1} \mod m \\
+			(p - 1)! + 1 &\equiv 0 \mod p \\
+			(n - 1)! + 1 &\equiv 0 \mod n \Rightarrow n \text{\,\'e primo.} \\
+			(m_i, m_j) &= 1, X \equiv a_i \mod m_i \Rightarrow M = \Pi m_i, M_i = \cfrac{M}{m_i}, M_i x_i \equiv 1 \mod m_i, \exists ! X \equiv \Sigma m_i x_i a_i \mod M \\
+			C &\equiv aP + b \mod 26 \\
+			P &\equiv a^{-1} (C - b) \mod 26 \\
+			C_i &\equiv P_i + k_i \mod 26 \\
+			C &\equiv AP \mod 26 \\
+			P &\equiv A^{-1} C \mod 26 \\
+			C &\equiv P^e \mod p \\
+			de &\equiv 1 \mod (p - 1) \\
+			(e, p - 1) &= 1 \\
+			C^d &\equiv P \mod p \\
+			n &= p_1 p_2 \\
+			(e, \varphi(n)) &= 1 \\
+			C &\equiv P^e \mod n \\
+			de &\equiv 1 \mod \varphi(n) \\
+			C^d &\equiv P \mod n
+		\end{align}
+
+\end{document}

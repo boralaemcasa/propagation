@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{eucal}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\begin{document}
+
+Main Video on \href{https://www.youtube.com/watch?v=mmzqmIcX7xo}{\underline{YouTube}}.
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $1$.}
+
+\begin{align}
+  T(x, y) = ax + by &\Leftrightarrow [T]_{1 \times 2}\, [v]_{2 \times 1} = w \in \mathbb{R} \\
+  T^\top(r) = \left( \begin{matrix} ar \\ br \end{matrix} \right) &\Leftrightarrow [T^\top]_{2 \times 1}\,r = [w]_{2 \times 1} \\
+  g : \mathbb{R}^b \rightarrow \mathbb{R} &\Leftrightarrow [\nabla g]_{1 \times b}\,[v]_{b \times 1} = w \in \mathbb{R} \\
+  g^\top : \mathbb{R} \rightarrow \mathbb{R}^b &\Leftrightarrow [\nabla g]^\top_{b \times 1}\,r = [w]_{b \times 1} \\
+  f : \mathbb{R}^b \rightarrow \mathbb{R}^a &\Leftrightarrow [\mathrm{d} f]_{a \times b}\,[v]_{b \times 1} = [w]_{a \times 1} \\
+  f^\top : \mathbb{R}^a \rightarrow \mathbb{R}^b &\Leftrightarrow [\mathrm{d} f]^\top_{b \times a}\,[v]_{a \times 1} = [w]_{b \times 1}
+\end{align}
+
+	Exemplo: $f(x,y,z) = \left( \begin{matrix} \sin x\,yz \\ x\,\sin y\,z \end{matrix} \right) \Rightarrow \mathrm{d}f = \left( \begin{matrix} \cos x\,yz & \sin x\,z & \sin x\,y \\ \sin y\,z & x\, \cos y\,z & x\,\sin y \end{matrix} \right)$
+
+	$\Rightarrow f^\top (u,v) = \left( \begin{matrix} \cos x\,yz & \sin y\,z \\ \sin x\,z & x\,cos y\,z \\ \sin x\,y & x\,\sin y \end{matrix} \right) \, \left( \begin{matrix} u \\ v \end{matrix} \right) $
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $2$.}
+
+\begin{align}
+  f : [t_0 - \delta, t_0 + \delta] &\rightarrow \mathbb{R}^n\,;\,\vert t - t_0\vert < \delta\,;\,C^\infty(t_0) \Rightarrow f(t) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, f^{(k)} (t_0)\,(t - t_0)^k \\
+  \text{Exemplo: } f(t) &= \binom{\cos t}{\sin t} = \binom{\cos t_0}{\sin t_0} + (t - t_0) \binom{- \sin t_0}{\cos t_0} + \cfrac{1}{2}\,(t - t_0)^2 \binom{- \cos t_0}{- \sin t_0} + \cdots \\
+  &\text{A derivada segunda tem transposta elementar }1 \times 2. \\
+  f : U^n\text{ aberto } &\rightarrow \mathbb{R}\,;\,x_0, x \in U\,;\,C^\infty(x_0) \Rightarrow f(x) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, \mathrm{d}^{k} f_{x_0}\,(x - x_0, \cdots, x - x_0)_{k}
+\end{align}
+
+\begin{align}
+  \text{Exemplo: } f(x^1,x^2) &= x^1 x^2 = x_0^1 x_0^2 + (x_0^2, x_0^1)_{1 \times 2} \binom{x^1 - x_0^1}{x^2 - x_0^2} + \cfrac{1}{2}\,(0 f_{xx} \mathrm{d}x \otimes \mathrm{d}x + 1 f_{xy} \mathrm{d}x \otimes \mathrm{d}y + \\
+  &+ 1 f_{yx} \mathrm{d}y \otimes \mathrm{d}x + 0 f_{yy} \mathrm{d}y \otimes \mathrm{d}y)\left(\binom{x^1 - x_0^1}{x^2 - x_0^2}, \binom{x^1 - x_0^1}{x^2 - x_0^2}\right) + \cdots \\
+  f: U^n\text{ aberto } &\rightarrow \mathbb{R}^a \,;\,x_0, x \in U\,;\,C^\infty(x_0) \Rightarrow f(x) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, \mathrm{d}^{k} f_{x_0}\,(x - x_0, \cdots, x - x_0)_{k} \\
+  \mathrm{d}f : \mathbb{R}^n &\rightarrow \mathcal{L}(\mathbb{R}^n\,;\,\mathbb{R}^a)\,;\,p \mapsto \mathrm{d}f_p : \mathbb{R}^n \rightarrow \mathbb{R}^a\,;\,v \mapsto \mathrm{d}f_p(v) \\
+  \mathrm{d}^2f : \mathbb{R}^n &\rightarrow \mathcal{L}(\mathbb{R}^n,\,\mathbb{R}^n\,;\,\mathbb{R}^a)\,;\,p \mapsto \mathrm{d}^2 f_p : \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}^a\,;\,(v^1, v^2) \mapsto \mathrm{d}^2f_p(v^1, v^2) \\
+  \text{Exemplo: }f(x,y,z) &= \left( \begin{matrix} \sin x\,yz \\ x\,\sin y\,z \end{matrix} \right) = f(\mathbf{x}_0) + \mathrm{d}f_{x_0}(\mathbf{x} - \mathbf{x}_0) + \cfrac{1}{2}\, \mathrm{d}^2 f_{x_0}(\mathbf{x} - \mathbf{x}_0, \mathbf{x} - \mathbf{x}_0) + \cdots \\
+  &= c_0 + M (\mathbf{x} - \mathbf{x}_0) + \cfrac{1}{2}\, \sum_{j = 1}^a \sum_{i_1 = 1}^n \sum_{i_2 = 1}^n (x^{i_1} - x_0^{i_1}) (x^{i_2} - x_0^{i_2}) \cfrac{\partial^2 f^j(x_0) e_j}{\partial x_{i_1} \partial x_{i_2}} + \cdots
+\end{align}
+
+\begin{align}
+v^1 v^1 f_{xx} &= (x - x_0)^2 \binom{-\sin x_0\,y_0z_0}{0}\,;\,v^1 v^2 f_{xy} = (x - x_0)(y - y_0) \binom{\cos x_0\,z_0}{\cos y_0\,z_0} \\
+  v^2 v^2 f_{yy} &= (y - y_0)^2 \binom{0}{-x_0 \sin y_0\,z_0}\,;\,v^1 v^3 f_{xz} = (x - x_0)(z - z_0) \binom{\cos x_0\,y_0}{\sin y_0}\,;\,\cdots
+\end{align}
+
+Est\'a vendo por que ningu\'em usa a segunda aproxima\c{c}\~ao? Apareceram $x^2, xy, xz, yx, y^2, yz, zx, zy, z^2$.
+
+J\'a sabemos que a transposta de $c_1 + M^i_j\,v = w$ \'e do tipo: $c_2 + M^\top v = w$.
+
+Queremos transpor quadr\'aticas do tipo: $c_0 + M^i_j\,v + \mathrm{d}^2 f_p (v, v) = w$.
+
+\begin{align}
+	\mathrm{d}^2f_p : \mathbb{R}^n \times \mathbb{R}^n &\rightarrow \mathbb{R}^a \\
+	(v^1, v^2) &\mapsto w = \sum_{j = 1}^a w^j(v^1, v^2) \partial x_j \\
+	w^j(v^1, v^2) &= \sum_{i_m = 1}^n f_{i_1, i_2}^j\, \mathrm{d}x^{i_1} \otimes \mathrm{d}x^{i_2}\,(v^1, v^2)\,;\,f^j_{i_1, i_2} = \cfrac{\partial^2 f^j}{\partial x_{i_1} \partial x_{i_2}}
+\end{align}
+
+\begin{align}
+	(\mathrm{d}^2)^\top f_p : \mathbb{R}^a &\rightarrow \mathbb{R}^{n^2} \\
+	w &\mapsto \tau = \sum_{i_m = 1}^n \tau_{i_1, i_2}(w)\, \mathrm{d}x^{i_1} \otimes \mathrm{d}x^{i_2} \\
+	\tau_{i_1, i_2} (w) &= \sum_{j = 1}^a f_{i_1, i_2}^j\, \partial x_j\,(w) = f_{i_1, i_2}^1 w^1 + \cdots + f_{i_1, i_2}^a w^a
+\end{align}
+
+Temos um objeto $f$ de tamanho $i_1i_2j = an^2$ e j\'a conseguimos dividir por $i_1i_2 = n^2$ para obter $j = a$.
+
+Tamb\'em conseguimos dividir por $j = a$ para obter $i_1i_2 = n^2$.
+
+S\'o ficou ruim somar $b$ linhas com $b^2$ linhas. Precisamos somar constantes com lineares com bilineares! :-)
+
+Portanto, sabemos determinar a transposta de $\mathrm{d}^2 f_p (v, v) = w$.
+
+Exerc\'icio para quem estiver empolgado: \textbf{Ordem $3$.}
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $k$.}
+
+\begin{align}
+	\mathrm{d}^k f_p : (\mathbb{R}^n)^k &\rightarrow \mathbb{R}^a \\
+	(v^1, \cdots, v^k) &\mapsto w = \sum_{i = 1}^a w^j(v^1, \cdots, v^k) \partial x_j \\
+	w^j(v^1, \cdots, v^k) &= \sum_{i_m = 1}^n f_{i_1, \cdots, i_k}^j\, \bigotimes_{m = 1}^{k} \mathrm{d}x^{i_m} \,(v^1, \cdots, v^k)\,;\,f^j_{i_1, \cdots, i_k} = \cfrac{\partial^k f^j}{\partial x_{i_1} \cdots \partial x_{i_k}} \\
+	(\mathrm{d}^k)^\top f_p : \mathbb{R}^a &\rightarrow \mathbb{R}^{n^k} \\
+	w &\mapsto \tau = \sum_{i_m = 1}^n \tau_{i_1, \cdots, i_k}(w)\, \bigotimes_{m = 1}^{k} \mathrm{d}x^{i_m} \\
+	\tau_{i_1, \cdots, i_k} (w) &= \sum_{j = 1}^a f_{i_1, \cdots, i_k}^j\, \partial x_j\,(w) = f_{i_1, \cdots, i_k}^1 w^1 + \cdots + f_{i_1, \cdots, i_k}^a w^a \\
+	\therefore &[w]_0^a\,;\,[w^j]_{n \times \cdots \times n}^0\,;\,[\tau]_{n \times \cdots \times n}^0\,;\,[\tau_{i_1, \cdots, i_k}]_0^a
+\end{align}
+
+\end{document}

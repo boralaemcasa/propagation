@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Sistemas Nebulosos
+\end{center}
+
+\normalsize
+
+\vspace{3mm}
+
+\section{Degraus Suaves [de]Crescentes}
+
+\begin{flushleft}
+Entrada: $u(t)$ \\
+Sa\'ida: $i(t)$
+\end{flushleft}
+
+$u = Ri + L\, \cfrac{di}{dt}$
+
+Varia\c{c}\~ao de Par\^ametros: $y' + p(t) y = q(t) \Rightarrow y = \exp(-\int p) \left[ \int \exp (\int p) q \,\mathrm{d}t + C \right]$
+
+$y \leftarrow i$
+
+$p(t) \leftarrow R/L \Rightarrow \int p = Rt/L$
+
+$q(t) \rightarrow u/L$
+
+Portanto,
+
+\begin{align}
+ i(u(t)) &= \exp(-Rt/L) \left[ \int (\exp Rt/L) u/L \,\mathrm{d}t + C \right] \\
+ i(u(t)) &= \cfrac{1}{L \alpha^t} \left[ \int \alpha^t u \,\mathrm{d}t + C \right]
+\end{align}
+
+Outras restri\c{c}\~oes:
+
+$u \leftarrow u[k]$
+
+$u[k] \leftarrow \mu_1 q_1[k] + \mu_2 q_2[k]$
+
+$q_1[k+1] = q_1[k] - \beta e \mu_1$
+
+$q_2[k+1] = q_2[k] - \beta e \mu_2$
+
+\vspace{3mm}
+
+\textbf{(II)}
+
+Se beta, mu\_i variarem com k, podemos pegar os pontos $(q_1, q_2)[k] = P_k \in \mathbb{R}^2$ e interpolar. No caso de polin\^omios: $P_0, P_1$ fazem reta de primeiro grau, $P_0, \cdots, P_n$ tem grau n.
+
+\vspace{3mm}
+
+\textbf{(III)}
+
+Para todo u, existe i(u). Queremos uma curva que comece da origem e estabilize em y = constante no menor $t = t_0$ poss\'ivel. Vou dar exemplos de degraus suaves:
+
+\begin{align}
+  2 \le t \le 3 \Rightarrow f_1(t) &= \cfrac{1}{1 - t} \Rightarrow -1 < y < -0.5 \\
+  2 \le t \le 10 \Rightarrow f_2(t) &= \ln(t + 2) \Rightarrow 1.4 < y < 2.4 \\
+  0 \le t \le 2 \Rightarrow f_3(t) &= 1 - \exp(-t) \Rightarrow 0 < y < 0.8
+\end{align}
+
+Agora eu exijo que todas as derivadas \`a esquerda e \`a direita sejam zero, como no degrau-rampa-degrau.
+
+\begin{align}
+  0 \le t \le 2 \Rightarrow f_4(t) &= \exp(-1/t) \Rightarrow 0 < y < 0.6 \\
+  a \le t \le a + 1 \Rightarrow f_5(t) &= \exp(-1/(t - a)) \Rightarrow 0 < y < 0.36 \\
+  a \le t \le b \Rightarrow f_6(t) &= \int_a^t \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < y < f_6(b)
+\end{align}
+
+Esta \'ultima \'e crescente. Calcule o limite quando b tende a $a$.
+
+\begin{align}
+  a \le t \le b \Rightarrow g(t) &= \cfrac{f_6(t)}{f_6(b)} (M - g_0) + g_0 \Rightarrow g_0 < y < M \\
+  a \le t \le b \Rightarrow f_7(t) &= \int_t^b \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < f_7(a) \to y \to 0 \\
+  a \le t \le b \Rightarrow h(t) &= \cfrac{f_7(t)}{f_7(a)} (M - h_0) + h_0 \Rightarrow h_0 < M \to y \to h_0
+\end{align}
+
+Conclus\~ao: o valor ideal que queremos \'e dado ou por $g(t)$ ou por $h(t)$.
+
+\section{Controlador RL de primeira ordem}
+
+\begin{align}
+  h &= 0,001\,;\,0 \le k \le 23000 h\,;\,a = 1 \le x \le 24 = 8b
+\end{align}
+
+Pela soma de Riemann,
+
+\begin{align}
+  i(u)(k) &= e^{-R/L (a + hk)}\cfrac{1}{L}\sum_{n > 0}^k e^{R/L (a + hn)} u(n) h \\  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  i_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
+  e &= i - i_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  u_{ref} &= R i_{ref} + L \cfrac{d}{dt} i_{ref} \\
+  v &= u - u_{ref}
+\end{align}
+
+Para cada alfa, conseguimos $| e | < \delta \Rightarrow | v | < \epsilon$. [Provar.]
+
+A primeira quest\~ao \'e se podemos inverter. Para \'epsilon = 0,08, ser\'a que o valor de alfa = 1 vai for\c{c}ar que o delta de entrada seja 2,5 e portanto garantir que o m\'odulo do erro de sa\'ida seja sempre menor que \'epsilon???
+
+\begin{align}
+u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e \\
+u(i)(k+1) &= \sum_{n = 0}^k \alpha \varphi(n) [i(n) - i_{ref}(n)] \\
+\varphi(n) &= 2 \mu_n \mu_k + 1 - \mu_k - \mu_n
+\end{align}
+
+A equa\c{c}~ao 13 passa de u para i. Combinamos com a equa\c{c}\~ao 24, que passa de i para u.
+
+\begin{align}
+i &\to i(k+ 1) = e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \alpha \varphi(n) [i(n) - i_{ref}(n)] h \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha \varphi(m) \bigg[e^{-R/L (a + hm)}\cfrac{1}{L}\sum_{n > 0}^m e^{R/L (a + hn)} u(n) h - i_{ref}(m)\bigg]
+\end{align}
+
+Vamos dividir em 3 casos.
+
+\subsection{Caso 1}
+
+\begin{align}
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1
+\end{align}
+
+\subsection{Caso 2}
+
+\begin{align}
+   e(k) &\ge E_2 \Rightarrow \mu(k) = 0
+\end{align}
+
+\subsection{Caso 3}
+
+\begin{align}
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q
+\end{align}
+
+\section{Controlador RLC de segunda ordem}
+
+\begin{flushleft}
+Se o erro for proporcional como vimos na simula\c{c}\~ao em MatLab, basta repetir a invers\~ao. \\
+Vamos trocar a equa\c{c}\~ao 20 por
+\end{flushleft}
+
+\begin{align}
+ u_{ref} &= R i_{ref} + L \cfrac{d}{dt} i_{ref} + \int_{t_0}^t \cfrac{i_{ref}(\tau)}{C}\, \mathrm{d}\tau + K\,;\,u_{ref}(t_0) = 0 \\
+  \cfrac{d}{dt} u_{ref} &= R \cfrac{d}{dt} i_{ref} + L \cfrac{d^2}{dt^2} i_{ref} + \cfrac{1}{C}i_{ref}
+\end{align}
+
+Basta resolver a equa\c{c}\~ao diferencial $y'' = a y + b y' + c, a = -\cfrac{1}{LC}, b = - \cfrac{R}{L}, c = \cfrac{u_{ref}}{L}$.
+
+\begin{align}
+ y' &= z \\
+ z' &= ay + bz + c \\
+ \begin{pmatrix} y \\ z \end{pmatrix}' &= \begin{pmatrix} 0 & 1 \\ a & b \end{pmatrix}\begin{pmatrix} y \\ z \end{pmatrix} + \begin{pmatrix} 0 \\ c \end{pmatrix} \\
+ Y' &= P Y + Q \\
+ Y &= e^{-tP} \int_{t_0}^t e^{\tau P} Q(\tau)\, \mathrm{d}\tau + Y(t_0)
+\end{align}
+
+\begin{align}
+e^{tP} &= \begin{pmatrix} f(t) & g(t) \\ p(t) & q(t) \end{pmatrix} \\
+ Y &= \cfrac{1}{L} \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix} \int_{t_0}^t \begin{pmatrix} f(\tau) & g(\tau) \\ p(\tau) & q(\tau) \end{pmatrix} \begin{pmatrix} 0 \\ u_{ref}(\tau) \end{pmatrix} \mathrm{d}\tau + Y(t_0) \\
+ v(t) &= \int_{t_0}^t g(\tau) u_{ref}(\tau) \,\mathrm{d}\tau \\
+ w(t) &= \int_{t_0}^t q(\tau) u_{ref}(\tau) \,\mathrm{d}\tau \\
+ Y &= \cfrac{1}{L} \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix}  \begin{pmatrix} v(t) \\ w(t) \end{pmatrix} + Y(t_0) \\
+ y(t) &= \cfrac{f(-t)v(t) + g(-t)w(t)}{L}  + y(t_0)
+\end{align}
+
+\section{Controlador Iterado}
+
+\begin{flushleft}
+Entrada: $u(t)$ \\
+Sa\'ida: $y(t)$ \\
+Regra:
+\end{flushleft}
+
+\begin{align}
+y(k) &= 1.4 y(k-1) - 0.6 y(k-2) - 3 u^3(k -1) + 2u(k-1) - u^3(k-2) + 2u(k-2)
+\end{align}
+
+Ser\'a poss\'ivel inverter?
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 15/Sep/2019, Release $1.0.1$
+
+\end{document}

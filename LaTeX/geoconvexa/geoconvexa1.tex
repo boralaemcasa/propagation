@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+Seja $K$ convexo, contido em $\mathbb{R}^2$. Sejam $\ell = (\ell_1, \ell_2) \in \mathbb{R}^2, M = K + \ell,$
+
+$\varphi(\ell) = $ vol $M^\circ, \psi = \bigg(\cfrac{\partial \varphi}{\partial \ell_1}, \cfrac{\partial \varphi}{\partial \ell_2} \bigg) \in \mathbb{R}^2$. Queremos mostrar que $\psi = 0 \Rightarrow \ell$ \'e um \'unico vetor de $\mathbb{R}^2$.
+
+\begin{align}
+\varphi(\ell) &= \int_0^{2\pi} \int_0^{f(\theta, \ell)} r \,\mathrm{d}r\,\mathrm{d}\theta = \cfrac{1}{2} \int_0^{2\pi} f^2\,\mathrm{d}\theta \\
+\psi_1 &= \cfrac{1}{2} \int_0^{2\pi} 2f\cdot\cfrac{\partial f}{\partial \ell_1}\,\mathrm{d}\theta = \int_0^{2\pi}g_1\,\mathrm{d}\theta = G_1(2\pi) - G_1(0) \\
+\psi_2 &= \int_0^{2\pi} f\cdot\cfrac{\partial f}{\partial \ell_2}\,\mathrm{d}\theta = \int_0^{2\pi}g_2\,\mathrm{d}\theta = G_2(2\pi) - G_2(0) \\
+(k_1 &+ \ell_1) x + (k_2 + \ell_2) y \le 1, \forall k \in K \\
+(k_1 &+ \ell_1) r \cos \theta + (k_2 + \ell_2) r \sin \theta \le 1, \forall k \in K
+\end{align}
+
+$\exists \,!\,(\ell_1,\ell_2)\,;\,H_1(\ell_1,\ell_2) = H_2(\ell_1, \ell_2) = 0$.
+
+\vspace{3mm}
+
+Queremos resolver o sistema de equa\c{c}\~oes $G(2\pi) = G(0)$.
+
+Quando \'e que uma fun\c{c}\~ao de $\mathbb{R}^n$ em $\mathbb{R}^n$ \textbf{ tem posto igual a }$n$?
+
+\textbf{Se ela \'e de classe $C^1$, j\'a acabou.}
+
+Se fosse linear, $H$ seria matriz com posto $2$, invert\'ivel. $H^{-1}(0) = (x_1, x_2)$ \'e um ponto. Ent\~ao suponhamos outro ponto distinto $(y_1, y_2)$, e queremos mostrar que $H(y) \ne 0, \forall y \ne x$.
+
+No caso da bola $f(\theta) = c$. No caso geral, $f$ \'e peri\'odica, sempre positiva (e operante) e um dos per\'iodos \'e $f(0) = f(2\pi)$.
+
+O que sabemos sobre a integral de $f'f$ em um per\'iodo?
+
+Suponha $f(\theta, \ell) = (\sin \omega_1 \ell_1 + \sin \omega_2 \ell_2) \sin \theta + \theta_0 = \alpha \sin \theta + \theta_0$.
+
+\begin{align}
+\psi_i &= \int_0^{2\pi} (\alpha \sin \theta + \theta_0)\cdot \omega_i \cdot \cos \omega_i \ell_i \cdot \sin \theta \,\mathrm{d}\theta \\
+&= \omega_i \cdot \cos \omega_i \ell_i \bigg[\alpha \int_0^{2\pi} \sin^2 \theta \,\mathrm{d}\theta + \theta_0 \cancel{\int_0^{2\pi} \sin \theta \,\mathrm{d}\theta} \bigg] \\
+&= \omega_i \cdot \cos \omega_i \ell_i \alpha \int_0^{4\pi} \cfrac{1 - \cancel{\cos t}}{4} \,\mathrm{d}t = \omega_i \cdot \cos \omega_i \ell_i \alpha \cfrac{t}{4} \bigg\vert_0^{4\pi} \\
+&= \omega_i \cdot \cos \omega_i \ell_i \cdot \pi (\sin \omega_1 \ell_1 + \sin \omega_2 \ell_2) = 0 \\
+\text{ou }\cos \omega_i \ell_i &= 0 \Rightarrow \omega_i \ell_i = \cfrac{\pi}{2} + \mathbb{Z}\pi \Rightarrow \text{para cada inteiro, um }\ell \\
+\text{ou }\sin \omega_1 \ell_1 + \sin \omega_2 \ell_2 &= 0 \Rightarrow \sin \omega_2 \ell_2 = - \sin \omega_1 \ell_1 \Rightarrow \omega_2 \ell_2 = \omega_1 \ell_1 + \pi + \mathbb{Z}\pi
+\end{align}
+
+Ou eu errei, ou aquilo n\~ao \'e corpo convexo. Vamos relembrar aquela aulinha daquela professorinha dos n\'umeros complexos.
+
+Regi\~ao $\mathcal{R}:\,\,(x - \ell_1)^2 + (y - \ell_2)^2 \le c^2$. Parametriza\c{c}\~ao:
+
+\begin{align}
+r \cos \theta &= x = \ell_1 + c \cos t \\
+r \sin \theta &= y = \ell_2 + c \sin t \\
+\iint_{\mathcal{R}(x,y)} \,\mathrm{d}x\,\mathrm{d}y &= \iint_{\mathcal{R}(r,\theta)} r\,\,\mathrm{d}r\,\mathrm{d}\theta
+\end{align}
+
+***
+
+\vspace{300mm}
+
+Seja a dimens\~ao $n > 2$.
+
+\begin{align}
+\varphi(\ell) &= \int_0^{\pi} \cdots \int_0^{2\pi} \int_0^{f(\theta, \ell)} r^{n-1} \,\mathrm{d}r\,\mathrm{d}\theta\,\mathrm{d}\lambda_1 \cdots \,\mathrm{d}\lambda_{n-2} \\
+&= \cfrac{1}{n} \int_0^{\pi} \cdots \int_0^{2\pi} f^n\,\mathrm{d}\theta\,\mathrm{d}\lambda_1 \cdots \,\mathrm{d}\lambda_{n-2} \\
+\psi_i &= \cfrac{1}{\cancel{n}} \int_0^{\pi} \cdots \int_0^{2\pi} \cancel{n}\cdot f^{n - 1}\cdot\cfrac{\partial f}{\partial \ell_i}\,\mathrm{d}\theta\,\mathrm{d}\lambda_1 \cdots \,\mathrm{d}\lambda_{n-2} \\
+&= \int_0^{\pi} \cdots \int_0^{2\pi}g_i\,\mathrm{d}\vec v = H_i(\ell, 0, \pi)
+\end{align}
+
+$\exists \,!\,(\ell_1,\cdots,\ell_n)\,;\,H_1(\ell_1,\cdots,\ell_n) = \cdots = H_n(\ell_1, \cdots, \ell_n) = 0$.
+
+\vspace{3mm}
+
+Exerc\'icio de geometria convexa, vers\~ao $0.2$, de 25/Jan/2020, Vinicius Claudino Ferraz
+
+\vspace{3mm}
+
+Fora da caridade, n\~ao h\'a salva\c{c}\~ao.
+
+\end{document}

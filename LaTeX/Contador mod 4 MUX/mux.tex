@@ -1,0 +1,115 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Contador mod 4 | MUX
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+
+-- aula7 - A Finite State Machine that mimics the behavior of mux
+-- Copyright (C) 2018  Digital Systems Group - UFMG
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 3 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, see <https://www.gnu.org/licenses/>.
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity aula7 is
+    port (
+        RESET   : in    std_logic; -- reset input
+        CLOCK   : in    std_logic; -- clock input
+        S       : in    std_logic; -- control input
+        A,B,C,D : in    std_logic; -- data inputs
+        Q       : out   std_logic  -- data output
+    );
+end aula7;
+
+architecture arch of aula7 is
+  type estado is (S0, S1, S2, S3);
+  signal estado_atual, proximo_estado: estado;
+begin
+
+	process(RESET, CLOCK) is
+	begin
+	  if (RESET='1') then
+		 estado_atual <= S0;
+	  elsif (rising_edge(CLOCK)) then
+		 estado_atual <= proximo_estado;
+	  end if;
+	end process;
+
+  process(S,A,B,C,D , estado_atual) is
+  begin
+    case estado_atual is
+	   when S0 =>
+		  if (S='1') then
+		    Q <= B;
+			 proximo_estado <= S1;
+		  else
+		    Q <= A;
+			 proximo_estado <= S0;
+		end if;
+	   when S1 =>
+		  if (S='1') then
+		    Q <= C;
+			 proximo_estado <= S2;
+		  else
+		    Q <= B;
+			 proximo_estado <= S1;
+		end if;
+  	   when S2 =>
+		  if (S='1') then
+		    Q <= D;
+			 proximo_estado <= S3;
+		  else
+		    Q <= C;
+			 proximo_estado <= S2;
+		end if;
+	   when S3 =>
+		  if (S='1') then
+		    Q <= A;
+			 proximo_estado <= S0;
+		  else
+		    Q <= D;
+			 proximo_estado <= S3;
+		end if;
+	end case;
+end process;
+
+end arch;
+\end{verbatim}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 20/Sep/2019, Release $1.0$
+
+\end{document}

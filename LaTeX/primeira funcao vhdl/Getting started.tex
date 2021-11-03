@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Primeira Fun\c{c}\~ao(x) $= 2 \cdot x \cdot x'$
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+LIBRARY IEEE;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity aula8 is
+	port( D: in std_logic_vector(3 downto 0);
+	      Q: out std_logic_vector(3 downto 0)
+	    );
+end aula8;
+
+architecture RTL of aula8 is
+
+
+type my_type4 is array (3 downto 0) of std_logic;
+type my_type12 is array (11 downto 0) of std_logic;
+
+	function dobro(x: my_type4) return my_type4 is
+	variable y: my_type4;
+	variable z: my_type12;
+	begin
+	  y(0) := not(x(0));
+	  y(1) := not(x(1));
+	  y(2) := not(x(2));
+	  y(3) := not(x(3));
+	  z := my_type12(2 * unsigned(x) * unsigned(y));
+	  y(0) := z(0);
+	  y(1) := z(1);
+	  y(2) := z(2);
+	  y(3) := z(3);
+	  return y;
+	end dobro;
+
+begin
+  Q <= std_logic_vector(dobro(my_type4(D)));
+end RTL;
+\end{verbatim}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 9/Octo/2019, Release $1.0$
+
+\vspace{3mm}
+
+Observa\c{c}\~ao: Prezado Hermes, solicito mais tempo (que tal at\'e quarta que vem, 16/outubro?) para entregar aula 9. N\~ao participarei com Arthur e Ricardo mais na sexta a partir desta aula 9.  Procurei laborat\'orio vazio, mas no fim do hor\'ario apareceram dois alunos. Interrompi imediatamente. Tornarei a procurar laborat\'orio vazio a partir de amanh\~a. Gostaria que estivesse registrado em algum lugar o nome completo de quem estiver comigo em laborat\'orio para ver se \'e poss\'ivel abrir processo formal de discrimina\c{c}\~ao.
+
+\end{document}

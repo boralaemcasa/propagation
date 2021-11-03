@@ -1,0 +1,163 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{amscd} %diagrama CD
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\date{}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Primeira Lista de I.E.D.P.
+
+		Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+	\section{Quest\~ao 1}
+		\begin{align}
+			u_t &= u_{xx} ; x \in (0, L) ; t \in (0, \infty) \label{Hum} \\
+			u_x(t, 0) &= 0, \forall t \ge 0 \\
+			u_x(t, L) &= 0, \forall t \ge 0 \\
+			u(0, x) &= f(x) \label{tIgual0} \\
+			f &\in C^1([0, L]) \\
+			f'(0) &= 0 \\
+			f'(L) &= 0 \\
+			u(x, t) &= \varphi(x) \psi(t) \label{Separou} \\
+			(\ref{Hum}) \Rightarrow \varphi(x) \psi'(t) &= \varphi''(x) \psi(t) \\
+			\frac{\psi'(t)}{\psi(t)} &= \frac{\varphi''(x)}{\varphi(x)} = - \lambda \in \mathbb{R} \\
+			\psi'(t) &= - \lambda \psi(t) \Rightarrow \psi(t) = C e^{- \lambda t}, C \in \mathbb{R} \\
+			\varphi''(x) &= - \lambda \varphi(x) \Rightarrow \varphi(x) = C_1 e^{ax} \cos(bx) + C_2 e^{ax} \sin(bx) \\
+			a &= 0, b = \sqrt{\lambda} \\
+			(\ref{Separou}) \Rightarrow u(t, x) &= e^{- \lambda t} (C_1 \cos(x \sqrt{\lambda}) + C_2 \sin(x \sqrt{\lambda})) \\
+			(\ref{tIgual0}) \Rightarrow u(0, x) &= C_1 \cos(x\sqrt{\lambda}) + C_2 \sin(x\sqrt{\lambda}) = f(x) \\
+			f'(x) &= - C_1 \sqrt{\lambda} \sin(x\sqrt{\lambda}) + C_2 \sqrt{\lambda} \cos(x\sqrt{\lambda}) \\
+			f'(0) &= C_2 \sqrt{\lambda} = 0 \Rightarrow C_2 = 0 \\
+			f'(L) &= - C_1 \sqrt{\lambda} \sin(L\sqrt{\lambda}) = 0 \Rightarrow L \sqrt{\lambda} = n\pi, n \in \mathbb{Z} \\
+			f(x) &= \sum_{n = 0}^\infty c_n \cos \frac{n \pi x}{L} \Rightarrow u(t, x) = \sum_{n = 0}^\infty c_n e^{- \frac{n^2\pi^2}{L^2} t} \cos \frac{n \pi x}{L}
+		\end{align}
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 2}
+
+		\begin{align}
+			u_1 &= \frac{1}{\sqrt{2}} \\
+			u_2 &= \cos \frac{n \pi x}{L} \\
+			u_3 &= \sin \frac{n \pi x}{L} \\
+			\langle u_1, u_2 \rangle_2 &= \int_{-L}^L u_1 u_2 \,\mathrm{d}x = 2 u_1 \int_0^L u_2 \,\mathrm{d}x = 2 u_1 [\alpha u_3]_0^L = 0 \\
+			\langle u_1, u_3 \rangle_2 &= \int_{-L}^L u_1 u_3 \,\mathrm{d}x = u_1 \int_{-L}^L u_3 \,\mathrm{d}x = 0, \text{ porque o seno \'e \'impar.} \\
+			\langle u_2, u_3 \rangle_2 &= \int_{-L}^L u_2 u_3 \,\mathrm{d}x = 0, \text{pois o integrando \'e par vezes \'impar = \'impar}
+		\end{align}
+
+		\begin{align}
+			\langle u_1, u_1 \rangle_2 &= \int_{-L}^L u_1^2 \,\mathrm{d}x = u_1^2 \cdot 2L = L \\
+			\langle u_2, u_2 \rangle_2 &= \int_{-L}^L u_2^2 \,\mathrm{d}x = \frac{L}{n\pi} \int_{-n\pi}^{n\pi} \cos^2 u\,\mathrm{d}u = \frac{L}{2n\pi} \int_{-n\pi}^{n\pi} (1 + \cos 2u)\,\mathrm{d}u \\
+			\langle u_2, u_2 \rangle_2 &= \frac{L}{2n\pi} \bigg[u + \frac{1}{2}\sin 2u\bigg]_{-n\pi}^{n\pi} = L \\
+			\langle u_3, u_3 \rangle_2 &= \int_{-L}^L u_3^2 \,\mathrm{d}x = \frac{L}{n\pi} \int_{-n\pi}^{n\pi} \sin^2 u\,\mathrm{d}u = \frac{L}{2n\pi} \int_{-n\pi}^{n\pi} (1 - \cos 2u)\,\mathrm{d}u \\
+			\langle u_3, u_3 \rangle_2 &= \frac{L}{2n\pi} \bigg[u - \frac{1}{2}\sin 2u\bigg]_{-n\pi}^{n\pi} = L
+		\end{align}
+
+	\section{Quest\~ao 3}
+
+		\begin{align}
+			f &\in CP[a,b] ; a < b \in \mathbb{R}
+		\end{align}
+
+		Queremos mostrar que
+
+		\begin{align}
+			\lim_{n \rightarrow \infty} \int_a^b &f(x) \cos(nx)\, \mathrm{d}\,x = 0 \\
+			\lim_{n \rightarrow \infty} \int_a^b &f(x) \sin(nx)\, \mathrm{d}\,x = 0
+		\end{align}
+
+		O lema de Riemmann-Lebesgue afirma que, se $g \in CP[-L,L]$, ent\~ao
+
+		\begin{align}
+			\lim_{n \rightarrow \infty} a_n(g) &= \frac{1}{L} \lim_{n \rightarrow \infty} \int_{-L}^L g(y) \cos \frac{n\pi y}{L}\, \mathrm{d}\,y = 0 \\
+			\lim_{n \rightarrow \infty} b_n(g) &= \frac{1}{L} \lim_{n \rightarrow \infty} \int_{-L}^L g(y) \sin \frac{n\pi y}{L}\, \mathrm{d}\,y = 0
+		\end{align}
+
+		Basta construirmos fun\c{c}\~oes reais em compactos da seguinte forma:
+
+		\begin{align}
+		 \begin{CD}
+		  [a,b] @>\rho>> [p,q] \\
+		  @V{f}VV  @VV{h}V \\
+		  \mathbb{R} @<g<< [-L,L] \\
+		 \end{CD}
+		\end{align}
+
+		\begin{align}
+			y &= \alpha z + \beta = h(z) \\
+			\alpha &= \frac{2L}{q - p} \\
+			\beta &= L - q \frac{2L}{q - p} \\
+			\lim_{n \rightarrow \infty} a_n(g) &= \frac{1}{L} \lim_{n \rightarrow \infty} \int_{p}^q g(h(z)) \cos \frac{n\pi (\alpha z + \beta)}{L} \alpha \, \mathrm{d}\,z = 0 \\
+			\lim_{n \rightarrow \infty} b_n(g) &= \frac{\alpha}{L} \lim_{n \rightarrow \infty} \int_{p}^q g(h(z)) \sin \frac{n\pi (\alpha z + \beta)}{L} \, \mathrm{d}\,z = 0
+		\end{align}
+
+		\begin{align}
+			x &= \frac{\pi}{L} (\alpha z + \beta) \Leftrightarrow \rho(x) = z \\
+			\lim_{n \rightarrow \infty} a_n(g) &= \frac{\alpha}{L} \lim_{n \rightarrow \infty} \int_{a}^b g(h(\rho(x))) \cos (nx) \cdot \frac{L}{\pi\alpha} \, \mathrm{d}\,x = 0 \\
+			\lim_{n \rightarrow \infty} b_n(g) &= \frac{1}{\pi} \lim_{n \rightarrow \infty} \int_{a}^b g(h(\rho(x))) \sin (nx) \, \mathrm{d}\,x = 0 \\
+			f &= g \circ h \circ \rho, \text{ por constru\c{c}\~ao.} \\
+			\lim_{n \rightarrow \infty} a_n(g) &= \frac{1}{\pi} \lim_{n \rightarrow \infty} \int_{a}^b f(x) \cos (nx) \, \mathrm{d}\,x = 0 \\
+			\lim_{n \rightarrow \infty} b_n(g) &= \frac{1}{\pi} \lim_{n \rightarrow \infty} \int_{a}^b f(x) \sin (nx) \, \mathrm{d}\,x = 0
+		\end{align}
+
+	\section{Quest\~ao 4}
+		\begin{flushright}
+		\end{flushright}
+
+		De fato, temos
+
+		\begin{align}
+			\frac{1}{L} \int_0^L f(x + \xi) D_N(\xi)\,\mathrm{d}\xi = &\frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi \\
+			+ &\frac{1}{L} \int_0^L f(x+) D_N(\xi)\,\mathrm{d}\xi.
+		\end{align}
+
+		Como
+
+		\begin{align}
+			&\frac{1}{L} \int_0^L f(x+) D_N(\xi)\,\mathrm{d}\xi = f(x+) \frac{1}{L} \int_0^L D_N(\xi)\,\mathrm{d}\xi = \frac{f(x+)}{2},
+		\end{align}
+
+		Queremos mostrar que
+
+		\begin{align}
+			&\lim_{N \rightarrow \infty} \frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi = 0.
+		\end{align}
+
+		Assim, pela f\'ormula do n\'ucleo,
+
+		\begin{align}
+			&\frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi = \frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] \cfrac{\sin\bigg(\cfrac{\pi}{2L}(2N+1)\xi\bigg)}{2\sin\bigg(\cfrac{\pi}{2L}\xi\bigg)} \,\mathrm{d}\xi \\
+			= &\frac{2}{\pi} \int_0^{\frac{\pi}{2}} v(\eta) \sin[(2N+1)\eta] \,\mathrm{d}\eta,
+		\end{align}
+
+		em que
+
+		\begin{align}
+			&v(\eta) = \cfrac{f\bigg(x + \cfrac{2L}{\pi} \eta\bigg) - f(x+)}{2 \sin \eta}.
+		\end{align}
+
+		Pelo exerc\'icio (3),
+
+		\begin{align}
+			&\lim_{N \rightarrow \infty} v(\eta) \sin[(2N+1)\eta] \,\mathrm{d}\eta = 0.
+		\end{align}
+
+		Uma vez que $v \in CP\bigg(0, \cfrac{\pi}{2}\bigg]$, basta agora mostrar que $v(0+)$ \'e finito.
+
+		\begin{align}
+			&\lim_{\eta \rightarrow 0+} v(\eta) = \lim_{\eta \rightarrow 0+} \cfrac{f\bigg(x + \cfrac{2L}{\pi}\eta\bigg) - f(x+)}{\frac{2L}{\pi}\eta} \cdot \cfrac{\cfrac{2L}{\pi}\eta}{2 \sin \eta} \\
+			= &f'(x+) \frac{L}{\pi} \lim_{\eta \rightarrow 0+} \frac{\eta}{\sin \eta} < \infty
+		\end{align}
+
+
+
+\end{document}

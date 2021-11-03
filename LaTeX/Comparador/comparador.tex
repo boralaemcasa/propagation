@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Comparador | Signed \& Unsigned
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+--0000
+--1111
+--1110
+--1101
+--1100
+--1011
+--1010
+--1001
+--1000
+
+entity somador is
+port (	x, y 	: in integer range -8 to 7;
+		   s, t  : out std_logic_vector(6 downto 0));
+end somador;
+
+architecture comportamental of somador is
+  signal v, w: integer range 0 to 15;
+begin
+  v <= x + 16;
+  w <= y + 16;
+
+		s <= "1110000" WHEN x > y else
+		     "1000110" WHEN x < y else "1000000";
+
+		t <= "1110000" WHEN v > w else
+		     "1000110" WHEN v < w else "1000000";
+
+end comportamental;
+\end{verbatim}
+
+\vspace{10mm}
+
+\Large
+
+\begin{center}
+Test Bench
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+entity tb_somador is
+end tb_somador;
+
+architecture teste of tb_somador is
+
+component somador is
+port (	x, y 	: in integer range -8 to 7;
+		   s, t  : out std_logic_vector(6 downto 0));
+end component;
+
+signal A, B: integer range -8 to 7;
+signal C, D: std_logic_vector(6 downto 0);
+begin
+instancia_somador: somador port map(x=>A,y=>B,s=>C,t=>D);
+A <= 0, 1 after 10 ns, 2 after 20 ns, 3 after 30 ns, 4 after 40 ns, 5 after 50 ns, 6 after 60 ns, 7 after 70 ns, -8 after 80 ns;
+B <= 7, 6 after 10 ns, 5 after 20 ns, 4 after 30 ns, 3 after 40 ns, 2 after 50 ns, 1 after 60 ns, 0 after 70 ns, 7 after 80 ns;
+end teste;
+\end{verbatim}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 6/Sep/2019, Release $1.0$
+
+\end{document}

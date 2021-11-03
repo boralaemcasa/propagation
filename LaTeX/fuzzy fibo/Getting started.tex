@@ -1,0 +1,424 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Fuzzy Systems | Fibonacci
+\end{center}
+
+\normalsize
+
+Second derivative method. Why not third derivative?
+
+\begin{align}
+y(k) &= y(k-1) - y(k-2) \\
+y(k+2) &= y(k+1) - y(k) \\
+f'(a) &\sim \cfrac{f(a + h) - f(a)}{h} \Rightarrow f(a + h) \sim f(a) + h f'(a) + \cfrac{h^2}{2}\cdot f''(a) \\
+y(k + 1) &\sim y(k) + y'(k) + \cfrac{1}{2}\cdot y''(k) \\
+y(k + 2) &\sim y(k) + 2 y'(k) + 2 y''(k) \\
+y(k) + 2 y'(k) + 2 y''(k) &= y(k) + y'(k) + \cfrac{1}{2}\cdot y''(k) - y(k) \\
+(2 - 0.5) y''(k) &= - y(k) + (1 - 2) y'(k) \\
+3 y''(k) + 2 y'(k) + 2 y(k) &= 0 \\
+3 \lambda^2 + 2 \lambda + 2 &= 0 \\
+\lambda &= \cfrac{-1 \pm i \sqrt{5}}{3} \\
+y(k) &= A e^{\lambda_1 k} + B e^{\lambda_2 k} \\
+y(1) &= 1 \Rightarrow A \underbrace{e^{\lambda_1}}_u + B \underbrace{e^{\lambda_2}}_v = 1 \Rightarrow Au + Bv = 1 \\
+y(2) &= 1 \Rightarrow A e^{2 \lambda_1} + B e^{2 \lambda_2} = 1 \Rightarrow Au^2 + Bv^2 = 1 \\
+A &= \cfrac{v^2 - v}{uv^2 - u^2v} \\
+B &= \cfrac{u - u^2}{uv^2 - u^2v} \\
+y(k) &= \cfrac{v^2 - v}{uv^2 - u^2v} \cdot u^k + \cfrac{u - u^2}{uv^2 - u^2 v} \cdot v^k \\
+  u &= \exp \cfrac{-1 + i \sqrt 5}{3} = e^{-1/3} \cos \theta + i e^{-1/3} \sin \theta \\
+  \theta &= \sqrt 5 / 3 \\
+  v &= \overline{u} \\
+  u^2 &=  e^{-2/3} \cos 2\theta + i e^{-2/3} \sin 2\theta \\
+  uv^2 &= e^{-1/3 - 2/3} \cos \cfrac{\sqrt 5 - 2 \sqrt 5}{3} - i e^{-1} \sin \theta \\
+  u^2 v &=  e^{-2/3 - 1/3} \cos \cfrac{2 \sqrt 5 - \sqrt 5}{3} + i e^{-1} \sin \theta \\
+1/D &= \cfrac{ei}{2 \sin \theta} \\
+  v^2-v &= e^{-2/3} \cos 2\theta - i e^{-2/3} \sin 2\theta - e^{-1/3} \cos \theta + i e^{-1/3} \sin \theta \\
+  A &= i \bigg(  \cfrac{e^{1/3}}{2 \sin \theta} \cos 2\theta   - \cfrac{e^{2/3}}{2} \cot \theta \bigg) + \cfrac{e^{1/3}}{2 \sin \theta} \sin 2\theta - \cfrac{ e^{2/3}}{2 } = p + iq \\
+  u^k &= e^{-k/3} \cos k\theta + i e^{-k/3} \sin k\theta = \alpha + i \beta \\
+u - u^2 &= e^{-1/3} \cos \theta + i e^{-1/3} \sin \theta -  e^{-2/3} \cos 2\theta - i e^{-2/3} \sin 2\theta
+\end{align}
+
+\begin{align}
+B &= i \bigg( \cfrac{e^{2/3}}{2} \cot \theta - \cfrac{e^{1/3}}{2 \sin \theta} \cos 2\theta \bigg) + \cfrac{e^{1/3}}{2 \sin \theta} \sin 2\theta  - \cfrac{e^{2/3}}{2} \\
+  B &= p - iq \\
+  v^k &= \alpha - i \beta \\
+  Au^k + Bv^k &= (\alpha + i \beta)(p + iq) + (\alpha - i \beta)(p - iq) =2 \alpha p - 2 \beta q \\
+  y(k) &= e^{-k/3} \cos k\theta ( 2e^{1/3} \cos \theta - e^{2/3} ) - e^{-k/3} \cfrac{\sin k\theta}{\sin \theta} (  e^{1/3} \cos 2\theta - e^{2/3} \cos \theta )
+\end{align}
+
+Compare with \href{https://wikimedia.org/api/rest\_v1/media/math/render/svg/bf676e167e853211636ae5862890a08ae78cb10a}{\underline{wikipedia}}. Every derivative is not zero.
+
+		\begin{align}
+F_n &= \cfrac{1}{\sqrt 5} \bigg( \cfrac{1 + \sqrt 5}{2} \bigg)^n - \cfrac{1}{\sqrt 5} \bigg( \cfrac{1 - \sqrt 5}{2} \bigg)^n
+		\end{align}
+
+\section{RLC-Series Controller | Quintic Order}
+
+\begin{align}
+V &= Ri + L i' + \cfrac{1}{C} \int_{t_0}^t i(\tau)\,\mathrm{d}\tau \\
+V' &= \cfrac{i}{C} + Ri' + L i''  \\
+u(t) &= c_0 i(t) + c_1 i'(t) + c_2 i''(t) \text{ has order 2} \\
+u &= c_0 i + c_1 i' + c_2 i'' + c_3 i^{(3)} + c_4 i^{(4)} + i^{(5)} \text{ has five impedances}
+\end{align}
+
+\textbf{Theorem:} $\forall \epsilon > 0, \exists I = (I_1, I_2), \exists f, \exists g\,;\,M \in I \Rightarrow f(M) < \alpha < g(M) \Rightarrow |i - i_{ref}| < \epsilon$.
+
+\textbf{Proof:}$\,\,\blacktriangleright$
+
+By variation of parameters,
+
+\begin{align}
+i &= y_1 \\
+y_1' &= y_2 \\
+y_2' &= y_3 \\
+y_3' &= y_4 \\
+y_4' &= y_5 \\
+y_5' + c_0 i + c_1 i' + c_2 i'' + c_3 i^{(3)} + c_4 i^{(4)} &= u \\
+Y + P\cdot Y &= Q = u \hat e_5 \\
+Y &= e^{-tP} \int_{t_0}^t e^{\tau P} u \hat e_5\,\mathrm{d}\tau + \underbrace{y(t_0) + \cdots + y^{(4)}(t_0) (t - t_0)^4/4!}_0 \\
+\exp \tau P &\to 5 \times 5: \exp (VDV^{-1}) = V (\exp D) V^{-1} \\
+\sim \cdot \hat e_5 &\to \text{ just take the fifth column, times u} \\
+\int &\to \text{ just get 5 functions of }t - t_0 \\
+e^{-tP}\cdot \sim &\to \text{ left multiply by }5 \times 5 \\
+i(t) = \mathrm{d}x (Y) &\to \text{ just take the first line}
+\end{align}
+
+\vspace{100mm}
+
+By Riemann's below series,
+
+\begin{align}
+  i(u)(k) &= \hat e_1^\top e^{-(a + hk)P}\sum_{n > 0}^k e^{(a + hn)P} u(n) \hat e_5 h \\  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
+  i_{ref}(\mathbb{Z}) &= \text{any limited function} \Rightarrow |i_{ref}| < c_5 \\
+  e &= i - i_{ref} \\
+  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
+  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
+  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
+  u_{ref} &= c_0 i_{ref} + c_1 i'_{ref} + c_2 i''_{ref} + c_3 i^{(3)}_{ref} + c_4 i^{(4)}_{ref} + i^{(5)}_{ref} \\
+  \Delta u &= u - u_{ref} \\
+u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
+&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e \\
+u(i)(k+1) &= \sum_{n = 0}^k \alpha \varphi(n,k) [i(n) - i_{ref}(n)] \\
+\varphi(n, k) &= 2 \mu_n \mu_k + 1 - \mu_k - \mu_n
+\end{align}
+
+Equation 51 goes from u to i. We combine with equation 62, which goes from i to u.
+
+\begin{align}
+i &\to i(k+ 1) = \hat e_1^\top e^{-(a + hk + h)P}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{(a + hm)P}  \sum_{n = 0}^{m - 1} \alpha \varphi(n,m-1) [i(n) - i_{ref}(n)] \hat e_5 h \\
+u &\to u(k + 1) = \sum_{m = 0}^k \alpha \varphi(m,k) \bigg[\hat e_1^\top e^{-(a + hm)P}\sum_{n > 0}^m e^{ (a + hn)P} u(n)\hat e_5 h - i_{ref}(m)\bigg]
+\end{align}
+
+We want direct ratio, that is:
+
+\begin{align}
+  \cfrac{|i - i_{ref}|}{\alpha} &< M \\
+  \left\vert \hat e_1^\top e^{-(a + hk + h)P}\sum_{m > 0}^{k + 1} e^{ (a + hm)P}  \sum_{n = 0}^{m - 1} \underbrace{\varphi(n,m-1)}_{\le 3} [i(t_n) - i_{ref}(t_n)] \hat e_5 h - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
+  \left\vert 3h \hat e_1^\top e^{-(a + hk + h)P}\sum_{m > 0}^{k + 1} e^{(a + hm)P} \hat e_5 \underbrace{\sum_{n = 0}^{m - 1} [i(t_n) - i_{ref}(t_n)]}_{<\text{ integral}} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le
+\end{align}
+
+\footnotesize
+
+\begin{align}
+  \left\vert 3h \hat e_1^\top e^{- (a + hk + h)P}\sum_{m > 0}^{k + 1} e^{(a + hm)P}\hat e_5  \left\{ i(a) - i_{ref}(a) + \int_a^{a + h(m - 1)} \underbrace{[i(t) - i_{ref}(t)]}_{\text{Fund.T.Calculus}} \mathrm{d}t \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
+  \left\vert 3h \hat e_1^\top e^{- (a + hk + h)P}\sum_{m > 0}^{k + 1} e^{ (a + hm)P}\hat e_5  \left\{ i(a) - i_{ref}(a) + [I(a + hm - h) - I_{ref}(a + hm - h)] - [I(a) - I_{ref}(a)] \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=
+\end{align}
+
+\normalsize
+
+\begin{align}
+  \left\vert 3h \hat e_1^\top e^{- (a + hk + h)P}\underbrace{\sum_{m > 0}^{k + 1} e^{(a+hm)P}\hat e_5 [p(m) + q]}_{<\text{ integral}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
+  \left\vert 3h \hat e_1^\top e^{- (a + hk + h)P} \underbrace{\int_0^{k + 2} e^{(a+hm)P}\hat e_5 [p(m) + q] \,\mathrm{d}m}_{\text{T.Fund.C\'alculo}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
+  \left\vert \underbrace{3h \hat e_1^\top e^{- (a + hk + h)P} [V(k+2) - V(0)]}_A  - \cfrac{1}{\alpha} \cdot \underbrace{i_{ref}(t_{k+1})}_B \right\vert &< M
+\end{align}
+
+\begin{align}
+  - M < A - \cfrac{B}{\alpha} &< M \\
+  - M\alpha < A\alpha - B &< M \alpha \\
+  (- M - A)\alpha < - B &< (M - A) \alpha \\
+  \cfrac{B}{A + M} &< \alpha < \cfrac{B}{A - M}
+\end{align}
+
+Our function is quite simple.
+
+\begin{align}
+ f(x) &= A - \cfrac{B}{x} \\
+ f(0+) &= - \infty \\
+ f(\infty) &= A \\
+ f(x) &= - M \Rightarrow Ax - B = - Mx \therefore x_{min} = \cfrac{B}{A + M} \\
+ f\bigg(\cfrac{B}{A - M}\bigg) &= M \Leftarrow M < A \Rightarrow x_{max} = \cfrac{B}{A - M} \\
+ \\
+ M \ge A &\Rightarrow x_{max} = \infty
+\end{align}
+
+Now, at line 66, $\epsilon = M\alpha $. We start by FOR ALL $\epsilon > 0$, EXISTS $\alpha(\epsilon) > 0$. We want $M(\epsilon) > 0$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} > \cfrac{B}{A + M} \\
+ \cfrac{BM - \epsilon(A+M)}{A+M} &< 0 \\
+ M_1 &= - A \,;\, M_2 = \cfrac{A \epsilon}{B - \epsilon}
+\end{align}
+
+When $B - \epsilon > 0$, the parabola stands up. $M$ is between $M_1$ and $M_2$.
+
+\begin{align}
+ \alpha &= \cfrac{\epsilon}{M} < x_{max} \\
+ M &\ge A \Rightarrow \text{end of restrictions} \\
+ M &< A \Rightarrow \cfrac{BM - \epsilon(A - M)}{A - M} > 0
+\end{align}
+
+\begin{align}
+ M_3 &= A \,;\, M_4 = \cfrac{A}{B + \epsilon}
+\end{align}
+
+When $B + \epsilon > 0$, the parabola reverts down. $M$ is between $M_3$ and $M_4$.
+
+The conclusion is that the maximum output error $M$ is a function of the order of magnitude of $\epsilon$. At Platonic world, there is the limit beyond and less than Quantum Physics. $\,\,\blacksquare$
+
+It's controlled: $y^{(n)} = p_0 y + p_1 y' + \cdots + p_{n-1} y^{(n-1)} + u(t)$, if $p_i$ are constants and if $n < \infty$.
+
+\subsection{MatLab for 5th order}
+
+\begin{verbatim}
+under construction
+\end{verbatim}
+
+\section{RL with Perturbations}
+
+\begin{align}
+ u &= Ri + Li' \\
+ i' + \cfrac{R}{L}\cdot i &= \cfrac{u}{L} \\
+ i(R, L) &= \cfrac{1}{L}\cdot e^{-Rt/L} \int_{t_0}^t e^{R\tau/L} u(\tau)\,\mathrm{d}\tau \\
+ \exp 1/L &= \beta\,;\,\exp 1/(L \cdot \Delta L) = \gamma = \beta^{\Delta L} \\
+ i(R, L) &= \cfrac{1}{L\beta^{Rt} }\cdot \int_{t_0}^t \beta^{R\tau} u(\tau)\,\mathrm{d}\tau = i_0 \\
+ i(R \cdot \Delta R, L \cdot \Delta L) &= \cfrac{1}{L}\cdot \gamma^{-Rt} \gamma^{-\Delta Rt} \int_{t_0}^t \gamma^{R\tau} \gamma^{\Delta R\tau} u(\tau)\,\mathrm{d}\tau  = i_1 \\
+ \cfrac{i_1}{i_0} &= \bigg( \cfrac{\gamma}{\beta}\bigg) ^{-Rt} \gamma^{-\Delta Rt} \cfrac{\int_{t_0}^t \gamma^{R\tau} \gamma^{\Delta R\tau} u(\tau)\,\mathrm{d}\tau}{  \int_{t_0}^t \beta^{R\tau} u(\tau)\,\mathrm{d}\tau} \\
+ \cfrac{i_1}{i_0} &= ( \beta^{t} )^{R - R\Delta L - \Delta R\Delta L}\cdot \cfrac{\int_{t_0}^t \beta^{R\tau \Delta L} u(\tau)\,\mathrm{d}\tau\, \beta^{\Delta R\Delta L\tau} }{  \int_{t_0}^t \beta^{R\tau} u(\tau)\,\mathrm{d}\tau}
+\end{align}
+
+\subsection{MatLab for almost constant 1st order}
+
+\begin{verbatim}
+/*******
+ *
+ * fun.m
+ *
+ *******/
+function y = fun(x,a,b)
+
+g = @(x) exp(1./((x-a).*(x-b))) ;
+
+ if (x <= a)
+     y = 0;
+ elseif (x >= b)
+     y = quadgk(g,a,b);
+ else
+     y = quadgk(g,a,x);
+ end
+end
+
+/*************
+ *
+ * principal.m
+ *
+ *************/
+close all;
+clc;
+clear all
+
+
+a = 1;
+b = 3;
+m1 = 0;
+M2 = 2;
+R = 3;
+L = 5;
+emin = -1;
+emax = 1;
+delta = 0.001;
+x=(a:delta:8*b-delta)' ;
+epsilon = 0.00008;
+
+
+p = -1/(emax-emin);
+
+u(1) = 0;
+ulinha(1) = 0;
+q1(1) = 0;
+q2(1) = 0;
+soma = 0;
+somalinha = 0;
+alfa(1) = 42000;
+funfinal = fun(b,a,b);
+temp = 0;
+
+for k =1:length(x)
+    if (k > 1)
+        termo = exp(R*x(k)/L)* delta * u(k)/alfa(k-1);
+        somalinha = somalinha + termo;
+    end
+
+    termo = exp(-R*x(k)/L)/L;
+    ilinha(k) = termo * somalinha;
+
+    const = 1 / funfinal * (M2 - m1);
+
+     if (x(k) <= a)
+         temp = 0;
+     elseif (x(k) >= b)
+         temp = funfinal;
+     else
+         temp = temp + exp(1./((x(k)-a).*(x(k)-b))) * delta;
+     end
+
+    iref(k) = temp * const + m1;
+
+    aa = ilinha(k);
+    bb = iref(k);
+
+    mm1 = aa * epsilon / (bb + epsilon);
+    mm2 = aa * epsilon / (bb - epsilon);
+    if mm1 > mm2
+      mm3 = mm1;
+      mm1 = mm2;
+      mm2 = mm3;
+    end
+    mm3 = (mm1 + mm2)/2;
+    mm4 = mm1 * 1.01;
+    mm5 = mm2 * 1.01;
+
+    if abs(aa - bb * mm3/epsilon) < mm3
+      mm = mm3;
+    elseif abs(aa - bb * mm4/epsilon) < mm4
+      mm = mm4;
+    elseif abs(aa - bb * mm5/epsilon) < mm5
+      mm = mm5;
+    else
+      mm = epsilon;
+    end
+
+    alfa(k) = epsilon/mm;
+    if alfa(k) > 42000
+      alfa(k) = 42000;
+    elseif alfa(k) < 39915
+      alfa(k) = 39915;
+    end
+
+    % calcular i(k) através da eq. do circuito
+
+    % i = exp(-Rt/L)/L * integral exp(R*t/L) * u dt
+
+    if (k > 1)
+        termo = exp(R*x(k)/L)* delta * u(k)/alfa(k);
+        soma = soma + termo * alfa(k);
+    end
+
+    termo = exp(-R*x(k)/L)/L;
+    i(k) = termo * soma;
+
+    % calcular o erro
+    e(k) =iref(k) - i(k);
+
+    % calcular mi1
+
+    if e(k) <= emin
+        mi1 = 1;
+    elseif e(k) >= emax
+        mi1 = 0;
+    else mi1 = p* e(k) + 0.5;
+    end
+
+    mi2=1-mi1;
+
+    % resolva em m: - M < A - BM/epsilon < M
+    %               BM/epsilon - M < A < BM/epsilon + M
+    %               A/~ < M < A/~
+
+    q1(k+1)=q1(k) + alfa(k)*mi1*e(k);
+    q2(k+1)=q2(k) + alfa(k)*mi2*e(k);
+
+    if (k < length(x))
+        u(k+1) = mi1*q1(k+1) + mi2*q2(k+1);
+    end
+
+    % u = Ri + L di\dt
+
+     if (x(k) <= a)
+         z = 0;
+     elseif (x(k) >= b)
+         z = 0;
+     else
+       z = exp(1./((x(k)-a).*(x(k)-b)));
+     end
+     uref(k) = R * iref(k) + L * z * const;
+end
+
+figure
+plot(x,e)
+
+figure
+plot(x,alfa)
+\end{verbatim}
+
+\subsection{Sinoidal Perturbation}
+
+\begin{align}
+  u &= (R_x + R_y \sin \omega t) i + (L_x + L_y \sin \varphi t) i' \\
+  i' + \cfrac{R(t)}{L(t)}\cdot i &= \cfrac{u(t)}{L(t)} \\
+  P(t) &= \int_{t_0}^t \cfrac{R_x + R_y \sin \omega \tau}{L_x + L_y \sin \varphi \tau}\,\mathrm{d}\tau \\
+  i(t) &= e^{-P(t)} \int_{t_0}^t e^{P(\tau)}\, \cfrac{u(\tau)}{L(\tau)}\,\mathrm{d}\tau
+\end{align}
+
+\section{Follower Robot | The Missile Problem}
+
+\begin{flushleft}
+Input: a robot named Self is at Cartesian Physical cohordinates $(s_x(k), s_y(k), s_z(k))$ \\
+Inputs: speed $(v_x, v_y, v_z)$ and acceleration $(a_x, a_y, a_z)$. \\
+Input: The followed object named M is at $m_x(k), m_y(k), m_z(k)$. \\
+Restrictions: $|s'(\mathbb{R})| \le 1\,;\,|s''(\mathbb{R})| \le 1$. We don't have how to preview M's next move. \\
+We want to minimize $|s - m|$. \\
+Outputs: Self's $(k + 1)$ new position, $(k)$ new speed and new acceleration.
+\end{flushleft}
+
+\begin{align}
+ |s(0) - m(0)| &= f(0) > 0 \\
+ X''(t) &\sim a(0) \\
+ X'(t) &\sim v(0) + t a(0) \\
+ \text{line from }s(0)\text{ to }m(0): X(t) &\sim s(0) + t v(0) + \cfrac{t^2}{2}\cdot a(0) = s(0) + \lambda[ m(0) - s(0) ] \\
+ t = 1 &\to \text{ we want at zero } v_x, v_y, v_z, a_x, a_y, a_z, \lambda \text{ then finallly }s(1)
+\end{align}
+
+\begin{align}
+ v_x + a_x/2 &= \lambda (m_x - s_x) \\
+ v_y + a_y/2 &= \lambda (m_y - s_y) \\
+ v_z + a_z/2 &= \lambda (m_z - s_z) \\
+v_x^2 + v_y^2 + v_z^2 &\le 1 \\
+ a_x^2 + a_y^2 + a_z^2 &\le 1 \\
+ \text{Difference } D &= (s_x, s_y, s_z) + \lambda(m_x - s_x, m_y - s_y, m_z - s_z) - (m_x, m_y, m_z) \\
+ D_x &= s_x + \lambda(m_x - s_x) - m_x \\
+ D_y &= s_y + \lambda(m_y - s_y) - m_y \\
+ D_z &= s_z + \lambda(m_z - s_z) - m_z \\
+\text{Minimize }J(\lambda) &= D_x^2 + D_y^2 + D_z^2 \\
+ t = k+1 &\to \text{ we want at k } v_x, v_y, v_z, a_x, a_y, a_z, \lambda \text{ then finallly }s(k+1) \\
+ k &= 1, 2, 3, \cdots
+\end{align}
+
+		\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 26/Oct/2019, Release $1.0.5$
+
+\end{document}

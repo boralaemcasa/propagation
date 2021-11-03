@@ -1,0 +1,71 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{amscd} %diagrama CD
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\date{}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Primeira Lista de I.E.D.P.
+
+		Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+	\section{Quest\~ao 4}
+		\begin{flushright}
+		\end{flushright}
+
+		De fato, temos
+
+		\begin{align}
+			\frac{1}{L} \int_0^L f(x + \xi) D_N(\xi)\,\mathrm{d}\xi = &\frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi \\
+			+ &\frac{1}{L} \int_0^L f(x+) D_N(\xi)\,\mathrm{d}\xi.
+		\end{align}
+
+		Como
+
+		\begin{align}
+			&\frac{1}{L} \int_0^L f(x+) D_N(\xi)\,\mathrm{d}\xi = f(x+) \frac{1}{L} \int_0^L D_N(\xi)\,\mathrm{d}\xi = \frac{f(x+)}{2},
+		\end{align}
+
+		Queremos mostrar que
+
+		\begin{align}
+			&\lim_{N \rightarrow \infty} \frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi = 0.
+		\end{align}
+
+		Assim, pela f\'ormula do n\'ucleo,
+
+		\begin{align}
+			&\frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] D_N(\xi)\,\mathrm{d}\xi = \frac{1}{L} \int_0^L [f(x + \xi) - f(x+)] \cfrac{\sin\bigg(\cfrac{\pi}{2L}(2N+1)\xi\bigg)}{2\sin\bigg(\cfrac{\pi}{2L}\xi\bigg)} \,\mathrm{d}\xi \\
+			= &\frac{2}{\pi} \int_0^{\frac{\pi}{2}} v(\eta) \sin[(2N+1)\eta] \,\mathrm{d}\eta,
+		\end{align}
+
+		em que
+
+		\begin{align}
+			&v(\eta) = \cfrac{f\bigg(x + \cfrac{2L}{\pi} \eta\bigg) - f(x+)}{2 \sin \eta}.
+		\end{align}
+
+		Pelo exerc\'icio (3),
+
+		\begin{align}
+			&\lim_{N \rightarrow \infty} v(\eta) \sin[(2N+1)\eta] \,\mathrm{d}\eta = 0.
+		\end{align}
+
+		Uma vez que $v \in CP\bigg(0, \cfrac{\pi}{2}\bigg]$, basta agora mostrar que $v(0+)$ \'e finito.
+
+		\begin{align}
+			&\lim_{\eta \rightarrow 0+} v(\eta) = \lim_{\eta \rightarrow 0+} \cfrac{f\bigg(x + \cfrac{2L}{\pi}\eta\bigg) - f(x+)}{\frac{2L}{\pi}\eta} \cdot \cfrac{\cfrac{2L}{\pi}\eta}{2 \sin \eta} \\
+			= &f'(x+) \frac{L}{\pi} \lim_{\eta \rightarrow 0+} \frac{\eta}{\sin \eta} < \infty
+		\end{align}
+
+
+
+\end{document}

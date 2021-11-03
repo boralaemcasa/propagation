@@ -1,0 +1,450 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{eucal}
+\usepackage{hyperref}
+\usepackage{array,bm}
+\usepackage{graphicx} %jpg
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows, matrix}
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\date{}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Lista de Geometria de Riemann, Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+Tensorial Video on \href{https://www.youtube.com/watch?v=mmzqmIcX7xo}{\color{blue}\underline{YouTube}}. Riemannian Geometry Video on \href{https://www.youtube.com/watch?v=Z3IXeWvEEa4}{\color{blue}\underline{YouTube}}.
+
+	\section{Quest\~ao 1.B}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $M$ variedade diferenci\'avel de dimens\~ao $n$.
+
+		Sejam $U$ vizinhan\c{c}a de $p \in M$ e uma parametriza\c{c}\~ao $\varphi: U \subset \mathbb{R}^n \rightarrow M$. $\varphi(x_0) = p.$
+
+		A vizinhan\c{c}a cont\'em um aberto, mas a topologia n\~ao importa.
+
+		Seja $v_p : C^\infty(M) \rightarrow \mathbb{R}$ um vetor tangente a $M$ em $p$. Seja $f : M \stackrel{C^\infty}{\longrightarrow} \mathbb{R}$. (Classe de equival\^encia. Regra do produto.)
+
+		Seja $T_pM = \{v_p \}$ o espa\c{c}o tangente a $M$ em $p$.
+
+		Seja $\partial_1 = \cfrac{\partial}{\partial x^1} ; \cdots ; \partial_n = \cfrac{\partial}{\partial x^n}$ a base de $TpM$. $v_p = \sum v^i \partial_i$.
+
+		Ao aplicar em $f$, calculamos $v_p(f) = \sum v^i \cdot \cfrac{\partial (f \circ \varphi)}{\partial x^i} (x_0)$.
+
+		Seja a variedade diferenci\'avel $TM = \{ (p, T): p \in M ; T \in T_pM \}$ o fibrado tangente de M; tamb\'em o fibrado tensorial $0$-covariante e $1$-contravariante de $M$. A reuni\~ao disjunta sobre $p$ dos $T_pM$.
+
+		Seja $X: M \rightarrow TM$ um campo vetorial diferenci\'avel. $X_p \in T_pM$. $X_p : C^\infty(M) \rightarrow \mathbb{R}$. $Xf \in C^\infty(M)$.
+
+		\begin{center}
+		\fbox{
+		\begin{tabular}{CCCCC}
+		  C^\infty(M)                                & \stackrel{X}{\longrightarrow}   &              								& C^\infty(M) \\
+		  M \stackrel{f}{\longrightarrow} \mathbb{R} & \mapsto                         & M            								& \stackrel{Xf}{\longrightarrow} & \mathbb{R} \\
+		                                             &                                 & p            								& \mapsto                        & X_p f \\
+		  M                                          & \stackrel{X}{\longrightarrow}   &              								& T_pM \\
+		  p											 & \mapsto                         & C^\infty(M)                                & \stackrel{X_p}{\longrightarrow} & \mathbb{R} \\
+		                                             &                                 & M \stackrel{f}{\longrightarrow} \mathbb{R} & \mapsto                         & X_p f
+		\end{tabular}
+		}
+		\end{center}
+
+		Seja $\mathcal{T}(M) = \{ T: M \rightarrow TM \}$ o espa\c{c}o vetorial dos campos $(0,1)$ tensoriais diferenci\'aveis.
+
+		Sejam as conex\~oes $\nabla, \overline{\nabla}: \mathcal{T}(M) \times \mathcal{T}(M) \rightarrow \mathcal{T}(M)$.
+
+		Sejam o intervalo $t \in I \subset \mathbb{R}$ e $\gamma : I \rightarrow M$ geod\'esica de $\nabla$. $\gamma(t_0) = p$.
+
+		Seja $V$ um campo vetorial diferenci\'avel induzido por um campo de vetores $X \in \mathcal{T}(M)$.
+
+		Ou seja, $V = X \circ \cfrac{\mathrm{d} \gamma}{\mathrm{d} t}$.
+
+		\[
+		\begin{tikzcd}
+		& I \arrow[swap]{d}{\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}} \arrow{rd}{V} &  \\
+		\mathbb{R}^n \arrow{r}{\varphi} & M \arrow{r}{X} & TM
+		\end{tikzcd}
+		\]
+
+		Pela defini\c{c}\~ao 4.1 de geod\'esica, $\cfrac{D}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma}{\mathrm{d} t} = 0$.
+
+		Pela proposi\c{c}\~ao 3.6 a derivada covariante de $V$ ao longo de $\gamma$  \'e \'unica e igual a:
+
+		\begin{align*}
+		  F = \cfrac{DV}{\mathrm{d} t} = \nabla_{\frac{\mathrm{d} \gamma}{\mathrm{d} t}} X = \sum_k \bigg[ \cfrac{\mathrm{d} V^k}{\mathrm{d} t} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} V^j \Gamma_{ij}^k \bigg] \partial_k = 0
+		\end{align*}
+
+		Acima podemos interpretar que $V^k, \gamma^i, \Gamma_{ij}^k : I \rightarrow \mathbb{R}, \forall i,j,k \in \{ 1, 2, \cdots, n \}$.
+
+		Trocamos $V$ por $\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}$ e cada coordenada $F^k$ ser\'a igual a:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k = 0, \forall k
+		\end{align*}
+
+		Analogamente, seja $\eta : I \rightarrow M$ geod\'esica de $\overline{\nabla}$. $\eta(t_0) = p$.
+
+		\[
+		\begin{tikzcd}
+		& I \arrow[swap]{d}{\cfrac{\mathrm{d} \eta}{\mathrm{d} t}} \arrow{rd}{W} &  \\
+		\mathbb{R}^n \arrow{r}{\varphi} & M \arrow{r}{Y} & TM
+		\end{tikzcd}
+		\]
+
+		Pela proposi\c{c}\~ao 3.6 a derivada covariante de $W$ ao longo de $\eta$  \'e \'unica e igual a:
+
+		\begin{align*}
+		  G = \cfrac{DW}{\mathrm{d} t} = \overline{\nabla}_{\frac{\mathrm{d} \eta}{\mathrm{d} t}} Y = \sum_k \bigg[ \cfrac{\mathrm{d} W^k}{\mathrm{d} t} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} W^j \overline{\Gamma}_{ij}^k \bigg] \partial_k = 0
+		\end{align*}
+
+		Trocamos $W$ por $\cfrac{\mathrm{d} \eta}{\mathrm{d} t}$ e cada coordenada $G^k$ ser\'a igual a:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k = 0, \forall k
+		\end{align*}
+
+		Suponha que $\gamma = \eta \Rightarrow \gamma^k = \eta^k \Rightarrow \cfrac{\mathrm{d} \gamma^k}{\mathrm{d} t} = \cfrac{\mathrm{d} \eta^k}{\mathrm{d} t} \Rightarrow \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} = \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2}, \forall k$
+
+		Mantendo somente $\gamma$:
+
+		\begin{align*}
+		  \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k = \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k, \forall k
+		\end{align*}
+
+		Temos $n$ formas quadr\'aticas em $\Gamma$ e $\overline{\Gamma}$:
+
+		\begin{align*}
+		  \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) &= 0, \forall k \\
+		  \Leftrightarrow \left( \begin{matrix} \cfrac{\mathrm{d} \gamma^1}{\mathrm{d} t} & \cdots & \cfrac{\mathrm{d} \gamma^n}{\mathrm{d} t} \end{matrix} \right) \cdot \left( \begin{matrix} \Gamma_{11}^k - \overline{\Gamma}_{11}^k & \cdots & \Gamma_{1n}^k - \overline{\Gamma}_{1n}^k \\ \vdots & \ddots & \vdots \\ \Gamma_{n1}^k - \overline{\Gamma}_{n1}^k & \cdots & \Gamma_{nn}^k - \overline{\Gamma}_{nn}^k \end{matrix} \right) \cdot \left( \begin{matrix} \cfrac{\mathrm{d} \gamma^1}{\mathrm{d} t} \\ \vdots \\ \cfrac{\mathrm{d} \gamma^n}{\mathrm{d} t} \end{matrix} \right) &= 0, \forall k
+		\end{align*}
+
+		N\~ao queremos que todos os coeficientes $\cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t}$ sejam zero, pois isso implicaria o caso particular
+
+		\begin{align*}
+		\cfrac{\mathrm{d} \gamma}{\mathrm{d} t} = 0 \Rightarrow \gamma(t) = p \in M
+		\end{align*}
+
+		\subsection{Lema de \'Algebra Linear}
+		\begin{flushright}
+		\end{flushright}
+
+		Sejam $A$ linear; $x, y \in \mathbb{R}^n \stackrel{A}{\longrightarrow} \mathbb{R}^n$. Se $x^T \cdot A \cdot y = 0, \forall x, y$ Ent\~ao $A^T = -A$.
+
+		\vspace{3mm}
+
+		\textbf{Demo:} Em particular, seja $x = y$. Sempre que $\sum \sum x_i A_{ij} x_j = 0$, podemos dobrar a soma: $\cfrac{1}{2} \cdot \sum \sum (x_i A_{ij} x_j + x_j A_{ji} x_i) = 0 \Rightarrow \sum \sum x_i (A_{ij} + A_{ji}) x_j = 0 \Rightarrow A + A^T = 0 \,\,\blacksquare$
+
+		\vspace{12mm}
+
+		Portanto,	$\Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0, \forall i,j,k \in \{ 1, 2, \cdots, n \}$
+
+		\vspace{3mm}
+
+		Queremos mostrar que $D(X, X) = 0, \forall X \in \mathcal{T}(M) \Leftrightarrow  \overline{\nabla}_X X - \nabla_X X = 0$
+
+		Pela equa\c{c}\~ao 3.3:
+
+		\begin{align*}
+  		\overline{\nabla}_X X = \sum_k \bigg[ X(X^k) + \sum_i \sum_j X^i X^j \overline{\Gamma}_{ij}^k \bigg] \partial_k \\
+  		\nabla_X X = \sum_k \bigg[ X(X^k) + \sum_i \sum_j X^i X^j \Gamma_{ij}^k \bigg] \partial_k
+		\end{align*}
+
+		Subtraindo, temos $n$ formas quadr\'aticas an\'alogas em $\Gamma$ e $\overline{\Gamma}$:
+
+		\begin{align*}
+  		\sum_i \sum_j X^i X^j ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) = 0, \forall k
+		\end{align*}
+
+		N\~ao queremos que todos os coeficientes $X^i X^j$ sejam zero, pois esse seria o caso particular $X = 0$.
+
+		Portanto, pelo lema 1.1 de \'algebra linear,	$\Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0, \forall i,j,k \in \{ 1, 2, \cdots, n \}$, como j\'a demonstramos.
+
+		\vspace{12mm}
+
+		Vale a rec\'iproca?
+
+		Suponha que $D(X, X) = 0 \Leftrightarrow \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0$. Ent\~ao:
+
+		\begin{align*}
+		  &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k ) = 0, \forall k \\
+		  2 \cdot &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) = 0, \forall k \\
+		  &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \Gamma_{ij}^k = \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k, \forall k
+		\end{align*}
+
+		Utilizamos que $\gamma$ e $\eta$ s\~ao geod\'esicas:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k &= 0, \forall k \\
+		  \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k &= 0, \forall k \\
+		  \Leftrightarrow \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \Gamma_{ij}^k &= 0, \forall k
+		\end{align*}
+
+		As equa\c{c}\~oes diferenciais s\~ao as mesmas. Pelo teorema 4.4 de exist\^encia e unicidade de geod\'esicas, se as condi\c{c}\~oes iniciais forem as mesmas, ent\~ao as geod\'esicas tamb\'em ser\~ao as mesmas.
+
+		$\gamma(t_0) = \eta(t_0) = p$
+
+		$\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}(t_0) = \cfrac{\mathrm{d} \eta}{\mathrm{d} t}(t_0) = v_0 \in T_pM$ constante.
+
+		$\therefore \gamma(t) = \eta(t), \forall t \in I$
+
+		\vspace{600mm}
+
+	\section{Quest\~ao 1.C}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $M$ variedade diferenci\'avel de dimens\~ao $n$.
+
+		Sejam $U$ vizinhan\c{c}a de $p \in M$ e uma parametriza\c{c}\~ao $\varphi: U \subset \mathbb{R}^n \rightarrow M$. $\varphi(x_0) = p.$
+
+		A vizinhan\c{c}a cont\'em um aberto, mas a topologia n\~ao importa.
+
+		Seja $v_p : C^\infty(M) \rightarrow \mathbb{R}$ um vetor tangente a $M$ em $p$. Seja $f : M \stackrel{C^\infty}{\longrightarrow} \mathbb{R}$. (Classe de equival\^encia. Regra do produto.)
+
+		Seja $T_pM = \{v_p \}$ o espa\c{c}o tangente a $M$ em $p$.
+
+		Seja $\partial_1 = \cfrac{\partial}{\partial x^1} ; \cdots ; \partial_n = \cfrac{\partial}{\partial x^n}$ a base de $TpM$. $v_p = \sum v^i \partial_i$.
+
+		Ao aplicar em $f$, calculamos $v_p(f) = \sum v^i \cdot \cfrac{\partial (f \circ \varphi)}{\partial x^i} (x_0)$.
+
+		Seja a variedade diferenci\'avel $TM = \{ (p, T): p \in M ; T \in T_pM \}$ o fibrado tangente de M; tamb\'em o fibrado tensorial $0$-covariante e $1$-contravariante de $M$. A reuni\~ao disjunta sobre $p$ dos $T_pM$.
+
+		Seja $X: M \rightarrow TM$ um campo vetorial diferenci\'avel. $X_p \in T_pM$. $X_p : C^\infty(M) \rightarrow \mathbb{R}$. $Xf \in C^\infty(M)$.
+
+		\begin{center}
+		\fbox{
+		\begin{tabular}{CCCCC}
+		  C^\infty(M)                                & \stackrel{X}{\longrightarrow}   &              								& C^\infty(M) \\
+		  M \stackrel{f}{\longrightarrow} \mathbb{R} & \mapsto                         & M            								& \stackrel{Xf}{\longrightarrow} & \mathbb{R} \\
+		                                             &                                 & p            								& \mapsto                        & X_p f \\
+		  M                                          & \stackrel{X}{\longrightarrow}   &              								& T_pM \\
+		  p											 & \mapsto                         & C^\infty(M)                                & \stackrel{X_p}{\longrightarrow} & \mathbb{R} \\
+		                                             &                                 & M \stackrel{f}{\longrightarrow} \mathbb{R} & \mapsto                         & X_p f
+		\end{tabular}
+		}
+		\end{center}
+
+		Seja $\mathcal{T}(M) = \{ T: M \rightarrow TM \}$ o espa\c{c}o vetorial dos campos $(0,1)$ tensoriais diferenci\'aveis.
+
+		Sejam as conex\~oes $\nabla, \overline{\nabla}: \mathcal{T}(M) \times \mathcal{T}(M) \rightarrow \mathcal{T}(M)$.
+
+		Sejam o intervalo $t \in I \subset \mathbb{R}$ e $\gamma : I \rightarrow M$ geod\'esica de $\nabla$. $\gamma(t_0) = p$.
+
+		Seja $V$ um campo vetorial diferenci\'avel induzido por um campo de vetores $X \in \mathcal{T}(M)$.
+
+		Ou seja, $V = X \circ \cfrac{\mathrm{d} \gamma}{\mathrm{d} t}$.
+
+		\[
+		\begin{tikzcd}
+		& I \arrow[swap]{d}{\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}} \arrow{rd}{V} &  \\
+		\mathbb{R}^n \arrow{r}{\varphi} & M \arrow{r}{X} & TM
+		\end{tikzcd}
+		\]
+
+		Pela defini\c{c}\~ao 4.1 de geod\'esica, $\cfrac{D}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma}{\mathrm{d} t} = 0$.
+
+		Pela proposi\c{c}\~ao 3.6 a derivada covariante de $V$ ao longo de $\gamma$  \'e \'unica e igual a:
+
+		\begin{align*}
+		  F = \cfrac{DV}{\mathrm{d} t} = \nabla_{\frac{\mathrm{d} \gamma}{\mathrm{d} t}} X = \sum_k \bigg[ \cfrac{\mathrm{d} V^k}{\mathrm{d} t} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} V^j \Gamma_{ij}^k \bigg] \partial_k = 0
+		\end{align*}
+
+		Acima podemos interpretar que $V^k, \gamma^i, \Gamma_{ij}^k : I \rightarrow \mathbb{R}, \forall i,j,k \in \{ 1, 2, \cdots, n \}$.
+
+		Trocamos $V$ por $\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}$ e cada coordenada $F^k$ ser\'a igual a:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k = 0, \forall k
+		\end{align*}
+
+		Analogamente, seja $\eta : I \rightarrow M$ geod\'esica de $\overline{\nabla}$. $\eta(t_0) = p$.
+
+		\[
+		\begin{tikzcd}
+		& I \arrow[swap]{d}{\cfrac{\mathrm{d} \eta}{\mathrm{d} t}} \arrow{rd}{W} &  \\
+		\mathbb{R}^n \arrow{r}{\varphi} & M \arrow{r}{Y} & TM
+		\end{tikzcd}
+		\]
+
+		Pela proposi\c{c}\~ao 3.6 a derivada covariante de $W$ ao longo de $\eta$  \'e \'unica e igual a:
+
+		\begin{align*}
+		  G = \cfrac{DW}{\mathrm{d} t} = \overline{\nabla}_{\frac{\mathrm{d} \eta}{\mathrm{d} t}} Y = \sum_k \bigg[ \cfrac{\mathrm{d} W^k}{\mathrm{d} t} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} W^j \overline{\Gamma}_{ij}^k \bigg] \partial_k = 0
+		\end{align*}
+
+		Trocamos $W$ por $\cfrac{\mathrm{d} \eta}{\mathrm{d} t}$ e cada coordenada $G^k$ ser\'a igual a:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k = 0, \forall k
+		\end{align*}
+
+		Suponha que $\gamma = \eta \Rightarrow \gamma^k = \eta^k \Rightarrow \cfrac{\mathrm{d} \gamma^k}{\mathrm{d} t} = \cfrac{\mathrm{d} \eta^k}{\mathrm{d} t} \Rightarrow \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} = \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2}, \forall k$
+
+		Mantendo somente $\gamma$:
+
+		\begin{align*}
+		  \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k = \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k, \forall k
+		\end{align*}
+
+		Temos $n$ formas quadr\'aticas em $\Gamma$ e $\overline{\Gamma}$:
+
+		\begin{align*}
+		  \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) &= 0, \forall k \\
+		  \Leftrightarrow \left( \begin{matrix} \cfrac{\mathrm{d} \gamma^1}{\mathrm{d} t} & \cdots & \cfrac{\mathrm{d} \gamma^n}{\mathrm{d} t} \end{matrix} \right) \cdot \left( \begin{matrix} \Gamma_{11}^k - \overline{\Gamma}_{11}^k & \cdots & \Gamma_{1n}^k - \overline{\Gamma}_{1n}^k \\ \vdots & \ddots & \vdots \\ \Gamma_{n1}^k - \overline{\Gamma}_{n1}^k & \cdots & \Gamma_{nn}^k - \overline{\Gamma}_{nn}^k \end{matrix} \right) \cdot \left( \begin{matrix} \cfrac{\mathrm{d} \gamma^1}{\mathrm{d} t} \\ \vdots \\ \cfrac{\mathrm{d} \gamma^n}{\mathrm{d} t} \end{matrix} \right) &= 0, \forall k
+		\end{align*}
+
+		N\~ao queremos que todos os coeficientes $\cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t}$ sejam zero, pois isso implicaria o caso particular
+
+		\begin{align*}
+		\cfrac{\mathrm{d} \gamma}{\mathrm{d} t} = 0 \Rightarrow \gamma(t) = p \in M
+		\end{align*}
+
+		\vspace{6mm}
+
+		Portanto, pelo lema 1.1 de \'algebra linear,	$\Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0, \forall i,j,k \in \{ 1, 2, \cdots, n \}$
+
+		\vspace{3mm}
+
+		Queremos mostrar que $S(X, Y) = 0, \forall X, Y \in \mathcal{T}(M) \Leftrightarrow D(X, Y) + D(Y, X) = 0$
+
+		\begin{align}
+		&\Leftrightarrow  \overline{\nabla}_Y X - \nabla_Y X + \overline{\nabla}_X Y - \nabla_X Y = 0 \label{first} \\
+		&\Leftrightarrow \Psi(X,Y) = \nabla_Y X + \nabla_X Y = \overline{\nabla}_Y X + \overline{\nabla}_X Y = \overline{\Psi}(X, Y) \label{second}
+		\end{align}
+
+		Pela equa\c{c}\~ao 3.3:
+
+		\begin{align*}
+  		\Psi(X, Y) &= \sum_k \bigg[ X(Y^k) + \sum_i \sum_j X^i Y^j \Gamma_{ij}^k \bigg] \partial_k + \sum_k \bigg[ Y(X^k) + \sum_i \sum_j Y^i X^j \Gamma_{ij}^k \bigg] \partial_k \\
+  		\Psi(X, Y) &= \sum_k \bigg[ X(Y^k) + Y(X^k) + 2 \sum_i \sum_j X^i Y^j \Gamma_{ij}^k \bigg] \partial_k \\
+  		\overline{\Psi}(X, Y) &= \sum_k \bigg[ X(Y^k) + Y(X^k) + 2 \sum_i \sum_j X^i Y^j \overline{\Gamma}_{ij}^k \bigg] \partial_k
+		\end{align*}
+
+		Igualando, temos $n$ formas quadr\'aticas an\'alogas em $\Gamma$ e $\overline{\Gamma}$:
+
+		\begin{align*}
+  		\sum_i \sum_j X^i Y^j ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) &= 0, \forall k \\
+		  \Leftrightarrow \left( \begin{matrix} X^1 & \cdots & X^n \end{matrix} \right) \cdot \left( \begin{matrix} \Gamma_{11}^k - \overline{\Gamma}_{11}^k & \cdots & \Gamma_{1n}^k - \overline{\Gamma}_{1n}^k \\ \vdots & \ddots & \vdots \\ \Gamma_{n1}^k - \overline{\Gamma}_{n1}^k & \cdots & \Gamma_{nn}^k - \overline{\Gamma}_{nn}^k \end{matrix} \right) \cdot \left( \begin{matrix} Y^1 \\ \vdots \\ Y^n \end{matrix} \right) &= 0, \forall k
+		\end{align*}
+
+		\vspace{100mm}
+
+		N\~ao queremos que todos os coeficientes $X^i Y^j$ sejam zero, pois isso implicaria $X = 0$ ou $Y = 0$.
+
+		Portanto, pelo lema 1.1 de \'algebra linear,	$\Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0, \forall i,j,k \in \{ 1, 2, \cdots, n \}$, como j\'a demonstramos.
+
+		\vspace{12mm}
+
+		Vale a rec\'iproca?
+
+		Suponha que $S(X, Y) = 0 \Leftrightarrow \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k = 0$. Ent\~ao:
+
+		\begin{align*}
+		  &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k + \Gamma_{ji}^k - \overline{\Gamma}_{ji}^k ) = 0, \forall k \\
+		  2 \cdot &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} ( \Gamma_{ij}^k - \overline{\Gamma}_{ij}^k ) = 0, \forall k \\
+		  &\sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \Gamma_{ij}^k = \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k, \forall k
+		\end{align*}
+
+		Utilizamos que $\gamma$ e $\eta$ s\~ao geod\'esicas:
+
+		\begin{align*}
+		  \cfrac{\mathrm{d}^2 \gamma^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \gamma^i}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma^j}{\mathrm{d} t} \Gamma_{ij}^k &= 0, \forall k \\
+		  \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \overline{\Gamma}_{ij}^k &= 0, \forall k \\
+		  \Leftrightarrow \cfrac{\mathrm{d}^2 \eta^k}{\mathrm{d} t^2} + \sum_i \sum_j \cfrac{\mathrm{d} \eta^i}{\mathrm{d} t} \cfrac{\mathrm{d} \eta^j}{\mathrm{d} t} \Gamma_{ij}^k &= 0, \forall k
+		\end{align*}
+
+		As equa\c{c}\~oes diferenciais s\~ao as mesmas. Pelo teorema 4.4 de exist\^encia e unicidade de geod\'esicas, se as condi\c{c}\~oes iniciais forem as mesmas, ent\~ao as geod\'esicas tamb\'em ser\~ao as mesmas.
+
+		$\gamma(t_0) = \eta(t_0) = p$
+
+		$\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}(t_0) = \cfrac{\mathrm{d} \eta}{\mathrm{d} t}(t_0) = v_0 \in T_pM$ constante.
+
+		$\therefore \gamma(t) = \eta(t), \forall t \in I$
+
+		\vspace{600mm}
+
+	\section{Quest\~ao 1.D}
+		\begin{flushright}
+		\end{flushright}
+
+		Acabamos de ver que se $\gamma$ \'e geod\'esica de $\nabla$ e $\eta = \gamma$ \'e geod\'esica de $\overline{\nabla}$, ent\~ao:
+
+		Eq. (\ref{second}) $\Leftrightarrow \Psi(X,Y) = \nabla_Y X + \nabla_X Y = \overline{\nabla}_Y X + \overline{\nabla}_X Y = \overline{\Psi}(X, Y)$
+
+		Pela defini\c{c}\~ao 3.14, os tensores tor\c{c}\~ao para cada conex\~ao s\~ao dados por:
+
+		\begin{align}
+		T(X, Y) = \nabla_X Y - \nabla_Y X - [X, Y] \label{tortion}
+		\end{align}
+
+		\begin{align*}
+		\overline{T}(X, Y) &= \overline{\nabla}_X Y - \overline{\nabla}_Y X - [X, Y] \\
+		T = \overline{T} &\Rightarrow \nabla_X Y - \nabla_Y X = \overline{\nabla}_X Y - \overline{\nabla}_Y X \\
+		T + \Psi = \overline{T} + \overline{\Psi} &\Rightarrow \nabla_X Y - \nabla_Y X + \nabla_Y X + \nabla_X Y = \overline{\nabla}_X Y - \overline{\nabla}_Y X + \overline{\nabla}_Y X + \overline{\nabla}_X Y \\
+		2 \cdot \nabla_X Y &= 2 \cdot \overline{\nabla}_X Y; \, \forall X, Y \in \mathcal{T}(M) \\
+		\nabla &= \overline{\nabla}
+		\end{align*}
+
+		\vspace{12mm}
+
+	\section{Quest\~ao 1.E}
+		\begin{flushright}
+		\end{flushright}
+
+		Utilizamos novamente (1.C) que se $\gamma$ \'e geod\'esica de $\nabla$ e $\eta = \gamma$ \'e geod\'esica de $\overline{\nabla}$, ent\~ao:
+
+		Eq. (\ref{first}) $\Leftrightarrow  \overline{\nabla}_Y X - \nabla_Y X + \overline{\nabla}_X Y - \nabla_X Y = 0 \Leftrightarrow  \overline{\nabla}_Y X + \overline{\nabla}_X Y - \nabla_X Y = \nabla_Y X$
+
+		Queremos que a tor\c{c}\~ao de $\nabla$ seja nula, o que equivale a:
+
+		Eq. (\ref{tortion}) $\Rightarrow T(X, Y) = \nabla_X Y - \nabla_Y X - [X, Y] = 0$
+
+		\begin{align*}
+		  &\Rightarrow \nabla_X Y - (\overline{\nabla}_Y X + \overline{\nabla}_X Y - \nabla_X Y) - [X, Y] = 0 \\
+		  &\Rightarrow 2 \cdot \nabla_X Y = \overline{\nabla}_Y X + \overline{\nabla}_X Y + [X, Y] \\
+		  &\Rightarrow \nabla_X Y = \cfrac{1}{2} \cdot (\overline{\nabla}_Y X + \overline{\nabla}_X Y + XY - YX); \, \forall X, Y \in \mathcal{T}(M)
+		\end{align*}
+
+		Para toda conex\~ao $\overline{\nabla}$, existe uma \'unica conex\~ao $\nabla$, definida pela equa\c{c}\~ao acima.
+
+		\vspace{12mm}
+
+	\section{Quest\~ao 1.A}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align*}
+		(\ref{tortion}) \Leftrightarrow T(X, Y) &= \nabla_X Y - \nabla_Y X - [X, Y] \\
+		\overline{T}(X, Y) &= \overline{\nabla}_X Y - \overline{\nabla}_Y X - [X, Y] \\
+		T = \overline{T} &\Leftrightarrow \nabla_X Y - \nabla_Y X = \overline{\nabla}_X Y - \overline{\nabla}_Y X \\
+		 &\Leftrightarrow \overline{\nabla}_Y X - \nabla_Y X = \overline{\nabla}_X Y - \nabla_X Y \\
+		 &\Leftrightarrow D(X, Y) = D(Y, X) \\
+		 &\Leftrightarrow D(X, Y) - D(Y, X) = 0 \\
+		 &\Leftrightarrow A(X, Y) = \cfrac{1}{2} \cdot [D(X, Y) - D(Y, X)] = 0 \\
+		\end{align*}
+
+		\vspace{12mm}
+
+	\section{Quest\~ao de Lee 4.4.a}
+		\begin{flushright}
+		\end{flushright}
+
+		Se $\overline{\nabla}$ \'e qualquer conex\~ao linear em $M$, ent\~ao $C_1 = \{ \text{conex\~oes lineares} \} = \{ \overline{\nabla} + A ; A \in \mathcal{T}^2_1(M)  \} = C_2$
+
+		\vspace{12mm}
+
+		$(C_1 \supset C_2)$ Se $\nabla = \overline{\nabla} + A$, para algum $A$ LINEAR, ent\~ao $\nabla$ \'e linear. Portanto, $\nabla \in C_1$.
+
+		\vspace{3mm}
+
+		$(C_1 \subset C_2)$ Se $\nabla$ \'e conex\~ao linear, ent\~ao $\nabla - \overline{\nabla} = A$ \'e linear. Existe $A$. Portanto, $\nabla \in C_2$.
+
+\end{document}

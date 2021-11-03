@@ -1,0 +1,606 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{cancel}
+\usepackage[latin1]{inputenc}
+\usepackage[paperheight=377mm,paperwidth=210mm,top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm,landscape]{geometry}
+\def\Xint#1{\mathchoice
+{\XXint\displaystyle\textstyle{#1}}%
+{\XXint\textstyle\scriptstyle{#1}}%
+{\XXint\scriptstyle\scriptscriptstyle{#1}}%
+{\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+\!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$ }
+\vcenter{\hbox{$#2#3$ }}\kern-.6\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+\textbf{Geometria Convexa}
+\end{center}
+
+\large
+
+\section{14/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+vol $S^{n-1}\,= 2\cdot \cfrac{\pi^{n/2}}{\Gamma(n/2)}$.
+
+Logo, vol $B_n\,= \cfrac{\pi^{n/2}}{\Gamma(n/2 + 1)}$.
+
+Seja $r_n$ o raio da bola de volume $1$. Ent\~ao $r_n \sim k!^{1/k} \to \infty$.
+
+Stirling: $\Gamma(n+1) \sim \sqrt{2\pi n} (n/e)^n$.
+
+vol $S^0\,\sim \bigg( \cfrac{n}{n-1} \bigg)^{(n-1)/2} \to \sqrt{e}$.
+
+Conjectura do hiperplano: existe uma constante universal $c > 0$ tal que $\forall n \in \mathbb{N}$ e para todo convexo $K$ de $\mathbb{R}^n$, existe um hiperplano $H\,;\,\dim H = n - 1$;
+
+tal que vol$_{n - 1} (K \cap H) > c$.
+
+M\'etodo de Laplace para aproxima\c{c}\~ao de integrais. Seja $f : \mathbb{R} \to \mathbb{R}$ fun\c{c}\~ao de classe $C^2$ tal que
+
+a) $\max_{\mathbb{R}} f(x) = m$ \'e atingido em \'unico ponto $x_0$.
+
+b) $f''(x_0) < 0$.
+
+c) $f^{-1} ( [ m - s^2, m]) = [\ell(s), r(s)]$, onde $\ell, r \in C^2$, onde $s \in [0, \epsilon)$.
+
+d) $- \infty = f(\infty) = f(-\infty)$, onde tomamos limite de x tendendo ao infinito.
+
+Ent\~ao
+
+\begin{align}
+\int_{-\infty}^{\infty} e^{-nf(x)}\,\mathrm{d}x &= e^{nm} \sqrt{\cfrac{-2\pi}{f''(x_0)\cdot n}}.
+\end{align}
+
+\vspace{100mm}
+
+\section{15/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Def: $K$ \'e corpo convexo se e s\'o se \'e convexo, compacto e int $K \ne \emptyset$.
+
+Teo: Se $K$ \'e convexo e $x_1,\cdots,x_n\in K\,;\,\lambda_1,\cdots,\lambda_m \in [0,1]$ tal que $\sum \lambda_i = 1$. Ent\~ao $\sum \lambda_i x_i \in K$.
+
+Def: c\'apsula convexa. Seja $K \subset \mathbb{R}^n$. co$(k) = \cap_i L_i$, onde $L_i \supset K$ e $L_i$ \'e convexo.
+
+Interse\c{c}\~ao arbitr\'aria de convexos \'e convexa.
+
+$L \supset K\,;\,L$ \'e convexo. Ent\~ao $L \supset \text{ co}(K)$.
+
+\begin{align}
+\text{Teo: co}(K) &= \bigg\{ \sum_{i=1}^m \lambda_i x_i\,;\,\lambda_i \in [0,1]\,;\,\sum_{i=1}^m \lambda_i = 1\,;\,x_i \in K\,;\,m\in \mathbb{N}\bigg\}\,\,.
+\end{align}
+
+Teo: Dado $K \subset \mathbb{R}^n$ convexo fechado e $x \in \mathbb{R}^n - K$, ent\~ao existe \'unico $y \in K$ tal que $d(x,y) = d(x, K) = \inf_{z \in K} d(x,z)$.
+
+Dado $v \in \mathbb{R}^n$, $\pi = \{ x \,;\,\langle v, x \rangle = a \}$ \'e hiperplano.
+
+Dado $v \in \mathbb{R}^n$, $H = \{ x \,;\,\langle v, x \rangle \ge a \}$ \'e semiespa\c{c}o.
+
+Teo. de Hahn Banach geom\'etrico: Se $K$ \'e convexo fechado de $\mathbb{R}^n$ e $x \in \mathbb{R}^n - K$, ent\~ao $K$ e $x$ s\~ao separados por um hiperplano.
+
+Se $K \subset \mathbb{R}^n$. Se para todo $x$, existe \'unico $y \in K$, satisfazendo dist\^ancia m\'inima, ent\~ao $K$ \'e convexo e fechado.
+
+Suporte: Dado $K \subset \mathbb{R}^n$ convexo fechado e $x \in \partial K$ ent\~ao existe um hiperplano que passa por $x$ e deixa $K$ de um lado.
+
+Def. A: Seja $f : \mathbb{R}^n \to \mathbb{R}$ cont\'inua. $f$ \'e convexa se $\forall x, y \in \mathbb{R}^n\,;\, t \in [0,1]\,;\,f(tx + (1 - t)y) \le t f(x) + (1 - t) f(y)$.
+
+Def: epi$(f) = \{ (x,y) \in \mathbb{R}^{n+1}\,;\,x\in\mathbb{R}^n\,;\,y\in\mathbb{R}\,;\,y \ge f(x) \}$.
+
+Def. A \'e equivalente a dizer que epi$(f)$ \'e convexo.
+
+\begin{align}
+\text{Def.: }\dashint_A f \,\mathrm{d}\mu &= \cfrac{1}{\mu(A)}\cdot\int f\,\mathrm{d}\mu\,\,.
+\end{align}
+
+Nota para f\'isicos. Centro de massa: $\dashint \vec r(m) \,\mathrm{d}m$.
+
+Teo. do valor m\'edio para integrais: Se $\gamma : I \to \mathbb{R}^n$, onde $I$ \'e intervalo. Ent\~ao $\dashint \gamma(t)\,\mathrm{d}t \in \text{ co}(\text{Im }\gamma)$
+
+Exerc\'icio: $p \in \mathbb{C}[x]$. As ra\'izes de $p'$ est\~ao contidas na c\'apsula convexa de \{ ra\'izes de $p$ \}.
+
+\vspace{100mm}
+
+Desigualdade de Jansen. Seja $f : \mathbb{R} \to \mathbb{R}$ convexa. Seja $I$ de medida finita. Seja $g : I^n \to \mathbb{R}$. $f, g \in C^0$. Se $g$ e $f \circ g$ s\~ao integr\'aveis. Ent\~ao:
+
+\begin{align}
+f\bigg( \int g(x)\,\mathrm{d}x \bigg) &\le \int f(g(x))\,\mathrm{d}x\,\,.
+\end{align}
+
+Exerc\'icio: Sejam $a_i > 0$. Ent\~ao $\cfrac{a_1 + \cdots + a_n}{n} \ge \sqrt[n]{a_1\cdots a_n}$.
+
+Def.: $x_0, \cdots, x_k \in \mathbb{R}^n$ s\~ao afim-mente dependentes se $x_1 - x_0, \cdots, x_k - x_0$ s\~ao linearmente dependentes.
+
+Def. equivalente: $x_0, \cdots, x_k \in \mathbb{R}^n$ s\~ao afim-mente dependentes se existem $\mu_i \in \mathbb{R}\,;\,\sum \mu_i x_i = 0\,;\,\sum \mu_i = 0\,;\,\vec \mu \ne \vec 0$.
+
+Def. [Soma de Minkowski] Se $A, B$ s\~ao corpos convexos, ent\~ao $A + B = \{ a + b \,;\, a \in A, b \in B \} $ \'e um corpo convexo.
+
+Def.: $-A = \{ -a\,;\, a \in A\}$.
+
+Def.: $\lambda A = \{ \lambda a\,;\, a \in A\}$.
+
+Def.: Se $K = -K$, dizemos que $K$ \'e (centralmente) sim\'etrico.
+
+Def.: Seja $K$ corpo convexo com $0$ no seu interior. $g_K(x) = \min\{ \lambda\,;\,x \in \lambda K\}$.
+
+Afirmamos. (1) $g_K \ge 0$. (2) Se $g_K(x) = 0,\,x\in \lambda_n K,\,\lambda_n \to 0$, ent\~ao $x = 0$, pois $K$ \'e compacto.
+
+(3) $g_K(x + y) \le g_K(x) + g_K(y)$.
+
+Def.: fun\c{c}\~ao $p$-homog\^enea. $f(\mu x) = \mu^p \cdot f(x)$.
+
+(4) $g_K(\mu x) = \mu \cdot g_K(x),\forall\mu\ge 0$. $g_K$ \'e $1$-homog\^enea. Se $K$ \'e sim\'etrico, ent\~ao $g_K$ \'e uma norma cuja bola unit\'aria \'e $K$. Sempre vale que $K = \{ x\,;\,g_K(x) \le 1 \}$.
+
+Se $K$ tem $0$ em seu interior, $v\in S^{n - 1}, r_K(v) = \max \{ \lambda\,;\,\lambda v \in K \} = \cfrac{1}{g_K(v)}$.
+
+(5) $g_K$ \'e convexa. De $K$ criamos $g_K$ pelo m\'inimo. Analogamente, de $g_K$, constru\'imos $K$ via $g_K \le 1$.
+
+Teo: se uma fun\c{c}\~ao \'e $1$-homog\^enea, ent\~ao ela \'e convexa se e somente se vale a desigualdade triangular.
+
+Fun\c{c}\~ao suporte: Dado $K$ corpo convexo. $h_K(v) = \max \{ \langle x, v \rangle\,;\,x \in K \}$. Se $v\in S^{n - 1},$
+
+$h_K(v)$ d\'a a dist\^ancia da origem ao \'unico hiperplano suporte perpendicular a $v$, do lado de $v$ com respeito \`a origem.
+
+(1) $h_K \ge 0$. (2) Se $h_K(v) = 0$, ent\~ao $v = 0$. (3) Se $\lambda > 0\,;\,h_K(\lambda x) = \lambda h_K(x)$.
+
+(4) $h_K$ \'e convexa, pois as fun\c{c}\~oes $v \mapsto \langle v, x\rangle$ s\~ao convexas com $x$ fixo e supremo de convexa \'e convexa.
+
+(5) $h_K$ \'e a fun\c{c}\~ao suporte de um \'unico convexo $K = \cap_{v \in S^{n - 1}} \{ x \in \mathbb{R}^n\,;\,\langle v, x \rangle \le h_K(v) \} = L$.
+
+Exerc\'icio: $K \subset L$. Exerc\'icio: $K \supset L$.
+
+Teo: Dada a fun\c{c}\~ao $h \ge 0$; $h(x) = 0 \Rightarrow x = 0$; $1$-homog\^enea, convexa. Defina $K = \cap_v \{ \cdots \}$. Ent\~ao $K$ \'e corpo convexo e $h_K = h$.
+
+\vspace{100mm}
+
+\section{21/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Def.: Polar de $K$. $K^\circ = \{ x \,;\, h_K(x) \le 1 \} = \{ x\,;\,\langle x, y \rangle \le 1, \forall y \in K \}$.
+
+$(B_n^p)^\circ = B_n^q$. Onde $1/p + 1/q = 1$.
+
+$(K^\circ)^\circ = K$.
+
+$A \subset B \Rightarrow A^\circ \supset B^\circ$.
+
+$g_{K^\circ} = h_K$.
+
+$h_{K^\circ} = h_K$.
+
+$g_K(x) \cdot g_{K^\circ}(x) = \Vert x \Vert_2^2$.
+
+Seja $A$ matriz invert\'ivel. $A\cdot K = \{ Ax \,;\, x \in K \}$. Ent\~ao $(A\cdot K)^\circ = (A^\top)^{-1}\cdot K$.
+
+Exerc\'icio: encontre o polar de $[-a_1, a_1] \times \cdots \times [-a_n, a_n]$.
+
+Teo: $\cap_{i\in I} A_i^\circ = \bigg( \text{co}\bigg( \cup_{i\in I} A_i \bigg) \bigg)^\circ$.
+
+Exerc\'icio: Se $E \subset \mathbb{R}^n$ \'e subespa\c{c}o vetorial, $K$ corpo convexo, $(K \cap E)^\circ = P_E (K^\circ)$, onde o polar \`a esquerda \'e em $E$, o polar \`a direita \'e em $\mathbb{R}^n$,
+
+e $P_E$ \'e a proje\c{c}\~ao ortogonal a $E$.
+
+Exerc\'icio: se $x \in K\,;\,\varphi(x) = \text{ vol} (K + x)^\circ$, ent\~ao $\varphi$ tem um \'unico m\'inimo.
+
+Produto de Mahler. $P(K) = \text{ vol} K \cdot \text{ vol} K^\circ$.
+
+$P(\lambda K) = P(K)$. Se $A$ \'e matriz invert\'ivel, ent\~ao $P(AK) = P(K)$.
+
+$P(S_n) \le P(K) \le P(B_n) = \text{ vol}^2 B_n$. A primeira desigualdade \'e sobre simplex: conjectura de Mahler. A segunda desigualdade \'e de Blaschke-Santal\'o.
+
+Def.: $\partial(K) = \text{ vol}_{n - 1}(\partial K)$.
+
+\begin{align}
+\cfrac{\partial(K)}{\text{vol}_n^{\frac{n-1}{n}} K} &\ge \cfrac{\partial(B_n)}{\text{vol}_n^{\frac{n-1}{n}} B_n}\text{  desigualdade isoperim\'etrica} \\
+\cfrac{\text{diam }K}{\text{vol}^{\frac{1}{n}} K} &\ge \cfrac{\text{diam }B_n}{\text{vol}^{\frac{1}{n}} B_n}\text{  desigualdade isodiam\'etrica}
+\end{align}
+
+$h_{A + B}(v) = h_A(v) + h_B(v)$.
+
+\vspace{100mm}
+
+Def.: dist\^ancia de Hausdorff. Sejam $A, B \subset \mathbb{R}^n$ corpos convexos. $d_h(A, B) = \Vert h_A - h_B \Vert_\infty$.
+
+Existe imers\~ao de (corpos convexos, $d_h$) $\to (C^0(S^{n-1}), \Vert \cdot \Vert_\infty)$.
+
+Teo. da sele\c{c}\~ao de Blaschke: $\{ h_A \in C^0(S^{n - 1})\,;\, A$ \'e corpo convexo\} \'e localmente compacto.
+
+Exerc\'icio: Sejam $A, B, M$ corpos convexos. Ent\~ao $A + M = B + M \Rightarrow A = B$.
+
+Simetriza\c{c}\~ao de Steiner: Dado $u\in S^{n - 1}$ e $K$ corpo convexo $K = \{ x + tu\,;\, x \in P_{u^\perp}K\,;\,g(x) \le t \le f(x)\}$.
+
+Ent\~ao $S_u K = \bigg\{ x + tu\,;\,x \in P_{u^\perp} K\,;\,\cfrac{g(x) - f(x)}{2} \le t \le \cfrac{f(x) - g(x)}{2} \bigg\}$.
+
+Se $K$ \'e convexo, ent\~ao $S_u K$ \'e convexo.
+
+Por Cavalieri, vol $S_u K = $ vol $K$.
+
+$S_u(\lambda K) = \lambda\cdot S_u K$.
+
+$S_u K + S_u T \subset S_u (K + T)$.
+
+Se $K \subset T$, ent\~ao $S_u K \subset S_u T$.
+
+$S_u$ \'e cont\'inua com respeito da $d_H$.
+
+$\partial (S_u K) \le \partial (K)$.
+
+$\text{diam }S_u K \le \text{diam }K$.
+
+vol $K^\circ \le $ vol$(S_u K^\circ)$.
+
+\begin{align}
+\partial(K) &= \lim_{\epsilon \to 0} \cfrac{\text{vol}(K + \epsilon B_n) - \text{vol} K}{\epsilon}\,\,.
+\end{align}
+
+Seja $K$ convexo, ent\~ao existe uma sequ\^encia $K_n \to B$, via $d_H$, onde $B$ \'e sim\'etrico. E onde $K_n$ s\~ao simetriza\c{c}\~oes de $K$.
+
+$K_n = (S_{V_n^n} \circ \cdots \circ S_{V_1^n}) (K)$.
+
+Lema: Seja $rB_n \supset K \ne rB_n$. Ent\~ao existem $v_1, \cdots, v_m\,;\,(S_{v_m} \circ \cdots S_{v_1}) (K) \subset \rho B_n$, com $\rho < r$.
+
+\vspace{100mm}
+
+\section{23/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Desigualdade isoperim\'etrica: $\min \{ \partial(K)\,;\,K$ \'e corpo convexo, vol$(K) = c \} = \partial(rB_n)$, onde $r$ \'e tal que vol$(rB_n) = c$.
+
+Meta-teorema: Se $F: \Lambda \to \mathbb{R}_+$ \'e um funcional definido nos corpos convexos, tal que:
+
+1) $F$ \'e cont\'inua com respeito a $d_H$.
+
+2) $F(S_u K) \le F(K), \forall u \in S^{n - 1}$.
+
+Ent\~ao $F$ \'e minimizado (entre os $K$ de igual volume) na bola euclideana.
+
+Poss\'iveis $F$'s s\~ao: (1) $\partial \to$ desigualdade isoperim\'etrica
+
+(2) diam $\to$ desigualdade isodiam\'etrica
+
+(3) $\cfrac{1}{\text{vol}(K^\circ)}\to$ Blaschke-Santal\'o.
+
+(4) $I_1(K) \to$ Busemann Random Simplex Inequality
+
+(5) vol$(\Gamma_1 K) \to $ Busemann Petty centroid inequality
+
+(6) vol$(\pi^\circ K) \to $ Petty projection inequality
+
+(7) $\lambda_1(K) \to$ Faber Kran inequality
+
+Def.: Seja $K$ corpo convexo. Sejam $x_1, \cdots, x_n$ pontos escolhidos aleatoriamente em $K$, com medida de probabilidade uniforme.
+
+$w = \cfrac{| \det(x_1, \cdots, x_n) |}{n!}$ \'e o volume da c\'apsula convexa do simplex co$(0, x_1, \cdots, x_n)$.
+
+\begin{align}
+I_1(K) &= E\bigg( \cfrac{|\det|}{n!} \bigg) = \cfrac{1}{\text{vol}^n K}\cdot \cfrac{1}{n!} \int_K \cdots \int_K |\det| \,\mathrm{d}x_1 \cdots\,\mathrm{d}x_n\,\,.
+\end{align}
+
+Teo: $I_1$ \'e cont\'inua com respeito a $d_H$. $I_1(S_u K) \le I_1 K$.
+
+B.R.S.Inequality: $I_1(K) \ge I_1(rB_n)$, onde vol $K = $ vol $rB_n$.
+
+Exerc\'icio: Seja $A$ matriz. $\det A = \pm 1$. Ent\~ao $I_1(AK) = I_1 K$.
+
+\vspace{100mm}
+
+Desigualdade de Brunn-Minkowski: Se $K$ e $L$ s\~ao corpos convexos, \text{vol}$^{1/n}(K + L) \ge \text{vol}^{1/n} K + \text{vol}^{1/n} L$.
+
+Equivale a: $\text{vol}^{1/n}(\lambda K + (1 - \lambda)L) \ge \lambda \text{vol}^{1/n} K + (1 - \lambda) \text{vol}^{1/n} L$.
+
+Equivale a: $\text{vol} (\lambda K + (1 - \lambda) L) \ge \text{vol}^\lambda K \cdot \text{vol}^{1 - \lambda} L$.
+
+Def.: o suporte de uma fun\c{c}\~ao \'e o complementar da pr\'e-imagem do zero.
+
+Equivale ao princ\'ipio de concavidade de Brunn: Se $u \in S^{n - 1}, K \subset \mathbb{R}^n$ \'e corpo convexo. Seja $E_t = \langle u \rangle^\perp + tu$. Ent\~ao $f(t) = \text{vol}_{n - 1}^{1/n}(K \cap E_t)$ \'e c\^oncava no suporte.
+
+\section{28/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Def.: [mean width.] $K$ corpo convexo. $\xi \in S^{n - 1}.\,\omega_K(\xi) = h_K(\xi) + h_K(-\xi) = \dashint_{S^{n-1}} \omega_K(\xi)\,\mathrm{d}\xi$.
+
+Desigualdade de Urysohn: $\cfrac{\omega(K)}{\text{vol}^{1/n} K} \ge \cfrac{\omega(B_n)}{\text{vol}^{1/n} B_n}$.
+
+Desigualdade de Blaschke-Santal\'o: $K$ corpo sim\'etrico. $\text{vol} K\cdot \text{vol}(K^\circ) \le \text{vol}^2 B_n$.
+
+Def.: Seja $A \subset \mathbb{R}^n$. $A(r)$ \'e a se\c{c}\~ao de altura $r$. $A(r) = \{x \in \mathbb{R}^{n-1} \,;\,(x,r)\in K\}$.
+
+$K^\circ(r) = \{ (x, r)\,;\,\langle x, y \rangle + rs \le 1, \forall (y, s) \in K \}$.
+
+Exerc\'icio: Brunn-Minkowski $\Rightarrow \cfrac{\partial(K)}{\text{vol}^{\frac{n-1}{n}} K} \ge \cfrac{\partial(B_n)}{\text{vol}^{\frac{n-1}{n}} B_n}$.
+
+Exerc\'icio: Utilize Brunn Minkowski para provar que a fun\c{c}\~ao $f : \mathbb{R}^n \to \mathbb{R}\,;\,f(x) = \text{vol}_n^{1/n} (K \cap (K + x))$ \'e c\^oncava no suporte. Qual \'e o suporte de $f$?
+
+Def.: Volumes mixtos. $V(K, L) = \cfrac{1}{n}\cdot \cfrac{\partial}{\partial \epsilon} \text{vol}(K + \epsilon L)\bigg\vert_{\epsilon = 0}$.
+
+$V(K, B_n) = \cfrac{1}{n}\cdot \partial(K)$.
+
+\begin{align}
+V(K, L) &= \int_{\partial(k)} h_L(n_x) \,\mathrm{d}S(x) \ge n\cdot (\text{vol }K)^{\frac{n-1}{n}}\cdot (\text{vol }L)^{\frac{1}{n}}\,\,.
+\end{align}
+
+\vspace{100mm}
+
+\section{29/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Princ\'ipio de Concavidade: Se $L \subset \mathbb{R}^n$. Se $F$ \'e um subespa\c{c}o; $\dim F = n - k\,;\dim (F^\perp) = k$.
+
+Ent\~ao a fun\c{c}\~ao $g: F \to \mathbb{R}\,;\,g(y) = \text{vol}_k^{1/k} (L \cap (y + F^\perp))$ \'e c\^oncava no suporte.
+
+Def.: $K - K$ \'e conjunto de diferen\c{c}as de $K$.
+
+Teo. de Rogers Shephard: $\text{vol}(K - K) \le \binom{2n}{n} \cdot \text{vol }K$.
+
+Exerc\'icio: vol$(K - K) \ge 2^n\cdot \text{vol }K$.
+
+Ent\~ao $2 \le \bigg( \cfrac{\text{vol}(K - K)}{\text{vol }K} \bigg)^{1/n} \le 4$.
+
+Teo. de Minkowski: Seja $K \subset \mathbb{R}^n$. $\text{vol}(K + tL)$ \'e um polin\^omio em $t$ de grau $n$.
+
+vol$(K + tL) = \sum_{i = 0}^n t^i\cdot\binom{n}{i}\cdot V(K_1, \cdots, K_{n-i}, L_1, \cdots, L_i)$. Onde todos $K_j = K\,;\,L_j = L$.
+
+vol $K = V(K, \cdots, K)\,;\,\partial(K) = V(K, \cdots, K, B_n)$.
+
+Def.: um polin\^omio homog\^eneo tem todos os termos de mesmo grau.
+
+vol$(t_1 K + t_2 L)$ \'e um polin\^omio homog\^eneo em $t_1, t_2$ de grau $n$.
+
+$p(t_1, t_2) = \sum_{i = 1}^n t_1^i \cdot t_2^{n - i}\cdot \binom{n}{i} \cdot V(K_1, \cdots, K_i, L_1, \cdots, L_{n - i})$.
+
+vol$(\sum^m t_i K_i)$ \'e um polin\^omio homog\^eneo em $t_1, \cdots, t_m$ de grau $n$.
+
+$p(t_1, \cdots, t_m) = \sum_{j = 1}^n \sum_{i_j = 1}^m t_{i_1}\cdot \cdots \cdot t_{i_m}\cdot V(K_{i_1}, \cdots, K_{i_n})$.
+
+$V(K,L) = V(L,K)$ em qualquer ordem.
+
+$V(\cdots, K_i + L_i, \cdots) = V(\cdots, K_i, \cdots) + V(\cdots, L_i, \cdots)$.
+
+Se $A$ \'e matriz invert\'ivel $n \times n\,;\,V(AK_1, \cdots, AK_n) = |\det A| \cdot V(K_1, \cdots, K_n)$.
+
+$V(\cdots) \ge 0$.
+
+$V(\cdots, K, \cdots) = V(\cdots, K + x, \cdots)$.
+
+Da\'i eu faltei, bati foto da Luciana, mas judeu nunca desiste de ser judeu. N\~ao \'e, cara p\'alida?
+
+\vspace{100mm}
+
+\section{30/01/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Segmentos. $[a, b] = \{ \lambda a + (1 - \lambda) b\,;\,\lambda \in [0,1] \}$.
+
+vol$([0, x] + [0, y]) = | \det(x, y)|$.
+
+Seja $x = t_1u, y = t_2v, z = t_3w$. vol$(t_1 [0, u] + t_2 [0, v] + t_3 [0, w]) = | \det(x, y)| + | \det(x, z)| + | \det(y, z)|$.
+
+Volumes intr\'insecos. Dado $K$, $V_{(i)} = V(K_1, \cdots, K_i, B_1^n, \cdots, B_{n-1}^n)$.
+
+$V_{(0)} = \text{vol}(B_n)$.
+
+\begin{align}
+V(K, \cdots, K, L) &= \cfrac{1}{n}\cdot \int_{\partial K} h_L(n_x)\,\mathrm{d}S_x \\
+V(K, \cdots, K) &= \cfrac{1}{n}\cdot \int_{\partial K} h_K(n_x)\,\mathrm{d}S_x \\
+V_{(1)}K &= V(K, B_n, \cdots, B_n) = \cfrac{1}{n}\cdot \int_{\partial B_n} h_K(n_x)\,\mathrm{d}S_x = \cfrac{1}{n}\cdot \int_{S^{n - 1}} h_K(\xi)\,\mathrm{d}\xi = \cfrac{1}{n}\cdot \omega(K)\cdot \text{vol}_{n - 1}(S^{n - 1})
+\end{align}
+
+Fun\c{c}\~ao suporte: $h_{[-v,v](w)} = \max \{ \langle w, x \rangle\,;\,x \in [-v,v] \} = |\langle w, v \rangle|$.
+
+$h_{[0,v](w)} = \langle w, v \rangle_+$.
+
+\begin{align}
+P_{v^\perp}K &= \int_{\partial K} \langle v, n_x \rangle_+\,\mathrm{d}S_x \\
+P_{v^\perp}K &= \cfrac{1}{2}\cdot \int_{\partial K} \vert\langle v, n_x \rangle\vert\,\mathrm{d}S_x
+\end{align}
+
+$V([0, e_1], \cdots, [0, e_n]) = \cfrac{1}{n!}$.
+
+Suponha que $A = (v_1,\cdots, v_n)$ formam base. $v_i = Ae_i \therefore V([0, v_1], \cdots, [0, v_n]) = \cfrac{|\det A|}{n!}$.
+
+Exerc\'icio: $V([-v_1, v_1], \cdots, [-v_n, v_n]) = \cfrac{2^n}{n!}\cdot\det A$.
+
+Desigualdade de volumes mixtos. $V(K,L) \ge (\text{vol }K)^{\frac{n-1}{n}}\cdot (\text{vol }L)^{\frac{1}{n}}$.
+
+Soma radial. $x \oplus y = x + y,$ se $\lambda y = x, \lambda > 0$. $x \oplus y = 0$, caso contr\'ario.
+
+$K \oplus L = \{ x \oplus y\,;\,x\in K,y\in L \}$.
+
+$h_{K + L}(v) = h_K(v) + h_L(v)$.
+
+$r_{K \oplus L}(v) = r_K(v) + r_L(v)$.
+
+$r_{\oplus \lambda_i K_i}(v) = \sum \lambda_i r_{K_i}(v)$.
+
+\begin{align}
+\text{vol}(\oplus_{i = 1}^m t_i K_i) = \cfrac{1}{n}\cdot \int_{S^{n - 1}} r_{\oplus}(v)^n\,\mathrm{d}v = \cfrac{1}{n}\cdot \int_{S^{n - 1}} \bigg( \sum_{i = 1}^m t_i r_{K_i}(v) \bigg)^n\,\mathrm{d}v = \sum t_{i_1} \cdots t_{i_n} \cdot \overline{V}(K_{i_1, \cdots, K_{i_n}}) \\
+\text{Def.: }\overline{V}(K_{i_1, \cdots, K_{i_n}}) = \cfrac{1}{n}\cdot \int_{S^{n - 1}} r_{K_1}\cdots r_{K_n}(v)\,\mathrm{d}v
+\end{align}
+
+Desigualdade de Holder. Se $p_1, \cdots, p_k > 1$ com $\cfrac{1}{p_1} + \cdots + \cfrac{1}{p_k} = 1$. Ent\~ao $\int f_1 \cdots f_k \le \prod_{i = 1}^k \bigg( \int f_i^{p_i} \bigg)^{1/p_i}$.
+
+Desigualdade de volume m\'edio. $\overline{V}(K_1, \cdots, K_n) \le \prod (\text{vol }K_i)^{1/n}$.
+
+Exerc\'icio: a partir de Brunn Minkowski, ache cotas left $\le \text{vol}^{1/n}(K \oplus L) \le $ right.
+
+Soma $p \ge 1$. Sabemos que $h_{K + L} = h_K + h_L$. Definimos $K +_p\,L$ como o corpo tal que $h_{K +_p\,L}(v) = \bigg( h_K(v)^p + h_L(v)^p \bigg)^{1/p}$.
+
+\begin{align}
+\text{Def.: }V_p(K, L) = \cfrac{p}{n}\cdot \lim_{\epsilon \to 0} \cfrac{\text{vol}(K +_p\,\epsilon L) - \text{vol }K}{\epsilon}
+\end{align}
+
+$h_{(\lambda K +_p\,\mu L)(v)}^p = \lambda h_K(v)^p + \mu h_L(v)^p$.
+
+Def.: $\lambda \cdot_p\,K = \lambda^{1/p}\cdot K$.
+
+$V_p(K, L) \ge (\text{vol }K)^{\frac{n-p}{n}}\cdot (\text{vol }L)^{p/n}$.
+
+Soma dual $p$. $r_{(\lambda \odot_p K \oplus \mu \odot L)(v)}^p = \lambda r_K(v)^p + \mu r_L(v)^p$.
+
+\vspace{100mm}
+
+\begin{align}
+\overline{V}_p(K, L) &= \cfrac{p}{n}\cdot \int_{S^{n - 1}} r_K(\xi)^{n - p} r_L(\xi)^p\,\mathrm{d}\xi
+\end{align}
+
+N\~ao existe defini\c{c}\~ao para $\overline{V}(K_1, \cdots, K_n)$.
+
+Agora $-p$. $h_{K +_{-p}\,L} = (h_K^{-p} + h_L^{-p})^{-p}$.
+
+$r \oplus_{-p}\,L(v) = (r_K(v)^{-p} + r_L(v)^{-p})^{-1/p}$.
+
+\begin{align}
+\overline{V}_{-p}(K, L) &= \cfrac{p}{n}\cdot\int_{S^{n - 1}} r_K(v)^{n + p} r_L(v)^{-p} \ge (\text{vol }K)^{\frac{n+p}{n}}\cdot(\text{vol }L)^{-p/n}
+\end{align}
+
+Teo: $H^{n - 1}(\partial K) = \partial (K)$.
+
+\section{04/02/2020}
+
+\begin{flushright}
+\end{flushright}
+
+\begin{align}
+\text{Teo: }\int_{\partial K} f(n_x)\,\mathrm{d}S_x = \int_{S^{n - 1}} f(\xi)\,\mathrm{d}\xi
+\end{align}
+
+Exemplo: Se $K$ \'e um pol\'itopo, ent\~ao $\int_{\partial K} f(n_x) = |A|f(n_A) + |B|f(n_B) + \cdots = \int_{S^{n - 1}} f(\xi)\,\mathrm{d}\mu(\xi)$, onde $\mu = |A|\delta(n_A) + |B|\delta(n_B) + \cdots$
+
+Exemplo cont\'inuo: $\mu$ ser\'a uma medida em $S^{n - 1}$ que d\'a mais import\^ancia aos pontos onde se acumulam as normais.
+
+Medida push-forward. $F: (X,\mu) \to Y$. Definimos uma medida $\nu = F_*(\mu)$ em $Y\,;\,A \subset Y\,;\,\nu(A) = \mu(F^{-1}(A))$.
+
+$F: (X,\mu) \to (Y, \nu)$ preserva medida: $\mu(F^{-1}(A)) = \nu(A)$. Se $F$ \'e bijetiva, ent\~ao $\nu(F(A)) = \mu(A)$.
+
+Dado $K \subset \mathbb{R}^n$ convexo com bordo $C^1$, existe $n : \partial K \to S^{n - 1}$ tal que
+
+(1) $S_K = n_x (H^{n - 1})$.
+
+(2) Se $A \subset S^{n - 1}$, ent\~ao $S_K(A) = H^{n-1} \{ x \in \partial K\,;\,n_x \in A \}$.
+
+(3) Se $B \subset \partial K$, ent\~ao $H^{n-1}(B) = S_K(n(B))$.
+
+(4) $\int_{x \in \partial K} f(n_L)\,\mathrm{d}H^{n - 1} = \int_{\xi \in S^{n - 1}} f(\xi)\,\mathrm{d}S_K$.
+
+\vspace{100mm}
+
+Problema de Minkowski. Dada medida $\mu$ em $S^{n - 1}$, decidir se existe $K \subset \mathbb{R}^n$ convexo, tal que $\mu = S_k$.
+
+\begin{align}
+0 &= \int_{x \in \partial K} \langle v, n_x \rangle\,\mathrm{d}H^{n - 1} = \int_{S^{n - 1}} \langle v, \xi \rangle \,\mathrm{d}S_k \\
+\vec 0 &= \int_{S^{n - 1}} \xi \,\mathrm{d}S_K
+\end{align}
+
+Teo: Seja $\mu$ medida boreliana finita positiva em $S^{n - 1}$. Ent\~ao existe $K \subset \mathbb{R}^n$ corpo convexo tal que (1) $\mu = S_K$.
+
+(2) $\int_{\xi \in S^{n - 1}} \xi\,\mathrm{d}\mu = \vec 0$.
+
+(3) supp $\mu$ n\~ao est\'a contida em um hemisf\'erio, ou seja, supp $\mu$ gera $\mathbb{R}^n$.
+
+$K$ \'e \'unico a menos de transla\c{c}\~ao.
+
+Teo sobre pol\'itopos: Dados $\mu_1, \cdots, \mu_m \in S^{n - 1}\,;\,\lambda_1, \cdots, \lambda_m > 0\,;\,\mu = \sum \lambda_i \delta(\mu_i)$ tais que
+
+(1) $\sum_{i = 1}^m \lambda_i u_i = 0$.
+
+(2) $\{ \mu_1, \cdots, \mu_m \}$ gera $\mathbb{R}^n$.
+
+Ent\~ao existe um pol\'itopo $K$ com faces ortogonais a $\mu_1, \cdots, \mu_m$ de medida $\lambda_1 \cdots \lambda_n$.
+
+Minkowski em dimens\~ao $2$: Dada $\mu$ medida em $S^1$, suponha que $\mu << L^1$. $\mu = g(\cdot) L$. $g : S^1 \to \mathbb{R}$. Queremos achar $h_K$ tal que $\Vert x'(\cdot) \Vert = h_K'' + h_K = g$.
+
+Por Fourier, \'e necess\'ario que $0 = \int_0^{2\pi} g(t)\cos t\,\mathrm{d}t = \int_0^{2\pi} g(t)\sin t\,\mathrm{d}t$.
+
+Isso equivale a $0 = \int_{S^1} g(\xi)\,\mathrm{d}L(\xi) = \int \xi \,\mathrm{d}\mu$.
+
+Problema de Minkowski em dimens\~ao maior. Dada uma fun\c{c}\~ao $F: S^{n - 1} \to \mathbb{R}_+$, quando podemos afirmar que existe $K \subset \mathbb{R}^n$ tal que $F_K(x_\xi) = F(\xi)$ ?
+
+Seja $\mu(\xi) = \cfrac{1}{F(\xi)}\cdot H(\xi)$. Se $\int_{S^{n - 1}} \xi \,\mathrm{d}\mu = 0$. Se supp $\mu$ gera $\mathbb{R}^n$. Ent\~ao existe $K$ tal que $S_K = \mu$. $\therefore S_k = \cfrac{1}{F(\xi)}\,\mathrm{d}H$.
+
+Isso implica que $K$ tem bordo $C^2$. Ent\~ao d$S_K(\xi) = \cfrac{1}{F_K(x_\xi)} \,\mathrm{d}H(\xi)$. Ent\~ao $F(\xi) = F_K(x_\xi)$. [Onde $F_K$ generaliza $h_K$.]
+
+Existe \'unica condi\c{c}\~ao sobre $K$: $\int_{S^{n - 1}} \xi \cdot \cfrac{1}{F(\xi)}\,\mathrm{d}H(\xi) = 0$.
+
+Exerc\'icio: $2\cdot \text{vol }K \le \text{vol}^{1/n} (K - K) \le 4\cdot (\text{vol K})^{1/n}$.
+
+Exerc\'icio: Se $2\cdot (\text{vol }K)^{1/n} = \text{vol}^{1/n} (K - K)$ ent\~ao $K$ \'e sim\'etrico.
+
+Exerc\'icio: Se $K \subset B_n$, ent\~ao $V(K, L) \le \cfrac{1}{n}\cdot \partial(L)$.
+
+\vspace{100mm}
+
+Exerc\'icio: Dados $K, L$, existe um corpo convexo $M$, tal que:
+
+(1) $S_M = \alpha S_K + (1 - \alpha) S_L$ com $\alpha > 0$.
+
+(2) $(\text{vol }M)^{\frac{n-1}{n}} \ge \alpha (\text{vol }K)^{\frac{n-1}{n}} + (1 - \alpha) (\text{vol }L)^{\frac{n-1}{n}}$.
+
+Sugest\~ao: calcular $V(M, Q)$, para $Q$ qualquer. Utilizar a desigualdade de volume mixto.
+
+Exerc\'icio: $\int_{S^{n - 1}} vol_{n - 1} (P_{\xi^\perp} K)\,\mathrm{d}\xi = c_n\cdot \partial (K)$.
+
+Curvatura de Gauss. Seja $M \subset \mathbb{R}^n$ superf\'icie de classe $C^2$ tal que $M = \partial K\,;\,K$ \'e corpo convexo.
+
+Defina a derivada no bundle tangente: $d_x\,n : T_xM \to T_{n_x}S^{n - 1} = T_xM$. Defina $\Omega(x) = \det (d_x\,n)$.
+
+Mudan\c{c}a de vari\'aveis. $\int_{S^{n - 1}} f(\xi)\,\mathrm{d}H(\xi) = \int_M f(n_x) |\det (d_x\,n)|\,\mathrm{d}S(x)$.
+
+Se $K \subset \mathbb{R}^n$ \'e estritamente convexo (que porra \'e essa???), para cada $\xi \in S^{n - 1}$, existe um \'unico $x_\xi\in \partial K$ tal que $n(x_\xi) = \xi$.
+
+$\int f(\xi) \cdot \cfrac{1}{\Omega(x_\xi)} \,\mathrm{d}H(\xi) = \int_M f(n_x) \cdot\cfrac{1}{\Omega(x_{n_x})}\cdot \Omega(x)\,\mathrm{d}S(x) = \int_M f(n_x)\,\mathrm{d}S(x) = \int_{S^{n - 1}} f(\xi)\,\mathrm{d}S_K(\xi)$.
+
+$\therefore$ Se $K\in C^2$ \'e estritamente convexo, ent\~ao $S_k << H$ com densidade $\cfrac{\mathrm{d}S_K}{\mathrm{d}H} = \cfrac{1}{\Omega(x_\xi)}$.
+
+$\therefore$ Seja $A \subset S^{n - 1}$. Ent\~ao $S_K(A) = \int_{\xi \in A} \cfrac{1}{\Omega(x_\xi)}\,\mathrm{d}H(\xi)$.
+
+\vspace{100mm}
+
+\section{06/02/2020}
+
+\begin{flushright}
+\end{flushright}
+
+Neste dia, o professor Jean deu aula, semin\'ario sobre nem lembro o que, decidiu com todos menos eu que a aula de 07/02/2020 ser\'a \`as 14h e me informou que o prazo para Capacidade \'e ter\c{c}a que vem, invertendo as bolas. Eu achava que ia varar o carnaval. Ningu\'em al\'em de mim quer varar o carnaval.
+
+Antes disso, fotografei os rascunhos desta mat\'eria aqui. Pelo jeito, eu fui o \'unico a tomar nota hoje.
+
+[Falta uma aula a digitar.]
+
+Num futuro n\~ao muito distante, v\^em as demonstra\c{c}\~oes. Se isso for bom.
+
+Hoje isso \'e s\'o tempestade de informa\c{c}\~ao em copo de \'agua.
+
+Nota: eu tenho que colocar na linguagem matem\'atica do whole.pdf uma barra em p\'e querendo dizer calculada em. Ou ent\~ao integrada de $a$ at\'e $b$.
+
+E se voc\^e perguntar a qualquer uma: eu achei que isso fosse s\'erio. Se \'e s\'erio, por que voc\^e n\~ao corre atr\'as de Vinicius? Ela vai lacrimejar e falar: \'e porque eu estou ferida demais para isso, meu irm\~aozinho desumaninho!
+
+\vspace{12mm}
+
+Fora da caridade, n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.
+
+Vinicius Claudino Ferraz, vers\~ao $0.2.2$ de 07/fev/2020.
+
+\end{document}

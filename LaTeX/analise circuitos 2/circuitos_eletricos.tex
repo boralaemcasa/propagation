@@ -1,0 +1,259 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+Circuitos El\'etricos 1
+
+\normalsize
+
+\begin{align}
+v &= \cfrac{dw}{dq} \\
+i &= \cfrac{dq}{dt} \\
+p &= \cfrac{dw}{dt} \\
+p &= vi \\
+v &= Zi \text{ [Lei de Ohm]} \\
+p &= vi = Zi^2 \\
+p &= vi = \cfrac{v^2}{Z} \\
+\sum_{n \in \text{ [malha]}} v_n &= 0 \text{ [KirchHoff]} \\
+\sum_{n \in \text{ [n\'o]}} i_n &= 0 = \sum_{n} \cfrac{v_{n_1} - v_{n_2}}{Z} \text{ [Tens\~oes nos N\'os]} \\
+Z_{[S,eq]} &= Z_1 + \cdots + Z_n \\
+\cfrac{1}{Z_{[P,eq]}} &= \cfrac{1}{Z_1} + \cdots + \cfrac{1}{Z_n} \\
+Z_x &= \cfrac{Z_2 Z_3}{Z_1} \text{ [WheatStone]} \\
+Z_{oa} &= \cfrac{Z_{ac} Z_{ab}}{Z_{bc} + Z_{ac} + Z_{ab}} \\
+Z_{bc} &= \cfrac{Z_{oa} Z_{ob} + Z_{ob} Z_{oc} + Z_{oc} Z_{oa}}{Z_{oa}} \\
+R_{Th} &= \cfrac{V_{Th}}{i_{sc}} \\
+R_L &= R_{Th} \text{ [m\'axima transfer\^encia de pot\^encia]}
+\end{align}
+
+\Large
+
+Circuitos El\'etricos 2
+
+\normalsize
+
+\begin{align}
+v &= L \cdot \cfrac{di}{dt} \\
+i(t) &= \cfrac{1}{L}\cdot \int_{t_0}^t v \,\mathrm{d}\tau + i(t_0) \\
+p &= \cfrac{dw}{dt} = Li \cdot \cfrac{di}{dt} \Rightarrow w = \int Li\,\mathrm{d}i = \cfrac{Li^2}{2} \\
+i &= C \cdot \cfrac{dv}{dt} \\
+v(t) &= \cfrac{1}{C}\cdot \int_{t_0}^t i \,\mathrm{d}\tau + v(t_0) \\
+p &= \cfrac{dw}{dt} = Cv \cdot \cfrac{dv}{dt} \Rightarrow w = \int Cv\,\mathrm{d}v = \cfrac{Cv^2}{2}
+\end{align}
+
+\begin{align}
+L_{[S,eq]} &= L_1 + \cdots + L_n \\
+\cfrac{1}{L_{[P,eq]}} &= \cfrac{1}{L_1} + \cdots + \cfrac{1}{L_n} \\
+\cfrac{1}{C_{[S,eq]}} &= \cfrac{1}{C_1} + \cdots + \cfrac{1}{C_n} \\
+C_{[P,eq]} &= C_1 + \cdots + C_n \\
+C &= \cfrac{dq}{dv} \Leftrightarrow Q = CV_{AB} \\
+v_{\text{na malha 1, devido ao indutor 2}} &= M\cdot \cfrac{di_2}{dt} \\
+L &= N^2\cdot F \\
+M &= N_1 \cdot N_2 \cdot F = k \sqrt{L_1 L_2} \\
+w(t) &= \cfrac{Li_1^2}{2} + \cfrac{Li_2^2}{2} + M i_1 i_2 \\
+x(t) &= x_f + [x(t_0) - x_f] \cdot e^{-(t - t_0)/T}, t \ge t_0 \\
+i(t) &= i(0)\cdot e^{-R/L\cdot t}, t \ge 0 \\
+p &= Ri^2 = R i(0)^2\cdot e^{-2R/L\cdot t}, t \ge 0 \\
+w &= \int_0^t p\,\mathrm{d}\tau \\
+T &= \cfrac{L}{R} = RC \\
+v(t) &= v(0)\cdot e^{-t/T}, t \ge 0 \\
+p &= \cfrac{V^2}{R} = \cfrac{1}{R}\cdot v(0)^2\cdot e^{-2t/T}, t \ge 0 \\
+i_L + i_R + i_C &= 0 \text{ [3 em paralelo, some as correntes.]} \\
+\int \cfrac{v}{L} + \cfrac{v}{R} + Cv' &= 0 \\
+v'' + \beta v' + \gamma v &= 0 \Rightarrow \Delta = \alpha^2 - \omega_0^2 \\
+s &= -\alpha \pm \sqrt{\alpha^2 - \omega_0^2} = - \alpha \pm j \omega_d, j = \sqrt{-1} \\
+\alpha &= \cfrac{1}{2RC} \\
+\omega_0 &= \cfrac{1}{\sqrt{LC}} \\
+\Delta > 0 &\Rightarrow v(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t} \\
+&\Rightarrow i_L(t) = i_f + A_1' e^{s_1 t} + A_2' e^{s_2 t} \\
+\Delta < 0 &\Rightarrow v(t) = B_1 e^{- \alpha t} \cos \omega_d t + B_2 e^{-\alpha t} \sin \omega_d t \\
+&\Rightarrow i_L(t) = i_f + B_1' e^{- \alpha t} \cos \omega_d t + B_2' e^{-\alpha t} \sin \omega_d t \\
+\Delta = 0 &\Rightarrow v(t) = D_1 t e^{-\alpha t} + D_2 e^{-\alpha t} \\
+&\Rightarrow i_L(t) = i_f + D_1' t e^{-\alpha t} + D_2' e^{-\alpha t}
+\end{align}
+
+\begin{align}
+v_L + v_R + v_C &= 0 \text{ [3 em s\'erie, some as quedas de tens\~ao.]} \\
+Li' + Ri + \int \cfrac{i}{C} &= 0 \\
+i'' + \beta i' + \gamma i &= 0 \\
+\alpha &= \cfrac{R}{2L} \\
+\Delta > 0 &\Rightarrow i(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t} \\
+&\Rightarrow v_C(t) = v_f + A_1' e^{s_1 t} + A_2' e^{s_2 t} \\
+\Delta < 0 &\Rightarrow i(t) = B_1 e^{- \alpha t} \cos \omega_d t + B_2 e^{-\alpha t} \sin \omega_d t \\
+&\Rightarrow v_C(t) = v_f + B_1' e^{- \alpha t} \cos \omega_d t + B_2' e^{-\alpha t} \sin \omega_d t \\
+\Delta = 0 &\Rightarrow i(t) = D_1 t e^{-\alpha t} + D_2 e^{-\alpha t} \\
+&\Rightarrow v_C(t) = v_f + D_1' t e^{-\alpha t} + D_2' e^{-\alpha t} \\
+\vec v &= V_m \cos (\omega t + \varphi) = V_m \angle \varphi \in \mathbb{C} \text{ omitimos } \angle (\omega t) \\
+z &= a + bj = re^{j\theta} = r \angle \theta \in \mathbb{C} \\
+z^* &= a - bj = re^{-j\theta} = r \angle (-\theta) \in \mathbb{C} \\
+V_{ef} &= \sqrt{ \cfrac{1}{T} \int_{t_0}^{t_0 + T} v^2(\tau) \,\mathrm{d}\tau } \text{ somente aqui aparece per\'iodo }T = \cfrac{1}{f} \\
+\cos 2x &= \cos^2 x - \sin^2 x \\
+1 &= \cos^2 x + \sin^2 x \Rightarrow \cos 2x + 1 = 2 \cos^2 x \therefore V_{ef} = \cfrac{V_m}{\sqrt{2}} \\
+v_L + v_R &= V_m \angle \varphi \text{ Encontre }i(t) \text{ transit\'orio e rp.} \\
+y' + py &= q \Rightarrow y(t) = e^{-P(t)} \int_{t_0}^t e^P q \, \mathrm{d}\tau + y_0 e^{P(0)} e^{-P(t)}   \\
+i_{rp} &= \text{Re } \vec I \text{ [regime permanente]} \\
+\vec v &= R I_m \angle \theta_i = R \cdot \vec I \\
+v &= L \cdot \cfrac{di}{dt} = L (-\sin) \omega \Rightarrow \vec v = j \omega L \cdot \vec I \\
+i &= C \cdot \cfrac{dv}{dt} = C (-\sin) \omega \Rightarrow \vec I = j \omega C \cdot \vec V \therefore \vec V = \cfrac{1}{j\omega C}\cdot \vec I \\
+\vec V &= Z \cdot \vec I \Rightarrow Z = R = j\omega L = \cfrac{1}{j \omega C} \\
+\cfrac{\vec V_1}{N_1} &= \cfrac{\vec V_2}{N_2} \Rightarrow \vec I_1 N_1 = \vec I_2 N_2 \\
+\vec V_g &= (Z_R + Z_L) \vec I_1 + \vec V_1 \\
+\vec V_2 &= (Z_{\rho} + Z_{\ell}) \vec I_2 \\
+\vec V_1 &= \cfrac{N_1}{N_2} \cdot \vec V_2 = k_1 \vec I_2 \\
+\vec I_2 &= \cfrac{N_1}{N_2}\cdot \vec I_1 \\
+\vec V_g &= (Z_R + Z_L) \vec I_1 + k_2 \vec I_1 \therefore \vec I_1
+\end{align}
+
+\begin{align}
+v &= V_m \cos (\omega t + \theta_v - \theta_i) \\
+i &= I_m \cos \omega t \\
+\cos x \cos y &= \cfrac{1}{2}\cdot \cos(x - y) + \cfrac{1}{2}\cdot \cos(x + y) \\
+p &= vi =  \underbrace{\cfrac{V_m I_m}{2}\cdot \cos(\theta_v - \theta_i)}_P + \cfrac{V_m I_m}{2}\cdot \cos(2\omega t + \theta_v - \theta_i) = P + P \cos 2 \omega t - Q \sin 2 \omega t \\
+Q &= \cfrac{V_m I_m}{2}\cdot \sin(\theta_v - \theta_i) \\
+fp &= \cos(\theta_v - \theta_i) \\
+fr &= \sin(\theta_v - \theta_i) \\
+S &= P + jQ = V_{ef} I_{ef} \angle (\theta_v - \theta_i) = \vec V_{ef} \vec I_{ef}^* \\
+\vec V_{ef} &= (R + jX) \vec I_{ef} \\
+S &= Z \vec I_{ef} \vec I_{ef}^* = (R + jX) |I_{ef}|^2 = P + jQ \\
+P &= R |I_{ef}|^2 \\
+Q &= X |I_{ef}|^2 \\
+Z_L &= Z_{Th}^*
+\end{align}
+
+\Large
+
+B\^onus 1: Mixto C + L//R
+
+\normalsize
+
+Determinar $i_R, i_L, i_C, v_C, v_L = v_R = v_2$.
+
+\begin{align}
+v_s &= v_C + v_2 \\
+i_C &= i_L + i_R \\
+i_C &= C v_C' \\
+v_2 &= Ri_R = L i_L' \Rightarrow i_R = \cfrac{L}{R}\cdot i_L' \\
+v_s &= \cfrac{1}{C}\int i_C\,\mathrm{d}\tau + L i_L' \\
+i_L &= y \\
+0 &= \cfrac{1}{C} \bigg(y + \cfrac{L}{R}\cdot y' \bigg) + L y'' \\
+y'' + \cfrac{1}{CR}\cdot y' + \cfrac{1}{CL} \cdot y &= 0 \\
+\Delta &= \cfrac{1}{C^2 R^2} - \cfrac{4}{CL} \\
+y &= C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t} \\
+y &= C_1 e^{\lambda t} \cos \mu t + C_2 e^{\lambda t} \sin \mu t \\
+y &= C_1 t e^{\lambda t} + C_2 e^{\lambda t}
+\end{align}
+
+\vspace{100mm}
+
+\Large
+
+B\^onus 2: Mixto R + L//C
+
+\normalsize
+
+Determinar $i_R, i_L, i_C, v_R, v_L = v_C = v_2$.
+
+\begin{align}
+v_s &= v_R + v_2 \\
+i_R &= i_L + i_C \\
+v_R &= Ri_R \\
+v_2 &= L i_L' \\
+i_C &= C v_2' = CL i_L'' \\
+v_s &= R(i_L + i_C) + L i_L' \\
+i_L &= y \\
+v_s &= R y + CLR y'' + L y' \\
+y'' + \cfrac{1}{CR}\cdot y' + \cfrac{1}{CL}\cdot y &= \cfrac{v_s}{CLR}
+\end{align}
+
+\Large
+
+B\^onus 3: Mixto L + R//C
+
+\normalsize
+
+Determinar $i_R, i_L, i_C, v_L, v_R = v_C = v_2$.
+
+\begin{align}
+v_s &= v_L + v_2 \\
+i_L &= i_R + i_C \\
+v_L &= L i_L' \\
+v_2 &= Ri_R \\
+i_C &= C v_2' = CR i_R' \\
+v_s &= L (i_R + i_C)' + R i_R \\
+i_R &= y \\
+v_s &= L y' + CLR y'' + R y \\
+y'' + \cfrac{1}{CR}\cdot y' + \cfrac{1}{CL}\cdot y &= \cfrac{v_s}{CLR}
+\end{align}
+
+Voc\^e viu a facilidade. As duas \'ultimas n\~ao s\~ao homog\^eneas, a primeira \'e.
+
+Exerc\'icio: Existe uma t\'ecnica ninja de resolver n\~ao homog\^eneas sem apelar para varia\c{c}\~ao de par\^ametros.
+
+\Large
+
+B\^onus 4: Mixto (L + R)//C
+
+\normalsize
+
+Determinar $i_R = i_L = i_2, i_C, v_L + v_R = v_C = v_s$.
+
+\begin{align}
+v_C = v_s &= v_L + v_R \\
+i_s &= i_C + i_2 \\
+v_L &= L i_2' \\
+v_R &= Ri_2 \\
+i_C &= C v_s' = 0 \\
+v_s &= L i_2' + R i_2
+\end{align}
+
+\vspace{100mm}
+
+\Large
+
+B\^onus 5: Mixto (C + L)//R
+
+\normalsize
+
+Determinar $i_C = i_L = i_2, i_R, v_L + v_C = v_R = v_s$.
+
+\begin{align}
+v_R = v_s &= v_L + v_C \\
+i_s &= i_R + i_2 \\
+v_L &= L i_2' \\
+v_s &= Ri_R \\
+i_2 &= C v_C' \\
+v_s &= L C v_C'' + v_C
+\end{align}
+
+\Large
+
+B\^onus 6: Mixto (R + C)//L
+
+\normalsize
+
+Determinar $i_R = i_C = i_2, i_L, v_C + v_R = v_L = v_s$.
+
+\begin{align}
+v_L = v_s &= v_C + v_R \\
+i_s &= i_L + i_2 \\
+v_s &= L i_L' \\
+v_R &= Ri_2 \\
+i_2 &= C v_C' \\
+v_s &= v_C + CR v_C'
+\end{align}
+
+\vspace{6mm}
+
+Fora da caridade n\~ao h\'a salva\c{c}\~ao.
+
+\vspace{6mm}
+
+Vers\~ao 1.0.3 de 31/dez/2019 por Vinicius Claudino Ferraz.
+
+\end{document}

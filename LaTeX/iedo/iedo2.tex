@@ -1,0 +1,97 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb}  %mathbb
+\usepackage{amsmath}  %align
+\usepackage{amsthm}   %newtheorem
+\usepackage{hyperref} %a href
+\usepackage{graphicx} %jpg
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\title{Matem\'atica e Espiritualidade}
+\date{}
+\begin{document}
+
+\textbf{IEDO, novembro de 2010. Devaney, Cap\'itulo 12.}
+
+\begin{flushright}
+\end{flushright}
+
+\textbf{Def. 1:} $\Sigma = \{ \mathbf{u} = \left( i_R, i_L, i_C, v_R, v_L, v_C \right) \in \mathbb{R}^6 \,|\, i_R = i_L = - i_C \,;\, v_R + v_L - v_C = 0 \,;\, f(i_R) = v_R \}$
+
+\textbf{Teorema 1:} $\dim \Sigma = 2$
+
+\textbf{Def. 2:} Equa\c{c}\~ao de Lienard. Sejam $(i_L, v_C) = (x,y), L = C = 1, X' = F(X).$ Ponto de equil\'ibrio: $X(t) = X^*$
+\begin{align*}
+  Lx' &= y - f(x) \\
+  Cy' &= -x
+\end{align*}
+
+\textbf{Teorema 2:} Caso linear. Se $f(x) = kx, k > 0$, ent\~ao $X^* = \mathbf{0}$ \'e sumidouro; $X(t) \rightarrow \mathbf{0};$ o sistema equivale a $y'' + ky' + y = 0$. $k < 2 \Rightarrow X(t)$ \'e espiral.
+
+\textbf{Teorema 3:} Na Equa\c{c}\~ao de Lienard, 1) $\exists\,!\, X^*.$
+
+2) $f'(0) = k > 0 \Rightarrow X^*$ \'e sumidouro.
+
+3) $k < 0 \Rightarrow X^*$ \'e fonte.
+
+4) $|k| < 2 \Rightarrow X(t)$ \'e espiral.
+
+\textbf{Teorema 4:} Resistor passivo. Suponha 1) $x > 0 \Rightarrow f(x) > 0$.
+2) $x < 0 \Rightarrow f(x) < 0$.
+3) $f(0) = 0$. Ent\~ao $X(t) \rightarrow X^* = \mathbf{0}$.
+
+\textbf{Def. 3:} Equa\c{c}\~ao de van der Pol. $f(x) = x^3 - x$.
+
+\textbf{Teorema 5:} $X^* = \mathbf{0}$ \'e fonte.
+
+\textbf{Def. 4:}
+\begin{align*}
+v^+ &= \{(x,y) \in \mathbb{R}^2 \,;\, y > 0, x = 0 \} \\
+v^- &= \{(x,y) \in \mathbb{R}^2 \,;\, y < 0, x = 0 \} \\
+g^+ &= \{(x,y) \in \mathbb{R}^2 \,;\, x > 0, y = x^3 - x \} \\
+g^- &= \{(x,y) \in \mathbb{R}^2 \,;\, x < 0, y = x^3 - x \} \\
+\partial A &= v^+ \cup g^- \cup \{ \mathbf{0} \}
+\end{align*}
+
+\textbf{Lema 1:} Seja $(0,y) \cong y$. Seja $y_0 \in v^+$. Ent\~ao $\phi_t(y_0)$ atravessa sequencialmente $g^+, v^-, g^-$ e retorna a $v^+$.
+
+\textbf{Lema 2:} Simetria. $F(-x, -y) = -F(x,y)$.
+
+\textbf{Def. 5:} Mapa de Poincar\'e. Sejam $y_0 \in v^+$ e $P: v^+ \rightarrow v^+. P(y_0) = \mathrm{d}y_0\,\,\phi_\tau(y) ;$
+\begin{align}
+  \tau = \underset{t > 0}{\operatorname{\min}} \{ \mathrm{d}t\,\Psi \,;\, \Psi \in \phi_t(y_0) \cap v^+ \}
+\end{align}
+
+\textbf{Lema 3:} Ponto fixo. $\exists\,!\, y^* \in v^+ \,;\, P(y) = y = \underset{n \rightarrow \infty}{\operatorname{\lim}} P^n(y_0), \forall y_0 \in v^+$.
+
+\textbf{Def. 6:} Seja $\alpha: v^+ \rightarrow v^- \,;\, \alpha(y) = \mathrm{d}y\,\,\phi_\tau(y) \,;\, \tau = \underset{t > 0}{\operatorname{\min}} \{ \mathrm{d}t\,\Psi \,;\, \Psi \in \phi_t(y) \cap v^- \}$.
+
+\textbf{Lema 4:} $\exists\,!\, y^* \in v^+, \exists\,!\, t^* > 0;$ 1) $0 < t < t^* \Rightarrow \phi_t(y^*) \in A.$
+
+2) $\phi_{t^*}(y^*) = (1,0) \in g^+$.
+
+\textbf{Def. 7:} Seja $\delta(y) = \genfrac{}{}{}{0}{\alpha(y)^2 - y^2}{2}$.
+
+\textbf{Lema 5:} 1) $0 < y < y^* \Rightarrow \delta(y) > 0.$
+
+2) $\underset{y \rightarrow \infty}{\operatorname{\lim}} \delta(y) = -\infty.$
+
+3) $y_1 > y_2 > y^* \Rightarrow \delta(y_1) < \delta(y_2)$.
+
+\textbf{Teorema 6:} $\exists X_p \neq \mathbf{0} \,;\, X_p$ \'e solu\c{c}\~ao peri\'odica da equa\c{c}\~ao de van der Pol. Se $X(t) \neq \mathbf{0}$ \'e qualquer outra solu\c{c}\~ao, ent\~ao $X \rightarrow X_p$. O sistema oscila.
+
+\textbf{Teorema 7:} Os teoremas 5 e 6 valem tamb\'em para $f(x) = x^3 - \mu x\,;\, 0 < \mu \le 1$.
+
+\textbf{Observa\c{c}\~oes:}
+\begin{align}
+  \lambda_\pm &= \frac{-k \pm \sqrt{k^2 - 4}}{2} \\
+  W(x,y) &= \frac{x^2 + y^2}{2} \\
+  W_t &= -x f(x) \\
+  I &= \int_{x(a)}^{x(b)} \frac{F(x, y(x)}{\mathrm{d}x/\mathrm{d}t} \,\mathrm{d}x = - \int_{y_1}^{y_2} \frac{F(x(y), y}{\mathrm{d}y/\mathrm{d}t} \,\mathrm{d}y
+\end{align}
+
+\textbf{B\^onus:} O n\'umero (m\'inimo) de formas can\^onicas de uma matriz $n \times n$ \'e:
+\begin{align*}
+  f(n) &= \frac{n}{24} \biggl[ n^2 + \frac{9(-1)^n + 55}{2} \biggr]
+\end{align*}
+
+\end{document}

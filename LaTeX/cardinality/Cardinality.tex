@@ -1,0 +1,285 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb}  %mathbb
+\usepackage{amsmath}  %align
+\usepackage{amsthm}   %newtheorem
+\usepackage{hyperref} %a href
+\usepackage[a4paper,top=1.0cm,bottom=1.0cm,left=1.0cm,right=1.0cm]{geometry}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\pagestyle{headings}
+\title{Matem\'atica e Espiritualidade}
+\date{}
+\begin{document}
+
+\textbf{April/2016. Cardinality Transformations. By Vinicius Claudino Ferraz}
+
+\vspace{3mm}
+
+\textbf{Def. 1:} $D = \{0, 1 \} = \mathbb{Z}_2$
+
+\textbf{Def. 2:} $\mathbb{N} \in \mathbb{M}(0, 0) \Leftrightarrow \exists f : \mathbb{N} \times \mathbb{N} \rightarrow D$
+
+\textbf{Def. 3:} $P(P(\mathbb{N})) = P^2(\mathbb{N})$
+
+$P(P^{k}(\mathbb{N})) = P^{k+1}(\mathbb{N})$
+
+$P^k(\mathbb{N}) \times P^k(\mathbb{N}) = (P^k)^2 (\mathbb{N})$
+
+$P^k(\mathbb{N}) \times (P^k)^{n-1}(\mathbb{N}) = (P^k)^n (\mathbb{N}) = \mathbb{P}_k^n = \mathbb{P}_k^{n \times 1}$
+
+$\mathbb{P}_k^{p \times q} = [a_{ij}], 1 \le i \le p, 1 \le j \le q, a_{ij} \in \mathbb{P}_k $
+
+\textbf{Def. 4:} $\mathbb{R} = P(\mathbb{N}) = \mathbb{P}_1 \in \mathbb{M}(1, 0) \Leftrightarrow \exists f : \mathbb{R} \times \mathbb{N} \rightarrow D$
+
+We take $\mathbb{R}$ as $y$-axis and $\mathbb{N}$ as $x$-axis.
+
+\textbf{Def. 5:} $\# \mathbb{N}_0 = \aleph_0$ ; $\# \mathbb{R}_1 = \aleph_1$ ; $\# X_k = \aleph_k$
+
+\textbf{Example 1:} $\pi = \pi_{1 \times \aleph_0}(\mathbb{Z}_{10}) = [ \cdots, 5, 1, 4, 1, 3, 0, 0, 0, \cdots ] = [ \cdots, f(-4), f(-3), f(-2), f(-1), f(0), f(1), f(2), f(3), \cdots ] $
+
+\textbf{Example 2:} $-\pi = (-\pi)_{1 \times \aleph_0}(\mathbb{Z}_{10}) = [ \cdots, 5, 1, 4, 1, 3, 0, 1, 1, 1, \cdots ] $
+
+\textbf{Notation:} $x_i \in Y_j \Leftrightarrow $ Exists decomposition $d : Y_j \times X_i \rightarrow D $, such that $d(x, \lambda)$ is the $\lambda$-th digit of $x$.
+
+\textbf{Def. 6:} $A \in \mathbb{M}(i, j) \Leftrightarrow \exists f : B_j \times C_i \rightarrow D$
+
+\textbf{Def. 7:} $A^T \in \mathbb{M}(j, i) \Leftrightarrow A \in \mathbb{M}(i, j)$
+
+$\mathbb{N}^T \in \mathbb{M}(0,0)$
+
+$\mathbb{R}^T \in \mathbb{M}(0,1)$
+
+$\mathbb{B} = P(\mathbb{R}) = \mathbb{R}^\mathbb{R} = P^2(\mathbb{N}) = \mathbb{P}_2 \in \mathbb{M}(2,j)$
+
+\vspace{3mm}
+
+\textbf{Theorem 1:} $j = 1$
+
+\textbf{Demo:} $\mathbb{B} = \{ f : \mathbb{R} \rightarrow \mathbb{R} \}$
+
+$\Gamma f \subset \mathbb{R}^2 \Rightarrow \aleph_0 < \# f \le \# \mathbb{R}^2 = \aleph_1$
+
+\vspace{3mm}
+
+$\mathbb{B}^T \in \mathbb{M}(1, 2)$
+
+$\mathbb{N}^n \in \mathbb{M}(0,0)$
+
+$\mathbb{C}, \mathbb{H}, \mathbb{R}^n \in \mathbb{M}(1, 0)$
+
+$\mathbb{N}^\omega = \mathbb{N}^\mathbb{N} = \mathbb{R} \in \mathbb{M}(1, 0)$
+
+$\mathbb{Q}^\omega \in \mathbb{M}(1, 0)$
+
+\vspace{3mm}
+
+\textbf{Def. 8:} $M \in \mathbb{M}(i,j) \Rightarrow T : M^{(B_k)} \rightarrow D ^ {B_k \times C_j} $ ; $T(d) = d'$ ; $T^{-1}(d') = d'' = d$
+
+$d : B_k \rightarrow M$ ; $d(x_k) = y_{1 \times \aleph_j} \in M$
+
+$d'(x_k, \lambda_j) = y_\lambda \in D$
+
+$d''(x) = \sum\limits_{\lambda \in C_j} d'(x, \lambda) ;$ This sum provides a matrix $1 \times \aleph_j$. $y_{1,\lambda} = d'(x, \lambda)$. We name $\Sigma$ a \textbf{transfinite concatenation}.
+
+\vspace{3mm}
+
+\textbf{Theorem 2:} $P^k(\mathbb{N}) = \mathbb{P}_k \in \mathbb{M}(k, k-1), \forall k \ge 1$
+
+\textbf{Demo:} Induction on k. $\# \mathbb{P}_{k + 1} = \aleph_{k + 1}$
+
+$f \in \mathbb{P}_{k + 1} \Rightarrow f : \mathbb{P}_k \rightarrow \mathbb{P}_k \Rightarrow \Gamma f \subset \mathbb{P}_k^2$
+
+$\# f \le \aleph_k \Rightarrow \mathbb{P}_{k + 1} \in \mathbb{M}(k + 1, k)$
+
+\vspace{3mm}
+
+\textbf{Theorem 3:} $\mathbb{R}^{J_k} \in \mathbb{M}(k + 1, k), \forall k \ge 1$
+
+\textbf{Demo:} $\# \mathbb{R}^J = \# \{ g : J \rightarrow \mathbb{R} \} = \# \{ g' : J \times \mathbb{N} \rightarrow D \} = 2^{\#J} = \aleph_{k+1}$
+
+$\Gamma g \subset J \times \mathbb{R} \Rightarrow \# g \le \# J = \aleph_k$
+
+\vspace{3mm}
+
+$x, y \in \mathbb{M}(i,j) \Rightarrow x \simeq y$
+
+\textbf{Corollary 3.1:} $\mathbb{R}^{J_k} \simeq \mathbb{P}_{k + 1}$
+
+\vspace{3mm}
+
+\textbf{In particular:} $\mathbb{R}^\mathbb{B} \in \mathbb{M}(3, 2) \Rightarrow \mathbb{R}^\mathbb{B} \simeq \mathbb{P}_3$
+
+\vspace{3mm}
+
+\textbf{Theorem 4:} $M \in \mathbb{M}(i,j) \Rightarrow M^\omega \in \mathbb{M}(j+1, i)$
+
+\textbf{Demo:} $\# M^\omega = \# \{ f : \mathbb{N} \rightarrow M \} = \# \{ f' : \mathbb{N} \times C_j \rightarrow D \} = 2^{\#C} = \aleph_{j + 1}$
+
+$\Gamma f \subset \mathbb{N} \times M \Rightarrow \# f \le \# M = \aleph_i$
+
+\vspace{3mm}
+
+\textbf{In particular:} $(\mathbb{P}_k)^\omega \in \mathbb{M}(k, k)$
+
+\textbf{In particular:} $\mathbb{R}^\omega = \mathbb{R}^\mathbb{N} \in \mathbb{M}(1, 1) \Rightarrow (\mathbb{R}^\omega)^T \simeq \mathbb{R}^\omega$
+
+\textbf{Corollary 4.1:} $M_0 \in \mathbb{M}(i, j) \Rightarrow (M_0^\omega)^T = M_1 \in \mathbb{M}(i, j+1)$
+
+$(M_1^\omega)^T = M_2 \in \mathbb{M}(i, j+2)$
+
+\textbf{Corollary 4.2:} $(M_{\ell-1}^\omega)^T = M_\ell \in \mathbb{M}(i, j+\ell) \Rightarrow (M_\ell^\omega)^T = M_{\ell+1} \in \mathbb{M}(i, j+\ell+1)$
+
+\textbf{Demo:} Reader's work.
+
+\textbf{In particular:} $ M_0 = \mathbb{P}_k \in \mathbb{M}(k, k-1) \Rightarrow M_1 \in \mathbb{M}(k, k) \Rightarrow M_\ell \in \mathbb{M}(k, k - 1 + \ell)$
+
+\vspace{3mm}
+
+\textbf{Theorem 5:} $\mathbb{M}(i, j) = \{ g : Y_j \times X_i \rightarrow D \} \in \mathbb{M}(\ell, \ell + 1), \ell = \max\{ i, j \}$
+
+\textbf{Demo:} $\# g \le \# (Y \times X \times D) = \aleph_\ell$
+
+$\# \mathbb{M}(i,j) = 2^{\# (Y \times X)} = \aleph_{\ell+1}$
+
+\vspace{3mm}
+
+\textbf{In particular:} $i < j \Rightarrow \mathbb{M}(i, j) \in \mathbb{M}(j + 1, j)$
+
+\textbf{In particular:} $i > j \Rightarrow \mathbb{M}(i, j) \in \mathbb{M}(i + 1, i)$
+
+\textbf{In particular:} $\mathbb{M}(k, k) \in \mathbb{M}(k + 1, k)$
+
+\textbf{In particular:} $\mathbb{M}(0, 0) \in \mathbb{M}(1, 0) \in \mathbb{M}(2, 1) \in \mathbb{M}(3, 2) \in \mathbb{M}(4, 3) \in \mathbb{M}(5, 4) \in \mathbb{M}(6, 5) \in \mathbb{M}(7, 6) \in \cdots \in \mathbb{M}(k + 1, k) \in \cdots$
+
+\vspace{3mm}
+
+\textbf{Rings}
+
+$\mathbb{Z}$ is a \href{https://pbs.twimg.com/media/CU7_V80WwAEvezq.png}{ring}.
+
+$f', g' \in \mathbb{M}(0, 0) = M \Rightarrow f'', g'' : \mathbb{N} \rightarrow \mathbb{N} \Rightarrow f'' +_\mathbb{R} g'' \in \mathbb{N} ^ \mathbb{N} \Rightarrow f' +_M g' \in \mathbb{M}(0,0)$, which is a ring,
+
+after a bijection $b : \mathbb{N} \rightarrow \mathbb{Z} $. \textbf{Example 3:} $b(0,1,2,3,4,5,6,\cdots) = (0,1,-1,2,-2,3,-3,\cdots)$.
+
+$\mathbb{N}^n + \mathbb{N}^T + (\mathbb{Z}^T)^n + (\mathbb{Q}^n)^T = (?)$
+
+$\mathbb{N}^n \cdot \mathbb{N}^T \cdot (\mathbb{Z}^T)^n \cdot (\mathbb{Q}^n)^T = (??)$
+
+$xx = x^2 ; x^nx = x^{n+1}$
+
+$p(x) \in M[x], \deg p(x) = g \Leftrightarrow p(x) = \sum\limits_{i = 0}^g a_i x^i = [a_0, a_1, \cdots, a_g, 0, 0, 0, \cdots] = [a_i]_{i \in \mathbb{N}}$
+
+$p(x, y) \in M[x, y], \deg p(x, y) = g \Leftrightarrow p(x, y) = \sum\limits_{i = 0}^{m_1} \sum\limits_{j = 0}^{m_2} a_{ij} x^i y^j = [a_{ij}]_{i, j \in \mathbb{N}} ; i + j > g \Rightarrow a_{ij} = 0$
+
+$X = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}, p(X) \in M[X], \deg p(X) = g \Leftrightarrow p(X) = \sum\limits_{i_1 = 0}^{m_1} \cdots \sum\limits_{i_n = 0}^{m_n} a_{i_1 \cdots i_n} x_1^{i_1} \cdots x_n^{i_n} = [a_{i_1 \cdots i_n}]_{i \in \mathbb{N}^n} ; \sum\limits_{k = 1}^n i_k > g \Rightarrow a_{i_1 \cdots i_n} = 0$
+
+$a : \mathbb{N}^n \rightarrow M; x_i \in (G, \cdot)$, which is a group. $x_i^0 = \text{Id}_G ; \cdot : M \times G \rightarrow U ; y_M \cdot \text{Id}_G = y_U ; + : U \times U \rightarrow U ; p(X_0) \in U, \forall X_0 \in G^n$
+
+$0 \notin M \Rightarrow \deg p(X) = \infty, \forall p(X) \in M[X]$; but we want that $0 \in M \Rightarrow 0 \in M[X], \deg 0 \notin \mathbb{N}$.
+
+\vspace{3mm}
+
+\textbf{Probability}
+
+Let $X_{2,1} : P(\mathbb{R}) \rightarrow \mathbb{R}$ be a random variable.
+
+$X'_{2,0} : P(\mathbb{R}) \times \mathbb{N} \rightarrow D$
+
+\vspace{3mm}
+
+\textbf{Basis and Representations}
+
+$[\mathbb{R}]_2 = \{f : \mathbb{R} \times \mathbb{N} \rightarrow \mathbb{Z}_2 \} \sim [\mathbb{R}]_{10} = \{f : \mathbb{R} \times \mathbb{N} \rightarrow \mathbb{Z}_{10} \} \sim [\mathbb{R}]_b \in \mathbb{M}(1, 0, \mathbb{Z}_b)$
+
+$\exists \,!\, B(\mathbb{R}) = \{ 2, 3, 4, \cdots \}$. Define $B(\mathbb{P}_2)$. $\exists \,!\, \overbar{[\mathbb{R}]} = \{[\mathbb{R}]_b ; b \in B(\mathbb{R}) \} ; \exists \,!\, \overbar{[\mathbb{P}_k]} = \{[\mathbb{P}_k]_b ; b \in B(\mathbb{P}_k) \}$
+
+\vspace{3mm}
+
+\textbf{Def. 9:} $F_{j, i} : A_i \rightarrow B_j ; G_{k, j} : B_j \rightarrow C_k \Rightarrow G_{k, j} \circ F_{j, i} = H_{k, i} $
+
+$F' : A \times B \rightarrow D$
+
+$G' : B \times C \rightarrow D$
+
+$H' : A \times C \rightarrow D ; H' = G' \otimes F'$
+
+\vspace{3mm}
+
+\textbf{Norms and ordinations in }$\mathbb{P}_k$
+
+$f \in \mathbb{B} ; f : \mathbb{R} \rightarrow \mathbb{R} ; \vert f_{11} \vert = \sup \{ \vert f(x) \vert ; x \in \mathbb{R} \} = \vert s \vert \in \mathbb{R}$
+
+$\sup \{ \vert f_1 \vert, \vert f_2 \vert, \cdots \} = \vert g \vert : \mathbb{R} \rightarrow \mathbb{R} ; \forall x \in \mathbb{R}, \exists \, ! \, \underset{n \in \mathbb{N}}{\sup} \vert f_n(x) \vert = \vert g(x) \vert \in \mathbb{R}$
+
+$f \in \mathbb{P}_3 ; f : \mathbb{B} \rightarrow \mathbb{B} ; \vert f_{22} \vert = \sup \{ \vert f_{11}(x) \vert \in \mathbb{R}^\mathbb{R} ; x \in \mathbb{B} \} = \vert s \vert \in \mathbb{B}$
+
+$\sup \{ \vert f_1 \vert, \vert f_2 \vert, \cdots \} = \vert g \vert : \mathbb{B} \rightarrow \mathbb{B} ; \forall x \in \mathbb{B}, \exists \, ! \, \underset{n \in \mathbb{N}}{\sup} \vert f_n(x) \vert = \vert g(x) \vert \in \mathbb{B}$
+
+$f \in \mathbb{P}_{k+1} ; f : \mathbb{P}_k \rightarrow \mathbb{P}_k ; \vert f_{k, k} \vert = \sup \{ \vert f_{k-1, k-1}(x) \vert : \mathbb{P}_{k-1} \rightarrow \mathbb{P}_{k-1} ; x \in \mathbb{P}_k \} = \vert s \vert \in \mathbb{P}_k$
+
+$\sup \{ \vert f_1 \vert, \vert f_2 \vert, \cdots \} = \vert g \vert : \mathbb{P}_k \rightarrow \mathbb{P}_k ; \forall x \in \mathbb{P}_k, \exists \, ! \, \underset{n \in \mathbb{N}}{\sup} \vert f_n(x) \vert = \vert g(x) \vert \in \mathbb{P}_k$
+
+Sups may be infinite. Prove that \textbf{the norm} is a norm.
+
+
+
+$g : \Lambda \rightarrow \mathbb{P}_k ; \Vert g \Vert_M = \sup \{ \vert g(x) \vert \in \mathbb{P}_k ; x \in \Lambda \} ; \Vert g \Vert_S = \sum\limits_{x \in \Lambda} \vert g(x) \vert$ ; Define Lebesgue sum over uncountable.
+
+\vspace{3mm}
+
+\textbf{Lines in }$\mathbb{P}_k^2$
+
+$+, \cdot : \mathbb{N} \times \mathbb{N} \rightarrow \mathbb{N}$
+
+$+, \cdot : \mathbb{R} \times \mathbb{R} \rightarrow \mathbb{R}$
+
+$+, \cdot : \mathbb{N}^\mathbb{N} \times \mathbb{N}^\mathbb{N} \rightarrow \mathbb{N}^\mathbb{N}$
+
+$+, \cdot : \mathbb{B} \times \mathbb{B} \rightarrow \mathbb{B}$
+
+$+, \cdot : \varphi(\mathbb{N}, 4) \times \varphi(\mathbb{N}, 4) \rightarrow \varphi(\mathbb{N}, 4)$
+
+$+, \cdot : \mathbb{P}_k \times \mathbb{P}_k \rightarrow \mathbb{P}_k$
+
+$+, \cdot : \varphi(\mathbb{N}, 2^k) \times \varphi(\mathbb{N}, 2^k) \rightarrow \varphi(\mathbb{N}, 2^k)$
+
+$+ : \mathbb{P}_k^2 \times \mathbb{P}_k^2 \rightarrow \mathbb{P}_k^2 ; \cdot : \mathbb{P}_k \times \mathbb{P}_k^2 \rightarrow \mathbb{P}_k ; \cdot : \mathbb{P}_k^2 \times \mathbb{P}_k \rightarrow \mathbb{P}_k ; t (u, v) = (tu, tv) ; (u, v) t = (ut, vt)$
+
+Define $+, \cdot : \mathbb{M}_{ij} \times \mathbb{M}_{ij} \rightarrow \mathbb{M}_{ij} $.
+
+$t \in \mathbb{P}_k, X = (x,y) = (a,b) + t (u,v) \neq (a,b) + (u, v) t = Y$
+
+Define dist$(X, Y) ; \Vert X \Vert, \langle X, Y \rangle ; $ derivative ; $C^\infty$ topology ; $C^\infty \stackrel{T}{\rightarrow} C^\infty $ transforms.
+
+$\langle (a,b), (x,y) \rangle = ax + by \Rightarrow \langle X, X \rangle = xx + yy$. Prove that the inner product is an inner product. Define $\sqrt{\cdot} : \mathbb{P}_k \rightarrow \mathbb{P}_k$.
+
+$\Vert (x,y) \Vert_M = \max \{ \vert x \vert, \vert y \vert \}$, where $\max \{ f_1, f_2 \} = \sup \{ f_1, f_2 \} = g$. $\Vert (x,y) \Vert_S =  \vert x \vert + \vert y \vert$
+
+$\Vert X \Vert = \Vert Y \Vert = a \Rightarrow X, Y \in S^1(0, a),$ the obscure sphere with radius $a$.
+
+\vspace{3mm}
+
+\textbf{Lines in }$\mathbb{P}_k^n$
+
+$t \in \mathbb{P}_k, X = X_0 + t V \neq X_0 + V t = Y$ ; $\biggl\langle \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}, \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix} \biggl\rangle = X^T Y = x_1 y_1 + \cdots + x_n y_n$
+
+$\biggl\Vert \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \biggl\Vert_M = \max \{ \vert x_1 \vert, \cdots, \vert x_n \vert \} ; \biggl\Vert \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix} \biggl\Vert_S = \vert x_1 \vert + \cdots + \vert x_n \vert $
+
+\vspace{3mm}
+
+\textbf{Lines in }$\mathbb{P}_k^{p \times q}$
+
+$+ : \mathbb{P}_k^{p \times q} \times \mathbb{P}_k^{p \times q} \rightarrow \mathbb{P}_k^{p \times q} ; \cdot : \mathbb{P}_k^{p \times n} \times \mathbb{P}_k^{n \times q} \rightarrow \mathbb{P}_k^{p \times q}$
+
+$X_{p \times q} = X_0 + T_{p \times n} V_{n \times q} \neq X_0 + V_{p \times n} T_{n \times q} = Y_{p \times q}$
+
+$\langle A_{p \times q}, B_{p \times r} \rangle = (A^T)_{q \times p} B_{p \times r} = C_{q \times r}$
+
+$\Vert A_k^{p \times q} \Vert = \sup \{ \Vert A v \Vert \in \mathbb{P}_k^p ; v \in \mathbb{P}_k^q , \langle v, v \rangle = \text{Id}_{\mathbb{P}_k} \}$
+
+\vspace{3mm}
+
+Immersion and submersion. Click \href{https://sites.google.com/site/mathspirituality2/CardinalityTransformations.pdf?attredirects=0&d=1}{here}. I'm \href{https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxtYXRoc3Bpcml0dWFsaXR5MnxneDo3OTE2ZTQ4ZjZiN2ZmM2I4}{without} PDF viewer.
+
+$V = L$
+
+\end{document}

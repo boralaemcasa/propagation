@@ -1,0 +1,59 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{cancel}
+\usepackage{hyperref} %a href
+\usepackage{gensymb}
+\usepackage{colortbl}
+\usepackage{amsthm}
+\newtheorem{exercise}{Exercise}
+\newtheorem{definition}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{example}{Example}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\begin{align}
+  X^2 + AX + XB &= C \\
+  x_1^2 + x_2 x_3 &= c_1 - T_{11} x_1 - T_{12} x_2 - T_{13} x_3 - 0 x_4 \\
+  x_1 x_2 + x_2 x_4 &= c_2 - T_{21} x_1 - T_{22} x_2 - 0 x_3 - T_{24} x_4 \\
+  x_1 x_3 + x_3 x_4 &= c_3 - T_{31} x_1 - 0 x_2 - T_{33} x_3 - T_{34} x_4 \\
+  x_2 x_3 + x_4^2 &= c_4 - 0 x_1 - T_{42} x_2 - T_{43} x_3 - T_{44} x_4 \\
+  1 &\Rightarrow x_3 = \cfrac{c_1 - T_{11} x_1 - x_1^2 - T_{12} x_2}{x_2 + T_{13}} \\
+  2 &\Rightarrow x_4 = \cfrac{c_2 - T_{21} x_1 - T_{22} x_2 - x_1 x_2}{x_2 + T_{24}} \\
+  3 &\Rightarrow \alpha x_2^2 + \beta x_2 + \gamma = 0 \\
+  &\exists\,!\,x_{21}\,;\,\exists\,!\,x_{22} \\
+  4 &\Rightarrow p(x_1) = 0 \\
+  \deg p &= 10
+\end{align}
+
+	There are $2$ real solutions.
+
+\begin{align}
+  \alpha &= D x_1 + E \\
+  \beta &= 1 x_1^3 + F x_1^2 + G x_1 + H \\
+  \gamma &= b x_1^3 + J x_1^2 + K x_1 + L \\
+  D &= - T_{34} - T_{31} - T_{12} \\
+  E &= - T_{22} T_{34} - c_3 - T_{12} T_{22} \\
+  F &= T_{22} = d + f \\
+  G &= T_{11} T_{22} + T_{12} T_{21} - T_{11} T_{33} - T_{21} T_{34} - T_{13} T_{34} - T_{13} T_{31} - T_{24} T_{31} \\
+  H &= - c_1 T_{22} - c_2 T_{12} + c_1 T_{33} + c_2 T_{34} - T_{13} T_{22} T_{34} - c_3 T_{13} - c_3 T_{24} \\
+  b &= T_{21} \\
+  J &= - T_{11} T_{24} + T_{11} T_{21} - c_2 \\
+  K &= c_1 T_{24} - T_{11} T_{24} T_{33} - T_{13} T_{34} - T_{24} T_{31} - c_1 T_{21} - c_2 T_{11} \\
+  L &= c_1 T_{24} T_{33} + c_2 T_{13} T_{34} - c_3 T_{13} T_{24} + c_1 c_2 \\
+   x_2 &= \cfrac{- \beta + \sigma \sqrt{\Delta}}{2D x_1 + 2E} \\
+  0 &= \theta_3 x_2^3 + \theta_2 x_2^2 + \theta_1 x_2 + \theta_0
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 4/Jul/2019
+
+\end{document}

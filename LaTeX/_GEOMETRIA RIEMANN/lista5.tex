@@ -1,0 +1,473 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{eucal}
+\usepackage{cancel}
+\usepackage{array,bm}
+\usepackage{graphicx} %jpg
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows, matrix}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Lista de Geometria de Riemann, Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+	\section{Grupos de Lie}
+		\begin{flushright}
+		\end{flushright}
+
+		Teorema 2.18: $L_p(h) = ph, R_p(h) = hp$ s\~ao difeomorfismos.
+
+		Defini\c{c}\~ao 2.19: Uma \'algebra de Lie sobre $\mathbb{R}$ \'e um espa\c{c}o vetorial $\mathcal{G}$ munido de um colchete de Lie bilinear de $\mathcal{G} \times \mathcal{G}$ em $\mathbb{R}$, anticomutativo $([X,Y] = -[Y,X])$ e com a identidade de Jacobi: $[[X,Y], Z] + [[Y,Z],X] + [[Z,X],Y] = 0$.
+
+		Defini\c{c}\~ao 2.23: $X \in \mathcal{T}(G)$ \'e invariante \`a esquerda se d$L_p X = X \circ L_p, \forall p \in G$.
+
+		Rela\c{c}\~ao 2.35: $X_p = (dL_p)_e X_e$. Um campo invariante \`a esquerda fica completamente determinado em algum ponto, por exemplo, $e$.
+
+		Teorema 2.24: Todo vetor tangente $X_e$ em $T_eG$ possui uma extens\~ao a um campo invariante \`a esquerda. $X \in \mathcal{T}(G)$, dado pela rela\c{c}\~ao 2.35.
+
+		Teorema 2.25: O colchete de Lie de campos invariantes \`a esquerda \'e invariante \`a esquerda. $\Leftrightarrow (dL_p)_h [X,Y]_h f = [X,Y]_{ph} f$.
+
+		$\mathcal{L} = \{$ campos invariantes \`a esquerda $\}$ \'e um subespa\c{c}o vetorial de $\mathcal{T}(G)$, perfazendo uma \'algebra de Lie.
+
+		Defini\c{c}\~ao 2.26: A \'algebra de Lie $\mathcal{G}$ de G \'e $T_eG$ munido de $[X_e, Y_e] := [X,Y]_e$ em que $X, Y \in \mathcal{T}(G)$ s\~ao extens\~oes invariantes \`a esquerda dos vetores tangentes $X_e, Y_e$.
+
+		Defini\c{c}\~ao 2.27: A m\'etrica \'e invariante \`a esquerda se $\langle V, W \rangle_h = \langle (dL_p)_h V, (dL_p)_h W \rangle_{L_p h}$. Para todos $p,h \in G\,; V, W \in T_eG$.
+
+		Teorema 2.28: Dado um produto interno em $T_eG$, a m\'etrica seguinte \'e invariante \`a esquerda.
+
+		Para todos $p \in G\,; V, W \in T_eG$: $\langle V, W \rangle_p = \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p W \rangle_e$.
+
+		Teorema 2.29: Seja a \'algebra de Lie $\mathcal{G} = T_eG$ do grupo de Lie G. A m\'etrica anterior \'e bi-invariante se e s\'o se
+
+		$\langle [V, X], W \rangle = - \langle V, [W, X] \rangle$. Para todos $V, W, X \in T_eG$. Traduzindo:
+
+		$\langle (dL_{p^{-1}})_p [V,X], (dL_{p^{-1}})_p W \rangle_e = - \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p [W,X] \rangle_e$.
+
+		\subsection{3-10: Em uma \'algebra de Lie, a m\'etrica $g$ \'e invariante \`a esquerda se e s\'o se $g_{ij}$ s\~ao constantes.}
+		\begin{flushright}
+		\end{flushright}
+
+		Do nada, sabemos que $G^n$ \'e grupo de Lie. $e =$ identidade. $X_e, Y_e \in T_eG = \mathcal{G}$, com a opera\c{c}\~ao $[X_e, Y_e] := [X, Y]_e$.
+
+		Extens\~oes $X, Y \in \mathcal{T}(G)$ invariantes \`a esquerda. (O exerc\'icio sugere que formam base ortonormal.)
+
+		Agora, $\langle \cdot, \cdot \rangle$ \'e invariante \`a esquerda.
+
+		$\langle X, Y \rangle_h = \langle (dL_p)_h X, (dL_p)_h Y \rangle_{L_p h}$. Para todos $p,h \in G\,; X, Y \in T_eG$.
+
+		Em particular: $h := p\,; p := p^{-1} \Rightarrow L_p h = e \Rightarrow $ Para todos $p \in G\,; X \in T_eG$: $\langle X, X \rangle_p = \langle (dL_{p^{-1}})_p X, (dL_{p^{-1}})_p X \rangle_e$.
+
+		Trocando os brackets pela m\'etrica, $\left[ \begin{matrix} X_p^1 \\ X_p^2 \end{matrix} \right]^T \cdot [g_{ij}(p)] \cdot \left[ \begin{matrix} X_p^1 \\ X_p^2 \end{matrix} \right] = \left[ \begin{matrix} J_{11} X_e^1 + J_{12} X_e^2 \\ J_{21} X_e^1 + J_{22} X_e^2 \end{matrix} \right]^T \cdot [g_{ij}(e)] \cdot \left[ \begin{matrix} J_{11} X_e^1 + J_{12} X_e^2 \\ J_{21} X_e^1 + J_{22} X_e^2 \end{matrix} \right]$.
+
+		$X$ \'e invariante \`a esquerda $\Rightarrow (dL_p)_h X_h = X_{ph}$.
+
+		Tudo se resolve se $(dL_{p^{-1}})_h$ independe de $h$. \textbf{DEMONSTRE.}
+
+		Vamos igualar: $X_p = [J] \cdot X_e = (dL_{p^{-1}})_{p^2} X_{p^2} = X_p = V_e$
+
+		Da\'i $g_{ij}(p) = g_{ij}(e)$.
+
+		$\therefore g_{ij}$ s\~ao constantes.
+
+		\vspace{3mm}
+
+		Vale a rec\'iproca? Suponhamos que $g_{ij}$ s\~ao constantes.
+
+		Da\'i $g_{ij}(p) = g_{ij}(e)$.
+
+		Tudo se resolve se $(dL_{p^{-1}})_h$ independe de $h$. \textbf{DEMONSTRE.}
+
+		Vamos construir: $X_p = [J] \cdot X_e = (dL_{p^{-1}})_{p^2} X_{p^2} = X_p = V_e$
+
+		$[X_p]^T \cdot [g_{ij}] \cdot [X_p] = [V_e]^T \cdot [g_{ij}] \cdot [V_e]$
+
+		Ent\~ao: Para todos $p \in G\,; X \in T_eG$: $\langle X, X \rangle_p = \langle (dL_{p^{-1}})_p X, (dL_{p^{-1}})_p X \rangle_e$.
+
+		$\langle X, Y \rangle_h = \langle (dL_g)_h X, (dL_g)_h Y \rangle_{L_g h}$. Para todos $g,h \in G\,; X, Y \in T_eG$.
+
+		$\therefore \langle \cdot, \cdot \rangle$ \'e invariante \`a esquerda
+
+		\vspace{3mm}
+
+		Na lista anterior, $\langle V, V\rangle_p = \langle J(p^{-1}h) V, J(p^{-1}h) V \rangle_e$
+
+		$[g] \equiv$ Id
+
+		$(V_1^2 + V_2^2)_p = \bigg( \cfrac{V_1^2 + V_2^2}{y^2} \bigg)_e$
+
+		$V_p = \cfrac{1}{y} \cdot V_e = (dL_{p^{-1}})_{p^2} V_{p^2} = V_p$, se $V$ for invariante \`a esquerda $\therefore V_e = V_{p^2}$
+
+		$p = (p_1,p_2), h = (h_1,h_2) \Rightarrow p^{-1} = (\text{Inv}_1(p), \text{Inv}_2(p)) = (-p_1/p_2, 1/p_2)$
+
+		Prod$(p_1, p_2, h_1, h_2) = (h_1 p_2 + p_1, h_2 p_2)$
+
+		$p^{-1}h = (\alpha_1(p,h), \alpha_2(p,h))	= \text{Prod}(\text{Inv}_1(p), \text{Inv}_2(p), h_1, h_2) = \left( \begin{matrix} \cfrac{h_1 - p_1}{p_2} \\ \cfrac{h_2}{p_2} \end{matrix} \right)$
+
+		$(dL_{p^{-1}})_h = \bigg[\cfrac{\partial \alpha^i}{\partial h^j} \bigg] = J(p^{-1}h) = \left[ \begin{matrix} 1/p_2 & 0 \\ 0 & 1/p_2 \end{matrix} \right]$
+
+		Depois $h := p^2 = (\beta_1(p), \beta_2(p)) = \text{Prod}(p_1,p_2,p_1,p_2) = \left( \begin{matrix} p_1 p_2 + p_1 \\ p_2^2 \end{matrix} \right)$.
+
+		Considerar $(dL_e)_h =$ Id $\Rightarrow [g(e)] \equiv$ Id
+
+		\subsection{5-10: Constantes de estrutura}
+		\begin{flushright}
+		\end{flushright}
+
+		Falta considerar $n \ge 3$.
+
+		\subsection{5-11: $2\, \nabla_X Y = [X, Y]$ sempre que $X, Y$ s\~ao invariantes \`a esquerda em $G$.}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $n = 2$.
+
+		$X = a \partial_1 + b \partial_2$
+
+		$Y = c \partial_1 + d \partial_2$
+
+		$[X, Y] = \lambda \partial_1 + \mu \partial_2$
+
+		$\lambda = c_{12}^1a + c_{12}^2c = a \partial_1 c - c \partial_1 a + b \partial_2 c - d \partial_2 a$, pela f\'ormula 0.37.
+
+		$\mu = c_{12}^1b + c_{12}^2d = a \partial_1 d - c \partial_1 b + b \partial_2 d - d \partial_2 b$
+
+		$\nabla_X Y = \nabla_{a \partial_1 + b \partial_2} (c \partial_1 + d \partial_2)  = c \nabla_{a \partial_1 + b \partial_2} (\partial_1) + d \nabla_{a \partial_1 + b \partial_2} (\partial_2) = ac \nabla_{ \partial_1} \partial_1 + ad \nabla_{\partial_1} \partial_2 + bc \nabla_{\partial_2} \partial_1 + bd \nabla_{ \partial_2} \partial_2$
+
+		$= ac(\Gamma_{11}^1 \partial_1 + \Gamma_{11}^2 \partial_2) + ad(\Gamma_{12}^1 \partial_1 + \Gamma_{12}^2 \partial_2) + bc(\Gamma_{21}^1 \partial_1 + \Gamma_{21}^2 \partial_2) + bd(\Gamma_{22}^1 \partial_1 + \Gamma_{22}^2 \partial_2) = \alpha \partial_1 + \beta \partial_2 = \cfrac{1}{2}\cdot (\lambda \partial_1 + \mu \partial_2)$
+
+		$\alpha = ac\Gamma_{11}^1  + ad\Gamma_{12}^1 + bc\Gamma_{21}^1 + bd\Gamma_{22}^1 = \cfrac{1}{2} \cdot \lambda$
+
+		$\beta = ac\Gamma_{11}^2  + ad\Gamma_{12}^2  + bc\Gamma_{21}^2  + bd\Gamma_{22}^2 = \cfrac{1}{2} \cdot \mu$
+
+		\vspace{3mm}
+
+		$2\alpha = 2ac\Gamma_{11}^1  + (2ad + 2bc)\Gamma_{12}^1 + 2bd\Gamma_{22}^1 = a \partial_1 c - c \partial_1 a + b \partial_2 c - d \partial_2 a$
+
+		$2\beta = 2ac\Gamma_{11}^2  + (2ad + 2bc)\Gamma_{12}^2  + 2bd\Gamma_{22}^2 = a \partial_1 d - c \partial_1 b + b \partial_2 d - d \partial_2 b$
+
+		\vspace{3mm}
+
+		$2ac\Gamma_{11}^k  + (2ad + 2bc)\Gamma_{12}^k  + 2bd\Gamma_{22}^k = a \partial_1 Y^k - c \partial_1 X^k + b \partial_2 Y^k - d \partial_2 X^k, \forall k \in \{1, 2\}$
+
+		\vspace{3mm}
+
+		$2 \langle (ac, ad + bc, bd), (\Gamma_{11}^k, \Gamma_{12}^k, \Gamma_{22}^k) \rangle_3 = a \partial_1 Y^k - c \partial_1 X^k + b \partial_2 Y^k - d \partial_2 X^k, \forall k \in \{1, 2\}$
+
+		\vspace{3mm}
+
+		$\Gamma^1, \Gamma^2 \in \pi: Ax + By + Cz = D^k$
+
+		\vspace{3mm}
+
+		Vamos isolar $c(x,y)$ na segunda e jogar na primeira.
+
+		$c = \cfrac{a d_x   + b d_y - d b_y -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2}{2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x}$
+
+		$c_x = \cfrac{(a_x d_x + a d_{xx} + b_x d_y + b d_{xy} - b_y d_x - b_{xy}d  - 2 a_x d\Gamma_{12}^2 - 2 a d_x \Gamma_{12}^2 - 2 a d \partial_x \Gamma_{12}^2 - 2b_x d\Gamma_{22}^2 - 2 b d_x \Gamma_{22}^2 - 2bd \partial_x \Gamma_{22}^2) (2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x) - (a d_x   + b d_y - d b_y -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2) (2a_x \Gamma_{11}^2 + 2a \partial_x \Gamma_{11}^2 + 2b_x\Gamma_{12}^2 + 2b\partial_x \Gamma_{12}^2 + b_{xx})}{(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)^2}$
+
+		$c_y = \cfrac{(a_y d_x + a d_{xy} + b d_{yy} - b_{yy} d - 2 a_y d\Gamma_{12}^2 - 2 a d_y \Gamma_{12}^2 - 2 a d \partial_y \Gamma_{12}^2 - 2b_y d\Gamma_{22}^2 - 2 b d_y \Gamma_{22}^2 - 2bd \partial_y \Gamma_{22}^2)(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x) - (a d_x   + b d_y - d b_y -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2) (2a_y \Gamma_{11}^2 + 2a \partial_y \Gamma_{11}^2 + 2b_y\Gamma_{12}^2 + 2b\partial_y \Gamma_{12}^2 + b_{xy})}{(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)^2}$
+
+		$a c_x + b c_y = c[2a\Gamma_{11}^1 + 2b\Gamma_{12}^1 + a_x]  + 2ad\Gamma_{12}^1 + 2bd\Gamma_{22}^1 + d a_y$
+
+		\vspace{3mm}
+
+		$a [(a_x d_x + a d_{xx} + b_x d_y + b d_{xy} - b_y d_x - b_{xy}d  - 2 a_x d\Gamma_{12}^2 - 2 a d_x \Gamma_{12}^2 - 2 a d \partial_x \Gamma_{12}^2 - 2b_x d\Gamma_{22}^2 - 2 b d_x \Gamma_{22}^2 - 2bd \partial_x \Gamma_{22}^2) (2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x) - (a d_x   + b d_y - b_y d -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2) (2a_x \Gamma_{11}^2 + 2a \partial_x \Gamma_{11}^2 + 2b_x\Gamma_{12}^2 + 2b\partial_x \Gamma_{12}^2 + b_{xx})] + b [(a_y d_x + a d_{xy} + b d_{yy} - b_{yy} d - 2 a_y d\Gamma_{12}^2 - 2 a d_y \Gamma_{12}^2 - 2 a d \partial_y \Gamma_{12}^2 - 2b_y d\Gamma_{22}^2 - 2 b d_y \Gamma_{22}^2 - 2bd \partial_y \Gamma_{22}^2)(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x) - (a d_x   + b d_y - b_y d -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2) (2a_y \Gamma_{11}^2 + 2a \partial_y \Gamma_{11}^2 + 2b_y\Gamma_{12}^2 + 2b\partial_y \Gamma_{12}^2 + b_{xy})] = (2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x) (a d_x   + b d_y - b_y d -  2ad\Gamma_{12}^2 - 2bd\Gamma_{22}^2) \cdot [2a\Gamma_{11}^1 + 2b\Gamma_{12}^1 + a_x]  + (2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)^2 [2ad\Gamma_{12}^1 + 2bd\Gamma_{22}^1 + a_y d]$
+
+		\vspace{3mm}
+
+		E.D.P.: $Ad + B d_x + C d_y + E d_{xx} + F d_{xy} + G d_{yy} = 0$
+
+		\vspace{3mm}
+
+		$A = (-ab_{xy} - 2 a_x a \Gamma_{12}^2 - 2 a^2 \partial_x \Gamma_{12}^2- 2ab_x \Gamma_{22}^2- 2ab \partial_x \Gamma_{22}^2 - b_{yy} b - 2a_y b \Gamma_{12}^2 - 2ab\partial_y \Gamma_{12}^2 - 2b_yb\Gamma_{22}^2 - 2 b^2\partial_y \Gamma_{22}^2)(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$+ (ab_y + 2a^2\Gamma_{12}^2 + 2ab\Gamma_{22}^2)(2a_x \Gamma_{11}^2 + 2a \partial_x \Gamma_{11}^2 + 2b_x\Gamma_{12}^2 + 2b\partial_x \Gamma_{12}^2 + b_{xx})$
+
+		$+ (b_y b + 2ab\Gamma_{12}^2 + 2b^2\Gamma_{22}^2)(2a_y \Gamma_{11}^2 + 2a \partial_y \Gamma_{11}^2 + 2b_y\Gamma_{12}^2 + 2b\partial_y \Gamma_{12}^2 + b_{xy})$
+
+		$+ (b_y + 2a\Gamma_{12}^2 + 2b\Gamma_{22}^2)\cdot [2a\Gamma_{11}^1 + 2b\Gamma_{12}^1 + a_x](2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$+ [-2a\Gamma_{12}^1 - 2b\Gamma_{22}^1 - a_y ](2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)^2$
+
+		$B = (a_y b - ab_y - 2 a^2 \Gamma_{12}^2- 2ab \Gamma_{22}^2 -2a^2\Gamma_{11}^1 - 2ab\Gamma_{12}^1)(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$- a^2(2a_x \Gamma_{11}^2 + 2a \partial_x \Gamma_{11}^2 + 2b_x\Gamma_{12}^2 + 2b\partial_x \Gamma_{12}^2 + b_{xx})$
+
+		$- ab(2a_y \Gamma_{11}^2 + 2a \partial_y \Gamma_{11}^2 + 2b_y\Gamma_{12}^2 + 2b\partial_y \Gamma_{12}^2 + b_{xy})$
+
+		$C = (ab_x- 2 ab\Gamma_{12}^2 - 2b^2\Gamma_{22}^2 -2ab\Gamma_{11}^1 - 2b^2\Gamma_{12}^1 - a_x b)(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$- ab(2a_x \Gamma_{11}^2 + 2a \partial_x \Gamma_{11}^2 + 2b_x\Gamma_{12}^2 + 2b\partial_x \Gamma_{12}^2 + b_{xx})$
+
+		$- b^2(2a_y \Gamma_{11}^2 + 2a \partial_y \Gamma_{11}^2 + 2b_y\Gamma_{12}^2 + 2b\partial_y \Gamma_{12}^2 + b_{xy})$
+
+		$E = a^2(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$F = 2ab(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		$G = b^2(2a\Gamma_{11}^2 + 2b\Gamma_{12}^2 + b_x)$
+
+		\vspace{3mm}
+
+		$X$ \'e invariante \`a esquerda $\Rightarrow (dL_p)_h X_h = X_{ph}$. Analogamente, $(dL_p)_h Y_h = Y_{ph}$.
+
+		A m\'etrica $g$ \'e bi-invariante. Pelo teorema 2.29, $\langle [X, Y], Z \rangle = - \langle X, [Z, Y] \rangle$. Para todos $X, Y, Z \in T_eG$. Traduzindo:
+
+		$\langle (dL_{p^{-1}})_p [X,Y], (dL_{p^{-1}})_p Z \rangle_e = - \langle (dL_{p^{-1}})_p X, (dL_{p^{-1}})_p [Z,Y] \rangle_e$.
+
+		$XYZ := XZY \Rightarrow \langle [X, Z], Y \rangle = - \langle X, [Y, Z] \rangle$
+
+		$XYZ := YZX \Rightarrow \langle [Y, Z], X \rangle = - \langle Y, [X, Z] \rangle = \langle [X, Y], Z \rangle$ (O exerc\'icio pede para provar o teorema 2.29.)
+
+		$XYZ := YXZ \Rightarrow \langle [Y, X], Z \rangle = - \langle Y, [Z, X] \rangle$
+
+		$XYZ := ZYX \Rightarrow \langle [Z, Y], X \rangle = - \langle Z, [X, Y] \rangle$
+
+		$XYZ := ZXY \Rightarrow \langle [Z, X], Y \rangle = - \langle Z, [Y, X] \rangle$
+
+		Queremos mostrar que $\langle [X, Y], Z \rangle = 2 \langle \nabla_X Y, Z \rangle$.
+
+		Equivalente a $X \langle Y, Z \rangle + Y \langle X, Z \rangle = Z\langle X, Y \rangle$
+
+		Equivalente a $\langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle + \langle \nabla_Y X, Z \rangle + \langle X, \nabla_Y Z \rangle = \langle \nabla_Z X, Y \rangle + \langle X, \nabla_Z Y \rangle$
+
+		Considerar que os vetores s\~ao paralelos independentemente da base.
+
+		\vspace{3mm}
+
+		$2 \left[ \begin{matrix} ac & ad + bc & bd  & 0 & 0 & 0 \\ 0 & 0 & 0 & ac & ad + bc & bd \end{matrix} \right]\cdot \left[ \begin{matrix} \Gamma_{11}^1 \\ \Gamma_{12}^1 \\ \Gamma_{22}^1 \\ \Gamma_{11}^2 \\ \Gamma_{12}^2 \\ \Gamma_{22}^2 \end{matrix} \right] = \left[ \begin{matrix} a \partial_1 c - c \partial_1 a + b \partial_2 c - d \partial_2 a \\ a \partial_1 d - c \partial_1 b + b \partial_2 d - d \partial_2 b \end{matrix} \right] = c_{12}^1 \left[ \begin{matrix} a \\ b \end{matrix} \right] + c_{12}^2 \left[ \begin{matrix} c \\ d \end{matrix} \right]$
+
+		\vspace{3mm}
+
+		$c_{12}^1 \left[ \begin{matrix} P_1^2 - R_1^2 \\ - P_1^2 - R_2^1 \end{matrix} \right] + c_{12}^2 \left[ \begin{matrix} P_1^2 - P_1^1 \\ P_2^2 - P_1^2 \end{matrix} \right] = \left[ \begin{matrix} a \partial_1 P_1^1 + b \partial_2 P_1^1 - c \partial_1 P_1^1 - d \partial_2 P_1^1 \\ c \partial_1 P_2^2 + d \partial_2 P_2^2 - a \partial_1 P_2^2 - b\partial_2 P_2^2 \end{matrix} \right]$
+
+		\vspace{3mm}
+
+		$c_{12}^1 \left[ \begin{matrix} (-ac + a^2) g_{11} + (-bc - ad + 2ab) g_{12} + (-bd + b^2) g_{22} \\  (-c^2 + ac) g_{11} + (-2cd + ad + bc) g_{12} + (-d^2 + bd) g_{22} \end{matrix} \right] + c_{12}^2 \left[ \begin{matrix} (a c - a^2) g_{11} + (a d + b c - 2ab) g_{12} + (b d - b^2) g_{22} \\ (c^2 - ac) g_{11} + (-a d - b c + 2cd) g_{12} + (d^2 - b d) g_{22} \end{matrix} \right] = \left[ \begin{matrix} a \partial_1 P_1^1 + b \partial_2 P_1^1 - c \partial_1 P_1^1 - d \partial_2 P_1^1 \\ c \partial_1 P_2^2 + d \partial_2 P_2^2 - a \partial_1 P_2^2 - b\partial_2 P_2^2 \end{matrix} \right]$
+
+		\vspace{3mm}
+
+		$- c_{12}^1 + c_{12}^2 = \cfrac{(a - c) \partial_1 P_1^1 + (b - d) \partial_2 P_1^1}{ - \langle (a,b), (a,b) \rangle + \langle (a,b), (c,d) \rangle} = \cfrac{(c - a) \partial_1 P_2^2 + (d - b) \partial_2 P_2^2}{\langle (c,d), (c,d) \rangle - \langle (a,b), (c,d) \rangle}$
+
+		\vspace{3mm}
+
+		$\cfrac{(a - c) \partial_1 \langle X, X \rangle + (b - d) \partial_2 \langle X, X \rangle}{ - \langle X, X \rangle + \langle X, Y \rangle} = \cfrac{(c - a) \partial_1 \langle Y, Y \rangle + (d - b) \partial_2 \langle Y, Y \rangle}{\langle Y, Y \rangle - \langle X, Y \rangle}$
+
+		\vspace{3mm}
+
+		$[\langle Y, Y \rangle - \langle X, Y \rangle] (X - Y) \langle X, X \rangle = [ - \langle X, X \rangle + \langle X, Y \rangle] (Y - X) \langle Y, Y \rangle$
+
+		\vspace{3mm}
+
+		$\langle Y, Y \rangle X \langle X, X \rangle - \langle X, Y \rangle X \langle X, X \rangle -  \langle X, X \rangle X \langle Y, Y \rangle + \langle X, Y \rangle X \langle Y, Y \rangle$
+
+		$= \langle Y, Y \rangle Y \langle X, X \rangle - \langle X, Y \rangle Y \langle X, X \rangle - \langle X, X \rangle Y \langle Y, Y \rangle + \langle X, Y \rangle Y \langle Y, Y \rangle$
+
+		\begin{align}
+		\text{Estou quase. Publicando puramente por estar engra\c{c}ado}
+		\end{align}
+
+		\subsection{7-5: $4\, R(X,Y)Z = [Z, [X,Y]]$ sempre que $X, Y, Z$ s\~ao invariantes \`a esquerda em $G$.}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{Manfredo p. 115, 4.1}
+		\begin{flushright}
+		\end{flushright}
+
+		$X, Y$ s\~ao ortonormais, $\sigma$ \'e o plano gerado por $X, Y$. a curvatura seccional $K(\sigma) = \cfrac{1}{4}\,\cdot \Vert [X, Y] \Vert^2$.
+
+		A curvatura seccional de um grupo de Lie com m\'etrica bi-invariante \'e n\~ao negativa e \'e zero se e s\'o se $\sigma$ \'e gerado por vetores $X, Y$ tais que $[X, Y] = 0$.
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{O conjunto de isometrias de $M$ \'e um grupo.}
+		\begin{flushright}
+		\end{flushright}
+
+		Ele \'e sempre um grupo de Lie de dimens\~ao finita agindo suavemente em $M$. [Shoshichi Kobayashi. Transformation Groups in Differential Geometry. Springer-Verlag, Berlin, 1972.]
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{Variedade de Riemann homog\^enea isotr\'opica}
+		\begin{flushright}
+		\end{flushright}
+
+		Chama-se variedade de Riemann homog\^enea se ela admite grupo de Lie agindo suavemente e transitivamente por isometrias.
+
+		$M$ \'e isotr\'opica em $p$ se existe grupo de Lie agindo suavemente em $M$ por isometrias tal que o subgrupo de isotropia $G_p$ (elementos de $G$ que fixam $p$) age transitivamente no conjunto de vetores unit\'arios em $T_pM$.
+
+		Uma homog\^enea que \'e isotr\'opica em um ponto \'e isotr\'opica em todo ponto.
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{Problema 3-9: espa\c{c}o projetivo complexo $CP^n$ versus grupo de Lie $U(n + 1)$.}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{3-11: Em um grupo de Lie compacto conexo, o elemento de volume \'e bi-invariante.}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{8-10}
+		\begin{flushright}
+		\end{flushright}
+
+		Uma a\c{c}\~ao de grupo \'e efetiva se nenhum elemento al\'em de $e$ age como a identidade em $M$.
+
+		$M^n$ variedade riemanniana conexa, um grupo de Lie $G$ age efetivamente em $M$ por isometrias.
+
+		Provar que $\dim G \le \cfrac{n(n+1)}{2}$ e que a igualdade s\'o \'e poss\'ivel se $M$ tem curvatura seccional constante.
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		\subsection{8-14}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja o grupo de Lie $G$ com a m\'etrica bi-invariante $g$.
+
+		Se $H < G$ \'e subgrupo de Lie, ent\~ao $H$ \'e totalmente geod\'esico.
+
+		Se $H$ \'e conexo, $R(X,Y)Z \equiv 0$ na m\'etrica induzida se e s\'o se $H$ \'e abeliano.
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+	\section{Quest\~ao de Manfredo 4.5, p. 117}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		Seja $\gamma$ uma geod\'esica. $\gamma' = \eta$. $X \in \mathcal{T}(M) \,; X(\gamma(0)) = 0$. Prove que
+
+		$\nabla_\eta ( R(\eta, X)\eta )(0) = \bigg( R\bigg(\eta, \cfrac{DX}{dt}\bigg) \eta \bigg) (0) $
+
+		Para tanto, observe que $0 = (\nabla_\eta R)(\eta, X, \eta, Z) = \cfrac{d}{dt} \langle R(\eta, X)\eta, Z \rangle - \langle R(\eta, X')\eta, Z \rangle - \langle R(\eta, X)\eta, Z' \rangle$
+
+		$= \langle \nabla_\eta ( R(\eta, X)\eta ), Z \rangle - \langle R(\eta, X')\eta, Z \rangle$
+
+	\section{Quest\~ao de Manfredo 4.7}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		Prove Bianchi: $\nabla R(XY, ZWT) + \nabla R(XY, WTZ) + \nabla R(XY, TZW) = 0$.
+
+		(a) basta demonstrar a igualdade em um ponto $p \in M$.
+
+		(b) escolha um referencial geod\'esico $\{ e_i \}$ em torno de $p$, conforme exerc\'icio 3.7
+
+		(c) $\nabla_{e_i} e_j (p) = 0$
+
+		(d) $\nabla R(e_i, e_j, e_k, e_\ell, e_k) = e_h \langle R(e_i, e_j) e_k, e_\ell \rangle = e_h \langle R(e_k, e_\ell) e_i, e_j \rangle = \langle \nabla_{e_h} \nabla_{e_\ell} \nabla_{e_k} e_i - \nabla_{e_h} \nabla_{e_k} \nabla_{e_\ell} e_i + \nabla_{e_h} \nabla_{[ e_k, e_\ell ]} e_i, e_j \rangle$
+
+		(e) Identidade de Jacobi para o colchete
+
+		$\nabla R(e_i, e_j, e_k, e_\ell, e_h) + \nabla R(e_i, e_j, e_\ell, e_h, e_k) + \nabla R(e_i, e_j, e_h, e_k, e_\ell) = $
+
+		$ = R(e_\ell, e_h, \nabla_{e_k} e_i, e_j) + R(e_h, e_k, \nabla_{e_\ell} e_i, e_j) + R(e_k, e_\ell, \nabla_{e_h} e_i, e_j) = 0$
+
+	\section{Quest\~ao de Manfredo 4.8}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		Seja $M^n$ variedade de Riemann, conexa, $n \ge 3$.
+
+		$M$ \'e isotr\'opica $\Leftrightarrow \forall p \in M, K(p, \sigma)$ n\~ao depende de $\sigma \subset T_pM$.
+
+		Prove que $M$ tem curvatura seccional constante $\Leftrightarrow K(p, \sigma)$ independe de $p$.
+
+		Para tanto, $R'(WZXY) = \langle W, X \rangle \langle Z, Y \rangle - \langle Z, X \rangle \langle W, Y \rangle $
+
+		$R = KR'$
+
+		$\forall U \in \mathcal{T}(M), \nabla_U R = (UK)R'$
+
+		$\nabla R(WZ, XYU) + \nabla R(WZ, YUX) + \nabla R(WZ, UXY) = 0$
+
+		$0 = (UK) (\langle W, X \rangle \langle Z, Y \rangle - \langle Z, X \rangle \langle W, Y \rangle) + (XK)(\langle W, Y \rangle \langle Z, U \rangle - \langle Z, Y \rangle \langle W, U \rangle) + (YK)(\langle W, U \rangle \langle Z, X \rangle - \langle Z, U \rangle \langle W, X \rangle)$
+
+		Fixe $X$ em $p$. $n \ge 3 \Rightarrow$ \'e poss\'ivel escolher $Y, Z$ em $p$ tais que $\langle X, Y \rangle = \langle Y, Z \rangle = \langle Z, X \rangle = 0\,; \langle Z, Z \rangle = 1.$
+
+		Seja $U = Z$ em $p$. $\forall W, \langle (XK)Y - (YK)X, W \rangle = 0$
+
+		$X, Y$ s\~ao linearmente independentes de $p \Rightarrow XK = 0, \forall X \in T_pM$
+
+		$\therefore K = $ constante.
+
+	\section{Quest\~ao de Manfredo 4.10}
+		\begin{flushright}
+		\end{flushright}
+
+		\begin{align}
+		\text{pend}
+		\end{align}
+
+		$M^n$ \'e variedade de Einstein $\Leftrightarrow \forall X, Y \in \mathcal{T}(M), \text{Ric}(X,Y) = \lambda \langle X, Y \rangle, \exists \lambda \in C^\infty(M).$
+
+		(a) $M$ conexa, de Einstein, $n \ge 3 \Rightarrow \lambda(M) \equiv $ constante.
+
+		Para tanto, considere referencial $\{ e_i \}$ ortonormal e geod\'esico em $p \in M$, conforme exerc\'icio 4.7
+
+		$e_s (R_{hijk}) + e_j (R_{hiks}) + e_k (R_{hisj}) = 0$
+
+		$\nabla_{e_i} e_j (p) = 0$
+
+		$\langle e_i, e_k \rangle = g_{ik} = \delta_{ik} = \delta^{ik}$
+
+		\begin{align*}
+		&\sum_{ikjh} \delta_{hj} \delta_{ik} e_s (R_{hijk}) = e_s (\sum_{ikjh} \delta_{hj} \delta_{ik} R_{hijk}) = e_s (\sum_{hj} \delta_{hj} R_{hj}) = e_s (\sum_{hj} \delta_{hj} (\lambda \delta_{hj})) = ne_s(\lambda) \\
+		&\sum_{ikjh} \delta_{hj} \delta_{ik} e_j (R_{hiks}) = - \sum_{jh} \delta_{hj} e_j (\sum_{ik} \delta_{ik} R_{hisk}) = \sum_{jh} \delta_{hj} e_j (\lambda \delta_{hs}) = -e_s(\lambda) \\
+		&\sum_{ikjh} \delta_{hj} \delta_{ik} e_k (R_{hisj}) = - e_s(\lambda) \\
+		\forall s, &(n - 2)e_s(\lambda) = 0
+		\end{align*}
+
+		$\therefore \lambda$ \'e constante em $M$.
+
+		\vspace{3mm}
+
+		(b) $M^3$ conexa, de Einstein $\Rightarrow M$ tem curvatura seccional constante.
+
+		\vspace{3mm}
+
+\end{document}

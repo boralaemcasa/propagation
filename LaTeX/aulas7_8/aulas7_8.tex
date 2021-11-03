@@ -1,0 +1,296 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Four states machine
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity aula7 is
+    port (
+        RESET   : in    std_logic; -- reset input
+        CLOCK   : in    std_logic; -- clock input
+        S       : in    std_logic; -- control input
+        A,B,C,D : in    std_logic; -- data inputs
+        Q       : out   std_logic  -- data output
+    );
+end aula7;
+
+architecture arch of aula7 is
+  type estado is (S0, S1, S2, S3);
+  signal estado_atual, proximo_estado: estado;
+begin
+
+	process(RESET, CLOCK) is
+	begin
+	  if (RESET='1') then
+		 estado_atual <= S0;
+	  elsif (rising_edge(CLOCK)) then
+		 estado_atual <= proximo_estado;
+	  end if;
+	end process;
+
+  process(S,A,B,C,D , estado_atual) is
+  begin
+    case estado_atual is
+	   when S0 =>
+		  if (S='1') then
+		    Q <= B;
+			 proximo_estado <= S1;
+		  else
+		    Q <= A;
+			 proximo_estado <= S0;
+		end if;
+	   when S1 =>
+		  if (S='1') then
+		    Q <= C;
+			 proximo_estado <= S2;
+		  else
+		    Q <= B;
+			 proximo_estado <= S1;
+		end if;
+  	   when S2 =>
+		  if (S='1') then
+		    Q <= D;
+			 proximo_estado <= S3;
+		  else
+		    Q <= C;
+			 proximo_estado <= S2;
+		end if;
+	   when S3 =>
+		  if (S='1') then
+		    Q <= A;
+			 proximo_estado <= S0;
+		  else
+		    Q <= D;
+			 proximo_estado <= S3;
+		end if;
+	end case;
+end process;
+
+end arch;
+\end{verbatim}
+
+\vspace{3mm}
+
+\Large
+
+\begin{center}
+Flip Flop
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+LIBRARY IEEE;
+use ieee.std_logic_1164.all;
+
+entity aula8 is
+	port( clock: in std_logic;
+		  D: in std_logic;
+	      Q: out std_logic
+	    );
+end aula8;
+
+architecture RTL of aula8 is
+begin
+  Q <= D when rising_edge(CLOCK);
+end RTL;
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+
+
+entity tb_aula8 is
+end tb_aula8;
+
+architecture teste of tb_aula8 is
+
+component aula8 is
+	port( clock: in std_logic;
+		  D: in std_logic;
+	      Q: out std_logic
+	    );
+end component;
+
+signal D1   :    std_logic; -- reset input
+signal C1   :    std_logic :='0'; -- clock input
+signal Q1       :  std_logic;  -- data output
+begin
+c1 <= NOT c1 after 5 ns;
+instancia_aula8: aula8 port map(
+  clock=>c1,
+  D=>d1,
+  Q=>Q1);
+
+ d1 <= '1', '0'  after 26 ns, '1' after 51 ns, '0' after 76 ns;
+end teste;
+\end{verbatim}
+
+\vspace{3mm}
+
+\Large
+
+\begin{center}
+Adder 1 bit
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity aula8FA is
+    port ( Cin : in std_logic;
+           x   : in std_logic;
+           y   : in std_logic;
+           s   : out std_logic;
+           Cout : out std_logic
+        );
+end aula8FA;
+architecture RTL OF aula8FA is
+  signal s_s, s_c: std_logic;
+begin
+	process(cin, x, y) is
+	begin
+    s_s <= x XOR y XOR Cin;
+    s_c <= (x AND y) OR (Cin AND x) OR (Cin AND y);
+	end process;
+	s <= s_s;
+	cout <= s_c;
+end RTL ;
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+
+
+entity tb_aula8fa is
+end tb_aula8fa;
+
+architecture teste of tb_aula8fa is
+
+component aula8fa is
+    port ( Cin : in std_logic;
+           x   : in std_logic;
+           y   : in std_logic;
+           s   : out std_logic;
+           Cout : out std_logic
+        );
+end component;
+
+signal C1   :    std_logic :='0';
+signal C2   :    std_logic;
+signal X1   :    std_logic :='0';
+signal Y1   :    std_logic :='0';
+signal S1   :  std_logic;
+begin
+instancia_aula8fa: aula8fa port map(
+  cin=>c1,
+  cout=>c2,
+  x=>x1,
+  y=>y1, s=>s1);
+
+c1 <= NOT c1 after 5 ns;
+x1 <= NOT x1 after 10 ns;
+y1 <= NOT y1 after 20 ns;
+end teste;
+\end{verbatim}
+
+\vspace{3mm}
+
+\Large
+
+\begin{center}
+Adder 4 bits
+\end{center}
+
+\normalsize
+
+\begin{verbatim}
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity aula8FA4bits is
+    port ( Cinn  : in std_logic;
+           xx    : in std_logic_vector(3 downto 0);
+           yy    : in std_logic_vector(3 downto 0);
+           ss    : out std_logic_vector(3 downto 0);
+           Coutt : out std_logic
+        );
+end aula8FA4bits;
+architecture RTL OF aula8FA4bits is
+
+
+component aula8FA is
+    port ( Cin : in std_logic;
+           x   : in std_logic;
+           y   : in std_logic;
+           s   : out std_logic;
+           Cout : out std_logic
+        );
+end component;
+
+  signal c: std_logic_vector(2 downto 0);
+--  signal s_s: std_logic_vector(3 downto 0);
+--  signal xx: std_logic;
+--  signal yy: std_logic;
+--  signal cc: std_logic;
+--  signal ss: std_logic;
+--  signal outt: std_logic;
+begin
+--	process(cc, xx, yy) is
+--	begin
+--    ss <= xx XOR yy XOR cc;
+--    outt <= (xx AND yy) OR (CC AND xx) OR (CC AND yy);
+--	end process;
+	--s <= s_s;
+	--cout <= s_c;
+
+instancia1: aula8fa port map(
+  cin=>cinn,
+  cout=>c(0),
+  x=>xx(0),
+  y=>yy(0), s=>ss(0));
+instancia2: aula8fa port map(
+  cin=>c(0),
+  cout=>c(1),
+  x=>xx(1),
+  y=>yy(1), s=>ss(1));
+instancia3: aula8fa port map(
+  cin=>c(1),
+  cout=>c(2),
+  x=>xx(2),
+  y=>yy(2), s=>ss(2));
+instancia4: aula8fa port map(
+  cin=>c(2),
+  cout=>coutt,
+  x=>xx(3),
+  y=>yy(3), s=>ss(3));
+end RTL ;
+\end{verbatim}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 27/Sep/2019, Release $1.0$
+
+\end{document}

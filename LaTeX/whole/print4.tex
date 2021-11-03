@@ -1,0 +1,199 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{cancel}
+\usepackage{tikz-cd}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{array,bm}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\newenvironment{myenum}
+{ \begin{enumerate}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{enumerate}                  }
+\begin{document}
+
+		\Large
+		\textbf{Exercise 4:}
+		\small
+		\vspace{3mm}
+
+		\underline{Definitions}: $a \pm b = \{ a + b, a - b \}$ ; $a \pm S = (a + S) \cup (a - S)$ ; $X \pm Y = (X + Y) \cup (X - Y)$.
+
+		$\text{proj}(S^a, \pi^b) = \{ p(x) \in \pi^a\,;\,\forall x \in S^a, \text{ Line}(x, p(x)) \perp \pi^b \}$.
+
+		$\langle A, B\rangle_G = A^\top \cdot G \cdot B \in \mathbb{R}$, where $A,B,G$ are matrixes. $\langle p(x), q(x)\rangle_I = \int_I p(x)\,q(x)\,\mathrm{d}x \in \mathbb{R}$.
+
+		proj$(v, u) = \cfrac{\langle v, u \rangle}{\langle u, u \rangle} \cdot u$. $\angle(v,w) =$ arccos $\cfrac{\langle v, w\rangle}{\Vert v\Vert \cdot \Vert w \Vert} \in [0, \pi]$.
+
+		Euler characteristic on polytopes: $$\sum_{m = 0}^{n - 1} (-1)^m \cdot V_m = 1 - (-1)^n.$$
+
+		Below there's a finite formula: $$\Phi:\bigvee_{m = 1}^n F_m\Leftrightarrow\bigwedge_{m = 1}^n G_m.$$
+
+		Below there are arbitrary extensions: $$B = \bigcup_{n \in \mathbb{N}} A_n\,;\,C = \bigcap_{\lambda \in ]0,1[} A_\lambda\,;\,\Phi:\bigvee_{n \in \mathbb{N}} F_n\Leftrightarrow\bigwedge_{\lambda \in ]0,1[} G_\lambda.$$
+
+		\begin{myenum}
+		\item The goal here is to group everything: scalar number element, set (line, plane, polygon, polyhedron, polytope, circle, sphere, ball, cylinder, cone), function, tensor, vector, point, differential form, monomial, polynomial, algebraic fraction, matrix, infinity and so on.
+		\item Separate elements from sets. term $X$ term ; $X \rightarrow M_P\,|\,\cdot\,|\,\div$ ; term $Z$ term ; $M_P \rightarrow +\,|-$ ;
+
+		$Z \rightarrow\,=\,|\,\ne\,|\,<\,|\,>\,|\,\le\,|\,\ge\,|\,\propto$. set $X_S$ set ; $X_S \rightarrow X\,|\,\cup\,|\,\cap\,|\,\pm\,|\,\times$ ; set $Z_S$ set ;
+
+		$Z_S \rightarrow Z\,|\,\in\,|\,\notin\,|\,\subset\,|\,\supset\,|\,\pitchfork\,|\,\cancel{\subset}\,|\,\cancel{\supset}$, for transversal sets. term $Z_{TS}$ set ; $Z_{TS} \rightarrow\,\in\,|\,\notin$ ; set $Z_{ST}$ term ; $Z_{ST} \rightarrow\,\ni\,|\,\cancel{\ni}$ ; set $\rightarrow$ term $\pm$ set ; set $\rightarrow$ term $\pm$ term ; set $\rightarrow$ term $X$ set ; set $\rightarrow$ set $X$ term.
+		\item $S_E \rightarrow S\,|\,S_DX_SK_S\,|\,K_T X K_S\,|\,U_S X H$ ; $S_D \rightarrow S_E\,|\,(S_DX_SK_S)\,|\,(-S_DX_SK_S)$, for linear combination of scalars and sets. Also for non Abelian $x \cdot N \ne N \cdot x$ and Cartesian product.
+		\item $U_S \rightarrow S_E\,| -S_E$ ; $K_S \rightarrow S_E\,|\,(-S_E)$.
+		\item $E \rightarrow \gcd(U_T, A)\,|\,$lcm$(U_T, A)$, for greatest common divisor and least common multiple.
+		\item $F \rightarrow U_TX_DU_T$ ; $X_D \rightarrow V_9\,|\,\nmid$ ; $V_9 \rightarrow ``|"$, for $a$ does [not] divide $b$.
+		\item $X_T \rightarrow /\,|\,\wedge$ ; $E \rightarrow$ cfrac$\{E\}\{E\}$, for fractions and $c^x$ ; $\varphi\wedge\varphi$; set $\wedge$ set; $p(x)\wedge K_N$ ; matrix $\wedge$ matrix;
+
+		group\_element $W \wedge\,K_N$ ; $\infty\wedge K_N$.
+		\item $T \rightarrow N.N\,|\,N.(N)\,|\,N.N(N)$, for floating point. $U_N \rightarrow N\,|-N$ ; $K_N \rightarrow N\,|\,(-N)$.
+		\item $H \rightarrow T\,|\,(U_T)$ ; $E \rightarrow X_E\,H\,|\text{ sqrt }H\,|\,\text{sqrt}[U_T]\,H\,|\,\exp H\,|\text{ argtanh }H\,|\,\text{ord }K_T$, for order of an element.
+		\item $X_E \rightarrow \log\,|\,\ln\,|\,\log\_\{U_T\}\,|\,\sin\,|\,\cos\,|\,\tan\,|\,\sec\,|\,\cot\,|\text{ cossec}$ ; $E \rightarrow X_E\wedge K_N\,H$.
+		\item Define $H_S, H_\varphi, H_V, H_\omega, H_J, H_\alpha, H_C, H_N$.
+		\item $E \rightarrow \arcsin H\,|\,\arccos H\,|\,\arctan H\,|\,\sinh H\,|\,\cosh H\,|\,\tanh H\,|\,\coth H\,|\,\text{argsinh }H\,|\,\text{argcosh }H$.
+		\item $E \rightarrow \lfloor U_T \rfloor\,|\, \lceil U_T \rceil$, for floor and ceiling. $T \rightarrow i\,|\,j\,|\,k$, for complex unity and quaternions.
+		\item $E \rightarrow E!\,|\,\Gamma(U_T)\,|$ binom$(U_T, U_T)$, for factorial and Newton binomial. Do the same for finite sequences and permutations with[out] repetitions.
+		\item $E \rightarrow V_9U_TV_9\,|\,\Re\text{e}\,H\,|\,\Im\text{m}\,H\,|$ conjugate$(U_T)\,|$ arg $H$, for absolute value, argument, real and imaginary part.
+		\item Use functions without parameters: $\varphi \rightarrow f\_\{N\}\,|\,\text{Id };\,X_\varphi \rightarrow X\,|\,X_T\,|\,\circ$ ; $\varphi X_\varphi \varphi$ ; $\varphi Z \varphi$.
+		\item Define $\varphi_D, \varphi_E, K_\varphi, U_\varphi, H_\varphi$, for linear combination of scalars and $\varphi$s.
+		\item $\varphi_E \rightarrow K_\varphi|_\_{K_S}$, for restriction of domain. Everything may be parameter for $f_N, R_N, \varphi$.
+		\item $S_E \rightarrow$ Dom $H_\varphi\,|$ Range $H_\varphi\,|$ Im $H_\varphi\,|$ Ker $H_\varphi\,|$ $\Gamma\,H_\varphi\,|$ supp $H_\varphi$, for image, kernel, graphic and support.
+		\item $E \rightarrow \delta(F)\,|\,\delta(R)\,|\,\delta(GYG)$, for $\delta(c = 0)$. $L \rightarrow T\,|\,\infty$ and define $L_D, L_E, K_L, U_L, H_L$.
+		\item $V \rightarrow (U_T, U_T)$, for an ordered pair. Separate scalars from vectors. vector $Z_V$ vector ; $Z_V \rightarrow\,=\,|\,\ne$.
+		\item $X_V \rightarrow M_P\,|\,\times$ ; $V_E \rightarrow V\,|\,V_D X_V K_V\,|\,K_T\cdot K_V$ ; $V_D \rightarrow V_E\,|\,(V_D X_V K_V)\,|\,(-V_D X_V K_V)$, for linear combination of scalars and vectors. Also for Euclidean cross product.
+		\item $U_V \rightarrow V_E\,| -V_E$ ; $K_V \rightarrow V_E\,|\,(-V_E)$. $E \rightarrow \langle U_V, U_V \rangle$, for Euclidean inner product.
+		\item $V_E \rightarrow \nabla H\,|\,\nabla \times K_V$, for gradient and curl. $E \rightarrow \langle \nabla, U_V \rangle$, for divergence.
+		\item $\varphi \rightarrow$ Id$(S_E)$ ; $F \rightarrow U_V=U_V\,|\,U_V\ne U_V\,|\,U_V Z_{TS} S_E$, where $S_E$ is an extended set.
+		\item $L_E \rightarrow$ dim $K_S\,|$ codim $K_S\,|$ $\inf K_S\,|\,\sup K_S\,|\,\text{inf}\_\{x\_\{N\} \in S_E\}\,H\,|\,\text{sup}\_\{x\_\{N\} \in S_E\}\,H$.
+		\item So we related vector and set. And all the possibilities are binom$(11,2)\cdot 2 = 110$ ($g$ for tensor, $W$ for group element which is not a number, $2 = X + Z$):
+
+		\begin{tabular}{C|C|C|C|C|C|C|C|C|C|C|C|C|C}
+		 TS  &		 T\varphi &  S\varphi &		 TV &  SV &  \varphi V &		 T\omega &  S\omega &  \varphi\omega &  V\omega &		 TJ	&		 SJ      &  \varphi J    &  VJ      \\
+		 \omega J &	 T\alpha &  S\alpha &  \varphi\alpha &  V\alpha &  \omega\alpha &  J\alpha & TC	&
+		 SC      &  \varphi C     &  VC      &  \omega C     &  JC      &  \alpha C \\
+		 TW	&  SW      &  \varphi W     &  VW      &  \omega W   &		 JW     &  \alpha W &  CW &  TL	&  SL      &  \varphi L     &  VL      &  \omega L    &  JL     \\
+		 \alpha L &  CL &	 WL &	 Tg	&  Sg      &  \varphi g     &  Vg      &  \omega g    &  Jg     &  \alpha g &  Cg & Wg & Lg
+		\end{tabular}
+		\item $F \rightarrow$ open$(S_E)$, closed$(S_E)$, clopen$(S_E)$. $E \rightarrow \min K_S\,|\,\max K_S\,|\,\text{card }K_S$, for finite cardinality.
+		\item $S_E \rightarrow K_S\,^\perp\,|\,\partial K_S\,|$ interior$(S_E)\,|$, closure$(S_E)\,|$  completion$(S_E)\,|\,\text{Frac }K_S\,|\,M\_\{N\times N\} K_S\,|\,\text{extended}(U_S)$.
+
+		$S_E \rightarrow H_S\wedge N$, for Euclidean orthogonal complement, border, set (field) of fractions, set (ring) of matrixes $N\times N$,	set $\cup\,\{\infty, -\infty\}$ and Cartesian product of $n$ copies of set.
+		\item $S_E \rightarrow V_bM_1, M_1V_b$ ; $V_b \rightarrow ``["\,|\,``]"$ ; $M_1 \rightarrow U_T\,|\,\infty\,|-\infty$, for an interval.
+		\item $V \rightarrow (A)$, for an element of $\mathbb{R}^n$. $V \rightarrow e\_\{N\}$, for canonical basis vector.
+		\item $L_E \rightarrow$ dist$(U_V, U_V)$ ; $E \rightarrow \angle(U_V,U_V)$, for Euclidean metric and angle.
+		\item $V_E \rightarrow$ proj$(U_V, U_V)$. $L_E \rightarrow V_9V_9U_VV_9V_9$, for Euclidean norm.
+		\item $L_E \rightarrow$ dist$(S_E, S_E)$ ; $E \rightarrow \angle(S_E,S_E)$, for Euclidean metric and angle between sets.
+		\item $S_E \rightarrow$ proj$(S_E, S_E)$, for Euclideanly orthogonal projection of set into another set.
+		\item $F \rightarrow U_V \perp U_V\,|\,U_V \parallel U_V$, for Euclidean orthogonality and parallelism.
+		\item $F \rightarrow S_E \perp S_E\,|\,S_E \parallel S_E$, for Euclidean orthogonality and parallelism between sets.
+		\item $F \rightarrow S_E \sim S_E\,|\,S_E \cong S_E$, for similar and congruent sets.
+		\item $X_\sigma \rightarrow ``S"$ ; $S_E \rightarrow X_\sigma\wedge N(U_V, U_T)\,|\,X_\sigma\wedge N(U_C, U_T)\,|\,X_\sigma\wedge N(U_\varphi, U_T)$, for Euclidean circle and sphere.
+		\item $X_\sigma \rightarrow ``S"\_\{N\}$, for sphere by $n$th metric or by $n$th norm.
+		\item $X_B \rightarrow ``B"$ ; $S_E \rightarrow X_B\wedge N(U_V, U_T)\,|\,X_B\wedge N(U_C, U_T)\,|\,X_B\wedge N(U_\varphi, U_T)$, for Euclidean ball.
+		\item $X_B \rightarrow ``B"\_\{N\}$, for ball by $n$th metric or by $n$th norm.
+		\item $S_E \rightarrow \langle A_3 \rangle$ ; $A_3 \rightarrow A_3, A_3\,|\,U_V$, for the vectorial space generated by $n$ vectors.
+		\item $S_E \rightarrow U_V M_P S_E$, for the translation of one vectorial space by one vector.
+		\item $S_E \rightarrow$ Line$(U_V, U_V)$, for the line through two distinct points $v_0 + \langle v_1 - v_0 \rangle$. Geodesics.
+		\item $S_E \rightarrow \pi\wedge N(U_V, U_V, A_3)$, for the plane$^n$ through $3$ or more general points $v_0 + \langle v_1 - v_0, v_2 - v_0, \cdots, v_n - v_0 \rangle$.
+		\item $S_E \rightarrow$ Cylinder$(U_S, U_V)$, for $\{w + t d\,;\,w \in S \subset \pi^2, d \in \pi^3 - \pi^2\}$.
+		\item $S_E \rightarrow$ Cone$(U_S, U_V)$, for $\{v + t (w - v)\,;\,w \in S \subset \pi^2, v \in \pi^3 - \pi^2\}$.
+		\item $S_E \rightarrow$ Polygon$(U_V, U_V, A_3)$, for $3$ or more distinct points $\subset \pi^2, e_{0,1} = \{v_0 + t(v_1 - v_0), t \in [0,1]\}$
+
+		$\Rightarrow x = \cfrac{n(n-3)}{2}$ empty intersections of line segments. Adjacent edges intersect at $n$ vertices. Diagonals intersect at $x$ interior points.
+		\item $S_E \rightarrow$ Polyhedron$(U_V, U_V, U_V, A_3)$, for $4$ or more distinct points $\subset \pi^3, V_0 - V_1 + V_2 = 2$.
+		\item $S_E \rightarrow$ Polytope$(U_V, U_V, U_V, U_V, A_3)$, for $5$ or more distinct points $\subset \pi^n, n \ge 4$, Euler holds.
+		\item $L_E \rightarrow V_9V_9U_VV_9V_9\_\{N\}$, for $n$th norm. $L_E \rightarrow$ dist$\_\{N\}(U_V, U_V)$, for $n$th metric.
+		\item $E \rightarrow \langle U_V, U_V\rangle\_g\,|\, g(U_V, U_V)$, for $n$th inner product. Is $g$ our first tensor?
+		\item $V_E \rightarrow$ proj$\_\{N\}(U_V, U_V)$, for $n$th projection of one vector onto another.
+		\item $S_E \rightarrow$ proj$\_\{N\}(S_E, S_E)$, for $n$th projection of one set into another. $V_S \rightarrow \Sigma\,|\,\Pi$ ; $V_L \rightarrow \lambda\,|\,V_LV_L\,|\,'$.
+		\item $L_E \rightarrow V_S\_\{x\_\{N\} \in S_E\} H$, for sum or product over one set. If $S_E$ is countable, then this is one series.
+		\item $L_E \rightarrow V_S\_\{x\_\{N\} = U_T\}\wedge\{U_T\} H$, for sum and product from $\{n = t_0\}$ to $t$.
+		\item $\varphi_E \rightarrow fV_L\_\{N\}$ ; $L_E \rightarrow fV_L\_\{N\}(A)$, for mono derivative. That function may assume $\infty$ values.
+		\item $\varphi_E \rightarrow fV_LM_P\_\{N\}$, for lateral mono derivative without parameter. That function may assume $\infty$ values.
+		\item $\varphi_E \rightarrow N_2$ ; $E \rightarrow N_2(A)$ ; $N_2 \rightarrow f\_\{N\}\wedge(N)\,|\,f\_\{N\}\wedge[U_N]$, for $(n)$th derivative or $[-n]$th iteration of $f$.
+		\item $\varphi_E \rightarrow P_2 H_\varphi$ ; $E \rightarrow P_2 H$ ; $P_2 \rightarrow P_2P_2\,|\,\partial/(\partial x\_\{N\})$, for partial derivative.
+		\item $\varphi_E \rightarrow P_3 H_\varphi$ ; $E \rightarrow P_3 H$ ; $P_3 \rightarrow \partial\wedge N/(P_4)$ ; $P_4 \rightarrow \partial x\_\{N\}\,|\,\partial x\_\{N\}\wedge N\,|\,P_4 P_4$, for $\partial^3/(\partial x^2 \partial y)$.
+		\item $E \rightarrow V_7E_3D_5$ ; $E_3 \rightarrow V_7E_3D_5\,|\,H$ ; $V_7 \rightarrow \int$ ; $D_5 \rightarrow \mathrm{d}x\_\{N\}$, for indefinite integral.
+		\item $V_E \rightarrow V_7E_5D_5$ ; $E_5 \rightarrow V_7E_5D_5\,|\,K_V$, for vectorial indefinite integral.
+		\item $V_I \rightarrow V_7\,|\,\overline{\int}\,|\,\underline{\int}$ ; $L_E \rightarrow V_I\_\{V_bM_1,M_1V_b\} E_4 D_5$ ; $E_4 \rightarrow V_I\_\{V_bM_1,M_1V_b\}E_4D_5\,|\,H$, for definite integral, superior integral and inferior integral.
+		\item $V_E \rightarrow V_I\_\{V_bM_1,M_1V_b\} E_6 D_5$ ; $E_6 \rightarrow V_I\_\{V_bM_1,M_1V_b\}E_6D_5\,|\,K_V$, for vectorial definite, vectorial superior and vectorial inferior integral. Each cohordinate may be $\infty$.
+		\item Riemann-integrable $\varphi(x)$. Lebesgue spaces $L^p$.
+		\item $X_\omega \rightarrow M_P\,|\,\wedge$ ; $\omega_E \rightarrow \omega\,|\,\omega_DX_\omega K_\omega \,|\,K_T\cdot K_\omega$ ; $\omega_D \rightarrow \omega_E\,|\,(\omega_DX_\omega K_\omega)\,|\,(-\omega_DX_\omega K_\omega)$, for wedge product and linear combination of scalars and $\omega$s.
+		\item $U_\omega \rightarrow \omega_E\,| -\omega_E$ ; $K_\omega \rightarrow \omega_E\,|\,(-\omega_E)$. $V_8 \rightarrow \mathrm{d}\,|\,V_8V_8$ ; $\omega_E \rightarrow V_8x\_\{N\}\,|\,V_8K_3$, for differential of $\omega$.
+		\item $E \rightarrow V_7\_K_S\,K_4$, for integral over set $K_S$ of one differential form $\omega$.
+		\item Same for the entire language of vectorial analysis. [SPIVAK, Michael. Calculus on Manifolds].
+		\item $J_E \rightarrow J\,|\,J_D X_J K_J$ ; $J_D \rightarrow J_E\,|\,(J_DX_J K_J)\,|\,(-J_DX_J K_J)$, for linear combination of scalars and monomials.
+		\item $U_J \rightarrow J_E\,| -J_E$ ; $K_J \rightarrow J\,|\,(U_J)$ ; $X_J \rightarrow M_P\,|\,\cdot\,|\,\div$.
+		\item $J \rightarrow c\_\{N\} J_M\,|\,N J_M$ ; $J_M \rightarrow x\_\{N\}\wedge N\,|\,J_M\cdot J_M$, for monic monomials.
+		\item $E \rightarrow \deg K_J$ ; $J \rightarrow U_J \div K_J\,|\,\gcd(U_J, U_J)\,|\,\text{lcm}(U_J, U_J)$, for operations with polynomials.
+		\item $L_E \rightarrow$ dist$(\varphi_E, \varphi_E)$ ; $E \rightarrow \angle(\varphi_E,\varphi_E)\,|\,\langle \varphi_E, \varphi_E \rangle$, for Euclidean metric, inner product and angle between functions. $L_E \rightarrow V_9V_9U_\varphi V_9V_9$, for Euclidean function norm.
+		\item $\alpha \rightarrow J_E/K_J\,|\,J_E\,|\,\text{cfrac}\{U_J\}\{U_J\}$ ; $X_\alpha \rightarrow X_J\,|\,/$, for algebraic fractions with[out] denominator. $\alpha\wedge N$.
+		\item $U_\alpha \rightarrow \alpha_E\,| -\alpha_E$ ; $K_\alpha \rightarrow \alpha_E\,|\,(-\alpha_E)$. Polynomials and algebraic fractions as $\varphi$ or $\varphi(x)$.
+		\item $\alpha_E \rightarrow \alpha_D X_\alpha K_\alpha$ ; $\alpha_D \rightarrow \alpha\,|\,(\alpha_E)\,|\,(\alpha_D X_\alpha K_\alpha)\,|\,(-\alpha_D X_\alpha K_\alpha)$ ; $K_\alpha \rightarrow \alpha_D\,|\,(-\alpha_E)$, for operations between $\alpha$s.
+		\item $F \rightarrow U_T \equiv U_T (\text{mod }H)$, for modulo scalar. $S_E \rightarrow [U_T]\_\{U_T\}$, for modulo scalar equivalence class.
+		\item $S_E \rightarrow S_E / K_S$, for set over set. $S_E \rightarrow S_E / R\_\{N\} (A)$, for set over relation.
+		\item $F \rightarrow U_J \equiv U_J (\text{mod }K_J)$, for modulo polynomial. $W \rightarrow e\_\{U_S\}$, for group identity.
+		\item $S_E \rightarrow [U_J]\_\{U_J\}$, for modulo polynomial equivalence class.
+		\item $S_E \rightarrow [U_T]\_\{R\_\{N\}\}$, for relation between scalars equivalence class.
+		\item $S_E \rightarrow [U_J]\_\{R\_\{N\}\}$, for relation between polynomials equivalence class. Same for $U_\varphi, U_V, U_\omega, U_\alpha, U_C, U_N$.
+		\item $S_E \rightarrow K_S[A_1]$ ; $A_1 \rightarrow A_1, A_1\,|\,x\_\{N\}$, for the set (ring) of polynomials $\mathbb{Z}[x,y]$.
+		\item $S_E \rightarrow U_J \cdot K_S$, for polynomial times set. $F \rightarrow U_S \lhd K_S$, for normal subgroup.
+		\item What about this notation? $C \rightarrow (A)\_\{N \times N\}$, for matrix.
+
+		Example: $(a_{11}, a_{12}, a_{13}, a_{21}, a_{22}, a_{23})_{2 \times 3}$ is one matrix.
+		\item $X_C \rightarrow M_P\,|\,\cdot$ ; $C_E \rightarrow C\,|\,C_DX_C K_C\,|\,K_T\cdot K_C$ ; $C_D \rightarrow C_E\,|\,(C_DX_C K_C)\,|\,(-C_D X_C K_C)$, for multiplying matrix by matrix and linear combination of scalars and matrixes.
+		\item $U_C \rightarrow C_E\,| -C_E$ ; $K_C \rightarrow C_E\,|\,(-C_E)$. $V_E \rightarrow C_E\cdot K_V$, for multiplying matrix by vector.
+		\item $C_E \rightarrow K_C\,^\top\,|\,K_C\wedge K_N\,|\,\det K_C\,|\,\text{rank }K_C\,|\,\text{tr }K_C\,|\,\exp K_C\,|\,\ln K_C\,|\,\ker K_C$, for transpose, inverse, $n$th power,
+
+		determinant, rank, trace, exponential, logarithm and kernel of matrix.
+		\item $C_E \rightarrow V_8H\,|\,V_8f\_\{N\}$, for differential of scalar. $C_E \rightarrow V_8K_V$, for differential of vector.
+		\item $L_E \rightarrow$ dist$(C_E, C_E)$ ; $E \rightarrow \angle(C_E,C_E)\,|\,\langle C_E, C_E \rangle$, for Euclidean metric, inner product and angle between matrixes. $L_E \rightarrow V_9V_9U_CV_9V_9$, for Euclidean matrix norm.
+		\item $V_{10} \rightarrow \lim\,|\,\liminf\,|\,\limsup$ ; $L_E \rightarrow V_{10}[x\_\{N\} \rightarrow U_L] H_\varphi$, for limit, inferior limit, superior limit.
+		\item $L_E \rightarrow V_{10}[x\_\{N\} \rightarrow U_T M_P] H_\varphi$, for lateral limit. Use also $\varphi(x+)$. Maybe $A \rightarrow AM_P$ solves everything.
+		\item $V_{10} \rightarrow \text{lim}\_\{N\}$, for limit by $n$th metric or $n$th norm. Limit of vector. $\underset{(x,y) \rightarrow (a_+,b_+)}{\text{lim}_2} \sin xy = 1$.
+		\item Sequence of real numbers $x_n \in \mathbb{R}^\omega$. Limit of $x_n$ while $n \rightarrow +\infty$. Limit $= c \in \mathbb{R}$ or $+\infty$ or $-\infty$. Limit $\in \varnothing$.
+
+		$v \in \mathbb{R}^{\{1,2\}} \Rightarrow v(1) = v_1 \in \mathbb{R}, v(2) = v_2 \in \mathbb{R}$. $v$ is also one function.
+
+		$v \in \mathbb{R}^\omega \Rightarrow s_n = v_1 + \cdots + v_n$ ; object: $(s_n)_{n \in \mathbb{N}}$ ; $\lim s_n = \underset{n \in \mathbb{N}}{\sum} v_n \in \text{extended}(\mathbb{R})$.
+		\item Space $v \in \mathbb{R}^{]0,1[} \Rightarrow$ object: $(v_\lambda)_{\lambda \in ]0,1[}$. Define the sets $\varphi \in C^0, C^1, \cdots, C^\infty$.
+		\item Sequence of functions $\varphi_n \in (\text{Range}^\text{Dom})^\omega$. Limit of $\varphi_n$ while $n \rightarrow +\infty$. Limit $= \varphi \in \mathbb{R}^{]0,1[}$ or $\text{extended}(\mathbb{R})^{]0,1[}$. Limit $\in \varnothing$. Several convergences: pointwise and uniform.
+
+		$f \in (\text{Range}^\text{Dom})^{\{1,2\}} \Rightarrow f(1) = f_1 \in C(]0,1[, \mathbb{R}), f(2) = f_2 \in C(]0,1[, \mathbb{R})$.
+
+		$f \in (\text{Range}^\text{Dom})^\omega \Rightarrow$ object: $(f_n)_{n \in \mathbb{N}}$ ; $\lim f_n = f \in C(]0,1[, \text{extended}(\mathbb{R}))$.
+
+		$\sigma_n = f_1 + \cdots + f_n \Rightarrow$ object: $(\sigma_n)_{n \in \mathbb{N}}$ ; $\lim \sigma_n = \underset{n \in \mathbb{N}}{\sum} f_n = \sigma \in C(]0,1[, \text{extended}(\mathbb{R}))$.
+
+		$f \in (\text{Range}^\text{Dom})^{]0,1[} \Rightarrow$ object: $(f_\lambda)_{\lambda \in ]0,1[}$.
+		\item Family of sets. Infinite cardinalities $\aleph_k$. $A \in P(\mathbb{N})^\omega \Rightarrow A(1) = A_1 \subset \mathbb{N}, A(2) = A_2 \subset \mathbb{N}$.
+		\item Sequence of vectors. $v \in (\mathbb{R}^n)^{\{1,2\}} \Rightarrow v(1) = v_1 \in \mathbb{R}^n, v(2) = v_2 \in \mathbb{R}^n$. $v$ is also one function.
+
+		$v \in (\mathbb{R}^n)^\omega \Rightarrow s_n = v_1 + \cdots + v_n$ ; object: $(s_n)_{n \in \mathbb{N}}$ ; $\lim s_n = \underset{n \in \mathbb{N}}{\sum} v_n \in \text{extended}(\mathbb{R}^n)$.
+		\item Sequence of: polynomials, $\alpha$s, matrixes, infinities and tensors.
+		\item tensor $\otimes$ tensor; Differential form as tensor. $n$th differential of $f$ at point $p$ applied to $n$ vectors. Pullback.
+		\item Handle three dots: $DXK_TX\cdots$, $GYGY\cdots$, $EZU_BZ\cdots$, $A, A, \cdots$, $\delta$, linear combination $+ \cdots$,
+
+		$U_V=U_V=\cdots$, $U_V\perp U_V\perp\cdots$, $S \sim S \sim\cdots$, $D_6\cdot K_6\cdot\,\cdots$.
+		\item List of types: formula, natural, integer, rational, irrational[algebrical], irrational[S\_transcendent],
+
+		irrational[T\_transcendent], irrational[Liouville\_transcendent], real, complex, function, relation, set[real],
+
+		interval[real], vector[real], sequence[real], sequence[set], family[integer], sequence[formula], family[formula], polynomial[real], algebraic\_fraction[integer], matrix[real], differential\_form, monic\_monomial, group\_element, extended[real], extended[vector[real]], tensor, quaternion.
+
+		$f = \lim$ function[$A$:interval, $B$:real] is function[$A$:interval, $C$:extended[real]].
+		\item $c, x$ is type, for element. $\mathbb{Z}$ is set[int]. $\mathbb{Z}_2$ is set[set[int]], for $\{2\mathbb{Z}, 2\mathbb{Z} + 1 \}$.
+		\item $v \in M^n,\,T_pM,\,TM$; $X: M \rightarrow TM$. Fibrations. $\omega \in \Lambda^k(\mathbb{R}^n) \subset T^k_\ell(\mathbb{R}^n)$.
+		\item $f$ is function[$A$:type, $B$:type], for types of domain $=A$ and range $=B$. For instance, for each polynomial $p$, one vector $v = f(p)$ ; $f$ is function[$A$:polynomial, $B$:vector] ; $f(a_0 + \cdots + a_n x^n) = (a_0, \cdots, a_n)$.
+		\item Relation[type, type] is not needed, if every object has its own type.
+		\item Partial differential equation: $u_{xx} + u_{yy} + u_x + u_y = u$.
+		\item $n$-ary conjunction and disjunction of formulas.
+		\item Units$(U_S)$, Irred$(U_S)$ for primes. Center, centralizer, normalizer, stabilizer, orbit, conjugation class...
+		\item Check for ambiguity errors.
+		\end{myenum}
+
+
+\end{document}

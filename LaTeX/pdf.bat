@@ -1,0 +1,1 @@
+for %%a in (*.tex) do pdflatex "%%a"

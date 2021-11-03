@@ -1,0 +1,357 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+	\Large
+
+	\begin{center}
+	 T\'opicos em Geometria de Riemann \\
+	 Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+	\section{Quest\~ao 5.18 de variedades\_diferenciaveis.pdf}
+		\begin{flushright}
+		\end{flushright}
+
+		Dado um vetor tangente $v \in T_pM$, construa um campo diferenci\'avel $X: M \rightarrow TM$ tal que $X_p = v$.
+
+		Seja $M = S^1$.
+
+		Seja o polo norte $p = (0,1) = N$.
+
+		Sabemos que $v = (1, 0) \in T_pM$.
+
+		Queremos $X : S^1 \rightarrow TS^1$
+
+		$p \mapsto (p, X_p = v)$
+
+		$p = (\cos t, \sin t)$
+
+		$q = (-\sin t, \cos t)$
+
+		Escrever $v = 1 e_1 + 0 e_2$ na base $\{ p, q \}$ de $\mathbb{R}^2$.
+
+		A proje\c{c}\~ao radial \'e: $\text{proj}_p v = \cfrac{\langle v, p \rangle}{\langle p, p \rangle}\,\cdot p$
+
+		A coordenada em $T_pS^1$ \'e: $\cfrac{\langle v, q \rangle}{\langle q, q \rangle} = - \sin t$
+
+		Conclus\~ao: $X_p = - \sin t \cdot \partial_t$.
+
+		Veja que o cilindro $x^2 + y^2 = 1, \forall z$ intercepta o plano $z = -y$ no c\'irculo $(\cos t, \sin t, -\sin t)$.
+
+		Engra\c{c}ado o vetor estar em repouso e a sombra dele variar no tempo enquanto a formiguinha roda o c\'irculo.
+
+	\section{Quest\~ao de Lee p. 67}
+		\begin{flushright}
+		\end{flushright}
+
+		Provar o Lema 5.2: $\nabla$ \'e compat\'ivel com $g \Leftrightarrow \nabla g \equiv 0$.
+
+		Defini\c{c}\~ao de compatibilidade: $\nabla$ \'e compat\'ivel com $g \Leftrightarrow \nabla_X \langle Y, Z \rangle = \langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle, \forall X, Y, Z \in \mathcal{T}(M)$.
+
+		Seja $g$ tensor 0-covariante e k-contravariante. $k = 2$.
+
+		Defini\c{c}\~ao de derivada covariante total de $g$ em rela\c{c}\~ao a $Z$: $\nabla g(X_1,\cdots,X_k, Z) = \nabla_{Z} g(X_1,\cdots,X_k)$, em que $Z$ \'e a \'ultima vari\'avel contravariante em ambos os lados.
+
+		Seja $M, \nabla$. Existe extens\~ao \'unica da conex\~ao (p. 140) com as propriedades:
+
+		\begin{align}
+		\nabla_Z f &= Zf \label{conecta_tpm_f} \\
+		(\nabla_Z g)(X_1, \cdots, X_k) &= Z(g(X_1, \cdots, X_k)) - \sum_{i=1}^k g(X_1, \cdots, \nabla_Z X_i, \cdots, X_k) \label{seis_um_b} \\
+		\nabla_Z [\omega(X)] &= (\nabla_Z \omega)(X) + \omega(\nabla_Z X) \nonumber \\
+		\nabla_Z (F \otimes G) &= \nabla_Z F \otimes G + F \otimes \nabla_Z G \nonumber \\
+		\nabla_{\partial i} dx^j &= - \Gamma_{i1}^j dx^1 - \cdots - \Gamma_{in}^j dx^n \nonumber
+		\end{align}
+
+		$\nabla g (X, Y, Z) = \nabla_Z g(X,Y) $, pela defini\c{c}\~ao
+
+		$= Z [g(X, Y)] - g (\nabla_Z X, Y) - g(X, \nabla_Z Y) $, pela igualdade (\ref{seis_um_b})
+
+		$= Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle $, pela m\'etrica
+
+		$= Z \langle X, Y\rangle - \nabla_Z \langle X, Y \rangle$, pela compatibilidade
+
+		$= 0$, pela igualdade (\ref{conecta_tpm_f})
+
+		Provamos que se $\nabla$ \'e compat\'ivel com $g \Rightarrow \nabla g \equiv 0$.
+
+		Reciprocamente, seja $\nabla g(X,Y,Z) = 0$.
+
+		$\nabla_Z g(X,Y) = 0$, pela defini\c{c}\~ao
+
+		$Z [g(X, Y)] - g (\nabla_Z X, Y) - g(X, \nabla_Z Y) = 0$, pela igualdade (\ref{seis_um_b})
+
+		$Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle = 0$, pela m\'etrica
+
+		$\nabla_Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle = 0$, pela igualdade (\ref{conecta_tpm_f})
+
+		$\nabla_Z \langle X, Y\rangle = \langle \nabla_Z X, Y \rangle + \langle X, \nabla_Z, Y \rangle$ Q.E.D. $\,\,\blacksquare$
+
+	\section{Quest\~ao de Lee 5.4, p. 87}
+		\begin{flushright}
+		\end{flushright}
+
+		(a) Relembre que $V$ \'e paralelo se $\nabla V \equiv 0$. Sejam $p \in \mathbb{R}^n, V_p \in T_p \mathbb{R}^n$. Prove que $V_p$ tem extens\~ao \'unica a campo vetorial paralelo $V$ em $\mathbb{R}^n$.
+
+		Fixamos $n = 3, p = (1,0,0), V_p = (0, a, b), \Gamma = 0$.
+
+		$\nabla_{\alpha'} V = \cfrac{dV^1}{dt} \partial_x + \cfrac{dV^2}{dt} \partial_y + \cfrac{dV^3}{dt} \partial_z = 0 \Rightarrow V(t) = V_p$
+
+		Em particular, $V = V_p$ nas curvas $\alpha_i(t) = p + t \cdot e_i, i \in \{ 1,2,3 \}$
+
+		Portanto, a extens\~ao \'unica \'e $V \equiv V_p$.
+
+		\vspace{3mm}
+
+		(b) Sejam em $S^2$, coordenadas esf\'ericas $(\theta, \varphi)$. Seja $V = \partial_\varphi$. Ent\~ao $\nabla V(Z) = \nabla_Z V = f \nabla_{\partial_\theta}V + g\nabla_{\partial_\varphi}V$.
+
+		Utilizamos gr.pdf 3.2 p\'agina 62:
+
+		$\nabla_{\partial_\theta} \partial_\varphi = \Gamma_{12}^1 \partial_\theta + \Gamma_{12}^2 \partial_\varphi\,;\nabla_{\partial_\varphi} \partial_\varphi = \Gamma_{22}^1 \partial_\theta + \Gamma_{22}^2 \partial_\varphi$
+
+		$\Gamma_{22}^1 = - \sin \varphi \cos \varphi, \Gamma_{12}^2 = \Gamma_{21}^2 = \cot \varphi$, o resto \'e zero. A cotangente estoura nos polos $\pm N$.
+
+		$\nabla_{\partial_\theta} \partial_\varphi = \cot \varphi \cdot \partial_\varphi\,;\nabla_{\partial_\varphi} \partial_\varphi = - \sin \varphi \cos \varphi \cdot \partial_\theta$
+
+		Conclua que $V$ \'e paralelo ao longo do equador $\varphi = \cfrac{\pi}{2}$ e ao longo de cada meridiano $\theta = \theta_0$.
+
+		$\varphi = \cfrac{\pi}{2} \Rightarrow 0 = \nabla_{\partial_\theta} \partial_\varphi = \nabla_{\partial_\varphi} \partial_\varphi$
+
+		$\theta = \theta_0 \Rightarrow \alpha(t) = (\theta(t), \varphi(t)) = (\theta_0, t) \Rightarrow \alpha'(t) = (0, 1)$
+
+		$Y = V \circ \alpha$
+
+		$V^1 = 0 \Rightarrow W^1 = \cfrac{DY}{dt} = \nabla_{\alpha'} (\partial_\varphi) = $
+		$\cfrac{d\alpha^1}{dt} \Gamma_{12}^1 V^2 \partial_1 + \cfrac{d\alpha^2}{dt} \Gamma_{22}^1 V^2 \partial_1$
+		$+ \cfrac{d\alpha^1}{dt} \Gamma_{12}^2 V^2 \partial_2 + \cfrac{d\alpha^2}{dt} \Gamma_{22}^2 V^2 \partial_2$
+
+		$W_p^1 = - \cfrac{d\varphi}{dt} \sin \varphi \cos \varphi V^2 \partial_\theta + \cfrac{d\theta}{dt} \cot \varphi V^2 \partial_\varphi = - \sin t \cos t \partial_\theta$
+
+		$W_p^1(f) = - \sin t \cos t \cfrac{\partial f}{\partial \theta} = 0$ sempre que $f$ independe de $\theta$. $V$ \'e paralelo ao longo das fun\c{c}\~oes constantes em rela\c{c}\~ao \`a longitude. Cada c\'irculo m\'aximo \'e o equador, por assim dizer, em alguma base $B$. Mais uma vez: esta teoria \'e local, n\~ao global. Localmente, ``aqui" tem latitude zero e longitude arbitr\'aria. O eixo de rota\c{c}\~ao da Terra deixa de ser o eixo $z$.
+
+		\vspace{3mm}
+
+		(c) Seja $p$ em $\theta = 0, \varphi = \cfrac{\pi}{2}$. Prove que $V_p$ n\~ao tem nenhuma extens\~ao paralela a nenhuma vizinhan\c{c}a de $p$.
+
+		$p = (1,0,0) \in \mathbb{R}^3$. Seja $\alpha(1) = (\epsilon, \pi/2 + \epsilon) \Rightarrow \alpha(t) = (t, \pi/2 + t) \Rightarrow \alpha'(t) = (1, 1)$
+
+		$V = \delta \partial_\theta + (1 + \delta) \partial_\varphi$. Queremos mostrar que $\nabla V \ne 0$. Primeiro perturbamos o ponto. Depois perturbamos o vetor tangente.
+
+		$\nabla_{\partial_\theta + \partial_\varphi} \partial_\varphi = \cot \varphi \cdot \partial_\varphi - \sin \varphi \cos \varphi \cdot \partial_\theta = W^2$
+
+		O \'unico jeito de $W^2 = 0$ \'e se $f =$ constante. Caso contr\'ario, $\varphi = \pi/2 + \epsilon \Rightarrow W^2 \ne 0$.
+
+		O caso $\alpha(t) = (t, \pi/2)$ \'e desconsiderado por ser unidimensional. Abertos aqui t\^em dimens\~ao 2.
+
+		$\nabla_{\alpha'} [t \partial_\theta + (1 + t) \partial_\varphi] = t \nabla_{\alpha'} \partial_\theta + (1 + t) W^2 = W^3$
+
+		$\nabla_{\partial_\theta + \partial \varphi} \partial_\theta = [\cancel{\Gamma_{11}^1} \partial_1 + \cancel{\Gamma_{11}^2} \partial_2] + [\cancel{\Gamma_{21}^1} \partial_1 + \Gamma_{21}^2 \partial_2]$
+
+		$W^3 = t \cot \varphi \cdot \partial_\varphi  + (1 + t) W^2 \ne 0$, simplesmente porque $t = \delta$ e $W^2 \ne 0$.
+
+		\vspace{3mm}
+
+		(d) Utilize a, c para provar que nenhuma vizinhan\c{c}a de $p$ \'e isom\'etrica a um aberto de $\mathbb{R}^2$.
+
+		Em $\mathbb{R}^2$, o campo vetorial constante $V \equiv V_p$ \'e paralelo globalmente.
+
+		Se houvesse isometria, em $S^2$ haveria um campo vetorial paralelo qualquer definido em um aberto qualquer de $S^2$.
+
+		Mas isso \'e absurdo, porque em $S^2$, os campos paralelos s\~ao unidimensionais, definidos somente ao longo de curvas: o equador e os meridianos.
+
+	\section{Quest\~ao de Manfredo 2.7}
+		\begin{flushright}
+		\end{flushright}
+
+		Em $S^2$, seja $c$ um paralelo e $V_0$ um vetor tangente a $S^2$ em um ponto de $c$. Descreva geometricamente o transporte paralelo de $V_0$ ao longo de $c$ em $S^2$.
+
+		Para tanto, considere o cone $C$ tangente a $S^2$ ao longo de $c$ e prove que \'e id\^entico ao transporte paralelo de $V_0$ ao longo de $c$ em $C$.
+
+		\vspace{3mm}
+
+		Coordenadas de $c$: $\alpha(t) = (\theta(t), \varphi(t)) = (t, \varphi_0) \Rightarrow \alpha'(t) = (1, 0)$.
+
+		Seja $p = c(0) = (0, \varphi_0)$. Ent\~ao $p = (\sin \varphi_0, 0, \cos \varphi_0) \in \mathbb{R}^3\,; V_p = (a, b) \in T_pS^2$.
+
+		Equa\c{c}\~oes diferenciais em $V$:
+
+		$\cfrac{dV^1}{dt} + \cfrac{d\alpha^1}{dt} \Gamma_{11}^1 V^1  + \cfrac{d\alpha^1}{dt} \Gamma_{12}^1 V^2  + \cfrac{d\alpha^2}{dt} \Gamma_{21}^1 V^1  + \cfrac{d\alpha^2}{dt} \Gamma_{22}^1 V^2 = 0$
+
+		$\cfrac{dV^2}{dt} + \cfrac{d\alpha^1}{dt} \Gamma_{11}^2 V^1  + \cfrac{d\alpha^1}{dt} \Gamma_{12}^2 V^2  + \cfrac{d\alpha^2}{dt} \Gamma_{21}^2 V^1  + \cfrac{d\alpha^2}{dt} \Gamma_{22}^2 V^2 = 0$
+
+		In\'icio em: $V^1(0) = a, V^2(0) = b$.
+
+		Substitu\'imos:
+
+		$\cfrac{dV^1}{dt} = 0, V^1(0) = a \Rightarrow V^1(t) \equiv a$
+
+		$\cfrac{dV^2}{dt} + \cot \varphi_0 \cdot V^2 = 0 \Rightarrow y' + ky = 0 \Rightarrow y(t) = C \exp(-kt) \Rightarrow y(0) = C \therefore V^2(t) = b \exp (-\cot \varphi_0 t)$
+
+		Para $\varphi_0 \ne \cfrac{\pi}{2} + k\pi$, podemos completar a base com $\partial_\theta = (\cos \varphi_0, 0, -\sin \varphi_0 \cos t)\,; \partial_\varphi = (0, \cos \varphi_0, -\sin \varphi_0 \sin t)$.
+
+		Lembrando que a base come\c{c}a com $\alpha(t) = (\sin \varphi_0 \cos t, \sin \varphi_0 \sin t, \cos \varphi_0)$.
+
+		O plano tangente ``f\'isico" \'e $\{ v(t) = \alpha + \lambda \partial_\theta + \mu \partial_\varphi \,; \lambda, \mu \in \mathbb{R} \}$.
+
+		O cone s\'o piora as coisas. $z = \cos \varphi_0\,; x^2 + y^2 = (A z)^2 \Rightarrow A = \tan \varphi_0$.
+
+		Exemplo: $\varphi_0 = \cfrac{\pi}{4} \Rightarrow V(t) = a \cdot \partial_\theta + b \cdot e^{-t} \partial_\varphi$. Trata-se de um vetor tangente em $T_pS^2$ com m\'odulo decrescendo exponencialmente com o tempo. Podemos completar a base com $\partial_\varphi = \bigg(0, \cfrac{\sqrt 2}{2}, -\cfrac{\sqrt 2}{2} \cdot \sin t\bigg)$, que d\'a $V(t)$ depois de multiplicado por $b \cdot e^{-t}$.
+
+		O cone \'e $z = \cfrac{\sqrt 2}{2}\,; x^2 + y^2 = z^2$. $\alpha(t) = \bigg(\cfrac{\sqrt 2}{2}\cdot \cos t, \cfrac{\sqrt 2}{2}\cdot \sin t, \cfrac{\sqrt 2}{2}\bigg)$. Interessante que $V(2\pi) = e^{-2\pi} V_p$, quando $a = 0$.
+
+	\section{Quest\~ao de Manfredo 2.5, p. 64}
+		\begin{flushright}
+		\end{flushright}
+
+		No espa\c{c}o euclideano, o transporte paralelo de 1 vetor entre 2 pontos n\~ao depende da curva que liga esses 2 pontos.
+
+		D\^e exemplo de que isso n\~ao \'e verdade em uma variedade de Riemann qualquer.
+
+		\vspace{3mm}
+
+		A pen\'ultima quest\~ao mostra em $\mathbb{R}^n$ o transporte paralelo constante globalmente $V \equiv V_p$.
+
+		A \'ultima mostra tamb\'em que em $S^2$ o transporte paralelo $V(t)$ depende do par\^ametro $t$ da curva $\alpha$.
+
+	\section{Quest\~ao de Manfredo 1.4}
+		\begin{flushright}
+		\end{flushright}
+
+		$G = \{g : \mathbb{R} \rightarrow \mathbb{R} \,; g(t) = yt + x \,; y > 0 \}\,$ \'e um grupo de Lie.
+
+		Como variedade diferenci\'avel, $G$ \'e simplesmente o semiplano superior com a estrutura diferenci\'avel usual.
+
+		\vspace{3mm}
+
+		Defini\c{c}\~ao 2.15: $G$ \'e grupo de Lie se a aplica\c{c}\~ao $F(g,h) = gh^{-1}$ \'e diferenci\'avel, $\forall g,h \in G$.
+
+		Teorema 2.16: $G$ \'e grupo de Lie se e s\'o se $F(g) = g^{-1}, P(g,h) = gh$ s\~ao diferenci\'aveis.
+
+		$t = \cfrac{g(t) - x}{y} \Rightarrow g^{-1}(t) = \cfrac{1}{y} \cdot t - \cfrac{x}{y}$ \'e diferenci\'avel.
+
+		$h(t) = rt + q \Rightarrow g(h(t)) = yh(t) + x = ryt + qy + x = L_g(h(t))$ \'e diferenci\'avel. $\therefore G$ sim, \'e um grupo de Lie.
+
+		\vspace{3mm}
+
+		A m\'etrica de Riemann de $G$ invariante \`a esquerda, que no elemento neutro $e = (0, 1)$ coincide com a m\'etrica euclidiana $(G = \text{Id})$ \'e dada por $G = \cfrac{1}{y^2} \cdot$ Id.
+
+		\vspace{3mm}
+
+		$e(t) = t\,;g = \left(\begin{matrix} x \\ y \end{matrix} \right) \Rightarrow g^{-1} = \left(\begin{matrix} -\cfrac{x}{y} \\ \cfrac{1}{y} \end{matrix} \right)\,;h = \left(\begin{matrix} q \\ r \end{matrix} \right) \Rightarrow L_g (h) =\left(\begin{matrix} qy + x \\ ry \end{matrix} \right)$
+
+		$g^{-1}(h(t)) = \cfrac{1}{y} \cdot h(t) - \cfrac{x}{y} = \cfrac{rt + q - x}{y}$
+
+		$L_{g^{-1}}(h) = g^{-1} h = g^{-1}\left(\begin{matrix} q \\ r \end{matrix} \right) = \left(\begin{matrix} \cfrac{q-x}{y} \\ \cfrac{r}{y} \end{matrix} \right) \Rightarrow (dL_{g^{-1}})_{(q,r)} = \left( \begin{matrix} \cfrac{1}{y} & 0 \\ 0 & \cfrac{1}{y} \end{matrix} \right) = J$ constante em rela\c{c}\~ao a $(q,r)$.
+
+		$\langle V, V \rangle_g = \langle (dL_{g^{-1}})_g V, (dL_{g^{-1}})_g V \rangle_e = \langle J V, J V \rangle_e = \left\langle \left(\begin{matrix} \cfrac{V^1}{y} \\ \cfrac{V^2}{y} \end{matrix} \right), \left(\begin{matrix} \cfrac{V^1}{y} \\ \cfrac{V^2}{y} \end{matrix} \right) \right\rangle_e \stackrel{\text{Euclides}}{=} \cfrac{V_1^2}{y^2} + \cfrac{V_2^2}{y^2} \,\,\blacksquare$ A m\'etrica do tio Loba.
+
+		\section{Grupos de Lie}
+		\begin{flushright}
+		\end{flushright}
+
+		Teorema 2.18: $L_p(h) = ph, R_p(h) = hp$ s\~ao difeomorfismos.
+
+		Defini\c{c}\~ao 2.19: Uma \'algebra de Lie sobre $\mathbb{R}$ \'e um espa\c{c}o vetorial $\mathcal{G}$ munido de um colchete de Lie bilinear de $\mathcal{G} \times \mathcal{G}$ em $\mathbb{R}$, anticomutativo $([X,Y] = -[Y,X])$ e com a identidade de Jacobi: $[[X,Y], Z] + [[Y,Z],X] + [[Z,X],Y] = 0$.
+
+		Defini\c{c}\~ao 2.23: $X \in \mathcal{T}(G)$ \'e invariante \`a esquerda se d$L_p X = X \circ L_p, \forall p \in G$.
+
+		Rela\c{c}\~ao 2.35: $X_p = (dL_p)_e X_e$. Um campo invariante \`a esquerda fica completamente determinado em algum ponto, por exemplo, $e$.
+
+		Teorema 2.24: Todo vetor tangente $X_e$ em $T_eG$ possui uma extens\~ao a um campo invariante \`a esquerda. $X \in \mathcal{T}(G)$, dado pela rela\c{c}\~ao 2.35.
+
+		Teorema 2.25: O colchete de Lie de campos invariantes \`a esquerda \'e invariante \`a esquerda. $\Leftrightarrow (dL_p)_h [X,Y]_h f = [X,Y]_{ph} f$.
+
+		$\mathcal{L} = \{$ campos invariantes \`a esquerda $\}$ \'e um subespa\c{c}o vetorial de $\mathcal{T}(G)$, perfazendo uma \'algebra de Lie.
+
+		Defini\c{c}\~ao 2.26: A \'algebra de Lie $\mathcal{G}$ de G \'e $T_eG$ munido de $[X_e, Y_e] := [X,Y]_e$ em que $X, Y \in \mathcal{T}(G)$ s\~ao extens\~oes invariantes \`a esquerda dos vetores tangentes $X_e, Y_e$.
+
+		Defini\c{c}\~ao 2.27: A m\'etrica \'e invariante \`a esquerda se $\langle V, W \rangle_h = \langle (dL_p)_h V, (dL_p)_h W \rangle_{L_p h}$. Para todos $p,h \in G\,; V, W \in T_eG$.
+
+		Teorema 2.28: Dado um produto interno em $T_eG$, a m\'etrica seguinte \'e invariante \`a esquerda.
+
+		Para todos $p \in G\,; V, W \in T_eG$: $\langle V, W \rangle_p = \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p W \rangle_e$.
+
+		Teorema 2.29: Seja a \'algebra de Lie $\mathcal{G} = T_eG$ do grupo de Lie G. A m\'etrica anterior \'e bi-invariante se e s\'o se
+
+		$\langle [V, X], W \rangle = - \langle V, [W, X] \rangle$. Para todos $V, W, X \in T_eG$. Traduzindo:
+
+		$\langle (dL_{p^{-1}})_p [V,X], (dL_{p^{-1}})_p W \rangle_e = - \langle (dL_{p^{-1}})_p V, (dL_{p^{-1}})_p [W,X] \rangle_e$.
+
+		\subsection{5-10: Constantes de estrutura}
+		\begin{flushright}
+		\end{flushright}
+
+		Em uma \'algebra de Lie $\mathcal{G}$, seja a base $(X_1, \cdots, X_n)$. Defina as constantes de estrutura $[X_i, X_j] = \sum_k c_{ij}^k X_k$. Compute Christoffel em termos de $c_{ij}^k, g_{ij}$.
+
+		\vspace{3mm}
+
+		Sejam $1 \le a,b,d \le n$. Basta computar de duas formas diferentes $\alpha = \langle \nabla_{X_a} X_b, X_d \rangle$.
+
+		\begin{align}
+		X_a &= X_a^1 \partial_1 + \cdots + X_a^n \partial_n \\
+		\nabla_{X_a} X_b &= \nabla_{(X_a^1 \partial_1 + \cdots + X_a^n \partial_n)} (X_b^1 \partial_1 + \cdots + X_b^n \partial_n) = \sum_{ijk} X_a^i X_b^j \Gamma_{ij}^k \partial_k \\
+		\alpha &= \sum_{ijk\ell} X_a^i X_b^j \Gamma_{ij}^k g_{k\ell} X_d^\ell \\
+		2 \alpha &= X_a\langle X_b,X_d\rangle + X_b\langle X_a,X_d\rangle - X_d\langle X_a,X_b\rangle -\\
+		&- \langle X_a, [X_b,X_d]\rangle - \langle X_b, [X_a,X_d]\rangle + \langle X_d, [X_a,X_b]\rangle
+		\end{align}
+
+		\begin{align}
+		u(a, b, d) &= X_a\langle X_b,X_d\rangle = \sum_k X_a^k \cfrac{\partial}{\partial_k} \left( \sum_{ij} X_b^i g_{ij} X_d^j \right) \\
+		v(a,b,d) &= \langle X_a, [X_b,X_d]\rangle = \langle X_a, \sum_k c_{bd}^k X_k\rangle = \sum_{ijk} c_{bd}^k X_k^j g_{ji} X_a^i \\
+		2 \sum_{ijk\ell} X_a^i X_b^j \Gamma_{ij}^k g_{k\ell} X_d^\ell &= u(a,b,d) + u(b,a,d) - u(d,a,b) - v(a,b,d) - v(b,a,d) + v(d,a,b)
+		\end{align}
+
+		S\~ao $n^3$ equa\c{c}\~oes para extrair $\Gamma_{ij}^k$.
+
+		\subsection{3-10: Em uma \'algebra de Lie, a m\'etrica $g$ \'e invariante \`a esquerda se e s\'o se $g_{ij}$ s\~ao constantes.}
+		\begin{flushright}
+		\end{flushright}
+
+	  Seja $n = 2$.
+
+		\vspace{3mm}
+
+		Na lista anterior, $\langle V, V\rangle_p = \langle J(p^{-1}h) V, J(p^{-1}h) V \rangle_e$. // \'E uma isometria. Lobachevsky.
+
+		$\sum V_i g_{ij}(p) V_j = \sum W_i g_{ij}(e) W_j$.
+
+		$V_p = \cfrac{1}{y} \cdot V_e$.
+
+		$p = (p_1,p_2), h = (h_1,h_2) \Rightarrow p^{-1} = (\text{Inv}_1(p), \text{Inv}_2(p)) = (-p_1/p_2, 1/p_2)$
+
+		Prod$(p_1, p_2, h_1, h_2) = (h_1 p_2 + p_1, h_2 p_2)$
+
+		$p^{-1}h = (\alpha_1(p,h), \alpha_2(p,h))	= \text{Prod}(\text{Inv}_1(p), \text{Inv}_2(p), h_1, h_2) = \left( \begin{matrix} \cfrac{h_1 - p_1}{p_2} \\ \cfrac{h_2}{p_2} \end{matrix} \right)$ // primeiro grau em $h$
+
+		$(dL_{p^{-1}})_h = \bigg[\cfrac{\partial \alpha^i}{\partial h^j} \bigg] = J(p^{-1}h) = \left[ \begin{matrix} 1/p_2 & 0 \\ 0 & 1/p_2 \end{matrix} \right]$ // constante em $h$
+
+		Se $g_{ij}$ s\~ao constantes, \'e \'obvio que $\langle V, V \rangle_p = \langle (dL_{p^{-1}})_p V, dL_{p^{-1}})_p V\rangle_e$.
+
+		Mas e a volta?
+
+		$V^\top G(p) V = (JV)^\top G(e) JV$
+
+		$G(p) = J^\top G(e) J$
+
+		Ao que parece, $G$ tamb\'em \'e constante somente em $h$ mesmo.
+
+		\subsection{Fora da caridade, n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.}
+
+	\begin{align}
+		e^{xt} &= ax^2 + bx + c \\
+		e^{yt} &= ay^2 + by + c \\
+		e^{zt} &= az^2 + bz + c \\
+		e^{xt} + e^{yt} + e^{zt} &= a(x^2 + y^2 + z^2) + b(x + y + z) + 3c \\
+		e^{2xt} + e^{2yt} + e^{2zt} &= S^2 - 2Q \\
+		e^{3xt} + e^{3yt} + e^{3zt} &= S^3 - 3SQ + 3P
+	\end{align}
+
+\end{document}

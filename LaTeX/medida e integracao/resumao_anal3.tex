@@ -1,0 +1,63 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\title{Mathematics and Spirituality}
+\date{}
+\begin{document}
+	\maketitle
+
+	\begin{align}
+		&\text{Caracter\'istica: } \chi_E(x) = 1, x \in E \\
+		&\chi_E(x) = 0, x \notin E \\
+		&\text{Escada: } \varphi = \sum _{j = 1} ^{n} c_j \chi_{E_j} \\
+		&\lim \sup x_n = \underset{m}{\operatorname{inf}} (\underset{n \ge m}{\operatorname{sup}} x_n) \\
+		&\lim \inf x_n = \underset{m}{\operatorname{sup}} (\underset{n \ge m}{\operatorname{inf}} x_n) \\
+		&\text{Em } \mathbb{\bar{R}}, (-\infty) + (-\infty) = x + (-\infty) = (-\infty) + x = (-\infty) \\
+		&(-\infty)(-\infty) = \infty; (-\infty)\infty = -\infty \\
+		&x \neq 0 \Rightarrow x(-\infty) = (-\infty)x = \mathrm{sgn}(x) \infty \\
+		&0(-\infty) = (-\infty)0 = 0
+	\end{align}
+
+	$\sigma$ -\'Algebra:
+	\begin{align}
+		\emptyset, X \in \mathbb{X} \\
+		A \in \mathbb{X} \Rightarrow \mathbb{X} - A \in X \\
+		A_n \in \mathbb{X} \Rightarrow \overset{\infty}{\underset{n = 1}{\operatorname{\big\cup}}} A_n \in \mathbb{X}
+	\end{align}
+
+	\begin{align}
+		\text{Espa\c{c}o mensur\'avel: } (X, \mathbb{X}) \\
+		\mathbb{X} - \underset{\alpha}{\operatorname{\big\cup}} A_\alpha = \underset{\alpha}{\operatorname{\big\cap}} (\mathbb{X} - A_\alpha) \\
+		\mathbb{X} - \underset{\alpha}{\operatorname{\big\cap}} A_\alpha = \underset{\alpha}{\operatorname{\big\cup}} (\mathbb{X} - A_\alpha) \\
+		f \in \mathbb{M} \Leftrightarrow f \text{ \'e mensur\'avel} \Leftarrow \forall \alpha \in \mathbb{R}, C \in \mathbb{X}; C = \{ x \in \mathbb{X} ; f(x) > \alpha \} \\
+		\Leftrightarrow \forall \alpha \in \mathbb{R}, C \in \mathbb{X}; C = \{ x \in \mathbb{X} ; f(x) \le \alpha \} \\
+		\Leftrightarrow \forall \alpha \in \mathbb{R}, C \in \mathbb{X}; C = \{ x \in \mathbb{X} ; f(x) \ge \alpha \} \\
+		\Leftrightarrow \forall \alpha \in \mathbb{R}, C \in \mathbb{X}; C = \{ x \in \mathbb{X} ; f(x) < \alpha \} \\
+		f, g \in \mathbb{M} \Rightarrow cf, f^2, f + g, fg, |f| \in \mathbb{M} \\
+		f^+(x) = \sup \{ f(x), 0 \} \\
+		f^-(x) = \sup \{ -f(x), 0 \} \\
+		f \in \mathbb{M} \Leftrightarrow f^+, f^- \in \mathbb{M} \\
+		\text{Em } \mathbb{\bar{R}}, f \in \mathbb{M} \Leftrightarrow A, B \in \mathbb{X} \wedge f_1 \in \mathbb{M} \text{ com: } \\
+		A = f^{-1}(\infty); B = f^{-1}(-\infty); f_1(A \cup B) = 0; f_1(x) = f(x), x \notin A \cup B \\
+		f_n \in \mathbb{M}; f(x) = \inf f_n(x); F(x) = \sup f_n(x); g(x) = \lim \inf f_n(x) ; G(x) = \lim \sup F_n(x) \Rightarrow f, F, g, G \in \mathbb{M} \\
+		f \leftarrow f_n \in \mathbb{M} \Rightarrow f \in \mathbb{M} \\
+		0 \le f \in \mathbb{M} \Rightarrow \exists \varphi_n \in \mathbb{M} ;
+	\end{align}
+
+\begin{equation}
+	\left\{\begin{aligned}
+		0 \le \varphi_n(x) \le \varphi_{n+1}(x); \forall x \in X, \forall n \in \mathbb{N} \\
+		f(x) = \lim \varphi_n(x), \forall x \in X \\
+		\forall n, \varphi_n \text{assume finitos valores} \Leftrightarrow \# (\mbox{ Im } \varphi_n) \in \mathbb{N}
+	\end{aligned}
+	\right.
+\end{equation}
+
+	\begin{align}
+		f : (X, \mathbb{X}) \rightarrow (Y, \mathbb{Y}) \in \mathbb{M} \Leftarrow \\
+		E \in \mathbb{Y} \Rightarrow f^{-1}(E) \in \mathbb{X}
+	\end{align}
+
+\end{document}

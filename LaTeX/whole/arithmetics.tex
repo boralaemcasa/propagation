@@ -1,0 +1,39 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{cancel}
+\usepackage{tikz-cd}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{array,bm}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\begin{document}
+
+		\Large
+		Arithmetics
+		\normalsize
+
+		\vspace{3mm}
+
+		$0 = \varnothing$
+
+		$x + 1 = x \cup \{x\}$
+
+		$1 = \{0\}$
+
+		$2 = 1 \cup \{1\} = \{0\} \cup \{\{0\}\} = 1 + 1'$ if $\therefore 1' = \{\{0\}\}$
+
+		$3 = 2 \cup \{2\} = 1 + 1' + \{1 + 1'\} = 1 + 1' + 2'$ if $2' = \{1, 1'\} = \{\{0\}, 1\}$
+
+		$4 = 3 \cup \{3\} = 2 + 2' + \{2 + 2'\} = 1 + 1' + 2' + 3'$ if $3' = \{\{\{0\}, 1\}, 2\}$
+
+		\begin{align*}
+		\therefore x \ge 1 \Rightarrow (x + 1)' &= \{ x', x \} \\
+		\therefore x + 1 &= 1 + \sum_{n = 1}^x n'
+		\end{align*}
+
+		$4' = \{3', 3\} = \{\{\{\{0\}, 1\}, 2\}, 3\} \Rightarrow 5 = 1 + 1' + 2' + 3' + 4'$
+
+\end{document}

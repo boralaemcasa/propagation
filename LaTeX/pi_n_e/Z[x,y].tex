@@ -1,0 +1,40 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb}  %mathbb
+\usepackage{amsmath}  %align
+\usepackage{amsthm}   %newtheorem
+\usepackage{hyperref} %a href
+\usepackage[a4paper,top=1.0cm,bottom=1.0cm,left=1.0cm,right=1.0cm]{geometry}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\pagestyle{headings}
+\title{Matem\'atica e Espiritualidade}
+\date{}
+\begin{document}
+
+Let $A^2 = \{(x,y) \in \mathbb{R}^2; \exists p \in \mathbb{Z}[x, y] ; p(x,y) = 0\}$.
+
+I want a proof that A is dense in $\mathbb{R}^2$, i.e., $\forall p \in \mathbb{R}^2 - A^2, \forall \epsilon > 0, \exists q \in A^2 ; |q - p| < \epsilon$.
+
+For $n = 1$, I have the proof below.
+
+There is a sequence of albegraic irrationals which converges to:
+
+ - algebraic numbers: $a_n = \sqrt{2}$ (constant sequence $c_n = c_0$);
+ - rationals: $p(x) = nx^2 - 1 \Rightarrow a_n = \frac{1}{\sqrt{n}} \rightarrow 0$
+ - $q(x) = (nx^2 -1 - a^2n)^2 - 4a^2n \Rightarrow b_n = \frac{1}{\sqrt{n}} + a \rightarrow a \in \mathbb{Q}$;
+ - transcendentals: $a_n = \sqrt{2} \sum_{n = 0}^k \frac{1}{n!} \rightarrow \sqrt{2} \exp 1$. Each partial sum is an algebraic number $y ; y^2 = 2\frac{r}{q} \in \mathbb{Q} \Leftarrow p(x) = qx^2 - 2r$. Analogously, we get any transcendental $t$. As the closure of $\mathbb{Q}$ is $\mathbb{R}$, there is a series of rationals $q_n ; \lim q_n = \frac{t}{\sqrt{2}}$. Therefore $b_n = q_n \sqrt{2}$ converges to $t$.
+
+$A^1 = \{x \in \mathbb{R} - \mathbb{Q}; \exists p \in \mathbb{Z}[x] ; p(x) = 0\}$ is dense in $\mathbb{R}$.
+
+Generalizing for $A^n, n \ge 2$
+
+Fix $p = (t_1, t_2, ..., t_n), t_i \in \mathbb{R} - \mathbb{Q} - A^1 = \mathbb{T}$ (transcenentals) and $\epsilon > 0$.
+
+Let the line $\alpha$ be $\alpha(x) = (t_1, t_2 + x, t_3, ..., t_n)$
+
+$\exists y_0 = \frac{p}{q} t_1 ; p, q \in \mathbb{Z} - \{0\} ; t_2 < y_0 < t_2 + \epsilon$
+
+The hyperplane $\beta$ of equation $p(x_1, x_2, ..., x_n) = x_2 - \frac{p}{q} x_1 = 0$ intersects $\alpha$ at $q = (t_1, y_0, t_3, ..., t_n) \in A^n$ because $q$ is root of $p$.
+
+$A^n = \{(x_1, ..., x_n) \in \mathbb{T}^n; \exists p \in \mathbb{Z}[x_1, ..., x_n] ; p(x_1, ..., x_n) = 0\}$ is dense in $\mathbb{R}^n$.
+
+\end{document}

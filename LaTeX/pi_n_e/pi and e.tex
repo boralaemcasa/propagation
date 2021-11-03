@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\LARGE
+
+\begin{center}
+Independ\^encia Alg\'ebrica
+\end{center}
+
+\large
+
+Inicialmente, sejam $\lambda = \pi, \mu = \exp 1 = e$.
+
+\textbf{(1)} N\~ao existe polin\^omio de grau $1$, n\~ao trivial, em duas vari\'aveis complexas e coeficientes inteiros que aplicado em $(\lambda, \mu)$ \'e identicamente nulo.
+
+\vspace{3mm}
+
+Prova: seja $p(x,y) = ax + by + c$.
+
+$p(\lambda, \mu) = a\lambda + b\mu + c = 0 \Leftrightarrow \lambda = \cfrac{-c - b\mu}{a} \Leftrightarrow$ Absurdo. Porque $\lambda \notin \cfrac{\mathbb{Z} + \mathbb{Z}\mu}{\mathbb{Z}} = \mathbb{Q} + \mathbb{Q} \mu$.
+
+\vspace{3mm}
+
+\textbf{(n)} N\~ao existe polin\^omio de grau $n$, n\~ao trivial, em duas vari\'aveis complexas e coeficientes inteiros que aplicado em $(\lambda, \mu)$ \'e identicamente nulo.
+
+\vspace{3mm}
+
+Queremos mostrar por indu\c{c}\~ao que $(1),(2), \cdots, (n-1) \Rightarrow (n)$.
+
+Seja o polin\^omio
+
+\begin{align}
+q(x,y) &= \sum_{i + j = 0}^{n - 1} a_{ij} x^i y^j
+\end{align}
+
+Por hip\'otese, $q(\lambda, \mu) = \alpha \ne 0, \forall \vec a \in \mathbb{Z}^m$, onde $m = (n - 1)^2$.
+
+Todo mundo faz isto no ciclo b\'asico: somar $r(x,y)$ com todos os termos de grau $n$ e obter a famosa tese de indu\c{c}\~ao.
+
+\begin{align}
+(q + r)(x,y) &= \sum_{i + j = 0}^{n - 1} a_{ij} x^i y^j + \sum_{i + j = n}^n a_{ij} x^i y^j \\
+(q + r)(\lambda,\mu) &= \alpha + \sum_{i= 0}^n a_{i,n-i} \lambda^i \mu^{n-i} = \alpha + \beta = \gamma
+\end{align}
+
+Gostar\'iamos que $\gamma \ne 0 \Leftrightarrow \beta \ne - \alpha$.
+
+Isto seria fato se
+
+\begin{align}
+\beta &\notin A = \sum_{i + j = 0}^{n-1} \mathbb{Z}\lambda^i \mu^j \,\,\blacksquare
+\end{align}
+
+Tudo o que sabemos \'e que
+
+\begin{align}
+\beta &\in B = \sum_{i= 0}^n \mathbb{Z} \lambda^i \mu^{n-i}
+\end{align}
+
+A mim pouco importa quem duvida de (4). A interse\c{c}\~ao \'e vazia. $A \cap B = \emptyset$.
+
+\vspace{100mm}
+
+Primeira consequ\^encia: $\mathbb{Z}\lambda^2 + \mathbb{Z}\mu^2 + \mathbb{Z}\lambda \mu$ nunca poder\'a ser expresso como $\mathbb{Z}\lambda + \mathbb{Z}\mu + \mathbb{Z}$. Tudo por causa do grau $n$ do lado esquerdo e do grau $n - 1$ do lado direito.
+
+\vspace{3mm}
+
+Segunda consequ\^encia: $\lambda$ independe de $\mu$, independe de $t_{11} = \lambda \mu$, independe de $t_{ij} = \lambda^i \mu^j$, independe de $t\cdot \lambda$, independe de $t\cdot \mu\cdots$
+
+\vspace{3mm}
+
+Terceira consequ\^encia: sejam $\lambda =\sin 1, \mu = \ln 2$. Qual n\'umero exatamente n\~ao \'e independente de qual outra coisa, mesmo?
+
+\vspace{3mm}
+
+Fora da caridade, n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 17/Jan/2020, Release $0.28$
+
+\vspace{3mm}
+
+Enquanto isso na Alemanha nazista: m\~ae, deixa eu parar de espancar esse judeu?! N\~ao, meu filho, eu quero que voc\^e seja um bom menino para ser um bom homem quando crescer.
+
+\end{document}

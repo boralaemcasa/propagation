@@ -1,0 +1,680 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{eucal}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{array,bm}
+\usepackage{graphicx} %jpg
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows, matrix}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\newcolumntype{C}{>{$}c<{$}}
+\renewcommand{\arraystretch}{1.2}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Lista 3 de Geometria de Riemann, Vin\'icius Claudino Ferraz, 08/11/2018
+	\end{center}
+
+	\normalsize
+
+Tensorial Video on \href{https://www.youtube.com/watch?v=mmzqmIcX7xo}{\color{blue}\underline{YouTube}}. Riemannian Geometry Video on \href{https://www.youtube.com/watch?v=Z3IXeWvEEa4}{\color{blue}\underline{YouTube}}.
+
+	\section{Pullback e push forward}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $F: M \rightarrow N$ aplica\c{c}\~ao diferenci\'avel entre variedades diferenci\'aveis.  $T^m \in \mathcal{T}^k(M), T^n \in \mathcal{T}^k(N)$.
+
+		$p \in M, F(p) = q \in N, w_i = dF_p (v_i)$. Ent\~ao: $F^* T^n = T^m$ se $T^m_p (v_1, \cdots, v_k) = T_q^n (w_1, \cdots, w_k)$.
+
+		\vspace{3mm}
+
+		Seja $\pi^{-1} = F: (M,g^2) \rightarrow (N, g^1)$ como a isometria do disco no hiperboloide.
+
+		Seja $G = F^{-1}$. Ent\~ao $\pi = G: (N,g^1) \rightarrow (M, g^2)$.
+
+		$F^*(g^1) = g^2 \Rightarrow F^*(g^1(V,V)) = g^1(F_* V, F_* V) = g^1(W, W) = \langle W, W \rangle_{F(p)} = \langle V, V \rangle_p = g^2(V,V)$.
+
+		Sejam os vetores tangentes $V \in \mathcal{T}(M), W \in \mathcal{T}(N), p \in M, q = F(p) \in N$.
+
+		Defini\c{c}\~ao: $W = F_* V \text{ se } W_q = dF_p (V_p) = dF_{G q} (V_{G q})$.
+
+		Logo, $U = G_* W \text{ se } U_p = dG_q (W_q) = dG_{F p} (G_{F p})$.
+
+		Defini\c{c}\~ao: $F^* W = V \text{ se } V_p = dG_q (W_q) = (G_* W)_q = U_q$
+
+		$dG_q = [dF_p]^{-1}$? Gostar\'iamos que sim.
+
+		\vspace{3mm}
+
+		Vimos na lista 2 que $T^m = g^2(V, V) = \langle V, V \rangle_p = \langle dF_p V, dF_p V\rangle_q = F^* g^1(V,V) = F^* T^n$
+
+		Pois $T_p^m(V,V) = T_q^n(W,W)$.
+
+		Conclus\~ao: $F^*(T^n(V,V)) = T^n(F_* V, F_* V)$.
+
+		\subsection{Se $W = F_* V$, ent\~ao para todo $f, V (f \circ F) = (Wf) \circ F$.}
+		\begin{flushright}
+		\end{flushright}
+
+		$V_p(g) = V^1 g_u(u,v) + V^2 g_v(u,v), g = f \circ F$
+
+		$V_p(g) = V^1 f_\xi \xi_u + V^1 f_\sigma \sigma_u + V^1 f_\tau \tau_u + V^2 f_\xi \xi_v + V^2 f_\sigma \sigma_v + V^2 f_\tau \tau_v$
+
+		$W_q = dF_p (V_p) = \left(\begin{matrix} \xi_u & \xi_v \\ \sigma_u & \sigma_v \\ \tau_u & \tau_v \end{matrix}\right) \left(\begin{matrix} V^1 \\ V^2 \end{matrix}\right) = \left(\begin{matrix} V^1 \xi_u + V^2 \xi_v \\ V^1 \sigma_u + V^2 \sigma_v \\ V^1 \tau_u + V^2 \tau_v \end{matrix}\right)$
+
+		$W_q(f) = (V^1 \xi_u + V^2 \xi_v) f_\xi + (V^1 \sigma_u + V^2 \sigma_v) f_\sigma + (V^1 \tau_u + V^2 \tau_v)  f_\tau$
+
+		$\therefore V_p(f \circ F) = W_q(f)\,\,\blacksquare$
+
+		\vspace{3mm}
+
+		Em geral, seja $\dim M + \text{codim } M = \Delta_m, \dim N + \text{codim } N = \Delta_n$.
+
+		Linha 1: Expresse $V_p(g)$ na base de $\mathcal{T}(M)$. $\Delta_m$ parcelas.
+
+		Linha 2: Regra da cadeia. $\Delta_m \Delta_n$ parcelas.
+
+		Linha 3: Expresse $W_q$ como produto do jacobiano vezes vetor coluna [V].
+
+		Linha 4: Aplique $W_q$ em $f$ e conclua. Acho que o rob\^o aprende isso em Delphi, mesmo.
+
+	\section{Proposi\c{c}\~ao 6.34 de variedades\_diferenciaveis.pdf}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $F: M \rightarrow N$ aplica\c{c}\~ao diferenci\'avel entre variedades diferenci\'aveis.  $T^m \in \mathcal{T}^k(M), T^n \in \mathcal{T}^k(N)$.
+
+		$p \in M, F(p) = q \in N, w_i = dF_p (v_i)$. Ent\~ao: $F^* T^n = T^m$ se $T^m_p (v_1, \cdots, v_k) = T_q^n (w_1, \cdots, w_k)$.
+
+		\subsection{$F^* (fT^n) = (f \circ F) F^* T^n$}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $U^n = f T^n$.
+
+		Defina $T^m$ por $F^* T^n = T^m \Leftrightarrow T_p^m(v_1, \cdots, v_k) = T_q^n(w_1, \cdots, w_k)$ com $w_i = dF_p(v_i)$
+
+		Defina $U^m$ por $F^* U^n = U^m \Leftrightarrow U_p^m(v_1, \cdots, v_k) = U_q^n(w_1, \cdots, w_k) = fT_q^n(w_1, \cdots, w_k)$ com $w_i = dF_p(v_i)$
+
+		\vspace{3mm}
+
+		Os diagramas comutam:
+
+		\[
+		\begin{tikzcd}
+		T^m \arrow{d}{P_g} \arrow[swap]{r}{F_*} & T^n \arrow{d}{P_f} & V \in T_pB^2 \arrow{r}{\pi_*^{-1}} \arrow{d}{P_g} & W = (V\xi, V\sigma, V\tau) \in T_q{\mathcal{H}^2} \arrow{d}{P_f} & B^2 \arrow{r}{\pi^{-1}} \arrow{dr}{g} & \mathcal{H}^2 \arrow{d}{f} & M \arrow{r}{F} \arrow{dr}{g} & N \arrow{d}{f}   \\
+		U^m \arrow{r}{F_*} & U^n & X = gV \arrow{r}{\pi_*^{-1}} &  Y = (fV\xi, fV\sigma, fV\tau) & & \mathbb{R} & & \mathbb{R}
+		\end{tikzcd}
+		\]
+
+		$F_*(T^m) = T^n \Rightarrow f F_*(T^m) = U^n$
+
+		$gT^m = U^m \Rightarrow F_*(g T^m) = U^n$
+
+		Queremos mostrar que partir de $T^m$, aplicar push forward e multiplicar por $f$; \'e o mesmo que multiplicar por $g := f \circ F$ e aplicar push forward.
+
+		Inicialmente seja a isometria do modelo do disco para o modelo do hiperboloide.
+
+		$\pi^{-1}(u,v) = (\xi, \sigma, \tau) \Rightarrow V\xi = V^1 \xi_u + V^2 \xi_v \Rightarrow V\sigma = V^1 \sigma_u + V^2 \sigma_v \Rightarrow V\tau = V^1 \tau_u + V^2 \tau_v$
+
+		Calcular o pullback de $Y = \left( \begin{matrix} fV\xi \\ fV\sigma \\ f V \tau \end{matrix} \right) = \left( \begin{matrix}f(V^1 \xi_u + V^2 \xi_v) \\ f(V^1 \sigma_u + V^2 \sigma_v) \\ f (V^1 \tau_u + V^2 \tau_v) \end{matrix} \right) \Rightarrow Y_q = \left( \begin{matrix}f(\xi, \sigma, \tau) (V^1 \xi_u + V^2 \xi_v) \\ f(\xi, \sigma, \tau) (V^1 \sigma_u + V^2 \sigma_v) \\ f(\xi, \sigma, \tau) (V^1 \tau_u + V^2 \tau_v) \end{matrix} \right)$
+
+		Encontrar $X = \left( \begin{matrix} (f \circ \pi^{-1}) V^1 \\  (f \circ \pi^{-1}) V^2 \end{matrix} \right) \Rightarrow X_p = \left( \begin{matrix} f(\xi, \sigma, \tau) V^1 \\ f(\xi, \sigma, \tau) V^2 \end{matrix} \right)$
+
+		$Y_q = d\pi^{-1}_p (X_p)$ Assim ficou \'obvio! Jacobiano em cima e embaixo.
+
+		\vspace{3mm}
+
+		Vamos subir para $V^m \in \mathcal{T}_0^2(M)$
+
+		$V^m : M \rightarrow T_0^2 M$
+
+		$p \mapsto (p, T'), T' \in T_0^2(T_pM)$
+
+		$T' : T_pM \times T_pM \rightarrow \mathbb{R}$
+
+		$(v_1, v_2) \mapsto V_p^m(v_1, v_2)$. Lembrando que os vetores tangentes satisfazem $v_p : C^\infty(M) \rightarrow \mathbb{R} \,; f \mapsto v_p(f) $.
+
+		Em $\mathcal{T}_0^1(M), \,\,T'(v_1) = (\alpha du + \beta dv) (v_1)$.
+
+		(Aqui eu deveria ter simplificado: $v_1 = v_2 = v, w_1 = w_2 = w$).
+
+		$V_p^m(v_1, v_2) = \alpha^m du \otimes du (v_1, v_2) + \beta^m du \otimes dv (v_1, v_2) + \gamma^m dv \otimes du (v_1, v_2) + \delta^m dv \otimes dv (v_1, v_2)$
+
+		Vamos precisar da dimens\~ao do espa\c{c}o em que $M$ est\'a imerso. Sejam $\dim M + \text{codim } M = \Delta_m, \dim N + \text{codim } N = \Delta_n$.
+
+		Em geral, expressamos $T_p^m$ na base de $du^1 \otimes \cdots \otimes du^k$, com todos os \'indices variando de $1$ a $\Delta_m$. Chamamos as coordenadas de $\alpha_i^m$, com $i$ variando de $1$ a $\Delta_m^k$.
+
+		\vspace{3mm}
+
+		$V_p^m(v_1, v_2) = \alpha^m v_1^1 v_2^1 + \beta^m v_1^1 v_2^2 + \gamma^m v_1^2 v_2^1 + \delta^m v_1^2 v_2^2$
+
+		$W_q^n(w_1, w_2) = V_p^m(v_1, v_2)$ com $w_i = J\pi^{-1}_p \cdot v_i \Rightarrow w_i^1 = \xi_u v_i^1 + \xi_v v_i^2 \Rightarrow w_i^2 = \sigma_u v_i^1 + \sigma_v v_i^2 \Rightarrow w_i^3 = \tau_u v_i^1 + \tau_v v_i^2$
+
+		Em geral, $T_q^n(w_1,\cdots,w_k) = T_p^m(v_1, \cdots, v_k)$. Jacobiano de $F$.
+
+		\vspace{3mm}
+
+		$W_q^n(w_1, w_2) = A^1 d\xi \otimes d\xi + B^1 d\xi \otimes d\sigma + C^1 d\xi \otimes d\tau $
+		$+ A^2 d\sigma \otimes d\xi + B^2 d\sigma \otimes d\sigma + C^2 d\sigma \otimes d\tau $
+		$+ A^3 d\tau \otimes d\xi + B^3 d\tau \otimes d\sigma + C^3 d\tau \otimes d\tau $
+
+		Em geral, expressamos $T_q^n$ na base de $dx^1 \otimes \cdots \otimes dx^k$, com todos os \'indices variando de $1$ a $\Delta_n$. Chamamos as coordenadas de $A_i$, com $i$ variando de $1$ a $\Delta_n^k$.
+
+		\vspace{3mm}
+
+		$W_q^n(w_1, w_2) = A^1 w^1_1 w^1_2 + B^1 w^1_1 w^2_2 + C^1 w^1_1 w^3_2 $
+		$+ A^2 w^2_1 w^1_2 + B^2 w^2_1 w^2_2 + C^2 w^2_1 w^3_2 $
+		$+ A^3 w^3_1 w^1_2 + B^3 w^3_1 w^2_2 + C^3 w^3_1 w^3_2 $
+
+		\vspace{3mm}
+
+		$W_q^n(w_1, w_2) = A^1 (\xi_u v^1_1 + \xi_v v^2_1) (\xi_u v^1_2 + \xi_v v^2_2) + B^1 (\xi_u v^1_1 + \xi_v v^2_1) (\sigma_u v^1_2 + \sigma_v v^2_2) + C^1 (\xi_u v^1_1 + \xi_v v^2_1) (\tau_u v^1_2 + \tau_v v^2_2) $
+
+		$+ A^2 (\sigma_u v^1_1 + \sigma_v v^2_1) (\xi_u v^1_2 + \xi_v v^2_2) + B^2 (\sigma_u v^1_1 + \sigma_v v^2_1) (\sigma_u v^1_2 + \sigma_v v^2_2) + C^2 (\sigma_u v^1_1 + \sigma_v v^2_1) (\tau_u v^1_2 + \tau_v v^2_2) $
+
+		$+ A^3 (\tau_u v^1_1 + \tau_v v^2_1) (\xi_u v^1_2 + \xi_v v^2_2) + B^3 (\tau_u v^1_1 + \tau_v v^2_1) (\sigma_u v^1_2 + \sigma_v v^2_2) + C^3 (\tau_u v^1_1 + \tau_v v^2_1) (\tau_u v^1_2 + \tau_v v^2_2) $
+
+		\vspace{3mm}
+
+		Em geral, tamb\'em \'e poss\'ivel trocar todos os $w_i$ pelos jacobianos de $F$ vezes $v_i$.
+
+		\vspace{3mm}
+
+		$W_q^n(w_1, w_2) = A^1 (\xi_u^2 du \otimes du + \xi_u \xi_v du \otimes dv + \xi_v \xi_u dv \otimes du + \xi_v^2 dv \otimes dv)$
+
+		$+ B^1 (\xi_u \sigma_u du \otimes du + \xi_u \sigma_v du \otimes dv + \xi_v \sigma_u dv \otimes du + \xi_v \sigma_v dv \otimes dv)$
+
+		$+ C^1 (\xi_u \tau_u du \otimes du + \xi_u \tau_v du \otimes dv + \xi_v \tau_u dv \otimes du + \xi_v \tau_v dv \otimes dv)$
+
+		$+ A^2 (\sigma_u \xi_u du \otimes du + \sigma_u \xi_v du \otimes dv + \sigma_v \xi_u dv \otimes du + \sigma_v \xi_v dv \otimes dv)$
+
+		$+ B^2 (\sigma_u^2 du \otimes du + \sigma_u \sigma_v du \otimes dv + \sigma_v \sigma_u dv \otimes du + \sigma_v^2 dv \otimes dv)$
+
+		$+ C^2 (\sigma_u \tau_u du \otimes du + \sigma_u \tau_v du \otimes dv + \sigma_v \tau_u dv \otimes du + \sigma_v \tau_v dv \otimes dv)$
+
+		$+ A^3 (\tau_u \xi_u du \otimes du + \tau_u \xi_v du \otimes dv + \tau_v \xi_u dv \otimes du + \tau_v \xi_v dv \otimes dv)$
+
+		$+ B^3 (\tau_u \sigma_u du \otimes du + \tau_u \sigma_v du \otimes dv + \tau_v \sigma_u dv \otimes du + \tau_v \sigma_v dv \otimes dv)$
+
+		$+ C^3 (\tau_u^2 du \otimes du + \tau_u \tau_v du \otimes dv + \tau_v \tau_u dv \otimes du + \tau_v^2 dv \otimes dv)$
+
+		\vspace{3mm}
+
+		$W_q^n(w_1, w_2) = [A^1 \xi_u^2  + B^1 \xi_u \sigma_u  + C^1 \xi_u \tau_u$
+		$+ A^2 \sigma_u \xi_u  + B^2 \sigma_u^2  + C^2 \sigma_u \tau_u$
+		$+ A^3 \tau_u \xi_u  + B^3 \tau_u \sigma_u  + C^3 \tau_u^2] du \otimes du$
+
+		$+ [A^1 \xi_u \xi_v  + B^1 \xi_u \sigma_v  + C^1 \xi_u \tau_v$
+		$+ A^2 \sigma_u \xi_v  + B^2 \sigma_u \sigma_v  + C^2 \sigma_u \tau_v$
+		$+ A^3 \tau_u \xi_v  + B^3 \tau_u \sigma_v  + C^3 \tau_u \tau_v] du \otimes dv$
+
+		$+ [A^1 \xi_v \xi_u  + B^1 \xi_v \sigma_u  + C^1 \xi_v \tau_u$
+		$+ A^2 \sigma_v \xi_u  + B^2 \sigma_v \sigma_u  + C^2 \sigma_v \tau_u$
+		$+ A^3 \tau_v \xi_u  + B^3 \tau_v \sigma_u  + C^3 \tau_v \tau_u] dv \otimes du$
+
+		$+ [A^1 \xi_v^2  + B^1 \xi_v \sigma_v  + C^1 \xi_v \tau_v $
+		$+ A^2 \sigma_v \xi_v  + B^2 \sigma_v^2  + C^2 \sigma_v \tau_v$
+		$+ A^3 \tau_v \xi_v  + B^3 \tau_v \sigma_v  + C^3 \tau_v^2] dv \otimes dv$
+
+		\vspace{3mm}
+
+		O sistema \textbf{PRINCIPAL} \'e:
+
+		$\alpha^m = A^1 \xi_u^2  + B^1 \xi_u \sigma_u  + C^1 \xi_u \tau_u$
+		$+ A^2 \sigma_u \xi_u  + B^2 \sigma_u^2  + C^2 \sigma_u \tau_u$
+		$+ A^3 \tau_u \xi_u  + B^3 \tau_u \sigma_u  + C^3 \tau_u^2 = \alpha^n(A,B,C)$
+
+		$\beta^m = A^1 \xi_u \xi_v  + B^1 \xi_u \sigma_v  + C^1 \xi_u \tau_v$
+		$+ A^2 \sigma_u \xi_v  + B^2 \sigma_u \sigma_v  + C^2 \sigma_u \tau_v$
+		$+ A^3 \tau_u \xi_v  + B^3 \tau_u \sigma_v  + C^3 \tau_u \tau_v = \beta^n(A,B,C)$
+
+		$\gamma^m = A^1 \xi_v \xi_u  + B^1 \xi_v \sigma_u  + C^1 \xi_v \tau_u$
+		$+ A^2 \sigma_v \xi_u  + B^2 \sigma_v \sigma_u  + C^2 \sigma_v \tau_u$
+		$+ A^3 \tau_v \xi_u  + B^3 \tau_v \sigma_u  + C^3 \tau_v \tau_u = \gamma^n(A,B,C)$
+
+		$\delta^m = A^1 \xi_v^2  + B^1 \xi_v \sigma_v  + C^1 \xi_v \tau_v $
+		$+ A^2 \sigma_v \xi_v  + B^2 \sigma_v^2  + C^2 \sigma_v \tau_v$
+		$+ A^3 \tau_v \xi_v  + B^3 \tau_v \sigma_v  + C^3 \tau_v^2 = \delta^n(A,B,C)$
+
+		\vspace{3mm}
+
+		Em geral, $\alpha_i^m = \alpha_i^n(A_1, \cdots, A_j)$, com $j = \Delta_n^k$ e com $i$ variando de $1$ a $\Delta_m^k$.
+
+		\vspace{3mm}
+
+		Multiplique por $f$: $Y_q^n(w_1, w_2) = f W_q^n(w_1, w_2)$.
+
+		Em geral, $U_q^n(w_1, \cdots, w_k) = f T_q^n(w_1, \cdots, w_k)$.
+
+		\vspace{3mm}
+
+		Calcular o push forward de $X_p^m = \left( \begin{matrix} f(\xi, \sigma, \tau) \alpha^m \\ f(\xi, \sigma, \tau) \beta^m \\ f(\xi, \sigma, \tau) \gamma^m \\ f(\xi, \sigma, \tau) \delta^m \end{matrix} \right)$ e encontrar $Y_q^n = \left( \begin{matrix} f(\xi, \sigma, \tau) A^1 & f(\xi, \sigma, \tau) B^1 & f(\xi, \sigma, \tau) C^1 \\ f(\xi, \sigma, \tau) A^2 & f(\xi, \sigma, \tau) B^2 & f(\xi, \sigma, \tau) C^2 \\ f(\xi, \sigma, \tau) A^3 & f(\xi, \sigma, \tau) B^3 & f(\xi, \sigma, \tau) C^3 \end{matrix} \right)$.
+
+		Em geral, podemos calcular o push forward de $T_p^m = \bigg[ f(x_1, \cdots, x_{\Delta_n}) \alpha_i^m \bigg]$, com $i$ variando de $1$ a $\Delta_m^k$ e encontar $U_q^n = \bigg[ f(x_1, \cdots, x_j) A^K \bigg]$, com $j = \Delta_n^k$ e com $K$ variando de $1$ a $\Delta_n^k$.
+
+		\vspace{3mm}
+
+		$X_p^m(v_1, v_2) = Y_q^n(w_1, w_2)$
+
+		Em geral, $U_p^m(v_1, \cdots, v_k) = U_q^n(w_1, \cdots, w_k)$.
+
+		\vspace{3mm}
+
+		Imagine. Eu defino $Y_q^n$ analogamente por $Q,R,S$. Fa\c{c}o as contas e o sistema \'e:
+
+		$f(\xi, \sigma, \tau) \alpha^m = \alpha^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \beta^m = \beta^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \gamma^m = \gamma^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \delta^m = \delta^n(Q,R,S)$
+
+		\vspace{3mm}
+
+		Em geral, $f(x_1, \cdots, x_{\Delta_n}) \alpha_i^m = \alpha_i^n (B^1, \cdots, B^K)$, com $K = \Delta_n^k$, e com $i$ variando de $1$ a $\Delta_m^k$.
+
+		\vspace{3mm}
+
+		Eu sei quem \'e $\alpha^m$:
+
+		$f(\xi, \sigma, \tau) \alpha^n(A,B,C) = \alpha^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \beta^n(A,B,C) = \beta^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \gamma^n(A,B,C) = \gamma^n(Q,R,S)$
+
+		$f(\xi, \sigma, \tau) \delta^n(A,B,C) = \delta^n(Q,R,S)$
+
+		\vspace{3mm}
+
+		Em geral, $f(x_1, \cdots, x_{\Delta_n}) \alpha_i^n(A^1, \cdots, A^K) = \alpha_i^n (B^1, \cdots, B^K)$, com $K = \Delta_n^k$, e com $i$ variando de $1$ a $\Delta_m^k$.
+
+		\vspace{3mm}
+
+		Um polin\^omio \'e identicamente nulo se e somente se todos seus coeficientes s\~ao nulos.
+
+		Repare no sistema \textbf{principal}. \'E quase um polin\^omio em $q = (\xi, \sigma, \tau)$ de cada lado. Usando a estrat\'egia acima, isso implica que $fA = Q, fB = R, fC = S$.
+
+		Em geral, o sistema \textbf{principal} \'e exatamente um polin\^omio de cada lado, nas entradas do jacobiano de $q = (x_1, \cdots, x_{\Delta_n})$. Usando a estrat\'egia polinomial, isso implica que $fA = B$. Q.E.D.$\,\,\blacksquare$
+
+		Falta considerar $\ell > 0$. Foi a demonstra\c{c}\~ao mais tensa de todos os tempos. Fora da reforma \'intima n\~ao h\'a salva\c{c}\~ao.
+
+		\subsection{$(F \circ G)^* = G^* \circ F^*$}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $G: L \rightarrow M, p' \in L, G(p') = p \in M$. Seja $H = F \circ G$.
+
+		$F^* T^n = T^m \Leftrightarrow T_p^m(v_1, \cdots, v_k) = T_q^n(w_1, \cdots, w_k)$ com $w_i = dF_p(v_i)$
+
+		$G^* T^m = T^K \Leftrightarrow T_{p'}^K(u_1, \cdots, u_k) = T_p^m(v_1, \cdots, v_k)$ com $v_i = dG_{p'} (u_i)$
+
+		$H^* T^n = T^K \Leftrightarrow T_{p'}^K(u_1, \cdots, u_k) = T_q^n(w_1, \cdots, w_k)$ com $w_i = dH_{p'} (u_i)$
+
+		Queremos mostrar que $w_i = dF_p(v_i) = dH_{p'} (u_i)$.
+
+		Pelas defini\c{c}\~oes de $v_i$ e $H,\,\,dF_p(dG_{p'} (u_i)) = d(F \circ G)_{p'} (u_i)$.
+
+		E vejam s\'o! Segue exatamente da regra da cadeia. Falta considerar $\ell > 0$.
+
+		\subsection{$\text{Id}^* =$ Id}
+		\begin{flushright}
+		\end{flushright}
+
+		$\text{Id}^* T^n = T^m \Leftrightarrow T_p^m(v_1, \cdots, v_k) = T_p^n(v_1, \cdots, v_k)$
+
+		$T_p^m = T_p^n$
+
+		$T^m = T^n$
+
+		$\text{Id}^* T^n = T^n$
+
+		$\text{Id}^* =$ Id
+
+	\section{Quest\~ao 5.18 de variedades\_diferenciaveis.pdf}
+		\begin{flushright}
+		\end{flushright}
+
+		Dado um vetor tangente $v \in T_pM$, construa um campo diferenci\'avel $X: M \rightarrow TM$ tal que $X_p = v$.
+
+		Seja $M = S^1$.
+
+		Seja o polo norte $p = (0,1) = N$.
+
+		Sabemos que $v = (1, 0) \in T_pM$.
+
+		Queremos $X : S^1 \rightarrow TS^1$
+
+		$p \mapsto (p, X_p = v)$
+
+		$p = (\cos t, \sin t)$
+
+		$q = (-\sin t, \cos t)$
+
+		Escrever $v = 1 e_1 + 0 e_2$ na base $\{ p, q \}$ de $\mathbb{R}^2$.
+
+		A proje\c{c}\~ao radial \'e: $\text{proj}_p v = \cfrac{\langle v, p \rangle}{\langle p, p \rangle}\,\cdot p$
+
+		A coordenada em $T_pS^1$ \'e: $\cfrac{\langle v, q \rangle}{\langle q, q \rangle} = - \sin t$
+
+		Conclus\~ao: $X_p = - \sin t \cdot \partial_t$.
+
+		Veja que o cilindro $x^2 + y^2 = 1, \forall z$ intercepta o plano $z = -y$ no c\'irculo $(\cos t, \sin t, -\sin t)$.
+
+		Engra\c{c}ado o vetor estar em repouso e a sombra dele variar no tempo enquanto a formiguinha roda o c\'irculo.
+
+	\section{Quest\~ao de Lee 5.4, p. 71}
+		\begin{flushright}
+		\end{flushright}
+
+		Se $F$ \'e isometria, ent\~ao $F$(geod\'esica) = geod\'esica.
+
+		Isso \'e o teorema de Rodney 4.5 na p. 79. ``A prova segue imediatamente do fato de isometrias preservarem conex\~oes de Riemann e da regra da cadeia."
+
+		\vspace{3mm}
+
+		Seja a isometria $F: (M, g) \rightarrow (N, \overline{g})$. Seja a \'unica conex\~ao riemanniana $\nabla: \mathcal{T}(M) \times \mathcal{T}(M) \rightarrow \mathcal{T}(M)$. Analogamente, $\overline{\nabla}: \mathcal{T}(N) \times \mathcal{T}(N) \rightarrow \mathcal{T}(N)$.
+
+		Sejam o intervalo $t \in I \subset \mathbb{R}$ e $\gamma : I \rightarrow M$ geod\'esica de $M$. $\gamma(t_0) = p$.
+
+		Seja $\eta = F \circ \gamma$. Queremos mostrar que $\eta$ \'e geod\'esica de $N$.
+
+		Seja $V$ um campo vetorial diferenci\'avel induzido por um campo de vetores $X \in \mathcal{T}(M)$.
+
+		Ou seja, $V = X \circ \cfrac{\mathrm{d} \gamma}{\mathrm{d} t}$. Analogamente, $W = Y \circ \cfrac{\mathrm{d} \eta}{\mathrm{d} t}$.
+
+		\[
+		\begin{tikzcd}
+		& I \arrow[swap]{d}{\cfrac{\mathrm{d} \gamma}{\mathrm{d} t}} \arrow{rd}{\cfrac{\mathrm{d} \eta}{\mathrm{d} t}} &  \\
+		\mathbb{R}^n \arrow{r}{\varphi} & M \arrow{d}{X} \arrow[swap]{r}{F} & N \arrow{d}{Y} \\
+		                                                    & TM & TN
+		\end{tikzcd}
+		\]
+
+		Pela defini\c{c}\~ao 4.1 de geod\'esica, $\cfrac{D}{\mathrm{d} t} \cfrac{\mathrm{d} \gamma}{\mathrm{d} t} = 0$.
+
+		\vspace{3mm}
+
+		Sabemos que isometrias preservam conex\~oes de Riemann atrav\'es da seguinte rela\c{c}\~ao:
+
+		\begin{align}
+		  \nabla_X Y = F_*^{-1} ( \overline{\nabla}_{F_* X} (F_* Y) ) \label{preserva_connection}
+		\end{align}
+
+		Precisamos apenas verificar que $F_* V = W, F_* X = Y, F_* \gamma'(t) = \eta'(t)$.
+
+		Pois por defini\c{c}\~ao de derivada, $\cfrac{DV}{dt} = \nabla_{\gamma'(t)} X \Rightarrow \cfrac{\overline{D}W}{dt} = \overline{\nabla}_{\eta'(t)} Y$.
+
+		Pela igualdade (\ref{preserva_connection}), $F_* \bigg(\cfrac{DV}{dt} \bigg) = F_* (\nabla_{\gamma'(t)} X) = \overline{\nabla}_{F_* \gamma'(t)} (F_* X) \Rightarrow F_* \bigg(\cfrac{DV}{dt} \bigg) = \cfrac{\overline{D}W}{dt} = F_* (0) = 0$.
+
+		Finalmente! A acelera\c{c}\~ao de $\eta$ \'e zero. $\eta$ \'e geod\'esica de $N.\,\,\blacksquare$
+
+	\section{Quest\~ao 3.25 de variedades\_diferenciaveis.pdf}
+		\begin{flushright}
+		\end{flushright}
+
+		Provar que $T\,S^{2n + 1} \cong S^{2n + 1} \times \mathbb{R}^{2n + 1}$
+
+		\vspace{3mm}
+
+		$T\,S^1 = \{ (z, w) \in \mathbb{C}^2 \,; |z| = 1\,; w = zri \,; r \in \mathbb{R}  \} \cong \{ (\cos \mu, \sin \mu, r) \,; \mu = \arg z \} = S^1 \times \mathbb{R}^1$
+
+		Base $[z, zi]_{2 \times 2} = \left[ \begin{matrix} a & -b \\ b & a \end{matrix} \right].\,\,\blacksquare$
+
+		Como ir de $T(0) = \left[ \begin{matrix} 1 & 0 \\ 0 & 1 \end{matrix} \right]$ a $T(1) = \left[ \begin{matrix} -1 & 0 \\ 0 & -1 \end{matrix} \right]$ sempre com $\det T(t) = 1$?
+
+		\'E poss\'ivel. Exemplo: $T(t) = \left[ \begin{matrix} 1 - 2t & - 2\sqrt{t(1-t)} \\ 2\sqrt{t(1-t)} & 1 - 2t \end{matrix} \right]$
+
+		\vspace{3mm}
+
+		$T\,S^3 = \{ (z, w) \in \mathbb{H}^2 \,; |z| = 1\,; w = zu \,; u = ai + bj + ck \,; a,b,c \in \mathbb{R}  \} \cong $
+
+		$ \cong \{ (1, \mu, \lambda_1, \lambda_2, 0, a, b, c) \,; \mu = \arg_0 z \,; \lambda_1 = \arg_1 z \,; \lambda_2 = \arg_2 z \} = S^3 \times \mathbb{R}^3$
+
+		Base $[z, zi, zj, zk]_{4 \times 4} = \left[ \begin{matrix} a & -b & -c & -d \\ b & a & -d & c \\ c & d & a & -b \\ d & -c & b & a \end{matrix} \right].\,\,\blacksquare\,\,$N\~ao \'e poss\'ivel essa permuta\c{c}\~ao com 6 n\'umeros.
+
+		\vspace{3mm}
+
+		Aceitamos sem demonstra\c{c}\~ao que isso funciona com oct\^onions em $S^7$.
+
+		\subsection{$S^2$}
+		\begin{flushright}
+		\end{flushright}
+
+		Abaixo uma tentativa de completar a base de $\mathbb{R}^3$ de posse de 3 n\'umeros $(a,b,c)$.
+
+		$ax + by + cz = 0$
+
+		$c = 0 \vee z = \cfrac{-ax - by}{c}$
+
+		$c = 0 \Rightarrow (x,y) = t_1 (-b, a), z = t_2, \forall t_i \in \mathbb{R}$
+
+		$c \ne 0 \Rightarrow \left( \begin{matrix} x \\ y \\ z \end{matrix} \right) = x \left( \begin{matrix} 1 \\ 0 \\ -a/c \end{matrix} \right) + y \left( \begin{matrix} 0 \\ 1 \\ -b/c \end{matrix} \right), \forall x,y \in \mathbb{R}$
+
+		$B_0(p) = \left( \begin{matrix} a & -b & 0 \\ b & a & 0 \\ 0 & 0 & 1 \end{matrix} \right) \vee B_1(p) = \left( \begin{matrix} a & c & 0 \\ b & 0 & c \\ c & -a & -b \end{matrix} \right) \therefore B(p) = B_1(p) + \delta(c = 0) \left( \begin{matrix} 0 & -b & 0 \\ 0 & a & 0 \\ 0 & a & b + 1 \end{matrix} \right)$
+
+		No nosso caso, a descontinuidade em $c = 0$ s\'o \'e evitada retirando o equador inteiro e ficando com o hemisf\'erio norte pra l\'a e o hemisf\'erio sul pra c\'a. Isso vai acontecer em $S^5, S^9, S^{11}, S^{13}, \cdots$ Gostaria de ver uma prova disso.
+
+		\subsection{$S^5$}
+		\begin{flushright}
+		\end{flushright}
+
+		Sejam $i,j,k,\ell,m \in M_{6 \times 6}(\mathbb{R})$.
+
+		$u_1 = i \Rightarrow zai = a \cdot [i]_{6 \times 6} \cdot [z]_{6 \times 1}$
+
+		$u_2 = j$
+
+		$u_3 = k$
+
+		$u_4 = \ell$
+
+		$u_5 = m$
+
+		$T\,S^5 = \{ (z, w) \in \mathbb{R}^6 \,; |z| = 1\,; w = zu \,; u = ai + bj + ck + d\ell + em \,; a,b,c,d,e \in \mathbb{R}  \} \ncong $
+
+		$ \ncong \{ (1, \mu, \lambda_1, \lambda_2, \lambda_3, \lambda_4, 0, a, b, c, d, e) \,; \mu = \arg_0 z \,; \lambda_i = \arg_i z  \} = S^5 \times \mathbb{R}^5$
+
+		Base $[z, d_1, d_2, d_3, d_4, d_5] = [z, zi, zj, zk, z\ell, zm]_{6 \times 6}$.
+
+		$iz, jz, kz, \ell z, mz \perp z \Rightarrow i + i^T = 0, j + j^T = 0, k + k^T = 0, \ell + \ell^T = 0, m + m^T = 0$. Uma matriz sim\'etrica tem 15 dimens\~oes.
+
+		$jz, kz, \ell z, mz \perp iz$. Um produto interno \'e uma equa\c{c}\~ao s\'o.
+
+		$kz, \ell z, mz \perp jz$
+
+		$\ell z, mz \perp kz$
+
+		$mz \perp \ell z$. Logo, s\~ao 75 vari\'aveis e 10 equa\c{c}\~oes.
+
+		\vspace{3mm}
+
+		$T\,S^5 = \{ (z, w) \,; z, w \in \mathbb{R}^6 \,; \Vert z \Vert = 1\,; w \perp z \Leftrightarrow w = z + t_1 d_1 + \cdots + t_5 d_5 \,; d_i \perp z \} \ncong$
+
+		$\ncong \{ (1, \mu, \lambda_1, \cdots, \lambda_4, t_1, t_2, \cdots, t_5) \,; \mu = \Phi_0(z) \,; \lambda_i = \Phi_i(z) \} = S^5 \times \mathbb{R}^5$
+
+		\subsection{$S^{2n+1}, n \ge 4$}
+		\begin{flushright}
+		\end{flushright}
+
+		$T\,S^{2n + 1} = \{ (z, w) \,; z, w \in \mathbb{R}^{2n + 2} \,; \Vert z \Vert = 1\,; w \perp z \Leftrightarrow w = z + t_1 d_1 + \cdots + t_{2n + 1} d_{2n + 1} \,; d_i \perp z \} \ncong$
+
+		$\ncong \{ (1, \mu, \lambda_1, \cdots, \lambda_{2n}, t_1, t_2, \cdots, t_{2n + 1}) \,; \mu = \Phi_0(z) \,; \lambda_i = \Phi_i(z) \} = S^{2n + 1} \times \mathbb{R}^{2n + 1}$
+
+		\vspace{3mm}
+
+		$T\,S^{2n + 1} = \{ (z, w) \,; z, w \in \mathbb{R}^{2n + 2} \,; \Vert z \Vert = 1\,; w = zu \,; u = a_1 u_1 + \cdots + a_{2n + 1} u_{2n + 1} \,; a_i \in \mathbb{R} \} \ncong$
+
+		$\ncong \{ (1, \mu, \lambda_1, \cdots, \lambda_{2n}, 0, a_1, a_2, \cdots, a_{2n + 1}) \,; \mu = \Phi_0(z) \,; \lambda_i = \Phi_i(z) \} = S^{2n + 1} \times \mathbb{R}^{2n + 1}$
+
+		Base $[z, d_1, \cdots, d_{2n + 1}] = [z, zu_1, \cdots, zu_{2n + 1}]_{(2n + 2) \times (2n + 2)}$.
+
+		\begin{align*}
+		\mu &\in [0, 2\pi) \,; \lambda_i \in [-90^\circ, 90^\circ] \text{, uma longitude e }2n\text{ latitudes} \\
+		z_1 &= r \cos \mu \cos \lambda_1 \cos \lambda_2 \cdots \cos \lambda_{2n} \\
+		z_2 &= r \sin \mu \cos \lambda_1 \cos \lambda_2 \cdots \cos \lambda_{2n} \\
+		z_3 &= r \sin \lambda_1 \cos \lambda_2 \cdots \cos \lambda_{2n} \\
+		z_4 &= r \sin \lambda_2 \cos \lambda_3 \cdots \cos \lambda_{2n} \\
+		&\vdots \\
+		z_{2n + 2} &= r \sin \lambda_{2n}
+		\end{align*}
+
+		Seja $A(t) = \cfrac{2 + \cos t}{3}\, \cdot $ Id $\Rightarrow A(0) = \text{Id} = A(2\pi) \Rightarrow A\bigg( \cfrac{\pi}{2} \bigg) = \cfrac{2}{3} \cdot\text{Id}\Rightarrow A(\pi) = \cfrac{1}{3}\, \cdot$ Id.
+
+		$\det A(t) = \bigg( \cfrac{2 + \cos t}{3} \bigg)^{2n+2} \le 0 \Leftrightarrow \cos t = -2$
+
+		\subsection{$S^{2n}$ tem duas orienta\c{c}\~oes}
+		\begin{flushright}
+		\end{flushright}
+
+		J\'a o determinante negativo reverte orienta\c{c}\~ao. A identidade n\~ao \'e homot\'opica \`a ant\'ipoda no caso abaixo.
+
+		$T\,S^{2n} = \{ (z, w) \,; z, w \in \mathbb{R}^{2n + 1} \,; \Vert z \Vert = 1\,; w \perp z \Leftrightarrow w = z + t_1 d_1 + \cdots + t_{2n} d_{2n} \,; d_i \perp z \} \ncong$
+
+		$\ncong \{ (1, \mu, \lambda_1, \cdots, \lambda_{2n - 1}, t_1, t_2, \cdots, t_{2n}) \,; \mu = \Phi_0(z) \,; \lambda_i = \Phi_i(z) \} = S^{2n} \times \mathbb{R}^{2n}$
+
+		Seja a homotopia $T : [0, 1] \rightarrow M_{3 \times 3} (\mathbb{R}) \,; t \mapsto T(t) \,; T(0) = \text{Id} \,; T(1) = - \text{Id}$.
+
+		Como a fun\c{c}\~ao determinante \'e cont\'inua, vale o teorema do valor intermedi\'ario. $\exists t \in (0, 1) \,; \det T(t) = 0$. Q.E.A. $\,\,\blacksquare$
+
+		$T\,S^2$ se parece com uma extens\~ao imagin\'aria $M^{2+2}$ da faixa de M\"obius $M^{1+1}$.
+
+		$T\,S^{2n}$ se parece com uma extens\~ao imagin\'aria $M^{2n + 2n}$ da faixa de M\"obius $M^{1+1}$. Fibrado sobre $S^{2n}$ com fibra $\mathbb{R}^{2n}$.
+
+	\section{Quest\~ao de Lee p. 67}
+		\begin{flushright}
+		\end{flushright}
+
+		Provar o Lema 5.2: $\nabla$ \'e compat\'ivel com $g \Leftrightarrow \nabla g \equiv 0$.
+
+		Defini\c{c}\~ao de compatibilidade: $\nabla$ \'e compat\'ivel com $g \Leftrightarrow \nabla_X \langle Y, Z \rangle = \langle \nabla_X Y, Z \rangle + \langle Y, \nabla_X Z \rangle, \forall X, Y, Z \in \mathcal{T}(M)$.
+
+		Seja $g$ tensor 0-covariante e k-contravariante. $k = 2$.
+
+		Defini\c{c}\~ao de derivada covariante total de $g$ em rela\c{c}\~ao a $Z$: $\nabla g(X_1,\cdots,X_k, Z) = \nabla_{Z} g(X_1,\cdots,X_k)$, em que $Z$ \'e a \'ultima vari\'avel contravariante em ambos os lados.
+
+		Seja $M, \nabla$. Existe extens\~ao \'unica da conex\~ao (p. 140) com as propriedades:
+
+		\begin{align}
+		\nabla_Z f &= Zf \label{conecta_tpm_f} \\
+		(\nabla_Z g)(X_1, \cdots, X_k) &= Z(g(X_1, \cdots, X_k)) - \sum_{i=1}^k g(X_1, \cdots, \nabla_Z X_i, \cdots, X_k) \label{seis_um_b} \\
+		\nabla_Z [\omega(X)] &= (\nabla_Z \omega)(X) + \omega(\nabla_Z X) \nonumber \\
+		\nabla_Z (F \otimes G) &= \nabla_Z F \otimes G + F \otimes \nabla_Z G \nonumber \\
+		\nabla_{\partial i} dx^j &= - \Gamma_{i1}^j dx^1 - \cdots - \Gamma_{in}^j dx^n \nonumber
+		\end{align}
+
+		$\nabla g (X, Y, Z) = \nabla_Z g(X,Y) $, pela defini\c{c}\~ao
+
+		$= Z [g(X, Y)] - g (\nabla_Z X, Y) - g(X, \nabla_Z Y) $, pela igualdade (\ref{seis_um_b})
+
+		$= Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle $, pela m\'etrica
+
+		$= Z \langle X, Y\rangle - \nabla_Z \langle X, Y \rangle$, pela compatibilidade
+
+		$= 0$, pela igualdade (\ref{conecta_tpm_f})
+
+		Provamos que se $\nabla$ \'e compat\'ivel com $g \Rightarrow \nabla g \equiv 0$.
+
+		Reciprocamente, seja $\nabla g(X,Y,Z) = 0$.
+
+		$\nabla_Z g(X,Y) = 0$, pela defini\c{c}\~ao
+
+		$Z [g(X, Y)] - g (\nabla_Z X, Y) - g(X, \nabla_Z Y) = 0$, pela igualdade (\ref{seis_um_b})
+
+		$Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle = 0$, pela m\'etrica
+
+		$\nabla_Z \langle X, Y\rangle - \langle \nabla_Z X, Y \rangle - \langle X, \nabla_Z, Y \rangle = 0$, pela igualdade (\ref{conecta_tpm_f})
+
+		$\nabla_Z \langle X, Y\rangle = \langle \nabla_Z X, Y \rangle + \langle X, \nabla_Z, Y \rangle$ Q.E.D. $\,\,\blacksquare$
+
+	\section{O Toro Plano}
+		\begin{flushright}
+		\end{flushright}
+
+		$\mathbb{R}^n \stackrel{\pi}{\longrightarrow} T^n \stackrel{\pi^{-1}}{\longrightarrow} U^n $
+
+		Quest\~ao de Manfredo 1.2, p. 50: Introduza m\'etrica de Riemann no toro $T^n$, exigindo que a proje\c{c}\~ao $\pi$ dada por $\pi(x_1, \cdots, x_n) = (\cos x_1, \sin x_1, \cdots, \cos x_n, \sin x_n)$ seja uma isometria local.
+
+		Prove que, com essa m\'etrica, $T^n$ \'e isom\'etrico ao toro plano.
+
+		Segundo a wikipedia, o toro plano mais simples \'e $U^2 = \cfrac{\mathbb{R}^2}{\mathbb{Z}^2}, \mathbb{Z}^2 < \mathbb{R}^2$, subgrupo discreto.
+
+		$\partial_1 \pi = (- \sin x_1, \cos x_1, 0, \cdots, 0)$
+
+		$\partial_2 \pi = (0, 0, - \sin x_2, \cos x_2, 0, \cdots, 0)$
+
+		$\vdots$
+
+		$\partial_n \pi = (0, \cdots, 0, - \sin x_n, \cos x_n)$
+
+		$g_{ii} = \langle \partial_i \pi, \partial_i \pi \rangle$ = 1
+
+		$i \ne j \Rightarrow g_{ij} = \langle \partial_i \pi, \partial_j \pi \rangle = 0 \Rightarrow G =$ Id.
+
+		\vspace{3mm}
+
+		Verificar que ${(\pi^{-1})}^* g = g$.
+
+		Sejam $p = (x^1, \cdots, x^n), \pi(p) = q = (y^1, \cdots, y^{2n}) \in T^n$.
+
+		${(\pi^{-1})}^* g(V,V) = g(\pi^{-1}_* V, \pi^{-1}_* V) = \langle \pi^{-1}_* V, \pi^{-1}_* V\rangle_q = (Vy^1)^2 + \cdots + (Vy^{2n})^2$
+
+		$V y^1 = V^1 \partial_1 y^1 + \cdots + V^n \partial_n y^1 = - V^1 \sin x_1$
+
+		$V y^2 = V^1 \cos x_1$
+
+		$V y^3 = - V^2 \sin x_2$
+
+		$V y^4 = V^2 \cos x_2$
+
+		$\vdots$
+
+		$V y^{2n - 1} = - V^n \sin x_n$
+
+		$V y^{2n} = V^n \cos x_n$
+
+		${(\pi^{-1})}^* g(V,V) = V_1^2 + \cdots + V_n^2 = \langle V, V \rangle_p = g(V, V)$
+
+		\vspace{3mm}
+
+		Aceitamos sem demonstra\c{c}\~ao que a m\'etrica de $U^n$ \'e a mesma de $\mathbb{R}^n$.
+
+	\section{Quest\~ao de Manfredo 1.4}
+		\begin{flushright}
+		\end{flushright}
+
+		$G = \{g : \mathbb{R} \rightarrow \mathbb{R} \,; g(t) = yt + x \,; y > 0 \}\,$ \'e um grupo de Lie.
+
+		Como variedade diferenci\'avel, $G$ \'e simplesmente o semiplano superior com a estrutura diferenci\'avel usual.
+
+		\vspace{3mm}
+
+		Defini\c{c}\~ao 2.15: $G$ \'e grupo de Lie se a aplica\c{c}\~ao $F(g,h) = gh^{-1}$ \'e diferenci\'avel, $\forall g,h \in G$.
+
+		Teorema 2.16: $G$ \'e grupo de Lie se e s\'o se $F(g) = g^{-1}, P(g,h) = gh$ s\~ao diferenci\'aveis.
+
+		$t = \cfrac{g(t) - x}{y} \Rightarrow g^{-1}(t) = \cfrac{1}{y} \cdot t - \cfrac{x}{y}$ \'e diferenci\'avel.
+
+		$h(t) = rt + q \Rightarrow g(h(t)) = yh(t) + x = ryt + qy + x = L_g(h(t))$ \'e diferenci\'avel. $\therefore G$ sim, \'e um grupo de Lie.
+
+		\vspace{3mm}
+
+		A m\'etrica de Riemann de $G$ invariante \`a esquerda, que no elemento neutro $e = (0, 1)$ coincide com a m\'etrica euclidiana $(G = \text{Id})$ \'e dada por $G = \cfrac{1}{y^2} \cdot$ Id.
+
+		\vspace{3mm}
+
+		$e(t) = t\,;g = \left(\begin{matrix} x \\ y \end{matrix} \right) \Rightarrow g^{-1} = \left(\begin{matrix} -\cfrac{x}{y} \\ \cfrac{1}{y} \end{matrix} \right)\,;h = \left(\begin{matrix} q \\ r \end{matrix} \right) \Rightarrow L_g (h) =\left(\begin{matrix} qy + x \\ ry \end{matrix} \right)$
+
+		$g^{-1}(h(t)) = \cfrac{1}{y} \cdot h(t) - \cfrac{x}{y} = \cfrac{rt + q - x}{y}$
+
+		$L_{g^{-1}}(h) = g^{-1} h = g^{-1}\left(\begin{matrix} q \\ r \end{matrix} \right) = \left(\begin{matrix} \cfrac{q-x}{y} \\ \cfrac{r}{y} \end{matrix} \right) \Rightarrow (dL_{g^{-1}})_{(q,r)} = \left( \begin{matrix} \cfrac{1}{y} & 0 \\ 0 & \cfrac{1}{y} \end{matrix} \right) = J$ constante em rela\c{c}\~ao a $(q,r)$.
+
+		$\langle V, V \rangle_g = \langle (dL_{g^{-1}})_g V, (dL_{g^{-1}})_g V \rangle_e = \langle J V, J V \rangle_e = \left\langle \left(\begin{matrix} \cfrac{V^1}{y} \\ \cfrac{V^2}{y} \end{matrix} \right), \left(\begin{matrix} \cfrac{V^1}{y} \\ \cfrac{V^2}{y} \end{matrix} \right) \right\rangle_e \stackrel{\text{Euclides}}{=} \cfrac{V_1^2}{y^2} + \cfrac{V_2^2}{y^2} \,\,\blacksquare$ A m\'etrica do tio Loba.
+
+\end{document}

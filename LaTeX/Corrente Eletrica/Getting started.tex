@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+
+
+\begin{align}
+i_1' &= a i_1 + b i_2 + d \\
+k i_2 &+ f i_1 + g i_2' + h i_1' = j \\
+k i_2 &+ f i_1 + g i_2' + h (a i_1 + b i_2 + d) = j \\
+i_2' &= a' i_1 + b' i_2 + d' \\
+I' + P\cdot I &= Q \\
+I &=  e^{-tP} \int_{t_0}^t e^{\tau P}\cdot Q\,\mathrm{d}\tau + i(t_0) \\
+I &=  e^{-tP} \left[ - P^{-1} e^{t P}\cdot Q + P^{-1} e^{t_0 P}\cdot Q \right] + i(t_0) \\
+I &=  \underbrace{e^{-tP} P^{-1}} \left[ - e^{t P} + e^{t_0 P} \right]\cdot Q + i(t_0)
+\end{align}
+
+Gostar\'iamos que comutasse, mas n\~ao.
+
+\begin{align}
+I &=   P^{-1} \left[ - Id + e^{(t_0-t)P} \right] \cdot Q + i(t_0)
+\end{align}
+
+
+\end{document}

@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Regress\~ao Linear de 3 Pontos
+\end{center}
+
+\normalsize
+
+Por 2 pontos, passa \'unica reta.
+
+Se um erro \'e $0,10$ e o outro erro \'e $0,20$, o erro quadr\'atico \'e $x$ minimizando $E(x) = (x - 0,10)^2 + (x - 0,20)^2$.
+
+\begin{align}
+  E'(x) &= 2(x - 0,10) + 2(x - 0,20) = 0
+\end{align}
+
+Portanto, $x$ \'e a m\'edia aritm\'etica.
+
+\vspace{3mm}
+
+Por 3 pontos $P = (a, b), Q = (c, d), R = (u, v)$ existe \'unica reta com erro quadr\'atico m\'inimo.
+
+Suponha ser imposs\'ivel reta vertical $x = x_0$.
+
+Ent\~ao a reta $s$ desejada \'e $f(x) = mx + y_0$. Queremos determinar os reais $m, y_0$.
+
+Ela passa pelos pontos $P' = (a, f(a)), Q' = (c, f(c)), R' = (u, f(u))$.
+
+O erro quadr\'atico \'e $E = [f(a) - b]^2 + [f(c) - d]^2 + [f(u) - v]^2$.
+
+\begin{align}
+  E(m, y_0) &= [ma + y_0 - b]^2 + [mc + y_0 - d]^2 + [mu + y_0 - v]^2 \\
+  \nabla E &= 0 \\
+  \cfrac{\partial E}{\partial m} &= 2 (ma + y_0 - b) a + 2 (mc + y_0 - d) c + 2 (mu + y_0 - v) u = 0 \\
+  m(a^2 &+ c^2 + u^2) + y_0(a + c + u) = ab + cd + uv \\
+  \cfrac{\partial E}{\partial y_0} &= 2 (ma + y_0 - b) + 2 (mc + y_0 - d) + 2 (mu + y_0 - v) = 0 \\
+  m(a &+ c + u) + 3y_0 = b + d + v
+\end{align}
+
+\'E um sistema linear. S\'o falta usar regra de Cramer.
+
+\begin{align}
+  \begin{pmatrix} \alpha & \eta \\ \beta & \theta \end{pmatrix} \cdot \begin{pmatrix} m \\ y_0 \end{pmatrix} &= \begin{pmatrix} \kappa \\ \lambda \end{pmatrix} \\
+  m &= \cfrac{D_1}{D} \\
+  y_0 &= \cfrac{D_2}{D}
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 6/Sep/2019, Release $1.0$
+
+\end{document}

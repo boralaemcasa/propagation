@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{cancel}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\subsection{Variation of Parameters | Equivalent Exponentials of Polynomials}
+
+\begin{flushright}
+\end{flushright}
+
+We have polynomial of $n$-th degree of $x$ with real coefficients equals to zero.
+
+\begin{align}
+p_n(x) &= 0 \Leftrightarrow x \in \{ r_1, \cdots, r_n \} = S
+\end{align}
+
+We have exponential of $xt$ plus polynomial of $(n-1)$-th degree of $x$ with coefficients $f_i(t)$ equals to zero.
+
+\begin{align}
+\varphi_{n - 1}(x, t) &= e^{xt} + p'_{n-1}(x, t) \\
+\varphi_{n - 1}(x, t) &= 0 \Leftrightarrow x \in S, \forall t \in \mathbb{R} \\
+\varphi_{n - 1}^{-1}(0) &= S \times \mathbb{R}
+\end{align}
+
+And for each term $n$ of the Taylor series $\exp rt = \sum \cfrac{r^n}{n!} \cdot x^n$,
+
+\begin{align}
+\psi_a(x, a) &= x^a + p''_{n-1}(x, n) \\
+\psi_a(x, a) &= 0 \Leftrightarrow x \in S, \forall a \in \mathbb{N} \\
+\psi_a^{-1}(0) &= S \times \mathbb{N}
+\end{align}
+
+\vspace{3mm}
+
+\begin{align}
+a &= - \cfrac{1}{2} \\
+b, c &= \pm \cfrac{\sqrt{3}}{2} \\
+D_1 &= \left( \begin{matrix} a & b & 0 & 0 \\ -b & a & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{matrix} \right) \\
+D_2 &= \left( \begin{matrix} 1 & 0 & 0 & 0 \\  0 & a & b & 0 \\ 0 &-b & a & 0 \\ 0 & 0 & 0 & 1 \end{matrix} \right) \\
+D_3 &= \left( \begin{matrix} 1 & 0 & 0 & 0 \\  0 & 1 & 0 & 0 \\ 0 & 0 & a & b \\ 0 & 0 &-b & a \end{matrix} \right) \\
+D_4 &= \left( \begin{matrix} a & b & 0 & 0 \\ -b & a & 0 & 0 \\ 0 & 0 & a & c \\ 0 & 0 &-c & a \end{matrix} \right) \\
+C = \sqrt[3]{\text{Id}_{4 \times 4}} &= \{ \text{Id} \} \cup \{ T^{-1} \circ D_i \circ T\,;\,T \in \text{GL}(4)\,;\,1 \le i \le 4 \} \\
+M \in C \Rightarrow M^3 &= \text{Id} \Rightarrow \{ \text{Id}, M, M^2 \} = (G, \circ) \cong \mathbb{Z}_3
+\end{align}
+
+\vspace{3mm}
+
+quod erat demonstrandum | Out of charity, there is no salvation at all.
+
+\vspace{3mm}
+
+I did not suppose that, but I was playing with $(x + 2)(x + 3)(x + 5)(x + 7) = 0$.
+
+\vspace{3mm}
+
+\textbf{Exercise: } Now, do the same without numbers.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, $01^{\text{st}}$/May/2019, Release 1.0
+
+\end{document}

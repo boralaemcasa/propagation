@@ -1,0 +1,493 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{eucal}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows, matrix}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+\begin{document}
+
+Main Video on \href{https://www.youtube.com/watch?v=mmzqmIcX7xo}{\color{blue}\underline{YouTube}}.
+
+\begin{align}
+  M &= \left( \begin{matrix} a & s \\ b & t \end{matrix} \right) = \left( \begin{matrix} \mathrm{d}u \\ \mathrm{d}v \end{matrix} \right) = \left(\cfrac{\partial}{\partial u}, \cfrac{\partial}{\partial v}\right) = (\partial u, \partial v) \\
+  M(x,y) &= \left( \begin{matrix} ax + sy \\ bx + ty \end{matrix} \right) \text{ \'e linear, mas }f(x,y) \text{ n\~ao \'e necesariamente linear} \\
+  u(x,y) &= ax + sy \\
+  v(x,y) &= bx + ty \\
+  \mathrm{d}u_p(f) &= a\, \mathrm{d}x_p(f) + s\, \mathrm{d}y_p(f) = af_1 + sf_2 \\
+  \mathrm{d}v_p(f) &= b\, \mathrm{d}x_p(f) + t\, \mathrm{d}y_p(f) = bf_1 + tf_2 \\
+  \partial u_p(f) &= a\, \partial x_p(f) + b\, \partial y_p(f) = af_x + bf_y \\
+  \partial v_p(f) &= s\, \partial x_p(f) + t\, \partial y_p(f) = sf_x + tf_y \\
+  \mathrm{d}x_p ( \partial u_p(f) ) &= a \\
+  \mathrm{d}y_p ( \partial u_p(f) ) &= b \\
+  \mathrm{d}x_p ( \partial v_p(f) ) &= s \\
+  \mathrm{d}y_p ( \partial v_p(f) ) &= t \\
+  M &= \left( \begin{matrix} \mathrm{d}x_p ( \partial u_p(f) ) & \mathrm{d}x_p ( \partial v_p(f) ) \\ \mathrm{d}y_p ( \partial u_p(f) ) & \mathrm{d}y_p ( \partial v_p(f) ) \end{matrix} \right) \\
+  M &= \left( \begin{matrix} \partial x_p(\mathrm{d}u_p(f)) & \partial y_p(\mathrm{d}u_p(f)) \\ \partial x_p(\mathrm{d}v_p(f)) & \partial y_p(\mathrm{d}v_p(f)) \end{matrix} \right) \\
+  &\text{Mais geralmente, a matriz de }(\partial u, \partial v)_{1 \times 2} \text{ independe da matriz de }(\mathrm{d} u, \mathrm{d} v)^\top_{2 \times 1}  \\
+  (\mathrm{d} u \otimes \partial u)_p (V, \omega) &= a_1a_2\, \mathrm{d}x \otimes \partial x + a_1b_2\, \mathrm{d} x \otimes \partial y + b_1a_2\, \mathrm{d}y \otimes \partial x + b_1b_2 \, \mathrm{d}y \otimes \partial y\\
+  (\mathrm{d} u \otimes \partial v)_p (V, \omega) &= a_1s_2\, \mathrm{d}x \otimes \partial x + a_1t_2\, \mathrm{d} x \otimes \partial y + s_1s_2\, \mathrm{d}y \otimes \partial x + s_1t_2\, \mathrm{d}y \otimes \partial y \\
+  (\mathrm{d} v \otimes \partial u)_p (V, \omega) &= s_1a_2\, \mathrm{d}x \otimes \partial x + s_1b_2\, \mathrm{d} x \otimes \partial y + t_1a_2\, \mathrm{d}y \otimes \partial x + t_1b_2\, \mathrm{d}y \otimes \partial y \\
+  (\mathrm{d} v \otimes \partial v)_p (V, \omega) &= s_1s_2\, \mathrm{d}x \otimes \partial x + s_1t_2\, \mathrm{d} x \otimes \partial y + t_1s_2\, \mathrm{d}y \otimes \partial x + t_1t_2\, \mathrm{d}y \otimes \partial y \\
+  \mathrm{d}x(V) &= V^1 \\
+  \mathrm{d}y(V) &= V^2 \\
+  \partial x (\omega) &= \omega_1 \\
+  \partial y (\omega) &= \omega_2 \\
+\text{Conven\c{c}\~ao: } T &= \left( \begin{matrix} V^1\, \omega_1 & V^1\, \omega_2 \\ V^2\, \omega_1 & V^2\, \omega_2 \end{matrix} \right) \,;\,U = \left( \begin{matrix} V^1V^1 & V^1 V^2 \\ V^1 V^2 & V^2V^2 \end{matrix} \right)\,;\,W = \left( \begin{matrix} \omega_1^2 & \omega_1 \omega_2 \\ \omega_1 \omega_2 & \omega_2^2 \end{matrix} \right) \\
+F_1 &= \left( \begin{matrix} a_1 a_2 & a_1 b_2 \\ b_1 a_2 & b_1 b_2 \end{matrix} \right) \,;\,G_1 = \left( \begin{matrix} a^2 & as \\ as & s^2 \end{matrix} \right) \\
+F_2 &= \left( \begin{matrix} a_1 s_2 & a_1 t_2 \\ s_1 s_2 & s_1 t_2 \end{matrix} \right)\,;\,G_2 = \left( \begin{matrix} b^2 & bt \\ bt & t^2 \end{matrix} \right) \\
+F_3 &= \left( \begin{matrix} s_1 a_2 & s_1 b_2 \\ t_1 a_2 & t_1 b_2 \end{matrix} \right)\,;\,H_1 = \left( \begin{matrix} a^2 & ab \\ ab & b^2 \end{matrix} \right) \\
+F_4 &= \left( \begin{matrix} s_1 s_2 & s_1 t_2 \\ t_1 s_2 & t_1 t_2 \end{matrix} \right)\,;\,H_2 = \left( \begin{matrix} s^2 & st \\ st & t^2 \end{matrix} \right)
+\end{align}
+
+\begin{align}
+  &\text{No pior caso, como mudar de (du dv) para (dx dy)?} \\
+  T &= T(p)(V^1, \cdots, V^k, \omega_1, \cdots, \omega_\ell) = \sum_{i_m, j_m = 1}^2 T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\, \bigotimes_{m = 1}^k \,\mathrm{d}u^{i_m} \bigotimes_{m = 1}^\ell \partial u_{j_m} \\
+  \mathrm{d}u^{i_z} &= u_{i_z;\,1} \,\mathrm{d}x^1 + u_{i_z;\,2} \,\mathrm{d}x^2 = \sum_{i_m = 1}^2 u_{i_z;\,i_m} \,\mathrm{d}x^{i_m};\,m = z + k \\
+  \partial u_{j_z} &= u^{j_z;\,1} \,\partial x_1 + u^{j_z;\,2} \,\partial x_2 = \sum_{j_m = 1}^2 u^{j_z;\,j_m} \,\partial x_{j_m};\,m = z + \ell \\
+  T &= \sum_{i_m, j_m = 1}^2 \tau_{i_{1+k}, \cdots, i_{2k}}^{j_{1+\ell}, \cdots, j_{2\ell}} \bigotimes_{m = 1 + k}^{2k} \,\mathrm{d}x^{i_m} \bigotimes_{m = 1+\ell}^{2\ell} \partial x_{j_m} \\
+  T &= \sum_{i_m, j_m = 1}^2 T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\, \left( \bigotimes_{m = 1 + k}^{2k} \sum_{i_m = 1}^2 u_{i_1;\,i_m} \,\mathrm{d}x^{i_m} \bigotimes_{m = 1 + \ell}^{2\ell} \sum_{j_m = 1}^2 u^{j_1;\,j_m} \,\partial x_{j_m} \right)  \\
+  \tau_{i_{1+k}, \cdots, i_{2k}}^{j_{1+\ell}, \cdots, j_{2\ell}} &= T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\, u_{i_1;\,i_{1+k}} \cdots \, u_{i_k;\,i_{2k}} \, u^{j_1;\,j_{1+\ell}} \cdots \, u^{j_\ell;\,j_{2\ell}} \\
+  \tau_{i_{1+k}, \cdots, i_{2k}}^{j_{1+\ell}, \cdots, j_{2\ell}} &= T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\,\prod_{m=1}^k u_{i_m;\,i_{m+k}}  \prod_{m=1}^\ell u^{j_m;\,j_{m+\ell}} \\
+  &\text{Cada coordenada tem uma parcela de } k + \ell + 1 \text{ fatores.} \\
+  \left( \begin{matrix} \partial u_1 \\ \partial u_2 \end{matrix} \right) &= \left( \begin{matrix} u^{11} & u^{12} \\ u^{21} & u^{22} \end{matrix} \right) \, \left( \begin{matrix} \partial x_1 \\ \partial x_2 \end{matrix} \right) \Leftrightarrow \partial u^\top = U^{ij} \, \partial x^\top \\
+  \left( \begin{matrix} \partial x_1 \\ \partial x_2 \end{matrix} \right) &= \cfrac{1}{\det U^{ij}} \left( \begin{matrix} u^{22} & -u^{12} \\ -u^{21} & u^{11} \end{matrix} \right) \, \left( \begin{matrix} \partial u_1 \\ \partial u_2 \end{matrix} \right) \Leftrightarrow \partial x^\top = (U^{ij})^{-1} \, \partial u^\top \\
+  \left( \begin{matrix} \mathrm{d} u^1 \\ \mathrm{d} u^2 \end{matrix} \right) &= \left( \begin{matrix} u_{11} & u_{12} \\ u_{21} & u_{22} \end{matrix} \right) \, \left( \begin{matrix} \mathrm{d} x^1 \\ \mathrm{d} x^2 \end{matrix} \right) \Leftrightarrow \mathrm{d} u = U_{ij} \, \mathrm{d} x \\
+  \left( \begin{matrix} \mathrm{d} x^1 \\ \mathrm{d} x^2 \end{matrix} \right) &= \cfrac{1}{\det U_{ij}} \left( \begin{matrix} u_{22} & -u_{12} \\ -u_{21} & u_{11} \end{matrix} \right) \, \left( \begin{matrix} \mathrm{d} u^1 \\ \mathrm{d} u^2 \end{matrix} \right) \Leftrightarrow \mathrm{d} x = U_{ij}^{-1} \, \mathrm{d} u
+\end{align}
+
+Sejam $M \in M_{a \times b}(\mathbb{R})\,;\,n = \Delta_m = \dim \mathcal{M} + \text{codim } \mathcal{M}\text{ ; em que }(\mathcal{M}, \langle \cdot, \cdot \rangle)$ \'e nossa variedade.
+
+\begin{align}
+  \mathrm{d}u^1_p(M) &= u_{11} (M_{11}, \cdots, M_{1b}) + u_{12} (M_{21}, \cdots, M_{2b}) = \sum_{i = 1}^b \langle u_{1j}, M^i_j \rangle\, \mathrm{d}\mu^i,\,1 \le j \le 2 \\
+  \partial {u_1}_p(M) &= u^{11} \left( \begin{matrix} M_{11} \\ \vdots \\ M_{a1} \end{matrix} \right) + u^{12} \left( \begin{matrix} M_{12} \\ \vdots \\ M_{a2} \end{matrix} \right) = \sum_{j = 1}^a \langle u^{1k}, M^j_k \rangle\, \partial \mu_j,\,1 \le k \le 2 \\
+  \{ \mathrm{d}x_1, \cdots, \mathrm{d}x_n \} &\mapsto \{ \mathrm{d}u_1, \cdots, \mathrm{d}u_n \} \text{ d\'a tudo na mesma. Seja } U^{ij} \in M_{n \times n}(\mathbb{R}) \\
+  \mathrm{d}u_p(M)_{n \times b} &= U_{ij} M'_{n \times b} =  \sum_{i = 1}^b \left\langle \left( \begin{matrix} u_{1j} \\ \vdots \\ u_{nj} \end{matrix} \right), M^i_j \right\rangle\, \mathrm{d}\mu^i,\,1 \le j \le n \\
+  \partial u_p(M)_{a \times n} &= M''_{a \times n} U^{ij} = \sum_{j = 1}^a \left\langle \left( \begin{matrix} u^{1k} \\ \vdots \\ u^{nk} \end{matrix} \right)^\top, M^j_k \right\rangle\, \partial \mu_j,\,1 \le k \le n
+\end{align}
+
+\begin{align}
+  \therefore\,\mathrm{d}u_p(f)_{n \times 1} &= U_{ij} f_{n \times 1}\,;\,\partial u_p(f)_{1 \times n} = (\nabla f)_{1 \times n} U^{ij}\text{ ; Seja }f : \mathbb{R}^a \rightarrow \mathbb{R}^n \\
+  \therefore\,\mathrm{d}u_p(M'V_{b \times 1})_{n \times 1} &= U_{ij} (M'V)_{n \times 1}\,;\,\partial u_p(M'V)_{1 \times n} = (\nabla (M'V))_{1 \times n} U^{ij} \\
+  (p, T(p)) &\in \mathcal{T}^k_\ell(M) \\
+  T(p) : (T_pM)^k \times (T_p^*M)^\ell &\rightarrow \mathbb{R}^{F^k \times G^\ell} \\
+  (V^1, \cdots, V^k, \omega_1, \cdots, \omega_\ell) &\mapsto T(p)(V^1, \cdots, V^k, \omega_1, \cdots, \omega_\ell) \\
+  T(p)(V^1, \cdots, V^k, \omega_1, \cdots, \omega_\ell) &: F_{a \times b}^k \times G_{1 \times c}^\ell \rightarrow \mathbb{R},\,F = \{ f : \mathbb{R}^b \rightarrow \mathbb{R}^a \},\,G = \{ f : \mathbb{R}^c \rightarrow \mathbb{R} \} \\
+  T(p) &= \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, i_{k}}^{j_1, \cdots, j_{\ell}}  \bigotimes_{m = 1}^k \,\mathrm{d}x^{i_m} \bigotimes_{m = 1}^\ell \partial x_{j_m}  \\
+  T_{i_1, \cdots, i_{k}}^{j_1, \cdots, j_{\ell}} &= f^0 : M \rightarrow \mathbb{R} \\
+  (f^0, f^1, \cdots, f^k, f^{k+1}, f^{k+\ell}) &\mapsto (f^0)_{1 \times n}(p)_{n \times 1} (f_{i_1}^1)_{1 \times 1} \cdots (f_{i_k}^k)_{1 \times 1} \left( \cfrac{\partial f^{k + 1}(p)}{\partial j_1} \right)_{1 \times 1} \cdots \left( \cfrac{\partial f^{k + \ell}(p)}{\partial j_\ell} \right)_{1 \times 1} \\
+  &= f^0(p) \prod_{m = 1}^k \text{linha}(i_m, f^m) \prod_{m = 1}^\ell \cfrac{\partial}{\partial j_m} (f^{k + m}(p))
+\end{align}
+
+\vspace{3mm}
+
+Exemplo | Placas de carro:
+
+$n = 26$, alfabeto A...Z, $k = 3$, de ``\#AAA" at\'e ``\#ZZZ" s\~ao $26^3$ palavras, cada uma com seu coeficiente.
+
+Mas n\~ao \'e s\'o isso. Matematicamente, n\'os vamos colocar $3 \times 26 = 78$ n\'umeros reais no lugar de cada letra.
+
+Chamamos isso de tr\^es matrizes coluna em $\mathbb{R}^{26}$. Ou $3$ alfabetos distintos.
+
+$n = 10$, 4 alfabetos $0^m \cdots 9^m$, $\ell = 4$, de ``\#$0^10^20^30^4$" at\'e ``\#$9^19^29^39^4$" s\~ao $10^4$ palavras, cada uma com seu coeficiente.
+
+ $T(p_{26}) : (T_pM)^k \rightarrow \mathbb{R} $.
+
+ $T'(q_{10}) : (T_q^*N)^\ell \rightarrow \mathbb{R} $.
+
+ $T''(p, q)(V^1, V^2, V^3, \omega_1, \omega_2, \omega_3, \omega_4) = T(p)(V^1, V^2, V^3)\,T'(q)(\omega_1, \omega_2, \omega_3, \omega_4) $
+
+ como se fosse elemento de subespa\c{c}o de $\mathcal{T}^k_\ell(M \times N)$, imers\~ao de $\mathbb{R}^{36 \times 7}$ em $\mathbb{R}^{36^7}$.
+
+\section{SubTensores | Deixem-me delirar um pouco. Obrigado.}
+
+\begin{align}
+  \overline{T}_m \in \mathcal{T}^{k_m}_{\ell_m}(M)\,;\,v(\omega) &= \omega(v) = \langle v, \omega \rangle = \sum_{i = j} v^i w_j \\
+  T^0_1(\omega_1) &= \sum_{j = 1}^n \alpha^j \partial x_j (\omega_1) = \sum_{j = 1}^n \alpha^j \omega_1^j \\
+  T_0^1 (\overline{T}_1) = \sum_{i_1 = 1}^n \alpha_{i_1} \mathrm{d}x^{i_1} (\overline{T}_1) &= \sum_{i_1 = 1}^n \alpha_{i_1} \langle \mathrm{d}x^{i_1}, \overline{T}_1 \rangle\text{ ; soma dupla sobre } i_1 = j_m, \text{ qq \'indice de coluna de }\overline{T}_1 \\
+  T_1^0 (\overline{T}_1) = \sum_{j_1 = 1}^n \alpha^{j_1} \partial x_{j_1} (\overline{T}_1) &= \sum_{j_1 = 1}^n \alpha^{j_1} \langle \partial x_{j_1}, \overline{T}_1 \rangle\text{ ; soma dupla sobre }j_1 = i_m, \text{ qq \'indice de linha de }\overline{T}_1 \\
+  T^0_\ell(\omega_1, \cdots, \omega_\ell) &= \prod_{m = 1}^\ell \sum_{j_m = 1}^n \alpha^{j_m} \partial x_{j_m} (\omega_m) = \prod_{m = 1}^\ell \sum_{j_m = 1}^n \alpha^{j_m} \omega_m^{j_m} \\
+  T^0_\ell(\overline{T}_1, \cdots, \overline{T}_\ell) &= \prod_{m = 1}^\ell \sum_{j_m = 1}^n \alpha^{j_m} \langle \partial x_{j_m}, \overline{T}_m \rangle
+\end{align}
+
+\begin{align}
+  T^k_0(v^1, \cdots, v^k) &= \prod_{m = 1}^k \sum_{i_m = 1}^n \alpha_{i_m} \mathrm{d} x^{i_m} (v^m) = \prod_{m = 1}^k \sum_{i_m = 1}^n \alpha_{i_m} v^m_{i_m} \\
+  T^k_0(\overline{T}_1, \cdots, \overline{T}_k) &= \prod_{m = 1}^\ell \sum_{i_m = 1}^n \alpha_{i_m} \langle \mathrm{d} x^{i_m}, \overline{T}_m \rangle \\
+  T^k_\ell(\overline{T}_1, \cdots, \overline{T}_{k + \ell})&(f^1, \cdots, f^{k + \ell}) = \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\, \bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m} (\overline{T}_{\cdots})(f^{\cdots}) \\
+  &\text{Todos os tensores s\~ao fun\c{c}\~oes. Em particular, algumas fun\c{c}\~oes s\~ao tensores:} \\
+  T^k_\ell(\overline{T}_1, \cdots, \overline{T}_{k + \ell})&(\overline{T}_{k+\ell+1}, \cdots, \overline{T}_{2k + 2\ell}) = \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, i_k}^{j_1, \cdots, j_\ell}\, \bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m} (\overline{T}_{\cdots})(\overline{T}_{\cdots}) \\
+  (k_0, \ell_0) \mapsto \ell_1 &= a^{k_0} \, c^{\ell_0} \\
+  (k_1, \ell_1) \mapsto \ell_2 &= a^{k_1} \, c^{\ell_1} \\
+  \ell_{m+1} &= a^{k_m} \, c^{\ell_m}\text{ ; Abaixo, }4\text{ formas B\'ASICAS de extrair fun\c{c}\~ao linear de tensor:} \\
+  \overline{T}_1 \mapsto f : \mathbb{R}^{k_1 + \ell_1} &\rightarrow \mathbb{R}\text{. Basta, em }f(v)\text{, fazer }v_{i_1 + (i_2 - 1)n + (j_1 - 1)n^2 + (j_2 - 1)n^3 + (j_3 - 1)n^4} = T_{i_1, i_2}^{j_1, j_2, j_3} \\
+  \overline{T}_1 &\mapsto \tau \in M_{n \times 1}(\mathbb{R})\,;\,\tau = \sum_{i_0 = 1}^n \tau_{i_0}\,\mathrm{d}x^{i_0} \in \mathcal{T}^1_0(M) \\
+  \overline{T}_1 &= \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, \hat{i}_0, \cdots, i_{k_1}}^{j_1, \cdots, j_{\ell_1}} \bigotimes_{i_m \ne i_0}^{k_1} \mathrm{d}x^{i_m} \bigotimes^{\ell_1} \partial x_{j_m} \\
+  \overline{T}_1 &\mapsto Y \in M_{1 \times n}(\mathbb{R})\,;\,Y = \sum_{j_0 = 1}^n Y^{j_0}\,\partial x_{j_0} \in \mathcal{T}^0_1(M) \\
+  \overline{T}_1 &= \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, i_{k_1}}^{j_1, \cdots, \hat{j}_0, \cdots, j_{\ell_1}} \bigotimes^{k_1} \mathrm{d}x^{i_m} \bigotimes_{j_m \ne j_0}^{\ell_1} \partial x_{j_m} \\
+  \overline{T}_1 &\mapsto Z \in M_{n \times n}(\mathbb{R})\,;\,Z = \sum_{i_0, j_0 = 1}^n Z^{j_0}_{i_0}\,\,\mathrm{d}x^{i_0} \partial x_{j_0} \in \mathcal{T}^1_1(M) \\
+  \overline{T}_1 &= \sum_{i_m, j_m = 1}^n T_{i_1, \cdots, \hat{i}_0, \cdots, i_{k_1}}^{j_1, \cdots, \hat{j}_0, \cdots, j_{\ell_1}} \bigotimes_{i_ \ne i_0}^{k_1} \mathrm{d}x^{i_m} \bigotimes_{j_m \ne j_0}^{\ell_1} \partial x_{j_m}
+\end{align}
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $1$.}
+
+\begin{align}
+  T(x, y) = ax + by &\Leftrightarrow [T]_{1 \times 2}\, [v]_{2 \times 1} = w \in \mathbb{R} \\
+  T^\top(r) = \left( \begin{matrix} ar \\ br \end{matrix} \right) &\Leftrightarrow [T^\top]_{2 \times 1}\,r = [w]_{2 \times 1} \\
+  g : \mathbb{R}^b \rightarrow \mathbb{R} &\Leftrightarrow [\nabla g]_{1 \times b}\,[v]_{b \times 1} = w \in \mathbb{R} \\
+  g^\top : \mathbb{R} \rightarrow \mathbb{R}^b &\Leftrightarrow [\nabla g]^\top_{b \times 1}\,r = [w]_{b \times 1} \\
+  f : \mathbb{R}^b \rightarrow \mathbb{R}^a &\Leftrightarrow [\mathrm{d} f]_{a \times b}\,[v]_{b \times 1} = [w]_{a \times 1} \\
+  f^\top : \mathbb{R}^a \rightarrow \mathbb{R}^b &\Leftrightarrow [\mathrm{d} f]^\top_{b \times a}\,[v]_{a \times 1} = [w]_{b \times 1}
+\end{align}
+
+	Exemplo: $f(x,y,z) = \left( \begin{matrix} \sin x\,yz \\ x\,\sin y\,z \end{matrix} \right) \Rightarrow \mathrm{d}f = \left( \begin{matrix} \cos x\,yz & \sin x\,z & \sin x\,y \\ \sin y\,z & x\, \cos y\,z & x\,\sin y \end{matrix} \right)$
+
+	$\Rightarrow f^\top (u,v) = \left( \begin{matrix} \cos x\,yz & \sin y\,z \\ \sin x\,z & x\,cos y\,z \\ \sin x\,y & x\,\sin y \end{matrix} \right) \, \left( \begin{matrix} u \\ v \end{matrix} \right) $
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $2$.}
+
+\begin{align}
+  f : [t_0 - \delta, t_0 + \delta] &\rightarrow \mathbb{R}^n\,;\,\vert t - t_0\vert < \delta\,;\,C^\infty(t_0) \Rightarrow f(t) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, f^{(k)} (t_0)\,(t - t_0)^k \\
+  \text{Exemplo: } f(t) &= \binom{\cos t}{\sin t} = \binom{\cos t_0}{\sin t_0} + (t - t_0) \binom{- \sin t_0}{\cos t_0} + \cfrac{1}{2}\,(t - t_0)^2 \binom{- \cos t_0}{- \sin t_0} + \cdots \\
+  &\text{A derivada segunda tem transposta elementar }1 \times 2. \\
+  f : U^n\text{ aberto } &\rightarrow \mathbb{R}\,;\,x_0, x \in U\,;\,C^\infty(x_0) \Rightarrow f(x) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, \mathrm{d}^{k} f_{x_0}\,(x - x_0, \cdots, x - x_0)_{k}
+\end{align}
+
+\begin{align}
+  \text{Exemplo: } f(x^1,x^2) &= x^1 x^2 = x_0^1 x_0^2 + (x_0^2, x_0^1)_{1 \times 2} \binom{x^1 - x_0^1}{x^2 - x_0^2} + \cfrac{1}{2}\,(0 f_{xx} \mathrm{d}x \otimes \mathrm{d}x + 1 f_{xy} \mathrm{d}x \otimes \mathrm{d}y + \\
+  &+ 1 f_{yx} \mathrm{d}y \otimes \mathrm{d}x + 0 f_{yy} \mathrm{d}y \otimes \mathrm{d}y)\left(\binom{x^1 - x_0^1}{x^2 - x_0^2}, \binom{x^1 - x_0^1}{x^2 - x_0^2}\right) + \cdots \\
+  f: U^n\text{ aberto } &\rightarrow \mathbb{R}^a \,;\,x_0, x \in U\,;\,C^\infty(x_0) \Rightarrow f(x) = \sum_{k = 0}^{\infty} \cfrac{1}{k!}\, \mathrm{d}^{k} f_{x_0}\,(x - x_0, \cdots, x - x_0)_{k} \\
+  \mathrm{d}f : \mathbb{R}^n &\rightarrow \mathcal{L}(\mathbb{R}^n\,;\,\mathbb{R}^a)\,;\,p \mapsto \mathrm{d}f_p : \mathbb{R}^n \rightarrow \mathbb{R}^a\,;\,v \mapsto \mathrm{d}f_p(v) \\
+  \mathrm{d}^2f : \mathbb{R}^n &\rightarrow \mathcal{L}(\mathbb{R}^n,\,\mathbb{R}^n\,;\,\mathbb{R}^a)\,;\,p \mapsto \mathrm{d}^2 f_p : \mathbb{R}^n \times \mathbb{R}^n \rightarrow \mathbb{R}^a\,;\,(v^1, v^2) \mapsto \mathrm{d}^2f_p(v^1, v^2) \\
+  \text{Exemplo: }f(x,y,z) &= \left( \begin{matrix} \sin x\,yz \\ x\,\sin y\,z \end{matrix} \right) = f(\mathbf{x}_0) + \mathrm{d}f_{x_0}(\mathbf{x} - \mathbf{x}_0) + \cfrac{1}{2}\, \mathrm{d}^2 f_{x_0}(\mathbf{x} - \mathbf{x}_0, \mathbf{x} - \mathbf{x}_0) + \cdots \\
+  &= c_0 + M (\mathbf{x} - \mathbf{x}_0) + \cfrac{1}{2}\, \sum_{j = 1}^a \sum_{i_1 = 1}^n \sum_{i_2 = 1}^n (x^{i_1} - x_0^{i_1}) (x^{i_2} - x_0^{i_2}) \cfrac{\partial^2 f^j(x_0) e_j}{\partial x_{i_1} \partial x_{i_2}} + \cdots \\
+  v^1 v^1 f_{xx} &= (x - x_0)^2 \binom{-\sin x_0\,y_0z_0}{0}\,;\,v^1 v^2 f_{xy} = (x - x_0)(y - y_0) \binom{\cos x_0\,z_0}{\cos y_0\,z_0} \\
+  v^2 v^2 f_{yy} &= (y - y_0)^2 \binom{0}{-x_0 \sin y_0\,z_0}\,;\,v^1 v^3 f_{xz} = (x - x_0)(z - z_0) \binom{\cos x_0\,y_0}{\sin y_0}\,;\,\cdots
+\end{align}
+
+Est\'a vendo por que ningu\'em usa a segunda aproxima\c{c}\~ao? Apareceram $x^2, xy, xz, yx, y^2, yz, zx, zy, z^2$.
+
+J\'a sabemos que a transposta de $c_1 + M^i_j\,v = w$ \'e do tipo: $c_2 + M^\top v = w$.
+
+Queremos transpor quadr\'aticas do tipo: $c_0 + M^i_j\,v + \mathrm{d}^2 f_p (v, v) = w$.
+
+\begin{align}
+	\mathrm{d}^2f_p : \mathbb{R}^n \times \mathbb{R}^n &\rightarrow \mathbb{R}^a \\
+	(v^1, v^2) &\mapsto w = \sum_{j = 1}^a w^j(v^1, v^2) \partial x_j \\
+	w^j(v^1, v^2) &= \sum_{i_m = 1}^n f_{i_1, i_2}^j\, \mathrm{d}x^{i_1} \otimes \mathrm{d}x^{i_2}\,(v^1, v^2)\,;\,f^j_{i_1, i_2} = \cfrac{\partial^2 f^j}{\partial x_{i_1} \partial x_{i_2}}
+\end{align}
+
+\begin{align}
+	(\mathrm{d}^2)^\top f_p : \mathbb{R}^a &\rightarrow \mathbb{R}^{n^2} \\
+	w &\mapsto \tau = \sum_{i_m = 1}^n \tau_{i_1, i_2}(w)\, \mathrm{d}x^{i_1} \otimes \mathrm{d}x^{i_2} \\
+	\tau_{i_1, i_2} (w) &= \sum_{j = 1}^a f_{i_1, i_2}^j\, \partial x_j\,(w) = f_{i_1, i_2}^1 w^1 + \cdots + f_{i_1, i_2}^a w^a
+\end{align}
+
+Temos um objeto $f$ de tamanho $i_1i_2j = an^2$ e j\'a conseguimos dividir por $i_1i_2 = n^2$ para obter $j = a$.
+
+Tamb\'em conseguimos dividir por $j = a$ para obter $i_1i_2 = n^2$.
+
+S\'o ficou ruim somar $b$ linhas com $b^2$ linhas. Precisamos somar constantes com lineares com bilineares! :-)
+
+Portanto, sabemos determinar a transposta de $\mathrm{d}^2 f_p (v, v) = w$.
+
+Exerc\'icio para quem estiver empolgado: \textbf{Ordem $3$.}
+
+\section{Transposta de qualquer fun\c{c}\~ao. Ordem $k$.}
+
+\begin{align}
+	\mathrm{d}^k f_p : (\mathbb{R}^n)^k &\rightarrow \mathbb{R}^a \\
+	(v^1, \cdots, v^k) &\mapsto w = \sum_{i = 1}^a w^j(v^1, \cdots, v^k) \partial x_j \\
+	w^j(v^1, \cdots, v^k) &= \sum_{i_m = 1}^n f_{i_1, \cdots, i_k}^j\, \bigotimes_{m = 1}^{k} \mathrm{d}x^{i_m} \,(v^1, \cdots, v^k)\,;\,f^j_{i_1, \cdots, i_k} = \cfrac{\partial^k f^j}{\partial x_{i_1} \cdots \partial x_{i_k}} \\
+	(\mathrm{d}^k)^\top f_p : \mathbb{R}^a &\rightarrow \mathbb{R}^{n^k} \\
+	w &\mapsto \tau = \sum_{i_m = 1}^n \tau_{i_1, \cdots, i_k}(w)\, \bigotimes_{m = 1}^{k} \mathrm{d}x^{i_m} \\
+	\tau_{i_1, \cdots, i_k} (w) &= \sum_{j = 1}^a f_{i_1, \cdots, i_k}^j\, \partial x_j\,(w) = f_{i_1, \cdots, i_k}^1 w^1 + \cdots + f_{i_1, \cdots, i_k}^a w^a \\
+	\therefore &[w]_0^a\,;\,[w^j]_{n \times \cdots \times n}^0\,;\,[\tau]_{n \times \cdots \times n}^0\,;\,[\tau_{i_1, \cdots, i_k}]_0^a \\
+\end{align}
+
+\section{Proposi\c{c}\~ao 6.34 de variedades\_diferenciaveis.pdf}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $F: M \rightarrow N$ aplica\c{c}\~ao diferenci\'avel entre variedades diferenci\'aveis.  $T^m \in \mathcal{T}^k_\ell(M), T^n \in \mathcal{T}^k_\ell(N)$.
+
+		$p \in M, F(p) = q \in N, w^i = \mathrm{d}F_p (v^i), \,\omega_j = (\mathrm{d}F_p)^\top (\eta_j)$.
+
+		Ent\~ao: $F^* T^n = T^m$ se $T^m_p (v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = T_q^n (w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$.
+
+		Percebe que de $w$ para $v$ \'e um sentido e de $\omega$ para $\eta$ \'e o inverso?
+
+		$G = F^{-1};\,v^i = \mathrm{d}G_q(w^i);\,\eta_j = (\mathrm{d}G_q)^\top (\omega_j)$.
+
+		\vspace{3mm}
+
+		N\~ao se esque\c{c}a de que a multiplica\c{c}\~ao \`a esquerda por $f : M \rightarrow \mathbb{R}$ \'e dada por:
+
+		$L_f : \mathcal{T}^k_\ell \rightarrow \mathcal{T}^k_\ell$; $L_f(T^m) = f\,T^m$; $L_f(T^m)(p) = f(p)\,T^m(p)$.
+
+		$L_f(T^m)(p)(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = f(p)\,T^m(p)(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell)$.
+
+		\subsection{$F^* (fT^n) = (f \circ F) F^* T^n$}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $k = 0$.
+
+		\textbf{LINHA 1:} $T_q^n(\eta_1,\cdots,\eta_\ell) = T_p^m(\omega_1, \cdots, \omega_\ell)$. Transposta da matriz jacobiana de $F$.
+
+		\textbf{LINHA 2:} Multiplique por $g$: $X_p^m(\omega_1, \omega_2) = g V_p^m(\omega_1, \omega_2)$.
+
+		\textbf{LINHA 3:} Podemos calcular o push forward de $T_p^m = \bigg[ f(x_1, \cdots, x_{\Delta_n}) \alpha_i^m \bigg]$, com $i$ variando de $1$ a $\Delta_m^\ell$ e encontrar $U_q^n = \bigg[ f(x_1, \cdots, x_j) A^K \bigg]$, com $j = \Delta_n^\ell$ e com $K$ variando de $1$ a $\Delta_n^\ell$.
+
+		\textbf{LINHA 4:} Conclu\'imos que $U^n = f T^n$. Q.E.D.$\,\,\blacksquare$
+
+		\subsection{Esbo\c{c}o de demonstra\c{c}\~ao, $\forall k,\, \forall \ell$}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $U^n = f T^n$.
+
+		Defina $T^m$ por $F^* T^n = T^m \Leftrightarrow T^m_p (v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = T_q^n (w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$,
+
+		Com $w^i = \mathrm{d}F_p(v^i), \,\omega_j = (\mathrm{d}F_p)^\top (\eta_j)$.
+
+		Defina $U^m$ por $F^* U^n = U^m \Leftrightarrow U^m_p (v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = U_q^n (w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$.
+
+		\vspace{3mm}
+
+		Os diagramas comutam:
+
+		\[
+		\begin{tikzcd}
+		T^m \arrow{d}{L_g} \arrow[swap]{r}{F_*} & T^n \arrow{d}{L_f} & V \in T_pB^2 \arrow{r}{\pi_*^{-1}} \arrow{d}{L_g} & W = (V\xi, V\sigma, V\tau) \in T_q{\mathcal{H}^2} \arrow{d}{L_f} & B^2 \arrow{r}{\pi^{-1}} \arrow{dr}{g} & \mathcal{H}^2 \arrow{d}{f} & M \arrow{r}{F} \arrow{dr}{g} & N \arrow{d}{f}   \\
+		U^m \arrow{r}{F_*} & U^n & X = gV \arrow{r}{\pi_*^{-1}} &  Y = (fV\xi, fV\sigma, fV\tau) & & \mathbb{R} & & \mathbb{R}
+		\end{tikzcd}
+		\]
+
+		$F_*(T^m) = T^n \Rightarrow f F_*(T^m) = U^n$
+
+		$gT^m = U^m \Rightarrow F_*(g T^m) = U^n$
+
+		Queremos mostrar que partir de $T^m$, aplicar push forward e multiplicar por $f$; \'e o mesmo que multiplicar por $g := f \circ F$ e aplicar push forward.
+
+		Expressamos $T_p^m$ na base de $\bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$, com todos os \'indices variando de $1$ a $\Delta_m$. Chamamos as coordenadas de $\alpha_i^m$, com $i$ variando de $1$ a $\Delta_m^{k + \ell}\,\therefore T_p^m = \sum \alpha_i^m \bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$.
+
+		$T_q^n(w^1,\cdots,w^k,\eta_1,\cdots,\eta_\ell) = T_p^m(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell)$. Matriz jacobiana de $F$.
+
+		Expressamos $T_q^n$ na base de $\bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}$, com todos os \'indices variando de $1$ a $\Delta_m$. Chamamos as coordenadas de $A_i$, com $i$ variando de $1$ a $\Delta_n^{k + \ell}\,\therefore T_q^n = \sum A_i \bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}$.
+
+		\'E poss\'ivel trocar todos os $w^i$ pelas matrizes jacobianas de $F$ aplicadas em $v^i$.
+
+		Analogamente, \'e poss\'ivel trocar todos os $\eta_j$ pelas transpostas das matrizes jacobianas de $F^{-1}$ aplicadas em $\omega_j$.
+
+		\textbf{Sistema principal:} $\alpha_i^m = \alpha_i^n(A_1, \cdots, A_j)$, com $j = \Delta_n^{k + \ell}$ e com $i$ variando de $1$ a $\Delta_m^{k + \ell}$.
+
+		$U_q^n(w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell) = f T_q^n(w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$.
+
+		Podemos calcular o push forward de $T_p^m = \bigg[ f(x_1, \cdots, x_{\Delta_n}) \alpha_i^m \bigg]$, com $i$ variando de $1$ a $\Delta_m^{k + \ell}$ e encontrar $U_q^n = \bigg[ f(x_1, \cdots, x_j) A^K \bigg]$, com $j = \Delta_n^{k + \ell}$ e com $K$ variando de $1$ a $\Delta_n^{k + \ell}$.
+
+		$U_p^m(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = U_q^n(w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$.
+
+		$f(x_1, \cdots, x_{\Delta_n}) \alpha_i^m = \alpha_i^n (B^1, \cdots, B^K)$, com $K = \Delta_n^{k + \ell}$, e com $i$ variando de $1$ a $\Delta_m^{k + \ell}$.
+
+		$f(x_1, \cdots, x_{\Delta_n}) \alpha_i^n(A^1, \cdots, A^K) = \alpha_i^n (B^1, \cdots, B^K)$, com $K = \Delta_n^{k + \ell}$, e com $i$ variando de $1$ a $\Delta_m^{k + \ell}$.
+
+		Um polin\^omio \'e identicamente nulo se e somente se todos seus coeficientes s\~ao nulos.
+
+		Em geral, o sistema \textbf{principal} \'e exatamente um polin\^omio de cada lado, nas entradas da matriz jacobiana de $q = (x_1, \cdots, x_{\Delta_n})$. Usando a estrat\'egia polinomial, isso implica que $fA = B$. Q.E.D.$\,\,\blacksquare$
+
+		\textbf{O que resta checar?}
+
+		Exibir o outro jeito de fazer: produto tensorial de um tensor $(k,0)$ por um tensor $(0,\ell)$.
+
+		\subsection{$(F \circ G)^* = G^* \circ F^*$}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja $G: L \rightarrow M, p' \in L, G(p') = p \in M$. Seja $H = F \circ G$.
+
+		$F^* T^n = T^m \Leftrightarrow T_p^m(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = T_q^n(w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$,
+
+		Com $w^i = \mathrm{d}F_p(v^i),\,\omega_j = (\mathrm{d}F_p)^\top (\eta_j)$.
+
+		$G^* T^m = T^K \Leftrightarrow T_{p'}^K(u^1, \cdots, u^k, \theta_1, \cdots, \theta_\ell) = T_p^m(v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell)$,
+
+		Com $v^i = \mathrm{d}G_{p'} (u^i),\,\theta_j = (\mathrm{d}G_{p'})^\top (\omega_j)$.
+
+		$H^* T^n = T^K \Leftrightarrow T_{p'}^K(u^1, \cdots, u^k, \theta_1, \cdots, \theta_\ell) = T_q^n(w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$,
+
+		Com $w^i = \mathrm{d}H_{p'} (u^i),\,\theta_j = (\mathrm{d}H_{p'})^\top (\eta_j)$.
+
+		Queremos mostrar que $w^i = \mathrm{d}F_p(v^i) = \mathrm{d}H_{p'} (u^i)$.
+
+		Pelas defini\c{c}\~oes de $v^i$ e $H,\,\,\mathrm{d}F_p(\mathrm{d}G_{p'} (u^i)) = \mathrm{d}(F \circ G)_{p'} (u^i)$.
+
+		E vejam s\'o! Segue exatamente da regra da cadeia.
+
+		Queremos mostrar tamb\'em que $\theta_j = (\mathrm{d}G_{p'})^\top (\omega_j) = (\mathrm{d}H_{p'})^\top (\eta_j)$.
+
+		Pelas defini\c{c}\~oes de $\omega_j$ e $H,\,\,(\mathrm{d}G_{p'})^\top ((\mathrm{d}F_p)^\top (\eta_j)) = (\mathrm{d}(F \circ G)_{p'})^\top (\eta_j)$.
+
+		E vejam s\'o! Analogamente, segue da regra da cadeia. Q.E.D.$\,\,\blacksquare$
+
+	\section{$F^* (T^n \otimes U^n) = F^* T^n \otimes F^* U^n$}
+		\begin{flushright}
+		\end{flushright}
+
+		N\~ao tem diagrama nenhum aqui:
+
+		\[
+		\begin{tikzcd}
+		T^m \arrow[swap]{r}{F_*} & T^n & U^m \arrow[swap]{r}{F_*} & U^n & X^m = T^m \otimes U^m \arrow[swap]{r}{F_*} & X^n = T^n \otimes U^n \\
+		                                          &         & V^m \arrow[swap]{r}{F_*} & V^n & Y^m = T^m \otimes V^m \arrow[swap]{r}{F_*} & Y^n = T^n \otimes V^n
+		\end{tikzcd}
+		\]
+
+		Seja $F: M \rightarrow N$ aplica\c{c}\~ao diferenci\'avel entre variedades diferenci\'aveis.  $T^m \in \mathcal{T}^k_\ell(M), T^n \in \mathcal{T}^k_\ell(N)$.
+
+		$p \in M, F(p) = q \in N, w^i = \mathrm{d}F_p (v^i),\,\omega_j = (\mathrm{d}F_p)^\top\,(\eta_j)$. Ent\~ao: $F^* T^n = T^m$ se
+
+		$T^m_p (v^1, \cdots, v^k, \omega_1, \cdots, \omega_\ell) = T_q^n (w^1, \cdots, w^k, \eta_1, \cdots, \eta_\ell)$.
+
+		\vspace{3mm}
+
+		Seja $U^m \in \mathcal{T}^1_0(M), U^n \in \mathcal{T}^1_0(N)$.
+
+		Ent\~ao: $F^* U^n = U^m$ se $U^m_p (v^1) = U_q^n (w^1)$.
+
+		\vspace{3mm}
+
+		Seja $V^m \in \mathcal{T}^0_1(M), V^n \in \mathcal{T}^0_1(N)$.
+
+		Ent\~ao: $F^* V^n = V^m$ se $V^m_p (\omega_1) = V_q^n (\eta_1)$.
+
+		\vspace{3mm}
+
+		\textbf{Queremos mostrar o t\'itulo desta se\c{c}\~ao e analogamente que: } $F^* (T^n \otimes V^n) = F^* T^n \otimes F^* V^n$.
+
+		A partir da\'i, o resultado segue por indu\c{c}\~ao no desmembramento de grande $U'$ em
+
+		$U' = U^1 \otimes \cdots \otimes U^{k_2} \otimes V_1 \otimes \cdots \otimes V_{\ell_2}$ menores.
+
+		\vspace{3mm}
+
+		Expressamos $T_p^m$ na base de $\bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$, com todos os \'indices variando de $1$ a $\Delta_m$. Chamamos as coordenadas de $\alpha_i^m$, com $i$ variando de $1$ a $\Delta_m^{k + \ell}\,\therefore T_p^m = \sum \alpha_i^m \bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$.
+
+\begin{equation*}
+		\text{Expressamos }U_p^m = \sum_{i_1 = 1}^{\Delta_m} T_{i_1} \mathrm{d}u^{i_1}\text{. Chamamos }T_{i_1} = \beta_i^m\text{, com }i\text{ variando de }1\text{ a }\Delta_m^1.
+\end{equation*}
+
+\begin{equation*}
+		\text{Expressamos }V_p^m = \sum_{i_1 = 1}^{\Delta_m} T^{j_1} \partial u_{j_1}\text{. Chamamos }T^{j_1} = \gamma_i^m\text{, com }i\text{ variando de }1\text{ a }\Delta_m^1.
+\end{equation*}
+
+		Logo, $X_p^m = T_p^m \otimes U_p^m = \sum \alpha_i^m \beta_j^m (\bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}) \otimes (\mathrm{d}u_{i_1}) \in \mathcal{T}^{k+1}_\ell(M)\,\therefore X_p^m = \sum \delta_i^m \bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$.
+
+		\vspace{3mm}
+
+		Logo, $Y_p^m = T_p^m \otimes V_p^m = \sum \alpha_i^m \gamma_j^m (\bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}) \otimes (\partial u^{i_1}) \in \mathcal{T}^k_{\ell+1}(M)\,\therefore Y_p^m = \sum \epsilon_i^m \bigotimes \mathrm{d}u^{i_m} \bigotimes \partial u_{j_m}$.
+
+		\vspace{3mm}
+
+		Expressamos $T_q^n$ na base de $\bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}$, com todos os \'indices variando de $1$ a $\Delta_n$. Chamamos as coordenadas de $A_i$, com $i$ variando de $1$ a $\Delta_n^{k + \ell}\,\therefore T_q^n = \sum A_i \bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}$.
+
+\begin{equation*}
+		\text{Expressamos }U_q^n = \sum_{i_1 = 1}^{\Delta_n} T_{i_1} \mathrm{d}x^{i_1}\text{. Chamamos }T_{i_1} = B_i\text{, com }i\text{ variando de }1\text{ a }\Delta_n^1.
+\end{equation*}
+
+\begin{equation*}
+		\text{Expressamos }V_q^n = \sum_{j_1 = 1}^{\Delta_n} T^{j_1} \partial x_{j_1}\text{. Chamamos }T^{j_1} = C_i\text{, com }i\text{ variando de }1\text{ a }\Delta_n^1.
+\end{equation*}
+
+		Logo, $X_q^n = T_q^n \otimes U_q^n = \sum A_i B_j (\bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}) \otimes (\mathrm{d}x_{i_1}) \in \mathcal{T}^{k+1}_\ell(N)$.
+
+		\vspace{3mm}
+
+		Logo, $Y_q^n = T_q^n \otimes V_q^n = \sum A_i C_j (\bigotimes \mathrm{d}x^{i_m} \bigotimes \partial x_{j_m}) \otimes (\partial x^{i_1}) \in \mathcal{T}^k_{\ell+1}(N)$.
+
+		\vspace{3mm}
+
+		Queremos mostrar que $F_* X_p^m = X_q^n$.
+
+		Por defini\c{c}\~ao, $X^m_p (v^1, \cdots, v^{k + 1}, \omega_1, \cdots, \omega_\ell) = X_q^n (w^1, \cdots, w^{k + 1}, \eta_1, \cdots, \eta_\ell)$.
+
+		\vspace{3mm}
+
+		Queremos mostrar tamb\'em que $F_* Y_p^m = Y_q^n$.
+
+		Por defini\c{c}\~ao, $Y^m_p (v^1, \cdots, v^k, \omega_1, \cdots, \omega_{\ell + 1}) = Y_q^n (w^1, \cdots, w^k, \eta_1, \cdots, \eta_{\ell + 1})$.
+
+		\vspace{3mm}
+
+		\'E poss\'ivel trocar todos os $w^i$ pelas matrizes jacobianas de $F$ aplicadas em $v^i$.
+
+		Analogamente, \'e poss\'ivel trocar todos os $\eta_j$ pelas transpostas das matrizes jacobianas de $F^{-1}$ aplicadas em $\omega_j$.
+
+		Ent\~ao: $\alpha_i^m = \text{Tran}_i^1(A_1, \cdots, A_j)$, com $j = \Delta_n^{k + \ell}$ e com $i$ variando de $1$ a $\Delta_m^{k + \ell}$.
+
+		\vspace{3mm}
+
+		Analogamente, $\beta_i^m = \text{Tran}_i^2(B_1, \cdots, B_j)$, com $j = \Delta_n^1$ e com $i$ variando de $1$ a $\Delta_m^1$.
+
+		\vspace{3mm}
+
+		Analogamente, $\gamma_i^m = \text{Tran}_i^3(C_1, \cdots, C_j)$, com $j = \Delta_n^1$ e com $i$ variando de $1$ a $\Delta_m^1$.
+
+		\vspace{3mm}
+
+		Analogamente, $\delta_K^m = \text{Tran}_K^4(D_1, \cdots, D_L)$, com $L = \Delta_n^{k + \ell} \Delta_n^1$ e com $K$ variando de $1$ a $\Delta_m^{k + \ell} \Delta_m^1$.
+
+		$\delta_K^m = \alpha_i^m \beta_j^m$
+
+		$D_{1\,\cdots\,L} = A_i B_j$
+
+		$\alpha_i^m \beta_j^m = \text{Tran}_i^1(A_1, \cdots, A_K) \text{Tran}_j^2(B_1, \cdots, B_L) = \text{Tran}_{ij}^4(A_1 B_1, \cdots, A_K B_L)$, com $K = \Delta_n^{k + \ell}$ e $L = \Delta_n^1$.
+
+		\vspace{3mm}
+
+		Analogamente, $\epsilon_K^m = \text{Tran}_K^5(E_1, \cdots, E_L)$, com $L = \Delta_n^{k + \ell} \Delta_n^1$ e com $K$ variando de $1$ a $\Delta_m^{k + \ell} \Delta_m^1$.
+
+		$\epsilon_K^m = \alpha_i^m \gamma_j^m$
+
+		$E_{1\,\cdots\,L} = A_i C_j$
+
+		$\alpha_i^m \gamma_j^m = \text{Tran}_i^1(A_1, \cdots, A_K) \text{Tran}_j^3(C_1, \cdots, C_L) = \text{Tran}_{ij}^5(A_1 C_1, \cdots, A_K C_L)$, com $K = \Delta_n^{k + \ell}$ e $L = \Delta_n^1$.
+
+		\vspace{3mm}
+
+		Baixando o n\'ivel,
+
+		$\alpha_1^m = A_1^1 \xi_u^2  + A_2^1 \xi_u \sigma_u  + A_3^1 \xi_u \tau_u$
+		$+ A_1^2 \sigma_u \xi_u  + A_2^2 \sigma_u^2  + A_3^2 \sigma_u \tau_u$
+		$+ A_1^3 \tau_u \xi_u  + A_2^3 \tau_u \sigma_u  + A_3^3 \tau_u^2 = \text{Tran}_1^1(A_1,A_2,A_3)$
+
+		$\beta_1^m = B_1^1 \xi_u^2  + B_2^1 \xi_u \sigma_u  + B_3^1 \xi_u \tau_u$
+		$+ B_1^2 \sigma_u \xi_u  + B_2^2 \sigma_u^2  + B_3^2 \sigma_u \tau_u$
+		$+ B_1^3 \tau_u \xi_u  + B_2^3 \tau_u \sigma_u  + B_3^3 \tau_u^2 = \text{Tran}_1^1(B_1,B_2,B_3)$
+
+		Multiplique ambos. Conseguir\'a um polin\^omio de grau sempre $4 = 2k$. $9 \times 9 = 3^{2k}$ mon\^omios.
+
+		Existe uma \'unica forma linear de combinar mon\^omios de grau $1$ com $k + \ell$ e gerar mon\^omios de grau $k + \ell + 1$: multiplicando os coeficientes.
+
+		O teorema segue por linearidade e pelo fato de todos os mon\^omios do sistema principal serem de grau $1$ ou $k + \ell.\,\,\blacksquare$
+
+		\textbf{O que resta checar?}
+
+		(1) $k_1 = \ell_1 = 0$. No lugar de tensor, $h : M \rightarrow \mathbb{R}$.
+
+		(2) $F^* (f h^n) = (f \circ F) F^* h^n$.
+
+		(3) $H^*(h^n) = G^*(F^*(h^n))$.
+
+		(4) $F^* (h^n \otimes U^n) = F^* h^n \otimes F^* U^n$.
+
+		(5) $F^* (h^n \otimes V^n) = F^* h^n \otimes F^* V^n$.
+
+		(6) $k_2 = \ell_2 = 0$. No lugar de tensor, $g : M \rightarrow \mathbb{R}$.
+
+		(7) $F^* (h^n \otimes g^n) = F^* h^n \otimes F^* g^n$.
+
+		(8) Exibir o outro jeito de fazer: produto tensorial de um tensor $(k,0)$ por um tensor $(0,\ell)$.
+
+\end{document}

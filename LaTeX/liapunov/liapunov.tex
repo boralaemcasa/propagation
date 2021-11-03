@@ -1,0 +1,59 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+Liapunov
+
+\normalsize
+
+\vspace{6mm}
+
+Procur\'avamos uma fun\c{c}\~ao de Liapunov para o degrau unit\'ario $y = u(t)$. O que encontramos foi:
+
+\begin{align}
+y^* &= y(\infty) = 1 \\
+L(y) &= (y - y^*)^2 \ge 0 \\
+\cfrac{dL}{dt} &= 2 (y - y^*) y' < 0
+\end{align}
+
+\vspace{6mm}
+
+Procur\'avamos uma fun\c{c}\~ao de Liapunov para a corrente alternada $y = \cos t$. O que encontramos foi:
+
+\begin{align}
+t \ge 0\,;\, y^* &= y(\infty) \\
+L(t) &= - \int_0^t \cfrac{\cos \tau}{\tau} \,\mathrm{d}\tau - \cfrac{t^3}{3} - 300t \\
+\cfrac{dL}{dt} &= - \cfrac{\cos t}{t} - t^2 - 300 \\
+t \le 0\,;\, y^* &= y(-\infty) \\
+L(t) &= - \int_t^0 \cfrac{\cos \tau}{\tau} \,\mathrm{d}\tau - 1000t \ge 0 \\
+\cfrac{dL}{dt} &= - \cfrac{\cos t}{t} - 1000 < 0
+\end{align}
+
+\vspace{3mm}
+
+Exerc\'icio 1: $y = \cos \omega t$.
+
+\vspace{3mm}
+
+Exerc\'icio 2: $y = \sin \omega t$.
+
+\vspace{3mm}
+
+Exerc\'icio 3: $y = \cfrac{a_0}{2} + \sum a_n \cos \omega_n t + \sum b_n \sin \omega_n t$. Soma finita, depois s\'erie.
+
+\vspace{6mm}
+
+Fora da caridade n\~ao h\'a salva\c{c}\~ao. Com caridade, h\'a evolu\c{c}\~ao.
+
+\vspace{6mm}
+
+Vers\~ao 0.1 de 6/jan/2019 por Vinicius Claudino Ferraz.
+
+\end{document}

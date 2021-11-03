@@ -1,0 +1,173 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amssymb} %mathbb
+\usepackage{amsmath} %align
+\usepackage{graphicx} %jpg
+\usepackage{amscd} %diagrama CD
+\usepackage[a4paper,top=1.3cm,bottom=1.3cm,left=1.3cm,right=1.3cm]{geometry}
+\pagestyle{headings}
+\date{}
+\begin{document}
+	\Large
+
+	\begin{center}
+		Segunda Lista de I.E.D.P.
+
+		Vin\'icius Claudino Ferraz
+	\end{center}
+
+	\normalsize
+
+	\section{Quest\~ao 1}
+		\begin{flushright}
+		\end{flushright}
+
+		Considere a extens\~ao \'impar
+
+		\begin{align}
+			g(x) &= x, x \in (-L, L) ; g(x + 2L) = g(x) \\
+			a_0(g) &= \int_{-L}^L g(x)\,\mathrm{d}x = \bigg[ \frac{x^2}{2} \bigg]_{-L}^L = \frac{L^2}{2} - \frac{L^2}{2} = 0 \\
+			a_n(g) &= \int_{-L}^L x \cos \frac{n \pi x}{L} \,\mathrm{d}x = 0, \text{pois o integrando \'e \'impar} \\
+			b_n(g) &= \int_{-L}^L x \sin \frac{n \pi x}{L} \,\mathrm{d}x = 2 \int_{0}^L x \sin \frac{n \pi x}{L} \,\mathrm{d}x = 2\cdot\frac{L}{n\pi}\cdot\frac{L}{n\pi} \int_{0}^{n\pi} y \sin y \,\mathrm{d}y \\
+			&= 2 \frac{L^2}{n^2\pi^2} \bigg\{[-y \cos y]_0^{n\pi} + \int_{0}^{n\pi} \cos y \,\mathrm{d}y \bigg\} = 2 \frac{L^2}{n^2\pi^2} (-n\pi\cos(n\pi)) = \frac{2L^2}{\pi} \cdot \frac{(-1)^{n+1}}{n} \\
+			g(x) &= \frac{a_0(g)}{2} + \sum_{n = 1}^\infty \bigg[ a_n(g) \cos \frac{n\pi x}{L} + b_n(g) \sin \frac{n\pi x}{L} \bigg] = \frac{2L^2}{\pi} \sum_{n = 1}^\infty \frac{(-1)^{n+1}}{n} \sin \frac{n\pi x}{L}
+		\end{align}
+
+		$g$ satisfaz ao item (i). Considere agora a extens\~ao par
+
+		\begin{align}
+			h(x) &= x, x \in [0, L) ; h(x) = -x, x \in (-L, 0) ; h(x + 2L) = h(x) \\
+			b_n(h) &= \int_{-L}^L |x| \sin \frac{n \pi x}{L} \,\mathrm{d}x = 0, \text{pois o integrando \'e \'impar} \\
+			a_0(h) &= \int_{-L}^L h(x)\,\mathrm{d}x = 2 \bigg[ \frac{x^2}{2} \bigg]_{0}^L = 2 \frac{L^2}{2} = L^2 \\
+			a_n(h) &= 2 \int_{0}^L x \cos \frac{n \pi x}{L} \,\mathrm{d}x = 2\cdot\frac{L}{n\pi}\cdot\frac{L}{n\pi} \int_{0}^{n\pi} y \cos y \,\mathrm{d}y \\
+			&= 2 \frac{L^2}{n^2\pi^2} \bigg\{[y \sin y]_0^{n\pi} - \int_{0}^{n\pi} \sin y \,\mathrm{d}y \bigg\} = 2 \frac{L^2}{n^2\pi^2} \{ + \cos (n\pi) - \cos 0 \} = 2 \frac{L^2}{n^2\pi^2} c_n \\
+			c_n &= 0, \text{ se n \'e par} ; c_n = -2, \text{ se n \'e \'impar} \\
+			h(x) &= \frac{a_0(h)}{2} + \sum_{n = 1}^\infty \bigg[ a_n(g) \cos \frac{n\pi x}{L} \bigg] = \frac{L^2}{2} -4 L^2 \frac{1}{\pi^2} \sum_{n = 1, n \text{ \'impar}}^\infty \bigg[ \frac{1}{n^2} \cos \frac{n\pi x}{L} \bigg]
+		\end{align}
+
+		$h$ satisfaz ao item (ii). Considere agora a extens\~ao nem par, nem \'impar
+
+		\begin{align}
+			p(x) &= x, x \in [0, L) ; p(x) = 0, x \in (-L, 0) ; p(x + 2L) = p(x) \\
+			a_0(p) &= \int_0^L x\,\mathrm{d}x = \frac{L^2}{2} \\
+			a_n(p) &= \int_0^L x \cos \frac{n\pi x}{L} \,\mathrm{d}x = \frac{a_n(h)}{2} \\
+			b_n(p) &= \int_0^L x \sin \frac{n\pi x}{L} \,\mathrm{d}x = \frac{b_n(g)}{2} \\
+			p(x) &= \frac{a_0(p)}{2} + \sum_{n = 1}^\infty \bigg[ a_n(p) \cos \frac{n\pi x}{L} + b_n(p) \sin \frac{n\pi x}{L} \bigg] \\
+			p(x) &= \frac{L^2}{4} + \sum_{n = 1}^\infty \bigg[ \frac{L^2}{n^2\pi^2} c_n \cos \frac{n\pi x}{L} + \frac{L^2}{\pi} \cdot \frac{(-1)^{n+1}}{n} \sin \frac{n\pi x}{L} \bigg]
+		\end{align}
+
+		Finalmente, $p$ satisfaz ao item (iii).
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 2}
+		\begin{flushright}
+		\end{flushright}
+
+		O Teorema de Fourier diz que a s\'erie de Fourier de $h$ converge em $x = L$ para
+
+		\begin{align}
+			h(L) &= \frac{h(L+) + h(L-)}{2} = L = \frac{L^2}{2} -4 L^2 \frac{1}{\pi^2} \sum_{n = 1, n \text{ \'impar}}^\infty \bigg[ \frac{1}{n^2} \cos \frac{n\pi L}{L} \bigg] \\
+			-1 &= \cos \pi = \cos 3\pi = \cos 5\pi = ... \\
+			L &= \frac{L^2}{2} +4 L^2 \frac{1}{\pi^2} \sum_{n \text{ \'impar}}^\infty \bigg[ \frac{1}{n^2} \bigg] \\
+			L = 1 \Rightarrow \cfrac{1 - \cfrac{1}{2}}{4 \cfrac{1}{\pi^2} } &= \sum_{n \text{ \'impar}}^\infty \bigg[ \frac{1}{n^2} \bigg] = \frac{1}{2} \cdot \frac{\pi^2}{4} = \frac{\pi^2}{8}
+		\end{align}
+
+		A identidade de Parseval aplicada a $g$ do exerc\'icio anterior diz que
+
+		\begin{align}
+			\frac{1}{L} \int_{-L}^L |g(x)|^2 \,\mathrm{d}x &= \sum b_n^2(g) \\
+			\frac{1}{L} \bigg[ \frac{x^3}{3} \bigg]_{-L}^L &= \sum \bigg[\frac{2L^2}{\pi} \cdot \frac{(-1)^{n+1}}{n} \bigg]^2 \\
+			\frac{2}{3} L^2 &= \frac{4L^4}{\pi^2} \sum \frac{1}{n^2} \\
+			L = 1 \Rightarrow \sum \frac{1}{n^2} = \frac{\pi^2}{6}
+		\end{align}
+
+		E se $L \neq 1$?
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 3}
+		\begin{flushright}
+		\end{flushright}
+
+		O princ\'ipio do m\'aximo afirma que, se
+
+		\begin{align}
+			u &\in C^2(\Omega_T) \cap C(\bar\Omega_T) \\
+			u_t &= k u_{xx}, \forall (x, t) \in \Omega_T
+		\end{align}
+
+		Ent\~ao
+
+		\begin{align}
+			\max_{\Omega_T} u &= \max_{\Gamma_T} u
+		\end{align}
+
+		Seja $v = |u| = \max \{ u , 0 \} + \max \{ -u, 0 \}$.
+
+		\begin{align}
+			\max_{\Omega_T} v &= \max_{\Gamma_T} v = K > 0
+		\end{align}
+
+		A parte positiva e a parte negativa de $u$ satisfazem as hip\'oteses do princ\'ipio do m\'aximo,
+
+		portanto, por linearidade, $v$ tamb\'em satisfaz.
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 4}
+		\begin{flushright}
+		\end{flushright}
+
+		Seja a extens\~ao \'impar
+
+		\begin{align}
+			v(x) &= u(x), x \in [0, 1] \\
+			v(x) &= -v(-x), x \in (-1, 0)
+		\end{align}
+
+		A identidade de Parseval para uma fun\c{c}\~ao \'impar se reduz a
+
+		\begin{align}
+			\sum b_n^2 &= \frac{1}{L} \int_{-L}^L |v(x)|^2 \,\mathrm{d}x = \frac{\Vert v \Vert_2^2}{L}
+		\end{align}
+
+		Vamos derivar $v$ termo a termo
+
+		\begin{align}
+			v(x) &= \sum b_n \sin \frac{n\pi x}{L} \\
+			v'(x) &= \sum A_n \cos \frac{n\pi x}{L} \\
+			A_n &= \frac{n\pi}{L} b_n
+		\end{align}
+
+		A identidade de Parseval para $v'$ se reduz a
+
+		\begin{align}
+			\sum A_n^2 &= \frac{1}{L} \int_{-L}^L |v'(x)|^2 \,\mathrm{d}x = \frac{\Vert v' \Vert_2^2}{L} = \sum \bigg[\frac{n\pi}{L} b_n\bigg]^2 = \frac{n^2\pi^2}{L^2} \sum b_n^2 = \frac{n^2\pi^2}{L^2} \cdot \frac{\Vert v \Vert_2^2}{L} \\
+			\Vert v' \Vert_2^2 \frac{L^2}{n^2\pi^2} &= \Vert v \Vert_2^2 \\
+			\frac{1}{n} \le 1 &\Rightarrow \Vert v' \Vert_2 \frac{L}{\pi} \ge \Vert v \Vert_2
+		\end{align}
+
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 5}
+		\begin{align}
+			&u_t
+		\end{align}
+
+		\begin{flushright}
+		\end{flushright}
+
+	\section{Quest\~ao 6}
+		\begin{align}
+			&u_t
+		\end{align}
+
+		\begin{flushright}
+		\end{flushright}
+
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Nebulosos 5
+\end{center}
+
+\normalsize
+
+Diz a lenda que basta segunda aproxima\c{c}\~ao (m\'etodo da derivada segunda).
+
+Por que n\~ao derivada terceira? Isto posto, l\'a vai a invers\~ao iterada.
+
+\begin{align}
+y(k) &= 1.4 y(k-1) - 0.6 y(k-2) - 3 u^3(k -1) + 2u(k-1) - u^3(k-2) + 2u(k-2) \\
+y(k+2) &= 1.4y(k+1) - 0.6y(k) + F \\
+f'(a) &\sim \cfrac{f(a + h) - f(a)}{h} \Rightarrow f(a + h) \sim f(a) + h f'(a) + \cfrac{h^2}{2}\cdot f''(a) \\
+y(k + 1) &\sim y(k) + y'(k) + \cfrac{1}{2}\cdot y''(k) \\
+y(k + 2) &\sim y(k) + 2 y'(k) + 2 y''(k) \\
+y(k) + 2 y'(k) + 2 y''(k) &= 1.4 [y(k) + y'(k) + \cfrac{1}{2}\cdot y''(k)] - 0.6y(k) + F \\
+(2 - 0.7) y''(k) &= (1.4 - 0.6 - 1) y(k) + (1.4 - 2) y'(k) + F \\
+y''(k) &=  - 2/13 y(k) - 6/13 y'(k) + F/1.3 \\
+y'' &=  a y + b y' + w \\
+ y' &= z \\
+ z' &= ay + bz + w \\
+ \begin{pmatrix} y \\ z \end{pmatrix}' &= \begin{pmatrix} 0 & 1 \\ a & b \end{pmatrix}\begin{pmatrix} y \\ z \end{pmatrix} + \begin{pmatrix} 0 \\ w \end{pmatrix} \\
+ Y' &= P Y + Q \\
+ Y &= e^{-tP} \int_{t_0}^t e^{\tau P} Q(\tau)\, \mathrm{d}\tau + Y(t_0) \\
+e^{tP} &= \begin{pmatrix} f(t) & g(t) \\ p(t) & q(t) \end{pmatrix} \\
+ Y &= \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix} \int_{t_0}^t \begin{pmatrix} f(\tau) & g(\tau) \\ p(\tau) & q(\tau) \end{pmatrix} \begin{pmatrix} 0 \\ w(\tau) \end{pmatrix} \mathrm{d}\tau + Y(t_0) \\
+ U(t) &= \int_{t_0}^t g(\tau) w(\tau) \,\mathrm{d}\tau \\
+ V(t) &= \int_{t_0}^t q(\tau) w(\tau) \,\mathrm{d}\tau \\
+ Y &= \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix}  \begin{pmatrix} U(t) \\ V(t) \end{pmatrix} + Y(t_0) \\
+ y(t) &= f(-t)U(t) + g(-t)V(t)  + y(t_0)
+\end{align}
+
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 20/Sep/2019, Release $1.0$
+
+\end{document}

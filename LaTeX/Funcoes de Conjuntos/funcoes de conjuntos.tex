@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Fun\c{c}\~oes de Conjuntos
+\end{center}
+
+\normalsize
+
+\begin{align}
+ f(A \cup B) &= f(A) \cup f(B) \\
+ f(A \cap B) &\subset f(A) \cap f(B)
+\end{align}
+
+Sejam $A = \{ 1, 2 \}, B = \{ 2, 3\}, f(1) = f(3) \ne f(2)$.
+
+\begin{align}
+ f(\{ 1, 2, 3 \}) &= f(\{ 1, 2 \}) \cup f(\{ 2, 3 \}) \\
+ f(2) &\subset f(\{ 1, 2 \}) \cap f(\{ 2, 3 \}) \\
+ f(1) &\in f(A) \cap f(B), f(1) \notin f(A \cap B)
+\end{align}
+
+Demo 1: Seja $y \in f(A) \cup f(B)$.
+
+\begin{align}
+  &y \in f(A) \vee y \in f(B)
+\end{align}
+
+Sem perda de generalidade, escolha $x \in A, y = f(x)$.
+
+\begin{align}
+  &x \in A \cup B \\
+  &y \in f(A \cup B)\,\,\blacksquare
+\end{align}
+
+\vspace{3mm}
+
+Demo 2: Seja $y \in f(A \cap B)$. Existe $x \in A \cap B, y = f(x)$.
+
+\begin{align}
+  &x \in A \wedge x \in B \\
+  &y \in f(A) \wedge y \in f(B) \\
+  &y \in f(A) \cap f(B)\,\,\blacksquare
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 5/Sep/2019, Release $1.0$
+
+\end{document}

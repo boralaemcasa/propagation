@@ -1,0 +1,67 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\Large
+
+\begin{center}
+Nebulosos 4
+\end{center}
+
+\normalsize
+
+Seja $\mu$ medido em Volts. Para $\alpha$ = 1 Watt$^{-1}$, $\epsilon = 0,08V \cdot \alpha$ em Amp\`ere.
+
+Queremos propor\c{c}\~ao direta, ou seja:
+
+\begin{align}
+  \cfrac{|i - i_{ref}|}{\alpha} &< M \\
+  \left\vert e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \underbrace{\varphi(n,m-1)}_{<4} [i(t_n) - i_{ref}(t_n)] h - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \underbrace{\sum_{n = 0}^{m - 1} [i(t_n) - i_{ref}(t_n)]}_{<\text{ integral}} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<
+\end{align}
+
+\footnotesize
+
+\begin{align}
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + \int_a^{a + h(m - 1)} \underbrace{[i(t) - i_{ref}(t)]}_{\text{T.Fund.C\'alculo}} \mathrm{d}t \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + [I(a + hm - h) - I_{ref}(a + hm - h)] - [I(a) - I_{ref}(a)] \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<
+\end{align}
+
+\normalsize
+
+\begin{align}
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\sum_{m > 0}^{k + 1} e^{f(m)} [p(m) + q]}_{<\text{ integral}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\int_a^{a + h(k + 1)} e^{f(t)} [p(t) + q] \,\mathrm{d}t}_{\text{T.Fund.C\'alculo}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &<  \\
+  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} [G(a + hk + h) - G(a)]  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &< M \\
+  - M < A - \cfrac{B}{\alpha} &< M \\
+  - M\alpha < A\alpha - B &< M \alpha \\
+  (- M - A)\alpha < - B &< (M - A) \alpha \\
+  \cfrac{B}{A + M} &< \alpha < \cfrac{B}{A - M}
+\end{align}
+
+\begin{align}
+  A &= 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} [G(a + hk + h) - G(a)] \\
+  B &= i_{ref}(t_{k+1}) \\
+  G'(t) &= e^{f(t)} [p(t) + q] \\
+  f(m) &= R/L (a + hm) \\
+  p(m) &= I(a + hm - h) - I_{ref}(a + hm - h) \\
+  q &= i(a) - i_{ref}(a) - [I(a) - I_{ref}(a)] \\
+  I'(t) &= i(t) \\
+  I_{ref}'(t) &= i_{ref}(t)
+\end{align}
+
+\vspace{3mm}
+
+Out of charity, there is no salvation at all. With charity, there is evolution.
+
+\vspace{3mm}
+
+Vinicius Claudino FERRAZ, 20/Sep/2019, Release $1.0$
+
+\end{document}
