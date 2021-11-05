@@ -47,7 +47,7 @@ erro(1:8) = AverageError;
 [erro(8), q8, p8, sigma8, ys8] = calcularAPE(alpha, nEpocas, nPontosT, nPontosV, xt, xv, ydt, ydv, nVariaveis, nGaussianas, xit, xft, true, true, true);
 
 		i = 1;
-		while (i < 8) && (erro(i).ape == round(erro(i).ape)) 
+		while (i < 8) && (erro(i).ape == round(erro(i).ape))
 			i++;
     end;
 		for j = (i + 1):8
@@ -58,9 +58,9 @@ erro(1:8) = AverageError;
       end;
     end;
 
-disp('Resposta');    
+disp('Resposta');
 i
-            
+
 x = (1:1:nPontosT);
 y = x;
 z = x;

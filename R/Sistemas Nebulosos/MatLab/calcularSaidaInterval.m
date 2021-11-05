@@ -1,5 +1,5 @@
 function [Result, ResultOmega, Resultz, Resultys] = calcularSaidaInterval(X, nVariaveis, nGaussianas, nPontos, c, sigma, p, q)
-  
+
 		Result = SaidaInterval;
 		ResultOmega(nGaussianas) = Interval;
 		Resultz(nGaussianas) = Interval;

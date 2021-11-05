@@ -41,7 +41,7 @@ def chebyshev(n):
       p = p - 2
       a = a - 1
    return
-   
+
 def binom(n, p):
    result = 1
    for i in range(0, p):

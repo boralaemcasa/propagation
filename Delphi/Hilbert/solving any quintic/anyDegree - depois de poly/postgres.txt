@@ -12,4 +12,4 @@ create table poly (
   p8 integer null,
   p9 integer null,
   primary key (who, i)
-);  
+);

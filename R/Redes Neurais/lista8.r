@@ -56,11 +56,11 @@ for (tempo in 1:8) {
   print(p)
 
 	modRBF <- treinaRBF(xin,yin,p)
-	
+
 	Yhat_train <- YRBF(xin, modRBF)
 	for (i in 1:length(Yhat_train))
 	  Yhat_train[i] <- Yhat_train[i]/abs(Yhat_train[i])
-	
+
 	e_teste <- sum((yin - Yhat_train)^2)/4
 	print(e_teste) # e_train
 

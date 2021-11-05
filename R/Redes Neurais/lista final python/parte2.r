@@ -79,7 +79,7 @@ for (i in 1:n) {
       xin[i,11] <- 6
    else if (x1 == d)
       xin[i,11] <- 7
-      
+
    if (xin[i,10] != xin[i,11])
      contador1 <- contador1 + 1
 }

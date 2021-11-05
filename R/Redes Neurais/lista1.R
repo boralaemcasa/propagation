@@ -48,7 +48,7 @@ segmento(0, 0, 0, sqrt(3)/2, 'blue')
  y <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = 0.001, t(N) = M
-    t <- (M - 0.001)/(N - 1) * (i - 1) + 0.001 
+    t <- (M - 0.001)/(N - 1) * (i - 1) + 0.001
     x[i] <- t
     y[i] <- 1/t
  }
@@ -110,7 +110,7 @@ wireframe(z ~ x * y, data = g, groups = gr,
  y <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = 0.001, t(N) = M
-    t <- 2*M/(N - 1) * (i - 1) -M 
+    t <- 2*M/(N - 1) * (i - 1) -M
     x[i] <- t
     y[i] <- cos(k*t)
  }
@@ -129,7 +129,7 @@ wireframe(z ~ x * y, data = g, groups = gr,
  zero <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = 0.001, t(N) = M
-    t <- 2*M/(N - 1) * (i - 1) -M 
+    t <- 2*M/(N - 1) * (i - 1) -M
     x[i] <- t
     y[i] <- sinh(t)
     z[i] <- cosh(t)
@@ -154,7 +154,7 @@ wireframe(z ~ x * y, data = g, groups = gr,
  zero <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = 0.001, t(N) = M
-    t <- 2*M/(N - 1) * (i - 1) -M 
+    t <- 2*M/(N - 1) * (i - 1) -M
     x[i] <- t
     y[i] <- t*cos(1/t)
  }
@@ -177,11 +177,11 @@ wireframe(z ~ x * y, data = g, groups = gr,
  zero <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = 0.001, t(N) = M
-    x[i] <- 2*M/(N - 1) * (i - 1) -M 
+    x[i] <- 2*M/(N - 1) * (i - 1) -M
     if (x[i] < -2)
        t <- 2*M/(N - 1) * (i - 1) -M + 1
     else if ((x[i] > -1) && (x[i] <= 1))
-       t <- 2*M/(N - 1) * (i - 1) -M 
+       t <- 2*M/(N - 1) * (i - 1) -M
     else if (x[i] > 2)
        t <- 2*M/(N - 1) * (i - 1) -M - 1
     else if (x[i] > 1)

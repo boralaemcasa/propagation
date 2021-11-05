@@ -4,27 +4,27 @@
  *  Dependencies: Bag.java In.java StdOut.java
  *  Data files:   http://algs4.cs.princeton.edu/42digraph/tinyDG.txt
  *                http://algs4.cs.princeton.edu/42digraph/mediumDG.txt
- *                http://algs4.cs.princeton.edu/42digraph/largeDG.txt  
+ *                http://algs4.cs.princeton.edu/42digraph/largeDG.txt
  *
  *  A graph, implemented using an array of lists.
  *  Parallel edges and self-loops are permitted.
  *
  *  % java Digraph tinyDG.txt
  *  13 vertices, 22 edges
- *  0: 5 1 
- *  1: 
- *  2: 0 3 
- *  3: 5 2 
- *  4: 3 2 
- *  5: 4 
- *  6: 9 4 8 0 
+ *  0: 5 1
+ *  1:
+ *  2: 0 3
+ *  3: 5 2
+ *  4: 3 2
+ *  5: 4
+ *  6: 9 4 8 0
  *  7: 6 9
- *  8: 6 
- *  9: 11 10 
- *  10: 12 
- *  11: 4 12 
- *  12: 9 
- *  
+ *  8: 6
+ *  9: 11 10
+ *  10: 12
+ *  11: 4 12
+ *  12: 9
+ *
  ******************************************************************************/
 
 package edu.princeton.cs.algs4;
@@ -38,7 +38,7 @@ import java.util.NoSuchElementException;
  *  iterate over all of the vertices adjacent from a given vertex.
  *  Parallel edges and self-loops are permitted.
  *  <p>
- *  This implementation uses an adjacency-lists representation, which 
+ *  This implementation uses an adjacency-lists representation, which
  *  is a vertex-indexed array of {@link Bag} objects.
  *  All operations take constant time (in the worst case) except
  *  iterating over the vertices adjacent from a given vertex, which takes
@@ -59,7 +59,7 @@ public class Digraph {
     private int E;                 // number of edges in this digraph
     private Bag<Integer>[] adj;    // adj[v] = adjacency list for vertex v
     private int[] indegree;        // indegree[v] = indegree of vertex v
-    
+
     /**
      * Initializes an empty digraph with <em>V</em> vertices.
      *
@@ -77,7 +77,7 @@ public class Digraph {
         }
     }
 
-    /**  
+    /**
      * Initializes a digraph from the specified input stream.
      * The format is the number of vertices <em>V</em>,
      * followed by the number of edges <em>E</em>,
@@ -102,7 +102,7 @@ public class Digraph {
             for (int i = 0; i < E; i++) {
                 int v = in.readInt();
                 int w = in.readInt();
-                addEdge(v, w); 
+                addEdge(v, w);
             }
         }
         catch (NoSuchElementException e) {
@@ -131,7 +131,7 @@ public class Digraph {
             }
         }
     }
-        
+
     /**
      * Returns the number of vertices in this digraph.
      *
@@ -189,7 +189,7 @@ public class Digraph {
      * This is known as the <em>outdegree</em> of vertex {@code v}.
      *
      * @param  v the vertex
-     * @return the outdegree of vertex {@code v}               
+     * @return the outdegree of vertex {@code v}
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public int outdegree(int v) {
@@ -202,7 +202,7 @@ public class Digraph {
      * This is known as the <em>indegree</em> of vertex {@code v}.
      *
      * @param  v the vertex
-     * @return the indegree of vertex {@code v}               
+     * @return the indegree of vertex {@code v}
      * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
     public int indegree(int v) {
@@ -228,7 +228,7 @@ public class Digraph {
     /**
      * Returns a string representation of the graph.
      *
-     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,  
+     * @return the number of vertices <em>V</em>, followed by the number of edges <em>E</em>,
      *         followed by the <em>V</em> adjacency lists
      */
     public String toString() {

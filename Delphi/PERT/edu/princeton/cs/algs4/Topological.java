@@ -29,7 +29,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code Topological} class represents a data type for 
+ *  The {@code Topological} class represents a data type for
  *  determining a topological order of a directed acyclic graph (DAG).
  *  Recall, a digraph has a topological order if and only if it is a DAG.
  *  The <em>hasOrder</em> operation determines whether the digraph has

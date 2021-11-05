@@ -21,7 +21,7 @@ for (i in 1:n) {
       for (v in (u + 1):74) {
          xtrein2[i,j] <- xtrein[i,u] * xtrein[i,v]
          j <- j + 1
-      }    
+      }
 }
 write.csv(xtrein2, file="validGrau2.csv")
 
@@ -39,7 +39,7 @@ for (i in 1:n) {
       for (v in (u + 1):74) {
          xtrein2[i,j] <- xtrein[i,u] * xtrein[i,v]
          j <- j + 1
-      }    
+      }
 }
 write.csv(xtrein2, file="trainGrau2.csv")
 

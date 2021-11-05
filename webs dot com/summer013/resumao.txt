@@ -1,6 +1,6 @@
 Definição de subvariedade M^m contido N^n.
 
-É necessário e suficiente que para cada p pertence M, 
+É necessário e suficiente que para cada p pertence M,
 existe aberto V em N, p pertence V
 e um difeomorfismo psi: V -> psi(V) contido R^n
                    tal que psi(M inter V) contido R^m cartesiano {0}
@@ -110,7 +110,7 @@ S é linear
 S é injetora
 S é sobrejetora
 
-Seja M^m uma variedade diferenciável (C^k, k >= 1) de dimensão m. Considere o conjunto 
+Seja M^m uma variedade diferenciável (C^k, k >= 1) de dimensão m. Considere o conjunto
 TM := {Reunião{p pertence M} T_p M} = {(p, v); p pertence M, v pertence T_p M}
 
 Seja A = {(U_alfa, fi_alfa)}_alfa pertence I um atlas sobre M.

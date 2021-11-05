@@ -87,7 +87,7 @@ final <- 4
 acuracia <- matrix(0,nrow=10, ncol=nn)
 nnn <- 20
 totalM <- kmeans(nnn, totalM, linhas, 4)
-  
+
 seqi<-seq(0 + 0.06,6,0.06)
 seqj<-seq(0 + 0.06,6,0.06)
 M1 <- matrix(0,nrow=length(seqi),ncol=length(seqj))
@@ -101,7 +101,7 @@ for (classe in 1:nn) {
       #kk <- 1
       cccc <- matrix(0,nrow=nn)
       xc <- array(0, c(n,colunas,nn))
-  
+
       for (i in 1:linhas) {
          jj <- totalM[i, 3]
          cccc[jj] <- cccc[jj] + 1
@@ -152,7 +152,7 @@ for (classe in 1:nn) {
          somax <- 0
          somay <- 0
          contador <- 0
-         for (j in 1:linhas) 
+         for (j in 1:linhas)
             if (totalM[j, 4] == jj) {
                somax <- somax + totalM[j,1]
                somay <- somay + totalM[j,2]
@@ -175,10 +175,10 @@ for (classe in 1:nn) {
             jj <- totalM[i,4]
             flag[jj] <- flag[jj] + 1
          }
-  
+
       acertos <- 0
       for (i in 1:testeN) {
-         denomm <- 0 
+         denomm <- 0
          numeradorr <- 0
          for (jj in 1:nnn)
             if (flag[jj] > 0)
@@ -186,7 +186,7 @@ for (classe in 1:nn) {
             else
                denomm <- denomm + p[i,jj]
 
-         if (denomm == 0) 
+         if (denomm == 0)
             acertos <- acertos + 1
          else {
             f <- numeradorr / denomm
@@ -204,7 +204,7 @@ for (classe in 1:nn) {
             ci<-ci+1
             cj<-0
             for(j in seqj) {
-               cj<-cj+1 
+               cj<-cj+1
 
                pp <- matrix(0,nrow=nnn,ncol=2)
                x <- matrix(0,nrow=2)
@@ -212,8 +212,8 @@ for (classe in 1:nn) {
                x[2] <- j
                for (jj in 1:nnn)
                   pp[jj] <- pdfnvar(x, media[jj,], K, 2) * cc[jj]
-       
-               denom[ci,cj] <- 0 
+
+               denom[ci,cj] <- 0
                numerador[ci,cj] <- 0
                for (jj in 1:nnn)
                   if (flag[jj] > 0)
@@ -244,7 +244,7 @@ for (ci in 1:100)
 
 
 par(new=T)
-contour2D(M1,seqi,seqj,colkey = NULL) 
+contour2D(M1,seqi,seqj,colkey = NULL)
 
 acuracia
 

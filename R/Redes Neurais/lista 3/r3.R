@@ -16,7 +16,7 @@ xin <- as.matrix(x[amostra])
 yd <- as.matrix(y[amostra])
 res <- trainadaline(xin,yd,eta,tol,maxepocas,par)
 z <- res[[1]][1] + res[[1]][2] * x
-	
+
 par(new=F)
 plot(t, y, col = 'black', xlim = c(-0.1, 6.1),ylim = c(-1.1,1.1),xlab = '' , ylab= '' )
 par(new=T)

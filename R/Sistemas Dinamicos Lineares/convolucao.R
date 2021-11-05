@@ -27,15 +27,15 @@ plotar <- function(x, y, Mx1, Mx2, My1, My2, color) {
    segmento(x, 0, x, y, color, c(Mx1,Mx2), c(My1,My2))
 }
 
-# https://twitter.com/mathspiritual/status/1371110143807610883 
+# https://twitter.com/mathspiritual/status/1371110143807610883
 convolution <- function(f, g, x) {
    return (convolution_matrix(f, g, x, 1, 1)) # de R em R, dx = 0.01
 }
 
 # n <- dim Dom ; a <- dim Im
-convolution_matrix <- function(f, g, x, n, a) { 
+convolution_matrix <- function(f, g, x, n, a) {
    m <- 100
-   mm <- (2 * m - 1)^n 
+   mm <- (2 * m - 1)^n
    dV <- m^(-n)
    soma <- matrix(0, a)
    v <- matrix(0, n)
@@ -132,7 +132,7 @@ ff <- function(t) {
  ww <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = Mx1, t(N) = Mx2
-    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1 
+    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1
     x[i] <- t
     y[i] <- f(t)
     z[i] <- g(t)
@@ -331,7 +331,7 @@ g <- function(t) {
     y[i] <- f(t)
     z[i] <- g(t)
     w[i] <- convolution(f, g, t)
-   
+
 # expresse g(t) como soma ponderada de degraus.
 
 ################################
@@ -357,7 +357,7 @@ g <- function(t) {
     z[i] <- g(t)
     w1[i] <- convolution(f, g, t)
     w2[i] <- convolution(f, f, t)
-   
+
 
 ################################
 ex21b
@@ -376,7 +376,7 @@ g <- function(t) {
     y[i] <- f(t)
     z[i] <- g(t)
     w[i] <- convolution(f, g, t)
-   
+
 
 ################
 ex22
@@ -409,7 +409,7 @@ hd(2)
 ################
 ex23
 
-Sabendo h = F(delta), queremos saber se F é A) causal; B) bibo estável. 
+Sabendo h = F(delta), queremos saber se F é A) causal; B) bibo estável.
 
 ha <- function(n) {
    return (0.2^n * u(n))
@@ -470,14 +470,14 @@ g <- function(t) {
     y[i] <- f(t)
     z[i] <- g(t)
     w[i] <- convolution_discrete(f, g, t, 1000)
-   
+
 ################################
 ex28
 
 A) x[n] ** h1[n] ** (h2[n] + h3[n]) = y[n]
-  
+
    \therefore h[n] = h1[n] ** (h2[n] + h3[n])
-   
+
 B)
 
 f <- function(n) {
@@ -494,7 +494,7 @@ g <- function(n) {
     y[i] <- f(t)
     z[i] <- g(t)
     w[i] <- convolution_discrete(f, g, t, 1000)
-   
+
 ################################
 ex29
 
@@ -512,7 +512,7 @@ g <- function(t) {
     y[i] <- f(t)
     z[i] <- g(t)
     w[i] <- convolution(f, g, t)
-   
+
 ################################
 ex30
 
@@ -520,4 +520,4 @@ Sigma1 = h1 ** h5 + h4
 Sigma2 = h1 ** h2 + Sigma1 ** h3 = h
      h = h1 ** h2 + (h1 ** h5 + h4) ** h3
      h = h1 ** h2 + h1 ** h3 ** h5 + h3 ** h4
-    
+

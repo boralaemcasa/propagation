@@ -1,7 +1,7 @@
 classdef Interval
    properties
-      min 
-      max 
+      min
+      max
    end
    methods
    end

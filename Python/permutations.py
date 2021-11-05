@@ -6,13 +6,13 @@ def fatorial(x):
      result = result * x
      x = x - 1
    return result
-   
+
 def permutations(n):
    nfat = fatorial(n)
    mat = mp.zeros(nfat, n)
    for j in range (0, n):
       mat[0,j] = j + 1
-   
+
    for i in range(1, nfat):
       for j in range (0, n):
          mat[i, j] = mat[i - 1, j]
@@ -33,7 +33,7 @@ def permutations(n):
                   boo = True
                   break
    return mat
-   
+
 def decomposition(n, sigma):
    lista = list()
    for k in range (1, n + 1):
@@ -45,7 +45,7 @@ def decomposition(n, sigma):
       if not boo:
          print("Error")
          return
-   
+
    contador = 0
    for i in range (0, n - 1):
       if sigma[i] != i + 1:
@@ -54,7 +54,7 @@ def decomposition(n, sigma):
          s = "(" + str(i + 1) + ", " + str(k + 1) + ")"
          lista.insert(0, s)
          contador = contador + 1
-         
+
    s = ""
    for cadaUm in lista:
      s = s + cadaUm

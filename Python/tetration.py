@@ -51,11 +51,11 @@ def newton_method(f, c, x1, x2, t, erro):
       else:
          xi = x
    return x
-   
+
 # tetration
 def f(x, t):
    return tration(x, t, 4)
-   
+
 # tetration(x, 1/n)
 def tetration_inverse(x, n, x1, x2):
    return newton_method(f, x, x1, x2, n, 1e-13)
@@ -70,7 +70,7 @@ def tration(x, y, n):
       #if log10(y) > 1000:
       #   return 0
       return power(x, y)
-      
+
    if x == 0:
       return 0
    if y == 1:
@@ -128,7 +128,7 @@ def mult(v, x, n):
    for i in range (0, k):
       res[i] = tration(v[2 * i], v[2 * i + 1], n)
    return res
-   
+
 # n >= 1 + log_2 rows
 def inner(M, cols, rows, nn):
    x, v, n = cols * rows, mp.zeros(cols * rows, 1), nn
@@ -145,7 +145,7 @@ def inner(M, cols, rows, nn):
          v[k] = M[2*i + 1, j]
          k = k + 1
    print(v.T)
-   
+
    if (n < 1 + mp.ln(rows)/mp.ln(2)):
       return v
    while (x > cols) and (n > 1):
@@ -158,7 +158,7 @@ def inner(M, cols, rows, nn):
       for i in range (1, x):
          res = tration(res, v[i], n)
       v = mp.zeros(1, 1)
-      v[0] = res      
+      v[0] = res
    return v
 
 def demo(t, k, x1, x2):

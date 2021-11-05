@@ -12,14 +12,14 @@ def spherical2unitary(n, v):
    w = mp.zeros(n + 1, 1)
    for i in range (0, n + 1):
       w[i] = 1
-      
+
    for j in range (0, n):
       k = n - j
       for i in range (0, k):
          w[i] = w[i] * mp.cos(v[i] * pi/180)
       w[k] = w[k] * mp.sin(v[k - 1] * pi/180)
-   
-   return w   
+
+   return w
 
 def sphericalMatrix(n, width, M):
    w = mp.zeros(n + 1, width)
@@ -27,14 +27,14 @@ def sphericalMatrix(n, width, M):
       for j in range (0, width):
          w[i, j] = 1
 
-   for col in range (0, width):  
+   for col in range (0, width):
       for j in range (0, n):
          k = n - j
          for i in range (0, k):
             w[i, col] = w[i, col] * mp.cos(M[i, col] * pi/180)
          w[k, col] = w[k, col] * mp.sin(M[k - 1, col] * pi/180)
-   
-   return w   
+
+   return w
 
 def norm2sphere(beta, pp, d, qq, a, b, c):
    p = sphericalMatrix(a - 1, a, pp)
@@ -102,14 +102,14 @@ def my_int(x):
 def f1(beta, a, b, c):
    if (a > b) or (b > c):
       return 0, 0, 0, 0, 0
-   
+
    print("# Free Variables =", a * a, "+", a, "+", b * c * b, "-", a * b * c, "=", a * a + a + b * c * b - a * b * c, "times <u, v> = 0")
    print("# Columns =", a, "+", b * c, "=", a + b * c)
 
    p = mp.zeros(a, a)
    d = mp.zeros(a, 1)
    q = mp.zeros(b * c, b * c)
-   
+
    # - beta + p * d * q = 0
    # gradient descent method
    h = 32
@@ -122,7 +122,7 @@ def f1(beta, a, b, c):
             p[i, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                p[i, j] = - p[i, j]
-      
+
       for i in range (0, a):
          d[i] = random.randrange(120)/100
          if random.randrange(2) == 0:
@@ -134,7 +134,7 @@ def f1(beta, a, b, c):
             q[ii, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                q[ii, j] = - q[ii, j]
-      
+
       #q[0, 6], q[0, 7], q[0, 8] =  1, 1, 1
       #q[3, 6], q[3, 7], q[3, 8] =  1, 1, 1
       #q[8, 6], q[8, 7], q[8, 8] =  1, 1, 1
@@ -222,17 +222,17 @@ def f1(beta, a, b, c):
 def f2(beta, a, b, c):
    if (a > b) or (b > c):
       return 0, 0, 0, 0, 0
-      
+
    aa = a - 1
    bb = b - 1
-   
+
    print("# Free Variables =", a * aa, "+", a, "+", b * c * bb, "-", a * b * c, "=", a * aa + a + b * c * bb - a * b * c, "times <u, v> = 0")
    print("# Columns =", a, "+", b * c, "=", a + b * c)
 
    pp = mp.zeros(aa, a)
    d = mp.zeros(a, 1)
    qq = mp.zeros(bb, b * c)
-   
+
    # - beta + p * d * q = 0
    # gradient descent method
    h = 32
@@ -244,7 +244,7 @@ def f2(beta, a, b, c):
          pp[0, j] = random.randrange(361)
          for i in range (1, aa):
             pp[i, j] = random.randrange(181) - 90
-      
+
       for i in range (0, a):
          d[i] = random.randrange(120)/100
          if random.randrange(2) == 0:
@@ -254,7 +254,7 @@ def f2(beta, a, b, c):
          qq[0, j] = random.randrange(361)
          for i in range (1, bb):
             qq[i, j] = random.randrange(181) - 90
-      
+
       erro2, dif, p, q = norm2sphere(beta, pp, d, qq, a, b, c)
    erroAnt = 1e100
 
@@ -324,14 +324,14 @@ def f2(beta, a, b, c):
 def f3(beta, a, b, c):
    if (a > b) or (b > c):
       return 0, 0, 0, 0, 0
-   
+
    print("# Free Variables =", a * a, "+", a, "+", b * c * b, "-", a * b * c, "=", a * a + a + b * c * b - a * b * c, "times <u, v> = 0")
    print("# Columns =", a, "+", b * c, "=", a + b * c)
 
    p = mp.zeros(a, a)
    d = mp.zeros(a, 1)
    q = mp.zeros(b * c, b * c)
-   
+
    # - beta + p * d * q = 0
    # gradient descent method
    h = 32
@@ -344,7 +344,7 @@ def f3(beta, a, b, c):
             p[i, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                p[i, j] = - p[i, j]
-      
+
       for i in range (0, a):
          d[i] = random.randrange(120)/100
          if random.randrange(2) == 0:
@@ -356,7 +356,7 @@ def f3(beta, a, b, c):
             q[ii, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                q[ii, j] = - q[ii, j]
-      
+
       erro2, dif = norm2(beta, p, d, q, a, b, c)
    erroAnt = 1e100
 
@@ -412,7 +412,7 @@ def f3(beta, a, b, c):
 def f4(beta, a, b, c):
    if (a > b) or (b > c):
       return 0, 0, 0, 0, 0
-   
+
    print("# Free Variables =", a * a, "+", a, "+", b * c * b, "-", a * b * c, "=", a * a + a + b * c * b - a * b * c, "times <u, v> = 0")
    print("# Columns =", a, "+", b * c, "=", a + b * c)
 
@@ -422,7 +422,7 @@ def f4(beta, a, b, c):
    gradp = mp.zeros(a, a)
    gradd = mp.zeros(a, 1)
    gradq = mp.zeros(b * c, b * c)
-   
+
    # - beta + p * d * q = 0
    # gradient descent method
    h = 0.01
@@ -436,7 +436,7 @@ def f4(beta, a, b, c):
             p[i, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                p[i, j] = - p[i, j]
-      
+
       for i in range (0, a):
          d[i] = random.randrange(120)/100
          if random.randrange(2) == 0:
@@ -448,7 +448,7 @@ def f4(beta, a, b, c):
             q[ii, j] = random.randrange(120)/100
             if random.randrange(2) == 0:
                q[ii, j] = - q[ii, j]
-               
+
       erro[0], dif = norm2(beta, p, d, q, a, b, c)
 
    for i in range (0, a):
@@ -462,7 +462,7 @@ def f4(beta, a, b, c):
       ii = power(k + 1, 2) - 1
       for j in range (0, b * c):
          gradq[ii, j] = dnorm2dqiij(beta, p, d, q, a, b, c, ii, j)
-         
+
    epmin = -1
    min = 1e100
    for epoca2 in range (0, 50):
@@ -471,16 +471,16 @@ def f4(beta, a, b, c):
          p2 = p + dx * gradp
          d2 = d + dx * gradd
          q2 = q + dx * gradq
-   
+
          erro[epoca], dif = norm2(beta, p2, d2, q2, a, b, c)
-   
+
          #print("Epoch =", epoca, "Error =", erro[epoca])
          if erro[epoca] < 0.01:
             return erro[epoca], p2, d2, q2, dif
-            
+
          if erro[epoca] < min:
             min, epmin = erro[epoca], epoca
-   
+
       epoca = epmin
       dx = (epoca - 50) * h
       for i in range (0, a):
@@ -492,17 +492,17 @@ def f4(beta, a, b, c):
          ii = power(k + 1, 2) - 1
          for j in range (0, b * c):
             q2[ii, j] = q[ii, j] + dx * gradq[ii, j]
-   
+
       erro[epoca], dif = norm2(beta, p2, d2, q2, a, b, c)
       print("Epmin =", epmin, "Error =", erro[epoca])
-      
+
       p, d, q = p2, d2, q2
       h = h / 50
-      
+
    return erro[epoca], p, d, q, dif
-   
+
 def dnorm2dpij(beta, p, d, q, a, b, c, I, j):
-   erro = p[j, I] # d (x^4 - x^2)^2 = 2(x^4 - x^2)(4x^3 - 2x) = 4x^3 (x^2 - 1)(2x^2 - 1) 
+   erro = p[j, I] # d (x^4 - x^2)^2 = 2(x^4 - x^2)(4x^3 - 2x) = 4x^3 (x^2 - 1)(2x^2 - 1)
    erro = 4 * power(erro, 3) * (power(erro, 2) - 1) * (2 * power(erro, 2) - 1)
 
    dif = mp.zeros(a, 1)
@@ -522,7 +522,7 @@ def dnorm2dpij(beta, p, d, q, a, b, c, I, j):
    #erro = 0
    for i in range (0, a):
       erro = erro + 2 * dif[i] * soma[i]
-   
+
    return mp.re(erro)
 
 def dnorm2ddi(beta, p, d, q, a, b, c, I):
@@ -545,11 +545,11 @@ def dnorm2ddi(beta, p, d, q, a, b, c, I):
    for i in range (0, a):
       for j in range (0, b * c):
          erro = erro + 2 * dif[i, j] * soma[i, j]
-   
+
    return mp.re(erro)
 
 def dnorm2dqiij(beta, p, d, q, a, b, c, II, j):
-   erro = q[II, j] # d (x^4 - x^2)^2 = 2(x^4 - x^2)(4x^3 - 2x) = 4x^3 (x^2 - 1)(2x^2 - 1) 
+   erro = q[II, j] # d (x^4 - x^2)^2 = 2(x^4 - x^2)(4x^3 - 2x) = 4x^3 (x^2 - 1)(2x^2 - 1)
    erro = 4 * power(erro, 3) * (power(erro, 2) - 1) * (2 * power(erro, 2) - 1)
 
    dif = mp.zeros(a, 1)
@@ -569,7 +569,7 @@ def dnorm2dqiij(beta, p, d, q, a, b, c, II, j):
    #erro = 0
    for i in range (0, a):
       erro = erro + 2 * dif[i] * soma[i]
-   
+
    return mp.re(erro)
 
 mp.dps = 50
@@ -586,16 +586,16 @@ for n in range (2, 5):
 
 beta = mp.zeros(2, 12)
 
-beta[0, 0], beta[0, 1], beta[0, 2] =    3,   4,   7 
+beta[0, 0], beta[0, 1], beta[0, 2] =    3,   4,   7
 beta[1, 0], beta[1, 1], beta[1, 2] =   13,  17,  19
 
-beta[0, 3], beta[0,  4], beta[0,  5] =  11, 10,   1 
+beta[0, 3], beta[0,  4], beta[0,  5] =  11, 10,   1
 beta[1, 3], beta[1,  4], beta[1,  5] =   2, 23,  29
 
 beta[0, 6], beta[0, 7], beta[0, 8] =    5, 4.4, 7.6
 beta[1, 6], beta[1, 7], beta[1, 8] =    1, 1.9, 1.8
 
-beta[0, 9], beta[0, 10], beta[0, 11] = 1.1,   0, 1.2 
+beta[0, 9], beta[0, 10], beta[0, 11] = 1.1,   0, 1.2
 beta[1, 9], beta[1, 10], beta[1, 11] = 2.3, 5.2, 9.2
 
 erro, p, d, q, dif = f1(beta, 2, 3, 4)

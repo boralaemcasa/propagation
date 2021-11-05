@@ -4,11 +4,11 @@ library('corpcor')
 library('mlbench')
 library('plot3D')
 
-dist <- function(x, y, nc) { 
+dist <- function(x, y, nc) {
    soma <- 0
    for (i in 1:nc)
       soma <- soma + (x[i] - y[i])^2
-   return(sqrt(soma)) 
+   return(sqrt(soma))
 }
 
 kmeans <- function(k, M, linhas, index) {
@@ -58,28 +58,28 @@ kmeans <- function(k, M, linhas, index) {
 }
 
 fcmeans <- function(c, X, n, m, epsilon) {
-   #c <- nclus 
-   #X <- totalM 
+   #c <- nclus
+   #X <- totalM
    #m <- 2
    #epsilon <- 0.1
 
    p <- length(X[1,]) # colunas
    dE <- 1
-   
+
    K <- matrix(0, nrow=c, ncol=p)
    for (i in 1:c) {
       a <- sample(1:n, 1)
       for (j in 1:p)
          K[i,j] <- X[a,j] + 0.1
    }
-   
+
    while (dE > epsilon) {
       Uaux <- matrix(0, nrow=c, ncol=n)
       U <- matrix(0, nrow=c, ncol=n)
       D <- matrix(0, nrow=c, ncol=n)
       aux <- matrix(0, nrow=c, ncol=p)
       aux2 <- matrix(0, nrow=c, ncol=p)
-      
+
       Ka <- K
       for (i in 1:c)
          for (j in 1:n)
@@ -87,11 +87,11 @@ fcmeans <- function(c, X, n, m, epsilon) {
       for (i in 1:c)
          for (j in 1:n) {
             for (k in 1:c)
-               Uaux[i,j] <- Uaux[i,j] + (D[i,j]/D[k,j])^(2/(m - 1)) 
+               Uaux[i,j] <- Uaux[i,j] + (D[i,j]/D[k,j])^(2/(m - 1))
             U[i,j] <- 1/Uaux[i,j]
          }
       for (i in 1:c) {
-         for (j in 1:n) 
+         for (j in 1:n)
             for (k in 1:p) {
                aux[i,k] <- aux[i,k] + U[i,j]^m * X[j,k]
                aux2[i,k] <- aux2[i,k] + U[i,j]^m
@@ -101,7 +101,7 @@ fcmeans <- function(c, X, n, m, epsilon) {
       dE <- norm(K - Ka)
       print(dE)
    }
-   
+
    U <- t(U)
    v <- matrix(1, nrow=n, ncol=1)
    for (i in 1:n) {
@@ -112,12 +112,12 @@ fcmeans <- function(c, X, n, m, epsilon) {
             v[i] <- j
          }
    }
-   return(list(K, U, v))       
+   return(list(K, U, v))
 }
 
 xin <- as.matrix(read.csv("x.csv", sep=",", header=FALSE))
 yin <- as.matrix(read.csv("y.csv", sep=",", header=FALSE))
-for (i in 1:n) { 
+for (i in 1:n) {
    if (yin[i] < 0) {
       yin[i] <- 2
       cor = "blue"
@@ -146,7 +146,7 @@ for (i in 1:n) {
       acertos <- acertos + 1
 }
 print(acertos)
-for (i in 1:n) { 
+for (i in 1:n) {
    if (3 - v[i] == 2) {
       cor = "blue"
    }

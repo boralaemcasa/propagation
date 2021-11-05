@@ -47,7 +47,7 @@ for epoca=1:nepocas
         for j=1:m
             dysdwj=(y(j)-ys)/b;
             dysdyj=w(j)/2;
-            
+
             for i=1:n
                 dwjdcij=w(j)*(xt(k,i)-c(i,j)/(s(i,j)^2));
                 dwjdsij=w(j)*(xt(k,i)-c(i,j))^2/(s(i,j)^3);

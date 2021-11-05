@@ -28,7 +28,7 @@ class TAlgebraicFraction:
       return TAlgebraicFraction(self.n * k, self.d)
    def eval(f, x):
       return f.n(x)/f.d(x)
-      
+
    def abs(self):
       if isZero(self.n):
          return 0
@@ -49,7 +49,7 @@ class TAlgebraicFraction:
             if k > max:
                max = k
       return max
-      
+
    def simplify(res):
       for k in range (0, len(res.n)):
          if not isfinite(res.n.coef[k]):
@@ -74,7 +74,7 @@ class TAlgebraicFraction:
                break
             res.n, res.d = q1, q2
       return res
-      
+
    def isZero(self):
       return isZero(self.n)
 
@@ -117,7 +117,7 @@ class TAlgebraicFraction:
       #intz = intz.simplify()
       print("atan 1 =", soma, "// root =", root, "\n")
       return intz
-   
+
    def sin(p):
       # sin p = p - p^3/3! + p^5/5! - p^7/7! + ...
       res = TAlgebraicFraction([0], [1]) # the "0" polynomial
@@ -163,13 +163,13 @@ class TAlgebraicFraction:
          res = TAlgebraicFraction([coef], [1]) # the "coef" polynomial
          for i in range (1, 30):
             powxt = powxt.mul(xt)
-            coef = coef * (r - i) / t / i 
+            coef = coef * (r - i) / t / i
             termo = powxt.dilat(coef)
             res = res.add(termo)
             if termo.abs() < 1e-5:
                break
          return res.simplify()
-      
+
       r = mp.re(r)
       if r < 0:
          r = -r
@@ -256,7 +256,7 @@ def evaluate(T, degree, z, x):
          if T[i,k]:
             soma = soma + T[i,k] / power(z, i) * power(x, k)
    return soma
-   
+
 def transform(T, degree):
    R = mp.zeros(degree + 3, degree + 3)
    for i in range (0, degree + 1):
@@ -266,7 +266,7 @@ def transform(T, degree):
                R[i, k - 1] += T[i, k] * k
             R[i + 2, k + 1] += T[i, k] * i
    return R
-   
+
 def complexRoots(p):
     """
     Return the roots of a polynomial with coefficients given in p.
@@ -451,7 +451,7 @@ def toString(p):
                 res += " - {b}".format(b=-a)
             elif mp.fabs(a) > 1e-9:
                 res += " + {a}".format(a=a)
-            # a = 0 is not displayed 
+            # a = 0 is not displayed
         elif i == 1:  # Second coefficient, only x and not x**i
             if a == 1:  # a = 1 does not need to be displayed
                 res += " + x"
@@ -459,7 +459,7 @@ def toString(p):
                 res += " - x"
             elif mp.re(a) < 0:
                 res += " - {b}*x".format(b=-mp.re(a))
-            elif mp.fabs(a) > 1e-9: 
+            elif mp.fabs(a) > 1e-9:
                 res += " + {a}*x".format(a=a)
         else:
             if a == 1:
@@ -468,12 +468,12 @@ def toString(p):
                 res += " - x^{i}".format(i=i)
             elif mp.re(a) < 0:
                 res += " - {b}*x^{i}".format(b=-mp.re(a), i=i)
-            elif mp.fabs(a) > 1e-9: 
+            elif mp.fabs(a) > 1e-9:
                 res += " + {a}*x^{i}".format(a=a, i=i)
     if lista1[0] > 0:
        return res[3:]
     return res[1:]
-        
+
 def power(x, y):
    if x == 0:
       return 0
@@ -533,4 +533,4 @@ demo(g)
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
-   
+

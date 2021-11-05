@@ -33,7 +33,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/super/AEquipeGraffite.pdf", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/super/index.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/super/novoAnuncio.jpg", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\summer013\\";
 		Util.println(executeGet("https://claudino.webs.com/summer013/holograms.png", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/summer013/resumao.txt", "", 443));
@@ -41,7 +41,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/summer013/variedade1.gif", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/summer013/variedade2.gif", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/summer013/variedade3.gif", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\math\\";
 		Util.println(executeGet("https://claudino.webs.com/math/1ijk_lemniscatas.gif", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/4pontos.zip", "", 443));
@@ -85,13 +85,13 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/math/trisection.pdf", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/Vinicius_Monografia.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/VinteQuatroDoisCuboTres.gif", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\math\\arcos\\";
 		Util.println(executeGet("https://claudino.webs.com/math/arcos/figura.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/arcos/index.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/arcos/s1.gif", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/math/arcos/s2.gif", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\info\\";
 		Util.println(executeGet("https://claudino.webs.com/info/cubo.zip", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/info/cubo_chines.zip", "", 443));
@@ -100,7 +100,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/info/reltec.zip", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/info/SNum.h", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/info/SNum.txt", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\google\\";
 		Util.println(executeGet("https://claudino.webs.com/google/index.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/google/index2.htm", "", 443));
@@ -108,7 +108,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/google/simpsons.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/google/StatLib.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/google/zeos.jpg", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\gimg\\";
 		Util.println(executeGet("https://claudino.webs.com/gimg/alargamento.gif", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gimg/apareceu.JPG", "", 443));
@@ -129,7 +129,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/gimg/vigarista.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gimg/woody.png", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gimg/wuw.jpg", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\gatherer\\";
 		Util.println(executeGet("https://claudino.webs.com/gatherer/absolute_grace.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gatherer/absolute_law.jpg", "", 443));
@@ -225,7 +225,7 @@ public class Testar {
 		Util.println(executeGet("https://claudino.webs.com/gatherer/wheel_fortune.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gatherer/wilderness.jpg", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/gatherer/words.jpg", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\citacoes\\";
 		Util.println(executeGet("https://claudino.webs.com/citacoes/acredito.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/citacoes/chicoXavierColecaoCompleta.htm", "", 443));
@@ -251,7 +251,7 @@ public class Testar {
 
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\aperfeicoamento\\";
 		Util.println(executeGet("https://claudino.webs.com/aperfeicoamento/index.htm", "", 443));
-		
+
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\";
 		Util.println(executeGet("https://claudino.webs.com/2010.htm", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/2011.htm", "", 443));

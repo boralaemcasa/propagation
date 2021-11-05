@@ -56,18 +56,18 @@ t <- 1
     z2[i] <- ex2(t - 1)
     z3[i] <- ex2(t + 3)
     print z_i
-   
+
 ex3 <- function(n) {
    return (delta(n + 1) - delta(n) + u(n - 1) - u(n - 2))
 }
 
 t <- 1
-   
+
     x[i] <- t
     y[i] <- ex3(t)
     z[i] <- ex3(4 - 2*t)
     print z
-   
+
 # escreva
 
 ####################### agora de R em R
@@ -83,7 +83,7 @@ ex4 <- function(t) {
       return (2 - t)
    return (0)
 }
-   
+
  dev.off()
  Mx1 <- -4
  Mx2 <- 4
@@ -99,7 +99,7 @@ ex4 <- function(t) {
  z5 <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = Mx1, t(N) = Mx2
-    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1 
+    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1
     x[i] <- t
     # t <- 1
     y[i] <- ex4(t)
@@ -114,7 +114,7 @@ ex4 <- function(t) {
  plot(x,z1,type = 'l',col='green',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
  par(new=T)
  plot(x,z2,type = 'l',col='red',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
- 
+
 ##################################################
 ex12
 
@@ -123,7 +123,7 @@ G <- function(t, T) {
 }
 
 p <- function(t) {
-   return (G(t - 0.5, 1) + (t - 1) * G(t - 1.5, 1) 
+   return (G(t - 0.5, 1) + (t - 1) * G(t - 1.5, 1)
          - G(t - 3.5, 1) + (3 - t) * G(t - 2.5, 1))
 }
 

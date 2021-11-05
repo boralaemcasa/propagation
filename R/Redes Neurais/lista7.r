@@ -46,7 +46,7 @@ contour(seqi, seqj, M, xlim = c(-4,4), ylim = c(-3,3), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-        
+
 ================
 
 #v<-mlbench.xor(100)
@@ -90,7 +90,7 @@ contour(seqi, seqj, M, xlim = c(-1,1), ylim = c(-1,1), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-        
+
 ================
 
 xin<-matrix(runif(100, -15, 15),ncol=1)
@@ -112,7 +112,7 @@ m2 <- -8.033118
 
 xin <- 3.7
 5.8 * sin(xin - 0.5)
-w1 * exp(- (xin - m1)^2) + w2 * exp(- (xin - m2)^2) 
+w1 * exp(- (xin - m1)^2) + w2 * exp(- (xin - m2)^2)
 ================
 
 12

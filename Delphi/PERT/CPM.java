@@ -112,7 +112,7 @@ if (n>0)
         int sink   = 2*n + 1;
 
 
-  
+
 
         // build network
         EdgeWeightedDigraph G = new EdgeWeightedDigraph(2*n + 2);

@@ -143,7 +143,7 @@ def Image_Classification(x_train, y_train, x_test, y_test, shape, batch_size=128
                                                                     max_nodes_dnn,
                                                                     random_optimizor,
                                                                     dropout)
-                                                                    
+
             filepath = "weights\weights_DNN_" + str(i) + ".hdf5"
             checkpoint = ModelCheckpoint(filepath,
                                          monitor='val_accuracy',
@@ -174,7 +174,7 @@ def Image_Classification(x_train, y_train, x_test, y_test, shape, batch_size=128
             y_pr = np.argmax(y_pr, axis=1)
             y_proba.append(np.array(y_pr))
             score.append(accuracy_score(y_test, y_pr))
-            
+
             i = i + 1
             del model_tmp
             del model_DNN
@@ -239,9 +239,9 @@ def Image_Classification(x_train, y_train, x_test, y_test, shape, batch_size=128
                                                                     dropout)
 
             filepath = "weights\weights_CNN_" + str(i) + ".hdf5"
-            checkpoint = ModelCheckpoint(filepath, 
+            checkpoint = ModelCheckpoint(filepath,
                                          monitor='val_accuracy',
-                                         verbose=1, 
+                                         verbose=1,
                                          save_best_only=True,
                                          mode='max')
             callbacks_list = [checkpoint]

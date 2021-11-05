@@ -18,7 +18,7 @@ def simplify(p, q, flagp, flagq, leftplus, ptimes, qtimes):
       u, v = mp.fabs(p * ptimes), mp.fabs(q * q * qtimes * qtimes)
    elif (not flagp) and flagq:
       u, v = mp.fabs(p * p * ptimes * ptimes), mp.fabs(q * qtimes)
-   else:   
+   else:
       u, v = mp.fabs(p * ptimes), mp.fabs(q * qtimes)
 
    sinalq = sgn(q)*sgn(qtimes)
@@ -32,9 +32,9 @@ def simplify(p, q, flagp, flagq, leftplus, ptimes, qtimes):
       a, b, u, v = u, 1, 1, v
    elif (not flagp) and flagq:
       a, b, u, v = 1, u, v, 1
-   else:   
+   else:
       a, b, u, v = 1, u, 1, v
-   
+
    if (a == 0) or (u == 0):
       s = "0"
    else:
@@ -557,7 +557,7 @@ def iterar(p, argz, tau, vn, vd, drew, sqimw, lista):
                         tanS, aa, bb, cc, dd = simplify(bb*ff, re(soma), True, False, False, im(soma), 1)
                         #r = (b/2)^p = 1/2^p * (sbn/sbd)^(p/2)
                         #*** cosargz = re(soma) * 2^p * sbd^(p/2)/ (rewB^p * imwB^q * sbn^(p/2))
-                        cosS = (my_str(mp.re(soma)) + "*" + str(2) + "^" + str(p) 
+                        cosS = (my_str(mp.re(soma)) + "*" + str(2) + "^" + str(p)
                                 + "*" + str(sbd) + "^" + str(q) + "/(" + str(rewB) + "^"
                                 + str(p) + "*" + str(imwB) + "^" + str(q) + "*" + str(sbn) + "^" + str(q) + ")")
                      else:
@@ -575,7 +575,7 @@ def iterar(p, argz, tau, vn, vd, drew, sqimw, lista):
                         tanS, aa, bb, cc, dd = simplify(ff, bb, True, True, False, im(soma), re(soma))
                         #r = (b/2)^p = 1/2^p * (sbn/sbd)^(p/2)
                         #*** cosargz = re(soma)*sqrt(bb) * 2^p * sbd^(p/2) / (rewB^p * imwB^q * sbn^(p/2))
-                        cosS = (cosS + "*" + str(2) + "^" + str(p) 
+                        cosS = (cosS + "*" + str(2) + "^" + str(p)
                                 + "*" + str(sbd) + "^" + str(q) + "/(" + str(rewB) + "^"
                                 + str(p) + "*" + str(imwB) + "^" + str(q) + "*" + str(sbn) + "^" + str(q) + ")")
 
@@ -661,7 +661,7 @@ def iterar(p, argz, tau, vn, vd, drew, sqimw, lista):
                      #print("D =", dS) # length(D) too long!
                      #print("M =", mS)
                      #print("V =", v)
-                     print("insert into trisection values (", quoted(thetaS), ",\n", quoted(my_int(k * p/2)), 
+                     print("insert into trisection values (", quoted(thetaS), ",\n", quoted(my_int(k * p/2)),
                           ",\n", quoted(p), ",\n", quoted(argzS), ",\n", quoted(cosS), ",\n", quoted(tanS),
                           ",\n", quoted(rezS), ",\n", quoted(imzS), ",\n", quoted(rewS),
                           ",\n", quoted(imwS), ",\n", quoted(aS), ",\n", quoted(bS),

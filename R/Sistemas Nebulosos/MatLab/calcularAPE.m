@@ -1,5 +1,5 @@
 function [obj, objq, objp, objsigma, objSaidays] = calcularAPE(alpha, nEpocas, nPontosT, nPontosV, xt, xv, ydt, ydv, nVariaveis, nGaussianas,	xit, xft, normalizar, limitar, copiar)
-    
+
     resultDefined = false;
     apeAnt = 1e100;
 		dq = zeros(nGaussianas);
@@ -8,7 +8,7 @@ function [obj, objq, objp, objsigma, objSaidays] = calcularAPE(alpha, nEpocas, n
 		dsigma = zeros(nGaussianas, nVariaveis);
 
 		obj = AverageError;
-    Result = AverageError;  
+    Result = AverageError;
     obj.alpha = alpha;
 		objq = zeros(nGaussianas);
 		objp = zeros(nGaussianas, nVariaveis);
@@ -91,7 +91,7 @@ function [obj, objq, objp, objsigma, objSaidays] = calcularAPE(alpha, nEpocas, n
 						max = tmp;
           end;
 				end; ##j
-        
+
 				if limitar && (max > 100.0)
 					alpha *= 0.01;
         end;

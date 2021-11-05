@@ -1543,7 +1543,7 @@ def HM(m, z, q, infty):
    q20 = q10 * q10
    if m == 0:
       w = ramanujan(q5, q5, infty)
-      return (- q * w * w * w * f(z5 * q5, q5/z5, infty) * f(-1/z10, -q20/z10, infty) 
+      return (- q * w * w * w * f(z5 * q5, q5/z5, infty) * f(-1/z10, -q20/z10, infty)
               / ramanujan(q10, q10, infty) / ramanujan(q20, q20, infty) / f(-z5, -q5/z5, infty))
    return 2 * q * power(z, m) * AA(z5, power(q, m), q5, infty)
 
@@ -1712,7 +1712,7 @@ def PP(z, x, q, infty):
 def eq1068(q, x, z, infty):
    x4, q4 = power(x, 4), power(q, 4)
    return - B(z, x, q, infty) + f(z * x4, q4/z/x4, infty) * (kk(x, q, infty) - 1/x) + PP(z, x, q, infty)
-   
+
 def II(m, z, q, infty):
    z5, zm, q4m, q20 = power(z, 5), power(z, m), power(q, 4*m), power(q, 20)
    return bm(m, q, infty) * zm * f(z5 * q4m, 1/z5 * q20 / q4m, infty)
@@ -1779,7 +1779,7 @@ def eq1111(q, infty):
    q8 = q4 * q4
    p1, p2, p3, p4 = phi10(q, infty), psi10(-q4, infty)/q, chi10(q8, infty)/q2, phi(q, infty) * hq(-q2, infty)/psi(-q, infty)
    return p1 - p2 + p3 - p4
-   
+
 def gg(q, infty):
    soma = 1
    sinal = -1
@@ -2049,7 +2049,7 @@ def eq12216(q, infty):
 def etan(n, z, infty):
    qn = mp.exp(2 * mp.pi() * j * z * n)
    return power(qn, 1/24) * ramanujan(qn, qn, infty)
- 
+
 def P2(t):
    frac = t - mp.floor(t)
    return frac * frac  - frac + 1/6

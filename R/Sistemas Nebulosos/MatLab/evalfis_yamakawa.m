@@ -14,7 +14,7 @@ function ysv = evalfis_yamakawa(out, xv)
           end
           xa = out.xit(v) + (jj(v)-2)*out.gamma(v);
           mujj(v) = 1/out.gamma(v) * (xa + 2*out.gamma(v) - xv(k,v)); %% inclinaçao negativa
-          ysv(k) = ysv(k) + mujj(v) * out.w(v,jj(v)) + (1 - mujj(v)) * out.w(v,jj(v)+1); 
+          ysv(k) = ysv(k) + mujj(v) * out.w(v,jj(v)) + (1 - mujj(v)) * out.w(v,jj(v)+1);
         end
     end
 

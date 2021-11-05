@@ -56,7 +56,7 @@ for (i in 1:n)
    }
 totalM <- pedaco
 n <- 1302
-  
+
 for (classe in 1:1) { #nn
    #classe <- 3
    offset <- 0
@@ -64,7 +64,7 @@ for (classe in 1:1) { #nn
       #kk <- 1
       cccc <- matrix(0,nrow=nn)
       xc <- array(0, c(n,colunas,nn))
-  
+
       for (i in 1:n) {
          jj <- totalM[i, colunay]
          cccc[jj] <- cccc[jj] + 1
@@ -113,7 +113,7 @@ for (classe in 1:1) { #nn
       maxk <- matrix(0,nrow=testeN)
       for (jj in 1:nnn) {
          contador <- 0
-         for (j in 1:n) 
+         for (j in 1:n)
             if (totalM[j, final] == jj) {
                for (ell in 1:nx)
                   media[jj,ell] <- media[jj,ell] + totalM[j,ell]
@@ -138,10 +138,10 @@ for (classe in 1:1) { #nn
             jj <- totalM[i,final]
             flag[jj] <- flag[jj] + 1
          }
-  
+
       acertos <- 0
       for (i in 1:testeN) {
-         denomm <- 0 
+         denomm <- 0
          numeradorr <- 0
          for (jj in 1:nnn)
             if (flag[jj] > 0)
@@ -149,7 +149,7 @@ for (classe in 1:1) { #nn
             else
                denomm <- denomm + p[i,jj]
 
-         if (denomm == 0) 
+         if (denomm == 0)
             acertos <- acertos + 1
          else {
             f <- numeradorr / denomm
@@ -168,15 +168,15 @@ for (classe in 1:1) { #nn
             x <- xvalid [i,]
             for (jj in 1:nnn)
                pp[jj] <- pdfnvar(x, media[jj,], K, nx) * cc[jj]
-      
-            denom <- 0 
+
+            denom <- 0
             numerador <- 0
             for (jj in 1:nnn)
                if (flag[jj] > 0)
                   numerador <- numerador + pp[jj]
                else
                   denom <- denom + pp[jj]
-      
+
             if (denom == 0)
                output[i,2] <- classe
             else {

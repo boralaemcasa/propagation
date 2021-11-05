@@ -46,7 +46,7 @@ contour(seqi, seqj, M, xlim = c(-4,4), ylim = c(-3,3), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-        
+
 
 ================
 
@@ -90,7 +90,7 @@ contour(seqi, seqj, M, xlim = c(-1,1), ylim = c(-1,1), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-        
+
 
 ================
 
@@ -134,7 +134,7 @@ contour(seqi, seqj, M, xlim = c(-1,1), ylim = c(-1,1), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-    
+
 ================
 
 v<-mlbench.spirals(100, sd=0.05)
@@ -177,7 +177,7 @@ contour(seqi, seqj, M, xlim = c(-1,1), ylim = c(-1,1), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-    
+
 
 ================
 

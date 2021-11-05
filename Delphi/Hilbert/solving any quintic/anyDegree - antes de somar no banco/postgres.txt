@@ -1,21 +1,21 @@
                     Tabela "public.polymaster"
- Coluna |          Tipo          | Collation | Nullable | Default 
+ Coluna |          Tipo          | Collation | Nullable | Default
 --------+------------------------+-----------+----------+---------
- who    | character varying(255) |           | not null | 
- i      | integer                |           | not null | 
- coef   | text                   |           | not null | 
+ who    | character varying(255) |           | not null |
+ i      | integer                |           | not null |
+ coef   | text                   |           | not null |
 Índices:
     "polymaster_pkey" PRIMARY KEY, btree (who, i)
 Referenciada por:
     TABLE "polydetail" CONSTRAINT "fk_master_detail" FOREIGN KEY (p_who, p_i) REFERENCES polymaster(who, i)
 
                     Tabela "public.polydetail"
- Coluna |          Tipo          | Collation | Nullable | Default 
+ Coluna |          Tipo          | Collation | Nullable | Default
 --------+------------------------+-----------+----------+---------
- p_who  | character varying(255) |           | not null | 
- p_i    | integer                |           | not null | 
- j      | character varying(10)  |           | not null | 
- power  | integer                |           | not null | 
+ p_who  | character varying(255) |           | not null |
+ p_i    | integer                |           | not null |
+ j      | character varying(10)  |           | not null |
+ power  | integer                |           | not null |
 Índices:
     "polydetail_pkey" PRIMARY KEY, btree (p_who, p_i, j)
 Restrições de chave estrangeira:

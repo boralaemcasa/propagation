@@ -27,10 +27,10 @@ def newton_method(f, c, x1, x2, t, erro):
       else:
          xi = x
    return x
-   
+
 def f(x, t):
    return power(x, t) * mp.exp(x)
-   
+
 def extendedw(xx, n):
    for x1 in range (0, 100):
       y = newton_method(f, xx, x1, x1 + 1, n, 1e-13)
@@ -40,10 +40,10 @@ def extendedw(xx, n):
       if mp.fabs(f(y, n) - xx) < 1e-9:
          return y
    return 0
-   
+
 def g(x, c, a0, r1, r2):
    return mp.exp(-c * x) - a0 * (x - r1) * (x - r2)
-   
+
 def superw(c, a0, r1, r2):
    for x1 in range (0, 100):
       y = super_newton(g, c, a0, r1, r2, x1, x1 + 1, 1e-13)
@@ -53,7 +53,7 @@ def superw(c, a0, r1, r2):
       if mp.fabs(g(y, c, a0, r1, r2)) < 1e-9:
          return y
    return 0
-   
+
 # f(x, c, a0, r1, r2) = 0
 def super_newton(f, c, a0, r1, r2, x1, x2, erro):
    x, y, y2 = x1, f(x1, c, a0, r1, r2), f(x2, c, a0, r1, r2)
@@ -74,7 +74,7 @@ def super_newton(f, c, a0, r1, r2, x1, x2, erro):
       else:
          xi = x
    return x
-   
+
 def my_round(x):
    y = mp.fabs(x)
    if mp.fabs(y - mp.floor(y)) < 0.5:
@@ -99,7 +99,7 @@ def power(x, y):
       return mp.exp(y * mp.ln(-x))
    else:
       return mp.exp(y * mp.ln(x))
-      
+
 # z = ln z, trigonometric
 def F(x):
    res = mp.zeros(2, 1)
@@ -107,7 +107,7 @@ def F(x):
    res[0] = r * mp.cos(t) - mp.ln(r)
    res[1] = r * mp.sin(t) - t
    return res
-   
+
 def dF(x):
    J = mp.zeros(2, 2)
    r, t = x[0], x[1]
@@ -116,7 +116,7 @@ def dF(x):
    J[1,0] = mp.sin(t)         # dv\dx
    J[1,1] = r * mp.cos(t) - 1 # dv\dy
    return J
-   
+
 def ddF(x):
    J = np.zeros((2, 2, 2), dtype=complex)
    r, t = x[0], x[1]
@@ -131,7 +131,7 @@ def ddF(x):
          for k in range (i + 1, 2):
             J[i, k, j] = J[i, j, k]
    return J
-   
+
 def method(n, a, f, df, ddf, x0, erro):
    xk = x0
    zant = 1e100
@@ -152,7 +152,7 @@ def method(n, a, f, df, ddf, x0, erro):
          for k in range (0, n):
             for u in range (0, a):
                H[i, k] = H[i, k] + J[u, k] * J[u, i] + y[u] * m[u, i, k]
-      
+
       # H = V * D * mp.inverse(V)
       H = Matrix(H)
       V, D = H.jordan_form()
@@ -170,7 +170,7 @@ def method(n, a, f, df, ddf, x0, erro):
       for i in range (0, n):
          Be[i] = B[i, epoch]
       w = mp.inverse(H) * mp.inverse(V) * Be
-      alfa = 0.01         
+      alfa = 0.01
       while (True):
          xk = xk - alfa * w
          y = f(xk)
@@ -183,7 +183,7 @@ def method(n, a, f, df, ddf, x0, erro):
                zant = z
                break
          zant = z
-      alfa = 0.1         
+      alfa = 0.1
       while (True):
          xk = xk + alfa * w
          y = f(xk)

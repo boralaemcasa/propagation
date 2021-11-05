@@ -1,7 +1,7 @@
 1) Fast quintic. Sextic skeleton.
 2) Sextic working. Cancel button.
 
-It's slow. 
+It's slow.
 
 We are using 00 .. 02 11 20 = array[6]. Do we need to go until 66 = array[14]?
 

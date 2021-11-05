@@ -26,32 +26,32 @@ p=zeros(c,length(h(:,1)));
 a=zeros(c,1);
 
 for i=1:c
-    for j = 1:length(h(:,1))  
+    for j = 1:length(h(:,1))
     D(i,j) = [(norm(M(i,:)-h(j,:)))^2];
     end
-end 
+end
 
 for i=1:c
-    for j=1:length(h(:,1)) 
-        for l= 1:c 
+    for j=1:length(h(:,1))
+        for l= 1:c
             if D(i,j)==0
-            U(i,j)=1;                        
-            a(j,:)=j; 
-            elseif D(l,j)==0          
-            U(i,j)=0;                                                                      
-            a(j,:)=j;           
-            end                                       
+            U(i,j)=1;
+            a(j,:)=j;
+            elseif D(l,j)==0
+            U(i,j)=0;
+            a(j,:)=j;
+            end
         end
     end
-end          
+end
 
 for i=1:c
-    for j=setdiff(1:max(size(h(:,1))), a(:,1)') 
-        for l= 1:c             
-            Uf(i,j)=Uf(i,j)+((D(l,j))/D(i,j)).^(1/(1-m)); 
-            U(i,j)=1/Uf(i,j);          
+    for j=setdiff(1:max(size(h(:,1))), a(:,1)')
+        for l= 1:c
+            Uf(i,j)=Uf(i,j)+((D(l,j))/D(i,j)).^(1/(1-m));
+            U(i,j)=1/Uf(i,j);
         end
-    end      
+    end
 end
 
 for i=1:size(h,1)

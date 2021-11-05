@@ -140,7 +140,7 @@ public static SFrac Incrementar(String p, String q, boolean co_prime, int halfMo
     if (! co_prime)
       x = Soma(x, "1"); // y = 0 is welcome. x = x + 1 - 1
   } while (true);
-  
+
   return Result;
 }
 

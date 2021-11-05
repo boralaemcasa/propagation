@@ -3,7 +3,7 @@ DX <- 0.01
 derivative <- function(f, x, h) {
    return ((f(x + h) - f(x))/h)
 }
-                
+
 integrar <- function(x1, x2, f, dx) {
    t <- x1 + dx
    soma <- 0
@@ -27,9 +27,9 @@ integrar_param3 <- function(x1, x2, f, dx, param2, param3) {
 impropria_lim2 <- function(g, lim2) {
    x <- 0
    n <- 1
-   a <- 1   
+   a <- 1
    m <- 100
-   mm <- (2 * m - 1)^n 
+   mm <- (2 * m - 1)^n
    dV <- m^(-n)
    soma <- matrix(0, a)
    v <- matrix(0, n)
@@ -62,9 +62,9 @@ impropria_lim2 <- function(g, lim2) {
 impropria_lim2_param3 <- function(g, lim2, param2, param3) {
    x <- 0
    n <- 1
-   a <- 1   
+   a <- 1
    m <- 100
-   mm <- (2 * m - 1)^n 
+   mm <- (2 * m - 1)^n
    dV <- m^(-n)
    soma <- matrix(0, a)
    v <- matrix(0, n)
@@ -97,9 +97,9 @@ impropria_lim2_param3 <- function(g, lim2, param2, param3) {
 impropria_param3 <- function(g, param2, param3) {
    x <- 0
    n <- 1
-   a <- 1   
+   a <- 1
    m <- 100
-   mm <- (2 * m - 1)^n 
+   mm <- (2 * m - 1)^n
    dV <- m^(-n)
    soma <- matrix(0, a)
    v <- matrix(0, n)

@@ -22,7 +22,7 @@ package edu.princeton.cs.algs4;
  *  methods for returning the number of vertices <em>V</em> and the number
  *  of edges <em>E</em>. Parallel edges and self-loops are permitted.
  *  <p>
- *  This implementation uses an adjacency-lists representation, which 
+ *  This implementation uses an adjacency-lists representation, which
  *  is a vertex-indexed array of {@link Bag} objects.
  *  All operations take constant time (in the worst case) except
  *  iterating over the edges incident from a given vertex, which takes
@@ -42,7 +42,7 @@ public class EdgeWeightedDigraph {
     private int E;                      // number of edges in this digraph
     private Bag<DirectedEdge>[] adj;    // adj[v] = adjacency list for vertex v
     private int[] indegree;             // indegree[v] = indegree of vertex v
-    
+
     /**
      * Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
      *
@@ -79,7 +79,7 @@ public class EdgeWeightedDigraph {
         }
     }
 
-    /**  
+    /**
      * Initializes an edge-weighted digraph from the specified input stream.
      * The format is the number of vertices <em>V</em>,
      * followed by the number of edges <em>E</em>,
@@ -221,7 +221,7 @@ public class EdgeWeightedDigraph {
             }
         }
         return list;
-    } 
+    }
 
     /**
      * Returns a string representation of this edge-weighted digraph.

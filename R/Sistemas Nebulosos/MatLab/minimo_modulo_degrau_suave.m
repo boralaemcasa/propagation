@@ -38,7 +38,7 @@ for k =1:length(x)
     ilinha(k) = termo * somalinha;
 
     const = 1 / funfinal * (M2 - m1);
-    
+
      if (x(k) <= a)
          temp = 0;
      elseif (x(k) >= b)
@@ -46,38 +46,38 @@ for k =1:length(x)
      else
          temp = temp + exp(1./((x(k)-a).*(x(k)-b))) * delta;
      end
-     
+
     iref(k) = temp * const + m1;
 
     aa = ilinha(k);
     bb = iref(k);
-    
+
     mm1 = 0;
     mm2 = bb / (aa - epsilon);
     mm3 = bb / (aa + epsilon);
     if (mm1 < mm2) && (mm2 < mm3)
       mm4 = mm1;
-      mm5 = mm2; 
+      mm5 = mm2;
       mm6 = mm3;
     elseif (mm1 < mm3) && (mm3 < mm2)
       mm4 = mm1;
-      mm5 = mm3; 
+      mm5 = mm3;
       mm6 = mm2;
     elseif (mm2 < mm1) && (mm1 < mm3)
       mm4 = mm2;
-      mm5 = mm1; 
+      mm5 = mm1;
       mm6 = mm3;
     elseif (mm2 < mm3) && (mm3 < mm1)
       mm4 = mm2;
-      mm5 = mm3; 
+      mm5 = mm3;
       mm6 = mm1;
     elseif (mm3 < mm1) && (mm1 < mm2)
       mm4 = mm3;
-      mm5 = mm1; 
+      mm5 = mm1;
       mm6 = mm2;
     else
       mm4 = mm3;
-      mm5 = mm2; 
+      mm5 = mm2;
       mm6 = mm1;
     end
     mm7 = mm6 + delta/1000;
@@ -96,7 +96,7 @@ for k =1:length(x)
     else
       alfa(k) = 1;
     end
-     
+
 ##    if alfa(k) > 42000
 ##      alfa(k) = 42000;
 ##    elseif alfa(k) < 39915
@@ -128,11 +128,11 @@ for k =1:length(x)
     end
 
     mi2=1-mi1;
-    
+
     % resolva em m: - M < A - BM/epsilon < M
     %               BM/epsilon - M < A < BM/epsilon + M
-    %               A/~ < M < A/~ 
-    
+    %               A/~ < M < A/~
+
     q1(k+1)=q1(k) + alfa(k)*mi1*e(k);
     q2(k+1)=q2(k) + alfa(k)*mi2*e(k);
 
@@ -141,13 +141,13 @@ for k =1:length(x)
     end
 
     % u = Ri + L di\dt
-    
+
      if (x(k) <= a)
          z = 0;
      elseif (x(k) >= b)
          z = 0;
      else
-       z = exp(1./((x(k)-a).*(x(k)-b))); 
+       z = exp(1./((x(k)-a).*(x(k)-b)));
      end
      uref(k) = R * iref(k) + L * z * const;
 end

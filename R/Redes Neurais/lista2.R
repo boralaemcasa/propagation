@@ -13,7 +13,7 @@ classe = 1*(circle(create_grid$Var1, create_grid$Var2) > raio)
 
 par(new=F)
 for (i in 1:N) {
-  if (classe[i]==1){           
+  if (classe[i]==1){
     plot(create_grid$Var1[i], create_grid$Var2[i], col = 'red', xlim = c(-1.1,1.1),ylim = c(-1.1,1.1),xlab = '' , ylab= '' )
   } else {
     plot(create_grid$Var1[i], create_grid$Var2[i], col = 'blue', xlim = c(-1.1,1.1),ylim = c(-1.1,1.1),xlab = '' , ylab= '' )
@@ -31,7 +31,7 @@ z <- complex(real = create_grid$Var1, imaginary = create_grid$Var2)
 
 par(new=T)
 for (i in 1:N) {
-  if (classe[i]==1){           
+  if (classe[i]==1){
     plot(Mod(z[i]), Arg(z[i]), col = 'red', xlim = c(-0.1,1.5),ylim = c(-3.5,3.5),xlab = '' , ylab= '' )
   } else {
     plot(Mod(z[i]), Arg(z[i]), col = 'blue', xlim = c(-0.1,1.5),ylim = c(-3.5,3.5),xlab = '' , ylab= '' )
@@ -47,7 +47,7 @@ for (i in 1:N) {
 coeficientes <- function(amostra, degp) {
   namostra <- length(amostra[,1])
   y <- matrix(0, namostra, 1)
-  h <- matrix(1, namostra, degp + 1) 
+  h <- matrix(1, namostra, degp + 1)
   for (i in 1:namostra) {
     y[i] <- amostra[i,2]
     h[i, degp] <- amostra[i,1]
@@ -78,7 +78,7 @@ for (degp in 1:8) {
 	namostra <- 20
 	amostra <- matrix(0, namostra, 2)
 	for (i in 1:namostra) {
-	  j <- sample(1:N, 1) 
+	  j <- sample(1:N, 1)
 	  amostra[i,1] <- x[j]
 	  amostra[i,2] <- y[j]
 	}
@@ -96,7 +96,7 @@ for (degp in 1:8) {
 	namostra <- 100
 	amostra <- matrix(0, namostra, 2)
 	for (i in 1:namostra) {
-	  j <- sample(1:N, 1) 
+	  j <- sample(1:N, 1)
 	  amostra[i,1] <- x[j]
 	  amostra[i,2] <- y[j]
 	}

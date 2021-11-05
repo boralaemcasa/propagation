@@ -18,18 +18,18 @@ function [out,error] = anfis_yamakawa(x, yd, xit, xft, nEpocas, nFuncPertinencia
 	    out.w(v,j) = 1;
 	  end
 	end
-   
+
 % aqui começa calcular ape
 
 		for epoca = 1:nEpocas
       disp('epoca');
       epoca
-      
+
 			for k = 1:nPontos
 			  if mod(k, 10) == 0
           k
         end
-				
+
           if (k == 1)
             alpha = 0.0;
           end
@@ -42,23 +42,23 @@ function [out,error] = anfis_yamakawa(x, yd, xit, xft, nEpocas, nFuncPertinencia
           end
           xa = xit(v) + (jj(v)-2)*out.gamma(v);
           mujj(v) = 1/out.gamma(v) * (xa + 2*out.gamma(v) - x(k,v)); %% inclinaçao negativa
-          yst(k) = yst(k) + mujj(v) * out.w(v,jj(v)) + (1 - mujj(v)) * out.w(v,jj(v)+1); 
+          yst(k) = yst(k) + mujj(v) * out.w(v,jj(v)) + (1 - mujj(v)) * out.w(v,jj(v)+1);
           if (k == 1)
             alpha = alpha + mujj(v)^2 + (1 - mujj(v))^2;
           end
         end
-        
+
         if (k == 1)
           alpha = 1/alpha;
         end
-      
+
       %método do gradiente vezes alpha
   			for v = 1:nVariaveis
 					out.w(v, jj(v))   = out.w(v, jj(v)) - alpha * (yst(k) - yd(k)) * mujj(v);
 					out.w(v, jj(v)+1) = out.w(v, jj(v)+1) - alpha * (yst(k) - yd(k)) * (1 - mujj(v));
-				end %%v 
-      end %%k	
-      
-      error(epoca) = rms(yd(k) - yst(k));		
+				end %%v
+      end %%k
+
+      error(epoca) = rms(yd(k) - yst(k));
 		end %%epoca
 end

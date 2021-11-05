@@ -17,7 +17,7 @@ for (iteracao in 1:niteracoes) {
    dimy <- 2
    Z <- matrix(runif(dimx*p - dimx) - 0.5, nrow = dimx, ncol = p - 1)
    W <- matrix(runif(p) - 0.5, nrow = p, ncol = dimy)
-   
+
    xtrain <- seq(from = 0, to = 2 * pi, by = 0.15)
    xtrain <- xtrain + (runif(length(xtrain)) - 0.5)/5
    ytrain <- sin(xtrain)
@@ -51,7 +51,7 @@ for (iteracao in 1:niteracoes) {
    nepocas <- 0
    eepoca <- tol + 1
    evec <- matrix(nrow = maxepocas, ncol = 1)
-   
+
    while ((nepocas < maxepocas) && (eepoca > tol)) {
       ei2 <- 0
       # sequencia aleatoria de trainamento
@@ -59,28 +59,28 @@ for (iteracao in 1:niteracoes) {
       for (i in 1:N) {
          #amostra dado da sequencia aleatoria
          irand <- xseq[i]
-         
+
          xatual[1:(dimx-1),1] <- xtrain[irand,]
          xatual[dimx,1] <- 1
-         
+
          yatual <- ytrain[irand,]
-         
+
          U <- t(xatual) %*% Z # xatual eh dimx x 1 e Z eh dimx x (p-1)
          H <- tanh(U)
          Haug <- cbind(H, 1) # Haug eh 1xp
-         
-         O <- t(Haug %*% W) # 1xp x p x dimy 
-         yhat <- tanh(O)    # dimy x 1 
-         
+
+         O <- t(Haug %*% W) # 1xp x p x dimy
+         yhat <- tanh(O)    # dimy x 1
+
          e <- yatual - yhat
          flinhaO <- sech2(O)
          dO <- t(e * flinhaO)        # .*
          Wminus <- W[-p,]            # retirar polarizacao
          ehidden <- dO %*% t(Wminus) # dO eh dimy x 1, W eh p x dimy, ehidden eh 1x(p - 1)
-          
+
          flinhaU <- sech2(U)
          dU <- ehidden * flinhaU     # .*
-         
+
          W <- W + eta * (t(Haug) %*% dO)
          Z <- Z + eta * (xatual %*% dU)
          ei2 <- ei2 + (e %*% t(e))
@@ -88,18 +88,18 @@ for (iteracao in 1:niteracoes) {
       nepocas <- nepocas + 1
       evec[nepocas] <- ei2/N
       eepoca <- evec[nepocas]
-   }  
+   }
 }
    if (iteracao == 5)
       plot(xtest,ytest,type = 'l',col='red',xlim=c(-0.1,6.3),ylim = c(-1.1,1.1),xlab='x',ylab='y')
-   
+
    ei2 <- 0
    N <- length(ytest[,1])
    for (i in 1:N) {
       xatual[1:(dimx-1),1] <- xtest[i,]
       xatual[dimx,1] <- 1
       yatual <- ytest[i,]
-      U <- t(xatual) %*% Z 
+      U <- t(xatual) %*% Z
       H <- tanh(U)
       Haug <- cbind(H, 1)
       O <- t(Haug %*% W)
@@ -114,7 +114,7 @@ for (iteracao in 1:niteracoes) {
    MSE[iteracao] <- ei2/N
 }
 
-#plot(evec[1:nepocas], type = 'l')     
+#plot(evec[1:nepocas], type = 'l')
 #par(new=T)
 
 mean(MSE)

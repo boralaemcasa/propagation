@@ -60,13 +60,13 @@ for (i in 1:teste1) {
     xx[i, j] <- xc1[amostra1[i + trein1],j]
   yy[i] <- yperceptron(xx[i,], w, 1)
   if (yy[i] == 0)
-    acertos <- acertos + 1  
+    acertos <- acertos + 1
   else {
     print("x = ")
     print(xx[i,])
     print("Esperado = 0, Calculado = ")
     print(yy[i])
-  }    
+  }
 }
 
 for (i in 1:teste2) {
@@ -74,13 +74,13 @@ for (i in 1:teste2) {
     xx[i + teste1 , j] <- xc2[amostra2[i + trein2],j]
   yy[i + teste1] <- yperceptron(xx[i + teste1,], w, 1)
   if (yy[i + teste1] == 1)
-    acertos <- acertos + 1  
+    acertos <- acertos + 1
   else {
     print("x = ")
     print(xx[i + teste1,])
     print("Esperado = 1, Calculado = ")
     print(yy[i + teste1])
-  }    
+  }
 }
 
 acuracia[k] <- 100 * acertos / (teste1 + teste2)

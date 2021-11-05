@@ -25,7 +25,7 @@ ys=evalfis(out_fis,xt);
 
 soma = 0;
 k = 0;
-for i =1:length(ydt); 
+for i =1:length(ydt);
    if abs(ydt(i)) > 1e-2;
       soma = soma + abs(ydt(i) - ys(i))/abs(ydt(i))*100;
       k = k + 1;

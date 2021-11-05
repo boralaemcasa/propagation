@@ -49,25 +49,25 @@ else
     else
 	   options = genfisOptions('FCMClustering','NumClusters',20);
     end
-    
+
 	in_fis = genfis(xt,ydt,options);
 	options = anfisOptions;
 	options.InitialFIS = in_fis;
 	options.EpochNumber = 20;
-	
+
 	options.DisplayANFISInformation = 0;
 	options.DisplayErrorValues = 0;
 	options.DisplayStepSize = 0;
 	options.DisplayFinalResults = 0;
-	
+
 	[out_fis,trainError] = anfis([xt ydt],options);
 	ys=evalfis(out_fis,xt);
 end
 
 soma = 0;
 k = 0;
-for i =1:length(ydt); 
-   APE(i) = 0;   
+for i =1:length(ydt);
+   APE(i) = 0;
    if abs(ydt(i)) > 1e-2;
       APE(i) = abs(ydt(i) - ys(i))/abs(ydt(i))*100;
       if APE(i) >= 200;

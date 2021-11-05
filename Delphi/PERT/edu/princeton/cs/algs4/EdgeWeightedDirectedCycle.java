@@ -12,7 +12,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code EdgeWeightedDirectedCycle} class represents a data type for 
+ *  The {@code EdgeWeightedDirectedCycle} class represents a data type for
  *  determining whether an edge-weighted digraph has a directed cycle.
  *  The <em>hasCycle</em> operation determines whether the edge-weighted
  *  digraph has a directed cycle and, if so, the <em>cycle</em> operation
@@ -29,9 +29,9 @@ package edu.princeton.cs.algs4;
  *  See {@link Topological} to compute a topological order if the edge-weighted
  *  digraph is acyclic.
  *  <p>
- *  For additional documentation,   
- *  see <a href="http://algs4.cs.princeton.edu/44sp">Section 4.4</a> of   
- *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne. 
+ *  For additional documentation,
+ *  see <a href="http://algs4.cs.princeton.edu/44sp">Section 4.4</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
  *
  *  @author Robert Sedgewick
  *  @author Kevin Wayne

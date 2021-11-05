@@ -47,7 +47,7 @@ public class Util {
 			s = s + memo.get(i);
 		return s;
 	}
-	
+
 	public static void processarBiba() {
 
 	Util.processar("Matthew 1, 1",
@@ -23490,8 +23490,8 @@ Util.processar("Revelation 22, 20",
 "Iesu ";
 
 	}
-	
+
 	public static void processar(String x, String y) {
-		
+
 	}
 }

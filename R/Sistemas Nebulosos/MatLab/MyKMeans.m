@@ -15,8 +15,8 @@ grid on;
 % Algoritmo K-Means
 
 % define o numero de grupos
-K = 4; 
-m = 8; % fórmula de u's e de centroid's         
+K = 4;
+m = 8; % fórmula de u's e de centroid's
 
 % step 1: randomly assign a cluster to each one of the patterns
 n = size(X,1);
@@ -59,12 +59,12 @@ end
           x = X(i,1) - centroids(t, 1);
           y = X(i,2) - centroids(t, 2);
           soma = soma + (x*x + y*y)^m;
-        end      
+        end
         U(i, j) = quadrado / soma; %^(2/(1-m));
-      end    
-    end 
+      end
+    end
 
-% calculating the objective function 
+% calculating the objective function
 W = zeros(K,1);
 for j = 1:K,
    indexes = find(idx==j);
@@ -85,7 +85,7 @@ changes = true;
 oldIdx = idx;
 iter = 1;
 while (changes)    % iterate until the cluster assignments stop changing
-    
+
     % computing the initial centroids
     novoCentro = zeros(K,2);
     for j = 1:K,
@@ -96,7 +96,7 @@ while (changes)    % iterate until the cluster assignments stop changing
           soma = soma + U(i,j)^m;
           somax = somax + U(i,j)^m * X(i,1);
           somay = somay + U(i,j)^m * X(i,2);
-        end        
+        end
         novoCentro(j,:) = [somax/soma,somay/soma];
     end;
     % ploting the new centroids
@@ -107,8 +107,8 @@ while (changes)    % iterate until the cluster assignments stop changing
     set(h,'YDataSource','ydata')
     set(h,'XDataSource','xdata')
     refreshdata
-    
-    % assign each pattern to the cluster whose centroid is closest 
+
+    % assign each pattern to the cluster whose centroid is closest
     U = zeros(n,K);
     for i = 1:n,
       for j = 1:K,
@@ -120,17 +120,17 @@ while (changes)    % iterate until the cluster assignments stop changing
           x = X(i,1) - novoCentro(t, 1);
           y = X(i,2) - novoCentro(t, 2);
           soma = soma + (x*x + y*y)^m;
-        end      
+        end
         U(i, j) = quadrado / soma; %)^(2/(1-m));
-      end    
+      end
     end
-    
+
    for i = 1:n,
      pattern = X(i,:);
      smallDistance = inf;
      for j = 1:K,
         gc = centroids(j,:);
-        distance = sum((pattern-gc).^2);  % squared Euclidian distance from pattern to each centroid  
+        distance = sum((pattern-gc).^2);  % squared Euclidian distance from pattern to each centroid
         if (distance < smallDistance),
             smallDistance = distance;
             smallIndex = j;
@@ -139,9 +139,9 @@ while (changes)    % iterate until the cluster assignments stop changing
       %U(i,smallIndex) = 1;
       idx(i) = smallIndex;
     end
-    
 
-    % calculating the objective function 
+
+    % calculating the objective function
     clus = unique(idx);
     c = length(clus);
     W = zeros(c,1);
@@ -161,7 +161,7 @@ while (changes)    % iterate until the cluster assignments stop changing
     end
     iter = iter + 1;
     J(iter) = sum(W);
-    
+
     % verifying the stop criteria
     igual = 1;
     for i = 1:K
@@ -177,25 +177,25 @@ while (changes)    % iterate until the cluster assignments stop changing
         igual = 0;
       end
     end
-    
-    
+
+
     if igual == 1
         changes = false;
     else
         oldIdx = idx;
         centroids = novoCentro;
     end;
-    
+
 end;
 
 % ploting the final clustering resulting from K-Means
 clus = unique(idx);
 colors = {'b.', 'r.', 'c.', 'm.', 'y.', 'k.'};
 for i = 1:length(clus),
-    
+
     indexes = find(idx==clus(i));
     plot(X(indexes,1), X(indexes,2), colors{i});
-    
+
 end
 
 % ploting the objective function as a function of the number of iterations

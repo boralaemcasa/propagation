@@ -50,7 +50,7 @@ def Bernoulli(n):
    for k in range (1, n + 2):
       soma = soma + power(k, n)
       res = res + s/k * binom(n + 1, k) * soma
-      s = - s   
+      s = - s
    return res
 
 def polar(B, p, q):
@@ -101,32 +101,32 @@ def schmidt(V, n, signal):
    for i in range (1, n):
       prod = prod * Delta[i, i]
    prod2 = 1
-   
+
    if signal:
       A = mp.zeros(n, n)
       for k in range (0, n):
          for i  in range (0, n):
             A[i, k] = W[i, k]
-      
-      #*** Sometimes the sgn(det) is wrong.   
+
+      #*** Sometimes the sgn(det) is wrong.
       # What did I try here?
       # product rule det[ a  b] = k det[a b] and sum rule: det[ 1  a] = -b + a = det[ 1    a  ]
       #                 [kc kd]        [c d]                  [-1 -b]               [ 0  a - b]
-      
+
       for pivoti in range (0, n):
          pivotj = pivoti
-      
+
          while ((mp.fabs(A[pivoti, pivotj]) < 1e-9) and (pivoti < n)):
             pivoti = pivoti + 1
-      
+
          #if (pivoti >= n) throw new Exception("Singular matrix.")
-      
+
          if pivotj != pivoti:
             for j in range (0, n):
                # xchg A[pivoti][*], A[pivotj][*]
                A[pivoti, j], A[pivotj, j] = A[pivoti, j], A[pivotj, j]
             pivoti = pivotj
-      
+
          for i in range (0, n):
            if mp.fabs(A[i, pivotj]) > 1e-9:
               for j in range (0, n):
@@ -137,13 +137,13 @@ def schmidt(V, n, signal):
                  if i == pivoti:
                     prod2 = - prod2
               A[i, pivotj] = 1
-      
+
          for i in range (pivoti + 1, n):
             if ((i != pivoti) and (mp.fabs(A[i, pivotj]) > 1e-9)):
                for j in range (0, n):
                   # line i -= line pivoti. column pivotj become full of zeroes
                   A[i, j] = A[i, j] - A[pivoti, j]
-      
+
    # prod = det V = 1.0 * det Delta
    return W, Delta, prod * prod2
 
@@ -163,16 +163,16 @@ def Cramer(A, b, n):
       for i in range (0, n): # restoring
          M[i, k] = A[i, k]
       x[k] = detM/detA
-   
+
    return x
-   
+
    y = mp.zeros(n + 1, 1)
    for i in range (0, n):
       y[i] = A[0, i] * x[i]
    y[n] = b[0]
-   
+
    y = simplex(y, n + 1)
-   
+
    return x
 
 def partial_schmidt(V, n, col):
@@ -216,7 +216,7 @@ def simplex(y, n):
       A[i, i], A[i + n], b[i] = 1, 1, 1 # negative + positive == 1
       A[n, i], A[n, i + n] = y[i], - y[i]
       A[n + 1, i], A[n + 1, i + n] = y[i], - y[i]
-   
+
    A[n, col - 2], A[n, col - 1] = -1,  1         # <: [y] [-y] -1  1 == 0
    A[n + 1, col - 2], A[n + 1, col - 1] = -1, -1 # >: [y] [-y] -1 -1 == 0
 
@@ -244,7 +244,7 @@ def simplex(y, n):
    *** to do: translate [part of] the simplex from C to [Grand] PieThon...
 
    for (li = 1; li <= novaA->rowCount; li++)
-      Pivotear(novaA->colCount - li, novaA->rowCount - li, novaA, opNovaA, 
+      Pivotear(novaA->colCount - li, novaA->rowCount - li, novaA, opNovaA,
                    novoB, novaC, novow0, opNovaC, pivotLoop);
 
    do {
@@ -258,9 +258,9 @@ def simplex(y, n):
    A->colCount = novaA->colCount - novaA->rowCount;
    A->v = malloc(A->colCount * A->rowCount * sizeof(TString));
    for (col = 0; col < A->colCount; col++)
-      for (li = 0; li < novaA->rowCount; li++) 
+      for (li = 0; li < novaA->rowCount; li++)
          SetCell(*A, col, li, newStringByLen(GetCell(*novaA, col, li)));
-      
+
    for (li = 0; li < novaA->colCount * novaA->rowCount; li++)
       free(novaA->v[li]);
    free(novaA->v);
@@ -268,7 +268,7 @@ def simplex(y, n):
    novaA->v = A->v;
 
    TStringVector x = malloc(novaA->colCount * sizeof(TString));
-   	
+
    for (col = 0; col < novaA->colCount; col++) {
       x[col] = Pivot(col, *novaA, *novoB, *novaC);
    }
@@ -294,7 +294,7 @@ def Canonica(int coluna, TStringVector novaC, TMatriz novaA):
     return (-1);
   else
     return pivo;
-   
+
 def Pivotear(int pcol, int pli, TMatriz * novaA, TMatriz * opNovaA, TStringVector * novoB,
          TStringVector * novaC, TString * novow0, TStringVector * opNovaC, TPivotVector * pivotLoop):
   int li, col;
@@ -358,7 +358,7 @@ def Pivotear(int pcol, int pli, TMatriz * novaA, TMatriz * opNovaA, TStringVecto
         }
       }
     }
-    
+
   pivotVectorLinesAdd(pcol, pli, pivotLoop);
   return
 
@@ -380,8 +380,8 @@ def Pivot(int coluna, TMatriz novaA, TStringVector novoB, TStringVector novaC):
   else {
     for (li = 0; li < coluna; li++)
       if (Canonica(li, novaC, novaA) == pivo)
-        return newString("0", 1);  	
-  	
+        return newString("0", 1);
+
     return newStringByLen(novoB[pivo]);
   }
 
@@ -390,9 +390,9 @@ def pivotSearch(int col, int li, TPivotVector pivotLoop):
   for (i = 0; i < pivotLoop.count; i++)
     if ((col == pivotLoop.lines[i].col) && (li == pivotLoop.lines[i].li))
       return true;
-      
+
   return false; // nao achou
-   
+
 def pivotVectorLinesAdd(int col, int li, TPivotVector * pivotVector):
   TPivot * novaLines = malloc((pivotVector->count + 1) * sizeof(TPivot));
   int i;
@@ -405,7 +405,7 @@ def pivotVectorLinesAdd(int col, int li, TPivotVector * pivotVector):
   pivotVector->lines[pivotVector->count].li = li;
   pivotVector->count++;
   return
-   
+
 def Primal(TStringVector * novaC, TMatriz * novaA, TStringVector * novoB, TPivotVector * pivotLoop,
     TMatriz * opNovaA, TString * novow0, TStringVector * opNovaC,
     TMatriz A, TStringVector b, TStringVector c, TPivotVector * pivotVector, int * contaAlteracoes):
@@ -424,7 +424,7 @@ def Primal(TStringVector * novaC, TMatriz * novaA, TStringVector * novoB, TPivot
               	  int invcol = pivotColunaInversa(col, li, *novaC, *novaA);
 	 			  pivotVectorLinesAdd(invcol, li, pivotVector);
 	 			  (*contaAlteracoes)++;
-				}              	  
+				}
                 Pivotear(col, li, novaA, opNovaA, novoB, novaC, novow0, opNovaC, pivotLoop);
                 alterou = true;
                 flagSaida = false;
@@ -489,12 +489,12 @@ def OpostoLinha(int linha, TMatriz * novaA, TMatriz * opNovaA, TStringVector * n
   }
   return
 
-def EscolherLinha(int * pcoluna, int * plinha, TMatriz novaA, TStringVector novoB, 
+def EscolherLinha(int * pcoluna, int * plinha, TMatriz novaA, TStringVector novoB,
       TPivotVector pivotLoop, TStringVector novaC):
   int minlinha;
 
-  while (TudoZeroNoVetor(novaA.colCount, novaC) 
-     && (*pcoluna <= novaA.colCount - 1) 
+  while (TudoZeroNoVetor(novaA.colCount, novaC)
+     && (*pcoluna <= novaA.colCount - 1)
      && (Canonica(*pcoluna, novaC, novaA) >= 0))
     (*pcoluna)++;
 
@@ -524,20 +524,20 @@ def EscolherLinha(int * pcoluna, int * plinha, TMatriz novaA, TStringVector novo
     if (FracCompare(s2, s4) < 0)
       if (! pivotSearch(*pcoluna, minlinha, pivotLoop))
         minlinha = *plinha;
-        
+
     free(s1); free(s2); free(s3); free(s4);
   } while (true);
 
   *plinha = minlinha;
-  return (*plinha < novaA.rowCount) 
-      && (FracCompare(GetCell(novaA, *pcoluna, *plinha), "0") > 0) 
+  return (*plinha < novaA.rowCount)
+      && (FracCompare(GetCell(novaA, *pcoluna, *plinha), "0") > 0)
       && (! pivotSearch(*pcoluna, minlinha, pivotLoop));
 
-def EscolherColuna(int * pcoluna, int * plinha, TMatriz novaA, TStringVector novoB, 
+def EscolherColuna(int * pcoluna, int * plinha, TMatriz novaA, TStringVector novoB,
       TPivotVector pivotLoop, TStringVector novaC):
   int mincoluna;
 
-  while (TudoZeroNoVetor(novaA.rowCount, novoB) 
+  while (TudoZeroNoVetor(novaA.rowCount, novoB)
      && (*plinha <= novaA.rowCount - 1))
     (*plinha)++;
 
@@ -567,13 +567,13 @@ def EscolherColuna(int * pcoluna, int * plinha, TMatriz novaA, TStringVector nov
     if (FracCompare(s2, s4) > 0)
       if (! pivotSearch(mincoluna, *plinha, pivotLoop))
         mincoluna = *pcoluna;
-        
+
     free(s1); free(s2); free(s3); free(s4);
   } while (true);
 
   *pcoluna = mincoluna;
-  return (*pcoluna < novaA.colCount) 
-      && (FracCompare(GetCell(novaA, *pcoluna, *plinha), "0") < 0) 
+  return (*pcoluna < novaA.colCount)
+      && (FracCompare(GetCell(novaA, *pcoluna, *plinha), "0") < 0)
       && (! pivotSearch(mincoluna, *plinha, pivotLoop));
 
 def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, TStringVector b,
@@ -598,7 +598,7 @@ def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, 
         li--;
       } while (li >= 0);
       free(cTMenosyTa);
-      free(s);      
+      free(s);
       return false;
     }
   }
@@ -615,7 +615,7 @@ def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, 
       free(s);
       for (li = 0; li < novaA.colCount; li++)
         free(cTMenosyTa[li]);
-      free(cTMenosyTa);          
+      free(cTMenosyTa);
       return false;
     }
   }
@@ -639,8 +639,8 @@ def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, 
     free(s);
     for (li = 0; li < novaA.colCount; li++)
       free(cTMenosyTa[li]);
-    free(cTMenosyTa);   
-    free(yTb);       
+    free(cTMenosyTa);
+    free(yTb);
     return false;
   }
   char Result = true;
@@ -650,7 +650,7 @@ def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, 
     for (col = 0; col < A.colCount; col++) {
       s2 = FracbMaisAx(s, GetCell(A, col, li), x[col]);
       free(s);
-      s = s2;      
+      s = s2;
     }
     if (FracCompare(s, b[li])) {
       Result = false;
@@ -663,8 +663,8 @@ def isOTIMA(TMatriz A, TMatriz opNovaA, TStringVector c, TStringVector opNovaC, 
   free(s);
   for (li = 0; li < novaA.colCount; li++)
     free(cTMenosyTa[li]);
-  free(cTMenosyTa);   
-  free(yTb);       
+  free(cTMenosyTa);
+  free(yTb);
   return Result;
 
 def TudoZeroNoVetor(int rowCount, TStringVector vetor):
@@ -676,7 +676,7 @@ def TudoZeroNoVetor(int rowCount, TStringVector vetor):
   return true;
 """
 
-# https://twitter.com/mathspiritual/status/1371110143807610883   
+# https://twitter.com/mathspiritual/status/1371110143807610883
 def convolution(f, g, x, n, a):
    m = 10
    mm = my_int(power(2 * m - 1, n))
@@ -704,7 +704,7 @@ def convolution(f, g, x, n, a):
          if n - j < 0:
             break
    return soma
-   
+
 # 2 x 3
 def G(x):
    y = mp.exp(- x[0]*x[0] - x[1]*x[1])

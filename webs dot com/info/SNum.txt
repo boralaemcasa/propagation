@@ -47,13 +47,13 @@ typedef
   char* FracAbs(char *a);
 
 //IMPLEMENTATION
-  
+
   char* newString(char * s, int tamanho) {
     char * Result = malloc(tamanho + 1);
     strcpy(Result, s);
     return Result;
   }
-  void delete(char* s, int pos, int qtde) {      
+  void delete(char* s, int pos, int qtde) {
     int i;
     for(i = pos - 1; s[i]; i++)
       s[i] = s[i + qtde];
@@ -102,7 +102,7 @@ char* Soma(char* y, char *z) {
     return newString(z, strlen(z));
   if (z[0] == '0')
     return newString(y, strlen(y));
-  
+
   int i, x;
   char carry, minus, *Result;
 
@@ -170,7 +170,7 @@ char* Soma(char* y, char *z) {
      leftConcat("1", Result);
   if (minus)
      leftConcat("-", Result);
-     
+
   free(a);
   free(b);
   return Result;
@@ -183,7 +183,7 @@ char* Subtrai(char* y, char *z) {
     return newString(y, strlen(y));
   if (! strcmp(y, z))
     return newString("0", 1);
-  
+
   int i, x;
   char carry, *Result;
 
@@ -320,15 +320,15 @@ char* Multiplica(char* y, char *z) {
     subtotal = newString(Result, strlen(Result) + 1);
     free(Result);
     Result = subtotal;
-    leftConcat("-", Result);   
+    leftConcat("-", Result);
   }
-      
+
   free(a);
   free(b);
   for (i = 2; i <= 9; i++)
     free(multAlgarismo[i]);
   free(multAlgarismo);
-      
+
   return Result;
 }
 
@@ -368,7 +368,7 @@ void Divide(char * alinha, char * blinha, char * q, char *r) {
     free(a);
     return;
   }
-  
+
   char minusa, minusb, x;
   int index;
 
@@ -384,7 +384,7 @@ void Divide(char * alinha, char * blinha, char * q, char *r) {
   q[0] = 0;
   index = strlen(b);
   Copy(r, a, 1, index);
-  do {   
+  do {
     x = 0;
     while (SNumCompare(r, b) >= 0) {
       x++;
@@ -419,19 +419,19 @@ void Divide(char * alinha, char * blinha, char * q, char *r) {
   }
   if ((minusa && (! minusb)) || ((! minusa) && minusb))
     leftConcat("-", q);
-      
+
   free(a);
   free(b);
 }
 
 char * SNumOposto(char *s) {
-  char * Result; 
-      
+  char * Result;
+
   if (s[0] == '0') {
     Result = newString("0", 1);
   }
   else if (s[0] == '-') {
-    Result = newString(s, strlen(s));  
+    Result = newString(s, strlen(s));
     delete(Result, 1, 1);
   }
   else {
@@ -458,8 +458,8 @@ char* FracAbs(char* a) {
 
 char * Potencia(char * a, char * b) {
   char * Result, * n;
-  n = newString(b, strlen(b));  
-  
+  n = newString(b, strlen(b));
+
   if ((n[0] == '0') || (n[0] == '-'))
     Result = newString("1", 1);
   else {
@@ -470,12 +470,12 @@ char * Potencia(char * a, char * b) {
       free(Result);
       free(n);
       Result = rr;
-      n = nn;      
+      n = nn;
     }
   }
   free(n);
   return Result;
-} 
+}
 
 char * FracAdd(char * x, char * y) {
   if (x[0] == '0')
@@ -484,7 +484,7 @@ char * FracAdd(char * x, char * y) {
     return newString(x, strlen(x));
   if ((! pos('/', x)) && (! pos('/', y)))
     return Soma(x, y);
-  
+
   SFrac a, b;
   char* Result;
   a = Str2Frac(x);
@@ -497,7 +497,7 @@ char * FracAdd(char * x, char * y) {
   Result[strlen(Result) + 1] = 0;
   Result[strlen(Result)] = '/';
   strcat(Result, adbd);
-  
+
   FracReduz(Result);
   free(anbd);
   free(adbn);
@@ -532,7 +532,7 @@ char * FracSub(char * x, char * y) {
   Result[strlen(Result) + 1] = 0;
   Result[strlen(Result)] = '/';
   strcat(Result, adbd);
-  
+
   FracReduz(Result);
   free(anbd);
   free(adbn);
@@ -556,19 +556,19 @@ char * FracMul(char * x, char * y) {
     return FracOposto(x);
   if ((! pos('/', x)) && (! pos('/', y)))
     return Multiplica(x, y);
-  
+
   SFrac a, b;
   char* Result;
   a = Str2Frac(x);
   b = Str2Frac(y);
   char * anbn = Multiplica(a.n, b.n);
   char * adbd = Multiplica(a.d, b.d);
-  
+
   Result = newString(anbn, strlen(anbn) + 1 + strlen(adbd));
   Result[strlen(Result) + 1] = 0;
   Result[strlen(Result)] = '/';
   strcat(Result, adbd);
-  
+
   FracReduz(Result);
   free(anbn);
   free(adbd);
@@ -586,7 +586,7 @@ char * FracDiv(char * x, char * y) {
     return newString("0", 1);
   if (! strcmp(x, y))
     return newString("1", 1);
-  
+
   SFrac a, b;
   char* Result;
   a = Str2Frac(x);
@@ -605,12 +605,12 @@ char * FracDiv(char * x, char * y) {
 
   char * anbn = Multiplica(a.n, b.n);
   char * adbd = Multiplica(a.d, b.d);
-  
+
   Result = newString(anbn, strlen(anbn) + 1 + strlen(adbd));
   Result[strlen(Result) + 1] = 0;
   Result[strlen(Result)] = '/';
   strcat(Result, adbd);
-  
+
   FracReduz(Result);
   free(anbn);
   free(adbd);
@@ -622,7 +622,7 @@ char * FracDiv(char * x, char * y) {
 void FracReduz(char * x) {
   if (! pos('/', x))
     return;
-    
+
   SFrac a, b;
   char *m, *r;
 
@@ -642,11 +642,11 @@ void FracReduz(char * x) {
       x[strlen(x)] = '/';
     strcat(x, b.d);
     }
-    free(b.n); free(b.d);  
+    free(b.n); free(b.d);
   }
   else if (! strcmp(a.d, "1"))
     strcpy(x, a.n);
-  
+
   free(m);
   free(a.n); free(a.d);
 }
@@ -666,14 +666,14 @@ char * Valida(char * s) {
   ZeroLTrim(Result);
   if (strcmp(Result, "-0") == 0)
     strcpy(Result, "0");
-     
+
   return Result;
 }
 
 char * FracValida(char *s) {
   char * Result;
   int i = 1;
-  
+
   if (s[0] == '0') return newString("0", 1);
   Result = newString(s, strlen(s));
   if (Result[0] == '-') i++;
@@ -730,7 +730,7 @@ short SNumCompare(char* a, char *b) {
   int tamanho2 = strlen(b);
   if (tamanho2 > tamanho1)
     tamanho1 = tamanho2;
-     
+
   char * alinha = newString(a, tamanho1);
   char * blinha = newString(b, tamanho1);
 
@@ -784,7 +784,7 @@ char* mdc(char *x, char *y) {
 
   xx = SNumAbs(x);
   yy = SNumAbs(y);
-  
+
   if (SNumCompare(yy, xx) > 0) {
     q = xx;
     xx = yy;
@@ -796,8 +796,8 @@ char* mdc(char *x, char *y) {
     r = newString("", strlen(yy) + 1);
     Divide(xx, yy, q, r);
     free(q);
-    if ((! strcmp(r, "1")) || (! strcmp(r, "0"))) 
-      break;  
+    if ((! strcmp(r, "1")) || (! strcmp(r, "0")))
+      break;
     strcpy(xx, yy);
     strcpy(yy, r);
     free(r);
@@ -820,7 +820,7 @@ char* mdc(char *x, char *y) {
 
 char * FracOposto(char * s) {
   return SNumOposto(s); // apelei
-/*    
+/*
   char * Result;
   SFrac a = Str2Frac(s);
   char * an = SNumOposto(a.n);
@@ -848,7 +848,7 @@ short FracCompare(char *x, char *y) {
     else
       return 1;
   }
-  
+
   if ((! pos('/', x)) && (! pos('/', y)))
     return SNumCompare(x, y);
 

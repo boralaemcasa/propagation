@@ -1,14 +1,36 @@
 program RTrim;
 
 uses
-  Forms,
-  Principal in 'Principal.pas' {Form1};
+  Windows, Forms, SysUtils;
 
-{$R *.res}
-
+var
+  f, g: TextFile;
+  param, s, tmp: string;
 begin
-  Application.Initialize;
-  Application.Title := 'Right Trim';
-  Application.CreateForm(TForm1, Form1);
-  Application.Run;
+  if paramcount <> 1 then
+     exit;
+  param := paramstr(1);
+  if not FileExists(param) then
+  begin
+     Application.MessageBox(PChar('Arquivo não existe: ' + param), 'RTrim Error', mb_iconexclamation);
+     exit;
+  end;
+  tmp := ExtractFilePath(param) + '_TRIM_' + ExtractFileName(param) + '.tmp';
+  assignFile(g, tmp);
+  rewrite(g);
+
+  filemode := 0;
+  assignfile(f, param);
+  reset(f);
+  while not eof(f) do
+  begin
+    readln(f, s);
+    s := TrimRight(s);
+    writeln(g, s);
+  end;
+
+  closefile(f);
+  closefile(g);
+  DeleteFile(param);
+  RenameFile(tmp, param);
 end.

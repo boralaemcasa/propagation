@@ -71,7 +71,7 @@ circulo <- function(x0, y0, raio, color, p1, p2) {
 
  soma <- soma/N * 100
  soma
- 
+
  M <- 2
  M1 <- -0.25
  M2 <- 4.25

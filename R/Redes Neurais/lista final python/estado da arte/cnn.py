@@ -55,12 +55,12 @@ x_test=np.expand_dims(x_test,axis=-1)
 
 def squeeze_excite_block2D(filters,input):                       # squeeze and exite is a good thing
     se = tf.keras.layers.GlobalAveragePooling2D()(input)
-    se = tf.keras.layers.Reshape((1, filters))(se) 
+    se = tf.keras.layers.Reshape((1, filters))(se)
     se = tf.keras.layers.Dense(filters//32, activation='relu')(se)
     se = tf.keras.layers.Dense(filters, activation='sigmoid')(se)
     se = tf.keras.layers.multiply([input, se])
     return se
-    
+
 datagen = tf.keras.preprocessing.image.ImageDataGenerator(rotation_range=10, width_shift_range=0.1, shear_range=10,
                         height_shift_range=0.1, zoom_range=0.2)
 datagen.fit(x_train)
@@ -68,7 +68,7 @@ datagen2 = tf.keras.preprocessing.image.ImageDataGenerator()
 datagen2.fit(x_test)
 
 def make_model():
-        s = tf.keras.Input(shape=x_train.shape[1:]) 
+        s = tf.keras.Input(shape=x_train.shape[1:])
         x = tf.keras.layers.Conv2D(128,(3,3),activation='relu',padding='same')(s)
         x = tf.keras.layers.Conv2D(128,(3,3),activation='relu',padding='same')(x)
         x = tf.keras.layers.Conv2D(128,(3,3),activation='relu',padding='same')(x)
@@ -97,12 +97,12 @@ def make_model():
         x = tf.keras.layers.Dense(10,activation='softmax',use_bias=False,
                                   kernel_regularizer=tf.keras.regularizers.l1(0.00025))(x) # this make stacking better
         return tf.keras.Model(inputs=s, outputs=x)
-        
+
 batch_size=32
 supermodel=[]
 for i in range(20):
         np.random.seed(i)
-        model=make_model()                
+        model=make_model()
         model.compile(optimizer=optimizers.Adam(lr=0.001), loss='categorical_crossentropy',metrics=['accuracy'])
         model.fit_generator(datagen.flow(x_train, y_train, batch_size=batch_size,shuffle=True),
                     steps_per_epoch=len(x_train) / batch_size, epochs=13,verbose=0)
@@ -116,7 +116,7 @@ for i in range(20):
         supermodel.append(model)
         print('********')
         print(i,'acc:',accuracy_score(np.argmax(y_test,axis=1),np.argmax(model.predict(x_test),axis=1)))
-        
+
 P=np.asarray([a.predict(x_test) for a in supermodel])
 
 accuracy_score(np.argmax(y_test,axis=1),np.argmax(np.mean(P,axis=0),axis=1)) # 20 models stack accurasy

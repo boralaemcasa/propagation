@@ -81,5 +81,5 @@ contour(seqi, seqj, M, xlim = c(-1,4), ylim = c(-1,4), xlab = '', ylab = '')
 
 persp3D(seqi, seqj, M, counter=T, theta = 55, phi = 30, r = 40, d = 0.1, expand = 0.5,
         ltheta = 90, lphi = 180, shade = 0.4, ticktype = "detailed", nticks = 5)
-        
-  
+
+

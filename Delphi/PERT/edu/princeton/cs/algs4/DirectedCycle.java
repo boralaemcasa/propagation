@@ -8,10 +8,10 @@
  *  Finds a directed cycle in a digraph.
  *  Runs in O(E + V) time.
  *
- *  % java DirectedCycle tinyDG.txt 
- *  Directed cycle: 3 5 4 3 
+ *  % java DirectedCycle tinyDG.txt
+ *  Directed cycle: 3 5 4 3
  *
- *  %  java DirectedCycle tinyDAG.txt 
+ *  %  java DirectedCycle tinyDAG.txt
  *  No directed cycle
  *
  ******************************************************************************/
@@ -19,7 +19,7 @@
 package edu.princeton.cs.algs4;
 
 /**
- *  The {@code DirectedCycle} class represents a data type for 
+ *  The {@code DirectedCycle} class represents a data type for
  *  determining whether a digraph has a directed cycle.
  *  The <em>hasCycle</em> operation determines whether the digraph has
  *  a directed cycle and, and of so, the <em>cycle</em> operation

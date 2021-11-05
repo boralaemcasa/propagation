@@ -188,10 +188,10 @@ def newton_method(f, c, x1, x2, t, erro):
       else:
          xi = x
    return x
-   
+
 def f(x, t):
    return power(x, t) * mp.exp(x)
-   
+
 def extendedw(xx, n):
    for x1 in range (0, 100):
       y = newton_method(f, xx, x1, x1 + 1, n, 1e-13)
@@ -201,11 +201,11 @@ def extendedw(xx, n):
       if mp.fabs(f(y, n) - xx) < 1e-9:
          return y
    return 0
-   
+
 def g(x, t):
    c, a0, r1, r2 = t[0], t[1], t[2], t[3]
    return mp.exp(-c * x) - a0 * (x - r1) * (x - r2)
-   
+
 def superw(c, a0, r1, r2):
    for x1 in range (0, 100):
       y = newton_method(g, 0, x1, x1 + 1, [c, a0, r1, r2], 1e-13)
@@ -215,7 +215,7 @@ def superw(c, a0, r1, r2):
       if mp.fabs(g(y, [c, a0, r1, r2])) < 1e-9:
          return y
    return 0
-   
+
 def my_round(x):
    y = mp.fabs(x)
    if mp.fabs(y - mp.floor(y)) < 0.5:
@@ -241,7 +241,7 @@ def power(x, y):
    if (y / 2 == mp.floor(y / 2)) and (mp.im(x) == 0) and (mp.re(x) < 0):
       return mp.exp(y * mp.ln(-x))
    return mp.exp(y * mp.ln(x))
-      
+
 # z = ln z, trigonometric
 def F(x, c):
    res = mp.zeros(2, 1)
@@ -249,7 +249,7 @@ def F(x, c):
    res[0] = r * mp.cos(t) - mp.ln(r)
    res[1] = r * mp.sin(t) - t
    return res
-   
+
 def dF(x, c):
    J = mp.zeros(2, 2)
    r, t = x[0], x[1]
@@ -258,7 +258,7 @@ def dF(x, c):
    J[1,0] = mp.sin(t)         # dv\dx
    J[1,1] = r * mp.cos(t) - 1 # dv\dy
    return J
-   
+
 def ddF(x, c):
    J = np.zeros((2, 2, 2), dtype=complex)
    r, t = x[0], x[1]
@@ -273,7 +273,7 @@ def ddF(x, c):
          for k in range (i + 1, 2):
             J[i, k, j] = J[i, j, k]
    return J
-   
+
 # exp(-cx - cyj) = a0 * (x - r1 + yj) * (x - r2 + yj)
 #   exp(-cx) cos(cy) = a0 * (x - r1)(x - r2) - y^2
 # - exp(-cx) sin(cy) = a0 * (2x - r1 - r2)y
@@ -292,7 +292,7 @@ def G(x, t):
    res[0] = mp.exp(-c * X) * mp.cos(c * Y) - a0 * (X - r1) * (X - r2) + Y * Y
    res[1] = - mp.exp(-c * X) * mp.sin(c * Y) - a0 * (2 * X - r1 - r2) * Y
    return res
-   
+
 def dG(x, t):
    c, a0, r1, r2 = t[0], t[1], t[2], t[3]
    J = mp.zeros(2, 2)
@@ -302,7 +302,7 @@ def dG(x, t):
    J[1,0] = c * mp.exp(-c * X) * mp.sin(c * Y) - a0 * 2 * Y                     # dv\dx
    J[1,1] = - c * mp.exp(-c * X) * mp.sin(c * Y) - a0 * (2 * X - r1 - r2)       # dv\dy
    return J
-   
+
 def ddG(x, t):
    c, a0, r1, r2 = t[0], t[1], t[2], t[3]
    J = np.zeros((2, 2, 2), dtype=complex)
@@ -318,7 +318,7 @@ def ddG(x, t):
          for k in range (i + 1, 2):
             J[i, k, j] = J[i, j, k]
    return J
-   
+
 def contains(lista, x):
    for cadaUm in lista:
       if cadaUm == x:
@@ -364,7 +364,7 @@ def demo():
          z = round(mp.re(r * mp.cos(t)), 13) + j * round(mp.re(r * mp.sin(t)), 13)
          zz = z - mp.ln(z)
          if mp.fabs(mp.re(zz)) < 1e-5:
-            zz = my_int(mp.im(zz)/mp.pi()) 
+            zz = my_int(mp.im(zz)/mp.pi())
             s = str(my_int(mp.fabs(zz/2))) + " re = " + str(i/10) + " im = " + str(round(kk, 2)) + " kk = " + str(z) + " => z - ln z = " + str(zz) + " j pi"
             print(s)
 

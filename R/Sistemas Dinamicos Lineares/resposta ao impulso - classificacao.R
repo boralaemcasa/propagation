@@ -6,7 +6,7 @@ resposta_discreta <- function(y, n, infty) {
 
 resposta <- function(y, t) {
    # y = F(x)
-   # return F(delta) : R -> R  
+   # return F(delta) : R -> R
    return(y(t, delta))
 }
 

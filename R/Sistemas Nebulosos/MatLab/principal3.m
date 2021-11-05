@@ -29,9 +29,9 @@ for x1=1:6
             ydt (k)=(1+x1^0.5 + x2^(-1) + x3^(-1.5))^2;
             k=k+1;
         end
-        
+
     end
-    
+
 end
 
 nPontosT=length(ydt);
@@ -45,9 +45,9 @@ for x1=1.5:5.5
             ydv(k)=(1+x1^0.5 + x2^(-1) + x3^(-1.5))^2;
             k=k+1;
         end
-        
+
     end
-    
+
 end
 
 stepv = 1;
@@ -79,13 +79,13 @@ end
 		for epoca = 1:nEpocas
       disp('epoca');
       epoca
-  		
+
 
 			for k = 1:nPontosT
 			  if mod(k, 10) == 0
           k
         end
-				
+
           if (k == 1)
             alpha = 0.0;
           end
@@ -98,30 +98,30 @@ end
           end
           xa = xit(v) + (jj(v)-2)*gamma(v);
           mujj(v) = 1/gamma(v) * (xa + 2*gamma(v) - xt(k,v)); %% inclinaçao negativa
-          yst(k) = yst(k) + mujj(v) * w(v,jj(v)) + (1 - mujj(v)) * w(v,jj(v)+1); 
+          yst(k) = yst(k) + mujj(v) * w(v,jj(v)) + (1 - mujj(v)) * w(v,jj(v)+1);
           if (k == 1)
             alpha = alpha + mujj(v)^2 + (1 - mujj(v))^2;
           end
         end
-        
+
         if (k == 1)
           alpha = 1/alpha;
         end
-      
+
       %método do gradiente vezes alpha
   			for v = 1:nVariaveis
 					w(v, jj(v))   = w(v, jj(v)) - alpha * (yst(k) - ydt(k)) * mujj(v);
 					w(v, jj(v)+1) = w(v, jj(v)+1) - alpha * (yst(k) - ydt(k)) * (1 - mujj(v));
-				end %%v      
-      end %%k			
+				end %%v
+      end %%k
 		end %%epoca
-    
+
 plot(ydt);
 hold on;
 plot(yst);
 
 		%calcular saída error de validaçao
-    
+
     for k = 1:nPontosV
         ysv(k) = 0.0;
         for v = 1:nVariaveis
@@ -131,7 +131,7 @@ plot(yst);
           end
           xa = xit(v) + (jj(v)-2)*gamma(v);
           mujj(v) = 1/gamma(v) * (xa + 2*gamma(v) - xv(k,v)); %% inclinaçao negativa
-          ysv(k) = ysv(k) + mujj(v) * w(v,jj(v)) + (1 - mujj(v)) * w(v,jj(v)+1); 
+          ysv(k) = ysv(k) + mujj(v) * w(v,jj(v)) + (1 - mujj(v)) * w(v,jj(v)+1);
         end
     end
 

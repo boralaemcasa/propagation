@@ -46,33 +46,33 @@ for k =1:length(x)
 
     aa = ilinha(kk);
     bb = iref(kk);
-    
+
     mm1 = 0;
     mm2 = bb / (aa - epsilon);
     mm3 = bb / (aa + epsilon);
     if (mm1 < mm2) && (mm2 < mm3)
       mm4 = mm1;
-      mm5 = mm2; 
+      mm5 = mm2;
       mm6 = mm3;
     elseif (mm1 < mm3) && (mm3 < mm2)
       mm4 = mm1;
-      mm5 = mm3; 
+      mm5 = mm3;
       mm6 = mm2;
     elseif (mm2 < mm1) && (mm1 < mm3)
       mm4 = mm2;
-      mm5 = mm1; 
+      mm5 = mm1;
       mm6 = mm3;
     elseif (mm2 < mm3) && (mm3 < mm1)
       mm4 = mm2;
-      mm5 = mm3; 
+      mm5 = mm3;
       mm6 = mm1;
     elseif (mm3 < mm1) && (mm1 < mm2)
       mm4 = mm3;
-      mm5 = mm1; 
+      mm5 = mm1;
       mm6 = mm2;
     else
       mm4 = mm3;
-      mm5 = mm2; 
+      mm5 = mm2;
       mm6 = mm1;
     end
     mm7 = mm6 + delta/1000;
@@ -98,11 +98,11 @@ for k =1:length(x)
       minimo = res4;
       alfa(k) = mmA;
     end
-    
+
 ##    if alfa(k) > 100
 ##      alfa(k) = 100;
 ##    end
-    
+
     % calcular i(k) através da eq. do circuito
 
     % i = exp(-Rt/L)/L * integral exp(R*t/L) * u dt
@@ -117,7 +117,7 @@ for k =1:length(x)
 
     % calcular o erro
     e(k) =iref(kk) - i(kk);
- 
+
     % calcular mi1
 
     if e(k) <= emin
@@ -128,11 +128,11 @@ for k =1:length(x)
     end
 
     mi2=1-mi1;
-    
+
     % resolva em m: - M < A - BM/epsilon < M
     %               BM/epsilon - M < A < BM/epsilon + M
-    %               A/~ < M < A/~ 
-    
+    %               A/~ < M < A/~
+
     q1(k+1)=q1(kk) + alfa(kk)*mi1*e(kk);
     q2(k+1)=q2(kk) + alfa(kk)*mi2*e(kk);
     q3(k+1)=q1(kk) + mi1*e(kk);
@@ -144,7 +144,7 @@ for k =1:length(x)
     end
 
     % u = Ri + L di\dt
-    
+
      uref(k) = R * iref(kk) + L * direfdt;
     kk = kk + 1;
 end

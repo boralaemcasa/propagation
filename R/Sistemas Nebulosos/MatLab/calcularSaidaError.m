@@ -1,5 +1,5 @@
 function [Result, ResultOmega, Resultz, Resultys] = calcularSaidaError(X, nVariaveis, nGaussianas, nPontos, c, sigma, p, q)
-  
+
 		Result = SaidaError;
 		ResultOmega = zeros(nGaussianas);
 		Resultz = zeros(nGaussianas);

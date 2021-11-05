@@ -13,11 +13,11 @@ xvalid <- xvalid[,2:75]
 length(xvalid [,1])
 length(xvalid [1,])
 
-dist <- function(x, y, nc) { 
+dist <- function(x, y, nc) {
    soma <- 0
    for (i in 1:nc)
       soma <- soma + (x[i] - y[i])^2
-   return(sqrt(soma)) 
+   return(sqrt(soma))
 }
 
 kmeans <- function(k, M, linhas, index) {

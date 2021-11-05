@@ -49,7 +49,7 @@ for (i in 1:teste) {
   if (yy[i] == 0)
     acertos <- acertos + 1
   if (yy[i + teste] == 1)
-    acertos <- acertos + 1  
+    acertos <- acertos + 1
 }
 
 acuracia <- 100 * acertos / (2 * teste)

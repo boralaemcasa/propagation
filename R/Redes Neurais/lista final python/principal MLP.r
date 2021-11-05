@@ -45,7 +45,7 @@ for (iteracao in 1:niteracoes) {
    dimy <- 1
    Z <- matrix(runif(dimx*p - dimx) - 0.5, nrow = dimx, ncol = p - 1)
    W <- matrix(runif(p) - 0.5, nrow = p, ncol = dimy)
-   
+
    xatual <- matrix(nrow = dimx, ncol = 1)
    yatual <- matrix(nrow = dimy, ncol = 1)
    tol <- 0.01
@@ -56,7 +56,7 @@ for (iteracao in 1:niteracoes) {
    evec <- matrix(nrow = maxepocas, ncol = 1)
    N <- length(xtrain[,1])
    minimo <- 1e9
-   
+
    while ((nepocas < maxepocas) && (eepoca > tol)) {
       ei2 <- 0
       erros <- 0
@@ -65,20 +65,20 @@ for (iteracao in 1:niteracoes) {
       for (i in 1:N) {
          #amostra dado da sequencia aleatoria
          irand <- xseq[i]
-         
+
          xatual[1:(dimx-1),1] <- xtrain[irand,]
          xatual[dimx,1] <- 1
-         
+
          yatual <- ytrain[irand,]
-         
+
          U <- t(xatual) %*% Z # xatual eh dimx x 1 e Z eh dimx x (p-1)
          H <- tanh(U)
          Haug <- cbind(H, 1) # Haug eh 1xp
-         
-         O <- t(Haug %*% W) # 1xp x p x dimy 
-         yhat <- tanh(O)    # dimy x 1 
+
+         O <- t(Haug %*% W) # 1xp x p x dimy
+         yhat <- tanh(O)    # dimy x 1
          yhat <- yhat/abs(yhat)
-         
+
          e <- yatual - yhat
          if (yatual != yhat)
             erros <- erros + 1
@@ -86,10 +86,10 @@ for (iteracao in 1:niteracoes) {
          dO <- t(e * flinhaO)        # .*
          Wminus <- W[-p,]            # retirar polarizacao
          ehidden <- dO %*% t(Wminus) # dO eh dimy x 1, W eh p x dimy, ehidden eh 1x(p - 1)
-          
+
          flinhaU <- sech2(U)
          dU <- ehidden * flinhaU     # .*
-         
+
          W <- W + eta * (t(Haug) %*% dO)
          Z <- Z + eta * (xatual %*% dU)
          ei2 <- ei2 + (e %*% t(e))
@@ -102,11 +102,11 @@ for (iteracao in 1:niteracoes) {
          Zmin <- Z
          minimo <- evec[nepocas]
       }
-   }  
+   }
 
    if (iteracao == 5)
       plot(xtest,ytest,type = 'l',col='red',xlim=c(-0.1,6.3),ylim = c(-1.1,1.1),xlab='x',ylab='y')
-   
+
    ei2 <- 0
    N <- length(ytest[,1])
    for (i in 1:N) {
@@ -130,7 +130,7 @@ for (iteracao in 1:niteracoes) {
       }
    }
    MSE[iteracao] <- ei2/N
-   
+
 #   for (i in 1:N)
 #      if (ytest[i] < 0)
 #         ytest[i] <- 0
@@ -138,7 +138,7 @@ for (iteracao in 1:niteracoes) {
    write.csv(ytest, file="valid_MLP_1.csv")
 }
 
-#plot(evec[1:nepocas], type = 'l')     
+#plot(evec[1:nepocas], type = 'l')
 #par(new=T)
 
 minimo
@@ -192,7 +192,7 @@ for (iteracao in 1:niteracoes) {
    dimy <- 1
    Z <- matrix(runif(dimx*p - dimx) - 0.5, nrow = dimx, ncol = p - 1)
    W <- matrix(runif(p) - 0.5, nrow = p, ncol = dimy)
-   
+
    xatual <- matrix(nrow = dimx, ncol = 1)
    yatual <- matrix(nrow = dimy, ncol = 1)
    tol <- 0.01
@@ -203,7 +203,7 @@ for (iteracao in 1:niteracoes) {
    evec <- matrix(nrow = maxepocas, ncol = 1)
    N <- length(xtrain[,1])
    minimo <- 1e9
-   
+
    while ((nepocas < maxepocas) && (eepoca > tol)) {
       ei2 <- 0
       erros <- 0
@@ -212,20 +212,20 @@ for (iteracao in 1:niteracoes) {
       for (i in 1:N) {
          #amostra dado da sequencia aleatoria
          irand <- xseq[i]
-         
+
          xatual[1:(dimx-1),1] <- xtrain[irand,]
          xatual[dimx,1] <- 1
-         
+
          yatual <- ytrain[irand,]
-         
+
          U <- t(xatual) %*% Z # xatual eh dimx x 1 e Z eh dimx x (p-1)
          H <- tanh(U)
          Haug <- cbind(H, 1) # Haug eh 1xp
-         
-         O <- t(Haug %*% W) # 1xp x p x dimy 
-         yhat <- tanh(O)    # dimy x 1 
+
+         O <- t(Haug %*% W) # 1xp x p x dimy
+         yhat <- tanh(O)    # dimy x 1
          yhat <- yhat/abs(yhat)
-         
+
          e <- yatual - yhat
          if (yatual != yhat)
             erros <- erros + 1
@@ -233,10 +233,10 @@ for (iteracao in 1:niteracoes) {
          dO <- t(e * flinhaO)        # .*
          Wminus <- W[-p,]            # retirar polarizacao
          ehidden <- dO %*% t(Wminus) # dO eh dimy x 1, W eh p x dimy, ehidden eh 1x(p - 1)
-          
+
          flinhaU <- sech2(U)
          dU <- ehidden * flinhaU     # .*
-         
+
          W <- W + eta * (t(Haug) %*% dO)
          Z <- Z + eta * (xatual %*% dU)
          ei2 <- ei2 + (e %*% t(e))
@@ -249,11 +249,11 @@ for (iteracao in 1:niteracoes) {
          Zmin <- Z
          minimo <- evec[nepocas]
       }
-   }  
+   }
 
    if (iteracao == 5)
       plot(xtest,ytest,type = 'l',col='red',xlim=c(-0.1,6.3),ylim = c(-1.1,1.1),xlab='x',ylab='y')
-   
+
    ei2 <- 0
    N <- length(ytest[,1])
    for (i in 1:N) {
@@ -277,7 +277,7 @@ for (iteracao in 1:niteracoes) {
       }
    }
    MSE[iteracao] <- ei2/N
-   
+
 #   for (i in 1:N)
 #      if (ytest[i] < 0)
 #         ytest[i] <- 0
@@ -285,7 +285,7 @@ for (iteracao in 1:niteracoes) {
    write.csv(ytest, file="valid_MLP_5.csv")
 }
 
-#plot(evec[1:nepocas], type = 'l')     
+#plot(evec[1:nepocas], type = 'l')
 #par(new=T)
 
 minimo
@@ -339,7 +339,7 @@ for (iteracao in 1:niteracoes) {
    dimy <- 1
    Z <- matrix(runif(dimx*p - dimx) - 0.5, nrow = dimx, ncol = p - 1)
    W <- matrix(runif(p) - 0.5, nrow = p, ncol = dimy)
-   
+
    xatual <- matrix(nrow = dimx, ncol = 1)
    yatual <- matrix(nrow = dimy, ncol = 1)
    tol <- 0.01
@@ -350,7 +350,7 @@ for (iteracao in 1:niteracoes) {
    evec <- matrix(nrow = maxepocas, ncol = 1)
    N <- length(xtrain[,1])
    minimo <- 1e9
-   
+
    while ((nepocas < maxepocas) && (eepoca > tol)) {
       ei2 <- 0
       erros <- 0
@@ -359,20 +359,20 @@ for (iteracao in 1:niteracoes) {
       for (i in 1:N) {
          #amostra dado da sequencia aleatoria
          irand <- xseq[i]
-         
+
          xatual[1:(dimx-1),1] <- xtrain[irand,]
          xatual[dimx,1] <- 1
-         
+
          yatual <- ytrain[irand,]
-         
+
          U <- t(xatual) %*% Z # xatual eh dimx x 1 e Z eh dimx x (p-1)
          H <- tanh(U)
          Haug <- cbind(H, 1) # Haug eh 1xp
-         
-         O <- t(Haug %*% W) # 1xp x p x dimy 
-         yhat <- tanh(O)    # dimy x 1 
+
+         O <- t(Haug %*% W) # 1xp x p x dimy
+         yhat <- tanh(O)    # dimy x 1
          yhat <- yhat/abs(yhat)
-         
+
          e <- yatual - yhat
          if (yatual != yhat)
             erros <- erros + 1
@@ -380,10 +380,10 @@ for (iteracao in 1:niteracoes) {
          dO <- t(e * flinhaO)        # .*
          Wminus <- W[-p,]            # retirar polarizacao
          ehidden <- dO %*% t(Wminus) # dO eh dimy x 1, W eh p x dimy, ehidden eh 1x(p - 1)
-          
+
          flinhaU <- sech2(U)
          dU <- ehidden * flinhaU     # .*
-         
+
          W <- W + eta * (t(Haug) %*% dO)
          Z <- Z + eta * (xatual %*% dU)
          ei2 <- ei2 + (e %*% t(e))
@@ -396,11 +396,11 @@ for (iteracao in 1:niteracoes) {
          Zmin <- Z
          minimo <- evec[nepocas]
       }
-   }  
+   }
 
    if (iteracao == 5)
       plot(xtest,ytest,type = 'l',col='red',xlim=c(-0.1,6.3),ylim = c(-1.1,1.1),xlab='x',ylab='y')
-   
+
    ei2 <- 0
    N <- length(ytest[,1])
    for (i in 1:N) {
@@ -424,7 +424,7 @@ for (iteracao in 1:niteracoes) {
       }
    }
    MSE[iteracao] <- ei2/N
-   
+
 #   for (i in 1:N)
 #      if (ytest[i] < 0)
 #         ytest[i] <- 0
@@ -432,7 +432,7 @@ for (iteracao in 1:niteracoes) {
    write.csv(ytest, file="valid_MLP_6.csv")
 }
 
-#plot(evec[1:nepocas], type = 'l')     
+#plot(evec[1:nepocas], type = 'l')
 #par(new=T)
 
 minimo
@@ -486,7 +486,7 @@ for (iteracao in 1:niteracoes) {
    dimy <- 1
    Z <- matrix(runif(dimx*p - dimx) - 0.5, nrow = dimx, ncol = p - 1)
    W <- matrix(runif(p) - 0.5, nrow = p, ncol = dimy)
-   
+
    xatual <- matrix(nrow = dimx, ncol = 1)
    yatual <- matrix(nrow = dimy, ncol = 1)
    tol <- 0.01
@@ -497,7 +497,7 @@ for (iteracao in 1:niteracoes) {
    evec <- matrix(nrow = maxepocas, ncol = 1)
    N <- length(xtrain[,1])
    minimo <- 1e9
-   
+
    while ((nepocas < maxepocas) && (eepoca > tol)) {
       ei2 <- 0
       erros <- 0
@@ -506,20 +506,20 @@ for (iteracao in 1:niteracoes) {
       for (i in 1:N) {
          #amostra dado da sequencia aleatoria
          irand <- xseq[i]
-         
+
          xatual[1:(dimx-1),1] <- xtrain[irand,]
          xatual[dimx,1] <- 1
-         
+
          yatual <- ytrain[irand,]
-         
+
          U <- t(xatual) %*% Z # xatual eh dimx x 1 e Z eh dimx x (p-1)
          H <- tanh(U)
          Haug <- cbind(H, 1) # Haug eh 1xp
-         
-         O <- t(Haug %*% W) # 1xp x p x dimy 
-         yhat <- tanh(O)    # dimy x 1 
+
+         O <- t(Haug %*% W) # 1xp x p x dimy
+         yhat <- tanh(O)    # dimy x 1
          yhat <- yhat/abs(yhat)
-         
+
          e <- yatual - yhat
          if (yatual != yhat)
             erros <- erros + 1
@@ -527,10 +527,10 @@ for (iteracao in 1:niteracoes) {
          dO <- t(e * flinhaO)        # .*
          Wminus <- W[-p,]            # retirar polarizacao
          ehidden <- dO %*% t(Wminus) # dO eh dimy x 1, W eh p x dimy, ehidden eh 1x(p - 1)
-          
+
          flinhaU <- sech2(U)
          dU <- ehidden * flinhaU     # .*
-         
+
          W <- W + eta * (t(Haug) %*% dO)
          Z <- Z + eta * (xatual %*% dU)
          ei2 <- ei2 + (e %*% t(e))
@@ -543,11 +543,11 @@ for (iteracao in 1:niteracoes) {
          Zmin <- Z
          minimo <- evec[nepocas]
       }
-   }  
+   }
 
    if (iteracao == 5)
       plot(xtest,ytest,type = 'l',col='red',xlim=c(-0.1,6.3),ylim = c(-1.1,1.1),xlab='x',ylab='y')
-   
+
    ei2 <- 0
    N <- length(ytest[,1])
    for (i in 1:N) {
@@ -571,7 +571,7 @@ for (iteracao in 1:niteracoes) {
       }
    }
    MSE[iteracao] <- ei2/N
-   
+
 #   for (i in 1:N)
 #      if (ytest[i] < 0)
 #         ytest[i] <- 0
@@ -579,7 +579,7 @@ for (iteracao in 1:niteracoes) {
    write.csv(ytest, file="valid_MLP_7.csv")
 }
 
-#plot(evec[1:nepocas], type = 'l')     
+#plot(evec[1:nepocas], type = 'l')
 #par(new=T)
 
 minimo

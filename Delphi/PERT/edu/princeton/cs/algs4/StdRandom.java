@@ -10,27 +10,27 @@
  *
  *  %  java StdRandom 5
  *  seed = 1316600602069
- *  59 16.81826  true 8.83954  0 
- *  32 91.32098  true 9.11026  0 
- *  35 10.11874  true 8.95396  3 
- *  92 32.88401  true 8.87089  0 
- *  72 92.55791  true 9.46241  0 
+ *  59 16.81826  true 8.83954  0
+ *  32 91.32098  true 9.11026  0
+ *  35 10.11874  true 8.95396  3
+ *  92 32.88401  true 8.87089  0
+ *  72 92.55791  true 9.46241  0
  *
  *  % java StdRandom 5
  *  seed = 1316600616575
- *  96 60.17070  true 8.72821  0 
- *  79 32.01607  true 8.58159  0 
- *  81 59.49065  true 9.10423  1 
- *  96 51.65818  true 9.02102  0 
- *  99 17.55771  true 8.99762  0 
+ *  96 60.17070  true 8.72821  0
+ *  79 32.01607  true 8.58159  0
+ *  81 59.49065  true 9.10423  1
+ *  96 51.65818  true 9.02102  0
+ *  99 17.55771  true 8.99762  0
  *
  *  % java StdRandom 5 1316600616575
  *  seed = 1316600616575
- *  96 60.17070  true 8.72821  0 
- *  79 32.01607  true 8.58159  0 
- *  81 59.49065  true 9.10423  1 
- *  96 51.65818  true 9.02102  0 
- *  99 17.55771  true 8.99762  0 
+ *  96 60.17070  true 8.72821  0
+ *  79 32.01607  true 8.58159  0
+ *  81 59.49065  true 9.10423  1
+ *  96 51.65818  true 9.02102  0
+ *  99 17.55771  true 8.99762  0
  *
  *
  *  Remark
@@ -51,7 +51,7 @@ import java.util.Random;
 
 /**
  *  The {@code StdRandom} class provides static methods for generating
- *  random number from various discrete and continuous distributions, 
+ *  random number from various discrete and continuous distributions,
  *  including Bernoulli, uniform, Gaussian, exponential, pareto,
  *  Poisson, and Cauchy. It also provides method for shuffling an
  *  array or subarray.
@@ -112,7 +112,7 @@ public final class StdRandom {
 
     /**
      * Returns a random integer uniformly in [0, n).
-     * 
+     *
      * @param n number of possible integers
      * @return a random integer uniformly between 0 (inclusive) and {@code n} (exclusive)
      * @throws IllegalArgumentException if {@code n <= 0}
@@ -129,7 +129,7 @@ public final class StdRandom {
 
     /**
      * Returns a random real number uniformly in [0, 1).
-     * 
+     *
      * @return     a random real number uniformly in [0, 1)
      * @deprecated Replaced by {@link #uniform()}.
      */
@@ -140,7 +140,7 @@ public final class StdRandom {
 
     /**
      * Returns a random integer uniformly in [a, b).
-     * 
+     *
      * @param  a the left endpoint
      * @param  b the right endpoint
      * @return a random integer uniformly in [a, b)
@@ -156,7 +156,7 @@ public final class StdRandom {
 
     /**
      * Returns a random real number uniformly in [a, b).
-     * 
+     *
      * @param  a the left endpoint
      * @param  b the right endpoint
      * @return a random real number uniformly in [a, b)
@@ -187,7 +187,7 @@ public final class StdRandom {
     /**
      * Returns a random boolean from a Bernoulli distribution with success
      * probability 1/2.
-     * 
+     *
      * @return {@code true} with probability 1/2 and
      *         {@code false} with probability 1/2
      */
@@ -197,7 +197,7 @@ public final class StdRandom {
 
     /**
      * Returns a random real number from a standard Gaussian distribution.
-     * 
+     *
      * @return a random real number from a standard Gaussian distribution
      *         (mean 0 and standard deviation 1).
      */
@@ -218,7 +218,7 @@ public final class StdRandom {
     /**
      * Returns a random real number from a Gaussian distribution with mean &mu;
      * and standard deviation &sigma;.
-     * 
+     *
      * @param  mu the mean
      * @param  sigma the standard deviation
      * @return a real number distributed according to the Gaussian distribution
@@ -231,7 +231,7 @@ public final class StdRandom {
     /**
      * Returns a random integer from a geometric distribution with success
      * probability <em>p</em>.
-     * 
+     *
      * @param  p the parameter of the geometric distribution
      * @return a random integer from a geometric distribution with success
      *         probability {@code p}; or {@code Integer.MAX_VALUE} if
@@ -377,7 +377,7 @@ public final class StdRandom {
     /**
      * Returns a random real number from an exponential distribution
      * with rate &lambda;.
-     * 
+     *
      * @param  lambda the rate of the exponential distribution
      * @return a random real number from an exponential distribution with
      *         rate {@code lambda}
@@ -465,7 +465,7 @@ public final class StdRandom {
      * @param  hi the right endpoint (exclusive)
      * @throws IllegalArgumentException if {@code a} is {@code null}
      * @throws IndexOutOfBoundsException unless {@code (0 <= lo) && (lo < hi) && (hi <= a.length)}
-     * 
+     *
      */
     public static void shuffle(Object[] a, int lo, int hi) {
         if (a == null) throw new IllegalArgumentException("argument array is null");

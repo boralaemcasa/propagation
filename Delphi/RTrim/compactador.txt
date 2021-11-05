@@ -1,0 +1,6 @@
+for %%a in (*.txt) do rtrim "%%a"
+for %%a in (*.java) do rtrim "%%a"
+for %%a in (*.tex) do rtrim "%%a"
+for %%a in (*.py) do rtrim "%%a"
+for %%a in (*.R) do rtrim "%%a"
+for %%a in (*.m) do rtrim "%%a"

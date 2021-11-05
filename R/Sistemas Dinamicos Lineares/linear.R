@@ -17,9 +17,9 @@ A) F(x) = a x
 B) F(x) = a x + b
 
 \therefore não linear
-   
+
    F(c G(x)) = c F(G(x)) ?
-   
+
    ac G(x) + b = c F(G(x)) ?
 
    a G(x) + b/c = F(G(x)), para todo c ?
@@ -38,7 +38,7 @@ F(x) = 0, se t > alpha
 
    F(a x) = a F(x) ?
    1 = F(a x) > 0
-   
+
 \therefore não linear
 
 ################################################
@@ -52,6 +52,6 @@ y = F(x)
    F(a x) = a F(x) !
 
    F(x + u) = F(x) + F(u) !
-   
+
    Mostre!
-   
+
