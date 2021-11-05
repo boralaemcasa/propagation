@@ -1,0 +1,84 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amssymb}  %mathbb
+\usepackage{amsmath}  %align
+\usepackage{amsthm}   %newtheorem
+\usepackage{hyperref} %a href
+\usepackage[a4paper,top=1.0cm,bottom=1.0cm,left=1.0cm,right=1.0cm]{geometry}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\pagestyle{headings}
+\title{Matem\'atica e Espiritualidade}
+\date{}
+\begin{document}
+
+\textbf{Algebraic Independence}
+
+\vspace{6mm}
+
+Let $A^2 = \{(x,y) \in (\mathbb{R} - \mathbb{Q})^2; \exists p \in \mathbb{Z}[x, y] - \{0 \} ; p(x,y) = 0\}$.
+
+$\# A^2 = \# \mathbb{Q}^2$
+
+We want a proof that A is dense in $\mathbb{R}^2$, i.e., $\forall p \in \mathbb{R}^2 - A^2, \forall \epsilon > 0, \exists q \in A^2 ; |q - p| < \epsilon$.
+
+For $n = 1$, we have the proof below.
+
+There is a sequence of algebraic irrationals which converges to:
+
+ (i) algebraic numbers: $a_n = \sqrt{2}$ (constant sequence $c_n = c_0$); \\
+ 
+ (ii) rationals: $p(x) = nx^2 - 1 \Rightarrow a_n = \cfrac{1}{\sqrt{n}} \rightarrow 0$
+ and $q(x) = (nx^2 -1 - a^2n)^2 - 4a^2n \Rightarrow b_n = \cfrac{1}{\sqrt{n}} + a \rightarrow a \in \mathbb{Q}$; \\
+ 
+ (iii) transcendentals: $a_n = \sqrt{2} \sum\limits_{k = 0}^n \cfrac{1}{k!} \rightarrow \sqrt{2} \exp 1 = e \sqrt{2}$. Each partial sum is an algebraic number $y ;$ 
+ 
+$ y^2 = 2 \cdot \cfrac{r}{q} \in \mathbb{Q} \Leftarrow p(x) = qx^2 - 2r$. Analogously, we get any transcendental $t$. As the closure of $\mathbb{Q}$ is $\mathbb{R}$, there is a sequence of rationals $q_n ; \lim q_n = \cfrac{t}{\sqrt{2}}$. Therefore $b_n = q_n \sqrt{2}$ converges to $t$.
+
+$A^1 = \{x \in \mathbb{R} - \mathbb{Q}; \exists p \in \mathbb{Z}[x] - \{0 \} ; p(x) = 0\}$ is countable and dense in $\mathbb{R}$.
+
+\vspace{6mm}
+
+Generalizing for $A^n, n \ge 2$
+
+Fix $p = (t_1, t_2, \cdots, t_n), t_i \neq t_j \in \mathbb{R} - \mathbb{Q} - A^1 = \mathbb{T}$ (transcendentals) and $\epsilon > 0$.
+
+Let the line $\alpha$ be $\alpha(x) = (t_1, t_2 + x, t_3, \cdots, t_n)$
+
+$\exists y_0 = \cfrac{a}{b} \cdot t_1 ; a, b \in \mathbb{Z} - \{0\} ; t_2 < y_0 < t_2 + \epsilon$
+
+The hyperplane $\beta$ of equation $p(x_1, x_2, \cdots, x_n) = x_2 - \cfrac{a}{b} \cdot x_1 = 0$ intersects $\alpha$ at $q = (t_1, y_0, t_3, \cdots, t_n) \in A^n$ because $q$ is root of $p$.
+
+$A^n = \{(x_1, \cdots, x_n) \in (\mathbb{R} - \mathbb{Q})^n; \exists p \in \mathbb{Z}[x_1, \cdots, x_n] - \{ 0 \} ; p(x_1, \cdots, x_n) = 0\}$ is countable and dense in $\mathbb{R}^n$, but it's not $\mathbb{Q}^n$.
+
+\vspace{6mm}
+
+Let $(e, e) \in A^2_e = \{(x,e) \in (\mathbb{R} - \mathbb{Q})^2; \exists p \in \mathbb{Z}[x, y = e] - \{0 \} ; p(x,e) = 0\}$.
+
+Let $(\pi, \pi) \in A^2_\pi = \{x \in \mathbb{R} - \mathbb{Q}; \exists p \in R[x] - \{0 \} ; p(x) = 0\} \times \{\pi\}$.
+
+$\deg p(x, \pi) = g$ 
+
+$q_g \in \mathbb{Z}[x] , \deg q_g = g$ 
+
+$p(x) = \sum\limits_{i = 0}^g q_{g - i}(\pi) x^i$ 
+
+$p(x) \in \mathbb{Z}(\pi)[x] = R[x] \subset \mathbb{R}[x]$ 
+
+In particular, $g = 2 \Rightarrow p(x, \pi) = a_0 + a_1 x + a_2 \pi + a_3 x^2 + a_4 x\pi + a_5 \pi^2 = q_2(\pi) + q_1(\pi) x + q_0(\pi) x^2$.
+
+$T^2_t = [\mathbb{R} - \mathbb{Q} - A - \{q_1(t)\} - \{q_2(t)\} - \{q_3(t)\} - \cdots] \times \{t\}$
+
+$T^3_{t_1, t_2} = [\mathbb{R} - \mathbb{Q} - A - \{q_1(t_1, t_2)\} - \{q_2(t_1, t_2)\} - \{q_3(t_1, t_2)\} - \cdots] \times \{t_1\} \times \{t_2\}, q_g \in \mathbb{Z}[x,y] , \deg q_g = g$
+
+Exchange $t_i \neq t_j$ above by $t_2 \notin \mathbb{Z}(t_1) ; t_3 \notin \mathbb{Z}(t_1, t_2) ; \cdots ; t_n \notin \mathbb{Z}(t_1, \cdots, t_{n - 1})$.
+
+$\dim T^{n+1}_{t_1, \cdots, t_n} = 1$. What about $T^\omega$?
+
+How many are the algebraically independent numbers? $n$, $\aleph_0$ or $\aleph_1$?
+
+\vspace{6mm}
+
+We want a proof that $(e, \pi) \notin A_\pi^2 $, which is countable and dense in $\mathbb{R} \times \{ \pi \}$. So, $(e, \pi) \in T_\pi^2$. 
+
+We want another proof that $(\pi, e) \notin A_e^2 $, which is countable and dense in $\mathbb{R} \times \{ e \}$. So, $(\pi, e) \in T_e^2$.
+
+\end{document}
