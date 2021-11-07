@@ -1,0 +1,51 @@
+a_2 y^2 + a_1 y + x = 0
+==> y = f(x)
+==> m_0 y + m_1 y' + m_2 = 0
+
+m_0 = a_1^2 - 4 x a_2
+
+m_1 = 2 a_2
+
+m_2 = a_1
+
+Do you know x = Bhaskara(a,b,c)?
+That linear EDO has as unique orbit y(x) = Bhaskara(a,b,x).
+
+\sum A_{ij} m_j = 0
+
+i = 0
+j = 0
+
+0
+
+
+i = 1
+j = 0
+
+a_1
+
+
+i = 2
+j = 0
+
+- a_1^2
++4 x a_2
+
+
+i = 0
+j = 1
+
+- a_1
+
+
+i = 1
+j = 1
+
+0
+
+i = 2
+j = 1
+
+2 a_2
+
+

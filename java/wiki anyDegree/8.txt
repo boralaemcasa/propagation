@@ -1,0 +1,20 @@
+a_8 y^8 + a_7 y^7 + a_6 y^6 + a_5 y^5 + a_4 y^4 + a_3 y^3 + a_2 y^2 + a_1 y + x = 0 <=> y = f(x)
+
+Usage:
+
+a_8 = 1 + 2i
+a_7 = 3 + 4i
+a_6 = 5 + 6i
+a_5 = 7 + 8i
+a_4 = 9 + 10i
+a_3 = 11 + 12i
+a_2 = 13 + 14i
+a_1 = 15 + 16i
+
+[A \cdot m = 0. A_{i,j} are below]
+
+==> m_0 y + m_1 y' + m_2 y'' + m_3 y''' + m_4 y^(4) + m_5 y^(5) + m_6 y^(6) + m_7 y^(7) + m_8 y^(8) = 0
+
+==> We will have eight functions(x) with initial condition y_0 = f(0).
+
+Exercise.
