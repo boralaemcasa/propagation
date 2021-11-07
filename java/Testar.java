@@ -1,5 +1,6 @@
 package br.com.calcula.wiki;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -18,8 +19,217 @@ public class Testar {
 	private static String USERNAME = "";
 	private static String PASSWORD = "";
 	private static String PASTA = "";
+	private static String ARQUIVO = "";
 
 	public static String rodar() {
+		PASTA = "V:\\java\\wiki_branch\\";
+		ARQUIVO = "temp.tmp";
+		System.out.println(title("https://www.youtube.com/watch?v=THEBLw7CQ6w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=CC7aXxSU720", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=xOnzF-iIQPo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=5AvjCrXd0qk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=0gj9xa7rZBw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1wNc0MccTc4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Qmdz_Qu3jV8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=CeNeaePbvYo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=drqWE2PFnvo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=-nWgSsuI5mA&feature=youtu.be", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=U-xpNalmfgY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8a-wfCBBPd8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=3ohu8ZSmat0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=2gZ7WEC8F4s", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=k3_lU615ZiQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=4fh04V2YO3w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=UceBV_G3dp8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=xsA3Y-kPpTM", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=-GqT79uk3cQ&feature=youtu.be", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=oFrMdRXTWCE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=NNLHsKoyvZc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=snf1sK_vd_Y", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=t8F7V4ywOZg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=_wxRMAsHQCE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=4LC-RnqAkBY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=PqOmEJvk1JY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=b9i86isSocw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=MZUs13LkZzI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1O0TMmA9QzE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=beRCO6aScPs", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=glBSE7J_g9E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8jpwH7Zud2Q", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=iWZDetvrUy8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=oDfclV5GxsY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=S1W837UmeZ0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Pqe81a_sGqw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=GimjV6Cl82U", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=uUdmrHPggCA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=EX021hmzO_4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=tCRBt4WI90c", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=_y4xd0f70jY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=4cqN5Xt0Lw4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=yWzrgSkrKlw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ORnacewqtVk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=yJcG_YexKsk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=qSf982abo5E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=LspapXG_h7s", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=GunAYyFhqtc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=3up5vuaTSg4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=gBiTRhjZO2I", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=SL9w31H9rzQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=R15HOBrxWO4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=oPUtaUe8VaU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=nCRlGR-xrsY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=-t1jjshEjFM&feature=youtu.be", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=uwoCjL8A5sQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ypDOPtmbOXg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=2plcnM-TCR0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=a2XVrzgouA8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QGBSPnKZUo8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=drwXa9lVrmg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=OQdZYivyNOA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=u6qitaV1X6A", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1r7hMrheJtY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ASg7mMXB6Xs", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Po-UTXEusIQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=r6L4df4Zikw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=eOpsxqh-4bs", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1_fSukOPDRA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ivBuwr-Z_mM", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=I4ApH9BKg-M", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=OtP3hRl4L3U", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=aGe6Osg0R_8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=BdPPIuZkfig", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=FT4salitZZo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Ie2z8CNlXS8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=jqpqLDBqSXs", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=lLK8Y5jicCw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=pWnCXXmSGlo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=phz_1W2FO9k", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=qmFzJpOOQU4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=tSSnfywHGX0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=G4DPpWLmTcw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Ipadp2B2EIY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=JU52wvXxdEE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QZCIxoAzE4c", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=SoCoRKGqU7E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=iy6kCidqjh0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=qTolZEkzUwc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1cu_tg8wuSk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=5AzIFbSgVvI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=93WsbBQxD5s", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=BQqTQD8mZ0A", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Gh7B6RdH-Ck", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=HLUD6-b5Vvk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=P1R0CPziF6w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=VaGNRK8M_V0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=bWpa3MHlRP0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=hlb2f_dirm8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=phO_PFslAow", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=yixbS6qMq5w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=hH_FzwPMG2M", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Ayv2Soe2P3w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=cPWkKbwheJo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=mh6cPiol0kU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=sGQPOsiLyQg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=07amfkNQ1mI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=472RBgxNRKE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8pbO1gS6Khc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=LHqFhttPjC8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QXX40ABqqkA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=RIosu15pW2E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=_kaE1bR-pV4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=cDr7JBi4zd8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=fHffJVGJ2Mo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=lLsoWd6hLns", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=pXKYMyqRQds", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=vHq60yrSuAg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ri133wXkBj8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=5Ij0wPPkt7I", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=7-wPzeXfH_I", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Hr-wRn_pSiM", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=NXpb3rscdmQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QE1CZg5NO4Y", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=UEjbLzr28BA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=clD7Tg66ULc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=reX745_fOhw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=vY_DMGjeO1c", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1xFZo8I61r4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=6yiW8ytXgb4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=7zHdLZ94HvI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8wJILJeD8sY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=9EmXw3qE4_Y", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=AR7BWVsdtHU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=C-sGymzk39E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=CIaGQePVVQw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=FwHyiikrjR8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=HIwzjfGUJjk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=KEjccyqMRMk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=KTG0CW8YJd4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=M12dHDJru2E", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=M1hDggVKFtA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=PLIuttXtBqg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QLFboAJhrB4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=QOjfjoVh2pM", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Rw8QllhM1cA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=So6hoVy8qSU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=UjexsG2MFJA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=UsLO5gUtWiw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=YZL3h71J6UQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=1xFZo8I61r4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8wJILJeD8sY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=9EmXw3qE4_Y", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=CIaGQePVVQw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=HIwzjfGUJjk", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=YZL3h71J6UQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=qtTiKL44z-U", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=tyeLHQSEQOo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=zls7IiFtqPI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=8Y96tq6_gGw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=H5jFpw1-CsU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=SN50mnCgvFg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=feBa1GAKLgc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=pc19OOW9kuQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=H0aeDHxYnGs", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Yrk6qZ34Mtw", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Vh0yCPvcdrI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=s4Xexej67k0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=rzPxK56GCu8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=wio-6zjSsV4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Z3IXeWvEEa4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=tkgjHRfidw8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Anyjzpp9uwI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=I-WQmzbslQc", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=JVKMdyvGbUQ", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=jH4QAWhqkDE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=E4aBYhwbRHg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=HuHuZYgcLOI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=OUaltUyhTSM", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=kNnNXxNR3SE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=_h26uIKyqco", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Dd4eHdms4ZU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=154zJRr2kwo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=zhrVnGItKOE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=yyqd22qMJE4", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=wyQJ_9UaOzE", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=mmzqmIcX7xo", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=2Zmk61NvaoU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=xlabDMqVODI", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=07oqRHg1oD8", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=TXpUrw3vr24", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=9Eck5B8b4GY", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ndlB2HIYZ7o", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=0dgNbhgUZ9w", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=h7HI_yRvung", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=f4RlOhc1cXA", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=gyxnDmc1U_c", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=Mz9mvLLgcDU", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=gIKVXwuLuAg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=ZkZQaSqqqq0", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=mScoQhy0Owg", "", 443));
+		System.out.println(title("https://www.youtube.com/watch?v=UIrG07SE9LQ", "", 443));
+		return "eee";
+	}
+
+	public static String rodar2() {
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\trinity\\";
 		Util.println(executeGet("https://claudino.webs.com/trinity/Exercicio1.txt", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/trinity/Exercicio222.txt", "", 443));
@@ -417,7 +627,10 @@ public class Testar {
 	private static String executeGet(final String https_url, final String proxyName, final int port) {
 		String nomearq = https_url;
 		int i = nomearq.lastIndexOf("/");
-		nomearq = nomearq.substring(i + 1);
+		if (ARQUIVO.equals(""))
+			nomearq = nomearq.substring(i + 1);
+		else
+			nomearq = ARQUIVO;
 
 		URL url;
 		try {
@@ -448,6 +661,62 @@ public class Testar {
 				out.write(bbuf, 0, s);
 				// tl += s;
 			}
+
+			fis.close();
+			out.close();
+
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return nomearq;
+	}
+
+	private static String title(final String https_url, final String proxyName, final int port) {
+		String nomearq = "temp.tmp";
+
+		URL url;
+		try {
+
+			HttpsURLConnection con;
+			url = new URL(https_url);
+
+			if (proxyName.isEmpty()) {
+				con = (HttpsURLConnection) url.openConnection();
+			} else {
+				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyName, port));
+				con = (HttpsURLConnection) url.openConnection(proxy);
+				Authenticator authenticator = new Authenticator() {
+					public PasswordAuthentication getPasswordAuthentication() {
+						return (new PasswordAuthentication(USERNAME, PASSWORD.toCharArray()));
+					}
+				};
+				Authenticator.setDefault(authenticator);
+			}
+
+			InputStream fis = (InputStream) con.getInputStream();
+			ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+			byte bbuf[] = new byte[10240];
+			int s;
+			while ((s = fis.read(bbuf, 0, 10240)) > 0) {
+				out.write(bbuf, 0, s);
+				// tl += s;
+			}
+
+			nomearq = out.toString("UTF-8");
+			int i = nomearq.indexOf("<title>");
+			int j = nomearq.indexOf("</title>");
+			nomearq = nomearq.substring(i + 7, j);
+
+			// i = nomearq.indexOf(" - Google Drive");
+			i = nomearq.indexOf(" - YouTube");
+			if (i >= 0)
+				nomearq = nomearq.substring(0, i);
+			else
+				nomearq = https_url;
 
 			fis.close();
 			out.close();
