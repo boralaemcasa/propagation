@@ -1,10 +1,4 @@
-periodo <- function(f) {
-   return (f(2))
-}
-
-periodo_discreto <- function(f) {
-   return (f(2))
-}
+# período discreto é gráfico
 
 ex26 <- function(nn) {
    # 0123 |-> 1
@@ -15,7 +9,8 @@ ex26 <- function(nn) {
    return (-1)
 }
 
-periodo_discreto(ex26)
+# T = 8
+# omega = 2 pi / T = pi/4
 
 ############################
 
@@ -30,10 +25,6 @@ ex27b <- function(t) {
 ex27c <- function(t) {
    return (exp(-2*t) * cos(2*pi*t))
 }
-
-periodo(ex27a)
-periodo(ex27b)
-periodo(ex27c)
 
 ex27d <- function(n) {
    return ((-1)^n)
@@ -51,8 +42,13 @@ ex27g <- function(n) {
    return (cos(2*pi*n))
 }
 
-periodo_discreto(ex27d)
-periodo_discreto(ex27e)
-periodo_discreto(ex27f)
-periodo_discreto(ex27g)
+dev.off()
+grafico_discreto(ex27d, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico_discreto(ex27e, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico_discreto(ex27f, -10, 10, -3, 3, 'blue')
+dev.off()
+grafico_discreto(ex27g, -10, 10, -10, 10, 'blue')
+
 

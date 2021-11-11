@@ -1,87 +1,25 @@
 rm(list = ls())
 gc()
 
-source("V:\\sem backup\\_4 anal sist dinamicos lineares\\lista 1\\integrar.R")
-
-convolution_discrete <- function(f, g, x, infty) {
-   soma <- 0
-   for (k in -infty:infty) {
-      soma <- soma + f(x - k) * g(k)
-   }
-   return (soma)
-}
-
-segmento <- function(x1, y1, x2, y2, color, p1, p2) {
- N <- 1000
- x <- matrix(0, N + 1)
- y <- matrix(0, N + 1)
- for (i in 1:(N + 1)) {
-    x[i] <- x1 + (x2 - x1) * (i - 1)/N
-    y[i] <- y1 + (y2 - y1) * (i - 1)/N
- }
- plot(x,y,type = 'l',col=color,xlim=p1,ylim=p2,xlab='x',ylab='y')
- par(new=T)
-}
-
-plotar <- function(x, y, Mx1, Mx2, My1, My2, color) {
-   segmento(x, 0, x, y, color, c(Mx1,Mx2), c(My1,My2))
-}
-
-# https://twitter.com/mathspiritual/status/1371110143807610883
-convolution <- function(f, g, x) {
-   return (convolution_matrix(f, g, x, 1, 1)) # de R em R, dx = 0.01
-}
-
-# n <- dim Dom ; a <- dim Im
-convolution_matrix <- function(f, g, x, n, a) {
-   m <- 100
-   mm <- (2 * m - 1)^n
-   dV <- m^(-n)
-   soma <- matrix(0, a)
-   v <- matrix(0, n)
-   for (j in 1:n)
-      v[j] <- -m + 1
-   hh <- matrix(0, n)
-   for (i in 1:mm) {
-      u <- 1/m * v
-      prod <- dV
-      for (j in 1:n) {
-         hh[j] <- u[j]/(1 - abs(u[j]))
-         prod <- prod * (1 - abs(u[j]))^(-2)
-      }
-      ff <- f(x - hh)
-      soma <- soma + prod * t(ff) %*% g(hh)
-
-      v[n] <- v[n] + 1
-      j <- 0
-      while (v[n - j] >= m) {
-         v[n - j] <- -m + 1
-         v[n - j - 1] <- v[n - j - 1] + 1
-         j <- j + 1
-         if (n == j)
-            break
-      }
-   }
-   return (soma)
-}
+source("V:\\sem backup\\_4 anal sist dinamicos lineares\\lista 1\\util.R")
 
 #############################
 
 f <- function(t) {
-   return (u(t) - u(t - 10))
+   return (u(t - 8) - u(t - 11))
 }
 
 g <- function(t) {
-   return (u(t - 2) - u(t - 7))
+   return (u(t) - u(t - 2))
 }
 
  dev.off()
 
  # Mx2 = Mx1 + N
- Mx1 <- -2
- Mx2 <- 20
+ Mx1 <- 5
+ Mx2 <- 15
  My1 <- -1
- My2 <- 6
+ My2 <- 3
  N <- Mx2 - Mx1
  x <- matrix(0, N)
  y <- matrix(0, N)
@@ -132,7 +70,7 @@ ff <- function(t) {
  ww <- matrix(0, N)
  for (i in 1:N) {
     # t(1) = Mx1, t(N) = Mx2
-    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1
+    t <- (Mx2 - Mx1)/(N - 1) * (i - 1) + Mx1 
     x[i] <- t
     y[i] <- f(t)
     z[i] <- g(t)
@@ -259,12 +197,17 @@ g <- function(n) {
    return (u(n - 1) - u(n - 2))
 }
 
+h <- function(n) {
+   return (convolution_discrete(f, g, n, 1000))
+}
+
 #convolution_discrete(f, g, 0, 1000)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution_discrete(f, g, t, 1000)
+dev.off()
+grafico_discreto(f, -10, 10, -2, 5, 'blue')
+grafico_discreto(g, -10, 10, -2, 5, 'green')
+dev.off()
+grafico_discreto(h, -10, 10, -2, 5, 'blue')
 
 ################################
 ex16
@@ -277,13 +220,17 @@ g <- function(n) {
    return (u(n) - u(n - 2))
 }
 
+h <- function(n) {
+   return (convolution_discrete(f, g, n, 1000))
+}
+
 #convolution_discrete(f, g, 0, 1000)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution_discrete(f, g, t, 1000)
-
+dev.off()
+grafico_discreto(f, -10, 10, -2, 5, 'blue')
+grafico_discreto(g, -10, 10, -2, 5, 'green')
+dev.off()
+grafico_discreto(h, -10, 10, -2, 5, 'blue')
 
 ################################
 ex17
@@ -300,19 +247,29 @@ h <- function(t) {
    return (u(t + 1) - 2 * u(t) + u(t - 1))
 }
 
+h1 <- function(t) {
+   return (convolution(x1, h, t))
+}
+
+h2 <- function(t) {
+   return (convolution(x2, h, t))
+}
+
 #convolution(x1, h, 0)
 #convolution(x2, h, 0)
 
+dev.off()
+grafico(x1, -10, 10, -2, 5, 'blue', 1000)
+grafico(h, -10, 10, -2, 5, 'green', 1000)
+dev.off()
+grafico(h1, -2, 2, -2, 2, 'blue', 1000)
 
-    x[i] <- t
-    y[i] <- x1(t)
-    z[i] <- h(t)
-    w[i] <- convolution(x1, h, t)
+dev.off()
+grafico(x2, -10, 10, -2, 5, 'blue', 1000)
+grafico(h, -10, 10, -2, 5, 'green', 1000)
+dev.off()
+grafico(h2, -4, 6, -2, 3, 'blue', 1000)
 
-    x[i] <- t
-    y[i] <- x2(t)
-    z[i] <- h(t)
-    w[i] <- convolution(x2, h, t)
 
 ################################
 ex19
@@ -325,14 +282,21 @@ g <- function(t) {
   return (impropria_lim2(f, t))
 }
 
+h <- function(t) {
+   return (convolution(f, g, t))
+}
+
 #convolution(f, g, 0)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution(f, g, t)
+dev.off()
+grafico(f, -4, 4, -2.5, 2.5, 'blue', 1000)
+dev.off()
+grafico(g, -3, 3, -1, 1, 'blue', 1000)
+dev.off()
+grafico(h, -4, 6, -0.15, 0.15, 'blue', 100)
 
 # expresse g(t) como soma ponderada de degraus.
+# g(t) = -u[-1 + t] + 2 u[t] - u[1 + t]
 
 ################################
 ex21a
@@ -350,13 +314,21 @@ g <- function(t) {
    return (exp(- beta*t) * u(t))
 }
 
+h1 <- function(y) {
+   a <- 4
+   b <- 2
+   return (-(((exp(-(a * y)) - exp(-(b * y))) * u(y))/(a - b)))
+}
+
+h2 <- function(x) {
+   return (x * u(x)/exp(2* x))
+}
+
 #convolution(f, g, 0)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w1[i] <- convolution(f, g, t)
-    w2[i] <- convolution(f, f, t)
+dev.off()
+grafico(h1, -4, 4, -0.5, 0.5, 'blue', 1000)
+grafico(h2, -4, 4, -0.5, 0.5, 'green', 1000)
 
 
 ################################
@@ -370,21 +342,22 @@ g <- function(t) {
    return (exp(2*t) * u(1 - t))
 }
 
+h <- function(y) {
+   return (u (1/4 * exp(2 * y) * (3 - 2 * y) - 1/2 * exp(2*y - 4) * (7 - 2*y) + 1/4 * exp(2*(y - 5))*(13 - 2*y)))
+}
+
 #convolution(f, g, 0)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution(f, g, t)
-
-
+dev.off()
+grafico(h, -10, 10, -1, 2, 'blue', 1000)
+   
 ################
 ex22
 
 Sabendo h = F(delta), queremos saber se F é bibo estável.
 
 ha <- function(n) {
-   return (n * cos(pi/4 * n) * u(n))
+   return (abs(n * cos(pi/4 * n) * u(n)))
 }
 
 hb <- function(n) {
@@ -401,15 +374,24 @@ hd <- function(t) {
    return (exp(-t) * cos(2*t) * u(t))
 }
 
-ha(2)
-hb(2)
-hc(2)
-hd(2)
+bibo_discreto(ha, 1000)
+bibo_discreto(hb, 1000)
+bibo(hc)
+bibo(hd)
+
+dev.off()
+grafico_discreto(ha, -10, 30, -20, 20, 'blue')
+dev.off()
+grafico_discreto(hb, -10, 30, -20, 3^10, 'blue')
+dev.off()
+grafico(hc, -10, 10, -1, 2, 'blue', 1000)
+dev.off()
+grafico(hd, -10, 10, -1, 2, 'blue', 1000)
 
 ################
 ex23
 
-Sabendo h = F(delta), queremos saber se F é A) causal; B) bibo estável.
+Sabendo h = F(delta), queremos saber se F é A) causal; B) bibo estável. 
 
 ha <- function(n) {
    return (0.2^n * u(n))
@@ -424,7 +406,7 @@ hc <- function(n) {
 }
 
 hd <- function(n) {
-   return ((-0.5)^n + 1.01^n * u(n - 1))
+   return (abs((-0.5)^n + 1.01^n * u(n - 1)))
 }
 
 he <- function(t) {
@@ -443,15 +425,31 @@ hh <- function(t) {
    return (t * exp(-t) * u(t))
 }
 
-ha(2)
-hb(2)
-hc(2)
-hd(2)
-he(2)
-hf(2)
-hg(2)
-hh(2)
+dev.off()
+grafico_discreto(ha, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico_discreto(hb, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico_discreto(hc, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico_discreto(hd, -10, 10, -10, 10, 'blue')
+dev.off()
+grafico(he, -10, 10, -5e-4, 5e-4, 'blue', 1000)
+dev.off()
+grafico(hf, -10, 10, -1, 20, 'blue', 1000)
+dev.off()
+grafico(hg, -10, 10, -10, 10, 'blue', 1000)
+dev.off()
+grafico(hh, -10, 10, -0.5, 0.5, 'blue', 1000)
 
+bibo_discreto(ha, 1000)
+bibo_discreto(hb, 1000)
+bibo_discreto(hc, 1000)
+bibo_discreto(hd, 1000)
+bibo(he)
+bibo(hf)
+bibo(hg)
+bibo(hh)
 
 ################################
 ex24 discreto
@@ -464,20 +462,25 @@ g <- function(t) {
    return (u(t - 2) - u(t - 7) + u(t - 11) - u(t - 16))
 }
 
+h <- function(n) {
+   return (convolution_discrete(f, g, n, 1000))
+}
+
 #convolution_discrete(f, g, 0, 1000)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution_discrete(f, g, t, 1000)
-
+dev.off()
+grafico_discreto(f, -10, 20, -10, 10, 'blue')
+grafico_discreto(g, -10, 20, -10, 10, 'green')
+dev.off()
+grafico_discreto(h, -5, 30, -10, 10, 'blue')
+   
 ################################
 ex28
 
 A) x[n] ** h1[n] ** (h2[n] + h3[n]) = y[n]
-
+  
    \therefore h[n] = h1[n] ** (h2[n] + h3[n])
-
+   
 B)
 
 f <- function(n) {
@@ -488,13 +491,16 @@ g <- function(n) {
    return (delta(n) + u(n - 1))
 }
 
+h <- function(n) {
+   return (convolution_discrete(f, g, n, 1000))
+}
+
 #convolution_discrete(f, g, 0, 1000)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution_discrete(f, g, t, 1000)
-
+grafico_discreto(f)
+grafico_discreto(g)
+grafico_discreto(h)
+   
 ################################
 ex29
 
@@ -506,13 +512,14 @@ g <- function(t) {
    return (u(t + 1) - u(t) - 0.5 * (u(t - 2) - u(t - 4)))
 }
 
+h <- function(y) {
+   return (3 (-0.5 ((y - 4) u(y - 4) - (y - 6) u(y - 6)) - (y - 2) u(y - 2) + (y - 1) u(y - 1)))
+}
+
 #convolution(f, g, 0)
 
-    x[i] <- t
-    y[i] <- f(t)
-    z[i] <- g(t)
-    w[i] <- convolution(f, g, t)
-
+grafico(h)
+   
 ################################
 ex30
 
@@ -520,4 +527,4 @@ Sigma1 = h1 ** h5 + h4
 Sigma2 = h1 ** h2 + Sigma1 ** h3 = h
      h = h1 ** h2 + (h1 ** h5 + h4) ** h3
      h = h1 ** h2 + h1 ** h3 ** h5 + h3 ** h4
-
+    

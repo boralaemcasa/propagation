@@ -1,0 +1,28 @@
+causal <=> h(t) = 0 para todo t < 0. 
+
+Vide gráfico.
+
+################################################
+
+#teste
+
+causal depende somente do presente e do passado.
+
+y = x(5t) + 4 é não causal. t = 1 ==> 5.
+
+################################################
+
+ex7
+
+y = F(x)
+
+F(x) = x, se t <= alpha
+
+F(x) = 0, se t > alpha
+
+F(delta) = delta(t), se t <= alpha
+F(delta) = 0, se t > alpha
+
+h(t) = 0 para todo t < 0.
+
+\therefore causal.

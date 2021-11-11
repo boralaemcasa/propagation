@@ -17,9 +17,9 @@ A) F(x) = a x
 B) F(x) = a x + b
 
 \therefore não linear
-
+   
    F(c G(x)) = c F(G(x)) ?
-
+   
    ac G(x) + b = c F(G(x)) ?
 
    a G(x) + b/c = F(G(x)), para todo c ?
@@ -36,9 +36,9 @@ F(x) = x, se t <= alpha
 
 F(x) = 0, se t > alpha
 
-   F(a x) = a F(x) ?
-   1 = F(a x) > 0
-
+       F(a x) = a F(x) ?
+   1 = F(a x) > 0      quando x(t) > alpha e x(t) <= alpha/a. sejam a, alpha > 0.
+   
 \therefore não linear
 
 ################################################
@@ -47,11 +47,14 @@ ex8
 
 y'(t) + 2 y(t) = x(t)
 
-y = F(x)
+x = x_1 => y_1'(t) + 2 y_1(t) = x_1(t)
 
-   F(a x) = a F(x) !
+x = x_2 => y_2'(t) + 2 y_2(t) = x_2(t)
 
-   F(x + u) = F(x) + F(u) !
+x = x_1 + x_2 => z'(t) + 2 z(t) = x_1(t) + x_2(t)
+                                = y_1'(t) + 2 y_1(t) + y_2'(t) + 2 y_2(t) = J
+                                
+z = y_1 + y_2
 
-   Mostre!
-
+(y_1 + y_2)'(t) + 2(y_1 + y_2)'(t) = J, QED
+   
