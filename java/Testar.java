@@ -2,6 +2,7 @@ package br.com.calcula.wiki;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,11 +20,88 @@ public class Testar {
 	private static String USERNAME = "";
 	private static String PASSWORD = "";
 	private static String PASTA = "";
-	private static String ARQUIVO = "";
+	private static String STMP = "";
+	private static Integer MinuteMP3 = 961536; // 0xEAC00
 
 	public static String rodar() {
+		PASTA = "V:\\Downloads\\hoje\\";
+		STMP = "V:\\Downloads\\hoje\\split\\";
+		splitFile("y2mate.com - Dream Dance Vol9  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol10  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol10  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol12  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol13  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol14  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol15  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol16  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol17  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol17  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol18  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol18  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol19  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol20  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol21  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol22  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol23  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol24  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol25  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol26  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol26  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol27  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol27  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol28  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol28  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol29  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol29  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol30  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol30  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol31  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol33  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol34  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol43  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol43  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol45  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol48  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol48  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol52  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol52  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol54  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol55  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol57  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol57  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol59  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol59  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol60  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol60  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance vol65  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance vol65  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance vol65  CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol66  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol66  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol66  CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol67  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol67  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol67  CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol75", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol77  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol77  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol77  CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol82 CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol83 CD 1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol87 CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol88 CD3", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - DREAM DANCE VOL88", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - DREAM DANCE VOL89", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol9  CD1", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - Dream Dance Vol9  CD2", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - DREAM DANCE VOL90", 5 * MinuteMP3, 13);
+		splitFile("y2mate.com - DREAM DANCE VOL91", 5 * MinuteMP3, 13);
+		return "eee";
+	}
+
+	public static String rodar2() {
 		PASTA = "V:\\java\\wiki_branch\\";
-		ARQUIVO = "temp.tmp";
+		STMP = "temp.tmp";
 		System.out.println(title("https://www.youtube.com/watch?v=THEBLw7CQ6w", "", 443));
 		System.out.println(title("https://www.youtube.com/watch?v=CC7aXxSU720", "", 443));
 		System.out.println(title("https://www.youtube.com/watch?v=xOnzF-iIQPo", "", 443));
@@ -229,7 +307,7 @@ public class Testar {
 		return "eee";
 	}
 
-	public static String rodar2() {
+	public static String rodar3() {
 		PASTA = "V:\\java\\wiki_branch\\propagation\\webs dot com\\trinity\\";
 		Util.println(executeGet("https://claudino.webs.com/trinity/Exercicio1.txt", "", 443));
 		Util.println(executeGet("https://claudino.webs.com/trinity/Exercicio222.txt", "", 443));
@@ -627,10 +705,10 @@ public class Testar {
 	private static String executeGet(final String https_url, final String proxyName, final int port) {
 		String nomearq = https_url;
 		int i = nomearq.lastIndexOf("/");
-		if (ARQUIVO.equals(""))
+		if (STMP.equals(""))
 			nomearq = nomearq.substring(i + 1);
 		else
-			nomearq = ARQUIVO;
+			nomearq = STMP;
 
 		URL url;
 		try {
@@ -728,6 +806,39 @@ public class Testar {
 		}
 
 		return nomearq;
+	}
+
+	// https://stackoverflow.com/questions/17886435/error-in-my-mp3-splitter-program
+	public static void splitFile(String entrada, int splitsize, int index) {
+		String nomearqEntrada = PASTA + entrada + ".mp3";
+		File file = new File(nomearqEntrada);
+		FileInputStream fis = null;
+		FileOutputStream fos = null;
+		Long filesize = file.length();
+		int contador = (int) (filesize / splitsize);
+		int resto = (int) (filesize % splitsize);
+		if (resto > 0)
+			contador++;
+		byte[] b = new byte[splitsize];
+		Util.println(nomearqEntrada + " " + filesize.toString() + " bytes");
+
+		try {
+			fis = new FileInputStream(file);
+			for (Integer j = 1; j <= contador; j++) {
+				String nomearqSaida = STMP + entrada.substring(index) + " part " + j.toString() + ".mp3";
+				fos = new FileOutputStream(nomearqSaida);
+				Integer i = fis.read(b);
+				fos.write(b, 0, i);
+				fos.close();
+				fos = null;
+				Util.println(nomearqSaida + "    " + i.toString() + " bytes");
+			}
+
+			fis.close();
+		} catch (IOException e) {
+			Util.println("IOException");
+		}
+
 	}
 
 }
