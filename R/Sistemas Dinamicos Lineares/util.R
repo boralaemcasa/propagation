@@ -1,3 +1,4 @@
+j <- complex(imaginary = 1)
 DX <- 0.01
 
 derivative <- function(f, x, h) {
