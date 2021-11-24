@@ -1,0 +1,187 @@
+TRANSFORMADA DE FOURIER DISCRETA
+######
+
+x[n] = sum k = 1 to T0, a(k) exp(j * k * omega0 * n)
+
+# a(k) = 1/T0 * sum n=1 to T0, x[n] * exp(-i*k*omega0*n)
+
+X(exp(jw)) = sum n=-infty to infty, x[n] * exp(-i*w*n)
+
+xhat[n] = 1/2/pi * integrate X(exp(j*w)) * exp(j*w*n) dw from 0 to (2*pi)
+
+sinais periódicos: w = delta(w - k * omega0)
+
+X(exp(j*w)) = sum k = -infty to infty, L = - infty to infty, a(k) * 2 * pi * delta(w - k * omega0 - 2 * pi * L)
+       
+x[n] = sum k = -infty to infty, a(k) exp(j * k * omega0 * n)
+
+# a(k) = 1/T0 * sum n=1 to T0, x[n] * exp(-i*k*omega0*n)
+
+#############
+
+Linearidade
+
+1) z(n) = A x(n) + B y(n)
+   Z(exp(jw)) = A X(exp(jw)) + B Y(exp(jw))
+
+Deslocamento no tempo
+   
+2) y(n) = x(n - n0)
+   Y(exp(jw)) = exp(- j * w * n0) * X(exp(jw))
+   
+Deslocamento na frequência
+
+3) y(n) = exp(j*omega0*n) * x(n)
+   Y(exp(jw)) = X(exp(j*(w - omega0)))
+
+Conjugação
+
+4) y(n) = conjugate(x(n))
+   Y(exp(jw)) = conjugate(X(exp(-jw)))
+
+Reflexão no tempo
+
+5) y(n) = x(-n)
+   Y(exp(jw)) = X(exp(-jw))
+
+Escalonamento
+
+6) y(n) = x(n/m), se n for múltiplo de m > 0
+   y(n) = 0,      se n não for múltiplo de m
+   Y(exp(jw)) = X(exp(j*m*w))
+
+Convolução
+
+7) z(n) = x(n) ** y(n) = sum k=-infty to infty, x[k] y[n - k]
+   Z(exp(jw)) = X(exp(jw)) * Y(exp(jw))
+
+Multiplicação / Modulação
+
+8) z(n) = x(n) y(n)
+   Z(exp(jw)) = 1/2/pi * X(exp(jw)) ** Y(exp(jw)) = 1/2/pi * sum k=-infty to infty, xx[k] yy[w - k]
+
+Diferença no tempo
+
+9) y(n) = x(n) - x(n - 1)
+   Y(exp(jw)) = (1 - exp(-j*k*w)) * X(exp(jw))
+
+Diferenciação na frequência
+
+10) y(n) = n^m * x(n)
+    Y(exp(jw)) = j^m d^m\dw^m X(exp(jw))
+
+Soma
+
+11) y(n) = sum k = -infty to n, x(k)
+    Y(exp(jw)) = X(exp(jw))/(1 - exp(-j*w)) + pi * X(exp(j0)) * sum k = -infty to infty, delta(w - 2*pi*k)
+
+Sinais reais e pares
+	
+12) x(n) real e par
+    X(exp(jw)) real e par
+
+Sinais reais e ímpares
+
+13) x(n) real e ímpar
+    X(exp(jw)) puramente imaginário e ímpar
+
+Relações de Parseval
+
+14) sum k = -infty to infty, abs(x(n))^2 = 1/2/pi * integrate abs(X(exp(jw)))^2 dw from 0 to (2*pi)
+
+Dualidade
+
+15) \emptyset
+   
+#############
+
+1) x(n) = 0.5^n u(n)
+   X(exp(jw)) = sum n=0 to infty, 0.5^n * exp(-i*w*n)
+              = sum n=0 to infty, (0.5 * exp(-i w))^n
+		      = 1/(1 - 0.5 exp(-i w))
+		      = 2/(2 - 1 exp(-i w))
+
+#############
+
+2) x(n) = delta(n + 3) + delta(n + 2) + delta(n - 2) - delta(n - 3)
+
+   y(n) = delta(n)
+   Y(exp(jw)) = sum n=0 to 0, delta(n) * exp(-i*w*n) = 1
+
+   Por Deslocamento no tempo,
+   z(n) = y(n - n0)
+   Z(exp(jw)) = exp(- j * w * n0) * Y(exp(jw))
+   
+   Por Linearidade,
+   x(n) = z_-3(n) + z_-2(n) + z_2(n) - z_3(n)
+   X(exp(jw)) = exp(+3 j * w) + exp(+2 j * w) + exp(-2 j * w) - exp(-3 j * w)
+              = 2 cos(2 w) + 2 i sin(3 w)
+			  
+#############
+
+3) x(n) = a^n u(n)
+   X(exp(jw)) = sum n=0 to infty, a^n * exp(-i*w*n)
+              = sum n=0 to infty, (a * exp(-i w))^n
+		      = 1/(1 - a exp(-i w))
+
+#############
+
+4) x(n) = 0.75^n u(n)
+   X(exp(jw)) = 1/(1 - 3/4 exp(-i w))
+              = 4/(4 - 3 exp(-i w))   
+
+#############
+
+7a) x(n) = delta(n)
+
+7b) x(n) = delta(n - T0)
+
+7c) x(n) = a^n u(n), abs(a) < 1
+
+7d) x(n) = a^abs(n), abs(a) < 1
+
+7e) x(n) = 1, se abs(n) <= M
+    x(n) = 0, se abs(n) > M
+	use a função sinc(x)
+
+7f) x(n) = cos(2 pi/5 * n)
+
+7g) x(n) = sum k = -infty to infty, delta(n - k * T0)
+
+8a) X(exp(jw)) = 1
+
+8b) X(exp(jw)) = 1, se abs(w) < W
+    X(exp(jw)) = 0, se W < abs(w) <= pi
+	sendo X(exp(jw)) = X(exp(j(w + 2 pi))) e use a função sinc(x)
+	
+8c) X(exp(jw)) = sum k=-infty to infty, 2 pi delta(w - omega0 - 2 pi k)
+
+17) h(n) = H(delta(n))
+	H(exp(jw)) = F(w)
+	H(exp(j*k pi/2)) = F(k pi/2) = R(k)
+    y(n) = H(x(n))
+	x(n) = sum k=-infty to infty, delta(n - k*4)
+	y(n) = cos(5 pi/2*n + pi/4)
+	
+	a) result = R(0)
+	
+	b) result = R(1)
+	
+	c) result = R(2)
+	
+	d) result = R(3)
+	
+18) h(n) = H(delta(n))
+    H(exp(jw)) = u(n - pi/3) - u(5*pi/12) + u(19 pi/12) - u(5 pi/3) = F(w), quando pi/3 <= w <= 5 pi/3
+	F(w + 2) = F(w)
+	y(n) = H(x(n))
+
+	a) x(n) = (-1)^n
+	
+	b) x(n) = 1 + sin(3 pi/8 * n + pi/4)
+	
+	c) x(n) = sum k=-infty to infty, 2^(4k - n) u(n - 4k)
+	
+21) result = H(exp(jw)) = Y(exp(jw))/X(exp(jw))
+    y(n) - 3/4 y(n - 1) + 1/8 y(n - 2) = 2 x(n)
+	
