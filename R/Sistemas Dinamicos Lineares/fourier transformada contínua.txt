@@ -1,9 +1,9 @@
 TRANSFORMADA DE FOURIER CONTÍNUA
 ######
 
-X(j*w) = integrate x(t) * exp(-j*w*t) dt from -infty to infty
+X(jw) = integrate x(t) * exp(-i*w*t) dt from -infty to infty
 
-xhat(t) = 1/2/pi * integrate X(j*w) * exp(j*w*t) dw from -infty to infty
+xhat(t) = 1/2/pi * integrate X(jw) * exp(jw*t) dw from -infty to infty
 
 integrate abs(x(t) - xhat(t))^2 dt from -infty to infty = 0
 somente se
@@ -11,7 +11,7 @@ integrate abs(x(t))^2 dt < infty
 
 sinais periódicos: w = delta(w - k * omega0)
 
-X(j*w) = sum k = -infty to infty, a(k) * 2 * pi * delta(w - k * omega0)
+X(jw) = sum k = -infty to infty, a(k) * 2 * pi * delta(w - k * omega0)
        
 x(t) = sum k = -infty to infty, a(k) exp(j * k * omega0 * t)
 
@@ -62,7 +62,7 @@ Multiplicação / Modulação
 Diferenciação no tempo
 
 9) y(t) = x'(t)
-   Y(jw) = j*w * X(jw)
+   Y(jw) = jw * X(jw)
 
 Diferenciação na frequência
 
@@ -114,8 +114,16 @@ x(0) = A/pi
 
 #############
 
-x(t) = cos(at)
+x(t) = cos(at) = sum k = -infty to infty, a(k) exp(i * k * t) = 1/2 exp(i a t) + 1/2 exp (-i a t)
 X(jw) = 1/2 * 2 * pi * delta(w + 1 a) + 1/2 * 2 * pi * delta(w - 1 a)
+
+#############
+
+x(t) = sin(at) = sum k = -infty to infty, a(k) exp(i * k * t) = -i/2 * exp(iat) + i/2 * exp(-iat)
+X(jw) = sum k = -infty to infty, a(k) * 2 * pi * delta(w - k * omega0)
+k = -a, a(k) = +i/2
+k = +a, a(k) = -i/2
+X(jw) = i/2 * 2 * pi * delta(w + 1 a) - i/2 * 2 * pi * delta(w - 1 a)
 
 #############
 
@@ -144,7 +152,7 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 
 1) x(t) = exp(-at) u(t)
    X(jw) = 1/(a + jw)
-
+   
    Pela reflexão no tempo,
    y(t) = x(-t) = exp(at) u(-t)
    Y(jw) = X(-jw) = 1/(a - jw)
@@ -191,31 +199,128 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 
 #############
 
-2b) x(t) = t exp(-abs(t))
+2b) x(t) = t exp(-abs(t)) = t exp(-t) u(t) + t exp(t) u(-t)
 
-2c) x(t) = t^2 exp(-abs(t))
+    y(t) = t exp(-t) u(t)
+    Y(jw) = 1/(1 + i w)^2
+	
+    Pela reflexão no tempo,
+    z(t) = y(-t) = -t exp(t) u(-t)
+    Z(jw) = Y(-jw) = 1/(1 - i w)^2
+   
+    x(t) = y(t) - z(t)
+    X(jw) = Y(jw) - Z(jw) = 1/(1 + i w)^2 - 1/(1 - i w)^2 = -4 i w/(w^2 + 1)^2
+   
+2c) x(t) = t^2 exp(-abs(t)) = t^2 exp(-t) u(t) + t^2 exp(t) u(-t)
 
-2d) x(t) = 1/i/t
+    y(t) = t^2 exp(-t) u(t)
+    Y(jw) = 2/(1 + i w)^3
+	
+    Pela reflexão no tempo,
+    z(t) = y(-t) = t^2 exp(t) u(-t)
+    Z(jw) = Y(-jw) = 2/(1 - i w)^3
+   
+    x(t) = y(t) + z(t)
+    X(jw) = Y(jw) + Z(jw) = 2/(1 + i w)^3 + 2/(1 - i w)^3 = (4 - 12 w^2)/(w^2 + 1)^3
+   
+2d) x(t) = 1/(it)
 
-2e) x(t) = -(t + 1) * G(t + 0.5, 1) + (1 - t) * G(t - 0.5, 1)
+    u(t) = exp(-0t) u(t)
+    U(jw) = 1/(0 + jw) = 1/(jw)
 
+	Pela dualidade,
+    x(t) = U(jt)
+    X(jw) = 2*pi*u(-w)
+	
+2e) x(t) = -(t + 1) * g(t + 0.5, 1) + (1 - t) * g(t - 0.5, 1)
+
+    g(at - t0, T) = u(at - t0 + T/2) - u(at - t0 - T/2)
+
+	h(t) = p(t) g(at - t0, T)
+	H(jw) = integrate p(t) * exp(-i*w*t) dt from (t0-T/2)/a to (t0+T/2)/a
+
+    X(jw) = integrate (-t - 1) * exp(-i*w*t) dt from (-0.5-1/2) to (-0.5+1/2)
+	      + integrate (1 - t) * exp(-i*w*t) dt from (0.5-1/2) to (0.5+1/2)
+		 
+	X(jw) = (-i w + e^(i w) - 1)/w^2 + (-i w - e^(-i w) + 1)/w^2
+	      = 2 i (sin(w) - w)/w^2
+	
 2f) x(t) = t exp(-abs(t)) sin(2t)
+
+    y(t) = t exp(-abs(t))
+    Y(jw) = -4 i w/(w^2 + 1)^2
+	
+	z(t) = sin(2t)
+	Z(jw) = i * pi * delta(w + 2) - i * pi * delta(w - 2)
+
+	Pela multiplicação,
+    x(t) = z(t) y(t)
+    X(jw) = 1/2/pi * Z(jw) ** Y(jw) = 8 (-3 w^4 + 6 w^2 + 25)/(w^4 - 6 w^2 + 25)^2
 
 2g) x(t) = 4t/(1 + t^2)^2
 
-2h) x(t) = cos(at)
-
-2i) x(t) = sin(at)
+    y(t) = - i t exp(-abs(t))
+    Y(jw) = 4 w/(1 + w^2)^2
+   
+    Pela dualidade,
+    x(t) = Y(jt)
+    X(jw) = 2*pi*y(-w) = 2*pi* i w exp(-abs(w))
 
 3) x(t) = (u(t+2) - u(t + 1)) * (t + 2) + (u(t+1) - u(t - 1)) * (-t) + (u(t-1) - u(t - 2)) * (t - 2)
+   X(jw) = integrate (t + 2) * exp(-i*w*t) dt from -2 to -1
+		 + integrate (-t) * exp(-i*w*t) dt from -1 to 1
+		 + integrate (t - 2) * exp(-i*w*t) dt from 1 to 2
+   X(jw) = e^(i w) (i w - e^(i w) + 1)/w^2
+         + 2 i (sin(w) - w cos(w))/w^2
+		 + e^(-2 i w) (1 + i e^(i w) (w + i))/w^2
+   X(jw) = -4 i sin(w) (cos(w) - 1)/w^2
+	
+5a) X(jw) = i * (u(w) - u(w + 1) + u(w) - u(w - 1))
 
-5a) X(jw) = i * (2 u(w) - u(w + 1) - u(w - 1))
+    Pela reflexão,
+    z(t) = x(-t)
+    Z(jw) = X(-jw) = i * (u(-w) - u(-w + 1) + u(-w) - u(-w - 1)) 
 
-5b) X(jw) = -(w + 1) * G(w + 0.5, 1) + (1 - w) * G(w - 0.5, 1)
+    Pela dualidade,
+    y(t) = Z(jt) = i * (u(-t) - u(-t + 1) + u(-t) - u(-t - 1))
+	                    t <= 0    t <= 1    t <= 0    t <= -1
+    Y(jw) = 2*pi*z(-w) = integrate (+i) * exp(-i*w*t) dt from -1 to 0
+	                   + integrate (-i) * exp(-i*w*t) dt from 0 to 1
+	2 pi z(-w) = (-1 + e^(i w))/w + (-1 + e^(-i w))/w
+			   = (2 (cos(w) - 1))/w
+	z(-w) = 1/pi/w * (cos(w) - 1)
+	 x(t) = 1/pi/t * (cos(t) - 1)
 
-5c) X(jw) = w * G(w - 0.5, 1) + (2 - w) * G(w - 2, 2) + (w - 4) * G(w - 3.5, 1)
+5b) X(jw) = -(w + 1) * g(w + 0.5, 1) + (1 - w) * g(w - 0.5, 1)
 
-5d) X(jw) = 2 pi exp(-abs(w)) * G(w, 2)
+    Pela reflexão,
+    z(t) = x(-t)
+    Z(jw) = X(-jw) = (w - 1) * g(-w + 0.5, 1) + (1 + w) * g(-w - 0.5, 1)
+
+    Pela dualidade,
+    y(t) = Z(jt) = (t - 1) * g(-t + 0.5, 1) + (1 + t) * g(-t - 0.5, 1)
+    Y(jw) = 2*pi*z(-w) = integrate (t - 1) * exp(-i*w*t) dt from (+0.5+1/2) to (0.5-1/2)
+					   + integrate (1 + t) * exp(-i*w*t) dt from (-0.5+1/2) to (-0.5-1/2)
+	2 pi x(w) = (-i w - e^(-i w) + 1)/w^2 + (-i w + e^(i w) - 1)/w^2 = 2 i (sin(w) - w)/w^2
+	x(t) = i/pi * (sin(t) - t)/t^2
+
+5c) X(jw) = w * g(w - 0.5, 1) + (2 - w) * g(w - 2, 2) + (w - 4) * g(w - 3.5, 1)
+
+    Pela reflexão,
+    z(t) = x(-t)
+    Z(jw) = X(-jw) = -w * g(-w - 0.5, 1) + (2 + w) * g(-w - 2, 2) + (-w - 4) * g(-w - 3.5, 1)
+
+    Pela dualidade,
+    y(t) = Z(jt) = -t * g(-t - 0.5, 1) + (2 + t) * g(-t - 2, 2) + (-t - 4) * g(-t - 3.5, 1)
+    Y(jw) = 2*pi*z(-w) = integrate (-t) * exp(-i*w*t) dt from (-0.5+1/2) to (-0.5-1/2)
+	                   + integrate (2 + t) * exp(-i*w*t) dt from (-2+2/2) to (-2-2/2)
+	                   + integrate (-t - 4) * exp(-i*w*t) dt from (-3.5+1/2) to (-3.5-1/2)
+    2 pi x(w) = (1 + e^(i w) (-1 + i w))/w^2 - (2 i e^(2 i w) (w cos(w) - sin(w)))/w^2
+	          + (e^((3 i) w) (1 + i w) - e^((4 i) w))/w^2
+    x(t) = -(-1 + e^(i t))^3 (1 + e^(i t))/t^2/2/pi
+	     = -8 sin^2(t/2) sin^2(t) cos(t)/(pi t^2) + 8 i sin^3(t/2) cos(t/2) cos(2 t)/(pi t^2)
+					   
+5d) X(jw) = 2 pi exp(-abs(w)) * g(w, 2)
 
 5e) X(jw) = 2 pi delta(w - a)
 
@@ -234,7 +339,7 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 	
 9a) result = y(0)
     y(t) = x(t) ** x(-t)
-	X(jw) = G(w, pi)
+	X(jw) = g(w, pi)
 	
 10a) y(t) = x(t) ** z(t)
      x(t) = 1/pi/t
@@ -274,7 +379,7 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 13f) result = integrate t exp(-abs(t)) sin(2t) dt from -infty to infty
 
 14) h(t) = H(delta(t))
-    H(jw) = G(w + 10, 1) + G(w - 10, 1)
+    H(jw) = g(w + 10, 1) + g(w - 10, 1)
 	
 	a) result = y(t) = H(x(t))
 	   x(t) = 10 + 20 sin(3t) cos(7t)
@@ -284,11 +389,11 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 	c) result = 1/2/T0 * integrate abs(y(t))^2 dt from -T0 to T0
 
 15) h(t) = H(delta(t))
-    H(jw) = G(w, 3)
+    H(jw) = g(w, 3)
 	
 	a) result = y(t) = H(x(t))
 	   x(t) = sum k = -infty to infty, q(t - k*2 pi)
-	   q(t) = 100 pi ( (t + 1) * G(t + 0.5, 1) + (1 - t) * G(t - 0.5, 1) )
+	   q(t) = 100 pi ( (t + 1) * g(t + 0.5, 1) + (1 - t) * g(t - 0.5, 1) )
 	   
 	b) result = 1/2/T0 * integrate abs(x(t))^2 dt from -T0 to T0
 
@@ -303,3 +408,5 @@ z(t) = -1/2/pi/j/t + 1/2 * delta(t)
 19) result = H(jw) = Y(jw)/X(jw)
     y'(t) + a y(t) = x(t)
 	
+20) x(t) = t exp(-at) u(t)
+
