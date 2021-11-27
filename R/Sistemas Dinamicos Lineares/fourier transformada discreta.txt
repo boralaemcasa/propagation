@@ -95,6 +95,12 @@ Dualidade
    
 #############
 
+x[n] = 1, se abs(n) <= M
+x[n] = 0, se abs(n) > M
+X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
+
+#############
+
 1) x(n) = 0.5^n u(n)
    X(exp(jw)) = sum n=0 to infty, 0.5^n * exp(-i*w*n)
               = sum n=0 to infty, (0.5 * exp(-i w))^n
