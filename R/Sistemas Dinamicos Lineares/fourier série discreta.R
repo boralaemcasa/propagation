@@ -26,14 +26,14 @@ Linearidade
    c_k = A a_k + B b_k
 
 Deslocamento no tempo
-   
+
 2) y(n) = x(n - n0)
    b_k = exp(- j * k * omega0 * n0) * a_k
-   
+
 Deslocamento na frequência
 
 3) y(n) = exp(j*M*omega0*n)
-   b_k = a_[k - M] 
+   b_k = a_[k - M]
 
 Conjugação
 
@@ -78,7 +78,7 @@ Soma
     b_k = 1/(1 - exp(-j*k*omega0)) * a_k
 
 Sinais reais e pares
-	
+
 12) x(n) real e par
     a_k real e par
 
@@ -94,7 +94,7 @@ Relações de Parseval
 Dualidade
 
 15) \emptyset
-   
+
 ##########################
 
 1)
@@ -190,7 +190,7 @@ x(n) = - exp(-i*3*pi/8)/2/i* exp(-i * 2*pi/24 * n) + 1 + exp(i*3*pi/8)/2/i * exp
 x(n) = sum k = 4 to 12, a(k) exp(j * k * 2 * pi/9 * n)
 
 mod a_k = de -5 a 3, 4 a 12
-a_4 = 0 
+a_4 = 0
 a_5 = 0
 a_6 = 1 exp(j * 2 pi/3) exp(j * 6 * 2 * pi/9 * n)
 a_7 = 2 exp(j * pi/3) exp(j * 7 * 2 * pi/9 * n)
@@ -215,7 +215,7 @@ y <- function(n) {
 
 for (n in -10:10)
    print(paste(n, " ", x(n)))
-   
+
 ##########################
 
 x <- function(n) {
@@ -245,12 +245,12 @@ for (n in -10:10)
 1c) x(n) = sum k = -infty to infty, p(n - k*C)
     p(n) = - delta(n + 1) + 2 delta(n) - delta(n - 1)
 	C > 2
-	
+
 1d) x(n) = sum k = -infty to infty, q(n - k*3)
     q(n) = p(n) - p(-n)
 	p(n) = 2 delta(n + 1) - delta(n) + delta(n - 1)
-	
-4) result = abs(x(0))^2 + abs(x(1))^2 + abs(x(2))^2 
+
+4) result = abs(x(0))^2 + abs(x(1))^2 + abs(x(2))^2
    T0 = 3
    a_k = 1 + cos(k * 2 pi/3)
-	 
+
