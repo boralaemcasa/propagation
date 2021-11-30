@@ -131,8 +131,12 @@ for (k in -10:10)
    if (abs(a(k, 21, x)) > 1e-9)
       print(paste(k, " ", a(k, 21, x)))
 
-for (n in -10:10)
-   print(paste(n, " ", x(n) - recoverx(n, 21, x)))
+for (n in -10:10) {
+   y <- x(n) - recoverx(n, 21, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
 
 ##########################
 
@@ -166,15 +170,20 @@ x <- function(n) {
    return(1 + sin(pi/12 * n + 3*pi/8))
 }
 
-for (k in -10:10)
+for (k in 0:24)
    if (abs(a(k,24, x)) > 1e-9)
       print(paste(k, " ", a(k,24, x)))
 
-for (n in -10:10)
-   print(paste(n, " ", x(n) - recoverx(n, 24, x)))
+for (n in -24:24) {
+   y <- x(n) - recoverx(n, 24, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
 
 print(a(1,24,x) - exp(j*3*pi/8)/2/j)
 print(a(-1,24,x) + exp(-j*3*pi/8)/2/j)
+print(a(0,24,x) - 1)
 
 ##########################
 
@@ -213,8 +222,12 @@ y <- function(n) {
    return( 2*cos(6*pi*n/9 - 2*pi/3) + 4 * cos(4*pi*n/9 - pi/3) - 1 )
 }
 
-for (n in -10:10)
-   print(paste(n, " ", x(n)))
+for (n in -10:10) {
+   z <- x(n)
+   if (abs(z) < 1e-9)
+      z <- 0
+   print(paste(n, " ", z))
+}
 
 ##########################
 
@@ -229,28 +242,108 @@ x <- function(n) {
    return (2)
 }
 
-for (k in -10:10)
+for (k in 0:4)
    if (abs(a(k,4, x)) > 1e-9)
       print(paste(k, " ", a(k,4, x)))
 
-for (n in -10:10)
-   print(paste(n, " ", x(n) - recoverx(n, 24, x)))
+for (n in -10:10) {
+   y <- x(n) - recoverx(n, 4, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
 
 ##########################
 
 1a) x(n) = sin(2 pi n/7 + pi/6) + exp(i pi n/5)
 
+    T0 = 70
+    a(7) = 1
+    a(10) = 0.25 - 0.433013 i
+    a(60) = conjugate(a(10))
+
+x <- function(n) {
+   return(sin(2*pi*n/7 + pi/6) + exp(j*pi*n/5))
+}
+
+for (k in 0:70)
+   if (abs(a(k, 70, x)) > 1e-9)
+      print(paste(k, " ", a(k, 70, x)))
+
+for (n in -70:70) {
+   y <- x(n) - recoverx(n, 70, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
+
 1b) x(n) = cos^2(pi n/5)
+
+    T0 = 10
+    a(-2) = 0.25
+    a(0) = 0.5
+    a(2) = 0.25
+
+x <- function(n) {
+   return(cos(pi*n/5)^2)
+}
+
+for (k in 0:10)
+   if (abs(a(k, 10, x)) > 1e-9)
+      print(paste(k, " ", a(k, 10, x)))
+
+for (n in -10:10) {
+   y <- x(n) - recoverx(n, 10, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
 
 1c) x(n) = sum k = -infty to infty, p(n - k*C)
     p(n) = - delta(n + 1) + 2 delta(n) - delta(n - 1)
-	C > 2
+    C > 2
+
+    T0 = C
+    a(k) = 1/C * (- exp(i*k*2 pi/C) + 2 - exp(-i*k*2 pi/C))
+         = 4 sin^2(pi k/C)/C = (2 - 2 cos(2 pi k/C))/C
 
 1d) x(n) = sum k = -infty to infty, q(n - k*3)
     q(n) = p(n) - p(-n)
-	p(n) = 2 delta(n + 1) - delta(n) + delta(n - 1)
+    p(n) = 2 delta(n + 1) - delta(n) + delta(n - 1)
 
-4) result = abs(x(0))^2 + abs(x(1))^2 + abs(x(2))^2
+    - p(-n) = - 2 delta(n - 1) + delta(n) - delta(n + 1)
+    q(n) = delta(n + 1) - delta(n - 1)
+    T0 = 3
+    a(k) = 1/3 * (exp(i*k*2 pi/3) - exp(-i*k*2 pi/3))
+         = 2/3 i sin(2 pi k/3)
+    a(1) = i/sqrt(3)
+    a(2) = -a(1)
+
+x <- function(n) {
+   n <- n %% 3
+   return(delta(n - 2) - delta(n - 1))
+}
+
+dev.off()
+grafico_discreto(x, -10, 10, -1.1, 1.1, 'blue')
+
+for (k in 0:4)
+   if (abs(a(k, 3, x)) > 1e-9)
+      print(paste(k, " ", a(k, 3, x)))
+
+for (n in -10:10) {
+   y <- x(n) - recoverx(n, 3, x)
+   if (abs(y) < 1e-9)
+      y <- 0
+   print(paste(n, " ", y))
+}
+
+4) result = y = abs(x(0))^2 + abs(x(1))^2 + abs(x(2))^2
    T0 = 3
    a_k = 1 + cos(k * 2 pi/3)
 
+   x(n) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) exp(i k * 2 pi/3 * n)
+   x(0) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) = 3
+   x(1) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) exp(i k * 2 pi/3) = 3/2
+   x(2) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) exp(i k * 2 pi/3 * 2) = 3/2
+   y = 9 + 9/4 + 9/4 = 27/2

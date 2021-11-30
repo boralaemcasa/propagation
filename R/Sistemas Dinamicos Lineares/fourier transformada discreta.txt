@@ -104,8 +104,8 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
 1) x(n) = 0.5^n u(n)
    X(exp(jw)) = sum n=0 to infty, 0.5^n * exp(-i*w*n)
               = sum n=0 to infty, (0.5 * exp(-i w))^n
-		      = 1/(1 - 0.5 exp(-i w))
-		      = 2/(2 - 1 exp(-i w))
+              = 1/(1 - 0.5 exp(-i w))
+              = 2/(2 - 1 exp(-i w))
 
 #############
 
@@ -128,7 +128,7 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
 3) x(n) = a^n u(n)
    X(exp(jw)) = sum n=0 to infty, a^n * exp(-i*w*n)
               = sum n=0 to infty, (a * exp(-i w))^n
-		      = 1/(1 - a exp(-i w))
+              = 1/(1 - a exp(-i w))
 
 #############
 
@@ -148,7 +148,7 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
 
 7e) x(n) = 1, se abs(n) <= M
     x(n) = 0, se abs(n) > M
-	use a função sinc(x)
+    use a função sinc(x)
 
 7f) x(n) = cos(2 pi/5 * n)
 
@@ -158,35 +158,35 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
 
 8b) X(exp(jw)) = 1, se abs(w) < W
     X(exp(jw)) = 0, se W < abs(w) <= pi
-	sendo X(exp(jw)) = X(exp(j(w + 2 pi))) e use a função sinc(x)
+    sendo X(exp(jw)) = X(exp(j(w + 2 pi))) e use a função sinc(x)
 
 8c) X(exp(jw)) = sum k=-infty to infty, 2 pi delta(w - omega0 - 2 pi k)
 
 17) h(n) = H(delta(n))
-	H(exp(jw)) = F(w)
-	H(exp(j*k pi/2)) = F(k pi/2) = R(k)
+    H(exp(jw)) = F(w)
+    H(exp(j*k pi/2)) = F(k pi/2) = R(k)
     y(n) = H(x(n))
-	x(n) = sum k=-infty to infty, delta(n - k*4)
-	y(n) = cos(5 pi/2*n + pi/4)
+    x(n) = sum k=-infty to infty, delta(n - k*4)
+    y(n) = cos(5 pi/2*n + pi/4)
 
-	a) result = R(0)
+    a) result = R(0)
 
-	b) result = R(1)
+    b) result = R(1)
 
-	c) result = R(2)
+    c) result = R(2)
 
-	d) result = R(3)
+    d) result = R(3)
 
 18) h(n) = H(delta(n))
     H(exp(jw)) = u(n - pi/3) - u(5*pi/12) + u(19 pi/12) - u(5 pi/3) = F(w), quando pi/3 <= w <= 5 pi/3
-	F(w + 2) = F(w)
-	y(n) = H(x(n))
+    F(w + 2) = F(w)
+    y(n) = H(x(n))
 
-	a) x(n) = (-1)^n
+    a) x(n) = (-1)^n
 
-	b) x(n) = 1 + sin(3 pi/8 * n + pi/4)
+    b) x(n) = 1 + sin(3 pi/8 * n + pi/4)
 
-	c) x(n) = sum k=-infty to infty, 2^(4k - n) u(n - 4k)
+    c) x(n) = sum k=-infty to infty, 2^(4k - n) u(n - 4k)
 
 21) result = H(exp(jw)) = Y(exp(jw))/X(exp(jw))
     y(n) - 3/4 y(n - 1) + 1/8 y(n - 2) = 2 x(n)
