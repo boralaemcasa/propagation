@@ -1,5 +1,4 @@
-SÉRIE DE FOURIER CONTÍNUA
-#############
+############# SÉRIE DE FOURIER CONTÍNUA
 
 os coeficientes da representacao em serie de Fourier dos seguintes sinais:
 
@@ -7,7 +6,9 @@ x(t) = sum k = -infty to infty, a(k) exp(j * k * omega0 * t)
 
 # a(k) = 1/T0 * integrate x(t) * exp(-i*k*omega0*t) dt from 0 to T0
 
-sinc(u) = sin(pi*u)/pi/u
+sinc(x) = sin(pi * x)/pi/x
+sin(pi x) = pi x sinc(x)
+sin(x) = x sinc(x/pi)
 
 # no wolfram alpha, sinc(x) = sin(x)/x, u(x) = theta(x)
 

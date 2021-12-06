@@ -53,7 +53,7 @@ function [RETORNO] = RUNSIMPLEX(ndim)
   fprintf('    Theoretical number of iterations for the simplex is  = %d\n',2^ndim);
   fprintf('    Simplex number of iterations is                      = %d\n',iter-1);
   fprintf('    Simplex erro porcentual optimal objective value is   = %f\n',erro_fobjsplx);
-  fprintf('    Simplex erro porcentual vetor x soluçao              = %f\n',erro_xsplx);
+  fprintf('    Simplex erro porcentual vetor x soluçao              = %f\n    ',erro_xsplx);
   toc
   disp('  ---------------------------------------------------------------  '); 
 %==========================================================================

@@ -56,7 +56,7 @@ function [RETORNO] = RUNPI2(ndim, gap, KALPHA)
   fprintf('  Theoretical number of iterations for the simplex is = %d\n',2^ndim);
   fprintf('  PI number of iterations is                          = %d\n',iter);
   fprintf('  PI erro porcentual optimal objective value is       = %f\n',erro_fobjpi);
-  fprintf('  PI erro porcentual vetor x soluçao                  = %f\n',erro_xpi);
+  fprintf('  PI erro porcentual vetor x soluçao                  = %f\n  ',erro_xpi);
   toc
   disp('  -----------------------------------------------------------------  '); 
 end

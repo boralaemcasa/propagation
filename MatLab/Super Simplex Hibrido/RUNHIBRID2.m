@@ -1,4 +1,4 @@
-function [RETORNO] = RUNHIBRID2(ndim, gap, KALPHA)
+function [RETORNO] = RUNHIBRID2(ndim, gap, KALPHA, separar)
   ncode = 1;
   valb = 10;
   tic
@@ -55,8 +55,16 @@ function [RETORNO] = RUNHIBRID2(ndim, gap, KALPHA)
   erro_fobjpi = 100*abs(FOBJ - valb^(ndim-1))/valb^(ndim-1);
   %disp('  ---------------------------------------------------------  ');
   %fprintf('    Pi number of iterations is                      = %d\n',ITER);
-  %fprintf('    Pi erro porcentual  optimal objective value is  = %f\n',erro_fobjpi);
-  %fprintf('    Pi erro porcentual vetor x solucao              = %f\n',erro_xpi);
+  if separar
+      disp('  -------------------------------------------------------------------  ');
+      fprintf('    Dim                                                  = %d\n',ndim);
+      fprintf('    Gap                                                  = %d\n',gap);
+      fprintf('    Alpha                                                = %f\n',KALPHA);
+      fprintf('    Pi erro porcentual  optimal objective value is       = %f\n',erro_fobjpi);
+      fprintf('    Pi erro porcentual vetor x solucao                   = %f\n    ',erro_xpi);
+      toc
+      tic
+  end
   %disp('  ---------------------------------------------------------  ');
   %disp('  ---------------------------------------------------------  ');
   %pause(1);
@@ -98,15 +106,17 @@ function [RETORNO] = RUNHIBRID2(ndim, gap, KALPHA)
   Xsol_splx(ndim) = Xsol_splx(ndim) - valb^(ndim-1);
   erro_xsplx = 100*norm(Xsol_splx)/valb^(ndim-1);
   erro_fobjsplx = 100*abs(obj - valb^(ndim-1))/valb^(ndim-1);
-  disp('  -------------------------------------------------------------------  ');
-  fprintf('    Dim                                                  = %d\n',ndim);
-  fprintf('    Gap                                                  = %d\n',gap);
-  fprintf('    Alpha                                                = %f\n',KALPHA);
+  if ~ separar
+     disp('  -------------------------------------------------------------------  ');
+     fprintf('    Dim                                                  = %d\n',ndim);
+     fprintf('    Gap                                                  = %d\n',gap);
+     fprintf('    Alpha                                                = %f\n',KALPHA);
+  end
   fprintf('    Theoretical number of iterations for the simplex is  = %d\n',2^ndim);
   fprintf('    Pi number of iterations is                           = %d\n',ITER);
   fprintf('    Simplex number of iterations is                      = %d\n',iter_spx);
   fprintf('    Simplex erro porcentual optimal objective value is   = %f\n',erro_fobjsplx);
-  fprintf('    Simplex erro porcentual vetor x solucao              = %f\n',erro_xsplx);
+  fprintf('    Simplex erro porcentual vetor x solucao              = %f\n    ',erro_xsplx);
   toc
   disp('  -------------------------------------------------------------------  '); 
 end
