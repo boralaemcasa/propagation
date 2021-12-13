@@ -838,3 +838,18 @@ grafico(y, -pi, pi, 0, 30, 'blue', 1000)
     y(t) = exp(-at) u(t)
    Y(jw) = 1/(jw + a)
    X(jw) = 1/(jw + a)^2
+
+H(jw) = exp(-14iw)/(-iw^3 - 15w^2 + 66iw + 80)
+      = e^(-14 i w)/((-5 - i w) (w - 2 i) (w - 8 i))
+     
+Pela diferenciação na frequência,
+x(t) = t h(t)
+X(jw) = i d\dw H(jw) = i e^(-14 i w) (14 w^3 - 213 i w^2 - 954 w + 1186 i)/((w - 2 i)^2 (w - 5 i)^2 (w - 8 i)^2)
+X(j0) = i (1186 i)/((- 2 i)^2 (- 5 i)^2 (- 8 i)^2) = 0.1853125
+
+##################
+
+H(jw) = exp(-3iw)/(w^4 - 1.7iw^3 - 0.9w^2 + 0.144iw)
+x(t) = h'(t)
+X(jw) = jw * H(jw)
+X(j0) = 0

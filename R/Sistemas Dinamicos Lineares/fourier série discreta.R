@@ -347,3 +347,14 @@ for (n in -10:10) {
    x(1) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) exp(i k * 2 pi/3) = 3/2
    x(2) = sum k = 1 to 3, (1 + cos(k * 2 pi/3)) exp(i k * 2 pi/3 * 2) = 3/2
    y = 9 + 9/4 + 9/4 = 27/2
+
+#######
+
+x(n) = sum k = -infty to infty, p(n - k*C)
+p(n) = -3 delta(n + 1) + 6 delta(n) - 3 delta(n - 1)
+
+T0 = 7   
+   
+a(k) = 1/7 * sum n=-1 to 1, x[n] * exp(-i*k*w*n)   
+     = 1/7 * (-3 exp(i*k*2 pi/7) + 6 - 3 exp(-i*k*2 pi/7))
+     = 12/7 sin^2((pi k)/7)

@@ -153,21 +153,21 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
 7e) x(n) = 1, se abs(n) <= M
     x(n) = 0, se abs(n) > M
     use a função sinc(x) = sin(pi * x)/pi/x
-   sin(pi x) = pi x sinc(x)
-   sin(x) = x sinc(x/pi)
+    sin(pi x) = pi x sinc(x)
+    sin(x) = x sinc(x/pi)
    
-   X(exp(jw)) = sum n=-infty to infty, x[n]  exp(-iwn)
-              = sum n=-M to M, exp(-iwn)
-              = sum n=0 to 2*M, exp(-iw(n - M))
-              = exp(iwM) sum n=0 to 2*M, exp(-iwn))
-              = exp(iwM) (-e^(i w) + e^(-2 i M w))/(1 - e^(i w))
-              = exp(iwM) (-1 + e^(-2 i M w - iw))/(e^(-iw) - 1)
-              = exp(iwM) exp(-i w/2 (2M + 1)) (-exp(i w/2 (2M + 1)) + e^(-i w/2 (2M + 1)))/ e^(-iw/2)/ (e^(-iw/2) - e^(iw/2))
-                   1             1                                                             1                  
-              = (exp(i w/2 (2M + 1)) - e^(-i w/2 (2M + 1)))/ (e^(iw/2) - e^(-iw/2))
-              = sin(w/2 (2M + 1))/ sin(w/2)
-              = w/2 (2M + 1) sinc(w/2/pi (2M + 1))/ (w/2 sinc(w/2/pi))
-              = (2M + 1) sinc(w/2/pi (2M + 1))/ sinc(w/2/pi)
+    X(exp(jw)) = sum n=-infty to infty, x[n]  exp(-iwn)
+               = sum n=-M to M, exp(-iwn)
+               = sum n=0 to 2*M, exp(-iw(n - M))
+               = exp(iwM) sum n=0 to 2*M, exp(-iwn))
+               = exp(iwM) (-e^(i w) + e^(-2 i M w))/(1 - e^(i w))
+               = exp(iwM) (-1 + e^(-2 i M w - iw))/(e^(-iw) - 1)
+               = exp(iwM) exp(-i w/2 (2M + 1)) (-exp(i w/2 (2M + 1)) + e^(-i w/2 (2M + 1)))/ e^(-iw/2)/ (e^(-iw/2) - e^(iw/2))
+                    1             1                                                             1                  
+               = (exp(i w/2 (2M + 1)) - e^(-i w/2 (2M + 1)))/ (e^(iw/2) - e^(-iw/2))
+               = sin(w/2 (2M + 1))/ sin(w/2)
+               = w/2 (2M + 1) sinc(w/2/pi (2M + 1))/ (w/2 sinc(w/2/pi))
+               = (2M + 1) sinc(w/2/pi (2M + 1))/ sinc(w/2/pi)
                
 7f) x(n) = cos(2 pi/5 * n)
     T0 = 5
@@ -233,15 +233,55 @@ X(exp(jw)) = sin(w/2 * (2M + 1)) / sin(w/2)
                      = 2 e^(- i pi/4)
 
 18) h(n) = Phi(delta(n))
-    H(exp(jw)) = u(n - pi/3) - u(5 pi/12) + u(19 pi/12) - u(5 pi/3) = F(w), quando pi/3 <= w <= 5 pi/3
-    F(w + 2) = F(w)
-    y(n) = Phi(x(n))
+    H(exp(jw)) = u(w - pi/3) - u(w - 5 pi/12) + u(w - 19 pi/12) - u(w - 5 pi/3) = F(w), quando pi/3 <= w <= 5 pi/3
+    F(w + 2 pi) = F(w)
+    y(n) = Phi(x(n)) = h(n) ** x(n)
+    h[n] = 1/2/pi * integrate H(exp(jw)) exp(jwn) dw from 0 to (2 pi)
+         = 1/2/pi * integrate exp(jwn) dw from pi/3 to 5 pi/12
+         + 1/2/pi * integrate exp(jwn) dw from 19 pi/12 to 5 pi/3
+         = -i e^(i pi n/3) (-1 + e^(i pi n/12))/(2 pi n) - i e^(19 i pi n/12) (-1 + e^(i pi n/12))/(2 pi n)
+         = e^(i pi n) (sin(2 pi n/3) - sin(7 pi n/12))/(pi n)
 
-    a) x(n) = (-1)^n
+    a) x(n) = (-1)^n = (cos pi)^n = cos(n pi) = 1/2 e^(-i pi n) + 1/2 e^(i pi n)
+       X(exp(jw)) = sum L = - infty to infty, pi delta(w - pi - 2 pi L)
 
-    b) x(n) = 1 + sin(3 pi/8 * n + pi/4)
-
+       Pela convolução,
+       Y(exp(jw)) = H(exp(jw)) X(exp(jw)); e a interseção com {- pi, pi} é igual a vazio.
+       Y(exp(jw)) = 0
+       y(n) = 0
+      
+    b) x(n) = 1 + sin(3 pi/8 * n + pi/4) = 1/2 i e^(-3/8 i pi n) e^(- i pi/4) - 1/2 i e^(3 i pi n/8) e^(i pi/4) + 1
+       T0 = 16; omega0 = pi/8
+       a(0) = 1; a(3) = - 1/2 i e^(i pi/4)
+       a(-3) = 1/2 i e^(- i pi/4)
+       X(exp(jw)) = sum L = - infty to infty, i e^(- i pi/4) pi delta(w + 3 pi/8 - 2 pi L)
+                  + sum L = - infty to infty, 2 pi delta(w - 2 pi L)
+                  + sum L = - infty to infty, - i e^(i pi/4) pi delta(w - 3 pi/8 - 2 pi L)
+       Y(exp(jw)) = sum L = - infty to infty, i e^(- i pi/4) pi delta(w + 3 pi/8 - 2 pi L)
+                  + sum L = - infty to infty, - i e^(i pi/4) pi delta(w - 3 pi/8 - 2 pi L)
+       y(n) = x(n) - 1 = sin(3 pi/8 * n + pi/4)
+      
     c) x(n) = sum k=-infty to infty, 2^(4k - n) u(n - 4k)
+       f(n) = 2^(4k) 0.5^n u(n - 4k)
+       F(exp(jw)) = 2^(4k) sum n=4k to infty, 0.5^n  exp(-iwn)
+                  = 2^(4k) 0.5^(4k) exp(-iw * 4k)/(1 - 0.5 exp(-iw))
+                  = 2 exp(-iw * 4k)/(2 - exp(-iw)) = c * a^k
+       X(exp(jw)) = sum k=0 to infty, c * a^k + sum k=1 to infty, c * b^k
+                  = c/(1 - a) + cb/(1 - b)
+                  = 2/(2 - exp(-iw))/(1 - exp(-iw * 4)) + 2/(2 - exp(-iw)) * exp(iw * 4)/(1 - exp(iw * 4))
+                  = 0
 
-21) result = H(exp(jw)) = Y(exp(jw))/X(exp(jw))
-    y(n) - 3/4 y(n - 1) + 1/8 y(n - 2) = 2 x(n)
+       Pela convolução,
+       Y(exp(jw)) = H(exp(jw)) X(exp(jw))
+                  = sum k=-infty to infty, H(exp(jw)) 2 exp(-iw * 4k)/(2 - exp(-iw)); e a faixa de F é imaginária.
+       y(n) = 0
+      
+#################
+
+y(n) - 9/18 y(n - 1) + 1/18 y(n - 2) = 3 x(n)
+18 y(n) - 9 y(n - 1) + y(n - 2) = 54 x(n)
+18 Y(exp(jw)) - 9 exp(- i w) Y(exp(jw)) + exp(- 2 i w) Y(exp(jw)) = 54 X(exp(jw))
+H(exp(jw)) = 54/(18 - 9 exp(- i w) + exp(- 2 i w))
+           = 18/(exp(- i w) - 6) - 18/(exp(- i w) - 3)
+           = -3/(1 - 1/6 exp(- i w)) + 6/(1 - 1/3 exp(- i w))
+h(n) = 6 * (1^3)^n * u(n) - 3 * (1/6)^n * u(n)
