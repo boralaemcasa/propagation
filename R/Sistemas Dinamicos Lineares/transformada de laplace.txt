@@ -1,0 +1,172 @@
+s = sigma + jw
+
+X(s) = integrate x(t) exp(-s t) dt from -infty to infty
+
+x(t) = 1/2/pi/i * integrate X(s) exp(s t) ds from Re(s) - i * infty to Re(s) + i * infty
+
+s = jw => X(jw) é igual à transformada de Fourier
+
+RDC: integrate abs(x(t) exp(-Re(s) t)) dt from -infty to infty < infty
+
+x(t) = u(t)
+X(s) = 1/s
+
+x(t) = u(t - 5)
+X(s) = 1/s * exp(-5s), Re(s) > 0
+
+x(t) = exp(i a t) u(t)
+X(s) = 1/(s - i a), Re(s) > 0
+
+x(t) = delta(t)
+X(s) = 1
+
+Transformada inversa
+
+1) x(t) = exp(at) u(t), a > 0
+   X(s) = 1/(s - a), Re(s) > a
+
+2) x(t) = - exp(at) u(-t), a > 0
+   X(s) = 1/(s - a), Re(s) < a
+
+3) x(t) = t^(n - 1)/(n - 1)! exp(at) u(t)
+   X(s) = 1/(s - a)^n, Re(s) > a
+   
+4) x(t) = - t^(n - 1)/(n - 1)! exp(at) u(-t)
+   X(s) = 1/(s - a)^n, Re(s) < a
+   
+5) x(t) = exp(at) cos(wt) u(t)
+   X(s) = (s - a)/[(s - a)^2 + w^2], Re(s) > a
+   
+6) x(t) = - exp(at) cos(wt) u(-t)
+   X(s) = (s - a)/[(s - a)^2 + w^2], Re(s) < a
+
+7) x(t) = exp(at) sin(wt) u(t)
+   X(s) = w/[(s - a)^2 + w^2], Re(s) > a
+   
+8) x(t) = - exp(at) sin(wt) u(-t)
+   X(s) = w/[(s - a)^2 + w^2], Re(s) < a
+
+Unilateral
+
+X(s) = integrate x(t) exp(-s t) dt from 0- to infty
+
+x(t) = exp(at) u(t)
+X_u(s) = 1/(s - a), Re(s) qualquer
+   
+Teorema do valor inicial
+
+x(0+) = lim s X(s) as s->infty
+
+Teorema do valor final
+
+lim x(t) as t->infty = lim s X(s) as s->0
+   
+Escalonamento
+
+y(t) = x(at)
+Y_u(s) = 1/abs(a) * X(s/a)
+
+Convolução
+
+z(t) = x(t) ** y(t)
+Z_u(s) = X(s) Y(s)
+
+Linearidade
+
+z(t) = a x(t) + b y(t)
+Z(s) = a X(s) + b Y(s)
+RDCz contém RDCx inter RDCy
+se RDCz = RDCx inter RDCy = emptySet, então não existe a transformada
+
+Deslocamento no tempo
+
+y(t) = x(t - t0)
+Y(s) = exp(-s * t0) * X(s), RDCy = RDCx
+
+Deslocamento no domínio s
+
+y(t) = exp(s0 * t) x(t)
+Y(s) = X(s - s0), RDCy = RDCx deslocada de - s0
+
+Diferenciação no tempo
+
+y(t) = x'(t)
+Y(s) = s X(s), RDCy contém RDCx
+s pode cancelar um polo de X(s)
+Y_u(s) = s X(s) - x(0-)
+
+Diferenciação no domínio s
+
+y(t) = - t x(t)
+Y(s) = X'(s), RDCy contém RDCx
+
+Integração no tempo
+
+y(t) = integrate x(tau) dtau from -infty to t
+Y(s) = 1/s * X(s), RDCy contém RDCx inter (Re(s) > 0)
+Y_u(s) = 1/s * X(s) + k/s, k = integrate x(tau) dtau from -infty to 0-
+
+Função de transferência
+
+H(s) = Y(s)/X(s), deg Y = m, deg X = n
+se n >= m, H(s) é própria
+se n < m, H(s) é imprópria
+
+h(t) é causal => h(t) = 0 para t < 0, portanto é lateral direito
+RDCh é um semiplano direito
+Para H(s) racional e própria, a causalidade é equivalente a RDC = semiplano à direita do polo mais à direita
+
+x(t) = delta'(t)
+X(s) = s
+
+Para H(s) racional e própria, o sistema é estável se os polos têm parte real negativa.
+Um sistema LIT é estável se e só se a RDCh incluir o eixo jw inteiro.
+
+#######
+
+dy\dt + 3y = 4x
+x(t) = cos(2t) u(t)
+y(0-) = -2
+
+s Y(s) - y(0-) + 3Y(s) = 4X(s)
+X(s) = s/(s^2 + 2^2)
+Y(s) = -2/(s + 3) + 4s/(s^2 + 2^2)/(s + 3) = N(s) + F(s)
+natural N(s) = -2/(s + 3)
+forçada F(s) = 4s/(s^2 + 2^2)/(s + 3)
+n(t) = -2 exp(-3t) u(t)
+f(t) = -12/13 exp(-3t) u(t) + 12/13 cos(2t) u(t) + 8/13 sin(2t) u(t)
+y(t) = n(t) + f(t)
+
+#######
+
+1) h(t) = - exp(-at) u(-t)
+
+2) x(t) = exp(t) u(-t) - 2 exp(-2t) u(t)
+
+3) h(t) = 3 exp(-2t) u(t) - 2 exp(-t) u(t)
+
+4) x(t) = cos(wt) u(-t)
+
+5) h(t) = 5 exp(-3t) u(t)
+
+6) x(t) = sin(wt) u(-t)
+
+7) h(t) = 5 exp(-7t) cos(2t) u(t)
+   result = RDCh
+   
+#######
+
+8) X(s) = (-21 + 21s)/(s + 1)/(s - 2), Re(s) < -1
+
+9) dy\dt + 3y = x
+   x(t) = u(t)
+   y(0-) = -2
+   result = y(t)
+   
+10) X(s) = 2(s + 2)/(s^2 + 7s + 12), Re(s) > -3
+
+11) X(s) = (-20 + 6s)/(s + 2)/(s - 6), Re(s) > 6
+
+12) X(s) = (-1 + 3s)/(s + 5)/(s - 3), Re(s) > 3
+
+13) X(s) = (-28 + 21s)/(s + 6)/(s - 5), Re(s) > 5
