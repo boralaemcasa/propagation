@@ -30,19 +30,19 @@ Transformada inversa
 
 3) x(t) = t^(n - 1)/(n - 1)! exp(at) u(t)
    X(s) = 1/(s - a)^n, Re(s) > a
-   
+
 4) x(t) = - t^(n - 1)/(n - 1)! exp(at) u(-t)
    X(s) = 1/(s - a)^n, Re(s) < a
-   
+
 5) x(t) = exp(at) cos(wt) u(t)
    X(s) = (s - a)/[(s - a)^2 + w^2], Re(s) > a
-   
+
 6) x(t) = - exp(at) cos(wt) u(-t)
    X(s) = (s - a)/[(s - a)^2 + w^2], Re(s) < a
 
 7) x(t) = exp(at) sin(wt) u(t)
    X(s) = w/[(s - a)^2 + w^2], Re(s) > a
-   
+
 8) x(t) = - exp(at) sin(wt) u(-t)
    X(s) = w/[(s - a)^2 + w^2], Re(s) < a
 
@@ -52,7 +52,7 @@ X(s) = integrate x(t) exp(-s t) dt from 0- to infty
 
 x(t) = exp(at) u(t)
 X_u(s) = 1/(s - a), Re(s) qualquer
-   
+
 Teorema do valor inicial
 
 x(0+) = lim s X(s) as s->infty
@@ -60,7 +60,7 @@ x(0+) = lim s X(s) as s->infty
 Teorema do valor final
 
 lim x(t) as t->infty = lim s X(s) as s->0
-   
+
 Escalonamento
 
 y(t) = x(at)
@@ -112,7 +112,7 @@ H(s) = Y(s)/X(s), deg Y = m, deg X = n
 se n >= m, H(s) é própria
 se n < m, H(s) é imprópria
 
-h(t) é causal => h(t) = 0 para t < 0, portanto é lateral direito
+Phi é causal => h(t) = 0 para t < 0, portanto h(t) é lateral direito
 RDCh é um semiplano direito
 Para H(s) racional e própria, a causalidade é equivalente a RDC = semiplano à direita do polo mais à direita
 
@@ -140,33 +140,149 @@ y(t) = n(t) + f(t)
 #######
 
 1) h(t) = - exp(-at) u(-t)
+   H(s) = 1/(s + a), Re(s) < -a
 
 2) x(t) = exp(t) u(-t) - 2 exp(-2t) u(t)
+   X(s) = -1/(s - 1) - 2/(s + 2), -2 < Re(s) < 1
+        = -3s/(s - 1)/(s + 2)
 
 3) h(t) = 3 exp(-2t) u(t) - 2 exp(-t) u(t)
+   H(s) = 3/(s + 2) - 2/(s + 1), Re(s) > -1
+        = (s - 1)/(s + 1)/(s + 2)
 
 4) x(t) = cos(wt) u(-t)
+   X(s) = - s/(s^2 + w^2), Re(s) < 0
 
 5) h(t) = 5 exp(-3t) u(t)
+   H(s) = 5/(s + 3), Re(s) > -3
 
 6) x(t) = sin(wt) u(-t)
+   X(s) = - w/(s^2 + w^2), Re(s) < 0
 
 7) h(t) = 5 exp(-7t) cos(2t) u(t)
-   result = RDCh
-   
+   result = RDCh = Re(s) > -7 <=> -7 - sigma < 0
+   integrate abs(5 exp([-7 - sigma]t) cos(2t)) dt from 0 to infty < infty
+
 #######
 
 8) X(s) = (-21 + 21s)/(s + 1)/(s - 2), Re(s) < -1
+        = 14/(s + 1) + 7/(s - 2)
+   x(t) = - 14 exp(-t) u(-t) - 7 exp(2t) u(-t)
 
 9) dy\dt + 3y = x
    x(t) = u(t)
    y(0-) = -2
    result = y(t)
-   
+
+   s Y(s) - y(0-) + 3Y(s) = X(s)
+   X(s) = 1/s
+   Y(s) = -2/(s + 3) + 1/s/(s + 3) = 1/3 * 1/s - 7/3 * 1/(s + 3)
+   y(t) = 1/3 u(t) - 7/3 exp(-3t) u(t)
+
 10) X(s) = 2(s + 2)/(s^2 + 7s + 12), Re(s) > -3
+         = 4/(s + 4) - 2/(s + 3)
+    x(t) = 4 exp(-4t) u(t) - 2 exp(-3t) u(t)
 
 11) X(s) = (-20 + 6s)/(s + 2)/(s - 6), Re(s) > 6
+         = 4/(s + 2) + 2/(s - 6)
+    x(t) = 4 exp(-2t) u(t) + 2 exp(6t) u(t)
 
 12) X(s) = (-1 + 3s)/(s + 5)/(s - 3), Re(s) > 3
+         = 2/(s + 5) + 1/(s - 3)
+    x(t) = 2 exp(-5t) u(t) + exp(3t) u(t)
 
 13) X(s) = (-28 + 21s)/(s + 6)/(s - 5), Re(s) > 5
+         = 14/(s + 6) + 7/(s - 5)
+    x(t) = 14 exp(-6t) u(t) + 7 exp(5t) u(t)
+
+#######
+
+14) H(s) = 1/(s + 2.5)
+    x(t) = 1.3 cos(1.7 t)
+	result = y(t) = h(t) ** x(t)
+
+	H(jw) = 1/(2.5 + jw)
+	X(jw) = 1.3 pi delta(w + 1.7) + 1.3 pi delta(w - 1.7)
+	Y(jw) = H(jw) X(jw) = 1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)
+	y(t) = 1/2/pi * integrate [1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)] exp(jw t) dw from -infty to infty
+         = 1/2/pi * 1.3 pi /(2.5 - 1.7 i) exp(- 1.7 i t) + 1/2/pi * 1.3 pi/(2.5 + 1.7 i) exp(1.7 i t)
+		 = 0.65/(2.5 - 1.7 i) (cos(1.7 t) - i sin(1.7 t)) + 0.65/(2.5 + 1.7 i) (cos(1.7 t) + i sin(1.7 t))
+		 = 13/914 (25 cos(1.7 t) + 17 sin(1.7 t))
+		 cos(1.7 t - k) = cos(k) cos(1.7 t) + sin(k) sin(1.7 t)
+		 cos k = 13*25/914/0.43, sin k = 13*25/914/0.43
+	y(t) = 0.43 cos(1.7 t - k)
+	k = 0.5971705668336766161542650501107464421228115211079983047848803450...
+
+15) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), -1 < Re(s) < 1
+         = 3/65 * (17 s - 19)/((s + 2)^2 + 2^2) + 3/26 * 1/(s - 1) + 1/10 * 1/(s + 1), há polos em -2 ± 2i
+	17s - 19 = 17(s + 2) - 15/2 * 2
+    x(t) = 3*17/65 exp(-2t) cos(2t) u(t) - 3/65*15/2 exp(-2t) sin(2t) u(t) - 3/26 exp(t) u(-t) + 1/10 exp(-t) u(t)
+	     = 51/65 exp(-2t) cos(2t) u(t) - 9/26 exp(-2t) sin(2t) u(t) - 3/26 exp(t) u(-t) + 1/10 exp(-t) u(t)
+    a) Causal? Não.
+	b) Estável? Sim.
+
+16) H(s) = 1/(A - s)
+    x(t) = B sin(C t)
+	result = y(t) = h(t) ** x(t)
+
+	H(jw) = 1/(A - jw)
+	X(jw) = B i pi delta(w + C) - B i pi delta(w - C)
+	Y(jw) = H(jw) X(jw) = B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)
+	y(t) = 1/2/pi * integrate [B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)] exp(iw t) dw from -infty to infty
+	     = 1/2/pi * B i pi/(A + Ci) exp(-Cit) - 1/2/pi * B i pi/(A - Ci) exp(Cit)
+	     = 1/2 * B i/(A + Ci) (cos(Ct) - i sin(Ct)) - 1/2 * B i/(A - Ci) (cos(Ct) + i sin(Ct))
+		 = B/(A^2 + C^2) (A sin(C t) + C cos(C t))
+		 sin(Ct + k) = cos(k) sin(C t) + sin(k) cos(C t)
+		 cos k = A/(A^2 + C^2), sin k = C/(A^2 + C^2)
+	y(t) = B sin(Ct + k)
+
+	A = 1.3
+	B = 2.3
+	C = 4.1
+	cos k = 1.3*2.3/(1.3^2+4.1^2)/0.535 => k = 1.2639051933636759674774825587158173548101972574733253828999538881...
+	y(t) = 0.535 sin(4.1t + k)
+
+	A = 2.7
+	B = 3.8
+	C = 1.9
+	cos k = 2.7*3.8/(2.7^2+1.9^2)/1.151 => k = 0.6132236304809738100938191868144472506536655751201487608496414131...
+	y(t) = 1.151 sin(1.9t + k)
+
+17) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) > 1
+    a) Causal? Sim.
+	b) Estável? Não.
+
+18) v(t) em série com L, R, C. Determinar a função de transferência relacionando a tensão no capacitor y(t) à tensão de entrada x(t).
+    Ri + L i'(t) + v_c = v(t)
+	i(t) = C y'(t)
+    RC y'(t) + LC y''(t) + y(t) = x(t)
+    RC s Y(s) + LC s^2 Y(s) + Y(s) = X(s)
+	Y(s)/X(s) = 1/(RC s + LC s^2 + 1)
+
+19) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), -2 < Re(s) < -1
+    a) Causal? Não.
+	b) Estável? Não.
+
+20) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) > -1
+    a) Causal? Não.
+	b) Estável? Sim.
+
+21) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) < 1
+    a) Causal? Não.
+	b) Estável? Sim.
+
+22) v(t) em série com RC + (L1 // RA)
+    RC = RA = 1 Ohm; L1 = 1 H; Determinar a função de transferência relacionando a tensão no RA y(t) à tensão de entrada x(t).
+	iRA, iL = z(t), iRC, vRC, vL = VRA = y(t)
+	x(t) = vRC + y(t)
+	iRC = iL + iRA
+    iRC = vRC/1
+	y(t) = 1 iRA = 1 iL' = z'(t)
+	x(t) = iL + y(t)/1 + iL'
+	x(t) = z(t) + 2 z'(t)
+	x'(t) = y(t) + 2 y'(t)
+	s X(s) = Y(s) + 2 s Y(s)
+    s/(1 + 2s) = Y(s)/X(s)
+
+#######
+
