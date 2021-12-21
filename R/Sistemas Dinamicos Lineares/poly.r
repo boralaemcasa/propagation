@@ -98,3 +98,17 @@ polysum(- polymul(polymul(polymul(q1, q2), q3), a), p - (b[1] * r1 + b[2] * r2 +
 
 #######
 
+x <- as.polynomial(c(0,1))
+p <- as.polynomial(c(0,1.8,7.4))
+q <- as.polynomial(c(2.8,3.5,2.1,1)) 
+p
+q
+for (i in 0:4) {
+   a <- p/q
+   p <- p %% q
+   if (length(a) == 1)
+      print(paste(a, "x^(", -i, ")"))
+   else print(a)
+   p <- p * x
+}
+
