@@ -1,137 +1,335 @@
-resumão
+z = r exp(jw)
+
+X(z) = sum n=-infty to infty, x[n] z^(-n)
+
+xhat[n] = 1/2/pi/i * integrate X(z) z^(n - 1) dz over abs(z) = r
+
+z = exp(jw) => X(exp(jw)) é igual à transformada de Fourier discreta
+
+RDC: sum n=-infty to infty, abs(x(n) r^(-n)) < infty
 
 #######
 
-1) x(n) = 0.5^(n + 1) u(n + 3)
-   X(z)
+x(n) = u(n)
+X(z) = 1/(1 - 1/z), abs(z) > 1
+
+x(n) = exp(jan) u(n)
+X(z) = 1/(1 - exp(ja)/z), abs(z) > 1
+
+x(n) = a^n, se 0 <= n <= N - 1,
+x(n) = 0, caso contrário
+X(z) = N, se a = z != 0
+X(z) = (1 - (a/z)^N)/(1 - a/z), se a != z != 0
+
+#######
+
+X(z) = sum n=n1 to n2, x(n) z^(-n) tem duração finita => RDC é todo o plano, exceto possivelmente z = 0 e abs(z) = infty.
+Se n2 > 0, possui o termo z^(-a) e por isso 0 \notin RDC.
+Se n1 < 0, possui o termo z^a e por isso infty \notin RDC.
+
+Se x(n) for lateral direita e {abs(z) = r0} \subset RDC, então {r0 < abs(z) < infty} \subset RDC.
+                            e se X(z) é racional, então a RDC é a região externa ao polo mais externo.
+                            e se x(n) for causal, então infty \in RDC. (causal a saída nunca depende de x(n + k).)
+Se x(n) for lateral esquerda e {abs(z) = r0} \subset RDC, então {abs(z) < r0} \subset RDC.
+                             e se X(z) é racional, então a RDC é a região interna ao polo mais interno não nulo.
+                             e se x(n) for anticausal, então 0 \in RDC. (anticausal a saída nunca depende de x(n - k).)
+
+Linearidade
+
+W(t) = a x(n) + b y(n)
+W(z) = a X(z) + b Y(z)
+RDCw contém RDCx inter RDCy
+
+Reflexão no tempo
+
+y(n) = x(-n), RDCx = {a < abs(z) < b}
+Y(z) = X(1/z), RDCy = {1/b < abs(z) < 1/a}
+
+Deslocamento no tempo
+
+y(n) = x(n - n0)
+Y(z) = z^(- n0) X(z), RDCy = RDCx possivelmente excluindo z = 0 ou abs(z) = infty
+
+Multiplicação por uma sequência exponencial
+
+y(n) = a^n x(n)
+Y(z) = X(z/a), RDCy = abs(a) RDCx
+
+Diferenciação em z
+
+y(n) = - n x(n)
+Y(z) = z X'(z), RDCy = RDCx
+
+Convolução
+
+W(n) = x(n) ** y(n) = sum k=-infty to infty, x[k] y[n - k]
+W(z) = X(z) Y(z), RDCw contém RDCx inter RDCy
+
+Transformada Z inversa
+
+1) x(n) = a^n u(n)
+   X(z) = 1/(1 - a/z), abs(z) > abs(a)
+
+2) x(n) = - a^n u(-n - 1)
+   X(z) = 1/(1 - a/z), abs(z) < abs(a)
+
+3) x(n) = n a^n u(n)
+   X(z) = a/z/(1 - a/z)^2, abs(z) > abs(a)
+
+4) x(n) = -n a^n u(-n - 1)
+   X(z) = a/z/(1 - a/z)^2, abs(z) < abs(a)
+
+5) x(n) = (n + 1) ... (n + m - 1)/(m - 1)! a^n u(n)
+   X(z) = 1/(1 - a/z)^m, abs(z) > abs(a)
+
+6) x(n) = - (n + 1) ... (n + m - 1)/(m - 1)! a^n u(-n - 1)
+   X(z) = 1/(1 - a/z)^m, abs(z) < abs(a)
+
+7) x(n) = delta(n - q)
+   X(z) = z^(-q)
+
+Se abs(z) < a, ou abs(z) > a, então podemos utilizar séries de potência / divisão longa.
+
+Transformada Z Unilateral
+
+X_u(z) = sum n=0 to infty, x[n] z^(-n)
+RDC externa ao polo mais externo
+
+Atraso no tempo
+
+y(n) = x(n - 1)
+Y_u(z) = 1/z X_u(z) + x(-1)
+
+W(n) = x(n - k)
+W_u(z) = sum L=0 to k - 1, x(-k + L) z^(1 - L) + z^(-k) X_u(z)
+
+Avanço no tempo
+
+y(n) = x(n + 1)
+Y_u(z) = z X_u(z) - z x(0)
+
+W(n) = x(n + k)
+W_u(z) = - sum L=0 to k - 1, x(L) z^(k - L) + z^k X_u(z)
+
+Convolução
+
+Se x(n) = y(n) = 0, para todo n < 0:
+W(n) = x(n) ** y(n) = sum k=-infty to infty, x[k] y[n - k]
+W_u(z) = X_u(z) Y_u(z)
+
+Diferenciação em z
+
+y(n) = - n x(n)
+Y_u(z) = z X_u'(z)
+
+Teorema do valor inicial
+
+Se x(n) = 0, para todo n < 0, então
+x(0) = lim X_u(z) as z->infty
+
+Teorema do valor final
+
+Se x(n) = 0, para todo n < 0, então
+lim x(n) as n->infty = lim (z - 1) X_u(z) as z->1
+
+H(z) = Y(z)/X(z), deg Y = m, deg X = n
+Sinais causais: n >= m (própria), infty \in RDC
+
+Um sistema LIT é estável se e só se a RDCh incluir abs(z) = 1.
+Para H(z) racional, o sistema CAUSAL é estável se e só se todos os polos têm módulo < 1.
+
+#######
+
+x(n) = a^abs(n)
+X(z) = az/(1 - az) + z/(z - a)
+
+x(n) = 1, se 0 <= n <= q - 1
+x(n) = 0, caso contrário
+x(n) = u(n) - u(n - q)
+X(z) = z/(z - 1) - z^(-q) z/(z - 1) = (z^q - 1)/z^(q - 1)/(z - 1)
+
+#######
+
+1) x(n) = a^(n + b) u(n - c)
+
+   y(n) = a^n u(n)
+   Y(z) = 1/(1 - a/z), abs(z) > abs(a)
+
+   Pelo Deslocamento no tempo,
+   w(n) = y(n - c) = a^(n - c) u(n - c)
+   W(z) = z^(- c) Y(z), RDCw = RDCy, excluindo z = 0 se c > 0 ou excluindo abs(z) = infty se c < 0
+
+   Por linearidade,
+   x(n) = a^(b + c) w(n)
+   X(z) = a^(b + c) z^(- c)/(1 - a/z)
+
+   x(n) = 0.5^(n + 1) u(n + 3)
+   a = 0.5, b = 1, c = -3
+   X(z) = 4 z^3/(1 - 0.5/z), abs(z) > 0.5 exceto abs(z) = infty
 
    x(n) = 0.2^n u(n - 3)
-   X(z)
+   a = 0.2, b = 0, c = 3
+   X(z) = 0.008 z^(-3)/(1 - 0.2/z), abs(z) > 0.2 exceto z = 0
+
+2) x(n) = a^(n + b) u(-n - c)
+
+   y(n) = - a^n u(-n - 1)
+   Y(z) = 1/(1 - a/z), abs(z) < abs(a)
+
+   Pelo Deslocamento no tempo,
+   h(n) = y(n + c - 1) = - a^(n + c - 1) u(-n - c)
+   H(z) = z^(c - 1) Y(z) = z^(c - 1)/(1 - a/z), RDCh = RDCy, excluindo z = 0 se c < 1 ou excluindo abs(z) = infty se c > 1
+
+   Por linearidade,
+   x(n) = - a^(b - c + 1) h(n)
+   X(z) = - a^(b - c + 1) z^(c - 1)/(1 - a/z)
+
+   O professor inverte a RDC (o sinal é lateral esquerdo), não multiplicou por constante e considerou:
+   - H(z) = X_2(z) = - z^(c - 1)/(1 - a/z)
+   x_2(z) = a^(n + c - 1) u(-n - c)
+
+   ####### Vamos conferir por definição:
+   x(n) = a^(n + b) u(-n - c) ; - n - c >= 0 => -c >= n
+   X(z) = sum n=-infty to -c, a^(n + b) z^(-n)
+        = a^b sum n=-infty to -c, (a/z)^n
+		= a^b (a/z)^(1 - c)/(a/z - 1)
+		= a^(b + 1 - c) z^(c - 1)/(a/z - 1)
 
    x(n) = 0.1^(n - 8) u(-n - 9)
-   X(z)
+   a = 0.1, b = -8, c = 9
+   X_2(z) = - z^8/(1 - 0.4/z), abs(z) < 0.1
+   X(z) = 0.1^(-16) X_2(z)
 
    x(n) = 0.5^(n - 2) u(-n - 3)
-   X(z)
+   a = 0.5, b = -2, c = 3
+   X_2(z) = - z^2/(1 - 0.5/z), abs(z) < 0.5
+   X(z) = 0.5^(-4) X_2(z)
 
    x(n) = 1.6^(n - 7) u(-n - 8)
-   X(z)
+   a = 1.6, b = -7, c = 8
+   X_2(z) = - z^7/(1 - 1.6/z), abs(z) < 1.6
+   X(z) = 1.6^(-14) X_2(z)
 
    x(n) = (-0.4)^(n - 7) u(-n - 8)
-   X(z) e RDC
+   a = -0.4, b = -7, c = 8
+   X_2(z) = - z^7/(1 + 0.4/z), abs(z) < 0.4
+   X(z) = 0.4^(-14) X_2(z)
 
    x(n) = (-0.2)^(n - 4) u(-n - 5)
-   X(z) e RDC
+   a = -0.2, b = -4, c = 5
+   X_2(z) = - z^4/(1 + 0.2/z), abs(z) < 0.2, excluindo z = 0
+   X(z) = 0.2^(-8) X_2(z)
 
-2) y(n) + 4 y(n - 2) + 10 y(n - 5) = 9 x(n) - 9 x(n + 2)
-   H(z) = Y(z)/X(z)
+3) y(n) + A y(n - p) + B y(n - q) = C x(n) - D x(n - r)
 
-3) y(n) + 8 y(n - 1) + 3 y(n - 4) = 5 x(n) - 10 x(n + 4)
-   H(z)
+   Y(z) + A z^(-p) Y(z) + B z^(-q) Y(z) = C X(z) - D z^(-r) X(z)
+   (1 + A z^(-p) + B z^(-q)) Y(z) = (C - D z^(-r)) X(z)
+   Y(z)/X(z) = H(z) = (C - D z^(-r))/(1 + A z^(-p) + B z^(-q)), multiplicar por z^(- min(-p, -q, -r))
 
-4) y(n) + 5 y(n - 2) + 9 y(n - 5) = 6 x(n) - 7 x(n - 2)
-   H(z)
+   y(n) + 4 y(n - 2) + 10 y(n - 5) = 9 x(n) - 9 x(n + 2)
+   H(z) = (9 - 9 z^2)/(1 + 4 z^(-2) + 10 z^(-5)), multiplicar por z^5
 
-5) y(n) + 2 y(n - 2) + 10 y(n - 5) = 6 x(n) - 9 x(n + 5)
-   H(z)
-
-6) y(n) + 4 y(n - 1) + 4 y(n - 5) = 2 x(n) - 2 x(n - 3)
-   H(z)
-
-7) y(n) + 9 y(n - 3) + 3 y(n - 4) = 4 x(n) - 8 x(n + 4)
-   H(z)
-
-8) y(n) + 4 y(n - 2) + 5 y(n - 5) = 5 x(n) - 2 x(n + 1)
-   H(z)
-
-9) y(n) + 2 y(n - 3) + 3 y(n - 5) = 5 x(n) - 3 x(n + 4)
-   H(z)
-
-10) y(n) + 4 y(n - 1) + 2 y(n - 5) = x(n) - 9 x(n + 3)
-    H(z)
-
-11) y(n) + 3 y(n - 2) + 8 y(n - 5) = 7 x(n) - 9 x(n + 3)
-    H(z)
-
-12) y(n) + y(n - 3) + 9 y(n - 6) = 2 x(n) - 5 x(n + 4)
-    H(z)
-
-13) y(n) + 5 y(n - 2) + 9 y(n - 5) = 6 x(n) - 7 x(n + 2)
-    H(z)
-
-14) y(n) + 9 y(n - 3) + 3 y(n - 5) = 10 x(n) - x(n + 3)
-    H(z)
-
-15) y(n) + 7 y(n - 3) + 8 y(n - 6) = 6 x(n) - 3 x(n + 4)
-    H(z)
-
-16) y(n) + 10 y(n - 2) + 8 y(n - 5) = 9 x(n) - 8 x(n + 2)
-    H(z)
-
-17) y(n) + 4 y(n - 2) + 4 y(n - 6) = x(n) - 3 x(n + 1)
-    H(z)
-
-18) y(n) + 3 y(n - 3) + 9 y(n - 5) = 4 x(n) - x(n + 3)
-    H(z)
-
-19) y(n) + 3 y(n - 2) + 2 y(n - 5) = 6 x(n) - 3 x(n + 4)
-    H(z)
-
-20) y(n) + 6 y(n - 2) + 10 y(n - 5) = 10 x(n) - 9 x(n + 1)
-    H(z)
+   y(n) + 8 y(n - 1) + 3 y(n - 4) = 5 x(n) - 10 x(n + 4)
+   H(z) = (5 - 10 z^4)/(1 + 8 z^(-1) + 3 z^(-4)), multiplicar por z^4
 
 #######
 
-21) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), 0.75 < abs(z) < 1.5
-    a) Estável?
-	b) Causal?
-	c) x(n)
+4) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), 0.75 < abs(z) < 1.5
+        = (2/z - 1/z^2)/(1 - 0.75/z)/(1 + 1.5/z), polos em -1.5 e +0.75
+		= 8/9 + (-8/9 + 12/9 v)/(1 - 0.75v)/(1 + 1.5v), v = 1/z
+		= 8/9 + 8/27/(1 - 0.75/z) - 32/27/(1 + 1.5/z)
+   a) Estável? Sim.
+   b) Causal? Não.
+   c) x(n) = 8/9 delta(n) + 8/27 * 0.75^n u(n) + 32/27 * 1.5^n u(-n - 1)
 
-22) y(n) + 3 y(n - 1) = x(n)
-    x(n) = a u(n)
-	y(-1) = b
-	H(z)
-	y(n)
+5) y(n) + 3 y(n - 1) = x(n)
+   x(n) = a u(n)
+   y(-1) = b
+   
+   Y(z) + 3 (1/z Y(z) + y(-1)) = X(z) = a/(1 - 1/z), abs(z) > 1
+   H(z) = 1/(1 + 3/z)
+   Y(z) = a/(1 - 1/z)/(1 + 3/z) - 3b/(1 + 3/z)
+        = 3a/4/(1 + 3 v) + a/4/(1 - v) - 3b/(1 + 3v)
+   Está de que lado de 1 e 3? Seja causal.
+   y(n) = (3a/4 - 3b) * (-3)^n u(n) + a/4 * u(n)
 
-23) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), abs(z) > 1.5
-    a) Estável?
-	b) Causal?
-	c) x(n)
+6) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), abs(z) > 1.5
+   a) Estável? Não.
+   b) Causal? Sim.
+   c) x(n) = 8/9 delta(n) + 8/27 * 0.75^n u(n) - 32/27 * 1.5^n u(n)
 
-24) y(n - 1) + 2 y(n) = x(n)
-    y(-1) = 2
-	x(n) = 0
-	y(n)
+7) y(n - 1) + 2 y(n) = x(n)
+   y(-1) = 2
+   x(n) = 0
+   
+   1/z Y(z) + y(-1) + 2 Y(z) = X(z) = 0
+   Y(z) = -2/(1/z + 2) = -1/(1 + 0.5/z)
+   Está de que lado de 0.5? Seja causal.
+   y(n) = - (-0.5)^n u(n)
 
-25) H(z) = (7.5 z - 5)/(z^3  + 1.2 z^2 + 0.32 z)
-    x(n) = 9.9 u(n)
-	result = lim y(n) as n->infty
+8) H(z) = (A z - B)/(z^3 + C z^2 + D z + E)
+   x(n) = F u(n)
+   R = lim y(n) as n->infty = lim (z - 1) Y_u(z) as z->1
+   
+   X(z) = F/(1 - 1/z)
+   y(n) = h(n) ** x(n)
+   Y(z) = H(z) X(z) = (A z - B)/(z^3 + C z^2 + D z + E) F/(1 - 1/z)
+   R = lim z(A z - B)/(z^3 + C z^2 + D z + E) F as z->1
+     = (A - B)/(1 + C + D + E) F
 
-26) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), abs(z) < 0.75
-    a) Estável?
-	b) Causal?
+   H(z) = (7.5 z - 5)/(z^3  + 1.2 z^2 + 0.32 z)
+   x(n) = 9.9 u(n)
+   A = 7.5, B = 5, C = 1.2, D = 0.32, E = 0, F = 9.9
+   R = lim y(n) as n->infty = 2.5/2.52*9.9 = 275/28 = 9.82142857
+   
+   H(z) = (4.9 z - 8.8)/(z^3  + 0.2 z^2 - 0.4 z - 0.064)
+   x(n) = 1.8 u(n)
+   A = 4.9, B = 8.8, C = 0.2, D = -0.4, E = -0.064, F = 1.8
+   R = lim y(n) as n->infty = -3.9/0.736*1.8 = -1755/184 = -9.5380434782608695652173913
 
-27) y(n) + 0.2 y(n - 1) - x(n) = 0
+   H(z) = (2.2 z - 10)/(z^3  + 1.3 z^2 + 0.42 z)
+   x(n) = 9.7 u(n)
+   A = 2.2, B = 10, C = 1.3, D = 0.42, E = 0, F = 9.7
+   R = lim y(n) as n->infty = -7.8/2.72*9.7 = -3783/136 = -27.8161764705882352941
+
+   H(z) = (4.7 z - 4.7)/(z^3 - 0.1 z^2 - 0.22 z - 0.04)
+   x(n) = 6.3 u(n)
+   A = 4.7, B = 4.7, C = -0.1, D = -0.22, E = -0.04, F = 6.3
+   R = lim y(n) as n->infty = 0/0.64*6.3 = 0
+
+   H(z) = (5.1 z - 6.5)/(z^3 - 0.2 z^2 - 0.49 z - 0.098)
+   x(n) = 6.4 u(n)
+   A = 5.1, B = 6.5, C = -0.2, D = -0.49, E = -0.098, F = 6.4
+   R = lim y(n) as n->infty = -1.4/0.212*6.4 = -2240/53 = -42.2641509433962
+
+9) X(z) = (2z - 1)/(z - 0.75)/(z + 1.5), abs(z) < 0.75
+   a) Estável? Não.
+   b) Causal? Não.
+
+10) y(n) + 0.2 y(n - 1) - x(n) = 0
     condições iniciais nulas
-	x(n) = 0.3^n u(n)
-	Y(z)
+    x(n) = 0.3^n u(n)
+    
+	Y(z) + 0.2/z Y(z) + 0.2 y(-1) = X(z) = 1/(1 - 0.3/z)
+	Y(z) = 1/(1 - 0.3v)/(1 + 0.2v)
+	     = 0.6/(1 - 0.3v) + 0.4/(1 + 0.2v)
 
-28) H(z) = (4.9 z - 8.8)/(z^3  + 0.2 z^2 - 0.4 z - 0.064)
-    x(n) = 1.8 u(n)
-	result = lim y(n) as n->infty
-
-29) H(z) = 1/(z + a)
+11) H(z) = 1/(z + a)
     sum k=-infty to infty, abs(h(k)) < infty
-	result = a \in J \subset R
+    result = a \in J \subset R
 
-30) H(z) = (2.2 z - 10)/(z^3  + 1.3 z^2 + 0.42 z)
-    x(n) = 9.7 u(n)
-	result = lim y(n) as n->infty
-
-31) X(z) = (7.4 z^2 + 1.8 z)/(z^3 + 2.1 z^2 + 3.5 z + 2.8)
+12) X(z) = (7.4 z^2 + 1.8 z)/(z^3 + 2.1 z^2 + 3.5 z + 2.8)
+         = (7.4 v + 1.8 v^2)/(1 + 2.1 v + 3.5 v^2 + 2.8 v^3)
+		 = 1/2.8/0.860716 (7.4 v + 1.8 v^2)/((v/0.860716 + 1) (v^2 + 0.389284 v + 0.414937)
+		 = 1/2.8/0.860716 [-5.179077/(1 + 1.161823 v) + (2.589539+1.946838i)/(1 + (0.194642+0.614045i)v) 
+		                                              + (2.589539-1.946838i)/(1 + (0.194642-0.614045i)v) ]
     x(n) é causal
-    x(4)
-
+	x(n) = A (-1.161823)^n u(n) + B (-0.194642-0.614045i)^n u(n) + C (-0.194642+0.614045i)^n u(n) 
+    x(4) = 1/2.8/0.860716 [-5.179077 (-1.161823)^4 + (2.589539+1.946838i) (-0.194642-0.614045i)^4  + (2.589539-1.946838i) (-0.194642+0.614045i)^4]
+         = -3.529180361228054342800355660934368263498894276061192907167653773...
+		 
+    Parametrizar
+		 
     X(z) = (1.5 z^2 + 4.9 z)/(z^3 + 1.8 z^2 + 2.5 z + 4.5)
     x(n) é causal
     x(4)
@@ -152,19 +350,10 @@ resumão
     x(n) é causal
     x(4)
 
-32) Determine x(n) limitado à esquerda tal que
+13) Determine x(n) limitado à esquerda tal que
     X(z) = (-8/z + 18)/(1/z^2 - 5/z + 6)
-
-33) H(z) = (4.7 z - 4.7)/(z^3 - 0.1 z^2 - 0.22 z - 0.04)
-    x(n) = 6.3 u(n)
-	result = lim y(n) as n->infty
-
-34) H(z) = (5.1 z - 6.5)/(z^3 - 0.2 z^2 - 0.49 z - 0.098)
-    x(n) = 6.4 u(n)
-	result = lim y(n) as n->infty
 
 #######
 
-35) Determine x(n) causal tal que
+14) Determine x(n) causal tal que
     X(z) = (3 - 5/6/z)/(1 - 0.25/z)/(1 - 1/3/z)
-
