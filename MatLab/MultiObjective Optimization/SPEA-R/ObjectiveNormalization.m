@@ -11,8 +11,7 @@ function PopObj = ObjectiveNormalization(Population)
 %--------------------------------------------------------------------------
 
     PopObj = Population;
-    ND     = NDSort(PopObj,1) == 1;
-    zmin   = min(PopObj(ND,:),[],1);
-    zmax   = max(PopObj(ND,:),[],1);
+    zmin   = min(PopObj,[],1);
+    zmax   = max(PopObj,[],1);
     PopObj = (PopObj-repmat(zmin,size(PopObj,1),1))./repmat(zmax-zmin,size(PopObj,1),1);
 end

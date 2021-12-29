@@ -1,4 +1,4 @@
-function [soma] = IGD(ndim, V, A)
+function [soma,HV] = IGD(ndim, V, A)
     % de acordo com o paper de Cheng,
     % sabemos quem é cada x^* = (?)
     % 1) Gerar uma Pareto Verdadeira PV com V pontos x_i;
@@ -17,4 +17,5 @@ function [soma] = IGD(ndim, V, A)
         soma = soma + min(d);
     end
     soma = soma/V;
+    HV = hypervolume(y);
 end

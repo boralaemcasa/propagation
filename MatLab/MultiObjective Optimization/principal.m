@@ -1,8 +1,11 @@
 clc
 clear
 
-A = IGD(2, 10, 5)
-B = IGD(2, 10, 5)
+p = [1,1;0.5,2.5]
+hypervolume(p)
+
+[A, hvA] = IGD(2, 10, 5)
+[B, hvB] = IGD(2, 10, 5)
 if A < B
     disp('Ganhou o A')
 elseif B < A
