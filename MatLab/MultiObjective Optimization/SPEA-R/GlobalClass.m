@@ -2,25 +2,21 @@ classdef GlobalClass
    properties
       N
       M
+      Lower
+      Upper
+	  Epoca
    end
    methods
       function pop = Initialization(obj)
-          for i = 1:obj.N
-               for j = 1:obj.M
-                   pop(i,j) = rand;
-               end
-          end
+          pop = rand(obj.N, obj.M);
       end
-      function flag = NotTermination(obj, Population)
-          flag = (rand < 0.5);
+      function flagContinue = NotTermination(obj, Population)
+          flagContinue = (obj.Epoca < 10);
       end
-      function variation = Variation(obj, Population, x)
-          s = size(Population);
-          if rem(s(2), 2) == 1
-              s(2) = s(2) + 1;
-              Population(1, s(2)) = 0;
-          end
-          variation = reshape(Population, s(2)/obj.M, s(1)*obj.M);
+      function Offspring = Variation(obj, Population, MatingPool)
+          Offspring = IEAreal(obj, Population, MatingPool);
+      end
+      function [a, b, c, d] = ParameterSet(obj, a, b, c, d)
       end
    end
 end

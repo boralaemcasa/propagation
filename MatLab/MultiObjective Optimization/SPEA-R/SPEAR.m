@@ -23,17 +23,19 @@ function SPEAR(Global)
     Population = Global.Initialization();
 
     %% Optimization
-    epoca = 0;
+	Global.Epoca = 0;
     while Global.NotTermination(Population)
         MatingPool = MatingSelection(Population,20);
-        Offspring  = Global.Variation(Population([1:Global.N,MatingPool]),Global.N);
+        Offspring  = Global.Variation(Population([1:Global.N,MatingPool]),Population(MatingPool,:));
         QObj       = ObjectiveNormalization([Population;Offspring]);
         [Ei,Angle] = Associate(QObj,W);
         FV         = FitnessAssignment(Ei,QObj,Angle,theta);
         Population = EnvironmentalSelection([Population;Offspring],Ei,FV,Global.N);
         s = size(Population);
         Population = reshape(Population, s(2)/Global.M, s(1)*Global.M);
-        epoca = epoca + 1;
+        Global.Epoca = Global.Epoca + 1;
     end
-    fprintf("%d épocas\n", epoca);
+    [igd, hv] = IGD(2 * Global.N, Population);
+    fprintf("%d linhas. Após %d épocas, %d linhas.\n", Global.N, Global.Epoca, size(Population,1));
+    fprintf("IGD = %f\nHyperVolume = %f\n", igd, hv);
 end
