@@ -1,4 +1,4 @@
-function Offspring = IEAreal(Global,Parent,ParentDec)
+function Offspring = CVEA_IEAreal(Global,Parent,ParentDec)
 % <operator> <real>
 % Simulated binary crossover and polynomial mutation
 % proC ---  1 --- The probability of doing crossover

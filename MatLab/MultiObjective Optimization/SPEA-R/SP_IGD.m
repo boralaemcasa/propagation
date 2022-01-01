@@ -1,6 +1,6 @@
-function [soma,HV] = IGD(V, y)
+function [soma,HV] = SP_IGD(x, y)
     [A, ndim] = size(y);
-    x = rand(V, ndim);
+    V = size(x, 1);
     soma = 0;
     for i = 1:V
         for j = 1:A
@@ -9,5 +9,6 @@ function [soma,HV] = IGD(V, y)
         soma = soma + min(d);
     end
     soma = soma/V;
-    HV = hypervolume(y);
+    PopObj = WFG5Pop(y);
+    HV = HV_referenced(PopObj);
 end

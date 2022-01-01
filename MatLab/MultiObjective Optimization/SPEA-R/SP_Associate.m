@@ -1,4 +1,4 @@
-function [Ei,Angle] = Associate(PopObj,W)
+function [Ei,Angle] = SP_Associate(PopObj,W)
 % Associate each solution with a reference direction
 
 %--------------------------------------------------------------------------

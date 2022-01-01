@@ -1,4 +1,4 @@
-function [y] = worse(a, b)
+function [y] = HV_worse(a, b)
     if a > b
         x = a;
         a = b;

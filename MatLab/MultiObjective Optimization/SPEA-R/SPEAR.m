@@ -12,8 +12,10 @@ function SPEAR(Global)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
+    Global.K = 20;
+    Global.Layers = 3;
     %% Generate the reference directions (general approach)
-    [W,Global.N] = UniformPoint(Global.N,Global.M);
+    [W, Global.N] = SP_ReferenceGeneration(Global.N,Global.M,Global.Layers);
     % Largest acute angle between two neighbouring reference directions
     cosine = 1 - pdist2(W,W,'cosine');
     cosine(logical(eye(length(cosine)))) = 0;
@@ -25,17 +27,23 @@ function SPEAR(Global)
     %% Optimization
 	Global.Epoca = 0;
     while Global.NotTermination(Population)
-        MatingPool = MatingSelection(Population,20);
+        PopObj     = WFG5Pop(Population);
+        MatingPool = SP_MatingSelection(PopObj,Global.K);
         Offspring  = Global.Variation(Population([1:Global.N,MatingPool]),Population(MatingPool,:));
-        QObj       = ObjectiveNormalization([Population;Offspring]);
-        [Ei,Angle] = Associate(QObj,W);
-        FV         = FitnessAssignment(Ei,QObj,Angle,theta);
-        Population = EnvironmentalSelection([Population;Offspring],Ei,FV,Global.N);
-        s = size(Population);
-        Population = reshape(Population, s(2)/Global.M, s(1)*Global.M);
+        QObj       = SP_ObjectiveNormalization([Population;Offspring]);
+        [Ei,Angle] = SP_Associate(QObj,W);
+        FV         = SP_FitnessAssignment(Ei,QObj,Angle,theta);
+        Population = SP_EnvironmentalSelection([Population;Offspring],Ei,FV,Global.N);
         Global.Epoca = Global.Epoca + 1;
     end
-    [igd, hv] = IGD(2 * Global.N, Population);
-    fprintf("%d linhas. Após %d épocas, %d linhas.\n", Global.N, Global.Epoca, size(Population,1));
+    
+    %Gerar Pareto Verdadeira na esfera unitária, uniformemente distribuída
+    V = 2 * Global.N;
+    PV = rand(V, Global.M);
+    for i = 1:V
+        PV(i,:) = PV(i,:)/norm(PV(i,:));
+    end
+    [igd, hv] = SP_IGD(PV, Population);
+    fprintf("%d pontos. Após %d épocas, %d pontos.\n", Global.N, Global.Epoca, size(Population,1));
     fprintf("IGD = %f\nHyperVolume = %f\n", igd, hv);
 end

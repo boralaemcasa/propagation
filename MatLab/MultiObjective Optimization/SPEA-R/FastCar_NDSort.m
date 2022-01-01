@@ -1,4 +1,4 @@
-function [FrontNo, MaxFNo] = NDSort(varargin)
+function [FrontNo, MaxFNo] = FastCar_NDSort(varargin)
 %Simplified NDSort - Do non-dominated sorting by efficient non-dominated sort (ENS)
 %
 %   FrontNo = NDSort(F,s) does non-dominated sorting on F, where F is the

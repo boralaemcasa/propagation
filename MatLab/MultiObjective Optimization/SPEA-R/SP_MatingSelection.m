@@ -1,5 +1,5 @@
-function PopObj = ObjectiveNormalization(Population)
-% Objective normalization in SPEA/R
+function MatingPool = SP_MatingSelection(PopObj,K)
+% The mating selection of SPEA/R
 
 %--------------------------------------------------------------------------
 % Copyright (c) 2016-2017 BIMK Group. You are free to use the PlatEMO for
@@ -10,8 +10,17 @@ function PopObj = ObjectiveNormalization(Population)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
-    PopObj = Population;
-    zmin   = min(PopObj,[],1);
-    zmax   = max(PopObj,[],1);
-    PopObj = (PopObj-repmat(zmin,size(PopObj,1),1))./repmat(zmax-zmin,size(PopObj,1),1);
+    N = size(PopObj,1);
+    
+    %% The Euclidean distance between each two solutions
+    Dis = pdist2(PopObj,PopObj);
+    Dis(logical(eye(N))) = inf;
+    
+    %% Randomly select one solution for each solution
+    MatingPool = zeros(1,N);
+    for i = 1 : N
+        Candidates    = randperm(N,min(K,N));
+        [~,nearest]   = min(Dis(i,Candidates));
+        MatingPool(i) = Candidates(nearest);
+    end
 end

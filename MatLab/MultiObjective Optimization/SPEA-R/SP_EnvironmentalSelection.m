@@ -1,4 +1,4 @@
-function Population = EnvironmentalSelection(Population,Ei,FV,N)
+function Population = SP_EnvironmentalSelection(Population,Ei,FV,N)
 % The environmental selection of SPEA/R
 
 %--------------------------------------------------------------------------
@@ -28,5 +28,5 @@ function Population = EnvironmentalSelection(Population,Ei,FV,N)
             Choose   = [Choose,H(rank(1:N-length(Choose)))];
         end
     end
-    Population = Population(Choose);
+    Population = Population(Choose,:);
 end

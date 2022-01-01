@@ -1,4 +1,4 @@
-function [prod] = inclusiveHV(p)
+function [prod] = HV_inclusive(p)
     prod = 1;
     N = size(p,2);
     for j = 1:N

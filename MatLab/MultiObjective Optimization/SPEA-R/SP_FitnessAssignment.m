@@ -1,4 +1,4 @@
-function FV = FitnessAssignment(Ei,PopObj,Angle,theta)
+function FV = SP_FitnessAssignment(Ei,PopObj,Angle,theta)
 % Calculate the local fitness value of each solution
 
 %--------------------------------------------------------------------------
