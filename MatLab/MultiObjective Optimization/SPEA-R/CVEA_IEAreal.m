@@ -20,8 +20,8 @@ function Offspring = CVEA_IEAreal(Global,Parent,ParentDec)
     %ParentDec = Parent.decs;
     [N,D]     = size(ParentDec);
     if rem(N, 2) == 1
-        Parent1Dec = ParentDec(1:fix(N/2),:);
-        Parent2Dec = ParentDec(fix(N/2):end,:);
+        Parent1Dec = ParentDec(1:max(fix(N/2),1),:);
+        Parent2Dec = ParentDec(max(fix(N/2),1):end,:);
         ParentDec = [Parent1Dec ; Parent2Dec];
         N = N + 1;
     end

@@ -1,5 +1,6 @@
-function [soma,HV] = SP_IGD(x, y)
-    [A, ndim] = size(y);
+function [soma,HV] = SP_IGD(x, Population, f, ref, M)
+    y = WFG_objective_pop(Population, f, M);
+    A = size(y, 1);
     V = size(x, 1);
     soma = 0;
     for i = 1:V
@@ -9,6 +10,5 @@ function [soma,HV] = SP_IGD(x, y)
         soma = soma + min(d);
     end
     soma = soma/V;
-    PopObj = WFG5Pop(y);
-    HV = HV_referenced(PopObj);
+    HV = HV_referenced(y, ref);
 end

@@ -1,21 +1,20 @@
 classdef GlobalClass
    properties
       N
-      M
+      Mx
+      My
       K
+      F
       Layers
       Lower
       Upper
-	  Epoca
+	  Gen
+      MaxGen
+      Ref
    end
    methods
       function pop = Initialization(obj)
-          % como vai convergir para S^M, que tal o plano sum(x) = constante?
-          pop = rand(obj.N, obj.M);
-          pop(:, obj.M) = 3 - sum(pop(:,1:obj.M-1),2);
-      end
-      function flagContinue = NotTermination(obj, Population)
-          flagContinue = (obj.Epoca < 10);
+          pop = feval(obj.F + "init", obj.N, obj.Mx);
       end
       function Offspring = Variation(obj, Population, MatingPool)
           Offspring = CVEA_IEAreal(obj, Population, MatingPool);

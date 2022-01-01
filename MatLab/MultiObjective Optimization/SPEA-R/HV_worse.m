@@ -1,12 +1,12 @@
-function [y] = HV_worse(a, b)
+function [y] = HV_worse(a, b, ref)
     if a > b
         x = a;
         a = b;
         b = x;
     end
-    if b < 2
+    if b < ref
         y = b; % a < b < 2
     else
-        y = 2; % a < b > 2; 
+        y = ref; % a < b > 2; 
     end
 end

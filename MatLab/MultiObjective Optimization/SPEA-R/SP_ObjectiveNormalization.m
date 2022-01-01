@@ -1,4 +1,4 @@
-function PopObj = SP_ObjectiveNormalization(Population)
+function PopObj = SP_ObjectiveNormalization(Population, f, M)
 % Objective normalization in SPEA/R
 
 %--------------------------------------------------------------------------
@@ -10,7 +10,7 @@ function PopObj = SP_ObjectiveNormalization(Population)
 % Computational Intelligence Magazine, 2017, 12(4): 73-87".
 %--------------------------------------------------------------------------
 
-    PopObj = WFG5Pop(Population);
+    PopObj = WFG_objective_pop(Population, f, M);
     ND     = FastCar_NDSort(PopObj,1) == 1;
     zmin   = min(PopObj(ND,:),[],1);
     zmax   = max(PopObj(ND,:),[],1);

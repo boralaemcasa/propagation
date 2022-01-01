@@ -5,12 +5,10 @@ WFG_objective(p, "WFG3");
 WFG_objective(p, "WFG5");
 
 % 1) Rodar o SPEA-R;
-%    *) Gerar Pareto Verdadeira na esfera unitária, uniformemente distribuída;
-%    *) Global.NotTermination := stops after 300, 600, 1000, 1500, and 2000 generations for 2, 3, 5, 8, 12-objective cases, respectively
+%    *) Stops after 300, 600, 1000, 1500, and 2000 generations for 2, 3, 5, 8, 12-objective cases, respectively
 %    *) Global.Variation := simulated binary crossover, polynomial mutation. CVEA3 = DOI: 10.1109/CEC.2018.8477649
-%    *) ObjectiveNormalization := função objetivo == string;
 %    *) Conferir com as tabelas de IGD e HV;
-%    *) Gráficos 10,11,13,14;
+%    *) Gráficos 6, 10,11,13,14;
 % 2) MOP1-7 := DOI: 10.1109/TEVC.2013.2281533 contém MOEA/D-M2M
 % 3) WFG1-9 := DOI: 10.1109/TEVC.2005.861417 contém MOP1-7
 %    SPEA-R vs 4) MOEA/D-M2M 
@@ -27,7 +25,17 @@ WFG_objective(p, "WFG5");
     
 Global = GlobalClass;
 Global.N = 1;
-Global.M = 3;
+Global.Mx = 3;
+Global.My = 3;
+Global.MaxGen = 10;
 Global.Lower = 0;
 Global.Upper = 1000;
+Global.F = "WFG5";
+SPEAR(Global)
+Global.Mx = 2;
+Global.F = "MOP7"; %*** fv
+SPEAR(Global)
+Global.N = 16;
+Global.My = 2;
+Global.F = "WFG3"; %*** fv
 SPEAR(Global)

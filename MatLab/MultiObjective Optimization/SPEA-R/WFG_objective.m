@@ -1,4 +1,8 @@
 function [y] = WFG_objective(z, f)
+	if extractBetween(f, 1, 4) ~= "WFG"
+		y = feval(f, z);
+		return
+	end
     z = z/max(z);
     y = z;
     k = 3;
