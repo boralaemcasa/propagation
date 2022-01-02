@@ -1,3 +1,3 @@
 function [PV] = WFG3fv(N, M)
-    PV = UniformPoint(N, M);
+    PV = FastCar_UniformPoint(N, M);
 end

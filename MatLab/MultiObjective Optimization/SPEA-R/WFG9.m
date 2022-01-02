@@ -1,3 +1,3 @@
-function [y] = WFG5(x)
+function [y] = WFG9(x)
     y = WFG_concave(x);
 end

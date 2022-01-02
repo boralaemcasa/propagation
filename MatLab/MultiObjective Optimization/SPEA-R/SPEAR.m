@@ -40,6 +40,5 @@ function SPEAR(Global)
     
     PV = feval(Global.F + "fv", 2 * Global.N,Global.My);
     [igd, hv] = SP_IGD(PV, Population, Global.F, Global.Ref, Global.My);
-    fprintf("%s: %d pontos. Após %d gerações, %d pontos. ", Global.F, Global.N, Global.Gen, size(Population,1));
-    fprintf("IGD = %f, HyperVolume = %f\n", igd, hv);
+    fprintf("%s: %d pontos, IGD = %f, HyperVolume = %f\n", Global.F, Global.N, igd, hv);
 end

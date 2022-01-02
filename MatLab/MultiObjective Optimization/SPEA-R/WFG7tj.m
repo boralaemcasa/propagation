@@ -1,16 +1,14 @@
-function [t] = WFG3tj(y, j, k)
+function [t] = WFG7tj(y, j, k)
     M = size(y,1);
     if j == 1
         t = y;
-        for i = k+1:M
-            t(i) = WFG_slinear(y(i), 0.35);
+        for i = 1:k
+            t(i) = WFG_bparam(y(i), WFG_rsum(y(i+1:M), ones(M-i,1)), 0.98/49.98, 0.02, 50);
         end
     elseif j == 2
         t = y;
-        fim = fix((M + k)/2);
-        for i = k+1:fim
-            index = k + 2 * (i - k) - 1;
-            t(i) = WFG_rnonsep(y(index:index+1), 2);
+        for i = k+1:M
+            t(i) = WFG_slinear(y(i), 0.35);
         end
     elseif j == 3
         t = ones(M, 1);

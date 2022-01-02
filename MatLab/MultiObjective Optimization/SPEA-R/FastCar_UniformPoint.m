@@ -1,4 +1,4 @@
-function [W,N] = UniformPoint(N,M)
+function [W,N] = FastCar_UniformPoint(N,M)
 %UniformPoint - Generate a set of uniformly distributed points on the unit
 %hyperplane
 %

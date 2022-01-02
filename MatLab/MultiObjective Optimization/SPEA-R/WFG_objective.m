@@ -1,11 +1,11 @@
-function [y] = WFG_objective(z, f)
-	if extractBetween(f, 1, 4) ~= "WFG"
+function [y] = WFG_objective(z, f, k)
+    k = max(k - 1,1); % M - 1;
+	if extractBetween(f, 1, 3) ~= "WFG"
 		y = feval(f, z);
 		return
 	end
     z = z/max(z);
     y = z;
-    k = 3;
     ft = f + "t";
     t = feval(ft, y, k);
     M = size(t,1);

@@ -1,3 +1,3 @@
-function [PV] = MOP7fv(N, M)
+function [PV] = WFG6fv(N, M)
     PV = FastCar_UniformPoint(N, M);
 end
