@@ -1,0 +1,227 @@
+\documentclass{rbfin}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{gensymb} % \degree
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\begin{document}
+\selectlanguage{brazil}
+\shorttitle{Otimização Não Linear 2021} % appears on header every other page
+\rbfe{}
+\autor{Vinícius Claudino Ferraz, 2021}
+
+
+\begin{center}
+\Large
+
+\textbf{Lista 1}
+
+\normalsize
+
+Matrícula $= 2019435823$
+\end{center}
+
+\large
+
+\textbf{Questão 1}
+
+\normalsize
+
+\vspace{6mm}
+
+\textbf{a)} Problemas de otimização também são conhecidos como problemas de programação matemática.
+
+FALSO. Existem problemas em teoria da decisão que não são convertíveis em números.
+
+\vspace{3mm}
+
+\textbf{b)} O número de restrições de igualdade pode ser maior que o número de variáveis de otimização.
+
+VERDADEIRO. Exemplo: numa matriz, o número de linhas pode ser maior que o número de colunas.
+
+\vspace{3mm}
+
+\textbf{c)} Parâmetros de projeto são os valores fixos das informações de projeto em um problema de otimização.
+
+VERDADEIRO. São predefinidos.
+
+\vspace{3mm}
+
+\textbf{d)} Os limites das variáveis de otimização não são relacionados com o funcionamento do sistema que se está otimizando.
+
+FALSO. É o espaço de busca.
+
+\vspace{3mm}
+
+\textbf{e)} Um ponto na fronteira de uma restrição pode ser inviável.
+
+VERDADEIRO. Rao exibe em sua figura os pontos de limite inaceitáveis. É interseção de 2 restrições, mas não é interseção de 3.
+
+\vspace{3mm}
+
+\textbf{f)} É necessário que algum $g_i(x) = 0$ no ponto ótimo.
+
+FALSO. $g_i(x) \le 0$.
+
+\vspace{6mm}
+
+\large
+
+\textbf{Questão 2} 
+
+\normalsize
+
+\vspace{6mm}
+
+Qual estratégia utilizar para resolver um problema de maximização como um problema de minimização?
+
+\vspace{3mm}
+
+Podemos simplesmente multiplicar a função objetivo por $-1$ e resolver como um problema de minimização.
+
+$\max f (x) = \min - f (x)$.
+
+\newpage
+
+\large
+
+\textbf{Questão 3}
+
+\normalsize
+
+\vspace{6mm}
+
+Qual a diferença entre um problema de programação linear e um problema de programação não linear?
+
+\vspace{3mm}
+
+O problema linear pode ser escrito como:
+
+$x^* = \arg \min c^\top x$
+
+com restrições de desigualdade: $A_1 x \le b_1$
+
+e restrições de igualdade: $A_2 x = b_2$.
+
+Já o não linear não é passível de ser reduzido a tais vetores $c, b_1, b_2 \in \mathbb{R}^n$ (para algum $n$) e tais matrizes $A_1, A_2$.
+
+\vspace{6mm}
+
+\large
+
+\textbf{Questão 4}
+
+\normalsize
+
+\vspace{6mm}
+
+Qual a diferença entre as variáveis de otimização e os parâmetros de projeto?
+
+\vspace{3mm}
+
+Variáveis de otimização: são as entidades que identificarão
+uma configuração particular, e esses valores serão os que mudarão
+ao longo da busca da melhor configuração. Descrevem as especificações da configuração, como valores de componentes,
+tamanho de partes, ou quantidade de cada peça.
+
+Parâmetros de projeto ou predefinidos: são os valores que não irão
+mudar (fixos) quando compararmos diferentes configurações durante
+o procedimento de busca pela melhor solução. São definidos no início
+do problema.
+
+\vspace{6mm}
+
+\large
+
+\textbf{Questão 5}
+
+\normalsize
+
+\vspace{6mm}
+
+O que é o espaço de projeto?
+
+\vspace{3mm}
+
+É a região do espaço Euclidiano gerado pelas $n$ variáveis de otimização $x$.
+
+Por exemplo, um produto cartesiano de intervalos.
+
+Seja $x_i \in J_i = [a_i, b_i] \subset \mathbb{R}$, para cada $1 \le i \le n$.
+
+\newpage
+
+\large
+
+\textbf{Questão 6}
+
+\normalsize
+
+\vspace{6mm}
+
+Qual a diferença entre uma superfície de restrição e uma superfície de restrição
+composta?
+
+\vspace{3mm}
+
+Superfície de restrição: O conjunto de pontos que resultam em $g_i(x) = 0$; $1 \le i \le p$. As superfícies de restrição dividem o
+espaço de busca em duas regiões, $g_i(x) > 0$ e $g_i(x) < 0$. Por exemplo, uma curva em $\mathbb{R}^2$.
+
+Superfície de restrição composta: Por exemplo, um triângulo em $\mathbb{R}^2$ divide o espaço de busca em interior e exterior e pode ser descrito como a interseção de 3 semiplanos.
+Já a superfície de restrição deveria ser escrita de forma mais complexa como união de 3 segmentos.
+
+\vspace{6mm}
+
+\large
+
+\textbf{Questão 7}
+
+\normalsize
+
+\vspace{6mm}
+
+Qual a diferença entre um ponto de limite e um ponto factível?
+
+\vspace{3mm}
+
+Ponto de limite: Satisfaz somente $g_i(x) = 0$, para algum $i$.
+
+Ponto factível: Satisfaz todas as restrições simultaneamente (igualdade e desigualdade).
+
+\vspace{6mm}
+
+\large
+
+\textbf{Questão 8}
+
+\normalsize
+
+\vspace{6mm}
+
+Escolha um sistema de seu interesse e apresente um problema de otimização para
+tal sistema juntamente com uma descrição sucinta das funções consideradas.
+
+\vspace{3mm}
+
+Ainda no curso técnico do CEFET, caiu na prova de geometria espacial: \emph{Uma formiga anda sobre um cubo de lado L. Qual é a menor distância d que ela consegue caminhar entre dois vértices opostos?}
+
+Eu resolvi da seguinte forma: precisamos passar por duas faces adjacentes. É claro que são duas retas. Mas a qual altura $h$ do primeiro quadrado ela vai passar?
+
+Temos um triângulo retângulo de base $L$ e altura $h$, logo a hipotenusa é $\sqrt{L^2 + h^2}$.
+
+Na outra face, temos um triângulo retângulo de base $L$ e altura $L - h$, logo a hipotenusa é $\sqrt{L^2 + (L - h)^2}$.
+
+\newpage
+
+Queremos minimizar a soma: $d = \min f(x)$, em que a função objetivo é $f : \mathbb{R} \to \mathbb{R}$; $f(x) = \sqrt{L^2 + x^2} + \sqrt{L^2 + (L - x)^2}$.
+
+$x^* = \arg \min f(x)$ é um problema de minimização irrestrita. $L$ é um parâmetro fixo. O espaço de busca é uma altura $0 \le x^* \le L$.
+
+(Daí depois da prova ela chega em sala, planifica e vira um retângulo de base $2L$ e altura $L$. Portanto, $d = \sqrt{(2L)^2 + L^2}$.)
+
+\vspace{6mm}
+
+Versão de 08/novembro/2021\footnote{Fora da caridade não há salvação.}  por Vinicius Claudino Ferraz.
+
+\end{document}
