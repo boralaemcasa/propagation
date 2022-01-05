@@ -199,90 +199,174 @@ y(t) = n(t) + f(t)
 
 14) H(s) = 1/(s + 2.5)
     x(t) = 1.3 cos(1.7 t)
-	result = y(t) = h(t) ** x(t)
+    result = y(t) = h(t) ** x(t)
 
-	H(jw) = 1/(2.5 + jw)
-	X(jw) = 1.3 pi delta(w + 1.7) + 1.3 pi delta(w - 1.7)
-	Y(jw) = H(jw) X(jw) = 1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)
-	y(t) = 1/2/pi * integrate [1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)] exp(jw t) dw from -infty to infty
+    H(jw) = 1/(2.5 + jw)
+    X(jw) = 1.3 pi delta(w + 1.7) + 1.3 pi delta(w - 1.7)
+    Y(jw) = H(jw) X(jw) = 1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)
+    y(t) = 1/2/pi * integrate [1.3 pi delta(w + 1.7)/(2.5 + jw) + 1.3 pi delta(w - 1.7)/(2.5 + jw)] exp(jw t) dw from -infty to infty
          = 1/2/pi * 1.3 pi /(2.5 - 1.7 i) exp(- 1.7 i t) + 1/2/pi * 1.3 pi/(2.5 + 1.7 i) exp(1.7 i t)
-		 = 0.65/(2.5 - 1.7 i) (cos(1.7 t) - i sin(1.7 t)) + 0.65/(2.5 + 1.7 i) (cos(1.7 t) + i sin(1.7 t))
-		 = 13/914 (25 cos(1.7 t) + 17 sin(1.7 t))
-		 cos(1.7 t - k) = cos(k) cos(1.7 t) + sin(k) sin(1.7 t)
-		 cos k = 13*25/914/0.43, sin k = 13*25/914/0.43
-	y(t) = 0.43 cos(1.7 t - k)
-	k = 0.5971705668336766161542650501107464421228115211079983047848803450...
+         = 0.65/(2.5 - 1.7 i) (cos(1.7 t) - i sin(1.7 t)) + 0.65/(2.5 + 1.7 i) (cos(1.7 t) + i sin(1.7 t))
+         = 13/914 (25 cos(1.7 t) + 17 sin(1.7 t))
+    cos(1.7 t - k) = cos(k) cos(1.7 t) + sin(k) sin(1.7 t)
+    cos k = 13*25/914/0.43, sin k = 13*25/914/0.43
+    y(t) = 0.43 cos(1.7 t - k)
+    k = 0.5971705668336766161542650501107464421228115211079983047848803450...
 
 15) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), -1 < Re(s) < 1
          = 3/65 * (17 s - 19)/((s + 2)^2 + 2^2) + 3/26 * 1/(s - 1) + 1/10 * 1/(s + 1), há polos em -2 ± 2i
-	17s - 19 = 17(s + 2) - 15/2 * 2
+    17s - 19 = 17(s + 2) - 15/2 * 2
     x(t) = 3*17/65 exp(-2t) cos(2t) u(t) - 3/65*15/2 exp(-2t) sin(2t) u(t) - 3/26 exp(t) u(-t) + 1/10 exp(-t) u(t)
-	     = 51/65 exp(-2t) cos(2t) u(t) - 9/26 exp(-2t) sin(2t) u(t) - 3/26 exp(t) u(-t) + 1/10 exp(-t) u(t)
+         = 51/65 exp(-2t) cos(2t) u(t) - 9/26 exp(-2t) sin(2t) u(t) - 3/26 exp(t) u(-t) + 1/10 exp(-t) u(t)
     a) Causal? Não.
-	b) Estável? Sim.
+    b) Estável? Sim.
 
 16) H(s) = 1/(A - s)
     x(t) = B sin(C t)
-	result = y(t) = h(t) ** x(t)
+    result = y(t) = h(t) ** x(t)
 
-	H(jw) = 1/(A - jw)
-	X(jw) = B i pi delta(w + C) - B i pi delta(w - C)
-	Y(jw) = H(jw) X(jw) = B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)
-	y(t) = 1/2/pi * integrate [B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)] exp(iw t) dw from -infty to infty
-	     = 1/2/pi * B i pi/(A + Ci) exp(-Cit) - 1/2/pi * B i pi/(A - Ci) exp(Cit)
-	     = 1/2 * B i/(A + Ci) (cos(Ct) - i sin(Ct)) - 1/2 * B i/(A - Ci) (cos(Ct) + i sin(Ct))
-		 = B/(A^2 + C^2) (A sin(C t) + C cos(C t))
-		 sin(Ct + k) = cos(k) sin(C t) + sin(k) cos(C t)
-		 cos k = A/(A^2 + C^2), sin k = C/(A^2 + C^2)
-	y(t) = B sin(Ct + k)
+    H(jw) = 1/(A - jw)
+    X(jw) = B i pi delta(w + C) - B i pi delta(w - C)
+    Y(jw) = H(jw) X(jw) = B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)
+    y(t) = 1/2/pi * integrate [B i pi delta(w + C)/(A - jw) - B i pi delta(w - C)/(A - jw)] exp(iw t) dw from -infty to infty
+         = 1/2/pi * B i pi/(A + Ci) exp(-Cit) - 1/2/pi * B i pi/(A - Ci) exp(Cit)
+         = 1/2 * B i/(A + Ci) (cos(Ct) - i sin(Ct)) - 1/2 * B i/(A - Ci) (cos(Ct) + i sin(Ct))
+         = B/(A^2 + C^2) (A sin(C t) + C cos(C t))
+    sin(Ct + k) = cos(k) sin(C t) + sin(k) cos(C t)
+    cos k = A/(A^2 + C^2), sin k = C/(A^2 + C^2)
+    y(t) = B sin(Ct + k)
 
-	A = 1.3
-	B = 2.3
-	C = 4.1
-	cos k = 1.3*2.3/(1.3^2+4.1^2)/0.535 => k = 1.2639051933636759674774825587158173548101972574733253828999538881...
-	y(t) = 0.535 sin(4.1t + k)
+    A = 1.3
+    B = 2.3
+    C = 4.1
+    cos k = 1.3*2.3/(1.3^2+4.1^2)/0.535 => k = 1.2639051933636759674774825587158173548101972574733253828999538881...
+   y(t) = 0.535 sin(4.1t + k)
 
-	A = 2.7
-	B = 3.8
-	C = 1.9
-	cos k = 2.7*3.8/(2.7^2+1.9^2)/1.151 => k = 0.6132236304809738100938191868144472506536655751201487608496414131...
-	y(t) = 1.151 sin(1.9t + k)
+   A = 2.7
+   B = 3.8
+   C = 1.9
+   cos k = 2.7*3.8/(2.7^2+1.9^2)/1.151 => k = 0.6132236304809738100938191868144472506536655751201487608496414131...
+    y(t) = 1.151 sin(1.9t + k)
 
 17) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) > 1
     a) Causal? Sim.
-	b) Estável? Não.
+    b) Estável? Não.
 
 18) v(t) em série com L, R, C. Determinar a função de transferência relacionando a tensão no capacitor y(t) à tensão de entrada x(t).
     Ri + L i'(t) + v_c = v(t)
-	i(t) = C y'(t)
+    i(t) = C y'(t)
     RC y'(t) + LC y''(t) + y(t) = x(t)
     RC s Y(s) + LC s^2 Y(s) + Y(s) = X(s)
-	Y(s)/X(s) = 1/(RC s + LC s^2 + 1)
+    Y(s)/X(s) = 1/(RC s + LC s^2 + 1)
 
 19) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), -2 < Re(s) < -1
     a) Causal? Não.
-	b) Estável? Não.
+    b) Estável? Não.
 
 20) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) > -1
     a) Causal? Não.
-	b) Estável? Sim.
+    b) Estável? Sim.
 
 21) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) < 1
     a) Causal? Não.
-	b) Estável? Sim.
+    b) Estável? Sim.
 
 22) v(t) em série com RC + (L1 // RA)
     RC = RA = 1 Ohm; L1 = 1 H; Determinar a função de transferência relacionando a tensão no RA y(t) à tensão de entrada x(t).
-	iRA, iL = z(t), iRC, vRC, vL = VRA = y(t)
-	x(t) = vRC + y(t)
-	iRC = iL + iRA
+    iRA, iL = z(t), iRC, vRC, vL = VRA = y(t)
+    x(t) = vRC + y(t)
+    iRC = iL + iRA
     iRC = vRC/1
-	y(t) = 1 iRA = 1 iL' = z'(t)
-	x(t) = iL + y(t)/1 + iL'
-	x(t) = z(t) + 2 z'(t)
-	x'(t) = y(t) + 2 y'(t)
-	s X(s) = Y(s) + 2 s Y(s)
+    y(t) = 1 iRA = 1 iL' = z'(t)
+    x(t) = iL + y(t)/1 + iL'
+    x(t) = z(t) + 2 z'(t)
+    x'(t) = y(t) + 2 y'(t)
+    s X(s) = Y(s) + 2 s Y(s)
     s/(1 + 2s) = Y(s)/X(s)
 
 #######
 
+1b) x(t) = exp(2t + 4) u(t + 2)
+
+1c) x(t) = exp(-2t) u(t) ** exp(-3t) u(t)
+
+1d) x(t) = exp(-2(t - 2)) u(t - 2) ** exp(-3(-t + 3)) u(-t + 3)
+
+1e) x(t) = exp(-t) d\dt (exp(-t) u(t + 1))
+
+1g) x(t) = cos(3t) u(-t) ** exp(-t) u(t)
+
+1h) x(t) = exp(t) sin(2t + 4) u(t + 2)
+
+1i) x(t) = integrate exp(2w) sin(w) u(-w) dw from -infty to t
+
+2a) X(s) = 1/(s^2 + 9), Re(s) > 0
+
+2b) X(s) = s/(s^2 + 9), Re(s) < 0
+
+2c) X(s) = (s + 1)/((s + 1)^2 + 9), Re(s) < -1
+
+2e) X(s) = (s + 1)/(s^2 + 5s + 6), -3 < Re(s) < -2
+
+2f) X(s) = (s^2 - s + 1)/(s + 1)^2, Re(s) > -1
+
+2g) X(s) = (s - 1)/s^2/(s + 2), Re(s) < -2
+
+2h) X(s) = (s - 2)/s^2/(s + 4), -4 < Re(s) < 0
+
+2i) X(s) = (7s + 1)/(s^2 - 1), Re(s) > -1 & Re(s) < 1
+
+3a) 5y' + 10y = 2x
+    y(0-) = 2
+    x(t) = u(t)
+   
+3b) y'' + 5y' + 6y = -4x + 4x'
+    y(0-) = -1
+    y'(0-) = 5
+    x(t) = exp(-t) u(t)
+   
+3c) y'' + 4y = 8x
+    y(0-) = 1
+    y'(0-) = 2
+    x(t) = u(t)
+   
+3d) y'' + 2y' + 5y = x'
+    y(0-) = 2
+    y'(0-) = 0
+    x(t) = exp(-t) u(t)
+   
+3e) y'' + 4y' + 4y = x' + x
+    y(0-) = 2
+    y'(0-) = 3
+    x(t) = exp(-2t) u(t)
+   
+4) h(t) = t exp(-2t) u(t) = Phi(delta(t))
+   x(t) = (1 + 2 cos(t) + 3 cos(2t)) u(t)
+   y(t) = Phi(x(t)) em regime permanente
+   
+5) h(t) = 100 t exp(-t) cos(2t) u(t) = Phi(delta(t))
+   x(t) = sin(2t) u(t)
+   y(t) = Phi(x(t)) em regime permanente
+   
+6) y(t) = integrate (1 - w^2) x(t - w) dw from -1 to 1
+   result = H(s) = Y(s)/X(s)
+   
+7) Determinar quando possível x(0+) e x(infty).
+
+   a) X(s) = 3/(s^2 + 5s - 1)
+   
+   b) X(s) = (2s^2 + 3)/(s^2 + 5s + 1)
+   
+   c) X(s) = (2s + 3)/(s^2 + 5s - 6)
+   
+   d) X(s) = (2s + 3)/(s^2 + 5s + 6)
+   
+   e) X(s) = (3s^2 + 2s)/(s^2 + s - 1) exp(-5s)
+   
+   f) X(s) = (3s^2 + 2s)/s/(s + 1)/(s + 2) exp(-3s)
+   
+8a) R = integrate t^2 exp(-3t) cos(2t) u(t) dt from 0 to infty
+
+8b) R = integrate 1000 t exp(-3t) cos(5t) u(t) dt from 0 to infty
+
+8c) R = integrate t^2 exp(-3t) sin(4t) u(t) dt

@@ -321,10 +321,10 @@ X(z) = z/(z - 1) - z^(-q) z/(z - 1) = (z^q - 1)/z^(q - 1)/(z - 1)
 12) x(n) é causal
     X(z) = (A z^2 + B z)/(z^3 + C z^2 + D z + E)
     x(0) = 0
-	x(1) = A
-	x(2) = B - AC
-	x(3) = AC^2 - BC - AD
-	x(4) = 2ACD - BD - AC^3 + BC^2 - AE
+    x(1) = A
+    x(2) = B - AC
+    x(3) = AC^2 - BC - AD
+    x(4) = 2ACD - BD - AC^3 + BC^2 - AE
 
     x(n) é causal
     X(z) = (7.4 z^2 + 1.8 z)/(z^3 + 2.1 z^2 + 3.5 z + 2.8)
@@ -388,3 +388,105 @@ X(z) = z/(z - 1) - z^(-q) z/(z - 1) = (z^q - 1)/z^(q - 1)/(z - 1)
          = -6/(v - 3) - 4/(v - 4)
          = 2/(1 - v/3) + 1/(1 - v/4)
     x(n) = 2 (1/3)^n u(n) + 0.25^n u(n)
+
+#######
+
+9a) x(n) = u(-n)
+
+9b) x(n) = 2^(-n) u(n) ** 3^(-n) u(n)
+
+9c) x(n) = n(2^(-n) u(n) ** 2^(-n) u(n))
+
+9d) x(n) = 3^n cos^2(2n) u(n)
+
+9e) x(n) = 2^n sin^2(3n) u(n)
+
+9f) x(n) = sin(pi/8 n - pi/4) u(n - 2)
+
+9g) x(n) = n sin(pi/2 n) u(-n)
+
+10a) X(z) = 2z/(z^2 - 1), abs(z) > 1
+
+10b) X(z) = 2z/(z^2 - 1), abs(z) < 1
+
+10c) X(z) = -2.5z/(z - 0.5)/(z + 2), abs(z) > 2
+
+10d) X(z) = -2.5z/(z - 0.5)/(z + 2), abs(z) < 0.5
+
+10e) X(z) = -2.5z/(z - 0.5)/(z + 2), 0.5 < abs(z) < 2
+
+10f) X(z) = (z + 1)/(z + 1/3), abs(z) > 1/3
+
+10g) X(z) = (z^2 - 3z)/(z^2 + 1.5z - 1), 0.5 < abs(z) < 2
+
+10h) X(z) = (z^3 + z^2 + 1.5z + 0.5)/(z^3 + 1.5z^2 + 0.5z), abs(z) < 0.5
+
+10i) X(z) = (z^3 + z^2 + 1.5z + 0.5)/(z^3 + 1.5z^2 + 0.5), abs(z) > 1
+
+11) h(n) = delta(n + 1) - u(n) + u(n - 2) = Phi(delta(n))
+    y(n) = Phi(x(n))
+    Z(x(n)) = z - 1/z^2, abs(z) > 0
+   
+12) X(z) = sum k=-infty to infty, x(k) z^(-k) = (2z + 1)/(z^2 + 4z + 3), abs(z) > 3
+    a) R = x(0)
+    b) R = x(1)
+    c) R = x(2)
+
+13) X(z) = 9/(z - 0.5)^2/(z + 0.5)^3, abs(z) > 0.5
+    a) R = x(infty)
+    b) R = x(0)
+    c) R = sum k =-infty to infty, x(k)
+    d) R = x(4)
+    e) R = x(5)
+   
+14) Determinar H(z) = Y(z)/X(z) e h(z) = Phi(delta(n)).
+
+    a) y(n + 1) - 0.5 y(n) = 2 x(n)
+   
+    b) y(n) = x(n) - x(n - 2) + x(n - 4) - x(n - 6)
+   
+    c) y(n + 2) - 0.25 y(n + 1) - 3/8 y(n) = -x(n + 2) + 2 x(n + 1)
+   
+    d) y(n + 2) - 1.2 y(n + 1) - 16/25 y(n) = 2x(n + 2) + x(n + 1)
+
+15) Determine y(n) solução das equações.
+
+    a) y(n + 2) - 9y(n) = 0
+       y(0) = 11
+       y(1) = -27
+
+    b) y(n + 2) - 9y(n) = 36n (-3)^n u(n)
+       y(0) = 3
+       y(1) = -6
+
+    c) y(n + 2) + 4y(n + 1) + 4y(n) = 0
+       y(0) = 100
+       y(1) = -100
+
+    d) y(n + 2) + 4y(n + 1) + 4y(n) = 400(-2)^n u(n)
+       y(0) = 100
+       y(1) = -100
+
+    e) y(n + 2) - 2.5 y(n + 1) + y(n) = 2^n u(n)
+       y(0) = 0
+       y(1) = 1
+
+    f) y(n + 2) - 2.5 y(n + 1) + y(n) = 2^n u(n)
+       y(0) = 1
+       y(1) = 0
+
+16) Determinar h(n) = Phi(delta(n)).
+
+    a) x(n) = delta(n) + 0.25 delta(n - 1) - 1/8 delta(n - 2)
+       y(n) = delta(n) - 0.75 delta(n - 1)
+      
+    b) x(n) = (-3)^(-n) u(n)
+       y(n) = 3 (-1)^n u(n) + 3^(-n) u(n)
+      
+    c) x(n) = (-3)^n u(n)
+       y(n) = 4 * 2^n u(n) - 2^(-n) u(n)
+      
+17) x(n) = sum k=0 to n, k^2, n >= 0
+    X(z) =
+   
+   
