@@ -21,7 +21,7 @@ function Population = SP_EnvironmentalSelection(Population,Ei,FV,N)
                 Ei(Local(q)) = -1;
             end
         end
-        if length(Choose) + length(H) < N
+        if length(Choose) + length(H) <= N
             Choose = [Choose,H];
         else
             [~,rank] = sort(FV(H));

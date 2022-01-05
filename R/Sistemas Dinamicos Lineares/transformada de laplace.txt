@@ -240,12 +240,12 @@ y(t) = n(t) + f(t)
     B = 2.3
     C = 4.1
     cos k = 1.3*2.3/(1.3^2+4.1^2)/0.535 => k = 1.2639051933636759674774825587158173548101972574733253828999538881...
-   y(t) = 0.535 sin(4.1t + k)
+    y(t) = 0.535 sin(4.1t + k)
 
-   A = 2.7
-   B = 3.8
-   C = 1.9
-   cos k = 2.7*3.8/(2.7^2+1.9^2)/1.151 => k = 0.6132236304809738100938191868144472506536655751201487608496414131...
+    A = 2.7
+    B = 3.8
+    C = 1.9
+    cos k = 2.7*3.8/(2.7^2+1.9^2)/1.151 => k = 0.6132236304809738100938191868144472506536655751201487608496414131...
     y(t) = 1.151 sin(1.9t + k)
 
 17) X(s) = (s^3 + s + 1)/(s + 1)/(s - 1)/(s^2 + 4s + 8), Re(s) > 1
@@ -287,62 +287,159 @@ y(t) = n(t) + f(t)
 #######
 
 1b) x(t) = exp(2t + 4) u(t + 2)
+    x(t - 2) = exp(2t) u(t) = y(t)
+    Y(s) = 1/(s - 2), Re(s) > 2
+   
+    Pelo deslocamento no tempo,
+    x(t) = y(t + 2)
+    X(s) = exp(2s)/(s - 2), RDCy = RDCx
 
 1c) x(t) = exp(-2t) u(t) ** exp(-3t) u(t)
+    Pela convolução,
+    X(s) = 1/(s + 2) * 1/(s + 3), Re(s) > -2
+         = 1/(s + 2) - 1/(s + 3)
 
 1d) x(t) = exp(-2(t - 2)) u(t - 2) ** exp(-3(-t + 3)) u(-t + 3)
+    y(t) = exp(-2t) u(t)
+    z(t) = exp(3t) u(-t)
+    x(t) = y(t - 2) ** z(t - 3) = p(t) ** q(t)
+    Y(s) = 1/(s + 2), Re(s) > -2
+    Z(s) = 1/(s - 3), Re(s) > 3
+    Pelo deslocamento no tempo,
+    P(s) = exp(-s * 2) * Y(s), RDCp = RDCy
+    Q(s) = exp(-s * 3) * Z(s), RDCq = RDCz
+    Pela convolução,
+    X(s) = P(s) Q(s) = exp(-5s)/(s + 2)/(s - 3), Re(s) > 3
+         = exp(-5s)/5 (1/(s - 3) - 1/(s + 2))
 
 1e) x(t) = exp(-t) d\dt (exp(-t) u(t + 1))
+    y(t) = exp(-t) u(t + 1)
+    y(t - 1) = exp(1 - t) u(t) = e exp(-t) u(t) = z(t)
+    Z(s) = e/(s + 1), Re(s) > -1
+    Pelo deslocamento no tempo,
+    y(t) = z(t + 1)
+    Y(s) = exp(s) Z(s), RDCy = RDCz
+    Pela diferenciação no tempo,
+    w(t) = y'(t)
+    W(s) = s Y(s) = s exp(s) e/(s + 1) = exp(s + 1) [1 - 1/(s + 1)], Re(s) > -1
+    Pelo deslocamento no domínio s,
+    x(t) = exp(-t) w(t)
+    X(s) = W(s + 1), Re(s) > -2
+         = exp(s + 2) [1 - 1/(s + 2)]
 
 1g) x(t) = cos(3t) u(-t) ** exp(-t) u(t)
+    Pela convolução,
+    X(s) = - 1/(s - 3) * 1/(s + 1), -1 < Re(s) < 3
+         = 1/4[1/(s + 1) - 1/(s - 3)]
 
 1h) x(t) = exp(t) sin(2t + 4) u(t + 2)
+    x(t - 2) = exp(t) exp(-2) sin(2t) u(t) = y(t)
+    Y(s) = exp(-2) * 2/[(s - 1)^2 + 2^2], Re(s) > 1
+    Pelo deslocamento no tempo,
+    x(t) = y(t + 2)
+    X(s) = exp(2s) Y(s), RDCy = RDCx
+         = exp(2s - 2) * 2/[(s - 1)^2 + 4], Re(s) > 1
 
 1i) x(t) = integrate exp(2w) sin(w) u(-w) dw from -infty to t
+    Pela integração no tempo,
+    X(s) = 1/s * Y(s), RDCx contém RDCy inter (Re(s) > 0)
+    y(t) = exp(2t) sin(t) u(-t)
+    Y(s) = - 1/[(s - 2)^2 + 1], Re(s) < 2
+    X(s) = (s - 4)/(5 [(s - 2)^2 + 1]) - 1/(5 s), RDCx contém 0 < Re(s) < 2
 
 2a) X(s) = 1/(s^2 + 9), Re(s) > 0
-
-2b) X(s) = s/(s^2 + 9), Re(s) < 0
-
-2c) X(s) = (s + 1)/((s + 1)^2 + 9), Re(s) < -1
+         = 1/3 * 3/[(s - 0)^2 + 3^2]
+    x(t) = 1/3 sin(3t) u(t)
 
 2e) X(s) = (s + 1)/(s^2 + 5s + 6), -3 < Re(s) < -2
+         = 2/(s + 3) - 1/(s + 2)
+    x(t) = 2 exp(-3t) u(t) + exp(-2t) u(-t)
 
 2f) X(s) = (s^2 - s + 1)/(s + 1)^2, Re(s) > -1
+         = 1 - 3/(s + 1) + 3/(s + 1)^2
+    x(t) = delta(t) - 3 exp(-t) u(t) + 3 t exp(-t) u(t)
 
 2g) X(s) = (s - 1)/s^2/(s + 2), Re(s) < -2
-
+         = -i * i/((s + 1)^2 + i^2) - 1/s * 1/(s^2 + 2s) = Y(s) + Y(s) Z(s)
+    y(t) = i exp(-t) sin(it) u(-t), Re(s) < -1
+    Z(s) = -1/s, Re(s) < 0
+    z(t) = u(-t)
+    Pela convolução,
+    P(s) = Y(s) Z(s)
+    p(t) = y(t) ** z(t) = -1/4 (-2 t - exp(-2 t) + 1) u(-t)
+    x(t) = i exp(-t) sin(it) u(-t) - 1/4 (-2 t - exp(-2 t) + 1) u(-t)
+   
 2h) X(s) = (s - 2)/s^2/(s + 4), -4 < Re(s) < 0
+         = -i/2 * 2i/((s + 2)^2 + (2i)^2) - 2/s/(s^2 + 4s) = Y(s) + Y(s) Z(s)
+    y(t) = -i/2 exp(-2t) sin(2it) u(t)
+    Z(s) = -2/s, Re(s) < 0
+    z(t) = 2 u(-t)
+    Pela convolução,
+    P(s) = Y(s) Z(s)
+    p(t) = y(t) ** z(t) = 1/8 ((4 t + exp(-4 t) - 1) u(-t) - 4 t - exp(-4 t))
+    x(t) = -i/2 exp(-2t) sin(2it) u(t) + 1/8 ((4 t + exp(-4 t) - 1) u(-t) - 4 t - exp(-4 t))
 
-2i) X(s) = (7s + 1)/(s^2 - 1), Re(s) > -1 & Re(s) < 1
+2i) X(s) = (7s + 1)/(s^2 - 1), -1 < Re(s) < 1
+         = 3/(s + 1) + 4/(s - 1)
+    x(t) = 3 exp(-t) u(t) - 4 exp(t) u(-t)
 
 3a) 5y' + 10y = 2x
     y(0-) = 2
-    x(t) = u(t)
+    x(t) = u(t) => X(s) = 1/s
+    5 s Y(s) - 5 * 2 + 10 Y(s) = 2/s
+    Y(s) = (2/s + 10)/(5 s + 10) = 9/5 * 1/(s + 2) + 1/5 * 1/s
+    y(t) = 9/5 exp(-2t) u(t) + 1/5 u(t)
    
 3b) y'' + 5y' + 6y = -4x + 4x'
     y(0-) = -1
     y'(0-) = 5
-    x(t) = exp(-t) u(t)
+    x(t) = exp(-t) u(t) => X(s) = 1/(s + 1)
+    z = y'
+    Z(s) = s Y(s) + 1
+    p = z' = y''
+    P(s) = s Z(s) - 5 = s^2 Y(s) + s - 5
+    s^2 Y(s) + s - 5 + 5 s Y(s) + 5 + 6 Y(s) = -4 X(s) + 4 Q(s)
+    Pela diferenciação no tempo,
+    q(t) = x'(t)
+    Q(s) = s X(s) - x(0-), u(0-) = 0
+    Y(s) = ((4 s - 4)/(s + 1) - s)/(s^2 + 5s + 6) = 14/(s + 2) - 11/(s + 3) - 4/(s + 1)
+    y(t) = 14 exp(-2t) u(t) - 11 exp(-3t) u(t) - 4 exp(-t) u(t)
    
 3c) y'' + 4y = 8x
     y(0-) = 1
     y'(0-) = 2
-    x(t) = u(t)
+    x(t) = u(t) => X(s) = 1/s
+    s^2 Y(s) - s Y(s) - 2 + 4 Y(s) = 8/s
+    Y(s) = (8/s + 2)/(s^2 - s + 4) = 2/s + (-2s + 4)/((s - 0.5)^2 + 15/4)
+    -2s + 4 = -2(s - 0.5) + 6/sqrt(15) * sqrt(15)/2
+    y(t) = 2 u(t) - 2 exp(0.5 t) cos(sqrt(15)/2 t) u(t) + 6/sqrt(15) exp(0.5 t) sin(sqrt(15)/2 t) u(t)
    
 3d) y'' + 2y' + 5y = x'
     y(0-) = 2
     y'(0-) = 0
-    x(t) = exp(-t) u(t)
+    x(t) = exp(-t) u(t) => X(s) = 1/(s + 1)
+    s^2 Y(s) - 2 s Y(s) + 2 s Y(s) - 4 + 5 Y(s) = s X(s)
+    Y(s) = (s/(s + 1) + 4)/(s^2 + 5) = 1/6 (s + 29/sqrt(5) * sqrt(5))/(s^2 + 5) - 1/6 * 1/(s + 1)
+    y(t) = 1/6 cos(sqrt(5) t) u(t) + 29/sqrt(5)/6 sin(sqrt(5) t) u(t) - 1/6 exp(-t) u(t)
    
 3e) y'' + 4y' + 4y = x' + x
     y(0-) = 2
     y'(0-) = 3
-    x(t) = exp(-2t) u(t)
+    x(t) = exp(-2t) u(t) => X(s) = 1/(s + 2)
+    s^2 Y(s) - 2 s Y(s) - 3 + 4 s Y(s) - 8 + 4 Y(s) = s X(s) + X(s)
+    Y(s) = ((s + 1)/(s + 2) + 11)/(s^2 + 2 s + 4) = 1/4 (s + 1 + 47/sqrt(3) * sqrt(3))/((s + 1)^2 + 3) - 1/4 * 1/(s + 2)
+    y(t) = 1/4 exp(-t) cos(sqrt(3) t) u(t) + 47/sqrt(3)/4 exp(-t) sin(sqrt(3) t) u(t)
    
 4) h(t) = t exp(-2t) u(t) = Phi(delta(t))
    x(t) = (1 + 2 cos(t) + 3 cos(2t)) u(t)
-   y(t) = Phi(x(t)) em regime permanente
+   y(t) = Phi(x(t))
+   H(s) = 1/(s + 2)^2
+   X(s) = 1 + 2 s/[s^2 + 1^2] + 3 s/[s^2 + 2^2]
+   H(jw) = 1/(2 + i w)^2
+   X(jw) = 1 + 2 iw/(1 - w^2) + 3 iw/(4 - w^2)
+   Y(jw) = H(jw) X(jw) = -(4i/25 - 3/25)/(iw - i) - 6/25 * 1/(iw + 2) + (4i/25 + 3/25)/(iw + i) + 3i/16 * 1/(iw + 2i) - 11/20/(iw + 2)^2 - 3i/16 * 1/(iw - 2i)
+   y(t) = -(4i/25 - 3/25) exp(it) u(t) - 6/25 exp(-2t) u(t) + (4i/25 + 3/25) exp(-it) u(t) + 3i/16 exp(-2it) u(t) - 11/20 t exp(-2t) u(t) - 3i/16 exp(2it) u(t)
+        = [-6/25 e^(-2 t) - 11/20 e^(-2 t) t + 8/25 sin(t) + 3/8 sin(2 t) + 6/25 cos(t)] u(t)
    
 5) h(t) = 100 t exp(-t) cos(2t) u(t) = Phi(delta(t))
    x(t) = sin(2t) u(t)
