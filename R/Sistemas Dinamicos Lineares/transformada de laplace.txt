@@ -289,7 +289,6 @@ y(t) = n(t) + f(t)
 1b) x(t) = exp(2t + 4) u(t + 2)
     x(t - 2) = exp(2t) u(t) = y(t)
     Y(s) = 1/(s - 2), Re(s) > 2
-
     Pelo deslocamento no tempo,
     x(t) = y(t + 2)
     X(s) = exp(2s)/(s - 2), RDCy = RDCx
@@ -342,7 +341,7 @@ y(t) = n(t) + f(t)
 
 1i) x(t) = integrate exp(2w) sin(w) u(-w) dw from -infty to t
     Pela integração no tempo,
-    X(s) = 1/s * Y(s), RDCx contém RDCy inter (Re(s) > 0)
+    X(s) = 1/s Y(s), RDCx contém RDCy inter (Re(s) > 0)
     y(t) = exp(2t) sin(t) u(-t)
     Y(s) = - 1/[(s - 2)^2 + 1], Re(s) < 2
     X(s) = (s - 4)/(5 [(s - 2)^2 + 1]) - 1/(5 s), RDCx contém 0 < Re(s) < 2
@@ -460,8 +459,6 @@ y(t) = n(t) + f(t)
    f(1) = u(1 - t) - t^2 u(1 - t)
    f(-1) = u(-1 - t) - t^2 u(-1 - t)
    h(t) = u(1 - t) - t^2 u(1 - t) - u(-1 - t) + t^2 u(-1 - t)
-   H(s) =
-   Pelo escalonamento,
    u(-t) <-> -1/s
    Pelo deslocamento no tempo,
    u(1 - t) <-> - exp(s)/s
