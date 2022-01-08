@@ -1,4 +1,4 @@
-function [RETORNO] = RUN3(dim)
+function [RETORNO] = RUN3(dim, isa_FV)
 
 a = 0.0263;
 
@@ -58,7 +58,11 @@ end
 % DEFINIÇÃO DOS LIMITES INF E SUP DE x (Xmax E xMin) E DO PONTO INICIAL x0:
 Xmin = - 10 * ones(dim,1);
 Xmax = 10 * ones(dim,1);
-x0 = 8 * ones(dim,1);
+if dim < 30
+	x0 = 8 * ones(dim,1);
+else
+	x0 = -10 + rand(dim,1)*(10-(-10));
+end
 
 %.........................................................................%
 % for i1 =1:dim                                                           %
@@ -74,7 +78,6 @@ MAXITER = 2*dim*100;
 % DEFINIÇÃO DA OPERAÇÃO A SER REALIZADA DA SEÇÃO ÁUREA:
 % 0 --> Falsa seção aurea
 % 1 --> Verdadeira seção aurea
-isa_FV = 1;
 if isa_FV==0
     TEC = 'Aproximação quadrática de f(x) em cada iteração';
 else

@@ -34,19 +34,19 @@ RUN1(2, 1, 1, 0)
 
 %exp3
 disp('Experimento 3')
-RUN3(5)
-RUN3(10)
-RUN3(15)
-RUN3(20)
-RUN3(25)
+RUN3(5, 1)
+RUN3(10, 1)
+RUN3(15, 1)
+RUN3(20, 1)
+RUN3(25, 1)
 
 %exp4
 disp('Experimento 4')
 RUN1(4, 0, 1, [-6;-5])
 RUN1(4, 0, 0, [-6;-5])
 
-RUN1(1, 0.0263, 1, 0)
-RUN1(1, 0.0263, 0, 0)
+RUN3(30, 1)
+RUN3(30, 0)
 
 %exp5
 disp('Experimento 5')
