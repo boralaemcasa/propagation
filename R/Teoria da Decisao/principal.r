@@ -238,18 +238,20 @@ neighbor <- function(x,clientes,sigma,dimini,dimx) {
    return(y)
 }
 
-SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
+SAreal <- function(dim1, dim2, maxnfe2, maxnfe3) {
+   index <- 0
    dimx <- 2 * dim2 + sz + 1
    ddim <- dim2 - dim1 + 1
    # Desvio padrão inicial da vizinhança
    sigma <- 1 # 0.25
+   xbest <- matrix(0, dimx, maxnfe3)
+   ponto <- matrix(0, 3, maxnfe3)
    
    len1 <- dimx # len x
    len2 <- 1    # len jx
-   pontos <- array(0, dim=c(maxnfe, 2, ddim))
+   pontos <- array(0, dim=c(maxnfe3, 2, ddim))
    for (dimini in dim1:dim2) {
       print(dimini)
-      memory <- array(0, dim=c(maxnfe, len1 + len2))
       depth <- dimini - dim1 + 1
    
       # Contador de estágios do método
@@ -272,22 +274,25 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
       T <- to
       
       # Armazena melhor solução encontrada
-      xbest  <- x
+      xbest[,1]  <- x
       jxbest <- jx
       obj  <- fobj(x,clientes,dimini,dimx)
+      ponto[1,1] <- obj[[2]]
+      ponto[2,1] <- obj[[3]]
+      ponto[3,1] <- obj[[4]]
 
       # Armazena a solução corrente
-      memory[1,1:len1] <- t(xbest)
-      memory[1,(len1+1):(len1+len2)] <- jxbest
       pontos[1,1,depth] <- obj[[2]]
       pontos[1,2,depth] <- obj[[3]]
+      print(paste("index", index))
       index <- 2
+      contador <- 2
       
       # Critério de parada do algoritmo
       numEstagiosEstagnados <- 0
       
       # Critério de parada
-      while ((numEstagiosEstagnados <= 10) && (index <= maxnfe)) {
+      while ((numEstagiosEstagnados <= 10) && (contador <= maxnfe3)) {
           
          # Critérios para mudança de temperatura
          numAceites <- 0
@@ -296,10 +301,10 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
          # Fitness da solução submetida ao estágio k
          fevalin <- jxbest
       
-         while ((numAceites < 12*dimx) && (numTentativas < 100*dimx) && (index <= maxnfe)) {
+         while ((numAceites < 12*dimx) && (numTentativas < 100*dimx) && (contador <= maxnfe3)) {
           
             # Gera uma solução na vizinhança de x
-            y <- neighbor(xbest,clientes,sigma,dimini,dimx)
+            y <- neighbor(xbest[,contador-1],clientes,sigma,dimini,dimx)
             retObj  <- fobj(y,clientes,dimini,dimx)
             jy <- retObj[[1]]
             y <- retObj[[5]]
@@ -314,18 +319,19 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
             
               # Atualiza melhor solução encontrada
                if (jx < jxbest) {
-                  xbest  <- x
+                  xbest[,contador]  <- x
                   jxbest <- jx 
                   obj <- retObj
+                  pontos[contador,1,depth] <- retObj[[2]]
+                  pontos[contador,2,depth] <- retObj[[3]]
+                  ponto[1,contador] <- retObj[[2]]
+                  ponto[2,contador] <- retObj[[3]]
+                  ponto[3,contador] <- retObj[[4]]
+                  print(paste("salvei o contador", contador))
+                  contador <- contador + 1
                }     
             }
             numTentativas <- numTentativas + 1   
-          
-            # Armazena a solução corrente
-            memory[index,1:len1] <- t(x)
-            memory[index,(len1+1):(len1+len2)] <- jx
-            pontos[index,1,depth] <- retObj[[2]]
-            pontos[index,2,depth] <- retObj[[3]]
             index <- index + 1
          }
                
@@ -353,19 +359,18 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
          k <- k + 1
       }
      
-      ponto <- matrix(0, 3)
-      ponto[1] <- obj[[2]]
-      ponto[2] <- obj[[3]]
-      ponto[3] <- obj[[4]]
       write.csv(ponto, file=paste("valorDist", toString(dimini), ".csv", sep=""))
       write.csv(xbest, file=paste("posicaoDist", toString(dimini), ".csv", sep=""))
    }
 
-   return(pontos)
+   print(paste("index", index))
+   return(list(pontos, contador - 1))
 }
 
-principal <- function(dim1, dim2, maxnfe, maxnfe2) {
-   pontos <- SAreal(dim1, dim2, maxnfe, maxnfe2)
+principal <- function(dim1, dim2, maxnfe2, maxnfe3) {
+   v <- SAreal(dim1, dim2, maxnfe2, maxnfe3)
+   pontos <- v[[1]]
+   maxnfe <- v[[2]]
    N <- dim2 - dim1 + 1
    x <- seq(1, maxnfe, 1)
    Delta <- matrix(0, maxnfe)
@@ -419,7 +424,20 @@ principal <- function(dim1, dim2, maxnfe, maxnfe2) {
    plot(x,HV,type='b',col='red',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
 }
 
-principal(33, 34, 3, 2)
+principal(16, 36, 100, 40)
 
-principal(16, 36, 5000, 100)
+principal(33, 34, 2, 2)
+
+x <- seq(1, 65, 1)
+Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
+Delta <- Delta[,2]
+HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
+HV <- HV[,2]
+y1 <- min(Delta) - 0.002
+y2 <- max(Delta) + 0.002
+plot(x,Delta,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
+
+y1 <- min(HV) - 0.002
+y2 <- max(HV) + 0.002
+plot(x,HV,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
 
