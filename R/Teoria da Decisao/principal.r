@@ -238,137 +238,173 @@ neighbor <- function(x,clientes,sigma,dimini,dimx) {
    return(y)
 }
 
-SAreal <- function(dim1, dim2, maxnfe2, maxnfe3) {
-   index <- 0
-   dimx <- 2 * dim2 + sz + 1
-   ddim <- dim2 - dim1 + 1
-   # Desvio padrão inicial da vizinhança
-   sigma <- 1 # 0.25
-   xbest <- matrix(0, dimx, maxnfe3)
-   ponto <- matrix(0, 3, maxnfe3)
-   
-   len1 <- dimx # len x
-   len2 <- 1    # len jx
-   pontos <- array(0, dim=c(maxnfe3, 2, ddim))
-   for (dimini in dim1:dim2) {
-      print(dimini)
-      depth <- dimini - dim1 + 1
-   
-      # Contador de estágios do método
-      k <- 0
-      
-      # Contador do número de avaliações de f(.)
-      nfe <- 0 
-      
-      # Gera solução inicial
-      ret <- initialSol(dimini,dimx)
-      x <- ret[[1]]
-      clientes <- ret[[2]]
-      
-      # Define temperatura inicial
-      ret <- initialT(x,clientes,sigma,nfe,dimini,dimx,maxnfe2)
-      to <- ret[[1]]
-      x <- ret[[2]]
-      jx <- ret[[3]]
-      nfe <- ret[[4]]
-      T <- to
-      
-      # Armazena melhor solução encontrada
-      xbest[,1]  <- x
-      jxbest <- jx
-      obj  <- fobj(x,clientes,dimini,dimx)
-      ponto[1,1] <- obj[[2]]
-      ponto[2,1] <- obj[[3]]
-      ponto[3,1] <- obj[[4]]
+SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
+	index <- 0
+	dimx <- 2 * dim2 + sz + 1
+	ddim <- dim2 - dim1 + 1
+	# Desvio padrão inicial da vizinhança
+	sigma <- 1 # 0.25
+	xbest <- array(0, dim=c(maxnfe, dimx, ddim))
+	jxbest <- matrix(0, ddim)
+	x <- matrix(0, dimx, ddim)
+	y <- matrix(0, dimx, ddim)
+	to <- matrix(0, ddim)
+	jx <- matrix(0, ddim)
+	jy <- matrix(0, ddim)
+	T <- matrix(0, ddim)
+	numAceites <- matrix(0, ddim)
+	numTentativas <- matrix(0, ddim)
+	fevalin <- matrix(0, ddim)
 
-      # Armazena a solução corrente
-      pontos[1,1,depth] <- obj[[2]]
-      pontos[1,2,depth] <- obj[[3]]
-      print(paste("index", index))
-      index <- 2
-      contador <- 2
-      
-      # Critério de parada do algoritmo
-      numEstagiosEstagnados <- 0
-      
-      # Critério de parada
-      while ((numEstagiosEstagnados <= 10) && (contador <= maxnfe3)) {
-          
-         # Critérios para mudança de temperatura
-         numAceites <- 0
-         numTentativas <- 0
-          
-         # Fitness da solução submetida ao estágio k
-         fevalin <- jxbest
-      
-         while ((numAceites < 12*dimx) && (numTentativas < 100*dimx) && (contador <= maxnfe3)) {
-          
-            # Gera uma solução na vizinhança de x
-            y <- neighbor(xbest[,contador-1],clientes,sigma,dimini,dimx)
-            retObj  <- fobj(y,clientes,dimini,dimx)
-            jy <- retObj[[1]]
-            y <- retObj[[5]]
-            nfe <- nfe + 1 
-          
-            # Atualiza solução 
-            DeltaE <- jy - jx
-            if ((DeltaE <= 0) || (runif(1, 0, 1) <= exp(-DeltaE/T))) {
-               x  <- y
-               jx <- jy         
-               numAceites <- numAceites + 1
-            
-              # Atualiza melhor solução encontrada
-               if (jx < jxbest) {
-                  xbest[,contador]  <- x
-                  jxbest <- jx 
-                  obj <- retObj
-                  pontos[contador,1,depth] <- retObj[[2]]
-                  pontos[contador,2,depth] <- retObj[[3]]
-                  ponto[1,contador] <- retObj[[2]]
-                  ponto[2,contador] <- retObj[[3]]
-                  ponto[3,contador] <- retObj[[4]]
-                  print(paste("salvei o contador", contador))
-                  contador <- contador + 1
-               }     
-            }
-            numTentativas <- numTentativas + 1   
-            index <- index + 1
-         }
+	# Contador do número de avaliações de f(.)
+	nfe <- matrix(0, ddim)
+	contador <- matrix(0, ddim)
+	index <- matrix(0, ddim)
+
+	ponto <- array(0, dim=c(maxnfe, 3, ddim))
+	pareto <- array(0, dim=c(maxnfe, 2, ddim))
+	len1 <- dimx # len x
+	len2 <- 1    # len jx
+   
+	# Contador de estágios do método
+	k <- 0
+
+	# Gera solução inicial
+	for (dimini in dim1:dim2) {
+		depth <- dimini - dim1 + 1
+		ret <- initialSol(dimini,dimx)
+		x[,depth] <- ret[[1]]
+		clientes <- ret[[2]]
+
+		# Define temperatura inicial
+		ret <- initialT(x[,depth],clientes,sigma,nfe[depth],dimini,dimx,maxnfe2)
+		to[depth] <- ret[[1]]
+		x[,depth] <- ret[[2]]
+		jx[depth] <- ret[[3]]
+		nfe[depth] <- ret[[4]]
+		T[depth] <- to[depth]
+
+		# Armazena melhor solução encontrada
+		xbest[1,,depth]  <- x[,depth]
+		jxbest[depth] <- jx[depth]
+		obj  <- fobj(x[,depth],clientes,dimini,dimx)
+		ponto[1,1,depth] <- obj[[2]]
+		ponto[1,2,depth] <- obj[[3]]
+		ponto[1,3,depth] <- obj[[4]]
+
+		# Armazena a solução corrente
+		pareto[1,1,depth] <- obj[[2]]
+		pareto[1,2,depth] <- obj[[3]]
+		index[depth] <- 2
+	}
+	  
+	contador <- 2
+
+	# Critério de parada do algoritmo
+	numEstagiosEstagnados <- matrix(0, ddim)
+
+	# Critério de parada
+	for (dimini in dim1:dim2) {
+		depth <- dimini - dim1 + 1
+		while (nfe[depth] <= maxnfe) {
+			if ((numEstagiosEstagnados[depth] <= 10) && (nfe[depth] <= maxnfe)) {
+		 
+				# Critérios para mudança de temperatura
+				numAceites[depth] <- 0
+				numTentativas[depth] <- 0
+
+				# Fitness da solução submetida ao estágio k
+				fevalin[depth] <- jxbest[depth]
+
+				while (nfe[depth] <= maxnfe) {
+					for (dimini2 in dim1:dim2) {
+						depth <- dimini2 - dim1 + 1
+						if ((numAceites[depth] < 12*dimx) && (numTentativas[depth] < 100*dimx) && (nfe[depth] <= maxnfe)) {
+							# Gera uma solução na vizinhança de x
+							y[,depth] <- neighbor(xbest[contador-1,,depth],clientes,sigma,dimini2,dimx)
+							retObj  <- fobj(y[,depth],clientes,dimini2,dimx)
+							jy[depth] <- retObj[[1]]
+							y[,depth] <- retObj[[5]]
+							nfe[depth] <- nfe[depth] + 1 
+
+							# Atualiza solução 
+							DeltaE <- jy[depth] - jx[depth]
+							if ((DeltaE <= 0) || (runif(1, 0, 1) <= exp(-DeltaE/T[depth]))) {
+								x[,depth]  <- y[,depth]
+								jx[depth] <- jy[depth]         
+								numAceites[depth] <- numAceites[depth] + 1
+
+								# Atualiza melhor solução encontrada
+								if (jx[depth] < jxbest[depth]) {
+									xbest[contador,,]  <- x
+									jxbest[depth] <- jx[depth] 
+									obj <- retObj
+									ponto[contador,1,depth] <- retObj[[2]]
+									ponto[contador,2,depth] <- retObj[[3]]
+									ponto[contador,3,depth] <- retObj[[4]]
+									contador <- contador + 1
+								}     
+							}
+							numTentativas[depth] <- numTentativas[depth] + 1   
+						}
+						pareto[index[depth],1,depth] <- ponto[contador-1,1,depth]
+						pareto[index[depth],2,depth] <- ponto[contador-1,2,depth]
+						index[depth] <- index[depth] + 1
+					}
+				}
+			}
+		}
                
-         # Atualiza o desvio padrão da vizinhança  
-         # A <- numAceites/numTentativas
-         #if (A > 0.20),
-         #  sigma = 1*sigma;
-         #else if (A < 0.05)
-         #   sigma = 1*sigma;
-      
-         # Atualiza a temperatura
-         T <- 0.9*T
-        
-         # Avalia critério de estagnação
-         if (jxbest < fevalin)
-            numEstagiosEstagnados <- 0
-         else
-            numEstagiosEstagnados <- numEstagiosEstagnados + 1      
-        
-         # Avalia critério de reinicialização da temperatura
-         if (T < 0.1)     
-            T <- to
-          
-         # Atualiza contador de estágios de temperatura
-         k <- k + 1
-      }
-     
-      write.csv(ponto, file=paste("valorDist", toString(dimini), ".csv", sep=""))
-      write.csv(xbest, file=paste("posicaoDist", toString(dimini), ".csv", sep=""))
-   }
+		# Atualiza o desvio padrão da vizinhança  
+		# A <- numAceites/numTentativas
+		#if (A > 0.20),
+		#  sigma = 1*sigma;
+		#else if (A < 0.05)
+		#   sigma = 1*sigma;
 
-   print(paste("index", index))
-   return(list(pontos, contador - 1))
+		# Atualiza a temperatura
+		for (dimini in dim1:dim2) {
+			depth <- dimini - dim1 + 1
+			T[depth] <- 0.9*T[depth]
+
+			# Avalia critério de estagnação
+			if (jxbest[depth] < fevalin[depth])
+				numEstagiosEstagnados[depth] <- 0
+			else
+				numEstagiosEstagnados[depth] <- numEstagiosEstagnados[depth] + 1      
+
+			# Avalia critério de reinicialização da temperatura
+			if (T[depth] < 0.1)     
+				T[depth] <- to[depth]
+		}
+			   
+		# Atualiza contador de estágios de temperatura
+		k <- k + 1
+	}
+	    
+	for (k in 1:ddim)	
+		for (j in 1:2)
+			for (i in 2:maxnfe) 
+				if (pareto[i,j,k] == 0)
+					pareto[i,j,k] <- pareto[i-1,j,k]
+
+	for (k in 1:ddim)	
+		for (j in 1:3)
+			for (i in 2:(contador - 1)) 
+				if (ponto[i,j,k] == 0)
+					ponto[i,j,k] <- ponto[i-1,j,k]
+
+	for (dimini in dim1:dim2) {
+		depth <- dimini - dim1 + 1
+		write.csv(t(ponto[,,depth]), file=paste("valorDist", toString(dimini), ".csv", sep=""))
+		write.csv(t(xbest[,,depth]), file=paste("posicaoDist", toString(dimini), ".csv", sep=""))
+	}
+
+	return(list(pareto, contador - 1))
 }
 
-principal <- function(dim1, dim2, maxnfe2, maxnfe3) {
-   v <- SAreal(dim1, dim2, maxnfe2, maxnfe3)
+principal <- function(dim1, dim2, maxnfe, maxnfe2) {
+   v <- SAreal(dim1, dim2, maxnfe, maxnfe2)
    pontos <- v[[1]]
    maxnfe <- v[[2]]
    N <- dim2 - dim1 + 1
@@ -424,20 +460,20 @@ principal <- function(dim1, dim2, maxnfe2, maxnfe3) {
    plot(x,HV,type='b',col='red',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
 }
 
-principal(16, 36, 100, 40)
+#x <- seq(1, 65, 1)
+#Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
+#Delta <- Delta[,2]
+#HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
+#HV <- HV[,2]
+#y1 <- min(Delta) - 0.002
+#y2 <- max(Delta) + 0.002
+#plot(x,Delta,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
 
-principal(33, 34, 2, 2)
+#y1 <- min(HV) - 0.002
+#y2 <- max(HV) + 0.002
+#plot(x,HV,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
 
-x <- seq(1, 65, 1)
-Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
-Delta <- Delta[,2]
-HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
-HV <- HV[,2]
-y1 <- min(Delta) - 0.002
-y2 <- max(Delta) + 0.002
-plot(x,Delta,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
+principal(33, 34, 10, 2)
 
-y1 <- min(HV) - 0.002
-y2 <- max(HV) + 0.002
-plot(x,HV,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
+principal(16, 36, 5000, 100)
 
