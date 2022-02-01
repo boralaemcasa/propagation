@@ -11,16 +11,39 @@ initialSol <- function(dimini, dimx) {
    clientes <- cbind(clientes, 0) # 4a coluna := N
    x <- matrix(0, dimx, 1) # ponto inicial do espaço
    x[dimx] <- dimini
-   N <- dimini
    jx <- 1e69
    while (jx > 0.5e69) {
+      N <- dimini
       posicao <- kmeans(N, clientes, sz, 4)
       for (i in 1:N) {
          x[i] <- posicao[i,1]
          x[i + N] <- posicao[i,2]
       }
+
+         N <- x[dimx]
+         atend <- matrix(0, sz, N)
+         for (i in 1:sz)
+            for (j in 1:N)
+               if (dist(clientes[i,], posicao[j,]) < dsup)
+                  atend[i,j] <- 1
+
+		 for (i in 1:sz) {
+		    soma <- sum(atend[i,])
+			if (soma == 0)
+			   x[2 * dimini + i] <- 0
+			else {
+			   while (T) {
+			      j <- sample(1:N, 1)
+				  if (atend[i,j] > 0.5)
+				     break
+			   }
+			   x[2 * dimini + i] <- j
+			}   
+		 }
+
       ret <- fobj(x,clientes,dimini,dimx)
       jx <- ret[[1]]
+      print("loop")
    }
    return(list(x,clientes))
 }
@@ -43,6 +66,7 @@ initialT <- function(x,clientes,sigma,nfe,dimini,dimx,maxnfe2) {
    i <- 0
    DeltaE <- matrix(0, nrow=N, ncol=1)
    for (k in 2:N) {
+       print(paste(dimini, "initialt k =", k))
        X[k,] <- neighbor(xbest,clientes,sigma,dimini,dimx)
        ret  <- fobj(X[k,],clientes,dimini,dimx)
        jX[k] <- ret[[1]]
@@ -126,10 +150,10 @@ kmeans <- function(k, M, linhas, index) {
 fobj <- function(x,clientes,dimini,dimx) {
    #clientes <- as.matrix(read.csv("clientes.csv", sep=",", header=FALSE))
    #clientes <- cbind(clientes, 0) # 4a coluna := N
-   minimo <- 1e69
-   min1 <- minimo
-   min2 <- minimo
-   min3 <- minimo
+   f <- 1e69
+   f1 <- f
+   f2 <- f
+   f3 <- f
    N <- x[dimx]
    posicao <- matrix(0, N, 3)
    for (i in 1:N) {
@@ -137,70 +161,36 @@ fobj <- function(x,clientes,dimini,dimx) {
       posicao[i,2] <- x[i + N]
    }
 
-   # Um cliente pode ser atendido <=> d < 85 metros. Gerar possibilidades.
-   atend <- matrix(0, sz, N)
-   for (i in 1:sz)
-     for (j in 1:N)
-        if (dist(clientes[i,], posicao[j,]) < dsup)
-           atend[i,j] <- 1
-
    # >= 95% * 500 = 475 têm suas demandas integralmente atendidas?
    naoAtendidas <- 0
    for (i in 1:sz)
-      if (sum(atend[i,]) < 1)
+      if (x[2*dimini + i] < 1)
          naoAtendidas <- naoAtendidas + 1
 
    if (naoAtendidas < 0.05 * sz) {
-      # atender. preencher 4a coluna com a próxima possibilidade.
-      ultima <- F
-      while (! ultima) {
-         ultima <- T
-         for (i in 1:sz) {
-            clientes[i,4] <- 0
-            for (j in 1:N)
-               if (atend[i,j] > 0.5) {
-                  clientes[i,4] <- j
-                  if (sum(atend[i,]) > 1) {
-                     ultima <- F
-                     atend[i,j] <- 0
-                  }
-                  break
-               }
+      # Cada ponto tem capacidade de 150 Mbps. Foi excedida?
+      excesso <- 1
+      somaDistancia <- 0
+      for (j in 1:N)
+         posicao[j,3] <- 0
+      for (i in 1:sz) {
+         j <- x[2*dimini + i]
+         if (j > 0) {
+            posicao[j,3] <- posicao[j,3] + clientes[i,3]
+            somaDistancia <- somaDistancia + dist(clientes[i,], posicao[j,])
          }
-         # Cada ponto tem capacidade de 150 Mbps. Foi excedida?
-         excesso <- 1
-         somaDistancia <- 0
-         for (j in 1:N)
-            posicao[j,3] <- 0
-         for (i in 1:sz) {
-            j <- clientes[i,4]
-            if (j > 0) {
-               posicao[j,3] <- posicao[j,3] + clientes[i,3]
-               somaDistancia <- somaDistancia + dist(clientes[i,], posicao[j,])
-            }
-         }
-         for (j in 1:N)
-            if (posicao[j,3] > maxc)
-               excesso <- excesso + posicao[j,3] - maxc
-
-         f1 <- N
-         f2 <- somaDistancia
-         f3 <- excesso
-         f <- f2 * f3
-         if (f < minimo) {
-            minimo <- f
-            min1 <- f1
-            min2 <- f2
-            min3 <- f3
-         }
-
-         # é a última possibilidade?
       }
+      for (j in 1:N)
+         if (posicao[j,3] > maxc)
+            excesso <- excesso + posicao[j,3] - maxc
+
+      f1 <- N
+      f2 <- somaDistancia
+      f3 <- excesso
+      f <- f2 * f3
    }
    
-   for (i in 1:sz)
-      x[2 * dimini + i] <- clientes[i,4]
-   return(list(minimo, min1, min2, min3, x))
+   return(list(f, f1, f2, f3, x))
 }
 
 neighbor <- function(x,clientes,sigma,dimini,dimx) {
@@ -230,6 +220,32 @@ neighbor <- function(x,clientes,sigma,dimini,dimx) {
             else if (y[i] > upper)
                y[i] <- upper
          } 
+
+         N <- x[dimx]
+         posicao <- matrix(0, N, 3)
+         for (i in 1:N) {
+            posicao[i,1] <- y[i]
+            posicao[i,2] <- y[i + N]
+         }
+         atend <- matrix(0, sz, N)
+         for (i in 1:sz)
+            for (j in 1:N)
+               if (dist(clientes[i,], posicao[j,]) < dsup)
+                  atend[i,j] <- 1
+
+		 for (i in 1:sz) {
+		    soma <- sum(atend[i,])
+			if (soma == 0)
+			   y[2 * dimini + i] <- 0
+			else {
+			   while (T) {
+			      j <- sample(1:N, 1)
+				  if (atend[i,j] > 0.5)
+				     break
+			   }
+			   y[2 * dimini + i] <- j
+			}   
+		 }
       #}
       ret <- fobj(y,clientes,dimini,dimx)
       jx <- ret[[1]]
@@ -272,12 +288,15 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
 	# Gera solução inicial
 	for (dimini in dim1:dim2) {
 		depth <- dimini - dim1 + 1
+		print(paste(dimini, "initialsol"))
 		ret <- initialSol(dimini,dimx)
 		x[,depth] <- ret[[1]]
 		clientes <- ret[[2]]
 
 		# Define temperatura inicial
+		print(paste(dimini, "initialt"))
 		ret <- initialT(x[,depth],clientes,sigma,nfe[depth],dimini,dimx,maxnfe2)
+		print(paste(dimini, "next"))
 		to[depth] <- ret[[1]]
 		x[,depth] <- ret[[2]]
 		jx[depth] <- ret[[3]]
@@ -305,6 +324,7 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
 
 	# Critério de parada
 	for (dimini in dim1:dim2) {
+            print(paste("nfe", t(nfe)))
 		depth <- dimini - dim1 + 1
 		while (nfe[depth] <= maxnfe) {
 			if ((numEstagiosEstagnados[depth] <= 10) && (nfe[depth] <= maxnfe)) {
@@ -460,20 +480,19 @@ principal <- function(dim1, dim2, maxnfe, maxnfe2) {
    plot(x,HV,type='b',col='red',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
 }
 
-#x <- seq(1, 65, 1)
+#x <- seq(1, 2125, 1)
 #Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
 #Delta <- Delta[,2]
 #HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
 #HV <- HV[,2]
 #y1 <- min(Delta) - 0.002
 #y2 <- max(Delta) + 0.002
-#plot(x,Delta,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
+#plot(x,Delta,type='l',col='blue',xlim=c(0,2125),ylim = c(y1,y2),xlab='x',ylab='y')
 
 #y1 <- min(HV) - 0.002
 #y2 <- max(HV) + 0.002
-#plot(x,HV,type='l',col='blue',xlim=c(0,65),ylim = c(y1,y2),xlab='x',ylab='y')
+#plot(x,HV,type='l',col='blue',xlim=c(0,2125),ylim = c(y1,y2),xlab='x',ylab='y')
 
-principal(33, 34, 10, 2)
+#principal(33, 34, 10, 2)
 
 principal(16, 36, 5000, 100)
-
