@@ -280,7 +280,8 @@ SAreal <- function(dimini,dimx,maxnfe) {
    
    # Critério de parada
    while ((numEstagiosEstagnados <= 10) && (nfe < maxnfe)) {
-         
+      print(paste("nfe1", nfe))   
+      print(paste("numEstagiosEstagnados ", numEstagiosEstagnados ))   
       # Critérios para mudança de temperatura
       numAceites <- 0
       numTentativas <- 0
@@ -289,6 +290,9 @@ SAreal <- function(dimini,dimx,maxnfe) {
       fevalin <- jxbest
    
       while ((numAceites < 12*dimx) && (numTentativas < 100*dimx) && (nfe < maxnfe)) {
+         print(paste("nfe2", nfe))   
+         print(paste("numAceites", numAceites))   
+         print(paste("numTentativas", numTentativas))   
          
          # Gera uma solução na vizinhança de x
          y <- neighbor(xbest,clientes,sigma,dimini,dimx)
@@ -392,7 +396,7 @@ principal <- function(dimini, maxnfe) {
    }
 }
 
-principal(34, 50)
+principal(34, 10)
 
 for (i in 17:33)
    principal(i, 5000)
@@ -420,8 +424,9 @@ ponto <- matrix(0, nrow=m, ncol=4)
 for (i in 1:m) {
    s <- paste("valorDist", toString(i + 15), ".csv", sep="")
    v <- as.matrix(read.csv(s, sep=",", header=TRUE)) 
-   ponto[i,1] <- v[1,2]
-   ponto[i,2] <- v[2,2]
+   v <- t(v)
+   ponto[i,1] <- v[2,5000]
+   ponto[i,2] <- v[3,5000]
 }
 ponto[,3] <- ponto[,1]/max(ponto[,1])
 ponto[,4] <- ponto[,2]/max(ponto[,2])
@@ -453,3 +458,16 @@ for (i in 2:5)
    A[i] <- (ref[1] - ponto[i,1]) * (ponto[i - 1,2] - ponto[i,2])
 HV <- sum(A)
 HV
+
+x <- seq(1, 97, 1)
+Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
+Delta <- Delta[,2]
+HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
+HV <- HV[,2]
+y1 <- min(Delta) - 0.002
+y2 <- max(Delta) + 0.002
+plot(x,Delta,type='l',col='blue',xlim=c(0,97),ylim = c(y1,y2),xlab='x',ylab='y')
+
+y1 <- min(HV) - 0.002
+y2 <- max(HV) + 0.002
+plot(x,HV,type='l',col='blue',xlim=c(0,97),ylim = c(y1,y2),xlab='x',ylab='y')
