@@ -1,4 +1,4 @@
-setwd("V:\\sem backup\\_1 OTIMIZACAO MULTIOBJETIVO\\_tc")
+setwd("V:\\sem backup\\_1 OTIMIZACAO MULTIOBJETIVO\\_tc\\S5")
 rm(list=ls())
 
 sz <- 500
@@ -405,19 +405,19 @@ principal(36, 5000)
 principal(34, 5000)
 principal(16, 5000)
 
- Mx1 <- 0
- Mx2 <- upper
- My1 <- 0
- My2 <- upper
- dev.off()
- for(i in 1:N) {
-   plot(posicao[i,1],posicao[i,2],type = 'b', pch=1, col='blue',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
-   par(new=T)
- }
- for(i in 1:sz) {
-   plot(clientes[i,1],clientes[i,2],type = 'b', pch=1, col='blue',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
-   par(new=T)
- }
+Mx1 <- 0
+Mx2 <- upper
+My1 <- 0
+My2 <- upper
+dev.off()
+for(i in 1:N) {
+  plot(posicao[i,1],posicao[i,2],type = 'b', pch=1, col='blue',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
+  par(new=T)
+}
+for(i in 1:sz) {
+  plot(clientes[i,1],clientes[i,2],type = 'b', pch=1, col='blue',xlim=c(Mx1,Mx2),ylim = c(My1,My2),xlab='x',ylab='y')
+  par(new=T)
+}
 
 m <- 36 - 15
 ponto <- matrix(0, nrow=m, ncol=4)
@@ -459,15 +459,17 @@ for (i in 2:5)
 HV <- sum(A)
 HV
 
-x <- seq(1, 97, 1)
+xlim <- 5000 - 126 + 1
+x <- seq(1, xlim, 1)
 Delta <- as.matrix(read.csv("delta.csv", sep=",", header=TRUE)) 
-Delta <- Delta[,2]
+Delta <- Delta[126:5000,2]
 HV <- as.matrix(read.csv("hv.csv", sep=",", header=TRUE)) 
-HV <- HV[,2]
+HV <- HV[126:5000,2]
 y1 <- min(Delta) - 0.002
 y2 <- max(Delta) + 0.002
-plot(x,Delta,type='l',col='blue',xlim=c(0,97),ylim = c(y1,y2),xlab='x',ylab='y')
+plot(x,Delta,type='l',col='blue',xlim=c(0,xlim),ylim = c(y1,y2),xlab='Época',ylab='Delta')
 
-y1 <- min(HV) - 0.002
-y2 <- max(HV) + 0.002
-plot(x,HV,type='l',col='blue',xlim=c(0,97),ylim = c(y1,y2),xlab='x',ylab='y')
+y1 <- min(HV) - 0.0002
+y2 <- max(HV) + 0.0002
+plot(x,HV,type='l',col='blue',xlim=c(0,xlim),ylim = c(y1,y2),xlab='Época',ylab='HV')
+

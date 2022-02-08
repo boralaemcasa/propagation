@@ -15,7 +15,8 @@ initialSol <- function(dimini, dimx) {
    N <- dimini
    jx <- 1e69
    while (jx > 0.5e69) {
-      posicao <- kmeans(N, clientes, sz, 4)
+      atendidos <- sample(1:sz, 0.95 * sz)
+      posicao <- kmeans(N, clientes[atendidos,], 0.95 * sz, 4)
       for (i in 1:N) {
          x[i] <- posicao[i,1]
          x[i + N] <- posicao[i,2]
@@ -375,7 +376,7 @@ SAreal <- function(dim1, dim2, maxnfe, maxnfe2) {
 
 principal <- function(dim1, dim2, maxnfe, maxnfe2) {
    pontos <- SAreal(dim1, dim2, maxnfe, maxnfe2)
-   #dim1 <- 16
+   #dim1 <- 15
    #dim2 <- 36
    #maxnfe <- 5000
    N <- dim2 - dim1 + 1
@@ -443,11 +444,12 @@ principal <- function(dim1, dim2, maxnfe, maxnfe2) {
    write.csv(HV, file="hv.csv")
    y1 <- min(Delta,HV) - 0.002
    y2 <- max(Delta,HV) + 0.002
-   plot(x,Delta,type='b',col='blue',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
+   plot(x,Delta,type='l',col='blue',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
    par(new=T)
-   plot(x,HV,type='b',col='red',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
+   plot(x,HV,type='l',col='red',xlim=c(0,maxnfe),ylim = c(y1,y2),xlab='x',ylab='y')
 }
 
 #principal(33, 34, 3, 2)
 
-principal(16, 36, 5000, 100)
+principal(15, 16, 5000, 100)
+
