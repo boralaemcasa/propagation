@@ -184,7 +184,7 @@
   opts(11) = 0 ;                 % 11)-Number of Function Gradient Evaluations.                                     
   opts(12) = 0;                  % 12)-Number of Constraint Evaluations.                                            
   opts(13) = 0; % opts(13)= nec; % 13)-Number of equality constraints.                                              
-  opts(14) = 1000;               % 14)-Maximum number of function evaluations. (Default is 100*number of variables) 
+  opts(14) = Opts.MaxIter;       % 14)-Maximum number of function evaluations. (Default is 100*number of variables) 
   opts(15) = 500;                % 15)-Used in goal attainment for special objectives.                              
   opts(16) = 1e-08 ; % or 0;     % 16)-Minimum change in variables for finite difference gradients.                 
   opts(17) = Inf;                % 17)-Maximum change in variables for finite difference gradients.                 

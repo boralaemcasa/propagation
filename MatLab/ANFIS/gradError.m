@@ -1,50 +1,39 @@
 function [d, g] = gradError(x)
     g = 0;
-    global a;
-    nPontos = int64(a(1));
-    nGaussianas = int64(a(2));
-    nVariaveis = a(3);
+    global nG;
+    global nV;
+    global X;
+    global Y;
+    nPontos = length(X(:,1));
     i = 1;
-    for j = 1:nGaussianas
-		for v = 1:nVariaveis
+    for j = 1:nG
+		for v = 1:nV
             c(j,v) = x(i);
             i = i + 1;
         end
     end
     dc = 0 * c;
-    for j = 1:nGaussianas
-		for v = 1:nVariaveis
+    for j = 1:nG
+		for v = 1:nV
             sigma(j,v) = x(i);
             i = i + 1;
         end
     end
     dsigma = 0 * sigma;
-    for j = 1:nGaussianas
-		for v = 1:nVariaveis
+    for j = 1:nG
+		for v = 1:nV
             p(j,v) = x(i);
             i = i + 1;
         end
     end
     dp = 0 * p;
-    for j = 1:nGaussianas
+    for j = 1:nG
 		q(j) = x(i);
         i = i + 1;
     end
     dq = 0 * q;
-    i = 4;
-    for j = 1:nPontos
-        for v = 1:nVariaveis
-        	X(j,v) = a(i);
-            i = i + 1;
-        end
-    end
-    for j = 1:nPontos
-		ydt(j) = a(i);
-        i = i + 1;
-    end
-    
-	ResultOmega = zeros(nGaussianas,1);
-	Resultz = zeros(nGaussianas,1);
+	ResultOmega = zeros(nG,1);
+	Resultz = zeros(nG,1);
 	Resultys = zeros(1,nPontos);
 	ysd = zeros(nPontos,1);
 	tmp = 0;
@@ -53,32 +42,35 @@ function [d, g] = gradError(x)
 	for k = 1:nPontos
 		ysn = 0;
 		ysd(k) = 0;
-		for j = 1:nGaussianas
+		for j = 1:nG
 			ResultOmega(j) = 1.0;
 			Resultz(j) = q(j);
-			for v = 1:nVariaveis
+			for v = 1:nV
 				tmp = gauss(X(k, v), c(j, v), sigma(j, v));
 				ResultOmega(j) = ResultOmega(j) * tmp;
 				tmp = p(j, v) * X(k, v);
 				Resultz(j) = Resultz(j) + tmp;
 			end;
+            if ResultOmega(j) == 0
+                ResultOmega(j) = 1;
+            end
 			tmp = ResultOmega(j) * Resultz(j);
 			ysn = ysn + tmp;
 			ysd(k) = ysd(k) + ResultOmega(j);
 		end;
 
 		Resultys(1,k) = ysn / ysd(k);
-        error = error + (ydt(k) - Resultys(1,k))^2;
+        error = error + 0.5 * (Y(k) - Resultys(1,k))^2;
 
-        for j = 1:nGaussianas
+        for j = 1:nG
             dysdwj = Resultz(j) - Resultys(1,k);
             dysdwj = dysdwj/ysd(k);
             dysdyj = ResultOmega(j);
-            dedys = Resultys(1,k) - ydt(k);
+            dedys = Resultys(1,k) - Y(k);
     %         if normalizar
     %             dedys = dedys/abs(dedys);
     %         end ;
-            for v = 1:nVariaveis
+            for v = 1:nV
                 sq = sigma(j, v)^2;
                 cub = sigma(j, v)^3;
                 difx = X(k, v) - c(j, v);
@@ -102,25 +94,25 @@ function [d, g] = gradError(x)
 
         d = 0;
         i = 1;
-        for j = 1:nGaussianas
-            for v = 1:nVariaveis
+        for j = 1:nG
+            for v = 1:nV
                 d(i) = dc(j,v);
                 i = i + 1;
             end
         end
-        for j = 1:nGaussianas
-            for v = 1:nVariaveis
+        for j = 1:nG
+            for v = 1:nV
                 d(i) = dsigma(j,v);
                 i = i + 1;
             end
         end
-        for j = 1:nGaussianas
-            for v = 1:nVariaveis
+        for j = 1:nG
+            for v = 1:nV
                 d(i) = dp(j,v);
                 i = i + 1;
             end
         end
-        for j = 1:nGaussianas
+        for j = 1:nG
             d(i) = dq(j);
             i = i + 1;
         end

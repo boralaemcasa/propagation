@@ -19,12 +19,6 @@ function [objape, objc, objq, objp, objsigma, objSaidays, error] = calcularAPE(x
 		end;
 	end;
 
-    global a;
-    a = nPontosT;
-    a(2) = nGaussianas;
-    a(3) = nVariaveis;
-    lb = 0;
-    ub = 0;
     x0 = 0;
     i = 1;
     for j = 1:nGaussianas
@@ -57,17 +51,15 @@ function [objape, objc, objq, objp, objsigma, objSaidays, error] = calcularAPE(x
         %ub(i) = UB(4);
         i = i + 1;
     end
-    i = 4;
-    for j = 1:nPontosT
-        for v = 1:nVariaveis
-        	a(i) = xt(j,v);
-            i = i + 1;
-        end
-    end
-    for j = 1:nPontosT
-		a(i) = ydt(j);
-        i = i + 1;
-    end
+    
+    global nG;
+    global nV;
+    global X;
+    global Y;
+    nG = nGaussianas;
+    nV = nVariaveis;
+    X = xt;
+    Y = ydt;
     
 %     A = [];
 %     b = [];
@@ -80,18 +72,14 @@ function [objape, objc, objq, objp, objsigma, objSaidays, error] = calcularAPE(x
 %     x = fmincon(@testeError,x0,A,b,Aeq,beq,lb,ub,[],options);
 
     options.Display='iter';
-    options.MaxIter= 50;
+    options.MaxIter = 1000;
     options.TolFun = 5e-5;
     options.TolX   = 1e-3;
     options.ComplexStep     = 'on';
     options.DerivativeCheck = 'on';
     [xopt,fopt] = sqp_MODIF(@testeError,x0,options,[],[],@gradError);% complex step
     
-    j = size(xopt,2);
-    for i = 1:size(xopt,2)
-        error(i) = testeError(xopt(:,j));
-        j = j - 1;
-    end
+    error = testeError(xopt(:,1));
     x = xopt(:,1);
     i = 1;
     for j = 1:nGaussianas

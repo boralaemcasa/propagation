@@ -18,6 +18,9 @@ function [ResultOmega, Resultz, Resultys] = calcularSaidaError(X, nVariaveis, nG
 				tmp = p(j, v) * X(k, v);
 				Resultz(j) = Resultz(j) + tmp;
 			end;
+            if ResultOmega(j) == 0
+                ResultOmega(j) = 1;
+            end
 			tmp = ResultOmega(j) * Resultz(j);
 			ysn = ysn + tmp;
 			ysd(k) = ysd(k) + ResultOmega(j);

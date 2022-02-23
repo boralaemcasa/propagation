@@ -7,7 +7,4 @@ function r = gauss(x, c, sigma)
     temp2 = temp1*temp1;
     temp1 = -0.5 * temp2;
     r = exp(temp1);
-    if r == 0
-        r = 1;
-    end
 end

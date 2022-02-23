@@ -14,7 +14,7 @@ if nProblema == 1
     delta = 4/500;
     xt=(xit:delta:xft)' ;
     ydt = xt.^2;
-    xv = (xit:delta/2:xft)';
+    xv = (xit+delta/2:delta:xft-delta/2)';
     ydv = xv.^2;
 end
 
@@ -138,16 +138,17 @@ disp(max(xt));
 [ape, c, q, p, sigma, ys, trainError] = calcularAPE(xt, xv, ydt, ydv, nVariaveis, nGaussianas);
 fprintf("trainError = %f; ape = %f\n", trainError(end), ape);
 
-plot(xv,ydv,xv,ys);
+if nVariaveis == 1
+    plot(xv,ydv,xv,ys);
+else
+    index = (1:1:length(ys))';
+    plot(index,ydv,index,ys);
+end;
 
-figure
-index = (1:1:length(ys))';
-plot(index,ydv,index,ys);
+%figure
+%plot(index(1:500),ydv(1:500),index(1:500),ys(1:500));
 
-figure
-plot(trainError);
-
-c
-p
-q
-sigma
+% c
+% p
+% q
+% sigma
