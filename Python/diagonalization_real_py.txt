@@ -1,0 +1,114 @@
+from mpmath import *
+import numpy as np
+from numpy import linalg
+
+def power(x, y):
+   if (y / 2 == mp.floor(y / 2)) and (mp.im(x) == 0) and (mp.re(x) < 0):
+      return mp.exp(y * mp.ln(-x))
+   else:
+      return mp.exp(y * mp.ln(x))
+
+def my_round(x):
+   y = mp.fabs(x)
+   if mp.fabs(y - mp.floor(y)) < 0.5:
+      return mp.sign(x) * mp.floor(y)
+   else:
+      return mp.sign(x) * mp.ceil(y)
+
+def my_int(x):
+   y = int(my_round(x))
+   return y
+
+def fatorial(x):
+   result = 1
+   while x > 1:
+     result = result * x
+     x = x - 1
+   return result
+
+def schmidt(V, n):
+   Delta = mp.zeros(n, n)
+   W = mp.zeros(n, n)
+
+   for k in range (0, n):
+      for i  in range (0, n):
+         W[i, k] = V[i, k]
+         for j in range (0, k):
+            W[i, k] = W[i, k] - Delta[j, k] * W[i, j]
+
+      # norma da coluna W[k]
+      Delta[k, k] = W[0, k] * W[0, k]
+      for i in range (1, n):
+         Delta[k, k] = Delta[k, k] + W[i, k] * W[i, k]
+      Delta[k, k] = mp.sqrt(Delta[k, k])
+
+      for i in range (0, n):
+         W[i, k] = W[i, k] / Delta[k, k]
+
+      if k < n - 1:
+         for i in range (0, k + 1):
+            # Delta[i][k + 1] = produtoInterno(V, k + 1, W, i, n);
+            Delta[i, k + 1] = V[0, k + 1] * W[0, i]
+            for j in range (1, n):
+               Delta[i, k + 1] = Delta[i, k + 1] + V[j, k + 1] * W[j, i]
+
+   # neste momento V = Delta * W
+   # Delta triangular
+   # W ortogonal
+   return W
+
+def binom(n, p):
+   result = 1
+   for i in range(0, p):
+      result = result * (n - i) / (i + 1)
+   return result
+
+mp.dps = 20
+#n = 2
+#H = np.array([[0,1],[-1,-1]])
+n = 5
+H = np.array([[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1],[1,1,0,0,0]])
+L = linalg.eigvals(H)
+L = np.diag(L)
+V = np.zeros((n, n), dtype=complex)
+flag = False
+for i in range(0,n):
+   if flag:
+      flag = False
+   else:
+      a = np.real(L[i,i])
+      b = np.imag(L[i,i])
+      M = H - L[i,i] * np.identity(n)
+      A = np.zeros((n-1,n-1), dtype=complex) # I've dropped the last column and the last row. You might choose another randomic one!
+      B = np.zeros((n-1,1), dtype=complex)
+      for u in range (0,n-1):
+         for v in range (0,n-1):
+            A[u,v] = M[u,v]
+            B[u] = - M[u,n-1] # I've replaced the last column by 1 => AC + 1 M = 0 => C = A^{-1} * (-1 M).
+      C = np.dot(linalg.inv(A), B)
+      for u in range (0,n-1):
+         V[u,i] = C[u]
+      V[n-1,i] = 1
+      if b != 0:
+         L[i,i] = a
+         L[i+1,i] = -b
+         L[i,i+1] = b
+         L[i+1,i+1] = a
+         flag = True
+         for u in range (0,n-1):
+            V[u,i+1] = np.imag(V[u,i])
+            V[u,i] = np.real(V[u,i])
+        
+W = linalg.inv(V)
+V = np.real(V)
+L = np.real(L)
+W = np.real(W)
+print("V", V)
+print("L", L)
+print("W", W)
+print("H =", np.dot(np.dot(V, L), W))
+
+# Release 0.1 from 2022/Mar/18th
+# Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
+# out of charity, there is no salvation at all.
+# with charity, there is evolution.
