@@ -3,6 +3,7 @@
 \usepackage{amssymb} %mathbb
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{colortbl}
 \usepackage[latin1]{inputenc}
 
 \begin{document}
@@ -10,7 +11,7 @@
 \Large
 
 \begin{center}
-Sistemas Nebulosos
+\href{https://www.youtube.com/watch?v=2E0TYW42x1c}{\color{blue}\underline{Sistemas Nebulosos 1}}
 \end{center}
 
 \normalsize
@@ -61,28 +62,6 @@ $q_2[k+1] = q_2[k] - \beta e \mu_2$
 \textbf{(III)}
 
 \textbf{Para todo u, existe i(u). Queremos uma curva que comece da origem e estabilize em y = constante no menor $t = t_0$ poss\'ivel. Vou dar exemplos de degraus suaves:}
-
-\begin{align}
-  2 \le t \le 3 \Rightarrow f_1(t) &= \cfrac{1}{1 - t} \Rightarrow -1 < y < -0.5 \\
-  2 \le t \le 10 \Rightarrow f_2(t) &= \ln(t + 2) \Rightarrow 1.4 < y < 2.4 \\
-  0 \le t \le 2 \Rightarrow f_3(t) &= 1 - \exp(-t) \Rightarrow 0 < y < 0.8
-\end{align}
-
-\textbf{Agora eu exijo que todas as derivadas \`a esquerda e \`a direita sejam zero, como no degrau-rampa-degrau.}
-
-\begin{align}
-  0 \le t \le 2 \Rightarrow f_4(t) &= \exp(-1/t) \Rightarrow 0 < y < 0.6 \\
-  a \le t \le a + 1 \Rightarrow f_5(t) &= \exp(-1/(t - a)) \Rightarrow 0 < y < 0.36 \\
-  a \le t \le b \Rightarrow f_6(t) &= \int_a^t \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < y < f_6(b)
-\end{align}
-
-\textbf{Esta \'ultima \'e crescente. Calcule o limite quando b tende a $a$.}
-
-\begin{align}
-  a \le t \le b \Rightarrow g(t) &= \cfrac{f_6(t)}{f_6(b)} (M - g_0) + g_0 \Rightarrow g_0 < y < M \\
-  a \le t \le b \Rightarrow f_7(t) &= \int_t^b \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < f_7(a) \to y \to 0 \\
-  a \le t \le b \Rightarrow h(t) &= \cfrac{f_7(t)}{f_7(a)} (M - h_0) + h_0 \Rightarrow h_0 < M \to y \to h_0
-\end{align}
 
 \vspace{3mm}
 

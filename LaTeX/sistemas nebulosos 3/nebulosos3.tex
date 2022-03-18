@@ -3,6 +3,7 @@
 \usepackage{amssymb} %mathbb
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{colortbl}
 \usepackage[latin1]{inputenc}
 \usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
 
@@ -11,82 +12,12 @@
 \Large
 
 \begin{center}
-Sistemas Nebulosos
+\href{https://www.youtube.com/watch?v=2E0TYW42x1c}{\color{blue}\underline{Sistemas Nebulosos 3}}
 \end{center}
 
 \normalsize
 
 \vspace{3mm}
-
-\section{Degraus Suaves [de]Crescentes}
-
-\begin{flushleft}
-Entrada: $u(t)$ \\
-Sa\'ida: $i(t)$
-\end{flushleft}
-
-$u = Ri + L\, \cfrac{di}{dt}$
-
-Varia\c{c}\~ao de Par\^ametros: $y' + p(t) y = q(t) \Rightarrow y = \exp(-\int p) \left[ \int \exp (\int p) q \,\mathrm{d}t + C \right]$
-
-$y \leftarrow i$
-
-$p(t) \leftarrow R/L \Rightarrow \int p = Rt/L$
-
-$q(t) \rightarrow u/L$
-
-Portanto,
-
-\begin{align}
- i(u(t)) &= \exp(-Rt/L) \left[ \int (\exp Rt/L) u/L \,\mathrm{d}t + C \right] \\
- i(u(t)) &= \cfrac{1}{L \alpha^t} \left[ \int \alpha^t u \,\mathrm{d}t + C \right]
-\end{align}
-
-Outras restri\c{c}\~oes:
-
-$u \leftarrow u[k]$
-
-$u[k] \leftarrow \mu_1 q_1[k] + \mu_2 q_2[k]$
-
-$q_1[k+1] = q_1[k] - \beta e \mu_1$
-
-$q_2[k+1] = q_2[k] - \beta e \mu_2$
-
-\vspace{3mm}
-
-\textbf{(II)}
-
-Se beta, mu\_i variarem com k, podemos pegar os pontos $(q_1, q_2)[k] = P_k \in \mathbb{R}^2$ e interpolar. No caso de polin\^omios: $P_0, P_1$ fazem reta de primeiro grau, $P_0, \cdots, P_n$ tem grau n.
-
-\vspace{3mm}
-
-\textbf{(III)}
-
-Para todo u, existe i(u). Queremos uma curva que comece da origem e estabilize em y = constante no menor $t = t_0$ poss\'ivel. Vou dar exemplos de degraus suaves:
-
-\begin{align}
-  2 \le t \le 3 \Rightarrow f_1(t) &= \cfrac{1}{1 - t} \Rightarrow -1 < y < -0.5 \\
-  2 \le t \le 10 \Rightarrow f_2(t) &= \ln(t + 2) \Rightarrow 1.4 < y < 2.4 \\
-  0 \le t \le 2 \Rightarrow f_3(t) &= 1 - \exp(-t) \Rightarrow 0 < y < 0.8
-\end{align}
-
-Agora eu exijo que todas as derivadas \`a esquerda e \`a direita sejam zero, como no degrau-rampa-degrau.
-
-\begin{align}
-  0 \le t \le 2 \Rightarrow f_4(t) &= \exp(-1/t) \Rightarrow 0 < y < 0.6 \\
-  a \le t \le a + 1 \Rightarrow f_5(t) &= \exp(-1/(t - a)) \Rightarrow 0 < y < 0.36 \\
-  a \le t \le b \Rightarrow f_6(t) &= \int_a^t \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < y < f_6(b)
-\end{align}
-
-Esta \'ultima \'e crescente. Calcule o limite quando b tende a $a$.
-
-\begin{align}
-  a \le t \le b \Rightarrow g(t) &= \cfrac{f_6(t)}{f_6(b)} (M - g_0) + g_0 \Rightarrow g_0 < y < M \\
-  a \le t \le b \Rightarrow f_7(t) &= \int_t^b \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < f_7(a) \to y \to 0 \\
-  a \le t \le b \Rightarrow h(t) &= \cfrac{f_7(t)}{f_7(a)} (M - h_0) + h_0 \Rightarrow h_0 < M \to y \to h_0
-\end{align}
-
-Conclus\~ao: o valor ideal que queremos \'e dado ou por $g(t)$ ou por $h(t)$.
 
 \section{Controlador RL de primeira ordem}
 

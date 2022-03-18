@@ -3,6 +3,7 @@
 \usepackage{amssymb} %mathbb
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{colortbl}
 \usepackage[latin1]{inputenc}
 \usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
 
@@ -11,7 +12,7 @@
 \Large
 
 \begin{center}
-Sistemas Nebulosos
+\href{https://www.youtube.com/watch?v=2E0TYW42x1c}{\color{blue}\underline{Sistemas Nebulosos 2}}
 \end{center}
 
 \normalsize
@@ -144,51 +145,6 @@ Vamos dividir em 3 casos.
 \begin{align}
   - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q
 \end{align}
-
-\section{Controlador RLC de segunda ordem}
-
-\begin{flushleft}
-Se o erro for proporcional como vimos na simula\c{c}\~ao em MatLab, basta repetir a invers\~ao. \\
-Vamos trocar a equa\c{c}\~ao 20 por
-\end{flushleft}
-
-\begin{align}
- u_{ref} &= R i_{ref} + L \cfrac{d}{dt} i_{ref} + \int_{t_0}^t \cfrac{i_{ref}(\tau)}{C}\, \mathrm{d}\tau + K\,;\,u_{ref}(t_0) = 0 \\
-  \cfrac{d}{dt} u_{ref} &= R \cfrac{d}{dt} i_{ref} + L \cfrac{d^2}{dt^2} i_{ref} + \cfrac{1}{C}i_{ref}
-\end{align}
-
-Basta resolver a equa\c{c}\~ao diferencial $y'' = a y + b y' + c, a = -\cfrac{1}{LC}, b = - \cfrac{R}{L}, c = \cfrac{u_{ref}}{L}$.
-
-\begin{align}
- y' &= z \\
- z' &= ay + bz + c \\
- \begin{pmatrix} y \\ z \end{pmatrix}' &= \begin{pmatrix} 0 & 1 \\ a & b \end{pmatrix}\begin{pmatrix} y \\ z \end{pmatrix} + \begin{pmatrix} 0 \\ c \end{pmatrix} \\
- Y' &= P Y + Q \\
- Y &= e^{-tP} \int_{t_0}^t e^{\tau P} Q(\tau)\, \mathrm{d}\tau + Y(t_0)
-\end{align}
-
-\begin{align}
-e^{tP} &= \begin{pmatrix} f(t) & g(t) \\ p(t) & q(t) \end{pmatrix} \\
- Y &= \cfrac{1}{L} \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix} \int_{t_0}^t \begin{pmatrix} f(\tau) & g(\tau) \\ p(\tau) & q(\tau) \end{pmatrix} \begin{pmatrix} 0 \\ u_{ref}(\tau) \end{pmatrix} \mathrm{d}\tau + Y(t_0) \\
- v(t) &= \int_{t_0}^t g(\tau) u_{ref}(\tau) \,\mathrm{d}\tau \\
- w(t) &= \int_{t_0}^t q(\tau) u_{ref}(\tau) \,\mathrm{d}\tau \\
- Y &= \cfrac{1}{L} \begin{pmatrix} f(-t) & g(-t) \\ p(-t) & q(-t) \end{pmatrix}  \begin{pmatrix} v(t) \\ w(t) \end{pmatrix} + Y(t_0) \\
- y(t) &= \cfrac{f(-t)v(t) + g(-t)w(t)}{L}  + y(t_0)
-\end{align}
-
-\section{Controlador Iterado}
-
-\begin{flushleft}
-Entrada: $u(t)$ \\
-Sa\'ida: $y(t)$ \\
-Regra:
-\end{flushleft}
-
-\begin{align}
-y(k) &= 1.4 y(k-1) - 0.6 y(k-2) - 3 u^3(k -1) + 2u(k-1) - u^3(k-2) + 2u(k-2)
-\end{align}
-
-Ser\'a poss\'ivel inverter?
 
 \vspace{3mm}
 
