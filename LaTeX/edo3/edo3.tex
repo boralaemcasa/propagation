@@ -3,6 +3,7 @@
 \usepackage{amssymb} %mathbb
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{colortbl}
 \usepackage[latin1]{inputenc}
 \usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
 
@@ -11,127 +12,14 @@
 \Large
 
 \begin{center}
-Sistemas Nebulosos 7 | Resum\~ao \& E.D.O.
+\href{https://www.youtube.com/watch?v=BKfWfz4Bah8&list=UUdcL3nma0HpYkWFH52YE06Q}{\color{blue}\underline{Sistemas Nebulosos 7 | Resum\~ao \& E.D.O.}}
 \end{center}
 
 \normalsize
 
 \vspace{3mm}
 
-\section{Degraus Suaves [de]Crescentes}
-
-Exijimos que todas as derivadas \`a esquerda e \`a direita sejam zero, como no degrau-rampa-degrau.
-
-\begin{align}
-  a \le t \le b \Rightarrow f_6(t) &= \int_a^t \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < y < f_6(b) \\
-  a \le t \le b \Rightarrow g(t) &= \cfrac{f_6(t)}{f_6(b)} (M - g_0) + g_0 \Rightarrow g_0 < y < M \\
-  a \le t \le b \Rightarrow f_7(t) &= \int_t^b \exp\left(\cfrac{1}{(x - a) (x - b)}\right)\,\mathrm{d}x \Rightarrow 0 < f_7(a) \to y \to 0 \\
-  a \le t \le b \Rightarrow h(t) &= \cfrac{f_7(t)}{f_7(a)} (M - h_0) + h_0 \Rightarrow h_0 < M \to y \to h_0
-\end{align}
-
-Conclus\~ao: o valor ideal que queremos \'e dado ou por $g(t)$ ou por $h(t)$.
-
-\section{Controlador RL de primeira ordem}
-
-\begin{align}
-  h &= 0,001\,;\,0 \le k \le 23000 h\,;\,a = 1 \le x \le 24 = 8b
-\end{align}
-
-Pela soma de Riemann,
-
-\begin{align}
-  i(u)(k) &= e^{-R/L (a + hk)}\cfrac{1}{L}\sum_{n > 0}^k e^{R/L (a + hn)} u(n) h \\  \mu &:= \mu_1 \Rightarrow \mu_2 = 1 - \mu \\
-  i_{ref}(\mathbb{Z}) &= \text{degrau restrito} \\
-  e &= i - i_{ref} \\
-  e(k) &\le - E_1 \Rightarrow \mu(k) = 1 \\
-  e(k) &\ge E_2 \Rightarrow \mu(k) = 0 \\
-  - E_1 &\le e(k) \le E_2 \Rightarrow \mu(k) = p e(k) + q \\
-  u_{ref} &= R i_{ref} + L \cfrac{d}{dt} i_{ref} \\
-  \Delta u &= u - u_{ref}
-\end{align}
-
-Para cada alfa, conseguimos $| \Delta u | < \delta \Rightarrow | e | < \epsilon$. [Provar.]
-
-A primeira quest\~ao \'e se podemos inverter. Para \'epsilon = 0,08, ser\'a que o valor de alfa = 1 vai for\c{c}ar que o delta de entrada seja 2,5 e portanto garantir que o m\'odulo do erro de sa\'ida seja sempre menor que \'epsilon???
-
-\textbf{Conjectura 1: }$\alpha = 1 \Rightarrow |\Delta u| < 2,5 \Rightarrow |e| < 0,08$.
-
-\textbf{Conjectura 2: }$ |\Delta u| < 2,5\cdot \alpha \Rightarrow |e| < 0,08\cdot \alpha $.
-
-\textbf{Conjectura 3: }$ |\Delta u| < \delta \Rightarrow |e| < 0,032\cdot \delta$.
-
-\begin{align}
-u(k+1) &= \mu_k q_1(k+1) + (1 - \mu_k) q_2(k+1) \\
-&= \mu_k \sum_n \alpha \mu_n e + (1 - \mu_k) \sum_n \alpha (1 - \mu_n) e
-\end{align}
-
-\begin{align}
-u(i)(k+1) &= \sum_{n = 0}^k \alpha \varphi(n,k) [i(n) - i_{ref}(n)] \\
-\varphi(n, k) &= 2 \mu_n \mu_k + 1 - \mu_k - \mu_n
-\end{align}
-
-A equa\c{c}\~ao 6 passa de u para i. Combinamos com a equa\c{c}\~ao 17, que passa de i para u.
-
-\begin{align}
-i &\to i(k+ 1) = e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \alpha \varphi(n,m-1) [i(n) - i_{ref}(n)] h \\
-u &\to u(k + 1) = \sum_{m = 0}^k \alpha \varphi(m,k) \bigg[e^{-R/L (a + hm)}\cfrac{1}{L}\sum_{n > 0}^m e^{R/L (a + hn)} u(n) h - i_{ref}(m)\bigg]
-\end{align}
-
-Seja $\mu$ medido em Volts. Para $\alpha$ = 1 Watt$^{-1}$, $\epsilon = 0,08V \cdot \alpha$ em Amp\`ere.
-
-(Aqui supomos um alfa constante. E se for um alfa para cada $k$?)
-
-Queremos propor\c{c}\~ao direta, ou seja:
-
-\begin{align}
-  \cfrac{|i - i_{ref}|}{\alpha} &< M \\
-  \left\vert e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \sum_{n = 0}^{m - 1} \underbrace{\varphi(n,m-1)}_{<4} [i(t_n) - i_{ref}(t_n)] h - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \underbrace{\sum_{n = 0}^{m - 1} [i(t_n) - i_{ref}(t_n)]}_{<\text{ integral}} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le
-\end{align}
-
-\footnotesize
-
-\begin{align}
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + \int_a^{a + h(m - 1)} \underbrace{[i(t) - i_{ref}(t)]}_{\text{T.Fund.C\'alculo}} \mathrm{d}t \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L}\sum_{m > 0}^{k + 1} e^{R/L (a + hm)}  \left\{ i(a) - i_{ref}(a) + [I(a + hm - h) - I_{ref}(a + hm - h)] - [I(a) - I_{ref}(a)] \right\} - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=
-\end{align}
-
-\normalsize
-
-\begin{align}
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\sum_{m > 0}^{k + 1} e^{f(m)} [p(m) + q]}_{<\text{ integral}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &\le  \\
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} \underbrace{\int_0^{k + 2} e^{f(m)} [p(m) + q] \,\mathrm{d}m}_{\text{T.Fund.C\'alculo}}  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &=  \\
-  \left\vert 4h e^{-R/L (a + hk + h)}\cfrac{1}{L} [G(k+2) - G(0)]  - \cfrac{1}{\alpha} \cdot i_{ref}(t_{k+1}) \right\vert &< M
-\end{align}
-
-\begin{align}
-  - M < A - \cfrac{B}{\alpha} &< M \\
-  - M\alpha < A\alpha - B &< M \alpha \\
-  (- M - A)\alpha < - B &< (M - A) \alpha \\
-  \cfrac{B}{A + M} &< \alpha < \cfrac{B}{A - M}
-\end{align}
-
-Nossa fun\c{c}\~ao \'e bem simples.
-
-\begin{align}
- f(x) &= A - \cfrac{B}{x} \\
- f(0+) &= - \infty \\
- f(\infty) &= A \\
- f(x) &= - M \Rightarrow Ax - B = - Mx \therefore x_{min} = \cfrac{B}{A + M} \\
- f\bigg(\cfrac{B}{A - M}\bigg) &= M \Leftarrow M < A \Rightarrow x_{max} = \cfrac{B}{A - M} \\
- \\
- M \ge A &\Rightarrow x_{max} = \infty
-\end{align}
-
-Agora, na linha 21, $\epsilon = M\alpha $. Come\c{c}amos dele. PARA TODO $\epsilon > 0$, EXISTE $\alpha(\epsilon) > 0$.
-
-Queremos $M(\epsilon) > 0$.
-
-\begin{align}
- \alpha &= \cfrac{\epsilon}{M} > \cfrac{B}{A + M} \\
- \cfrac{BM - \epsilon(A+M)}{A+M} &< 0 \\
- M_1 &= - A \,;\, M_2 = \cfrac{A \epsilon}{B - \epsilon}
-\end{align}
+\section{Preliminares}
 
 Caso $B - \epsilon > 0$, a par\'abola vira para cima. $M$ est\'a entre $M_1$ e $M_2$.
 
