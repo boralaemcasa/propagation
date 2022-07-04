@@ -1,0 +1,19 @@
+function ydot=dvCord2(y,u,t,G,m1,m2)
+% z1 = x1
+% z2 = x2
+% z3 = x1'
+% z4 = x2'
+% z1' = z3
+% z2' = z4
+% m z3' = -x1/|x| v^2/r 
+% m z4' = -x2/|x| v^2/r
+
+ydot(1) = 0;
+ydot(2) = 0;
+ydot(3) = 0;
+ydot(4) = 0;
+ydot(5) = y(7);
+ydot(6) = y(8);
+ydot(7) = -y(5) / norm(y(5:6)) * norm(y(7:8))^2/G/m1; % G * m1 * m2 / m1 * (y(6) - y(5))/norm(y(5:6) - y(1:2))^3;
+ydot(8) = -y(6) / norm(y(5:6)) * norm(y(7:8))^2/G/m1; % G * m1 * m2 / m2 * (y(5) - y(6))/norm(y(5:6) - y(1:2))^3;
+ydot = ydot';

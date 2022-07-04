@@ -1,0 +1,139 @@
+close all;
+clear all;
+clc;
+
+n = 500;
+t = 1:1:n;
+
+Phi=[0.8 -0.4 0.2;0 0.3 -0.5;0 0 0.5];
+Gama=[0 0; 0 -0.5 ;0.5 0];
+Upsilon=eye(3);
+H=[0.5 0.5 0; 0 0 1];
+
+nu = randn(1,n);
+nu = nu - mean(nu);
+nu = nu/std(nu);
+
+% w = ruído de processo
+% cov w = sw I
+sw = 0.05;
+
+% v = ruído de medição
+% cov v = sv I
+sv = 0.2;
+
+% b
+sw = 0.2;
+sv = 0.05;
+
+v = randn(2,n);
+w = randn(3,n);
+v = v - mean(v);
+v = v./std(v) * sqrt(sv);
+w = w - mean(w);
+w = w./std(w) * sqrt(sw);
+
+u = [0; 0];
+for k = 2:n
+    u(1, k) = 0.5 * u(1, k - 1) + nu(k);
+    u(2, k) = 0.9 * nu(k - 1) + nu(k);
+end;
+
+x = zeros(3,1);
+y = zeros(2,1);
+for k = 1:n-1
+    x(:,k + 1) = Phi * x(:,k) + Gama * u(:, k) + Upsilon * w(:, k);
+    y(:,k + 1) = H * x(:, k) + v(:, k);
+end;
+
+figure(1)
+plot(t, y(1,:));
+set(gca,'FontSize',16)
+ylabel('y_1')
+xlabel('k')
+
+figure(2)
+plot(t, y(2,:));
+set(gca,'FontSize',16)
+ylabel('y_2')
+xlabel('k')
+
+%% filtragem de Kalman
+
+% inicializacao
+hat_x_ma(:,1)=[0;0;0];
+P_ma=1e2*eye(3);
+
+
+
+
+% equacoes do filtro
+% nomenclatura
+% hat_x_me => x chapeu menos (media da distribuicao a priori)
+% P_me => P menos (covariancia da distribuicao a priori)
+% hat_x_ma => x chapeu mais (media da distribuicao a posteriori)
+% P_ma => P mais (covariancia da distribuicao a posteriori)
+% Phim, Gamam e Hm sao as matrizes do modelo implementado no filtro.
+% Usaremos valores levemente diferentes de Phi, Gama e H para representar
+% erros de modelagem. O modelo permanece constante ao longo do experimento,
+% pois o sistema eh invariante no tempo.
+
+q=0.1;Q=eye(3)*sw;
+r=0.1;R=eye(2)*sv;
+Phim=[0.8+q*randn(1,1) -0.4 0.2;0 0.3+q*randn(1,1) -0.5;0 0 0.5+q*randn(1,1)];
+Gamam=[0 0+q*randn(1,1);0 -0.5+q*randn(1,1);0.5+q*randn(1,1) 0];
+Upsilonm=(1+q)*eye(3);
+Hm=[0.5-0.05 0.5-0.1 0; 0 0 1-0.1];
+
+Phi=[0.8 -0.4 0.2;0 0.3 -0.5;0 0 0.5];
+Gama=[0 0; 0 -0.5 ;0.5 0];
+Upsilon=eye(3);
+H=[0.5 0.5 0; 0 0 1];
+
+% Equacoes de (9.34)
+for k=1:n-1
+    hat_x_me(:,k+1)=Phim*hat_x_ma(:,k)+Gamam*u(:,k);
+    P_me=Phim*P_ma*Phim' + Upsilonm*Q*Upsilonm';
+    K=P_me*Hm'*inv(Hm*P_me*Hm'+R);
+    % inovacao 
+    eta(:,k+1)=y(:,k+1)-Hm*hat_x_me(:,k+1);
+    hat_x_ma(:,k+1)=hat_x_me(:,k+1)+K*eta(:,k+1);
+    P_ma=P_me-K*Hm*P_me;
+    % traco de P_ma
+    traco(k)=trace(P_ma);
+end
+
+figure(3)
+plot(eta(1,:))
+set(gca,'FontSize',16)
+ylabel('\eta_1')
+
+figure(4)
+plot(eta(2,:))
+set(gca,'FontSize',16)
+ylabel('\eta_2')
+
+figure(5)
+plot(log10(traco(1:50)))
+set(gca,'FontSize',16)
+xlabel('k')
+ylabel('tr(P)')
+
+    
+figure(6)
+plot(1:n,x(1,1:n),'k',1:n,hat_x_ma(1,1:n),'b--');
+set(gca,'FontSize',16)
+ylabel('x_1^+')
+xlabel('k')
+
+figure(7)
+plot(1:n,x(2,1:n),'k',1:n,hat_x_ma(2,1:n),'b--');
+set(gca,'FontSize',16)
+ylabel('x_2^+')
+xlabel('k')
+
+figure(8)
+plot(1:n,x(3,1:n),'k',1:n,hat_x_ma(3,1:n),'b--');
+set(gca,'FontSize',16)
+ylabel('x_3^+')
+xlabel('k')
