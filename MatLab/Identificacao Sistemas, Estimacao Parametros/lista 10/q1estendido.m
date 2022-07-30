@@ -50,7 +50,7 @@ for rep = 1:200
     y = zeros(2,1);
     for k = 1:n-1
         x(:,k + 1) = Phi * x(:,k) + Gama * u(:, k) + Upsilon * w(:, k);
-        y(:,k + 1) = H * x(:, k) + v(:, k);
+        y(:,k + 1) = H * x(:, k + 1) + v(:, k);
     end;
 
     if rep == 1
