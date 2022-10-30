@@ -13,3 +13,4 @@ git checkout c31acd156c
 pip install sklearn
 pip install rmdl
 pip install sympy
+pip install xlrd
