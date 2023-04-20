@@ -25,8 +25,8 @@ implementation
 
 procedure TFormPrincipal.FormActivate(Sender: TObject);
 var f: TextFile;
-  i, n, j: integer;
-  origem, destino, bat: string;
+  i, n, j, k, L: integer;
+  origem, destino, bat, saida, conjini, conjfim, conjmeio, conjrand, numero: string;
   inicio, multiplicador: integer;
 begin
   //dir/b *.mp3 > lista.txt
@@ -48,6 +48,40 @@ begin
   until multiplicador >= 0;
 
   if not InputQuery('Diretório\Máscara', 'Caminho completo do arquivo:', origem) then exit;
+
+  destino := ExtractFilePath(Application.ExeName) + 'pini.txt';
+  if not FileExists(destino) then
+  begin
+    AssignFile(f, destino);
+    rewrite(f);
+    writeln(f, '0123456789_ -.');
+    CloseFile(f);
+  end;
+  memo.lines.loadfromfile(destino);
+  conjini := stringReplace(memo.text, #13#10, '', [rfReplaceAll]);
+
+  destino := ExtractFilePath(Application.ExeName) + 'pfim.txt';
+  if not FileExists(destino) then
+  begin
+    AssignFile(f, destino);
+    rewrite(f);
+    writeln(f, '0123456789 ()');
+    CloseFile(f);
+  end;
+  memo.lines.loadfromfile(destino);
+  conjfim := stringReplace(memo.text, #13#10, '', [rfReplaceAll]);
+
+  destino := ExtractFilePath(Application.ExeName) + 'pmeio.txt';
+  if not FileExists(destino) then
+  begin
+    AssignFile(f, destino);
+    rewrite(f);
+    writeln(f, '.');
+    CloseFile(f);
+  end;
+  memo.lines.loadfromfile(destino);
+  conjmeio := stringReplace(memo.text, #13#10, '', [rfReplaceAll]);
+
   deletefile(ExtractFilePath(origem) + 'num_tmp.txt');
   winexec(PChar('cmd /c dir/b "' + origem + '" > "' + ExtractFilePath(origem) + 'num_tmp.txt"'), SW_HIDE);
   repeat
@@ -57,6 +91,7 @@ begin
   //if not FileExists(origem) then exit;
   //if not InputQuery('Arquivo de Destino', 'Caminho completo do arquivo:', destino) then exit;
   bat := ExtractFilePath(origem) + 'num_tmp.bat';
+  saida := ExtractFilePath(origem) + 'saida.txt';
   //destino := paramstr(2);
   //if FileExists(destino) then exit;
 
@@ -69,6 +104,7 @@ begin
     writeln(f, origem[2] + ':');
   writeln(f, 'cd ' + ExtractFilePath(origem));
   n := 0;
+  conjrand := '';
   for i := 0 to memo.Lines.Count - 1 do
   begin
     inc(n);
@@ -76,22 +112,54 @@ begin
     //  inc(n, 2);
     origem := memo.lines[i];
     j := 1;
-    while origem[j] in ['0'..'9', '_', ' ', '-','.'] do
+    while pos(origem[j], conjini) > 0 do
       inc(j);
     if multiplicador = 0 then
-      destino := ''
+      numero := ''
     else
     begin
-      destino := inttostr(inicio + i);
-      while length(destino) < 4 do
-        destino := '0' + destino;
+      repeat
+        numero := inttostr(inicio + random(memo.lines.count));
+        while length(numero) < 4 do
+          numero := '0' + numero;
+      until pos(numero + ' ', conjrand) = 0;
+      conjrand := conjrand + numero + ' ';
     end;
 
-    destino := destino + extractfileext(origem);
-    writeln(f, 'ren "' + origem + '" "' + destino + '"');
+    destino := copy(origem, j, length(origem));
+    if pos('.', destino) = 0 then
+      destino := '.' + destino;
+    L := pos('.', destino);
+    k := length(destino);
+    if L > 0 then
+    begin
+      while destino[k] <> '.' do
+        dec(k);
+      dec(k);
+    end;
+    if k > 0 then
+      while pos(destino[k], conjfim) > 0 do
+      begin
+        delete(destino, k, 1);
+        dec(k);
+        if k = 0 then
+           break;
+      end;
+    if k > 0 then
+      while pos(destino[k], conjmeio) > 0 do
+      begin
+        if (k > 1) or (destino[1] <> '.') then
+          delete(destino, k, 1);
+        dec(k);
+        if k = 0 then
+          break;
+      end;
+
+    writeln(f, 'ren "' + origem + '" "' + numero + destino + '.numerar"');
   end;
+  writeln(f, 'ren *.numerar *.');
   CloseFile(f);
-  winexec(PChar('cmd /c "' + bat + '"'), SW_HIDE);
+  winexec(PChar('cmd /c "' + bat + '" > "' + saida + '"'), SW_HIDE);
   application.Terminate;
 end;
 
