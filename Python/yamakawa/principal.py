@@ -13,7 +13,7 @@ def normalize(array, min, max):
     return [(x - min) / (max - min) for x in array]
 
 def load_deathvalleyavg(normalized=1, n=12):
-    xls = pd.ExcelFile("../../dados/DeathValleyAvg.xls")
+    xls = pd.ExcelFile("DeathValleyAvg.xls")
     sheetx = xls.parse(0)
 
     # Preparing x
@@ -81,7 +81,6 @@ wsup = 0
 alpha = 0
 xa = 0
 out_fis,trainError,incertTrein,xit, xft, gamma, winf, wsup, alpha, xa = fsYamakawa.anfis_yamakawa(xt, ydt, xit, xft, constMaxEpocas, constNFuncPertinencia, constEpsilon,h,gamma,winf,wsup,alpha,xa)
-print("T error", trainError, "incerteza", incertTrein)
 ys, muinf, musup = fsYamakawa.evalfis_yamakawa(out_fis,xv)
 nPontos = np.shape(xv)[0]
 vinf = ydv - ys[:,0]

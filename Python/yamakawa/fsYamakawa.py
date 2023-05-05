@@ -4,7 +4,13 @@ class TTemp:
     def setXit(self, xit):
         self.xit = xit
     
-def anfis_yamakawa(x, yd, xit, xft, nEpocas, nFuncPertinencia, constEpsilon, h, gamma, winf, wsup, alpha, xa):
+def anfis_yamakawa(x, yd, xitp, xftp, nEpocas, nFuncPertinencia, constEpsilon, h, gammap, winfp, wsupp, alphap, xap):
+    xit = np.copy(xitp)
+    xft = np.copy(xftp)
+    gamma = np.copy(gammap)
+    winf = np.copy(winfp)
+    wsup = np.copy(wsupp)
+    xa = np.copy(xap)
     error = np.zeros(nEpocas)
     incerteza = np.zeros(nEpocas)
     minError = np.inf
@@ -215,7 +221,8 @@ def metodoYamakawa2(nVariaveis, xt, ydt, constPCA, batelada=0):
     
     return cols
 
-def metodoYamakawaOtimo(nVariaveis, xt, ydt, constPCA, batelada=0):
+def metodoYamakawaOtimo(nVariaveis, xt, ydtp, constPCA, batelada=0):
+    ydt = np.copy(ydtp)
     H, s = np.shape(xt)
     constNFuncPertinencia = 10
 
@@ -267,3 +274,60 @@ def metodoYamakawaOtimo(nVariaveis, xt, ydt, constPCA, batelada=0):
     for i in range(0,m):
         cols[i] = idx[i,0]
     return cols
+
+def anfis_yamakawaOtimo(xt, ydtp, constNFuncPertinencia):
+    ydt = np.copy(ydtp)
+    H, nVariaveis = np.shape(xt)
+    constNFuncPertinencia = 10
+
+    xit = np.zeros(nVariaveis)
+    xft = np.zeros(nVariaveis)
+    for i in range(0,nVariaveis):
+        xit[i] = np.min(xt[:,i])
+        xft[i] = np.max(xt[:,i])
+    
+    gamma = np.zeros(nVariaveis)
+    for v in range(0, nVariaveis):
+        gamma[v] = (xft[v] - xit[v])/(constNFuncPertinencia - 1)
+        if gamma[v] == 0:
+            gamma[v] = 1
+    
+    jj = np.zeros(nVariaveis, int)
+    A = np.zeros((H, nVariaveis * constNFuncPertinencia))
+    for h in range(0, H):
+        M = np.zeros((nVariaveis, constNFuncPertinencia))
+        mujj = np.zeros(nVariaveis)
+        for v in range(0,nVariaveis):
+            jj[v] = np.floor((xt[h,v] - xit[v])/gamma[v]) + 1
+            if jj[v] > constNFuncPertinencia - 1:
+                jj[v] = constNFuncPertinencia - 1
+            elif jj[v] < 1:
+                jj[v] = 1
+            xa = xit[v] + (jj[v]-2)*gamma[v]
+            mujj[v] = 1/gamma[v] * (xa + 2*gamma[v] - xt[h,v])
+            M[v,jj[v]-1] = mujj[v]
+            M[v,jj[v]] = 1 - mujj[v]
+        A[h,:] = M.reshape(1, nVariaveis * constNFuncPertinencia)
+
+    wt = np.asmatrix(np.linalg.pinv(A))
+    ydt = np.asmatrix(ydt.reshape(H, 1))
+    wt = wt * ydt
+    wt = wt.reshape(nVariaveis, constNFuncPertinencia)
+    out = TTemp
+    out.xit = xit
+    out.nFuncPertinencia = constNFuncPertinencia
+    out.epsilon = 0
+    out.gamma = gamma
+    if nVariaveis == 0:
+       out.yConst = np.mean(ydt)
+    out.winf = np.copy(wt)
+    out.wsup = np.copy(wt)
+    
+    incert = 0
+    ys, mu1, mu2 = evalfis_yamakawa(out, xt)
+    ysavg = (ys[:,0] + ys[:,1])/2
+    error = np.zeros(H)
+    for i in range(0,H):
+        error[i] = abs((ydt[i] - ysavg[i])/ydt[i]) * 100
+    
+    return out, error, incert
