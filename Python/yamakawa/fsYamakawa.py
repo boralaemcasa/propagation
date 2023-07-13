@@ -58,8 +58,8 @@ def anfis_yamakawa(x, yd, xitp, xftp, nEpocas, nFuncPertinencia, constEpsilon, h
                     jj[v] = nFuncPertinencia - 1
                 elif jj[v] < 1:
                     jj[v] = 1
-                xa[v] = xit[v] + (jj[v]-2)*out.gamma[v]
-                mujj[v] = 1/out.gamma[v] * (xa[v] + 2*out.gamma[v] - x[k,v])
+                xa = xit[v] + (jj[v]-1)*out.gamma[v]
+                mujj[v] = 1/out.gamma[v] * (xa[v] - x[k,v]) + 1
                 mujjinf[v] = np.max((mujj[v] - out.epsilon, 0))
                 mujjsup[v] = np.min((mujj[v] + out.epsilon, 1))
                 ystinf[k] = ystinf[k] + mujjinf[v] * out.winf[v,jj[v]-1] + (1 - mujjinf[v]) * out.winf[v,jj[v]]
@@ -110,8 +110,8 @@ def evalfis_yamakawa(out, x):
                     jj[v] = out.nFuncPertinencia - 1
                 elif jj[v] < 1:
                     jj[v] = 1
-                xa = out.xit[v] + (jj[v]-2)*out.gamma[v]
-                mujj[v] = 1/out.gamma[v] * (xa + 2*out.gamma[v] - x[k,v])
+                xa = out.xit[v] + (jj[v]-1)*out.gamma[v]
+                mujj[v] = 1/out.gamma[v] * (xa - x[k,v]) + 1
                 mujjinf[v] = np.max((mujj[v] - out.epsilon, 0))
                 mujjsup[v] = np.min((mujj[v] + out.epsilon, 1))
                 ysv[k,0] = ysv[k,0] + mujjinf[v] * out.winf[v,jj[v]-1] + (1 - mujjinf[v]) * out.winf[v,jj[v]]
@@ -249,8 +249,8 @@ def metodoYamakawaOtimo(nVariaveis, xt, ydtp, constPCA, batelada=0):
                 jj[v] = constNFuncPertinencia - 1
             elif jj[v] < 1:
                 jj[v] = 1
-            xa = xit[v] + (jj[v]-2)*gamma[v]
-            mujj[v] = 1/gamma[v] * (xa + 2*gamma[v] - xt[h,v])
+            xa = xit[v] + (jj[v]-1)*gamma[v]
+            mujj[v] = 1/gamma[v] * (xa - xt[h,v]) + 1
             M[v,jj[v]-1] = mujj[v]
             M[v,jj[v]] = 1 - mujj[v]
         A[h,:] = M.reshape(1, s * constNFuncPertinencia)
@@ -303,8 +303,8 @@ def anfis_yamakawaOtimo(xt, ydtp, constNFuncPertinencia):
                 jj[v] = constNFuncPertinencia - 1
             elif jj[v] < 1:
                 jj[v] = 1
-            xa = xit[v] + (jj[v]-2)*gamma[v]
-            mujj[v] = 1/gamma[v] * (xa + 2*gamma[v] - xt[h,v])
+            xa = xit[v] + (jj[v]-1)*gamma[v]
+            mujj[v] = 1/gamma[v] * (xa - xt[h,v]) + 1
             M[v,jj[v]-1] = mujj[v]
             M[v,jj[v]] = 1 - mujj[v]
         A[h,:] = M.reshape(1, nVariaveis * constNFuncPertinencia)
