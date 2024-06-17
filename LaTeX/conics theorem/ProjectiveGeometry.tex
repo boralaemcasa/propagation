@@ -1,0 +1,399 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University Assignment Title Page 
+% LaTeX Template
+% Version 1.0 (27/12/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Title_Creation)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+% Instructions for using this template:
+% This title page is capable of being compiled as is. This is not useful for 
+% including it in another document. To do this, you have two options: 
+%
+% 1) Copy/paste everything between \begin{document} and \end{document} 
+% starting at \begin{titlepage} and paste this into another LaTeX file where you 
+% want your title page.
+% OR
+% 2) Remove everything outside the \begin{titlepage} and \end{titlepage} and 
+% move this file to the same directory as the LaTeX file you wish to add it to. 
+% Then add \input{./title_page_1.tex} to your LaTeX file where you want your
+% title page.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Title page with logo}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[portuguese]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\numberwithin{table}{section}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{acronym}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{units}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{setspace}
+\usepackage{wasysym}
+\usepackage{esint}
+\usepackage{tikz-cd}
+\usepackage[colorlinks = true,
+            linkcolor = red, % acrônimos
+            urlcolor  = blue,
+            citecolor = coolblack,
+            anchorcolor = yellow]{hyperref}
+%\usepackage[numbers]{natbib}
+\usepackage[abbrvnat]{natbib}
+\newcommand\citeay[1]{%
+%  \citeauthor{#1}~[\citeyear{#1}]}
+    \cite{#1}}
+\newcommand\citeayp[1]{%
+%  [\citeauthor{#1}, \citeyear{#1}]}
+    \citep{#1}}
+
+\usepackage{geometry}
+\bibliographystyle{abbrvnat}
+
+
+
+\geometry{verbose,a4paper,tmargin=30mm,bmargin=20mm,lmargin=30mm,rmargin=20mm}
+\begin{document}
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
+
+
+% PDF informations
+                  
+\setstretch{1.5}
+\newtheorem{definition}{Definição}
+\newcommand\LG{\mathord{\mathcal{L}}}
+\newcommand\LM{\mathord{\mathcal{L}}_m}
+
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.4mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\normalsize Universidade Federal de Minas Gerais}\\[0.05cm]
+\begin{figure}[!h]
+   \centering{
+   \includegraphics[scale=0.65]{ufmglogo.png} \\[0.5cm]
+   }
+ \end{figure} 
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Projective Geometry Again}\\[0.4cm] 
+\HRule \\[0.7cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+{\normalsize TEAM:
+\begin{itemize}
+    \item[] Vinicius Claudino Ferraz PPGEE-UFMG.
+\end{itemize}
+}
+
+
+$\,$\\[2.0cm]
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+%{\large \today} % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+%\includegraphics[width=0.5\textwidth]{ufmgLogo.jpg}
+%\includegraphics{ufmglogo.png}\\[1cm] %
+ 
+%----------------------------------------------------------------------------------------
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+% List of Acronyms Definition
+
+
+
+\section{The Conic Theorem}
+
+\begin{align}
+A &= X_1 X_5 \cap X_2 X_6 \\
+B &= X_1 X_4 \cap X_3 X_6 \\
+C &= X_2 X_4 \cap X_3 X_5 \in AB \label{eq3} \\
+A &= (0,0) \\
+B &= (0,a) \\
+X_1 &= (x_1, bx_1) \\
+X_5 &= (x_5, bx_5) \\
+X_2 &= (x_2, cx_2) \\
+X_6 &= (x_6, cx_6) \\
+X_4 &= (x_4, d(x_4 - a)) \\
+bx_1 &= d(x_1 - a) \Rightarrow d = \cfrac{b x_1}{x_1 - a} \\
+X_3 &= (x_3, e(x_3 - a)) \\
+cx_6 &= e(x_6 - a) \Rightarrow e = \cfrac{cx_6}{x_6 - a} \\
+\alpha x_1^2 + \beta (bx_1)^2 &= 1 \Rightarrow x_1^2 = \cfrac{1}{\alpha + \beta b^2} = \lambda \\
+\alpha x_2^2 + \beta (cx_2)^2 &= 1 \Rightarrow  x_2^2 =\cfrac{1}{\alpha + \beta c^2} = \xi\\  
+\alpha x_5^2 + \beta (bx_5)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \beta b^2} = \lambda \therefore x_5 = \epsilon_1 x_1 \\
+\alpha x_6^2 + \beta (cx_6)^2 &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \beta c^2} = \xi \therefore x_2 = \epsilon_6 x_6\\
+\alpha x_3^2 + \beta [e(x_3-a)]^2 &= 1 \Rightarrow e^2 = \cfrac{1 - \alpha x_3^2 }{\beta (x_3-a)^2} \label{eq18}\\
+\alpha x_4^2 + \beta [d(x_4-a)]^2 &= 1 \Rightarrow d^2 = \cfrac{1 - \alpha x_4^2 }{\beta (x_4-a)^2} \label{eq19}
+\end{align}
+
+\begin{align}
+&\text{Therefore:} \nonumber \\
+\cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \label{eq20} \\
+\cfrac{-\cfrac{cx_6}{x_6 - a}(x_3-a) x_5 + b x_5 x_3}{x_3 - x_5} &= \cfrac{-cx_2 x_4 + \cfrac{bx_1}{x_1 - a}(x_4-a) x_2}{x_2 - x_4} 
+\end{align}
+
+Below, we try to reduce that to $0x = 0$:
+
+The first intention is to eliminate $x_1$ and $x_6$.
+
+\begin{align}
+\zeta &= b x_3 x_5 (x_2 - x_4) + cx_2 x_4(x_3 - x_5) = \zeta_{51} x_5 + \zeta_{50} \\
+\zeta_{51} &= bx_2x_3 - b x_3x_4 - cx_2 x_4 \\
+\zeta_{50} &= cx_2 x_3 x_4 \\
+\eta &= (x_4-a) (x_3 - x_5) = \eta_{51} x_5 + \eta_{50} \\
+\eta_{51} &= a - x_4 \\
+\eta_{50} &= -x_3 (a - x_4)\\
+\kappa &= (x_3-a)^2 (x_2 - x_4)^2 =\kappa_{21} x_2 + \kappa_{20} \\
+\kappa_{21} &= - (x_3-a)^2 x_4\\
+\kappa_{20} &= (x_3-a)^2 x_4^2 + \xi (x_3-a)^2\\
+\eta^2 &= (\eta_{51} x_5 + \eta_{50})^2 = \hat A x_5 + \hat B \\
+\hat A &= 2\eta_{51}\eta_{50} \\
+\hat B &= \lambda \eta_{51}^2 + \eta_{50}^2\\
+\zeta^2 &= (\zeta_{51} x_5 + \zeta_{50})^2  = \hat C x_5 + \hat D\\
+\hat C &= 2\zeta_{51}\zeta_{50} \\
+\hat D &= \lambda \zeta_{51}^2 + \zeta_{50}^2 \\
+\mu &= 4\beta (x_3 - a)^4 (x_4 - a)^4(1 - \alpha x_4^2 ) \\
+\nu &= (1 - \alpha x_4^2)(x_3-a)^2(x_4-a)\\
+\pi &= \beta (x_3-a)^2(x_4-a)^3
+\end{align}
+\begin{align}
+\rho &= (1 - \alpha x_3^2 )(x_4-a)^3\\
+\kappa x_5^2 \underbrace{e^2} &= (\zeta - \eta x_2 \underbrace{d})^2 \\ 
+\kappa x_5^2 \cfrac{1 - \alpha x_3^2 }{\beta (x_3-a)^2} &= \eta^2 x_2^2 \cfrac{1 - \alpha x_4^2 }{\beta (x_4-a)^2} - 2 \zeta \eta x_2 \underbrace{d} + \zeta^2 \\
+ \mu \zeta^2 \eta^2 x_2^2  &= (\eta^2 x_2^2 \nu  + \pi \zeta^2 - \kappa x_5^2 \rho)^2 
+\end{align}
+
+They are already eliminated: $(d,e)$. Let us eliminate $x_5$ and, only partially, $x_2$.
+
+\begin{align}
+\xi \mu (\hat A x_5 + \hat B)(\hat C x_5 + \hat D)  &= \left[ \xi\nu (\hat A x_5 + \hat B)  + \pi (\hat C x_5 + \hat D) - \lambda \rho \kappa \right]^2 \\
+E x_5 + F  &= ( G x_5 + H )^2 = 2GH x_5 + \lambda G^2 + H^2 \\
+\lambda (E - 2GH)^2  &= \left(\lambda G^2 + H^2 - F\right)^2 \\
+E &= \xi \mu(\hat A\hat D + \hat B\hat C)\\
+F &= \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \beta b^2)] \\
+G &= \xi \nu \hat A + \pi \hat C \\
+H &= \xi \nu \hat B + \pi \hat D - \lambda \rho \kappa
+\end{align}
+
+Let us eliminate $x_2$ in $(\zeta,\kappa, \hat C, \hat D)$.
+
+\footnotesize
+
+\begin{align}
+&\lambda \left[\xi \mu(\hat A\hat D + \hat B\hat C) - 2\left(\xi \nu \hat A + \pi \hat C\right) \left(\xi \nu \hat B + \pi \hat D - \lambda \rho \kappa\right) \right]^2 = \nonumber\\
+&= \left\{\lambda \left(\xi \nu \hat A + \pi \hat C\right)^2 + \left(\xi \nu \hat B   + \pi \hat D - \lambda \rho \kappa\right) ^2 - \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \beta b^2)]\right\}^2 
+\end{align}
+
+\normalsize
+
+\begin{align}
+\kappa(x_2) &= \kappa_{21} x_2 + \kappa_{20}\\
+\hat C(x_2) &= 2(bx_2x_3 - b x_3x_4 - cx_2 x_4 )cx_2 x_3 x_4 = Ix_2 + J \\
+\hat D(x_2) &= \lambda (bx_2x_3 - b x_3x_4 - cx_2 x_4 )^2 + c^2x_2^2 x_3^2 x_4^2 = K x_2 + L \\
+I &= - 2b cx_3^2x_4^2\\
+J &= \xi (2bcx_3^2 x_4 - 2c^2 x_3 x_4^2)\\
+K &= \lambda (2bc x_3 x_4^2 - 2b^2x_3^2 x_4 )\end{align}
+\begin{align}
+L &= \lambda b^2 x_3^2 x_4^2 + \xi c^2x_3^2 x_4^2+\lambda \xi (bx_3 - c x_4)^2\\
+M &= \xi \mu(\hat AK  + \hat BI ) \\
+N &= \xi \mu(\hat AL + \hat BJ) \\
+P &= \pi I \\
+Q &= \xi \nu \hat A + \pi J \\
+R &= \pi K - \lambda \rho \kappa_{21}  \\
+S &=\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20} \\ 
+T &= - \lambda \xi \mu [\hat AI  + \hat BK  (\alpha + \beta b^2)]\\
+U &= - \lambda\xi \mu [\hat A J + \hat B L(\alpha + \beta b^2)]\\
+\lambda [Mx_2 + N &-2 (Px_2 + Q)(Rx_2 + S) ]^2  = [\lambda\left(Px_2 + Q\right)^2 + \left(Rx_2 + S\right) ^2 + T x_2 + U]^2 \\
+V &= M-2PS -2 QR\\
+W &= N -2\xi PR-2 QS \\
+Y &= 2\lambda VW\\
+Z &= \lambda\xi V^2 + \lambda W^2 \\
+\hat E &= 2\lambda PQ + 2RS + T\\
+\hat F &= \lambda\xi P^2 +\xi R^2 + \lambda Q^2 + S^2 + U \\
+Yx_2 + Z &= (\hat E x_2 + \hat F)^2 =  \xi \hat E^2 + \hat F^2 + 2\hat E\hat F x_2 \\
+\xi (Y - 2\hat E\hat F)^2 &= \left(\xi \hat E^2 + \hat F^2 - Z\right)^2 
+\end{align}
+
+We have an Equation in $\alpha, \beta, x_3, x_4, a, b, c$.
+
+The question is: is it an identity? Let us express it as a function of $(x_3,x_4) \equiv (x,y,z=x-a,w=y-a)$.
+
+\begin{align}
+Y &= 2\lambda (\xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \\
+& -2\xi \nu \pi \hat A K +2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J)(\xi \mu(\hat AL + \hat BJ) \\
+&-2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
+&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J)
+\end{align}
+
+Let us substitute from $L$ and above, until $\eta$.
+
+\begin{align}
+Y &= 2\lambda \{-2\bar e x^2 y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
+&-2 \bar f x^3 y w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
+&+ \lambda \bar\iota x^2 y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
+&+ \bar\iota x^4y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
+&-2\beta z^2w^3 \bar \iota x^2 y^2\biggl[\xi ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (\lambda w^2 + x^2 w^2) + \beta z^2w^3 (\bar a x^2 y^2 \\
+&+ \bar b x^2 + \bar c y^2 + \bar d xy) - \lambda (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)\biggl] \\
+& +4\beta\xi x z^2w^5( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)   (\bar e xy^2 + \bar f x^2 y) \\
+&+4 \lambda \xi xyz^2 w^2( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (w^3 - \alpha x^2 w^3)  \\
+&-2  \beta^2 z^4w^6 (\bar g xy^2 + \bar h x^2 y) (\bar e xy^2 + \bar f x^2 y) \\
+&-2 \lambda \beta y z^4w^3 (w^3 - \alpha x^2 w^3) (\bar g xy^2 + \bar h x^2 y)\} \cdot \\
+&\cdot \{\xi (\bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5)\biggl[-2xw^2(\bar a x^2 y^2 + \bar b x^2 
+\\&+ \bar c y^2 + \bar d xy ) + (\lambda w^2 + x^2 w^2)(\bar g xy^2 + \bar h x^2 y)\biggl] \\
+&-2\xi \beta z^2w^3 \bar \iota x^2 y^2\biggl[\beta z^2w^3 (\bar e xy^2 + \bar f x^2 y) + \lambda yz^2 (w^3 - \alpha x^2 w^3) \biggl]\\
+&+4\xi^2 xw^2 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)^{\color{red}2} (\lambda w^2 + x^2 w^2) \\
+&+4 \xi\beta x z^2w^5 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)  (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&-4 \lambda \xi xw^2( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)  \\
+&-2 \xi\beta z^2w^3 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)  (\lambda w^2 + x^2 w^2) (\bar g xy^2 + \bar h x^2 y) \\
+&-2 \beta^2 z^4w^6 (\bar g xy^2 + \bar h x^2 y) (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&+2 \lambda \beta z^2w^3 (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2) (\bar g xy^2 + \bar h x^2 y)\}
+\end{align}
+
+If we did not want to give it all up, we ``would'' have:
+
+\begin{align}
+Z &= \lambda\xi [\xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})  -2\xi \nu \pi \hat A K \\
+&+2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J]^2 + \lambda [\xi \mu(\hat AL + \hat BJ) \\
+&-2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
+&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J]^2 \\
+\hat E &= 2\lambda \pi I(\xi \nu \hat A + \pi J) + 2(\pi K - \lambda \rho \kappa_{21})(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})  \\
+&- \xi \mu (\lambda \hat AI  + \hat BK  )\\
+\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi \nu \hat A + \pi J)^2 + (\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})^2 \\
+&- \xi \mu (\lambda \hat A J + \hat B L) \\
+L &= \bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy \,;\,\bar a = \lambda b^2 + \xi c^2\,;\,\bar b = \lambda \xi b^2\,;\,\bar c = \lambda \xi c^2\,;\,\bar d = -2 \lambda \xi bc \\
+K &= \bar e xy^2 + \bar f x^2 y \,;\,\bar e = 2 \lambda bc \,;\,\bar f = -2\lambda b^2 \\
+J &= \bar g xy^2 + \bar h x^2 y \,;\,\bar g = -2\xi c^2 \,;\,\bar h = 2\xi bc \\
+I &= \bar \iota x^2 y^2 \,;\, \bar \iota = -2bc \\
+\kappa_{21} &= -yz^2 \\
+\kappa_{20} &= y^2 z^2 + \xi z^2\\
+\rho &= w^3 - \alpha x^2 w^3\\
+\pi &= \beta z^2w^3\\
+\nu &= z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2\,;\,\bar k = \alpha \cdot a\\
+\mu &= \bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5 \,;\,\bar \ell = 4\beta   -4\alpha\beta a^2 \,;\,\bar m = -4\alpha\beta \,;\,\bar n = - 8\alpha\beta a \\
+\hat B &= \lambda w^2 + x^2 w^2\\
+\hat A &= -2xw^2 \\
+\bar o &=
+\end{align}
+
+\newpage
+
+Below, let us explain the Equation (\ref{eq20}), expliciting C on Equation (\ref{eq3}).
+
+\begin{align}
+    \begin{pmatrix}
+        x_2 & 1 \\ x_4 & 1
+    \end{pmatrix}  
+    \begin{pmatrix}
+        a \\ b
+    \end{pmatrix} &=
+    \begin{pmatrix}
+        y_2 \\ y_4
+    \end{pmatrix} \Rightarrow 
+    \begin{pmatrix}
+        a \\ b
+    \end{pmatrix} = \cfrac{1}{x_2 - x_4}
+    \begin{pmatrix}
+        1 & -1 \\ -x_4 & x_2
+    \end{pmatrix}  
+    \begin{pmatrix}
+        y_2 \\ y_4
+    \end{pmatrix} \\
+    \begin{pmatrix}
+        x_3 & 1 \\ x_5 & 1
+    \end{pmatrix}  
+    \begin{pmatrix}
+        c \\ d
+    \end{pmatrix} &=
+    \begin{pmatrix}
+        y_3 \\ y_5
+    \end{pmatrix} \Rightarrow 
+    \begin{pmatrix}
+        c \\ d
+    \end{pmatrix} = \cfrac{1}{x_3 - x_5}
+    \begin{pmatrix}
+        1 & -1 \\ -x_5 & x_3
+    \end{pmatrix}  
+    \begin{pmatrix}
+        y_3 \\ y_5
+    \end{pmatrix} \\
+    ax + b &= cx + d \Rightarrow x = \cfrac{d-b}{a-c} = 0 \therefore d = b
+\end{align}
+
+\newpage
+
+\section{The Converse Conic Theorem}
+
+\begin{align}
+    A &= X_1 X_5 \cap X_2 X_6 \\
+    B &= X_1 X_4 \cap X_3 X_6 \\
+    C &= X_2 X_4 \cap X_3 X_5 \in AB \\
+    A &= (0,0) \\
+    B &= (0,a) \\
+    X_1 &= (x_1, bx_1) \\
+    X_5 &= (x_5, bx_5) \\
+    X_2 &= (x_2, cx_2) \\
+    X_6 &= (x_6, cx_6) \\
+    X_4 &= (x_4, d(x_4 - a) \\
+    bx_1 &= d(x_1 - a) \\
+    X_3 &== e(x_3 - a) \\
+    cx_6 &= e(x_6 - a) \\
+    \cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \\
+    \text{Então } \exists &P, \theta, \alpha, \beta, \gamma, \delta \in \{0, 1 \}\text{ tais que:} \nonumber \\
+    \alpha x_i^2 + \beta y_i^2 + x(y_i - \gamma x_i) &= \delta, \forall i \in \{1, 2, \cdots, 6\}
+\end{align}
+
+$\blacksquare$
+
+Out of charity, there is no salvation at all. With charity, we evolve.
+
+June, the 17th, 2024.
+%\clearpage
+
+%\bibliography{references.bib}
+\end{document}
