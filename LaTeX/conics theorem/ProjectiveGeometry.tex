@@ -265,46 +265,91 @@ We have an Equation in $\alpha, \beta, x_3, x_4, a, b, c$.
 The question is: is it an identity? Let us express it as a function of $(x_3,x_4) \equiv (x,y,z=x-a,w=y-a)$.
 
 \begin{align}
-Y &= 2\lambda (\xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \\
-& -2\xi \nu \pi \hat A K +2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J)(\xi \mu(\hat AL + \hat BJ) \\
-&-2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
-&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J)
+V &= \xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \\
+& -2\xi \nu \pi \hat A K +2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J\\
+W &= \xi \mu(\hat AL + \hat BJ) -2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
+&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J
 \end{align}
 
 Let us substitute from $L$ and above, until $\eta$.
 
 \begin{align}
-Y &= 2\lambda \{-2\bar e x^2 y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
-&-2 \bar f x^3 y w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
-&+ \lambda \bar\iota x^2 y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
-&+ \bar\iota x^4y^2 w^2(\xi\bar \ell z^4 w^4 + \xi\bar m z^4 w^6 + \xi\bar n z^4 w^5)\\
-&-2\beta z^2w^3 \bar \iota x^2 y^2\biggl[\xi ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (\lambda w^2 + x^2 w^2) + \beta z^2w^3 (\bar a x^2 y^2 \\
-&+ \bar b x^2 + \bar c y^2 + \bar d xy) - \lambda (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)\biggl] \\
-& +4\beta\xi x z^2w^5( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)   (\bar e xy^2 + \bar f x^2 y) \\
-&+4 \lambda \xi xyz^2 w^2( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (w^3 - \alpha x^2 w^3)  \\
-&-2  \beta^2 z^4w^6 (\bar g xy^2 + \bar h x^2 y) (\bar e xy^2 + \bar f x^2 y) \\
-&-2 \lambda \beta y z^4w^3 (w^3 - \alpha x^2 w^3) (\bar g xy^2 + \bar h x^2 y)\} \cdot \\
-&\cdot \{\xi (\bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5)\biggl[-2xw^2(\bar a x^2 y^2 + \bar b x^2 
-\\&+ \bar c y^2 + \bar d xy ) + (\lambda w^2 + x^2 w^2)(\bar g xy^2 + \bar h x^2 y)\biggl] \\
-&-2\xi \beta z^2w^3 \bar \iota x^2 y^2\biggl[\beta z^2w^3 (\bar e xy^2 + \bar f x^2 y) + \lambda yz^2 (w^3 - \alpha x^2 w^3) \biggl]\\
-&+4\xi^2 xw^2 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)^{\color{red}2} (\lambda w^2 + x^2 w^2) \\
-&+4 \xi\beta x z^2w^5 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)  (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&-4 \lambda \xi xw^2( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)  \\
-&-2 \xi\beta z^2w^3 ( z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2)  (\lambda w^2 + x^2 w^2) (\bar g xy^2 + \bar h x^2 y) \\
-&-2 \beta^2 z^4w^6 (\bar g xy^2 + \bar h x^2 y) (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&+2 \lambda \beta z^2w^3 (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2) (\bar g xy^2 + \bar h x^2 y)\}
+\nu^2 &= z^4 ( w - \alpha y^3 + \bar k y^2)^2 \\
+&= z^4 (w^2 + \alpha^2 y^6 + \bar k^2 y^4 - 2  \alpha y^3 w + 2 \bar k y^2 w - 2 \alpha \bar k y^5)
+\end{align}
+
+At this moment, we realize that we are next to a polynomial of a single variable, say $x$. Let us eliminate $z$.
+
+By inverse central projection, we ``should'' eliminate $\beta = \alpha > 0$.
+
+\begin{align}
+V[17] &= (x^5-4ax^4+6a^2x^3-4a^3x^2+a^4x) yw^2\biggl[-2\bar e x y (\xi\bar \ell w^4 + \xi\bar m w^6 + \xi\bar n w^5)\\
+&-2 \bar f x^2 (\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
+&+ \lambda \bar\iota x y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
+&+ \bar\iota x^3y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
+&-2\lambda\beta \bar \iota x yw^2 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) \\
+&-2\beta \bar \iota x^3y w^3 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) \\
+&- 2\beta \bar \iota x y\beta w^4 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \\
+&+2\lambda\beta \bar \iota x y  w^4 (y^2  + \xi )\\
+&- 2\beta \bar \iota \lambda \alpha x^3 y  w^4 (y^2  + \xi ) \\
+& +4\beta\xi \bar e xyw^3(  w - \alpha y^3  + \bar k y^2 ) \\
+& +4\beta\xi \bar f x^2 w^3(  w - \alpha y^3  + \bar k y^2 )  \\
+&+4\lambda \xi w^3(  w - \alpha y^3  + \bar k y^2 ) \\
+&- 4\lambda \xi \alpha 
+x^2 w^3(  w - \alpha y^3  + \bar k y^2) \\
+&-2\beta^2 \bar g y w^4(\bar e xy^2 + \bar f x^2 y) \\
+&-2\beta^2 \bar h x w^4(\bar e xy^2 + \bar f x^2 y) \\
+&-2 \lambda \beta w^4 (\bar g y^2 + \bar h x y) \\
+&+ 2 \lambda \beta \alpha x w^4 (\bar g xy^2 + \bar h x^2 y)\biggr]
+\end{align}
+
+\begin{align}
+W[26] &= (x^5-4ax^4+6a^2x^3-4a^4x+a^4x)\biggl[-2\xi w^2\bar a x^2 y^2(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
+&- 2\xi xw^2\bar b x(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
+&- 2\xi w^2\bar c y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
+&- 2\xi w^2\bar d xy (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
+&+ \xi \lambda w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
+&+ \xi \lambda w^2\bar h x y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
+&+ \xi x w^2\bar g xy^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)
+ \\
+&+ \xi x w^2\bar h x^2 y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
+&-2\xi \beta \bar \iota x y^2\beta w^6 (\bar e xy^2 + \bar f x^2 y) \\
+&- 2\xi \beta w^3 \bar \iota x \lambda y^3 (w^3 - \alpha x^2 w^3) \\
+&+4\lambda\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) \\
+&+4\xi^2 x^2w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k)  \\
+&+  4 \xi\beta w^6  (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&- 4 \xi\beta w^5\alpha y^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&+ 4 \xi\beta w^5\bar k y^2 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&+  w (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
+&- \alpha y^3  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
+&+ \bar k y^2  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
+&-2 \xi\beta w^3 \bar g y^2\lambda w^2 (  w - \alpha y^3  + \bar k y^2 )   \\
+&-2 \xi\beta w^3 \bar g y^2 x^2 w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
+&-2 \xi\beta w^3 \bar h x y\lambda w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
+&-2 \xi\beta w^3 \bar h x^3 y w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
+&-2 \beta^2 z^4w^6\bar g y^2 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&-2 \beta^2 z^4w^6\bar h x y (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
+&+ 2 \lambda \beta w^6 (y^2 \bar g y^2 + y^2 \bar h x y + \xi \bar g y^2 + \xi \bar h x y) \\
+&- 2 \lambda \beta \alpha x w^6 (y^2 \bar g xy^2 + y^2 \bar h x^2 y + \xi \bar g xy^2 + \xi \bar h x^2 y)\biggr]
 \end{align}
 
 If we did not want to give it all up, we ``would'' have:
 
 \begin{align}
-Z &= \lambda\xi [\xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})  -2\xi \nu \pi \hat A K \\
-&+2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J]^2 + \lambda [\xi \mu(\hat AL + \hat BJ) \\
-&-2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
-&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J]^2 \\
-\hat E &= 2\lambda \pi I(\xi \nu \hat A + \pi J) + 2(\pi K - \lambda \rho \kappa_{21})(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})  \\
+VW &= 17\cdot 26 = 442
+\end{align}
+
+\begin{align}
+Y &> 442^2 = 195364
+\end{align}
+
+\begin{align}
+V,W\Rightarrow Z&=\\
+S(\nu)&=\\
+Q(\nu)&=\\
+\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S}  \\
 &- \xi \mu (\lambda \hat AI  + \hat BK  )\\
-\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi \nu \hat A + \pi J)^2 + (\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20})^2 \\
+\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi {\color{red}\nu} \hat A + \pi J)^2 + (\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})^2 \\
 &- \xi \mu (\lambda \hat A J + \hat B L) \\
 L &= \bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy \,;\,\bar a = \lambda b^2 + \xi c^2\,;\,\bar b = \lambda \xi b^2\,;\,\bar c = \lambda \xi c^2\,;\,\bar d = -2 \lambda \xi bc \\
 K &= \bar e xy^2 + \bar f x^2 y \,;\,\bar e = 2 \lambda bc \,;\,\bar f = -2\lambda b^2 \\
@@ -323,7 +368,7 @@ I &= \bar \iota x^2 y^2 \,;\, \bar \iota = -2bc \\
 
 \newpage
 
-Below, let us explain the Equation (\ref{eq20}), expliciting C on Equation (\ref{eq3}).
+Below, let us explain the Equation (\ref{eq20}), expliciting $C$ on Equation (\ref{eq3}).
 
 \begin{align}
     \begin{pmatrix}
@@ -384,15 +429,19 @@ Below, let us explain the Equation (\ref{eq20}), expliciting C on Equation (\ref
     X_3 &== e(x_3 - a) \\
     cx_6 &= e(x_6 - a) \\
     \cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \\
-    \text{Então } \exists &P, \theta, \alpha, \beta, \gamma, \delta \in \{0, 1 \}\text{ tais que:} \nonumber \\
-    \alpha x_i^2 + \beta y_i^2 + x(y_i - \gamma x_i) &= \delta, \forall i \in \{1, 2, \cdots, 6\}
+    \text{Therefore, } \exists &\lambda\in\mathbb{R}^6\text{, such that:} \nonumber \\
+    \begin{pmatrix}
+        x_1^2 & y_1^2 & x_1 y_1 & x_1 & y_1 & 1 \\
+        \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+        x_6^2 & y_6^2 & x_6 y_6 & x_6 & y_6 & 1 
+    \end{pmatrix}\cdot \lambda &= 0
 \end{align}
 
 $\blacksquare$
 
 Out of charity, there is no salvation at all. With charity, we evolve.
 
-June, the 17th, 2024.
+June, the 19th, 2024.
 %\clearpage
 
 %\bibliography{references.bib}
