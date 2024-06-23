@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[portuguese]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage{indentfirst}
 \usepackage{amsmath}
 \numberwithin{table}{section}
 \usepackage{graphicx}
@@ -28,13 +29,7 @@
             anchorcolor = yellow]{hyperref}
 %\usepackage[numbers]{natbib}
 \usepackage[abbrvnat]{natbib}
-\newcommand\citeay[1]{%
-%  \citeauthor{#1}~[\citeyear{#1}]}
-    \cite{#1}}
-\newcommand\citeayp[1]{%
-%  [\citeauthor{#1}, \citeyear{#1}]}
-    \citep{#1}}
-
+\newcommand{\isParallel}{\mathbin{\!/\mkern-5mu/\!}}
 \usepackage{geometry}
 \bibliographystyle{abbrvnat}
 
@@ -132,16 +127,19 @@ X_4 &= (x_4, d(x_4 - a)) \\
 bx_1 &= d(x_1 - a) \Rightarrow d = \cfrac{b x_1}{x_1 - a} \\
 X_3 &= (x_3, e(x_3 - a)) \\
 cx_6 &= e(x_6 - a) \Rightarrow e = \cfrac{cx_6}{x_6 - a} \\
-\alpha x_1^2 + \beta (bx_1)^2 &= 1 \Rightarrow x_1^2 = \cfrac{1}{\alpha + \beta b^2} = \lambda \\
-\alpha x_2^2 + \beta (cx_2)^2 &= 1 \Rightarrow  x_2^2 =\cfrac{1}{\alpha + \beta c^2} = \xi\\  
-\alpha x_5^2 + \beta (bx_5)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \beta b^2} = \lambda \therefore x_5 = \epsilon_1 x_1 \\
-\alpha x_6^2 + \beta (cx_6)^2 &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \beta c^2} = \xi \therefore x_2 = \epsilon_6 x_6\\
-\alpha x_3^2 + \beta [e(x_3-a)]^2 &= 1 \Rightarrow e^2 = \cfrac{1 - \alpha x_3^2 }{\beta (x_3-a)^2} \label{eq18}\\
-\alpha x_4^2 + \beta [d(x_4-a)]^2 &= 1 \Rightarrow d^2 = \cfrac{1 - \alpha x_4^2 }{\beta (x_4-a)^2} \label{eq19}
+\alpha x_1^2 + \alpha (bx_1)^2 &= 1 \Rightarrow x_1^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \\
+\alpha x_2^2 + \alpha (cx_2)^2 &= 1 \Rightarrow  x_2^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi\\  
+\alpha x_5^2 + \alpha (bx_5)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \therefore x_5 = \epsilon_1 x_1 \\
+\alpha x_6^2 + \alpha (cx_6)^2 &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi \therefore x_2 = \epsilon_6 x_6\\
+\alpha x_3^2 + \alpha [e(x_3-a)]^2 &= 1 \Rightarrow e^2 = \cfrac{1 - \alpha x_3^2 }{\alpha (x_3-a)^2} \label{eq18}\\
+\alpha x_4^2 + \alpha [d(x_4-a)]^2 &= 1 \Rightarrow d^2 = \cfrac{1 - \alpha x_4^2 }{\alpha (x_4-a)^2} \label{eq19}
 \end{align}
 
+\newpage
+
+Therefore:
+
 \begin{align}
-&\text{Therefore:} \nonumber \\
 \cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \label{eq20} \\
 \cfrac{-\cfrac{cx_6}{x_6 - a}(x_3-a) x_5 + b x_5 x_3}{x_3 - x_5} &= \cfrac{-cx_2 x_4 + \cfrac{bx_1}{x_1 - a}(x_4-a) x_2}{x_2 - x_4} 
 \end{align}
@@ -166,14 +164,14 @@ The first intention is to eliminate $x_1$ and $x_6$.
 \zeta^2 &= (\zeta_{51} x_5 + \zeta_{50})^2  = \hat C x_5 + \hat D\\
 \hat C &= 2\zeta_{51}\zeta_{50} \\
 \hat D &= \lambda \zeta_{51}^2 + \zeta_{50}^2 \\
-\mu &= 4\beta (x_3 - a)^4 (x_4 - a)^4(1 - \alpha x_4^2 ) \\
+\mu &= 4\alpha (x_3 - a)^4 (x_4 - a)^4(1 - \alpha x_4^2 ) \\
 \nu &= (1 - \alpha x_4^2)(x_3-a)^2(x_4-a)\\
-\pi &= \beta (x_3-a)^2(x_4-a)^3
+\pi &= \alpha (x_3-a)^2(x_4-a)^3
 \end{align}
 \begin{align}
 \rho &= (1 - \alpha x_3^2 )(x_4-a)^3\\
 \kappa x_5^2 \underbrace{e^2} &= (\zeta - \eta x_2 \underbrace{d})^2 \\ 
-\kappa x_5^2 \cfrac{1 - \alpha x_3^2 }{\beta (x_3-a)^2} &= \eta^2 x_2^2 \cfrac{1 - \alpha x_4^2 }{\beta (x_4-a)^2} - 2 \zeta \eta x_2 \underbrace{d} + \zeta^2 \\
+\kappa x_5^2 \cfrac{1 - \alpha x_3^2 }{\alpha (x_3-a)^2} &= \eta^2 x_2^2 \cfrac{1 - \alpha x_4^2 }{\alpha (x_4-a)^2} - 2 \zeta \eta x_2 \underbrace{d} + \zeta^2 \\
  \mu \zeta^2 \eta^2 x_2^2  &= (\eta^2 x_2^2 \nu  + \pi \zeta^2 - \kappa x_5^2 \rho)^2 
 \end{align}
 
@@ -184,7 +182,7 @@ They are already eliminated: $(d,e)$. Let us eliminate $x_5$ and, only partially
 E x_5 + F  &= ( G x_5 + H )^2 = 2GH x_5 + \lambda G^2 + H^2 \\
 \lambda (E - 2GH)^2  &= \left(\lambda G^2 + H^2 - F\right)^2 \\
 E &= \xi \mu(\hat A\hat D + \hat B\hat C)\\
-F &= \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \beta b^2)] \\
+F &= \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \alpha b^2)] \\
 G &= \xi \nu \hat A + \pi \hat C \\
 H &= \xi \nu \hat B + \pi \hat D - \lambda \rho \kappa
 \end{align}
@@ -195,7 +193,7 @@ Let us eliminate $x_2$ in $(\zeta,\kappa, \hat C, \hat D)$.
 
 \begin{align}
 &\lambda \left[\xi \mu(\hat A\hat D + \hat B\hat C) - 2\left(\xi \nu \hat A + \pi \hat C\right) \left(\xi \nu \hat B + \pi \hat D - \lambda \rho \kappa\right) \right]^2 = \nonumber\\
-&= \left\{\lambda \left(\xi \nu \hat A + \pi \hat C\right)^2 + \left(\xi \nu \hat B   + \pi \hat D - \lambda \rho \kappa\right) ^2 - \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \beta b^2)]\right\}^2 
+&= \left\{\lambda \left(\xi \nu \hat A + \pi \hat C\right)^2 + \left(\xi \nu \hat B   + \pi \hat D - \lambda \rho \kappa\right) ^2 - \lambda \xi \mu [\hat A\hat C + \alpha\hat B\hat D(1 + b^2)]\right\}^2 
 \end{align}
 
 \normalsize
@@ -215,9 +213,9 @@ P &= \pi I \\
 Q &= \xi \nu \hat A + \pi J \\
 R &= \pi K - \lambda \rho \kappa_{21}  \\
 S &=\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20} \\ 
-T &= - \lambda \xi \mu [\hat AI  + \hat BK  (\alpha + \beta b^2)]\\
-U &= - \lambda\xi \mu [\hat A J + \hat B L(\alpha + \beta b^2)]\\
-\lambda [Mx_2 + N &-2 (Px_2 + Q)(Rx_2 + S) ]^2  = [\lambda\left(Px_2 + Q\right)^2 + \left(Rx_2 + S\right) ^2 + T x_2 + U]^2 \\
+T &= - \lambda \xi \mu [\hat AI  + \alpha\hat BK  (1 + b^2)]\\
+U &= - \lambda\xi \mu [\hat A J + \alpha\hat B L(1 + b^2)]\\
+\lambda [Mx_2 + N -2 (Px_2 + Q)(Rx_2 &+ S) ]^2  = [\lambda\left(Px_2 + Q\right)^2 + \left(Rx_2 + S\right) ^2 + T x_2 + U]^2 \\
 V &= M-2PS -2 QR\\
 W &= N -2\xi PR-2 QS \\
 Y &= 2\lambda VW\\
@@ -225,116 +223,113 @@ Z &= \lambda\xi V^2 + \lambda W^2 \\
 \hat E &= 2\lambda PQ + 2RS + T\\
 \hat F &= \lambda\xi P^2 +\xi R^2 + \lambda Q^2 + S^2 + U \\
 Yx_2 + Z &= (\hat E x_2 + \hat F)^2 =  \xi \hat E^2 + \hat F^2 + 2\hat E\hat F x_2 \\
-\xi (Y - 2\hat E\hat F)^2 &= \left(\xi \hat E^2 + \hat F^2 - Z\right)^2 
+\xi (Y - 2\hat E\hat F)^2 &= \left(\xi \hat E^2 + \hat F^2 - Z\right)^2 \label{eq75}
 \end{align}
 
-We have an Equation in $\alpha, \beta, x_3, x_4, a, b, c$.
+We have the Equation (\ref{eq75}) in $\alpha, x_3, x_4, a, b, c$.
 
-The question is: is it an identity? Let us express it as a function of $(x_3,x_4) \equiv (x,y,z=x-a,w=y-a)$.
+The main question is: is it an identity? Let us express it as a function of $(x_3,x_4) \equiv (x,y,z=x-a,w=y-a)$.
 
 \begin{align}
-V &= \xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \\
+V &= \xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \nonumber\\
 & -2\xi \nu \pi \hat A K +2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J\\
-W &= \xi \mu(\hat AL + \hat BJ) -2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\\
+W &= \xi \mu(\hat AL + \hat BJ) -2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\nonumber\\
 &-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J
 \end{align}
 
 Let us substitute from $L$ and above, until $\eta$.
 
 \begin{align}
-\nu^2 &= z^4 ( w - \alpha y^3 + \bar k y^2)^2 \\
+\nu^2 &= z^4 ( w - \alpha y^3 + \bar k y^2)^2\nonumber \\
 &= z^4 (w^2 + \alpha^2 y^6 + \bar k^2 y^4 - 2  \alpha y^3 w + 2 \bar k y^2 w - 2 \alpha \bar k y^5)
 \end{align}
 
 At this moment, we realize that we are next to a polynomial of a single variable, say $x$. Let us eliminate $z$.
 
-By inverse central projection, we ``should'' eliminate $\beta = \alpha > 0$.
+For all conic section in $x\hat O y$, there is a circle in $x\hat O z$. The theorem is simplified because the inverse projection of 3 collinear points are 3 collinear points too.
 
 \begin{align}
-V[17] &= (x^5-4ax^4+6a^2x^3-4a^3x^2+a^4x) yw^2\biggl[-2\bar e x y (\xi\bar \ell w^4 + \xi\bar m w^6 + \xi\bar n w^5)\\
-&-2 \bar f x^2 (\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
-&+ \lambda \bar\iota x y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
-&+ \bar\iota x^3y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\\
-&-2\lambda\beta \bar \iota x yw^2 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) \\
-&-2\beta \bar \iota x^3y w^3 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) \\
-&- 2\beta \bar \iota x y\beta w^4 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \\
-&+2\lambda\beta \bar \iota x y  w^4 (y^2  + \xi )\\
-&- 2\beta \bar \iota \lambda \alpha x^3 y  w^4 (y^2  + \xi ) \\
-& +4\beta\xi \bar e xyw^3(  w - \alpha y^3  + \bar k y^2 ) \\
-& +4\beta\xi \bar f x^2 w^3(  w - \alpha y^3  + \bar k y^2 )  \\
-&+4\lambda \xi w^3(  w - \alpha y^3  + \bar k y^2 ) \\
-&- 4\lambda \xi \alpha 
-x^2 w^3(  w - \alpha y^3  + \bar k y^2) \\
-&-2\beta^2 \bar g y w^4(\bar e xy^2 + \bar f x^2 y) \\
-&-2\beta^2 \bar h x w^4(\bar e xy^2 + \bar f x^2 y) \\
-&-2 \lambda \beta w^4 (\bar g y^2 + \bar h x y) \\
-&+ 2 \lambda \beta \alpha x w^4 (\bar g xy^2 + \bar h x^2 y)\biggr]
-\end{align}
-
-\begin{align}
-W[26] &= (x^5-4ax^4+6a^2x^3-4a^4x+a^4x)\biggl[-2\xi w^2\bar a x^2 y^2(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
-&- 2\xi xw^2\bar b x(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
-&- 2\xi w^2\bar c y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
-&- 2\xi w^2\bar d xy (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
-&+ \xi \lambda w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
-&+ \xi \lambda w^2\bar h x y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
-&+ \xi x w^2\bar g xy^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)
- \\
-&+ \xi x w^2\bar h x^2 y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\\
-&-2\xi \beta \bar \iota x y^2\beta w^6 (\bar e xy^2 + \bar f x^2 y) \\
-&- 2\xi \beta w^3 \bar \iota x \lambda y^3 (w^3 - \alpha x^2 w^3) \\
-&+4\lambda\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) \\
-&+4\xi^2 x^2w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k)  \\
-&+  4 \xi\beta w^6  (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&- 4 \xi\beta w^5\alpha y^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&+ 4 \xi\beta w^5\bar k y^2 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&+  w (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
-&- \alpha y^3  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
-&+ \bar k y^2  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi  +4 \lambda \xi \alpha x^2 w^5 y^2  + 4 \lambda \xi \alpha x^2 w^5 \xi ) \\
-&-2 \xi\beta w^3 \bar g y^2\lambda w^2 (  w - \alpha y^3  + \bar k y^2 )   \\
-&-2 \xi\beta w^3 \bar g y^2 x^2 w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
-&-2 \xi\beta w^3 \bar h x y\lambda w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
-&-2 \xi\beta w^3 \bar h x^3 y w^2 (  w - \alpha y^3  + \bar k y^2 ) \\
-&-2 \beta^2 z^4w^6\bar g y^2 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&-2 \beta^2 z^4w^6\bar h x y (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy ) \\
-&+ 2 \lambda \beta w^6 (y^2 \bar g y^2 + y^2 \bar h x y + \xi \bar g y^2 + \xi \bar h x y) \\
-&- 2 \lambda \beta \alpha x w^6 (y^2 \bar g xy^2 + y^2 \bar h x^2 y + \xi \bar g xy^2 + \xi \bar h x^2 y)\biggr]
+V &= x(x-a)^4 yw^2(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3) \\
+W &= x(x-a)^4(\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)\\
+Y &= 2\lambda x^2(x-a)^8 yw^2(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3)(\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)
 \end{align}
 
 If we did not want to give it all up, we ``would'' have:
 
 \begin{align}
-VW &= 17\cdot 26 = 442
+Z &= x^2(x-a)^8 [\lambda\xi  y^2w^4(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3)^2 + \lambda (\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)^2] \nonumber\\
+&= \cdots
 \end{align}
 
 \begin{align}
-Y &> 442^2 = 195364
+S(\nu)&=\xi (z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (\lambda w^2 + x^2 w^2) + \alpha z^2w^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \nonumber\\
+&- \lambda (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)\\
+&= \cdots
 \end{align}
 
 \begin{align}
-V,W\Rightarrow Z&=\\
-S(\nu)&=\\
-Q(\nu)&=\\
-\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S}  \\
+Q(\nu)&=-2\xi xw^2 (z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) + \alpha z^2w^3 (\bar g xy^2 + \bar h x^2 y)\\
+\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S}  \nonumber\\
 &- \xi \mu (\lambda \hat AI  + \hat BK  )\\
-\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi {\color{red}\nu} \hat A + \pi J)^2 + (\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})^2 \\
+\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi {\color{red}\nu} \hat A + \pi J)^2 + (\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})^2 \nonumber\\
 &- \xi \mu (\lambda \hat A J + \hat B L) \\
 L &= \bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy \,;\,\bar a = \lambda b^2 + \xi c^2\,;\,\bar b = \lambda \xi b^2\,;\,\bar c = \lambda \xi c^2\,;\,\bar d = -2 \lambda \xi bc \\
 K &= \bar e xy^2 + \bar f x^2 y \,;\,\bar e = 2 \lambda bc \,;\,\bar f = -2\lambda b^2 \\
 J &= \bar g xy^2 + \bar h x^2 y \,;\,\bar g = -2\xi c^2 \,;\,\bar h = 2\xi bc \\
-I &= \bar \iota x^2 y^2 \,;\, \bar \iota = -2bc \\
+I &= \bar \iota x^2 y^2 \,;\, \bar \iota = -2bc
+\end{align}
+
+\begin{align}
+(Y - 2\hat E \hat F)^2 &= \cdots \\
+\hat E^2 &= \cdots \\
+\hat F^2 &= \cdots 
+\end{align}
+
+\begin{align}
 \kappa_{21} &= -yz^2 \\
 \kappa_{20} &= y^2 z^2 + \xi z^2\\
 \rho &= w^3 - \alpha x^2 w^3\\
-\pi &= \beta z^2w^3\\
+\pi &= \alpha z^2w^3\\
 \nu &= z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2\,;\,\bar k = \alpha \cdot a\\
-\mu &= \bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5 \,;\,\bar \ell = 4\beta   -4\alpha\beta a^2 \,;\,\bar m = -4\alpha\beta \,;\,\bar n = - 8\alpha\beta a \\
+\mu &= \bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5 \,;\,\bar \ell = 4\alpha   -4\alpha^2 a^2 \,;\,\bar m = -4\alpha^2 \,;\,\bar n = - 8\alpha^2 a \\
 \hat B &= \lambda w^2 + x^2 w^2\\
 \hat A &= -2xw^2 \\
-\bar o &=
+\bar o_0 &= 4\lambda \xi w^3(  w - \alpha y^3  + \bar k y^2 ) -2 \lambda \alpha w^4 \bar g y^2 \\ 
+\bar o_1 &= -2\bar e y (\xi\bar \ell w^4 + \xi\bar m w^6 + \xi\bar n w^5)
++ \lambda \bar\iota y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\nonumber\\
+&-2\lambda\alpha \bar \iota yw^2 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) - 2\alpha^2 \bar \iota y w^4 \bar c y^2 +2\lambda\alpha \bar \iota y  w^4 (y^2  + \xi )\nonumber\\
+&+4\alpha\xi \bar e yw^3(  w - \alpha y^3  + \bar k y^2 ) -2\alpha^2 \bar g y w^4\bar e y^2 -2 \lambda \alpha w^4 \bar h y \\
+\bar o_2 &= -2 \bar f  (\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)- 2\alpha^2 \bar \iota y w^4 \bar d y +4\alpha\xi \bar f  w^3(  w - \alpha y^3  + \bar k y^2 )  \nonumber\\
+&- 4\lambda \xi \alpha  w^3(  w - \alpha y^3  + \bar k y^2) -2\alpha^2 \bar g y w^4 \bar f  y -2\alpha^2 \bar h w^4\bar e y^2 + 2 \lambda \alpha^2 w^4 \bar g y^2 \\
+\bar o_3 &= \bar\iota y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)-2\alpha \bar \iota y w^3 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 )  \nonumber\\
+&- 2\alpha^2 \bar \iota \lambda y  w^4 (y^2  + \xi ) 
+-2\alpha^2 \bar h w^4 \bar f  y
++ 2 \lambda \alpha^2 w^4 \bar h  y- 2\alpha^2 \bar \iota y w^4  (\bar a y^2 + \bar b )\\
+\bar p_0 &=- 2\xi w^2\bar c y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) + \xi \lambda w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\nonumber\\
+&+4\lambda\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) +  4 \xi\alpha w^6  \bar c y^2  \nonumber\\
+&+ 4 \xi\alpha w^5\bar k y^2 \bar c y^2 +  w (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) - \alpha y^3  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) \nonumber\\
+&+ \bar k y^2  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) -2 \xi\alpha w^3 \bar g y^2\lambda w^2 (  w - \alpha y^3  + \bar k y^2 )   \nonumber\\
+&+ 2 \lambda \alpha w^6 (\bar g y^4 + \xi \bar g y^2) -2 \alpha^2 w^6\bar g y^2 \bar c y^2 - 4 \xi\alpha w^5\alpha y^3 \bar c y^2
 \end{align}
 
-\newpage
+\begin{align}
+\bar p_1 &= - 2\xi w^2\bar d y (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) + \xi \lambda w^2\bar h  y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)- 2\xi \alpha w^3 \bar \iota \lambda y^3 w^3  \nonumber\\
+&+  4 \xi\alpha w^6  \bar d y - 4 \xi\alpha w^5\alpha y^3 \bar d y + 4 \xi\alpha w^5\bar k y^2 \bar d y -2 \lambda\xi\alpha \bar h  y w^5  (  w - \alpha y^3  + \bar k y^2 ) \nonumber\\
+&-2 \alpha^2 w^6\bar g y^2 \bar d y 
+-2 \alpha^2 w^6\bar h y \bar c y^2
++ 2 \lambda \alpha w^6 (\bar h  y^3 + \xi \bar h  y) \\
+\bar p_2 &= -2\xi w^2\bar a  y^2(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) -2\xi \alpha \bar \iota y^2\alpha w^6 \bar e y^2 - 2\xi w^2\bar b (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)  \nonumber\\
+&+4\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) +  4 \xi\alpha w^6  (\bar a  y^2 + \bar b ) \nonumber\\
+&- 4 \xi\alpha w^5\alpha y^3 (\bar a  y^2 + \bar b ) + 4 \xi\alpha w^5\bar k y^2 (\bar a  y^2 + \bar b ) +  w (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi ) \nonumber\\
+&- \alpha y^3  (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi ) + \bar k y^2  (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi )  \nonumber\\
+&-2 \alpha^2 z^4w^6\bar g y^2 (\bar a  y^2 + \bar b ) -2 \alpha^2 z^4w^6\bar h y \bar d y - 2 \lambda \alpha^2 w^6 (\bar g y^4 + \xi \bar g y^2)\nonumber\\
+&-2 \xi\alpha w^3 \bar g y^2  w^2 (  w - \alpha y^3  + \bar k y^2 )+ \xi  w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
+\bar p_3 &= \xi w^2\bar h  y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)
+-2\xi \alpha^2 \bar \iota y^2 w^6 \bar f  y 
+- 2\xi \alpha w^3 \bar \iota \lambda y^3 \alpha  w^3 \nonumber\\
+&-2 \xi\alpha \bar h  y w^5 (  w - \alpha y^3  + \bar k y^2 ) 
+-2 \alpha^2 w^6\bar h y (\bar a  y^2 + \bar b ) - 2 \lambda \alpha^2 w^6 (\bar h  y^3 + \xi \bar h  y)
+\end{align}
 
 Below, let us explain the Equation (\ref{eq20}), expliciting $C$ on Equation (\ref{eq3}).
 
@@ -394,7 +389,7 @@ Below, let us explain the Equation (\ref{eq20}), expliciting $C$ on Equation (\r
     X_6 &= (x_6, cx_6) \\
     X_4 &= (x_4, d(x_4 - a) \\
     bx_1 &= d(x_1 - a) \\
-    X_3 &== e(x_3 - a) \\
+    X_3 &= e(x_3 - a) \\
     cx_6 &= e(x_6 - a) \\
     \cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \\
     \text{Therefore, } \exists &\lambda\in\mathbb{R}^6\text{, such that:} \nonumber \\
@@ -422,7 +417,7 @@ x' &= \cfrac{R-z'}{R}\cdot x_b = \cfrac{px_b}{p+y_b} \\
 \therefore y_b &= \cfrac{px_b^2 - p R^2}{2R^2}
 \end{align}
 
-That is a parabola that crosses $\hat O y$ at $V = \left(0, -\cfrac{p}{2}, 0\right)$, and crosses $\hat Ox$ at $(\pm R, 0, 0)$.
+That is a parabola that intercepts $\hat O y$ at $V = \left(0, -\cfrac{p}{2}, 0\right)$, and intercepts $\hat Ox$ at $(\pm R, 0, 0)$.
 
 \subsection{From Circle to Hiperbola}
 
@@ -434,6 +429,16 @@ p^2(R+q)^4 - p^2q(R+q)^2(2R + q) &= \left[(2R + q)q y_b + p(R+q)^2\right]^2-(2R+
 \cfrac{1}{A^2} \left[y_b+\cfrac{p(R+q)^2}{q(2R + q)}\right]^2-\cfrac{x_b^2}{B^2} &= 1\,;\,A = \cfrac{pR(R+q)}{q(2R+q)}\,;\,B = \cfrac{R(R+q)}{\sqrt{q(2R+q)}}
 \end{align}
 
+Whenever $x_b = 0$, we have $y_b + C(q) = \pm A$. Therefore, that's a vertical hyperbola.
+
+We want to prove that while $q\to \infty$, the projection is a degenerated hyperbola.
+
+\begin{align}
+\cfrac{(y + c)^2}{a^2} - \cfrac{x^2}{b^2} &= 1\Rightarrow y = -c \pm a\sqrt{1 + \cfrac{x^2}{b^2}} \Rightarrow y' = \pm  \cfrac{ax}{\sqrt{1 + \cfrac{x^2}{b^2}} } \,\xrightarrow{x \to \infty}\, \pm \cfrac{a}{b} \\
+y &= \pm \cfrac{ax}{b} -c\because y(0) = - c \\
+\cfrac{A}{B} &= \cfrac{p}{\sqrt{q(2R+q)}}\,\xrightarrow{q \to \infty}\,0
+\end{align}
+
 \subsection{From Circle to Ellipsis}
 
 \begin{align}
@@ -441,11 +446,51 @@ S''': x'^2 + z'^2 &= (R-q)^2, y = 0 \\
 \pi(S'''): \cfrac{1}{A^2} \left[y_b-\cfrac{p(R-q)^2}{q(2R - q)}\right]^2+\cfrac{x_b^2}{B^2} &= 1 \,;\,A = \cfrac{pR(R-q)}{q(2R-q)}\,;\,B = \cfrac{R(R-q)}{\sqrt{q(2R-q)}}
 \end{align}
 
+Whenever $y_b + C(-q) = 0$, we have $x_b = \pm B$.
+
+\subsection{Invariant Straight Lines}
+
+\begin{align}
+t': Ax' + Bz' &= C \\
+\pi(t'): A px_b + B R y_b &= C(p + y_b)\text{, which is a straight line.} \\
+r': x' &= 0\,;\,s': z' = Ax' \\
+\pi(r'): x_b &= 0\,;\,\pi(s'): Ry_b = Ap x_b\\ 
+\therefore 0 &= r' \cap s' \Rightarrow 0 = \pi(r') \cap \pi(s')
+\end{align}
+
+\subsection{Parallelism}
+
+\begin{align}
+s'': z' &= Ax' + R \\
+\pi(s''): \cancel{Ry_b} &= Ap x_b + R(p + \cancel{y_b}) \Rightarrow x_b = - \cfrac{R}{A} \\
+\therefore r' \cap s'' &= (0,R) \in v \Rightarrow \pi(r') \isParallel \pi(s'')
+\end{align}
+
+\section{Degenerated Section}
+
+A degenerated conic section are 2 straight lines, but we do not want 2 distinct proofs. 
+
+How do we merge a theorem $T_1$ on a circle and a theorem $T_2$ about 2 straight lines?
+
+We want to prove that: $T(S)\Leftrightarrow$ ``three points are collinear'' holds in a conic section if and only if $T(r,s)\Leftrightarrow$ ``three points are collinear'' holds degeneratedly in 2 straight lines too.
+
+Our way is to intercept a cone $K:z^2 = a^2(x^2 + y^2)$ by a plane.
+
+$L = K\cap \pi_R: y = 0$, for two straight lines $\Rightarrow z = \pm ax$;
+
+$H = K\cap \pi_H: y = c$, for a hyperbola;
+
+$E = K\cap \pi_E: z = bx + c$; $b < b_E$ for an ellipsis;
+
+$P = K\cap \pi_P: z = bx + c$; $b_E < b < b_H$ for a parabola. Here, it suffices that $\pi_P$ has a slope greater than for an ellipsis and less than for an hyperbola.
+
 $\blacksquare$
+
+\vspace{12mm}
 
 Out of charity, there is no salvation at all. With charity, we evolve.
 
-June, the 21th, 2024.
+June, the 23th, 2024.
 %\clearpage
 
 %\bibliography{references.bib}
