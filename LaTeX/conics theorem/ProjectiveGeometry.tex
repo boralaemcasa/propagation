@@ -117,20 +117,20 @@ $\,$\\[2.0cm]
 A &= X_1 X_5 \cap X_2 X_6 \\
 B &= X_1 X_4 \cap X_3 X_6 \\
 C &= X_2 X_4 \cap X_3 X_5 \in AB \label{eq3} \\
-A &= (0,0) \\
+A &= (0,\ell=0),{\color{red}\text{ diametrical opposition}\Rightarrow\text{loss of generality.}}\\
 B &= (0,a) \\
-X_1 &= (x_1, bx_1) \\
-X_5 &= (x_5, bx_5) \\
-X_2 &= (x_2, cx_2) \\
-X_6 &= (x_6, cx_6) \\
+X_1 &= (x_1, b(x_1-\ell)) \\
+X_5 &= (x_5, b(x_5-\ell)) \\
+X_2 &= (x_2, c(x_2-\ell)) \\
+X_6 &= (x_6, c(x_6-\ell)) \\
 X_4 &= (x_4, d(x_4 - a)) \\
-bx_1 &= d(x_1 - a) \Rightarrow d = \cfrac{b x_1}{x_1 - a} \\
+b(x_1 - \ell) &= d(x_1 - a) \Rightarrow d = \cfrac{b (x_1 - \ell)}{x_1 - a} \\
 X_3 &= (x_3, e(x_3 - a)) \\
-cx_6 &= e(x_6 - a) \Rightarrow e = \cfrac{cx_6}{x_6 - a} \\
-\alpha x_1^2 + \alpha (bx_1)^2 &= 1 \Rightarrow x_1^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \\
-\alpha x_2^2 + \alpha (cx_2)^2 &= 1 \Rightarrow  x_2^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi\\  
-\alpha x_5^2 + \alpha (bx_5)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \therefore x_5 = \epsilon_1 x_1 \\
-\alpha x_6^2 + \alpha (cx_6)^2 &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi \therefore x_2 = \epsilon_6 x_6\\
+c(x_6-\ell) &= e(x_6 - a) \Rightarrow e = \cfrac{c(x_6-\ell)}{x_6 - a} \\
+\alpha x_1^2 + \alpha b^2 (x_1 -\ell)^2 &= 1 \Rightarrow \left(x_1 - \cfrac{b^2 \ell}{1 + b^2} \right)^2 = \cfrac{1 - \alpha b^2 \ell^2}{\alpha (1+b^2)} + \cfrac{b^4 \ell^2}{(1+b^2)^2}  \\
+\alpha x_2^2 + \alpha c^2(x_2-\ell)^2 &= 1 \Rightarrow  \Rightarrow \left(x_2 - \cfrac{c^2 \ell}{1 + c^2} \right)^2 = \cfrac{1 - \alpha c^2 \ell^2}{\alpha (1+c^2)} + \cfrac{c^4 \ell^2}{(1+c^2)^2}\\  
+\alpha x_5^2 + \alpha b^2(x_5-\ell)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \therefore x_5 - f = \epsilon_1 (x_1 - f) \\
+\alpha x_6^2 + \alpha c^2(cx_6-\ell) &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi \therefore x_2 - g = \epsilon_6 (x_6 - g)\\
 \alpha x_3^2 + \alpha [e(x_3-a)]^2 &= 1 \Rightarrow e^2 = \cfrac{1 - \alpha x_3^2 }{\alpha (x_3-a)^2} \label{eq18}\\
 \alpha x_4^2 + \alpha [d(x_4-a)]^2 &= 1 \Rightarrow d^2 = \cfrac{1 - \alpha x_4^2 }{\alpha (x_4-a)^2} \label{eq19}
 \end{align}
@@ -262,17 +262,39 @@ Z &= x^2(x-a)^8 [\lambda\xi  y^2w^4(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3)^2
 \end{align}
 
 \begin{align}
-S(\nu)&=\xi (z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) (\lambda w^2 + x^2 w^2) + \alpha z^2w^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \nonumber\\
-&- \lambda (w^3 - \alpha x^2 w^3) (y^2 z^2 + \xi z^2)\\
-&= \cdots
+S(\nu)&=z^2\biggl[\xi (w - \alpha y^3 + \bar k y^2) (\lambda w^2 + x^2 w^2) + \alpha w^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \nonumber\\
+&- \lambda (w^3 - \alpha x^2 w^3) (y^2 + \xi)\biggr]= (x-a)^2(\bar q_2 x^2 + \bar q_1 x + \bar q_0)\\
+\bar q_0 &= \xi \lambda w^2(w - \alpha y^3 + \bar k y^2)  + \alpha w^3 \bar c y^2 - \lambda w^3 (y^2 + \xi)\\
+\bar q_1 &= \alpha w^3 \bar d y\\
+\bar q_2 &= \xi w^2 (w - \alpha y^3 + \bar k y^2) + \alpha w^3 (\bar a y^2 + \bar b) + \lambda \alpha w^3 (y^2 + \xi)
 \end{align}
 
 \begin{align}
-Q(\nu)&=-2\xi xw^2 (z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2) + \alpha z^2w^3 (\bar g xy^2 + \bar h x^2 y)\\
-\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S}  \nonumber\\
-&- \xi \mu (\lambda \hat AI  + \hat BK  )\\
+Q(\nu)&=x(x-a)^2 w^2(\bar r_1 x + \bar r_0)\,;\,\bar r_0 = -2\xi (w - \alpha y^3 + \bar k y^2)+\alpha w \bar g y^2 \,;\,\bar r_1 = \alpha w \bar h y\\
+\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S} - \xi \mu (\lambda \hat AI  + \hat BK  )\nonumber\\
+&= \sum_{i=0}^4 \bar u_i x^i (x^4 - 4a x^3 + 6a^2 x^2 - 4 a^3 x + a^4) \nonumber\\
+&+ 2\lambda \xi \mu w^2\bar \iota x^3 y^2  - (\lambda \xi \mu w^2 + \xi \mu x^2 w^2)(\bar e xy^2 + \bar f x^2 y) = \sum_{i=0}^8 \bar t_i x^i\\
+\bar s_1 &= \alpha \bar e y\,;\,\bar s_2 = \alpha \bar f - \lambda \alpha \\
+\bar t_0 &= \bar u_0 a^4 - \lambda \xi \mu w^2 \bar f y\,;\,\bar u_0 = 2yw^3\lambda q_0\\
+\bar t_1 &= \bar u_1 a^4 - 4a^3\bar u_0 - \lambda \xi \mu w^2 \hat e y^2\,;\,\bar u_1 = 2yw^3 q_1 \lambda + 2yw^3 q_0 s_1\\
+\bar t_2 &= a^4 \bar u_2 - 4a^3 \bar u_1 + 6a^2 \bar u_2\,;\,\bar u_2 = 2yw^3 q_2 \lambda + 2yw^3 q_1 s_1 + 2yw^3 q_0 s_2\\
+\bar t_3 &= a^4\bar u_3 - 4a^3 u_2 + 6a^2 \bar u_1 - 4a \bar u_0  + 2\lambda \xi \mu w^2\bar \iota y^2 - \xi \mu w^2 \bar e y^2\\
+\bar u_3 &= 2yw^3 \lambda \alpha \bar \iota y w^2 \bar r_0 + 2yw^3 q_2 s_1 + 2yw^3 q_1 s_2\\
+\bar t_4 &= a^4 \bar u_4 - 4a^3 \bar u_3 + 6a^2 \bar u_2 -4a \bar u_1 +\bar u_0- \xi \mu w^2 \bar f y\\
+\bar u_4 &= 2yw^3 \lambda \alpha \bar \iota y w^2\bar r_1 + 2yw^3q_2 s_2\\
+\bar t_5 &= -4a^3\bar u_4 + 6a^2\bar u_3 - 4a\bar u_2 + \bar u_1\\
+\bar t_6 &= 6a^2\bar u_4 - 4a\bar u_3 + \bar u_2\,;\,\bar t_7 = -4a\bar u_4 + \bar u_3\,;\,\bar t_8 = \bar u_4
+\end{align}
+
+\begin{align}
 \hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi {\color{red}\nu} \hat A + \pi J)^2 + (\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})^2 \nonumber\\
 &- \xi \mu (\lambda \hat A J + \hat B L) \\
+&= \lambda\xi \alpha^2 z^4w^6 \bar \iota^2 x^4 y^4 +\xi (\alpha z^2w^3 (\bar e xy^2 + \bar f x^2 y) + \lambda yz^2(w^3 - \alpha x^2 w^3) )^2 \\
+&+ \lambda x^2z^4 w^4(\bar r_1 x + \bar r_0)^2 + z^4(\bar q_2 x^2 + \bar q_1 x + \bar q_0)^2 \nonumber\\
+&- \xi \mu (\lambda (-2xw^2) (\bar g xy^2 + \bar h x^2 y) + (\lambda w^2 + x^2 w^2) (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy))
+\end{align}
+
+\begin{align}
 L &= \bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy \,;\,\bar a = \lambda b^2 + \xi c^2\,;\,\bar b = \lambda \xi b^2\,;\,\bar c = \lambda \xi c^2\,;\,\bar d = -2 \lambda \xi bc \\
 K &= \bar e xy^2 + \bar f x^2 y \,;\,\bar e = 2 \lambda bc \,;\,\bar f = -2\lambda b^2 \\
 J &= \bar g xy^2 + \bar h x^2 y \,;\,\bar g = -2\xi c^2 \,;\,\bar h = 2\xi bc \\
@@ -435,8 +457,8 @@ We want to prove that while $q\to \infty$, the projection is a degenerated hyper
 
 \begin{align}
 \cfrac{(y + c)^2}{a^2} - \cfrac{x^2}{b^2} &= 1\Rightarrow y = -c \pm a\sqrt{1 + \cfrac{x^2}{b^2}} \Rightarrow y' = \pm  \cfrac{ax}{\sqrt{1 + \cfrac{x^2}{b^2}} } \,\xrightarrow{x \to \infty}\, \pm \cfrac{a}{b} \\
-y &= \pm \cfrac{ax}{b} -c\because y(0) = - c \\
-\cfrac{A}{B} &= \cfrac{p}{\sqrt{q(2R+q)}}\,\xrightarrow{q \to \infty}\,0
+y &= \pm \cfrac{ax}{b} + y_0\,;\,y_0 = -c\pm \cancel{a}\\
+\cfrac{A}{B} &= \cfrac{p}{\sqrt{q(2R+q)}}\,\xrightarrow{q \to \infty}\,0\\-C\pm A &= -\cfrac{p(R+q)^2}{q(2R + q)}\pm \cfrac{pR(R+q)}{q(2R+q)}\xrightarrow{q \to \infty}\,-p
 \end{align}
 
 \subsection{From Circle to Ellipsis}
@@ -490,7 +512,7 @@ $\blacksquare$
 
 Out of charity, there is no salvation at all. With charity, we evolve.
 
-June, the 23th, 2024.
+July, the 4th, 2024.
 %\clearpage
 
 %\bibliography{references.bib}
