@@ -3,11 +3,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage{indentfirst}
 \usepackage{amsmath}
-\numberwithin{table}{section}
 \usepackage{graphicx}
-\usepackage[colorinlistoftodos]{todonotes}
-\usepackage{acronym}
-\usepackage{multirow}
 \usepackage{array}
 \usepackage{float}
 \usepackage{units}
@@ -16,10 +12,6 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{adjustbox}
-\usepackage{setspace}
-\usepackage{wasysym}
-\usepackage{esint}
 \usepackage{cancel}
 \usepackage{tikz-cd}
 \usepackage[colorlinks = true,
@@ -27,27 +19,13 @@
             urlcolor  = blue,
             citecolor = coolblack,
             anchorcolor = yellow]{hyperref}
-%\usepackage[numbers]{natbib}
-\usepackage[abbrvnat]{natbib}
 \newcommand{\isParallel}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\degree}{^{\circ}}
 \usepackage{geometry}
-\bibliographystyle{abbrvnat}
-
-
-
 \geometry{verbose,a4paper,tmargin=30mm,bmargin=20mm,lmargin=30mm,rmargin=20mm}
 \begin{document}
-\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
-
-
 % PDF informations
                   
-\setstretch{1.5}
-\newtheorem{definition}{Definição}
-\newcommand\LG{\mathord{\mathcal{L}}}
-\newcommand\LM{\mathord{\mathcal{L}}_m}
-
-
 \begin{titlepage}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.4mm}} % Defines a new command for the horizontal lines, change thickness here
@@ -109,291 +87,104 @@ $\,$\\[2.0cm]
 
 % List of Acronyms Definition
 
-
-
 \section{The Conic Theorem}
 
 \begin{align}
 A &= X_1 X_5 \cap X_2 X_6 \\
 B &= X_1 X_4 \cap X_3 X_6 \\
-C &= X_2 X_4 \cap X_3 X_5 \in AB \label{eq3} \\
-A &= (0,\ell=0),{\color{red}\text{ diametrical opposition}\Rightarrow\text{loss of generality.}}\\
-B &= (0,a) \\
-X_1 &= (x_1, b(x_1-\ell)) \\
-X_5 &= (x_5, b(x_5-\ell)) \\
-X_2 &= (x_2, c(x_2-\ell)) \\
-X_6 &= (x_6, c(x_6-\ell)) \\
-X_4 &= (x_4, d(x_4 - a)) \\
-b(x_1 - \ell) &= d(x_1 - a) \Rightarrow d = \cfrac{b (x_1 - \ell)}{x_1 - a} \\
-X_3 &= (x_3, e(x_3 - a)) \\
-c(x_6-\ell) &= e(x_6 - a) \Rightarrow e = \cfrac{c(x_6-\ell)}{x_6 - a} \\
-\alpha x_1^2 + \alpha b^2 (x_1 -\ell)^2 &= 1 \Rightarrow \left(x_1 - \cfrac{b^2 \ell}{1 + b^2} \right)^2 = \cfrac{1 - \alpha b^2 \ell^2}{\alpha (1+b^2)} + \cfrac{b^4 \ell^2}{(1+b^2)^2}  \\
-\alpha x_2^2 + \alpha c^2(x_2-\ell)^2 &= 1 \Rightarrow  \Rightarrow \left(x_2 - \cfrac{c^2 \ell}{1 + c^2} \right)^2 = \cfrac{1 - \alpha c^2 \ell^2}{\alpha (1+c^2)} + \cfrac{c^4 \ell^2}{(1+c^2)^2}\\  
-\alpha x_5^2 + \alpha b^2(x_5-\ell)^2 &= 1\Rightarrow x_5^2 = \cfrac{1}{\alpha + \alpha b^2} = \lambda \therefore x_5 - f = \epsilon_1 (x_1 - f) \\
-\alpha x_6^2 + \alpha c^2(cx_6-\ell) &= 1 \Rightarrow  x_6^2 =\cfrac{1}{\alpha + \alpha c^2} = \xi \therefore x_2 - g = \epsilon_6 (x_6 - g)\\
-\alpha x_3^2 + \alpha [e(x_3-a)]^2 &= 1 \Rightarrow e^2 = \cfrac{1 - \alpha x_3^2 }{\alpha (x_3-a)^2} \label{eq18}\\
-\alpha x_4^2 + \alpha [d(x_4-a)]^2 &= 1 \Rightarrow d^2 = \cfrac{1 - \alpha x_4^2 }{\alpha (x_4-a)^2} \label{eq19}
+C &= X_2 X_4 \cap X_3 X_5 \in AB \\
+X &= \begin{pmatrix}
+    x_1 \\ y_1
+\end{pmatrix} + t_1 \begin{pmatrix}
+    x_5 - x_1 \\
+    y_5 - y_1
+\end{pmatrix} = \begin{pmatrix}
+    x_2 \\ y_2
+\end{pmatrix} + t_2 \begin{pmatrix}
+    x_6 - x_2 \\
+    y_6 - y_2
+\end{pmatrix} \\
+\begin{pmatrix}
+    x_5 - x_1 & x_2 - x_6 \\
+    y_5 - y_1 & y_2 - y_6
+\end{pmatrix} &\cdot \begin{pmatrix}
+    t_{1A} \\
+    t_{2A}
+\end{pmatrix} = X_2 - X_1 \Rightarrow t_A = M_{15}^{26} (X_2 - X_1)\\
+M_{15}^{26} = &\cfrac{1}{(x_5 - x_1)(y_2 - y_6) - (x_2 - x_6)(y_5 - y_1)} \begin{pmatrix}
+    y_2 - y_6 & -x_2 + x_6 \\
+    -y_5 + y_1 & x_5 - x_1
+\end{pmatrix} \\
+t_B &= M_{14}^{36} (X_3 - X_1)\\
+t_C &= M_{24}^{35} (X_3 - X_2) \\
+C &= A + \lambda (B - A) = X_2 + t_{1C} (X_4 - X_2) \\
+\lambda &= \cfrac{x_C - x_A}{x_B - x_A} = \cfrac{y_C - y_A}{y_B - y_A}
 \end{align}
 
-\newpage
+% \newpage
 
 Therefore:
 
 \begin{align}
-\cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \label{eq20} \\
-\cfrac{-\cfrac{cx_6}{x_6 - a}(x_3-a) x_5 + b x_5 x_3}{x_3 - x_5} &= \cfrac{-cx_2 x_4 + \cfrac{bx_1}{x_1 - a}(x_4-a) x_2}{x_2 - x_4} 
+\cfrac{x_2 + t_{1C} (x_4 - x_2) - M_{15}^{36}(x_2 - x_1)}{M_{14}^{36} (x_3 - x_1) - M_{15}^{36}(x_2 - x_1)} &=\cfrac{y_2 + t_{2C} (y_4 - y_2) - M_{15}^{36}(y_2 - y_1)}{ M_{14}^{36}(y_3 - y_1) - M_{15}^{36}(y_2 - y_1)} \label{eq11}
 \end{align}
 
-Below, we try to reduce that to $0x = 0$:
+For all conic section in $x\hat O y$, there is a circle in $x\hat O z$. The theorem is simplified because the inverse projection of 3 collinear points are 3 collinear points too.
 
-The first intention is to eliminate $x_1$ and $x_6$.
+\subsection{Parallel Straight Lines}
 
 \begin{align}
-\zeta &= b x_3 x_5 (x_2 - x_4) + cx_2 x_4(x_3 - x_5) = \zeta_{51} x_5 + \zeta_{50} \\
-\zeta_{51} &= bx_2x_3 - b x_3x_4 - cx_2 x_4 \\
-\zeta_{50} &= cx_2 x_3 x_4 \\
-\eta &= (x_4-a) (x_3 - x_5) = \eta_{51} x_5 + \eta_{50} \\
-\eta_{51} &= a - x_4 \\
-\eta_{50} &= -x_3 (a - x_4)\\
-\kappa &= (x_3-a)^2 (x_2 - x_4)^2 =\kappa_{21} x_2 + \kappa_{20} \\
-\kappa_{21} &= - (x_3-a)^2 x_4\\
-\kappa_{20} &= (x_3-a)^2 x_4^2 + \xi (x_3-a)^2\\
-\eta^2 &= (\eta_{51} x_5 + \eta_{50})^2 = \hat A x_5 + \hat B \\
-\hat A &= 2\eta_{51}\eta_{50} \\
-\hat B &= \lambda \eta_{51}^2 + \eta_{50}^2\\
-\zeta^2 &= (\zeta_{51} x_5 + \zeta_{50})^2  = \hat C x_5 + \hat D\\
-\hat C &= 2\zeta_{51}\zeta_{50} \\
-\hat D &= \lambda \zeta_{51}^2 + \zeta_{50}^2 \\
-\mu &= 4\alpha (x_3 - a)^4 (x_4 - a)^4(1 - \alpha x_4^2 ) \\
-\nu &= (1 - \alpha x_4^2)(x_3-a)^2(x_4-a)\\
-\pi &= \alpha (x_3-a)^2(x_4-a)^3
-\end{align}
-\begin{align}
-\rho &= (1 - \alpha x_3^2 )(x_4-a)^3\\
-\kappa x_5^2 \underbrace{e^2} &= (\zeta - \eta x_2 \underbrace{d})^2 \\ 
-\kappa x_5^2 \cfrac{1 - \alpha x_3^2 }{\alpha (x_3-a)^2} &= \eta^2 x_2^2 \cfrac{1 - \alpha x_4^2 }{\alpha (x_4-a)^2} - 2 \zeta \eta x_2 \underbrace{d} + \zeta^2 \\
- \mu \zeta^2 \eta^2 x_2^2  &= (\eta^2 x_2^2 \nu  + \pi \zeta^2 - \kappa x_5^2 \rho)^2 
+    y_1 &= \epsilon_1 a \\
+    y_2 &= \epsilon_2 a \\
+    y_3 &= \epsilon_3 a \\
+    y_4 &= \epsilon_4 a \\
+    y_5 &= \epsilon_5 a \\
+    y_6 &= \epsilon_6 a 
 \end{align}
 
-They are already eliminated: $(d,e)$. Let us eliminate $x_5$ and, only partially, $x_2$.
+Below, we try to reduce that to $0x = 0$.
 
 \begin{align}
-\xi \mu (\hat A x_5 + \hat B)(\hat C x_5 + \hat D)  &= \left[ \xi\nu (\hat A x_5 + \hat B)  + \pi (\hat C x_5 + \hat D) - \lambda \rho \kappa \right]^2 \\
-E x_5 + F  &= ( G x_5 + H )^2 = 2GH x_5 + \lambda G^2 + H^2 \\
-\lambda (E - 2GH)^2  &= \left(\lambda G^2 + H^2 - F\right)^2 \\
-E &= \xi \mu(\hat A\hat D + \hat B\hat C)\\
-F &= \lambda \xi \mu [\hat A\hat C + \hat B\hat D(\alpha + \alpha b^2)] \\
-G &= \xi \nu \hat A + \pi \hat C \\
-H &= \xi \nu \hat B + \pi \hat D - \lambda \rho \kappa
+\cfrac{x_2 + t_{1C} (x_4 - x_2) - M_{15}^{36}(x_2 - x_1)}{M_{14}^{36} (x_3 - x_1) - M_{15}^{36}(x_2 - x_1)} &=\cfrac{\epsilon_2 a + t_{2C} (\epsilon_4 a - \epsilon_2 a) - M_{15}^{36}(\epsilon_2 a - \epsilon_1 a)}{M_{14}^{36}(\epsilon_3 a - \epsilon_1 a) - M_{15}^{36}(\epsilon_2 a - \epsilon_1 a)}
 \end{align}
 
-Let us eliminate $x_2$ in $(\zeta,\kappa, \hat C, \hat D)$.
+\subsection{Concurrent Straight Lines}
+
+\begin{align}
+    y_1 &= \epsilon_1 ax_1 \\
+    y_2 &= \epsilon_2 ax_2 \\
+    y_3 &= \epsilon_3 ax_3 \\
+    y_4 &= \epsilon_4 ax_4 \\
+    y_5 &= \epsilon_5 ax_5 \\
+    y_6 &= \epsilon_6 ax_6 
+\end{align}
+
+Below, we try to reduce that to $0x = 0$.
+
+\begin{align}
+\cfrac{x_2 + t_{1C} (x_4 - x_2) - M_{15}^{36}(x_2 - x_1)}{M_{14}^{36} (x_3 - x_1) - M_{15}^{36}(x_2 - x_1)} &=\cfrac{\epsilon_2 ax_2 + t_{2C} (\epsilon_4 ax_4 - \epsilon_2 ax_2) - M_{15}^{36}(\epsilon_2 ax_2 - \epsilon_1 ax_1)}{M_{14}^{36}(\epsilon_3 ax_3 - \epsilon_1 ax_1) - M_{15}^{36}(\epsilon_2 ax_2 - \epsilon_1 ax_1)}
+\end{align}
+
+\subsection{Circle}
+
+\begin{align}
+  X_1 &= (\cos t_1, \sin t_1) \\ 
+  X_2 &= (\cos t_2, \sin t_2) \\ 
+  X_3 &= (\cos t_3, \sin t_3) \\ 
+  X_4 &= (\cos t_4, \sin t_4) \\ 
+  X_5 &= (\cos t_5, \sin t_5) \\ 
+  X_6 &= (\cos t_6, \sin t_6) 
+\end{align}
+
+Below, we try to reduce that to $0x = 0$.
 
 \footnotesize
 
 \begin{align}
-&\lambda \left[\xi \mu(\hat A\hat D + \hat B\hat C) - 2\left(\xi \nu \hat A + \pi \hat C\right) \left(\xi \nu \hat B + \pi \hat D - \lambda \rho \kappa\right) \right]^2 = \nonumber\\
-&= \left\{\lambda \left(\xi \nu \hat A + \pi \hat C\right)^2 + \left(\xi \nu \hat B   + \pi \hat D - \lambda \rho \kappa\right) ^2 - \lambda \xi \mu [\hat A\hat C + \alpha\hat B\hat D(1 + b^2)]\right\}^2 
+\cfrac{\cos t_2 + t_{1C} (\cos t_4 - \cos t_2) - M_{15}^{36}(\cos t_2 - \cos t_1)}{M_{14}^{36} (\cos t_3 - \cos t_1) - M_{15}^{36}(\cos t_2 - \cos t_1)} &=\cfrac{\sin t_2 + t_{2C} (\sin t_4 - \sin t_2) - M_{15}^{36}(\sin t_2 - \sin t_1)}{M_{14}^{36}(\sin t_3 - \sin t_1) - M_{15}^{36}(\sin t_2 - \sin t_1)}
 \end{align}
 
 \normalsize
-
-\begin{align}
-\kappa(x_2) &= \kappa_{21} x_2 + \kappa_{20}\\
-\hat C(x_2) &= 2(bx_2x_3 - b x_3x_4 - cx_2 x_4 )cx_2 x_3 x_4 = Ix_2 + J \\
-\hat D(x_2) &= \lambda (bx_2x_3 - b x_3x_4 - cx_2 x_4 )^2 + c^2x_2^2 x_3^2 x_4^2 = K x_2 + L \\
-I &= - 2b cx_3^2x_4^2\\
-J &= \xi (2bcx_3^2 x_4 - 2c^2 x_3 x_4^2)\\
-K &= \lambda (2bc x_3 x_4^2 - 2b^2x_3^2 x_4 )\end{align}
-\begin{align}
-L &= \lambda b^2 x_3^2 x_4^2 + \xi c^2x_3^2 x_4^2+\lambda \xi (bx_3 - c x_4)^2\\
-M &= \xi \mu(\hat AK  + \hat BI ) \\
-N &= \xi \mu(\hat AL + \hat BJ) \\
-P &= \pi I \\
-Q &= \xi \nu \hat A + \pi J \\
-R &= \pi K - \lambda \rho \kappa_{21}  \\
-S &=\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20} \\ 
-T &= - \lambda \xi \mu [\hat AI  + \alpha\hat BK  (1 + b^2)]\\
-U &= - \lambda\xi \mu [\hat A J + \alpha\hat B L(1 + b^2)]\\
-\lambda [Mx_2 + N -2 (Px_2 + Q)(Rx_2 &+ S) ]^2  = [\lambda\left(Px_2 + Q\right)^2 + \left(Rx_2 + S\right) ^2 + T x_2 + U]^2 \\
-V &= M-2PS -2 QR\\
-W &= N -2\xi PR-2 QS \\
-Y &= 2\lambda VW\\
-Z &= \lambda\xi V^2 + \lambda W^2 \\
-\hat E &= 2\lambda PQ + 2RS + T\\
-\hat F &= \lambda\xi P^2 +\xi R^2 + \lambda Q^2 + S^2 + U \\
-Yx_2 + Z &= (\hat E x_2 + \hat F)^2 =  \xi \hat E^2 + \hat F^2 + 2\hat E\hat F x_2 \\
-\xi (Y - 2\hat E\hat F)^2 &= \left(\xi \hat E^2 + \hat F^2 - Z\right)^2 \label{eq75}
-\end{align}
-
-We have the Equation (\ref{eq75}) in $\alpha, x_3, x_4, a, b, c$.
-
-The main question is: is it an identity? Let us express it as a function of $(x_3,x_4) \equiv (x,y,z=x-a,w=y-a)$.
-
-\begin{align}
-V &= \xi \mu(\hat AK  + \hat BI )-2\pi I(\xi \nu \hat B + \pi L - \lambda \rho \kappa_{20}) \nonumber\\
-& -2\xi \nu \pi \hat A K +2 \lambda \xi \nu \rho \kappa_{21} \hat A -2  \pi^2 J K +2 \lambda \pi \rho \kappa_{21} J\\
-W &= \xi \mu(\hat AL + \hat BJ) -2\xi \pi I(\pi K - \lambda \rho \kappa_{21})\nonumber\\
-&-2\xi^2 \nu^2 \hat A \hat B -2 \xi \nu \pi \hat A L +2 \lambda \xi \nu \rho \kappa_{20} \hat A-2 \xi \nu \pi \hat B J -2 \pi^2 J L +2 \lambda \pi \rho \kappa_{20} J
-\end{align}
-
-Let us substitute from $L$ and above, until $\eta$.
-
-\begin{align}
-\nu^2 &= z^4 ( w - \alpha y^3 + \bar k y^2)^2\nonumber \\
-&= z^4 (w^2 + \alpha^2 y^6 + \bar k^2 y^4 - 2  \alpha y^3 w + 2 \bar k y^2 w - 2 \alpha \bar k y^5)
-\end{align}
-
-At this moment, we realize that we are next to a polynomial of a single variable, say $x$. Let us eliminate $z$.
-
-For all conic section in $x\hat O y$, there is a circle in $x\hat O z$. The theorem is simplified because the inverse projection of 3 collinear points are 3 collinear points too.
-
-\begin{align}
-V &= x(x-a)^4 yw^2(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3) \\
-W &= x(x-a)^4(\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)\\
-Y &= 2\lambda x^2(x-a)^8 yw^2(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3)(\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)
-\end{align}
-
-If we did not want to give it all up, we ``would'' have:
-
-\begin{align}
-Z &= x^2(x-a)^8 [\lambda\xi  y^2w^4(\bar o_0 + \bar o_1 x + o_2 x^2 + o_3 x^3)^2 + \lambda (\bar p_0 + \bar p_1 x + \bar p_2 x^2 + \bar p_3 x^3)^2] \nonumber\\
-&= \cdots
-\end{align}
-
-\begin{align}
-S(\nu)&=z^2\biggl[\xi (w - \alpha y^3 + \bar k y^2) (\lambda w^2 + x^2 w^2) + \alpha w^3 (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy) \nonumber\\
-&- \lambda (w^3 - \alpha x^2 w^3) (y^2 + \xi)\biggr]= (x-a)^2(\bar q_2 x^2 + \bar q_1 x + \bar q_0)\\
-\bar q_0 &= \xi \lambda w^2(w - \alpha y^3 + \bar k y^2)  + \alpha w^3 \bar c y^2 - \lambda w^3 (y^2 + \xi)\\
-\bar q_1 &= \alpha w^3 \bar d y\\
-\bar q_2 &= \xi w^2 (w - \alpha y^3 + \bar k y^2) + \alpha w^3 (\bar a y^2 + \bar b) + \lambda \alpha w^3 (y^2 + \xi)
-\end{align}
-
-\begin{align}
-Q(\nu)&=x(x-a)^2 w^2(\bar r_1 x + \bar r_0)\,;\,\bar r_0 = -2\xi (w - \alpha y^3 + \bar k y^2)+\alpha w \bar g y^2 \,;\,\bar r_1 = \alpha w \bar h y\\
-\hat E &= 2\lambda \pi I\overbrace{(\xi {\color{red}\nu} \hat A + \pi J)}^{Q} + 2(\pi K - \lambda \rho \kappa_{21})\overbrace{(\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})}^{S} - \xi \mu (\lambda \hat AI  + \hat BK  )\nonumber\\
-&= \sum_{i=0}^4 \bar u_i x^i (x^4 - 4a x^3 + 6a^2 x^2 - 4 a^3 x + a^4) \nonumber\\
-&+ 2\lambda \xi \mu w^2\bar \iota x^3 y^2  - (\lambda \xi \mu w^2 + \xi \mu x^2 w^2)(\bar e xy^2 + \bar f x^2 y) = \sum_{i=0}^8 \bar t_i x^i\\
-\bar s_1 &= \alpha \bar e y\,;\,\bar s_2 = \alpha \bar f - \lambda \alpha \\
-\bar t_0 &= \bar u_0 a^4 - \lambda \xi \mu w^2 \bar f y\,;\,\bar u_0 = 2yw^3\lambda q_0\\
-\bar t_1 &= \bar u_1 a^4 - 4a^3\bar u_0 - \lambda \xi \mu w^2 \hat e y^2\,;\,\bar u_1 = 2yw^3 q_1 \lambda + 2yw^3 q_0 s_1\\
-\bar t_2 &= a^4 \bar u_2 - 4a^3 \bar u_1 + 6a^2 \bar u_2\,;\,\bar u_2 = 2yw^3 q_2 \lambda + 2yw^3 q_1 s_1 + 2yw^3 q_0 s_2\\
-\bar t_3 &= a^4\bar u_3 - 4a^3 u_2 + 6a^2 \bar u_1 - 4a \bar u_0  + 2\lambda \xi \mu w^2\bar \iota y^2 - \xi \mu w^2 \bar e y^2\\
-\bar u_3 &= 2yw^3 \lambda \alpha \bar \iota y w^2 \bar r_0 + 2yw^3 q_2 s_1 + 2yw^3 q_1 s_2\\
-\bar t_4 &= a^4 \bar u_4 - 4a^3 \bar u_3 + 6a^2 \bar u_2 -4a \bar u_1 +\bar u_0- \xi \mu w^2 \bar f y\\
-\bar u_4 &= 2yw^3 \lambda \alpha \bar \iota y w^2\bar r_1 + 2yw^3q_2 s_2\\
-\bar t_5 &= -4a^3\bar u_4 + 6a^2\bar u_3 - 4a\bar u_2 + \bar u_1\\
-\bar t_6 &= 6a^2\bar u_4 - 4a\bar u_3 + \bar u_2\,;\,\bar t_7 = -4a\bar u_4 + \bar u_3\,;\,\bar t_8 = \bar u_4
-\end{align}
-
-\begin{align}
-\hat F &= \lambda\xi \pi^2 I^2 +\xi (\pi K - \lambda \rho \kappa_{21})^2 + \lambda (\xi {\color{red}\nu} \hat A + \pi J)^2 + (\xi {\color{red}\nu} \hat B + \pi L - \lambda \rho \kappa_{20})^2 \nonumber\\
-&- \xi \mu (\lambda \hat A J + \hat B L) \\
-&= \lambda\xi \alpha^2 z^4w^6 \bar \iota^2 x^4 y^4 +\xi (\alpha z^2w^3 (\bar e xy^2 + \bar f x^2 y) + \lambda yz^2(w^3 - \alpha x^2 w^3) )^2 \\
-&+ \lambda x^2z^4 w^4(\bar r_1 x + \bar r_0)^2 + z^4(\bar q_2 x^2 + \bar q_1 x + \bar q_0)^2 \nonumber\\
-&- \xi \mu (\lambda (-2xw^2) (\bar g xy^2 + \bar h x^2 y) + (\lambda w^2 + x^2 w^2) (\bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy))
-\end{align}
-
-\begin{align}
-L &= \bar a x^2 y^2 + \bar b x^2 + \bar c y^2 + \bar d xy \,;\,\bar a = \lambda b^2 + \xi c^2\,;\,\bar b = \lambda \xi b^2\,;\,\bar c = \lambda \xi c^2\,;\,\bar d = -2 \lambda \xi bc \\
-K &= \bar e xy^2 + \bar f x^2 y \,;\,\bar e = 2 \lambda bc \,;\,\bar f = -2\lambda b^2 \\
-J &= \bar g xy^2 + \bar h x^2 y \,;\,\bar g = -2\xi c^2 \,;\,\bar h = 2\xi bc \\
-I &= \bar \iota x^2 y^2 \,;\, \bar \iota = -2bc
-\end{align}
-
-\begin{align}
-(Y - 2\hat E \hat F)^2 &= \cdots \\
-\hat E^2 &= \cdots \\
-\hat F^2 &= \cdots 
-\end{align}
-
-\begin{align}
-\kappa_{21} &= -yz^2 \\
-\kappa_{20} &= y^2 z^2 + \xi z^2\\
-\rho &= w^3 - \alpha x^2 w^3\\
-\pi &= \alpha z^2w^3\\
-\nu &= z^2 w - \alpha y^3 z^2 + \bar k y^2 z^2\,;\,\bar k = \alpha \cdot a\\
-\mu &= \bar \ell z^4 w^4 + \bar m z^4 w^6 + \bar n z^4 w^5 \,;\,\bar \ell = 4\alpha   -4\alpha^2 a^2 \,;\,\bar m = -4\alpha^2 \,;\,\bar n = - 8\alpha^2 a \\
-\hat B &= \lambda w^2 + x^2 w^2\\
-\hat A &= -2xw^2 \\
-\bar o_0 &= 4\lambda \xi w^3(  w - \alpha y^3  + \bar k y^2 ) -2 \lambda \alpha w^4 \bar g y^2 \\ 
-\bar o_1 &= -2\bar e y (\xi\bar \ell w^4 + \xi\bar m w^6 + \xi\bar n w^5)
-+ \lambda \bar\iota y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)\nonumber\\
-&-2\lambda\alpha \bar \iota yw^2 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 ) - 2\alpha^2 \bar \iota y w^4 \bar c y^2 +2\lambda\alpha \bar \iota y  w^4 (y^2  + \xi )\nonumber\\
-&+4\alpha\xi \bar e yw^3(  w - \alpha y^3  + \bar k y^2 ) -2\alpha^2 \bar g y w^4\bar e y^2 -2 \lambda \alpha w^4 \bar h y \\
-\bar o_2 &= -2 \bar f  (\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)- 2\alpha^2 \bar \iota y w^4 \bar d y +4\alpha\xi \bar f  w^3(  w - \alpha y^3  + \bar k y^2 )  \nonumber\\
-&- 4\lambda \xi \alpha  w^3(  w - \alpha y^3  + \bar k y^2) -2\alpha^2 \bar g y w^4 \bar f  y -2\alpha^2 \bar h w^4\bar e y^2 + 2 \lambda \alpha^2 w^4 \bar g y^2 \\
-\bar o_3 &= \bar\iota y(\xi\bar \ell  w^4 + \xi\bar m  w^6 + \xi\bar n  w^5)-2\alpha \bar \iota y w^3 ( \xi  w - \xi \alpha y^3  + \xi \bar k y^2 )  \nonumber\\
-&- 2\alpha^2 \bar \iota \lambda y  w^4 (y^2  + \xi ) 
--2\alpha^2 \bar h w^4 \bar f  y
-+ 2 \lambda \alpha^2 w^4 \bar h  y- 2\alpha^2 \bar \iota y w^4  (\bar a y^2 + \bar b )\\
-\bar p_0 &=- 2\xi w^2\bar c y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) + \xi \lambda w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)\nonumber\\
-&+4\lambda\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) +  4 \xi\alpha w^6  \bar c y^2  \nonumber\\
-&+ 4 \xi\alpha w^5\bar k y^2 \bar c y^2 +  w (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) - \alpha y^3  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) \nonumber\\
-&+ \bar k y^2  (-4 \lambda \xi w^5 y^2  -4 \lambda \xi w^5 \xi) -2 \xi\alpha w^3 \bar g y^2\lambda w^2 (  w - \alpha y^3  + \bar k y^2 )   \nonumber\\
-&+ 2 \lambda \alpha w^6 (\bar g y^4 + \xi \bar g y^2) -2 \alpha^2 w^6\bar g y^2 \bar c y^2 - 4 \xi\alpha w^5\alpha y^3 \bar c y^2
-\end{align}
-
-\begin{align}
-\bar p_1 &= - 2\xi w^2\bar d y (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) + \xi \lambda w^2\bar h  y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)- 2\xi \alpha w^3 \bar \iota \lambda y^3 w^3  \nonumber\\
-&+  4 \xi\alpha w^6  \bar d y - 4 \xi\alpha w^5\alpha y^3 \bar d y + 4 \xi\alpha w^5\bar k y^2 \bar d y -2 \lambda\xi\alpha \bar h  y w^5  (  w - \alpha y^3  + \bar k y^2 ) \nonumber\\
-&-2 \alpha^2 w^6\bar g y^2 \bar d y 
--2 \alpha^2 w^6\bar h y \bar c y^2
-+ 2 \lambda \alpha w^6 (\bar h  y^3 + \xi \bar h  y) \\
-\bar p_2 &= -2\xi w^2\bar a  y^2(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) -2\xi \alpha \bar \iota y^2\alpha w^6 \bar e y^2 - 2\xi w^2\bar b (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)  \nonumber\\
-&+4\xi^2 w^4 (  w^2 + \alpha^2 y^6  + \bar k^2 y^4  - 2  \alpha y^3  w + 2 \bar k y^2 w - 2 \alpha y^5  \bar k) +  4 \xi\alpha w^6  (\bar a  y^2 + \bar b ) \nonumber\\
-&- 4 \xi\alpha w^5\alpha y^3 (\bar a  y^2 + \bar b ) + 4 \xi\alpha w^5\bar k y^2 (\bar a  y^2 + \bar b ) +  w (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi ) \nonumber\\
-&- \alpha y^3  (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi ) + \bar k y^2  (4 \lambda \xi \alpha  w^5 y^2  + 4 \lambda \xi \alpha  w^5 \xi )  \nonumber\\
-&-2 \alpha^2 z^4w^6\bar g y^2 (\bar a  y^2 + \bar b ) -2 \alpha^2 z^4w^6\bar h y \bar d y - 2 \lambda \alpha^2 w^6 (\bar g y^4 + \xi \bar g y^2)\nonumber\\
-&-2 \xi\alpha w^3 \bar g y^2  w^2 (  w - \alpha y^3  + \bar k y^2 )+ \xi  w^2\bar g y^2 (\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5) \\
-\bar p_3 &= \xi w^2\bar h  y(\bar \ell  w^4 + \bar m  w^6 + \bar n  w^5)
--2\xi \alpha^2 \bar \iota y^2 w^6 \bar f  y 
-- 2\xi \alpha w^3 \bar \iota \lambda y^3 \alpha  w^3 \nonumber\\
-&-2 \xi\alpha \bar h  y w^5 (  w - \alpha y^3  + \bar k y^2 ) 
--2 \alpha^2 w^6\bar h y (\bar a  y^2 + \bar b ) - 2 \lambda \alpha^2 w^6 (\bar h  y^3 + \xi \bar h  y)
-\end{align}
-
-Below, let us explain the Equation (\ref{eq20}), expliciting $C$ on Equation (\ref{eq3}).
-
-\begin{align}
-    \begin{pmatrix}
-        x_2 & 1 \\ x_4 & 1
-    \end{pmatrix}  
-    \begin{pmatrix}
-        a \\ b
-    \end{pmatrix} &=
-    \begin{pmatrix}
-        y_2 \\ y_4
-    \end{pmatrix} \Rightarrow 
-    \begin{pmatrix}
-        a \\ b
-    \end{pmatrix} = \cfrac{1}{x_2 - x_4}
-    \begin{pmatrix}
-        1 & -1 \\ -x_4 & x_2
-    \end{pmatrix}  
-    \begin{pmatrix}
-        y_2 \\ y_4
-    \end{pmatrix} \\
-    \begin{pmatrix}
-        x_3 & 1 \\ x_5 & 1
-    \end{pmatrix}  
-    \begin{pmatrix}
-        c \\ d
-    \end{pmatrix} &=
-    \begin{pmatrix}
-        y_3 \\ y_5
-    \end{pmatrix} \Rightarrow 
-    \begin{pmatrix}
-        c \\ d
-    \end{pmatrix} = \cfrac{1}{x_3 - x_5}
-    \begin{pmatrix}
-        1 & -1 \\ -x_5 & x_3
-    \end{pmatrix}  
-    \begin{pmatrix}
-        y_3 \\ y_5
-    \end{pmatrix} \\
-    ax + b &= cx + d \Rightarrow x = \cfrac{d-b}{a-c} = 0 \therefore d = b
-\end{align}
 
 \newpage
 
@@ -402,24 +193,81 @@ Below, let us explain the Equation (\ref{eq20}), expliciting $C$ on Equation (\r
 \begin{align}
     A &= X_1 X_5 \cap X_2 X_6 \\
     B &= X_1 X_4 \cap X_3 X_6 \\
-    C &= X_2 X_4 \cap X_3 X_5 \in AB \\
-    A &= (0,0) \\
-    B &= (0,a) \\
-    X_1 &= (x_1, bx_1) \\
-    X_5 &= (x_5, bx_5) \\
-    X_2 &= (x_2, cx_2) \\
-    X_6 &= (x_6, cx_6) \\
-    X_4 &= (x_4, d(x_4 - a) \\
-    bx_1 &= d(x_1 - a) \\
-    X_3 &= e(x_3 - a) \\
-    cx_6 &= e(x_6 - a) \\
-    \cfrac{-y_3 x_5 + y_5 x_3}{x_3 - x_5} &= \cfrac{-y_2 x_4 + y_4 x_2}{x_2 - x_4} \\
-    \text{Therefore, } \exists &\lambda\in\mathbb{R}^6\text{, such that:} \nonumber \\
+    C &= X_2 X_4 \cap X_3 X_5 \in AB\Leftrightarrow (\ref{eq11}) \\
+    \text{Therefore, } \exists &\lambda\in\mathbb{R}^6-\{0\}\text{, such that:} \nonumber \\
     \begin{pmatrix}
         x_1^2 & y_1^2 & x_1 y_1 & x_1 & y_1 & 1 \\
         \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
         x_6^2 & y_6^2 & x_6 y_6 & x_6 & y_6 & 1 
     \end{pmatrix}\cdot \lambda &= 0
+\end{align}
+
+We want to show that:
+
+\begin{align}
+0 &=
+    \begin{vmatrix}
+        x_2^2 - x_1^2 & y_2^2 - y_1^2 & x_2 y_2 - x_1 y_1 & x_2 - x_1 & y_2 - y_1 \\
+        x_3^2 - x_1^2 & y_3^2 - y_1^2 & x_3 y_3 - x_1 y_1 & x_3 - x_1 & y_3 - y_1 \\
+        x_4^2 - x_1^2 & y_4^2 - y_1^2 & x_4 y_4 - x_1 y_1 & x_4 - x_1 & y_4 - y_1 \\
+        x_5^2 - x_1^2 & y_5^2 - y_1^2 & x_5 y_5 - x_1 y_1 & x_5 - x_1 & y_5 - y_1 \\
+        x_6^2 - x_1^2 & y_6^2 - y_1^2 & x_6 y_6 - x_1 y_1 & x_6 - x_1 & y_6 - y_1 
+    \end{vmatrix} 
+\end{align}
+
+\scriptsize
+
+\begin{align}
+ 0 &= (y_2 - y_1) \begin{vmatrix}
+        x_3^2 - x_1^2 & y_3^2 - y_1^2 & x_3 y_3 - x_1 y_1 & x_3 - x_1  \\
+        x_4^2 - x_1^2 & y_4^2 - y_1^2 & x_4 y_4 - x_1 y_1 & x_4 - x_1  \\
+        x_5^2 - x_1^2 & y_5^2 - y_1^2 & x_5 y_5 - x_1 y_1 & x_5 - x_1 \\
+        x_6^2 - x_1^2 & y_6^2 - y_1^2 & x_6 y_6 - x_1 y_1 & x_6 - x_1
+        \end{vmatrix}
+        - (y_3 - y_1) \begin{vmatrix}
+        x_2^2 - x_1^2 & y_2^2 - y_1^2 & x_2 y_2 - x_1 y_1 & x_2 - x_1  \\
+        x_4^2 - x_1^2 & y_4^2 - y_1^2 & x_4 y_4 - x_1 y_1 & x_4 - x_1  \\
+        x_5^2 - x_1^2 & y_5^2 - y_1^2 & x_5 y_5 - x_1 y_1 & x_5 - x_1 \\
+        x_6^2 - x_1^2 & y_6^2 - y_1^2 & x_6 y_6 - x_1 y_1 & x_6 - x_1
+        \end{vmatrix}\nonumber\\
+        &+ (y_4 - y_1)  \begin{vmatrix}
+        x_2^2 - x_1^2 & y_2^2 - y_1^2 & x_2 y_2 - x_1 y_1 & x_2 - x_1  \\
+        x_3^2 - x_1^2 & y_3^2 - y_1^2 & x_3 y_3 - x_1 y_1 & x_3 - x_1  \\
+        x_5^2 - x_1^2 & y_5^2 - y_1^2 & x_5 y_5 - x_1 y_1 & x_5 - x_1 \\
+        x_6^2 - x_1^2 & y_6^2 - y_1^2 & x_6 y_6 - x_1 y_1 & x_6 - x_1
+        \end{vmatrix} 
+        - (y_5 - y_1) \begin{vmatrix}
+        x_2^2 - x_1^2 & y_2^2 - y_1^2 & x_2 y_2 - x_1 y_1 & x_2 - x_1  \\
+        x_3^2 - x_1^2 & y_3^2 - y_1^2 & x_3 y_3 - x_1 y_1 & x_3 - x_1  \\
+        x_4^2 - x_1^2 & y_4^2 - y_1^2 & x_4 y_4 - x_1 y_1 & x_4 - x_1 \\
+        x_6^2 - x_1^2 & y_6^2 - y_1^2 & x_6 y_6 - x_1 y_1 & x_6 - x_1
+        \end{vmatrix} \nonumber\\
+        &+ (y_6 - y_1)  \begin{vmatrix}
+        x_2^2 - x_1^2 & y_2^2 - y_1^2 & x_2 y_2 - x_1 y_1 & x_2 - x_1  \\
+        x_3^2 - x_1^2 & y_3^2 - y_1^2 & x_3 y_3 - x_1 y_1 & x_3 - x_1  \\
+        x_4^2 - x_1^2 & y_4^2 - y_1^2 & x_4 y_4 - x_1 y_1 & x_4 - x_1 \\
+        x_5^2 - x_1^2 & y_5^2 - y_1^2 & x_5 y_5 - x_1 y_1 & x_5 - x_1
+        \end{vmatrix}
+\end{align}
+
+\normalsize
+
+\subsection{Beyond Conic Sections}
+
+More generally,
+
+\begin{align}
+    A &= X_1 X_5 \cap X_2 X_6 \\
+    B &= X_1 X_4 \cap X_3 X_6 \\
+    C &= X_2 X_4 \cap X_3 X_5 \in AB\Leftrightarrow (\ref{eq11}) \Rightarrow \forall f : \mathbb{R}^2 \to \mathbb{R},\\
+    f(x,y) &= \sum_{i,j\ge 0} a_{ij} x^i y^j\Rightarrow \left\{\begin{aligned}
+        f(x_1,y_1) &= 0 \\
+        f(x_2,y_2) &= 0 \\
+        f(x_3,y_3) &= 0 \\
+        f(x_4,y_4) &= 0 \\
+        f(x_5,y_5) &= 0 \\
+        f(x_6,y_6) &= 0 
+    \end{aligned}\right. \\
 \end{align}
 
 \section{From Circle to Parabola}
@@ -506,13 +354,62 @@ $E = K\cap \pi_E: z = bx + c$; $b < b_E$ for an ellipsis;
 
 $P = K\cap \pi_P: z = bx + c$; $b_E < b < b_H$ for a parabola. Here, it suffices that $\pi_P$ has a slope greater than for an ellipsis and less than for an hyperbola.
 
+\section{Higher Dimensions}
+
+\begin{align}
+A &= X_1 X_5 \cap X_2 X_6 X_7 \\
+B &= X_1 X_4 \cap X_3 X_6 X_7 \\
+C &= X_2 X_4 \cap X_3 X_5 X_7 \\
+D &= X_4 X_7 \cap X_2 X_3 X_5 \in \langle ABC \rangle \\
+X = \begin{pmatrix}
+    x_1 \\ y_1 \\ z_1 
+\end{pmatrix} + t_1 \begin{pmatrix}
+    x_5 - x_1 \\
+    y_5 - y_1 \\
+    z_5 - z_1 
+\end{pmatrix} &= \begin{pmatrix}
+    x_2 \\ y_2 \\ z_2
+\end{pmatrix} + t_2 \begin{pmatrix}
+    x_6 - x_2 \\
+    y_6 - y_2 \\
+    z_6 - z_2 
+\end{pmatrix} + t_3 \begin{pmatrix}
+    x_7 - x_2 \\
+    y_7 - y_2 \\
+    z_7 - z_2
+\end{pmatrix} \\
+\begin{pmatrix}
+    x_5 - x_1 & x_2 - x_6 & x_2 - x_7 \\
+    y_5 - y_1 & y_2 - y_6 & y_2 - y_7 \\
+    z_5 - z_1 & z_2 - z_6 & z_2 - z_7 
+\end{pmatrix} &\cdot \begin{pmatrix}
+    t_{1A} \\
+    t_{2A} \\
+    t_{3A} 
+\end{pmatrix} = X_2 - X_1 \Rightarrow t_A = M_{15}^{267} (X_2 - X_1)\\
+t_B &= M_{14}^{367} (X_3 - X_1)\\
+t_C &= M_{24}^{357} (X_3 - X_2) \\
+t_D &= M_{47}^{235} (X_2 - X_4) \\
+D &= A + \lambda (B - A) + \mu (C - A) \\
+\begin{pmatrix}
+    x_B - x_A & x_C - x_A \\
+    y_B - y_A & y_C - y_A
+\end{pmatrix} \cdot \begin{pmatrix}
+    \lambda \\ \mu
+\end{pmatrix} &= \begin{pmatrix}
+    x_D \\ y_D 
+\end{pmatrix} \\
+(z_B - z_A) \lambda + (z_C - z_A)\mu &= z_D \\
+0 &= \langle (x^2, y^2, z^2, xy, xz, yz, x, y, z, 1), (\lambda_1, \cdots, \lambda_{10})\rangle
+\end{align}
+
 $\blacksquare$
 
 \vspace{12mm}
 
 Out of charity, there is no salvation at all. With charity, we evolve.
 
-July, the 4th, 2024.
+July, the 20th, 2024.
 %\clearpage
 
 %\bibliography{references.bib}
