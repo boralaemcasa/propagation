@@ -87,7 +87,7 @@ $\,$\\[2.0cm]
 
 % List of Acronyms Definition
 
-\section{The Conic Theorem}
+\section{The ConicSection Theorem}
 
 \begin{align}
 A &= X_1 X_5 \cap X_2 X_6 \\
@@ -188,7 +188,7 @@ Below, we try to reduce that to $0x = 0$.
 
 \newpage
 
-\section{The Converse Conic Theorem}
+\section{The Converse ConicSection Theorem}
 
 \begin{align}
     A &= X_1 X_5 \cap X_2 X_6 \\
@@ -252,7 +252,7 @@ We want to show that:
 
 \normalsize
 
-\subsection{Beyond Conic Sections}
+\subsection{Beyond ConicSections}
 
 More generally,
 
@@ -267,7 +267,7 @@ More generally,
         f(x_4,y_4) &= 0 \\
         f(x_5,y_5) &= 0 \\
         f(x_6,y_6) &= 0 
-    \end{aligned}\right. \\
+    \end{aligned}\right. 
 \end{align}
 
 \section{From Circle to Parabola}
@@ -338,11 +338,11 @@ s'': z' &= Ax' + R \\
 
 \section{Degenerated Section}
 
-A degenerated conic section are 2 straight lines, but we do not want 2 distinct proofs. 
+A degenerated conicSection are 2 straight lines, but we do not want 2 distinct proofs. 
 
 How do we merge a theorem $T_1$ on a circle and a theorem $T_2$ about 2 straight lines?
 
-We want to prove that: $T(S)\Leftrightarrow$ ``three points are collinear'' holds in a conic section if and only if $T(r,s)\Leftrightarrow$ ``three points are collinear'' holds degeneratedly in 2 straight lines too.
+We want to prove that: $T(S)\Leftrightarrow$ ``three points are collinear'' holds in a conicSection if and only if $T(r,s)\Leftrightarrow$ ``three points are collinear'' holds degeneratedly in 2 straight lines too.
 
 Our way is to intercept a cone $K:z^2 = a^2(x^2 + y^2)$ by a plane.
 
@@ -403,13 +403,59 @@ D &= A + \lambda (B - A) + \mu (C - A) \\
 0 &= \langle (x^2, y^2, z^2, xy, xz, yz, x, y, z, 1), (\lambda_1, \cdots, \lambda_{10})\rangle
 \end{align}
 
+A conicSection in $\mathbb{R}^n$ is expressed as :
+
+\begin{align}
+    \sum_{i=1}^n a_i x_i^2 +\sum_{i=1}^{n-1} \sum_{j=i+1}^n b_{ij} x_i x_j +  \sum_{i=1}^n c_i x_i + d &= 0. \\
+    \text{With }\# \lambda = n + \begin{pmatrix}
+        n \\ 2
+    \end{pmatrix} + n + 1 = \begin{pmatrix}
+        n + 2 \\ 2
+    \end{pmatrix} &= \cfrac{(n+1)(n+2)}{2}.
+\end{align}
+
+Generalizing, as $2$-dimensioned planes intersect at $1$-dimensioned planes in $\mathbb{R}^3$, i.e., $ABC \cap ABD = AB$, also:
+
+\begin{align}
+\langle X_1, \cdots, X_k \rangle \cap \langle X_1, \cdots, X_{k-1}, \widehat{X_k}, X_{k+1} \rangle &\ne \emptyset, \forall k \ge \left\lceil\cfrac{n}{2}\right\rceil + 1.
+\end{align}
+
+That is because, in $\mathbb{R}^4$, $\langle e_1, e_2 \rangle \cap \langle e_3, e_4 \rangle = 0$ and $2$D planes may be parallel $\Leftrightarrow$ they meet at infinity. In $\mathbb{R}^5$, $\langle e_1, e_2, e_3 \rangle \cap \langle e_4, e_5 \rangle = 0$ and $3$D planes may be parallel to $2$D planes. So, we define the least by $\ell = \left(\left\lfloor \cfrac{n}{2} \right\rfloor,\left\lceil \cfrac{n}{2} \right\rceil\right)$.
+
+A third degree section in $\mathbb{R}^n$ is expressed as:
+
+\begin{align}
+&\sum_{i=1}^n a_i x_i^3 +\sum_{i=1}^{n-1} \sum_{j=i+1}^n b_{ij} x_i^2 x_j
++\sum_{i=1}^{n-1} \sum_{j=i+1}^n c_{ij} x_i x_j^2 +\sum_{i=1}^{n-2}\sum_{j=i+1}^{n-1} \sum_{k=j+1}^n d_{ijk} x_i x_j x_k \nonumber\\
++ &\sum_{i=1}^n e_i x_i^2 +\sum_{i=1}^{n-1} \sum_{j=i+1}^n f_{ij} x_i x_j+  \sum_{i=1}^n g_i x_i + h = 0. \\
+\# \lambda &= 1 + 3n + 3\begin{pmatrix}
+    n \\ 2
+\end{pmatrix} + \begin{pmatrix}
+    n \\ 3
+\end{pmatrix}.
+\end{align}
+
+A $k$-th degree section has:
+
+\begin{align}
+    \# \lambda &= 1 + n k + \sum_{i=2}^{k} \sum_{j=1}^{k-i+1} j \begin{pmatrix}
+        n \\ i
+    \end{pmatrix} = 1 + n k + \sum_{i=2}^{k} \begin{pmatrix}
+        k+2-i \\ 2
+    \end{pmatrix}  \begin{pmatrix}
+        n \\ i
+    \end{pmatrix}.
+   \end{align} 
+
+\vspace{6mm}
+
 $\blacksquare$
 
 \vspace{12mm}
 
 Out of charity, there is no salvation at all. With charity, we evolve.
 
-July, the 20th, 2024.
+July, the 22th, 2024.
 %\clearpage
 
 %\bibliography{references.bib}
