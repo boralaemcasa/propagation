@@ -1,3 +1,4 @@
+# this is a 2D plotting program. for a 3D one, see pg3.py
 import numpy as np
 from mpmath import *
 import matplotlib.pyplot as plt
@@ -27,22 +28,20 @@ def intersect(X, Y, a, b, c, d):
 	return mp.matrix([[Ax], [Ay]]), True
 	
 mp.dps = 40
+fig = plt.figure(figsize=(16,9))
 p = mp.pi()
 
 # (y+x + 1)(y - 2x + 1) = y^2 - 2x^2 - 2xy + xy + y + x + y - 2x + 1
 
-a = mp.rand() * 2 - 1 # -2 # x^2
-b = mp.rand() * 2 - 1 #  1 # y^2
-c = mp.rand() * 2 - 1 # -1 # xy
-d = mp.rand() * 2 - 1 # -1 # x
-e = mp.rand() * 2 - 1 #  2 # y
-f = mp.rand() * 2 - 1 #  1
+a = mp.zeros(6,1)
+for i in range(0,6):
+	a[i] = mp.rand() * 2 - 1
 
 def raio(t):
 	cc, ss = mp.cos(t), mp.sin(t)
-	A = cc*cc * (a - b) + c * cc * ss + b
-	B = d * cc + e * ss
-	C = f
+	A = cc*cc * (a[0] - a[1]) + a[2] * cc * ss + a[1]
+	B = a[3] * cc + a[4] * ss
+	C = a[5]
 	Delta = B*B - 4*A*C
 	if Delta < 0 or mp.fabs(A) < 1e-6:
 		return mp.nan
@@ -73,12 +72,16 @@ plt.plot(x, y, 'y')
 #x[:-1,0], y[:-1,0] = t[:,1], t[:,2]
 #x[6,0],   y[6,0]   = t[0,1], t[0,2]
 #plt.plot(x, y, 'b')
+contador = 0
 while True:
 	A, flag1 = intersect(t[:,1], t[:,2], 1-1, 5-1, 2-1, 6-1)
 	B, flag2 = intersect(t[:,1], t[:,2], 1-1, 4-1, 3-1, 6-1)
 	C, flag3 = intersect(t[:,1], t[:,2], 2-1, 4-1, 3-1, 5-1)
 	if flag1 and flag2 and flag3:
 		break
+	contador = contador + 1
+	if contador >= 500:
+		exit()
 line(A[0], A[1], B[0], B[1], 'r')
 line(B[0], B[1], C[0], C[1], 'r')
 Lambda1 = (C[0] - A[0])/(B[0] - A[0])
@@ -91,7 +94,7 @@ yl2 = np.float32(max([max(t[:,2]),A[1],B[1],C[1]]))
 plt.xlim(xl1, xl2)
 plt.ylim(yl1, yl2)
 plt.show()
-# Release 0.1.2 from 2024/July/17
+# Release 0.1.3 from 2024/July/23
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # Out of charity, there is no salvation at all.
 # With charity, there is Evolution.
