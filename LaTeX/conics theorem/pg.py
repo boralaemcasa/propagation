@@ -13,10 +13,14 @@ def line(Xa, Ya, Xb, Yb, color):
 def intersect(X, Y, a, b, c, d):
 	#X[a] + t1 (X[b] - X[a]) = X[c] + t2 (X[d] - X[c])
 	M = mp.matrix([[X[b] - X[a], X[c] - X[d]], [Y[b] - Y[a], Y[c] - Y[d]]])
+	U = mp.zeros(6,2)
 	if mp.fabs(mp.det(M)) < 1e-6:
 		z = np.random.permutation(6)
-		X[0],X[1],X[2],X[3],X[4],X[5] = X[int(z[0])],X[int(z[1])],X[int(z[2])],X[int(z[3])],X[int(z[4])],X[int(z[5])]
-		Y[0],Y[1],Y[2],Y[3],Y[4],Y[5] = Y[int(z[0])],Y[int(z[1])],Y[int(z[2])],Y[int(z[3])],Y[int(z[4])],Y[int(z[5])]
+		for i in (0,6):
+			U[i,0] = X[int(z[i])]
+			U[i,1] = Y[int(z[i])]
+		X = U[:,0]
+		Y = U[:,1]
 		return 0, False
 	t = M**(-1) * mp.matrix([[X[c] - X[a]], [Y[c] - Y[a]]])
 	Ax = X[a] + t[0] * (X[b] - X[a])
@@ -31,11 +35,12 @@ mp.dps = 40
 fig = plt.figure(figsize=(16,9))
 p = mp.pi()
 
-# (y+x + 1)(y - 2x + 1) = y^2 - 2x^2 - 2xy + xy + y + x + y - 2x + 1
-
 a = mp.zeros(6,1)
 for i in range(0,6):
 	a[i] = mp.rand() * 2 - 1
+
+# (y+x + 1)(y - 2x + 1) = y^2 - 2x^2 - 2xy + xy + y + x + y - 2x + 1
+# a = mp.matrix([[-2,1,-1,-1,2,1]]).T
 
 def raio(t):
 	cc, ss = mp.cos(t), mp.sin(t)
@@ -94,7 +99,7 @@ yl2 = np.float32(max([max(t[:,2]),A[1],B[1],C[1]]))
 plt.xlim(xl1, xl2)
 plt.ylim(yl1, yl2)
 plt.show()
-# Release 0.1.3 from 2024/July/23
+# Release 0.1.3.1 from 2024/July/26
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # Out of charity, there is no salvation at all.
 # With charity, there is Evolution.
