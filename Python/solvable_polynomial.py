@@ -8,6 +8,220 @@
 
 from mpmath import *
 
+def processarR(m,n,p,q,r,r1):
+   erro = power(r1, 5)+m*power(r1, 4)+n*power(r1, 3)+p*power(r1, 2)+q*r1+r
+   print("erro =", erro)
+   if mp.fabs(erro) < 1e-6:
+      print("r1 =", r1, " y = ", erro)
+
+      # briot ruffini
+      #    | 1 |   m    |  n  |  p  |  q  |  r
+      # r1 | 1 | m + r1 |  c  |  b  |  y  |  0
+      d = m + r1
+      c = d * r1 + n
+      a1 = c * r1 + p
+      a0 = a1 * r1 + q
+
+      # x4 + d x3 + c x2 + b x + a = 0
+      # Ferrari
+      y1, y2, y3, y4 = Ferrari(d, c, a1, a0)
+
+      #Do the roots of the Quartic satisfy the Quintic?
+      print("r2 =", y1, " y =", power(y1, 5)+m*power(y1, 4)+n*power(y1, 3)+p*power(y1, 2)+q*y1+r)
+      print("r3 =", y2, " y =", power(y2, 5)+m*power(y2, 4)+n*power(y2, 3)+p*power(y2, 2)+q*y2+r)
+      print("r4 =", y3, " y =", power(y3, 5)+m*power(y3, 4)+n*power(y3, 3)+p*power(y3, 2)+q*y3+r)
+      print("r5 =", y4, " y =", power(y4, 5)+m*power(y4, 4)+n*power(y4, 3)+p*power(y4, 2)+q*y4+r)
+      return True
+   return False
+
+def processar3(sigma,tau,m,n,p,q,r,P,Q,R,S,u,v,w, msg):
+   print(msg)
+   A = (power(v,3) *power(P,4) - 3 *u *v *w *power(P,4) - 2 *S *power(u,3) *power(P,3) - Q *u *power(v,2) *power(P,3) - 5 *R *power(w,2) *power(P,3) - 2 *u *power(w,2)* power(P,3) 
+      + R *power(u,2) *v *power(P,3) + 2 *Q *power(u,2) *w *power(P,3) + power(v,2) *w *power(P,3) + 6 *S *v *w *power(P,3) - 4 *Q *power(v,3) *power(P,2) 
+      + 9* power(S,2) *power(u,2) *power(P,2) + 2 *power(R,2) *power(v,2) *power(P,2) + 8 *Q *S *power(v,2) *power(P,2) + R *u *power(v,2) *power(P,2) + 5 *power(Q,2) *power(w,2) *power(P,2) 
+      + 10 *S *power(w,2) *power(P,2) + v *power(w,2) *power(P,2) - 2 *S *power(u,2) *v *power(P,2) - 10 *R *S *u *v *power(P,2) + 3 *power(R,2) *u *w *power(P,2) 
+      - 14 *Q *S *u *w *power(P,2) - 7 *Q *R *v *w *power(P,2) + 11 *Q *u *v *w *power(P,2) + 6 *Q *S *power(u,3) *P + 4 *R *power(v,3) *P 
+      - u *power(v,3) *P + 5 *power(w,3) *P - 6 *Q *R *S *power(u,2) *P - 4 *power(Q,2) *R *power(v,2) *P - 16 *R *S *power(v,2) *P 
+      + 3 *power(Q,2) *u *power(v,2) *P - 2 *S *u *power(v,2) *P - 5 *Q *R *power(w,2) *P + 4 *Q *u *power(w,2) *P - 12 *power(S,3) *u *P 
+      + 12 *R *power(S,2) *v *P - 3 *Q *R *power(u,2) *v *P + 3 *Q *power(R,2) *u *v *P + 15 *power(S,2) *u *v *P + 2 *power(Q,2) *S *u *v *P 
+      + 15 *Q *power(S,2) *w *P - 6* power(Q,2) *power(u,2) *w *P + 2 *S *power(u,2) *w *P - 3* Q *power(v,2) *w *P - 10 *power(R,2) *S* w *P 
+      + 6 *power(Q,2) *R *u *w *P + 2 *R *S *u *w *P + power(Q,3) *v *w *P + 13 *power(R,2) *v *w *P + 3 *power(u,2) *v *w *P 
+      - 4 *Q *S *v *w *P - 10 *R *u *v *w *P + 5 *power(S,4) + 2 *S *power(u,4) + power(v,4) - 6 *R *S *power(u,3) + 2 *power(Q,2) *power(v,3) 
+      - 8* S *power(v,3) - 9 *Q *power(S,2) *power(u,2) + 2* power(Q,3) *S *power(u,2) + 6 *power(R,2) *S* power(u,2) + power(Q,4) *power(v,2) + 4 *Q *power(R,2) *power(v,2) 
+      + 18 *power(S,2) *power(v,2) + Q *power(u,2) *power(v,2) - 8 *power(Q,2) *S *power(v,2) - 5 *Q *R *u *power(v,2) - 5 *power(Q,3) *power(w,2) + 5* power(R,2) *power(w,2) 
+      + 2* power(u,2)* power(w,2) + 10* Q* S *power(w,2) - 7* R* u* power(w,2) - 6 *Q *v *power(w,2) + 9 *Q *R *power(S,2) *u - 2 *power(R,3) *S *u 
+      + power(R,4) *v - 16 *power(S,3) *v - R *power(u,3) *v + 6* power(Q,2)* power(S,2)* v + 3* power(R,2)* power(u,2)* v + 4 *Q *S *power(u,2) *v 
+      - 8* Q *power(R,2) *S *v - 3 *power(R,3) *u *v - power(Q,3) *R *u *v + 4 *Q *R *S *u *v + 5 *Q *power(R,3) *w - 2 *Q *power(u,3) *w 
+      + 15 *R *power(S,2) *w + 6 *Q *R *power(u,2) *w + 7 *R *power(v,2) *w - 4 *u *power(v,2)* w - 10 *power(Q,2) *R *S *w - 2 *power(Q,4) *u *w 
+      - 9 *Q *power(R,2) *u* w - 12 *power(S,2)* u *w + 16 *power(Q,2) *S *u *w + 3 *power(Q,2) *R *v *w - 22 *R *S *v *w - 4* power(Q,2) *u *v *w 
+      + 16* S *u *v *w)
+   B = (power(w,3) *power(P,5) - S *power(v,3) *power(P,4) - 2 *R *u *power(w,2) *power(P,4) - Q *v *power(w,2) *power(P,4) + R* power(v,2) *w *power(P,4) + 3 *S *u *v *w *power(P,4) 
+      + power(S,2) *power(u,3) *power(P,3) - 5 *Q *power(w,3) *power(P,3) + Q *S *u *power(v,2) *power(P,3) + 5 *R *S *power(w,2) *power(P,3) + power(Q,2) *u *power(w,2)* power(P,3) 
+      + 2 *S *u *power(w,2) *power(P,3) + R *v *power(w,2) *power(P,3) - R *S *power(u,2) *v *power(P,3) + power(R,2) *power(u,2) *w *power(P,3) - 2 *Q *S *power(u,2) *w *power(P,3) 
+      - S *power(v,2) *w *power(P,3) - 3* power(S,2) *v *w *power(P,3) - Q *R *u *v *w *power(P,3) + 4 *Q *S *power(v,3) *power(P,2) + 5 *R *power(w,3) *power(P,2) 
+      - u *power(w,3) *power(P,2) - 3* power(S,3) *power(u,2) *power(P,2) - 4 *Q *power(S,2) *power(v,2) *power(P,2) - 2 *power(R,2) *S *power(v,2) *power(P,2) - R *S *u *power(v,2) *power(P,2) 
+      - 5 *Q *power(R,2) *power(w,2) *power(P,2) - 5 *power(S,2) *power(w,2) *power(P,2) - 5 *power(Q,2) *S *power(w,2) *power(P,2) + 6 *Q *R *u *power(w,2) *power(P,2) 
+      + 4 *power(Q,2) *v *power(w,2)* power(P,2) - S *v *power(w,2) *power(P,2) + power(S,2) *power(u,2) *v *power(P,2) + 5 *R *power(S,2) *u *v *power(P,2) - 4 *Q *R *power(v,2) *w *power(P,2) 
+      + 7 *Q *power(S,2) *u *w *power(P,2) - 3 *power(R,2) *S *u *w *power(P,2) + 2 *power(R,3) *v *w *power(P,2) + 7 *Q *R *S *v *w *power(P,2) 
+      + power(R,2) *u *v *w *power(P,2) - 11 *Q *S *u *v *w *power(P,2) - 3 *Q *power(S,2) *power(u,3) *P - 4 *R *S *power(v,3) *P + S *u *power(v,3) *P 
+      + 5 *power(Q,2) *power(w,3) *P - 5 *S *power(w,3) *P + v *power(w,3) *P + 3 *Q *R *power(S,2) *power(u,2) *P + 8 *R *power(S,2) *power(v,2) *P 
+      + 4 *power(Q,2) *R *S *power(v,2) *P + power(S,2) *u *power(v,2) *P - 3 *power(Q,2) *S* u *power(v,2) *P + 5 *power(R,3) *power(w,2) *P + 2 *R *power(u,2) *power(w,2) *P 
+      + 5 *power(Q,3) *R *power(w,2) *P + 5 *Q *R *S *power(w,2) *P - 3 *power(Q,3) *u* power(w,2) *P - 7 *power(R,2) *u* power(w,2) *P - 4 *Q *S *u *power(w,2) *P 
+      - 7 *Q *R *v *power(w,2) *P + Q *u *v *power(w,2) *P + 3 *power(S,4) *u *P - 4 *R *power(S,3) *v *P + 3 *Q *R *S *power(u,2) *v *P 
+      - 5 *power(S,3) *u *v *P - power(Q,2) *power(S,2) *u *v *P - 3 *Q *power(R,2) *S *u *v *P - 5 *Q *power(S,3) *w *P + 5 *power(R,2) *power(S,2) *w *P 
+      - 3 *Q *power(R,2) *power(u,2) *w *P - power(S,2) *power(u,2) *w *P + 6 *power(Q,2) *S *power(u,2) *w *P + 4 *power(R,2) *power(v,2) *w *P + 3 *Q *S *power(v,2) *w *P 
+      - R *u *power(v,2) *w *P + 3 *Q *power(R,3) *u *w *P - R *power(S,2) *u *w *P - 6 *power(Q,2) *R* S *u *w *P - 4* power(Q,2)* power(R,2)* v *w *P 
+      + 2 *Q *power(S,2) *v *w *P - 3 *S *power(u,2) *v *w *P - power(Q,3) *S *v *w *P - 13 *power(R,2) *S *v *w *P + 3 *power(Q,2) *R *u *v *w *P 
+      + 10 *R *S *u *v *w *P - power(S,5) - power(S,2) *power(u,4) - S *power(v,4) - power(w,4) + 3 *R *power(S,2) *power(u,3) + 4 *power(S,2) *power(v,3) 
+      - 2 *power(Q,2) *S *power(v,3) - 5* Q *R *power(w,3) + 2 *Q *u *power(w,3) + 3 *Q *power(S,3) *power(u,2) - power(Q,3) *power(S,2) *power(u,2) - 3 *power(R,2) *power(S,2) *power(u,2) 
+      - 6 *power(S,3) *power(v,2) + 4* power(Q,2) *power(S,2) *power(v,2) - Q *S *power(u,2) *power(v,2) - power(Q,4) *S *power(v,2) - 4 *Q *power(R,2) *S *power(v,2) 
+      + 5 *Q *R *S *u *power(v,2) - power(Q,5) *power(w,2) - 5* power(Q,2) *power(R,2) *power(w,2) - 5 *Q *power(S,2) *power(w,2) - power(Q,2) *power(u,2)* power(w,2) - 2 *S *power(u,2) *power(w,2) 
+      - Q *power(v,2) *power(w,2) + 5 *power(Q,3) *S *power(w,2) - 5 *power(R,2) *S *power(w,2) + 3* power(Q,2) *R *u *power(w,2) + 7 *R *S *u *power(w,2) - 2 *power(Q,3) *v *power(w,2) 
+      + 3 *power(R,2) *v *power(w,2) + 6 *Q *S *v *power(w,2) - 3 *R *u *v *power(w,2) - 3 *Q *R *power(S,3) *u + power(R,3) *power(S,2) *u + 4* power(S,4) *v 
+      - 2 *power(Q,2) *power(S,3) *v + R *S *power(u,3) *v + 4 *Q *power(R,2) *power(S,2) *v - 2 *Q *power(S,2) *power(u,2) *v - 3 *power(R,2) *S *power(u,2) *v - power(R,4) *S *v 
+      - 2 *Q *R *power(S,2) *u *v + 3 *power(R,3) *S *u *v + power(Q,3) *R *S *u *v + power(R,5) *w - 5 *R *power(S,3) *w - power(R,2) *power(u,3) *w 
+      + 2 *Q *S *power(u,3) *w + R* power(v,3) *w + 5 *power(Q,2) *R *power(S,2) *w + 3 *power(R,3) *power(u,2) *w - 6 *Q *R *S *power(u,2) *w + 2* power(Q,2) *R *power(v,2) *w 
+      - 7 *R *S *power(v,2) *w + 4 *S *u *power(v,2) *w - 5 *Q *power(R,3) *S *w - 3 *power(R,4) *u* w + 4 *power(S,3) *u *w - power(Q,3) *power(R,2) *u *w 
+      - 8* power(Q,2) *power(S,2) *u *w + 2*power(Q,4) *S *u *w + 9* Q *power(R,2) *S* u* w + 4 *Q *power(R,3) *v *w + 11 *R *power(S,2) *v *w 
+      + Q *R *power(u,2) *v *w + power(Q,4) *R *v *w - 3 *power(Q,2) *R *S *v *w - 5 *Q *power(R,2) *u *v *w - 8 *power(S,2) *u *v *w
+      + 4 *power(Q,2) *S *u *v *w)
+
+   f = power(-1/A, 1/4) # d4 f^4 = -1
+   s = -B * power(f,5) # s = -k = -d5 f^5
+   print("s =", s)
+   t = -s*hyperg(4, 3, [1/5,2/5,3/5,4/5],[1/2,3/4,5/4],3125/256*power(s, 4))
+   print("f(t) =", power(t, 5) - t - s)
+   y = t/f # y = z
+   print("f(y) =", power(y, 5) + A* y + B)
+
+   # briot ruffini
+   #   | 1 | 0 |  0  |  0  |    A    |  B
+   # y | 1 | y | y^2 | y^3 | y^4 + A |  0
+   d = y
+   c = d * y
+   b = c * y
+   a = b * y + A
+   z1, z2, z3, z4 = Ferrari(d, c, b, a)
+
+   # x4 + P x3 + Q x2 + R x + s - y = 0
+   # Ferrari
+   y01, y02, y03, y04 = Ferrari(P, Q, R, S - y)
+   y11, y12, y13, y14 = Ferrari(P, Q, R, S - z1)
+   y21, y22, y23, y24 = Ferrari(P, Q, R, S - z2)
+   y31, y32, y33, y34 = Ferrari(P, Q, R, S - z3)
+   y41, y42, y43, y44 = Ferrari(P, Q, R, S - z4)
+
+   #now looking for the root that solves both the Quartic and the Quintic
+   r1 = mp.inf
+   if printifzero("f01 =", power(y01, 5)+u*power(y01, 2)+v*y01+w):
+      r1 = y01
+   elif printifzero("f02 =", power(y02, 5)+u*power(y02, 2)+v*y02+w):
+      r1 = y02
+   elif printifzero("f03 =", power(y03, 5)+u*power(y03, 2)+v*y03+w):
+      r1 = y03
+   elif printifzero("f04 =", power(y04, 5)+u*power(y04, 2)+v*y04+w):
+      r1 = y04
+   elif printifzero("f11 =", power(y11, 5)+u*power(y11, 2)+v*y11+w):
+      r1 = y11
+   elif printifzero("f12 =", power(y12, 5)+u*power(y12, 2)+v*y12+w):
+      r1 = y12
+   elif printifzero("f13 =", power(y13, 5)+u*power(y13, 2)+v*y13+w):
+      r1 = y13
+   elif printifzero("f14 =", power(y14, 5)+u*power(y14, 2)+v*y14+w):
+      r1 = y14
+   elif printifzero("f21 =", power(y21, 5)+u*power(y21, 2)+v*y21+w):
+      r1 = y21
+   elif printifzero("f22 =", power(y22, 5)+u*power(y22, 2)+v*y22+w):
+      r1 = y22
+   elif printifzero("f23 =", power(y23, 5)+u*power(y23, 2)+v*y23+w):
+      r1 = y23
+   elif printifzero("f24 =", power(y24, 5)+u*power(y24, 2)+v*y24+w):
+      r1 = y24
+   elif printifzero("f31 =", power(y31, 5)+u*power(y31, 2)+v*y31+w):
+      r1 = y31
+   elif printifzero("f32 =", power(y32, 5)+u*power(y32, 2)+v*y32+w):
+      r1 = y32
+   elif printifzero("f33 =", power(y33, 5)+u*power(y33, 2)+v*y33+w):
+      r1 = y33
+   elif printifzero("f34 =", power(y34, 5)+u*power(y34, 2)+v*y34+w):
+      r1 = y34
+   elif printifzero("f41 =", power(y41, 5)+u*power(y41, 2)+v*y41+w):
+      r1 = y41
+   elif printifzero("f42 =", power(y42, 5)+u*power(y42, 2)+v*y42+w):
+      r1 = y42
+   elif printifzero("f43 =", power(y43, 5)+u*power(y43, 2)+v*y43+w):
+      r1 = y43
+   elif printifzero("f44 =", power(y44, 5)+u*power(y44, 2)+v*y44+w):
+      r1 = y44
+   if mp.isinf(r1):
+      return
+
+   if (m == 0) and (n == 0):
+      return processarR(m,n,p,q,r,r1)
+
+   bb = sigma
+   cc = tau - r1
+   r01 = (- bb - mp.sqrt(bb*bb - 4*cc))/2
+   r02 = (- bb + mp.sqrt(bb*bb - 4*cc))/2
+   flag = processarR(m,n,p,q,r,r01)
+   return flag or processarR(m,n,p,q,r,r02)
+
+def processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P,u,v,w,msg):
+   Q = alfa * P + beta
+   S = gamma * P + delta
+
+   e2 = (- 3 * power(u,2) + 4 * Q * v + 5 * P * w)/u
+   e1 = (3 * power(u,3) + 3 *P *Q * power(u,2) - 9 *Q *S *u + 5 *power(P,2) *v *u - 2 *Q *v *u - P *w *u + 8 *P *power(v,2) 
+         - 12 *P *S *v + 5 *power(Q,2) *w - 15 *S *w + 11 *v *w)/u
+   e0 = (-power(u,4) + power(P,3) *power(u,3) - 3 *P *Q *power(u,3) - power(Q,3) *power(u,2) - 9 *power(P,2) *S *power(u,2) + 9 *Q *S *power(u,2) + power(P,2) *v *power(u,2) 
+         - 2 *Q *v *power(u,2) - P *w *power(u,2) + 18 *P *power(S,2) *u + P *power(v,2) *u - P *power(Q,2) *v *u - 15 *P *S *v *u 
+         - 8 *power(Q,2) *w *u + 7 *power(P,2) *Q *w *u + 12 *S *w *u - 8 *v *w *u - 10* power(S,3) + 4 *power(v,3) + 4* power(Q,2)* power(v,2) 
+         - 4 *power(P,2) *Q *power(v,2) - 18 *S *power(v,2) - 5 *power(P,2) *power(w,2) - 5 *Q* power(w,2) + 24 *power(S,2) *v - 6* power(Q,2) *S *v 
+         - 15 *P *Q *S *w - 3 *power(P,3) *v *w + 2 *P *Q *v *w)/u
+
+   R1,R2,R3 = Cardano(e2,e1,e0)
+   flag = processar3(sigma,tau,m,n,p,q,r,P,Q,R1,S,u,v,w, msg + " R1")
+   flag = flag or processar3(sigma,tau,m,n,p,q,r,P,Q,R2,S,u,v,w, msg + " R2")
+   return flag or processar3(sigma,tau,m,n,p,q,r,P,Q,R3,S,u,v,w, msg + " R3")
+
+def processar0(sigma, m,n,p,q,r, msg0):
+   tau = (sigma *m - m*m + 2 *n)/5
+   a, b = sigma, tau
+
+   if (m == 0) and (n == 0):
+      u,v,w = p,q,r
+   else:
+      u = (power(a,3) *p - 3 *power(a,2) *b *n - power(a,2) *m *p + 4 *power(a,2) *q + 6 *a *power(b,2) *m + 3 *a *b *m *n - 9 *a *b *p - 3 *a *m *q 
+            + a *n *p + 5 *a *r - 10 *power(b,3) - 6 *power(b,2) *power(m,2) + 12 *power(b,2) *n + 6 *b *m *p - 3 *b *power(n,2) - 6 *b *q - 2 *m *r 
+            + 2 *n *q - power(p,2)) # c3
+      v = (power(a,4) *q - 2 *power(a,3) *b *p - power(a,3) *m *q + 5 *power(a,3) *r + 3 *power(a,2) *power(b,2) *n + 2* power(a,2) *b *m *p 
+            - 8 *power(a,2) *b *q - 4 *power(a,2) *m *r + power(a,2) *n *q - 4 *a *power(b,3) *m - 3 *a *power(b,2) *m *n + 9 *a *power(b,2) *p 
+            + 6 *a *b *m *q - 2* a *b *n *p - 10 *a *b *r + 3 *a *n *r - a *p *q + 5 *power(b,4) + 4 *power(b,3) *power(m,2) - 8 *power(b,3) *n 
+            - 6 *power(b,2) *m *p + 3 *power(b,2) *power(n,2) + 6* power(b,2) *q + 4 *b *m *r - 4 *b *n *q + 2 *b *power(p,2) - 2 *p *r + power(q,2)) # c4
+      w = (power(a,5) *r - power(a,4) *b *q - power(a,4) *m *r + power(a,3) *power(b,2) *p + power(a,3) *b *m *q - 5 *power(a,3) *b *r + power(a,3) *n *r 
+            - power(a,2) *power(b,3) *n - power(a,2) *power(b,2) *m *p + 4 *power(a,2) *power(b,2) *q + 4 *power(a,2) *b *m *r - power(a,2) *b *n *q 
+            - power(a,2) *p *r + a *power(b,4) *m + a* power(b,3) *m* n - 3 *a *power(b,3) *p - 3 *a *power(b,2) *m *q + a* power(b,2) *n *p 
+            + 5 *a *power(b,2) *r - 3 *a *b *n *r + a *b *p *q + a *q *r - power(b,5) - power(b,4) *power(m,2) + 2 *power(b,4) *n + 2 *power(b,3) *m* p 
+            - power(b,3) *power(n,2) - 2 *power(b,3) *q - 2 *power(b,2) *m *r + 2 *power(b,2) *n *q - power(b,2) *power(p,2) + 2 *b *p *r - b *power(q,2) - r*r) # c5
+
+   # Q = (- 4*P*v - 5*w)/3/u = alfa * p + beta
+   alfa = -4*v/3/u
+   beta = -5*w/3/u
+   # S = (3*P*u + 4*v)/5 = gamma * p + delta # d1
+   gamma = 3*u/5
+   delta = 4*v/5
+
+   # 10*s*s- 12*p*s*u + 3*p*p*u*u - 3*q*u*u + 2*q*q*v - 16*s*v + 5*p*u*v + 6*v*v + 5*p*q*w - 4*u*w = 0 # d2
+   # 10*(gamma * p + delta)**2- 12*p*(gamma * p + delta)*u + 3*p*p*u*u - 3*u*u*(alfa * p + beta) 
+   # + 2*v*(alfa * p + beta)**2 - 16*(gamma * p + delta)*v + 5*p*u*v + 6*v*v + 5*p*w*(alfa * p + beta) - 4*u*w = 0 
+   aa = power(gamma,2) * 10 - 12*gamma*u + 3*u*u + 2*v*power(alfa,2) + 5*w*alfa
+   bb = 2*gamma*delta * 10 - 12*delta*u - 3*u*u*alfa + 2*v*2*alfa*beta - 16*gamma*v + 5*u*v + 5*w*beta
+   cc = power(delta,2) * 10 - 3*u*u*beta + 2*v*power(beta,2) - 16*delta*v + 6*v*v - 4*u*w
+   P1 = (- bb - mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+   P2 = (- bb + mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+   flag = processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P1,u,v,w,msg0 + " P1")
+   return flag or processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P2,u,v,w,msg0 + " P2")
+
 def discriminant(a, b, c, d, e):
    return (power(a, 5) *power(e, 3)                 -192 *power(a, 4) *b *d *power(e, 2)
            -128 *power(a, 4) *power(c, 2) *power(e, 2)     +144 *power(a, 4) *c *power(d, 2) *e
@@ -2441,695 +2655,37 @@ def Ferrari(A3, A2, A1, A0):
    t4 = x4 + fdiv(s, 4)
    return t1, t2, t3, t4
 
-def eq_solve_tangent2(v):
-   print("Tangent equation with v =", v)
-   # v2 = v*v
-   # m, n, p, q, r = - 20 - 25*v2, 110 + 100*v2, - 100 - 110*v2, 25 + 20*v2, - v2
-   # the output f(y) is very bad.
-   m = -200
-   n = 1340
-   p = 12.34910
-   q = -239.18200
-   r = 339.2181700
+def printifzero(ch, z):
+   flag = mp.fabs(mp.re(z)) < 1e-9
+   if flag:
+      print(ch, z)
+   return flag
 
-   d, c, b, a, A, B = Tschirnhaus3(m, n, p, q, r)
-   print("d =", d)
-   print("c =", c)
-   print("b =", b)
-   print("a =", a)
-   print("A =", A)
-   print("B =", B)
-   s = -B/power(-A, 5/4)
-   print("s =", s)
-   z = -s*hyperg(4, 3, [1/5,2/5,3/5,4/5],[1/2,3/4,5/4],3125/256*power(s, 4))
-   print("f(z) =", power(z, 5) - z - s)
-   y = power(-A, 1/4)*z
-   print("f(y) =", power(y, 5) + A* y + B)
+def eq_solve_tangent2(vv):
+   if vv == -1:
+      eq_solve2(-15,85,-225,274,-120)
+   elif vv == -2:
+      eq_solve2(0, 0, 12.34910, -239.18200, 396.968) # 339.2181700
+   else:
+      print("Tangent equation with v =", vv)
+      v2 = vv*vv
+      eq_solve2(- 20 - 25*v2, 110 + 100*v2, - 100 - 110*v2, 25 + 20*v2, - v2)
 
-   # x4 + d x3 + c x2 + b x + a + y = 0
-   # Ferrari
-   y1, y2, y3, y4 = Ferrari(d, c, b, a + y)
-
-   #now looking for the root that solves both the Quartic and the Quintic
-   print("f1 =", power(y1, 5)+m*power(y1, 4)+n*power(y1, 3)+p*power(y1, 2)+q*y1+r)
-   print("f2 =", power(y2, 5)+m*power(y2, 4)+n*power(y2, 3)+p*power(y2, 2)+q*y2+r)
-   print("f3 =", power(y3, 5)+m*power(y3, 4)+n*power(y3, 3)+p*power(y3, 2)+q*y3+r)
-   print("f4 =", power(y4, 5)+m*power(y4, 4)+n*power(y4, 3)+p*power(y4, 2)+q*y4+r)
-
-   w = 1e100
-   if mp.fabs(power(y1, 5)+m*power(y1, 4)+n*power(y1, 3)+p*power(y1, 2)+q*y1+r) < w:
-      r1 = y1
-   if mp.fabs(power(y2, 5)+m*power(y2, 4)+n*power(y2, 3)+p*power(y2, 2)+q*y2+r) < w:
-      r1 = y2
-   if mp.fabs(power(y3, 5)+m*power(y3, 4)+n*power(y3, 3)+p*power(y3, 2)+q*y3+r) < w:
-      r1 = y3
-   if mp.fabs(power(y4, 5)+m*power(y4, 4)+n*power(y4, 3)+p*power(y4, 2)+q*y4+r) < w:
-      r1 = y4
-   print("r1 =", r1)
-
-   # briot ruffini
-   #    | 1 |   m    |  n  |  p  |  q  |  r
-   # r1 | 1 | m + r1 |  c  |  b  |  y  |  0
-   d = m + r1
-   c = d * r1 + n
-   b = c * r1 + p
-   a = b * r1 + q
-
-   # x4 + d x3 + c x2 + b x + a = 0
-   # Ferrari
-   y1, y2, y3, y4 = Ferrari(d, c, b, a)
-
-   #Do the roots of the Quartic satisfy the Quintic?
-   print("r2 =", y1, " y =", power(y1, 5)+m*power(y1, 4)+n*power(y1, 3)+p*power(y1, 2)+q*y1+r)
-   print("r3 =", y2, " y =", power(y2, 5)+m*power(y2, 4)+n*power(y2, 3)+p*power(y2, 2)+q*y2+r)
-   print("r4 =", y3, " y =", power(y3, 5)+m*power(y3, 4)+n*power(y3, 3)+p*power(y3, 2)+q*y3+r)
-   print("r5 =", y4, " y =", power(y4, 5)+m*power(y4, 4)+n*power(y4, 3)+p*power(y4, 2)+q*y4+r)
-   return True, r1, y1, y2, y3, y4
-
-# this is not used in this file.
-# from [https://arxiv.org/abs/math/0005026v1]
-def Tschirnhaus3(m, n, p, q, r):
-   # x5 + m x4 + n x3 + p x2 + q x + r = 0
-   # x4 + d x3 + c x2 + b x + a + y = 0
-   # y5 + A y + B = 0
-   # shall return d, c, b, a, A, B
-   # nowadays it's not returning good numbers.
-
-   if (m != 0) and (n != 0):
-      alpha = 1/2*(-13*m*n-10*power(n,2)+4*power(m,3)+20*q+17*power(m,2)*n-4*power(m,4)+15*p-17*m*p+ mp.sqrt(-
-      680*q*m*p+200*power(m,2)*r+30*power(m,3)*power(n,2)+360*p*power(m,2)*n-80*power(m,4)*p-500*n*r+260*q*power(m,2)*
-      n-190*m*n*p-80*m*p*power(n,2)-15*power(n,2)*power(m,4)+60*power(n,3)*power(m,2)+80*p*power(n,2)+60*power(n,3)-170*power(m,3)*n
-      *p-200*n*q+80*power(m,2)*q+40*power(m,5)*p-100*q*power(n,2)+400*power(q,2)-120*power(m,3)*r+225*power(p,2)+265*power(m,2)*power(p,2)+300*m*n*r-40*q*power(m,4)+60*n*power(p,2)+600*p*q-15*power(m,2)*power(n,2)+40*power(m,3)*p-510*m*power(p,2)-120*m*power(n,3)-40*power(m,3)*q-20*m*n*q))/(2*power(m,2)-5*n)
-
-      xi3 = (580*power(m,3)*p*power(alpha,2)*n-80*power(m,5)*p*power(alpha,2)+1500*power(m,3)*power(p,2)*alpha+5200*power(m,2)
-      *power(n,3)*q+1360*power(m,6)*n*q+1600*power(q,2)*power(m,2)*alpha+5000*power(q,2)*m*n-4000*power(q,3)+3200*q*power(n,3)*alpha-320*q*power(m,6)*alpha-5775*m*power(p,2)*n*alpha-4065*power(m,4)*power(n,2)*q-6625*power(m,2)*n*power(q,2)-5625*q*m*power(p,2)+3285*power(m,2)*power(p,2)*q+5820*power(m,4)*power(p,2)*n-160*q*power(m,4)*power(alpha,2)-8020*power(m,2)*power(p,2)*power(n,2)-1580*power(m,4)*power(p,2)*alpha+310*m*p*power(n,4)+3300*m*p*power(q,2)+860*power(m,7)*p*n-360
-      *power(m,5)*p*q+5895*q*power(m,3)*power(n,2)-4000*power(q,2)*n*alpha+1040*q*power(m,4)*n-1990*q*power(m,2)*power(n,2)-2400*
-      q*power(m,5)*n-180*power(n,5)+200*m*p*q*power(n,2)+1125*n*power(p,2)*power(alpha,2)-2250*power(n,2)*power(p,2)*alpha
-      -375*power(n,2)*power(m,2)*r-1500*power(n,3)*m*r+1000*power(n,2)*p*r+375*power(n,2)*power(m,3)*r-5000*n*q*r+4950*
-      power(m,2)*power(p,3)-400*q*m*p*n*alpha+760*q*power(m,4)*p+320*q*power(m,5)*alpha-2820*power(m,5)*p*power(n,2)
-      +2585*power(m,3)*p*power(n,3)+3800*q*power(n,2)*p-2000*power(q,2)*power(m,3)-5300*q*m*power(n,3)+2250*q*power(p,2)-2250
-      *m*power(p,3)+30*power(n,2)*power(m,4)*power(alpha,2)-160*q*power(m,6)-850*power(m,4)*power(p,2)+160*power(m,8)*p-80*power(m,7)*p+1045
-      *power(n,3)*power(p,2)-2000*n*power(q,2)-3125*n*power(r,2)+1500*power(n,3)*r+1200*power(n,3)*q-400*q*power(m,3)*p+60*power(n,2)*power(m,6)*alpha+7055*power(m,2)*power(p,2)*n*alpha-1485*power(n,4)*power(m,3)+525*power(n,4)*power(m,2)+800*power(m,2)*power(q,2)
-      +1250*power(m,2)*power(r,2)-240*power(n,3)*power(m,4)+540*power(n,3)*power(m,5)+5625*power(p,2)*r+1780*power(m,5)*power(p,2)-195*power(n,3)*
-      power(m,2)*power(alpha,2)-675*power(n,2)*power(p,2)+300*power(n,4)*power(alpha,2)+320*q*power(m,7)-600*power(n,5)*alpha-2005*power(n,3)*power(m,2)*p+800*q*power(m,2)*power(alpha,2)*n+435*power(n,3)*power(m,3)*alpha-780*power(n,4)*m*alpha+2600*q*
-      m*power(n,2)*alpha+2000*power(m,2)*q*r+1000*power(m,3)*r*p-450*power(m,2)*power(p,2)*power(alpha,2)-4275*power(p,3)*n-60
-      *power(n,2)*power(m,7)-1140*power(n,4)*p-1000*power(m,4)*p*r+3375*power(p,3)*alpha-950*m*p*power(n,2)*power(alpha,2)+1140
-      *power(n,5)*m-500*power(m,3)*q*r+30*power(n,2)*power(m,6)+7885*power(n,2)*m*power(p,2)-160*power(m,8)*q+5200*power(n,2)*power(q,2)
-      -60*power(n,2)*power(m,5)*alpha-2200*power(n,4)*q+4230*power(n,2)*power(m,4)*p+1650*power(m,4)*power(q,2)+30*power(m,8)*power(n,2)-1155
-      *power(m,2)*power(n,5)+7500*q*p*r+990*power(m,4)*power(n,4)-300*power(m,6)*power(n,3)+4500*q*power(p,2)*alpha-5700*q*
-      power(p,2)*n-1840*q*power(m,3)*n*alpha+280*power(m,3)*p*q*n+900*power(n,3)*alpha*p-6375*m*power(p,2)*r-3825
-      *m*power(p,3)*alpha+4845*m*power(p,3)*n-1170*q*power(m,2)*n*p-30*power(n,3)*m*p-3000*q*n*alpha*p
-      -560*q*power(m,3)*p*alpha-160*power(m,7)*p*alpha-495*power(n,3)*power(m,4)*alpha+1170*power(n,4)*power(m,2)*alpha
-      -1490*power(n,2)*power(m,3)*p+100*q*m*n*p+160*power(m,6)*alpha*p+700*power(m,5)*n*p-4750*n*r*m*p-
-      1560*power(m,6)*n*p+4500*n*power(m,2)*p*r-250*n*m*q*r+1200*q*power(m,2)*alpha*p-3375*power(n,2)*power(m,3)*p*alpha+3700*n*power(m,2)*power(p,2)+2160*q*power(m,4)*n*alpha-4500*q*power(m,2)*power(n,2)*alpha-930*power(m,6)*power(p,2)-9440*n*power(m,3)*power(p,2)+880*power(n,3)*m*p*alpha+2245*power(n,2)*power(m,2)*alpha*p-80*power(m,9)*p+
-      1440*power(m,5)*p*n*alpha-2720*power(m,3)*power(p,3)-1280*power(m,4)*n*alpha*p-1000*q*power(n,2)*power(alpha,2)+
-      300*power(n,6))
-
-      xi2 = (5640*power(m,6)*alpha*q*p+46000*m*power(q,2)*r-240*power(m,6)*alpha*power(p,2)+3400*power(m,4)*alpha
-      *q*r-480*power(m,8)*alpha*q+4875*power(p,2)*alpha*n*r-990*power(m,5)*alpha*power(n,4)+1800*power(m,4)*power(alpha,2)*q*p-600*power(n,4)*power(alpha,2)*p+4750*power(n,2)*power(alpha,2)*power(p,2)*m+160*power(m,8)*alpha*r-1910
-      *power(n,3)*power(alpha,2)*p*power(m,2)+240*power(m,7)*power(alpha,2)*q-4860*power(m,5)*alpha*power(q,2)+120*power(m,5)*power(alpha,2)*power(p,2)+60*power(m,5)*power(alpha,2)*power(n,3)-15000*p*alpha*q*r-4680*power(m,7)*alpha*q*n-7600*power(p,2)*alpha*power(m,2)*r-3900*power(n,3)*m*alpha*r+240*power(m,7)*alpha*power(p,2)+1500*power(n,3)*power(alpha,2)*r+
-      12600*power(q,2)*alpha*m*p-160*n*power(alpha,2)*r*power(m,4)+600*power(n,5)*power(alpha,2)*m-19250*m*power(n,2)*
-      power(r,2)+27500*n*p*q*r+4500*p*alpha*power(n,2)*r+5100*power(p,2)*alpha*q*n-200*power(m,6)*power(alpha,2)*n*p-2220*power(n,3)*p*q-8700*power(n,3)*p*r+3420*power(m,6)*alpha*power(n,2)*p+26250*n*p*power(r,2)+3400
-      *n*p*power(q,2)-14750*power(m,2)*p*power(r,2)-400*power(m,8)*alpha*n*p-10980*power(m,4)*alpha*q*power(n,2)+280*
-      power(m,7)*p*r-2250*power(p,3)*power(alpha,2)*n-520*power(m,5)*alpha*r*p-1800*power(p,2)*alpha*power(n,3)+900*power(p,3)*power(alpha,2)*power(m,2)-9375*p*alpha*power(r,2)+14820*power(m,5)*alpha*q*power(n,2)+6000*r*q*power(n,2)+1600
-      *r*q*power(m,4)-6520*power(m,5)*alpha*n*power(p,2)+2460*power(m,2)*power(n,3)*r-5400*power(m,5)*alpha*q*p+400*power(m,7)*alpha*n*p-500*power(m,2)*n*power(r,2)-3020*power(m,5)*alpha*p*power(n,2)-280*power(m,6)*n*r-640*power(m,4)*power(n,2)
-      *r-4560*m*power(n,5)*p+8700*m*power(n,4)*r-120*power(m,6)*alpha*power(n,3)-600*power(m,6)*alpha*n*r-1920*
-      power(m,5)*power(alpha,2)*q*n+1360*power(m,4)*power(alpha,2)*power(n,2)*p-840*power(m,4)*alpha*power(n,2)*r-7320*power(m,4)*alpha
-      *power(n,3)*p+870*power(m,4)*alpha*power(n,4)+3360*power(m,4)*alpha*power(q,2)-3720*power(m,7)*p*power(n,2)+4500*power(n,2)
-      *power(alpha,2)*power(m,3)*q+14050*m*power(n,3)*p*r+1700*power(n,2)*power(alpha,2)*q*p-10095*power(p,2)*m*power(q,2)-10920
-      *power(q,2)*alpha*power(m,2)*n-700*power(n,2)*power(alpha,2)*power(m,2)*r+11000*m*p*q*r-2200*n*power(alpha,2)
-      *power(m,3)*power(p,2)-3380*power(m,5)*power(p,2)*n-4350*power(p,3)*power(m,2)*q-870*power(m,2)*p*power(n,4)-2560*power(m,3)*p*power(n,4)-3000
-      *power(n,3)*power(alpha,2)*m*q-4000*power(m,3)*alpha*q*r+4200*n*power(alpha,2)*m*power(q,2)-1000*power(m,2)*power(p,2)*r-5000*n*power(alpha,2)*q*r+7120*power(m,2)*p*q*power(n,2)+6080*power(m,4)*power(p,2)*n*alpha+830*power(m,2)*power(p,2)*q*n-18300*power(m,4)*power(p,2)*q-47000*power(m,2)*p*q*r-38890*power(m,3)*p*q*power(n,2)-13100*power(m,2)*power(p,3)
-      *n+12080*power(m,3)*power(p,2)*power(n,2)+23580*power(m,2)*power(p,2)*power(n,3)+31040*power(m,3)*power(p,3)*n+33660*power(m,5)*p*q*n
-      -13480*power(m,4)*p*q*n+21850*m*power(p,2)*n*r+820*power(m,4)*p*n*r-8200*power(m,2)*n*q*r-3300*m*p
-      *power(n,2)*r+200*power(m,5)*p*r+4660*power(m,3)*p*power(n,3)*alpha-480*power(m,6)*p*r-18800*power(m,2)*power(p,2)*power(n,2)*
-      alpha-13500*power(m,2)*power(p,2)*q*alpha-200*power(m,4)*p*r*alpha+6100*m*power(p,2)*q*n+1500*m*power(p,2)*alpha*r+1000*power(m,3)*p*n*r-1870*power(m,2)*p*power(n,2)*r-2700*power(m,3)*power(p,3)*alpha-17250*q*
-      alpha*power(m,3)*power(n,3)+2500*m*p*power(r,2)+4500*m*power(p,4)-25855*power(q,2)*alpha*power(m,2)*p+22705*power(q,2)*
-      alpha*power(m,3)*n+20100*m*power(p,3)*n*alpha-4500*q*power(p,3)+700*power(m,3)*power(p,2)*r+41940*power(m,2)*power(q,2)*
-      n*p-20200*power(m,4)*q*n*r-31500*power(m,4)*power(p,2)*power(n,2)+8400*power(m,3)*power(p,2)*q+7200*power(m,6)*power(p,2)*n-17400
-      *power(m,2)*p*power(q,2)+40980*power(m,3)*p*power(q,2)+9200*power(q,3)*p-1650*m*power(p,2)*power(n,3)-26600*m*power(p,3)*power(n,2)+24275*power(m,2)*q*power(n,2)*r-18745*power(m,2)*q*power(n,3)*p+9500*q*alpha*power(n,2)*r-10000*power(q,2)*alpha
-      *r+14300*q*alpha*power(m,3)*power(p,2)-5900*q*alpha*power(n,3)*p+7800*q*alpha*m*power(n,4)-1680*
-      power(q,2)*power(alpha,2)*power(m,3)-16300*power(q,2)*alpha*m*power(n,2)+7800*q*alpha*power(n,3)*power(m,2)+8400*power(q,3)*alpha
-      *m-8860*power(n,2)*q*power(p,2)*m+8550*power(p,4)*n-6750*power(p,4)*alpha-11250*power(p,3)*r+21780*power(m,5)
-      *power(q,2)*n-27875*power(m,2)*power(q,2)*r-2760*power(m,9)*q*n-24630*power(m,4)*power(q,2)*p+3200*power(m,6)*q*r-20420
-      *power(m,6)*q*n*p+33390*power(m,4)*q*power(n,2)*p+10260*power(m,5)*q*power(p,2)-9010*power(m,3)*q*n*power(p,2)+3240*power(m,8)
-      *q*p+25700*power(m,3)*q*r*p+8000*power(q,2)*alpha*n*p-17880*power(m,6)*q*power(n,2)+25290*power(m,4)*q*power(n,3)+5040*power(m,8)*q*n+30960*power(m,2)*power(q,2)*power(n,2)+1350*power(n,2)*power(p,3)-34045*power(m,3)*power(q,2)*power(n,2)+16350*
-      power(m,3)*q*power(n,4)-10000*r*power(q,2)-120*power(m,6)*power(n,2)*r+1460*power(m,3)*alpha*power(n,2)*r-900*r*power(n,4)-25000
-      *power(r,2)*q-1000*power(r,2)*power(m,4)+2530*power(m,2)*power(n,5)*p+440*power(m,5)*alpha*n*r+7500*power(r,2)*power(n,2)+2340
-      *power(m,3)*power(n,5)*alpha+2060*power(m,8)*power(n,2)*p+600*power(n,5)*r-200*power(m,3)*power(alpha,2)*p*r-600*power(n,6)*
-      p+37000*power(m,3)*q*n*r+19740*power(m,5)*power(n,2)*power(p,2)-41500*m*q*power(n,2)*r-24900*power(m,3)*power(n,3)*power(p,2)+
-      4730*power(m,4)*power(n,4)*p-6360*power(m,6)*power(n,3)*p+4200*power(n,4)*q*p-2700*power(n,3)*q*r-10600*power(n,2)*power(q,2)*
-      p+220*power(m,2)*power(n,4)*p*alpha+24010*power(m,3)*power(n,2)*power(p,2)*alpha-12200*n*power(q,3)*m+3000*n*power(q,2)
-      *r-620*power(m,3)*power(n,2)*r*p-4800*power(n,5)*q*m+13300*power(n,3)*power(q,2)*m+20860*power(n,3)*q*m*p-24460*
-      n*power(q,2)*m*p-33300*power(m,4)*power(q,2)*n-15625*power(r,3)-14400*power(m,2)*q*power(n,4)-6460*power(p,2)*q*power(n,2)-160
-      *power(m,7)*alpha*r+11250*power(p,3)*q*m-16125*power(p,2)*q*r-3820*power(p,2)*power(m,7)*n+3360*power(n,4)*alpha
-      *m*p-360*m*power(n,6)+1870*power(p,2)*m*power(n,4)-9675*power(p,3)*q*alpha+12255*power(p,3)*q*n+500*power(m,3)*alpha
-      *power(r,2)+3875*power(n,3)*alpha*power(m,2)*r+80*power(m,6)*power(alpha,2)*r+600*power(n,7)*m+6840*power(m,5)*q*power(n,2)-7080*power(m,3)*q*power(n,3)+2000*power(m,2)*power(alpha,2)*q*r+4200*power(m,6)*alpha*q*n-2280*power(m,7)*q*n-
-      900*n*power(m,5)*r*p-8520*m*power(q,2)*power(n,2)+13000*n*m*alpha*q*r+13320*power(m,3)*power(q,2)*n+2280*
-      power(m,2)*power(n,6)+3000*m*q*power(n,4)+29375*m*q*power(r,2)-6000*power(m,5)*q*r-24700*power(p,3)*power(m,2)*n*alpha-
-      600*power(m,7)*power(n,4)-7260*power(p,2)*power(n,3)*m*alpha+4210*power(m,4)*power(n,3)*r+1980*power(m,5)*power(n,5)-7075*power(m,2)*
-      power(n,4)*r+60*power(m,9)*power(n,3)+80*r*power(m,8)-17290*power(p,2)*power(m,2)*n*r+360*power(n,5)*p+11280*power(m,7)*q*power(n,2)-
-      440*n*power(m,8)*r-200*n*power(m,10)*p+4500*power(p,3)*power(n,2)*alpha+3020*power(p,3)*alpha*power(m,4)+9000*power(p,4)*alpha*m+1020*power(p,2)*r*power(m,4)-8175*power(p,2)*power(n,2)*r+15000*power(p,3)*r*m-11400*power(p,4)*n*m+29390
-      *power(p,3)*power(n,2)*power(m,2)-18360*power(p,3)*power(m,4)*n-13420*q*alpha*m*p*power(n,2)+3000*power(m,6)*p*q-6240
-      *power(m,7)*p*q-200*power(m,8)*p*n+400*power(m,9)*p*n-3200*power(m,4)*p*power(n,3)+1660*power(m,6)*p*power(n,2)+9360*power(m,5)*p*power(n,3)-160*power(m,9)*r-390*power(n,4)*power(alpha,2)*power(m,3)+80*power(m,10)*r-1000*power(m,5)*power(r,2)-2880*power(m,5)
-      *power(q,2)-2090*power(p,3)*power(n,3)+480*power(m,9)*alpha*q+5380*power(p,4)*power(m,3)+1620*power(p,3)*power(m,6)+120*power(m,7)*alpha
-      *power(n,3)+1500*power(m,4)*power(p,3)-26580*power(m,4)*alpha*q*n*p-1560*power(n,5)*alpha*power(m,2)+240*power(m,11)
-      *q-7130*power(m,3)*power(n,3)*r+1080*power(m,6)*power(n,4)+10500*power(m,3)*n*power(r,2)+8400*m*power(q,3)+720*power(m,7)*n*r+
-      840*power(m,5)*power(n,2)*r-5180*n*power(alpha,2)*power(m,2)*q*p-1200*power(n,6)*alpha*m+1200*power(n,5)*alpha*p
-      -2100*power(n,4)*alpha*r+625*n*m*alpha*power(r,2)+120*power(m,7)*power(p,2)-240*power(m,8)*power(p,2)+500*n*power(alpha,2)*r*m*p+6360*power(m,6)*power(q,2)+12525*power(m,3)*power(q,3)-1600*power(m,2)*p*n*alpha*r-3120*power(m,5)*power(p,3)
-      -17250*q*alpha*power(m,2)*n*r+22960*power(m,3)*p*q*n*alpha+26750*q*alpha*r*m*p-2310*
-      power(m,3)*power(n,6)-120*power(m,8)*power(n,3)-3480*power(m,7)*power(q,2)-480*power(m,10)*q-21000*power(m,2)*power(q,3)-20130*power(m,5)*q*
-      power(n,3)+6140*power(m,3)*alpha*n*p*r+240*power(m,9)*q-2970*power(m,4)*power(n,5)-11750*n*q*r*m*p+7820*q
-      *alpha*n*power(p,2)*m+19505*q*alpha*power(n,2)*p*power(m,2)-9900*power(p,4)*power(m,2)+120*power(p,2)*power(m,9)+2280*power(p,2)*power(n,4)+1050*power(m,3)*power(n,5)-7750*power(n,2)*alpha*r*m*p+60*power(m,7)*power(n,3)-480*power(m,5)*power(n,4))
-
-      xi1 = (6850*power(m,2)*power(p,3)*r*alpha+38040*q*p*power(m,5)*power(n,3)-5745*q*power(m,3)*power(n,2)*power(alpha,2)*p-
-      14500*n*power(m,2)*power(p,2)*r*alpha+14550*m*p*power(n,2)*power(r,2)-13790*power(q,2)*power(m,2)*power(n,3)*alpha+17540
-      *power(q,2)*m*power(n,2)*p*alpha+4880*q*p*power(m,9)*n+9000*q*power(m,2)*power(r,2)+2720*q*power(m,9)*r-240*q*power(m,11)*p-2000*q*power(m,2)*power(n,4)*power(alpha,2)+7160*q*power(m,8)*power(n,3)+5315*power(q,2)*power(m,2)*power(alpha,2)*power(n,2)+19815
-      *power(q,2)*power(m,4)*power(n,2)*alpha+13500*power(m,2)*p*power(r,2)*alpha-5625*q*power(p,4)*m-12265*q*power(m,6)*
-      power(n,4)-2200*power(m,4)*power(p,3)*r-3040*q*power(m,8)*power(n,2)*alpha+320*q*power(m,10)*n*alpha+24550*power(m,3)*p
-      *power(r,2)*n-3610*power(q,2)*power(m,4)*n*power(alpha,2)-27750*power(m,3)*p*power(r,2)*alpha+160*q*power(m,12)*n-500*q
-      *power(n,2)*power(r,2)+10710*power(q,3)*power(m,4)*n+8835*power(q,2)*power(m,2)*power(n,4)-6250*q*power(r,2)*power(alpha,2)-14580*q*power(m,5)*power(p,3)+25000*q*power(m,4)*power(r,2)+23720*power(q,2)*power(m,2)*n*p*alpha-43230*q*power(p,2)*power(m,4)*power(n,2)+19190
-      *power(m,2)*power(p,3)*n*r-1240*q*power(m,6)*power(n,2)*power(alpha,2)-3860*q*power(m,8)*power(p,2)-18600*power(m,5)*p*power(r,2)-5000
-      *m*p*power(r,2)*power(alpha,2)+2700*q*power(n,3)*p*power(alpha,2)*m+1500*m*power(p,3)*r*alpha+160*q*power(m,8)*n*power(alpha,2)-45030*power(q,2)*power(p,2)*power(m,2)*n-40620*power(q,2)*p*power(m,5)*n+300*power(m,5)*power(p,3)*power(alpha,2)-
-      300*power(m,3)*power(p,3)*r+6035*power(q,2)*power(p,2)*power(n,2)+10050*q*power(p,2)*power(m,2)*power(n,3)-13905*q*p*power(m,2)*power(n,2)*r
-      -7550*q*p*power(m,4)*n*r-3980*power(q,2)*power(m,6)*n*alpha+7040*q*power(m,3)*power(n,2)*alpha*r+60*q*power(m,3)
-      *n*power(alpha,2)*r-20000*q*power(m,5)*n*alpha*r+410*power(q,2)*power(m,6)*power(alpha,2)+15340*power(q,2)*power(m,6)*power(n,2)+17645*power(m,2)*power(p,4)*n*alpha+9400*n*power(m,2)*power(p,4)+4950*power(m,2)*power(p,5)-2070*q*power(m,4)*power(p,2)*power(alpha,2)+9600*n*power(m,3)*power(p,2)*r+8360*q*n*p*alpha*power(m,7)+20750*m*p*n*power(r,2)*alpha-6680
-      *q*power(m,6)*power(p,2)*alpha+230*power(q,3)*power(m,4)*alpha+17310*q*power(p,3)*power(m,3)*n-21620*q*p*power(m,3)*power(n,4)
-      -3800*m*power(p,3)*power(n,2)*power(alpha,2)-23980*q*p*power(m,7)*power(n,2)+2730*q*power(m,5)*n*power(alpha,2)*p+30940
-      *q*power(p,2)*power(m,6)*n-2250*m*power(p,5)-1800*q*power(m,10)*power(n,2)-9000*power(m,3)*p*power(r,2)+570*power(m,3)*power(p,3)*power(alpha,2)*n+80*power(q,2)*power(m,7)*alpha+34800*power(m,4)*p*power(r,2)+4320*power(q,2)*power(m,7)*n-14600*q*m*n*p*r
-      *alpha+28600*power(q,2)*power(m,2)*r*p+24660*q*power(m,4)*power(n,2)*alpha*p+4600*q*power(m,2)*power(n,5)*alpha+
-      31455*power(q,2)*power(m,2)*power(p,2)*alpha+14160*q*p*power(m,2)*n*r*alpha-700*q*power(n,2)*power(p,2)*power(alpha,2)-
-      1800*q*power(m,2)*p*power(alpha,2)*r-80*power(q,2)*power(m,8)*alpha-11140*power(q,3)*power(m,2)*power(n,2)-480*q*power(m,9)*p*
-      alpha+20820*q*power(m,4)*p*alpha*r+5170*power(q,2)*power(m,5)*p*alpha-240*q*power(m,7)*p*power(alpha,2)-4050
-      *power(q,2)*power(m,3)*n*r-11160*power(q,3)*m*alpha*p+10500*power(q,2)*m*power(alpha,2)*r-15050*power(q,2)*power(m,3)*alpha*r-14325*m*power(p,4)*n*alpha-19700*power(q,2)*m*alpha*n*r-7500*q*m*power(n,2)*power(alpha,2)*r-11550*power(q,2)*power(m,5)*r-2000*q*power(p,2)*power(n,4)+3640*power(q,2)*power(m,7)*p-600*power(m,3)*power(p,4)*alpha-5050
-      *power(q,2)*n*power(p,2)*alpha+11500*q*m*power(n,3)*alpha*r+15930*power(q,3)*m*n*p-6745*q*n*power(p,3)
-      *alpha*m+28895*power(q,2)*power(m,4)*power(p,2)+6350*power(q,2)*m*power(n,2)*r-14570*power(q,2)*m*power(n,3)*p-7300*q*power(n,4)*p*alpha*m-23780*power(q,2)*power(m,4)*power(n,3)-2320*power(q,2)*power(m,8)*n+19920*q*power(m,5)*power(n,2)*r-49380*
-      power(q,2)*power(p,2)*power(m,3)-48590*power(q,2)*p*power(m,3)*n*alpha-5600*power(q,2)*power(n,3)*power(m,2)+320*power(q,3)*power(m,3)*alpha
-      -23800*power(q,2)*power(m,5)*power(n,2)-21020*q*power(m,3)*r*power(p,2)+14720*q*power(m,6)*r*p-9750*q*power(m,2)*power(r,2)*n+
-      33250*q*power(m,2)*power(r,2)*alpha-20900*m*power(p,3)*n*r+4250*q*n*p*power(alpha,2)*r-8700*q*power(n,2)*
-      p*alpha*r+8465*q*n*r*m*power(p,2)+7245*power(q,2)*power(p,3)*m-16510*power(q,3)*power(m,3)*p-1000*power(m,2)*power(p,3)
-      *r-1400*power(q,2)*power(p,2)*n-380*power(q,2)*m*power(n,4)-28400*q*r*alpha*m*power(p,2)-39100*power(m,2)*p*power(r,2)*
-      n+2700*q*power(n,3)*power(p,2)*alpha-5350*power(q,2)*n*r*p+2855*q*power(m,4)*power(n,3)*power(alpha,2)+3105*q*power(m,2)*power(p,2)*power(alpha,2)*n-3300*power(m,3)*power(p,2)*power(alpha,2)*r-11200*power(q,3)*m*p-47120*power(q,2)*power(m,2)*power(n,2)
-      *p+2020*power(q,3)*m*power(n,2)-4350*power(q,2)*m*power(alpha,2)*n*p-10280*q*power(m,4)*power(n,4)*alpha-15760*q
-      *power(m,7)*n*r+4640*q*power(m,7)*r*alpha+21000*power(q,2)*power(p,2)*power(m,2)-3100*q*power(n,4)*r*m+8780*q*power(p,3)*power(n,2)*m+2500*q*power(n,3)*r*p+4600*q*p*power(n,5)*m-675*q*m*power(p,3)*power(alpha,2)-22750*q*m*p*
-      power(r,2)+1020*q*power(m,5)*power(alpha,2)*r+3750*q*n*power(r,2)*alpha+600*power(m,4)*power(p,4)*alpha-7720*q*power(m,6)*n*p*alpha+5280*power(q,2)*power(m,3)*p*power(alpha,2)+23260*power(q,2)*m*n*power(p,2)+9345*q*power(m,4)*power(n,5)-20220
-      *q*power(m,3)*power(p,3)*alpha+13000*power(q,2)*r*alpha*p+10220*q*m*power(n,2)*power(p,2)*alpha+14110
-      *power(q,3)*power(m,2)*alpha*n-4410*power(q,3)*power(m,2)*power(alpha,2)-32940*q*power(m,3)*n*alpha*power(p,2)-6720*power(q,2)
-      *power(m,6)*p-18600*power(q,3)*power(m,3)*n+8760*q*power(m,4)*n*alpha*r-12380*q*power(m,2)*power(n,3)*p*alpha+260
-      *power(q,2)*m*alpha*power(n,3)-15600*power(q,2)*m*alpha*power(p,2)+40520*q*m*power(n,2)*p*r+400*q*power(m,2)*n*
-      p*r-585*q*power(m,3)*power(n,3)*r+8920*power(q,2)*m*power(n,2)*p-3860*power(q,2)*power(m,4)*p*alpha-16720*q*p*power(m,3)*n*r-27520*power(q,2)*power(m,3)*n*p-8920*power(q,2)*power(m,3)*power(n,2)*alpha+2460*power(q,2)*power(m,5)*n*alpha+21820
-      *power(q,2)*power(m,3)*power(n,3)-300*power(q,2)*power(n,2)*p*alpha-8200*q*power(m,3)*p*alpha*r+24000*power(q,2)*power(m,2)
-      *n*r-1040*power(q,3)*m*alpha*n-2800*power(q,2)*m*r*n+66380*power(q,2)*p*power(m,4)*n+4280*q*power(m,6)*power(n,3)-30460*q*p*power(m,5)*power(n,2)*alpha+20100*q*p*power(m,2)*power(n,4)-9120*q*p*power(m,8)*n-4220*q*power(p,3)*
-      power(m,2)*n+3280*q*power(m,9)*power(n,2)+380*power(q,2)*power(n,3)*p-2600*q*power(m,2)*power(n,6)+800*power(q,4)-46000*power(q,2)*m*
-      r*p+4420*q*power(m,3)*power(n,4)*alpha-320*q*power(m,9)*n*alpha+3640*q*power(m,2)*power(n,2)*alpha*r+2660
-      *q*power(p,3)*power(n,2)-2000*power(q,2)*power(m,6)*n+1620*q*power(n,5)*power(m,2)+39570*q*power(p,2)*power(m,3)*power(n,2)+2720*q*power(m,7)*power(n,2)*alpha+15900*q*power(m,2)*power(p,3)*alpha+480*q*power(m,8)*p*alpha-44220*q*power(m,4)*power(n,3)*p+
-      15155*q*power(n,4)*power(m,5)-3520*q*power(m,6)*power(p,2)-4130*q*power(n,4)*power(m,4)-2000*power(q,4)*m+1250*power(q,2)*power(r,2)-
-      2500*power(q,3)*m*r+1200*power(q,3)*p*alpha+450*power(q,2)*power(p,2)*power(alpha,2)+2000*power(q,3)*r+1250*power(q,4)*
-      power(m,2)-6200*q*m*n*power(p,3)-2880*q*m*power(n,4)*p+4240*q*power(m,7)*n*p-2200*q*power(m,2)*power(n,2)*power(p,2)+1045
-      *power(n,3)*power(p,4)-6820*q*power(m,5)*power(n,3)*alpha-1125*power(p,3)*r*power(alpha,2)-6000*p*power(r,2)*power(n,2)+5370
-      *power(p,3)*r*power(n,2)+2500*power(p,2)*power(r,2)*m-2025*power(p,3)*r*n*alpha-4800*p*r*q*power(n,2)+12500*p*power(r,3)+8000*p*r*power(q,2)+720*p*r*power(n,4)+20000*p*power(r,2)*q-18375*power(p,2)*power(r,2)*n+5375*power(p,2)*power(r,2)*
-      power(m,2)+5625*power(p,2)*power(r,2)*alpha+38580*q*p*power(m,6)*power(n,2)-51320*q*power(p,2)*power(m,5)*n-14800*q*m*power(n,3)*power(p,2)+6040*q*power(m,5)*power(p,2)*alpha+9200*q*power(m,3)*power(n,3)*p-15000*q*power(m,5)*power(n,2)*p-5040*q*
-      power(m,8)*r+480*q*power(m,10)*p+2320*q*power(m,7)*r+160*q*power(m,10)*n-240*q*power(m,9)*p-1480*q*power(m,8)*power(n,2)+5840*q*power(m,3)*power(n,2)*r+25820*q*power(p,3)*power(m,4)-7960*q*power(n,5)*power(m,3)-2100*q*n*power(p,3)*alpha-320
-      *q*power(m,11)*n-11600*q*power(p,3)*power(m,3)+1125*n*power(p,4)*power(alpha,2)-2250*power(n,2)*power(p,4)*alpha-16820
-      *q*power(n,3)*power(m,2)*r+2040*q*power(n,3)*m*r-22345*power(n,2)*power(m,2)*power(p,4)-18700*q*power(p,2)*n*r+12000*q
-      *power(p,2)*r*alpha+41600*q*power(p,2)*power(m,2)*r-7000*q*power(p,2)*m*r-3040*q*power(m,6)*r*alpha+24080
-      *q*power(m,6)*n*r-12840*q*power(m,4)*power(n,2)*r+40460*q*power(p,2)*power(m,4)*n*alpha+22725*q*p*power(m,3)*power(n,3)
-      *alpha-10675*q*power(p,2)*power(m,2)*power(n,2)*alpha+21160*q*power(m,4)*n*power(p,2)+7380*q*power(p,2)*power(m,7)-11280
-      *q*power(n,3)*power(m,7)-195*power(n,5)*power(m,4)*power(alpha,2)+9620*power(q,2)*power(m,4)*power(n,2)+1020*q*power(p,2)*power(n,3)-10320*
-      q*power(m,5)*r*n-7600*power(q,2)*power(m,3)*r-41500*q*power(m,3)*power(r,2)+3080*power(q,2)*power(m,5)*p+60365*power(q,2)*p*power(m,3)*power(n,2)+19500*power(q,2)*power(m,4)*r+7440*power(q,3)*power(m,2)*n+27760*power(q,3)*power(m,2)*p-500*power(q,2)*power(n,2)*r-1520
-      *power(q,3)*n*p-240*power(n,2)*power(m,9)*p*alpha-1565*power(n,2)*power(m,4)*power(p,2)*power(alpha,2)+3830*power(n,3)*power(m,2)*power(p,2)*power(alpha,2)-495*power(n,5)*power(m,6)*alpha-16695*power(n,4)*power(p,2)*power(m,4)+12000*q*power(m,4)*p*r-25520*q*
-      power(m,5)*p*r-7000*q*m*power(r,2)*n-440*power(q,3)*power(n,2)-1900*power(n,2)*power(m,8)*power(p,2)+30*power(n,4)*power(m,6)*power(alpha,2)
-      -960*power(n,4)*power(m,3)*power(alpha,2)*p-120*power(n,2)*power(m,11)*p-8360*power(n,2)*power(m,9)*r+30*power(n,4)*power(m,10)+60*power(n,4)*power(m,8)*alpha+300*power(n,6)*power(m,2)*power(alpha,2)+1170*power(n,6)*power(m,4)*alpha+300*power(n,4)*power(p,2)*power(alpha,2)
-      -2700*power(n,2)*power(m,2)*power(r,2)+29350*power(n,3)*power(p,3)*power(m,3)+2220*power(n,6)*p*power(m,3)-3540*power(n,4)*p*power(m,7)-600*
-      power(n,5)*p*power(alpha,2)*m+13160*power(n,3)*power(p,2)*power(m,6)+1980*power(n,3)*p*alpha*power(m,7)-3900*power(n,2)*power(m,6)*power(p,2)*alpha+18715*power(n,2)*power(p,4)*m+70*power(n,5)*power(p,2)*power(m,2)+8205*power(n,3)*p*power(m,2)*r*alpha+14180*power(n,3)*power(m,5)*alpha*r+1875*power(n,2)*power(r,2)*power(alpha,2)-600*power(n,5)*power(p,2)*alpha+1250*m*n*power(r,3)+2145
-      *power(n,5)*p*power(m,5)-16740*power(n,2)*power(m,5)*power(p,3)+1200*power(n,3)*p*power(m,9)+780*power(n,3)*power(m,5)*power(alpha,2)*p+15760
-      *power(n,3)*power(m,7)*r-120*power(n,2)*power(m,7)*p*power(alpha,2)+1500*power(n,4)*m*power(alpha,2)*r-2100*power(n,5)*m*alpha
-      *r+6380*power(n,3)*power(p,3)*alpha*m+4090*power(n,4)*p*power(m,2)*r-24850*power(n,2)*power(m,4)*power(r,2)+30300*power(n,3)*
-      p*power(m,4)*r-3535*power(n,4)*power(m,3)*alpha*r+1835*power(n,3)*power(m,3)*power(alpha,2)*r-24960*power(n,2)*power(m,3)*power(p,3)*
-      alpha+345*q*power(m,2)*power(p,4)+9720*n*power(m,4)*power(p,4)+1200*power(n,6)*p*alpha*m-6495*power(n,2)*power(m,2)*p*
-      power(alpha,2)*r-600*power(n,7)*power(m,2)*alpha-160*power(n,5)*power(m,3)*r-1500*power(n,3)*p*power(alpha,2)*r+4920*power(n,3)
-      *m*p*r*alpha-9300*power(n,3)*r*m*power(p,2)-600*power(n,5)*r*p+7200*n*power(m,4)*power(r,2)-2845*power(n,2)*r*
-      alpha*m*power(p,2)-11175*power(n,4)*power(m,5)*r+2100*power(n,4)*p*alpha*r-21775*power(n,2)*power(m,2)*power(r,2)*alpha-38820
-      *power(n,2)*power(m,6)*r*p-2180*power(n,4)*power(p,3)*m-780*power(n,6)*power(m,3)*alpha-600*power(n,7)*p*m-3410*power(n,2)
-      *power(m,5)*power(alpha,2)*r+2415*power(n,4)*power(m,4)*alpha*p-11280*power(n,2)*power(m,7)*r*alpha-29890*power(n,2)*power(m,3)*r*power(p,2)+600*power(n,6)*r*m-1500*power(n,3)*power(r,2)*alpha+2425*power(n,3)*power(m,2)*power(r,2)+9300*q*power(m,6)*power(n,3)
-      *alpha+2460*power(n,5)*power(m,2)*p*alpha-2580*power(n,4)*m*power(p,2)*alpha-13370*power(n,3)*power(m,3)*alpha*power(p,2)+720*power(m,5)*n*power(p,3)-13750*power(m,3)*power(r,3)+2250*q*power(p,4)-9840*power(n,4)*m*p*r-3420*power(n,6)*p*power(m,2)-7060*power(n,3)*power(m,4)*alpha*r-480*power(n,3)*power(m,2)*p*r-5290*power(q,3)*power(p,2)-40*power(q,2)*power(m,10)+19180*
-      power(n,2)*power(m,3)*p*alpha*r-1740*power(n,3)*power(m,6)*p*alpha-3945*power(n,4)*p*power(m,5)*alpha+15350*power(n,4)*
-      power(p,2)*power(m,3)-2160*power(n,3)*p*power(m,8)+22500*power(m,2)*power(r,3)-1155*power(n,7)*power(m,4)-8625*power(p,4)*m*r-300*power(n,5)
-      *power(m,8)-6555*power(p,4)*q*n+5175*power(p,4)*q*alpha+8625*power(p,3)*q*r+6555*power(p,5)*m*n-5175*power(p,5)*
-      m*alpha+140*power(q,3)*power(m,6)+60*power(q,2)*power(n,4)-40*power(q,2)*power(m,8)+80*power(q,2)*power(m,9)+40*power(q,3)*power(m,4)-180*power(q,3)*power(m,5)-26300*power(n,3)*p*power(m,3)*r+225*power(m,2)*power(p,4)*power(alpha,2)-630*power(n,4)*power(m,2)*power(p,2)-840*power(n,5)*power(m,3)*p-1710*power(n,4)*power(m,5)*p+3420*power(n,5)*m*power(p,2)-21580*power(n,3)*power(p,2)*power(m,5)+5130*power(n,4)*p*power(m,6)+525
-      *power(n,6)*power(m,4)+900*power(n,3)*power(p,3)*alpha+240*power(n,2)*power(m,8)*p*alpha+21430*power(n,2)*power(m,2)*power(p,3)*alpha
-      +300*power(n,6)*power(p,2)+300*power(n,4)*power(r,2)-1485*power(n,6)*power(m,5)+990*power(n,6)*power(m,6)-700*power(m,6)*power(p,3)*alpha+960
-      *power(n,3)*power(m,7)*p+1680*power(n,3)*m*power(p,3)+360*power(n,6)*m*p-555*power(n,5)*power(m,4)*p-675*power(n,2)*power(p,4)-27750
-      *power(n,3)*power(p,3)*power(m,2)-60*power(n,4)*power(m,7)*alpha+300*power(n,8)*power(m,2)+2100*power(n,2)*power(p,2)*m*r-360*power(n,5)*m*r
-      +3980*power(n,2)*power(m,5)*power(p,2)*alpha+3780*power(n,5)*power(m,2)*r-1140*power(n,4)*power(p,3)+30*power(n,4)*power(m,8)+435*power(n,5)
-      *power(m,5)*alpha-180*power(n,7)*power(m,2)+8440*power(n,3)*power(m,4)*power(p,2)-5240*power(n,2)*power(m,7)*r+13440*power(n,2)*power(m,8)*r
-      -180*power(n,5)*power(p,2)+51420*power(n,2)*power(m,5)*p*r+8560*power(n,2)*power(m,6)*r*alpha-20240*power(n,3)*power(m,6)*r+240
-      *power(n,2)*power(m,10)*p-13480*power(n,2)*power(p,3)*power(m,3)+30240*power(n,2)*power(p,3)*power(m,4)-60*power(n,4)*power(m,9)+3280*power(m,9)*n
-      *alpha*r-2080*power(n,2)*power(m,6)*power(p,2)+8245*power(n,4)*power(m,4)*r+810*power(m,6)*power(p,4)-240*power(n,5)*power(m,6)+32590
-      *power(n,2)*power(p,2)*power(m,2)*r-3600*power(n,2)*power(p,2)*r*alpha-6200*power(m,5)*power(p,2)*r-160*power(m,13)*r-18750*m*
-      power(r,3)*alpha-780*power(n,4)*power(m,3)*r+31600*power(n,2)*power(m,3)*power(r,2)-14160*power(n,2)*power(m,4)*p*r+5840*power(n,3)*power(m,5)*r+3000*power(n,3)*m*power(r,2)+540*power(n,5)*power(m,7)+1140*power(n,7)*power(m,3)+4020*power(n,2)*power(p,2)*power(m,7)+40*power(m,12)*
-      power(p,2)-660*power(n,5)*p*power(m,3)*alpha+40*power(m,10)*power(p,2)-4640*power(n,4)*power(p,2)*power(m,2)*alpha-1300*power(m,5)*power(p,4)-1800*power(m,6)*power(r,2)+16930*power(n,3)*power(p,2)*power(m,4)*alpha+440*power(m,9)*power(p,3)-3000*power(m,8)*power(r,2)+400*power(m,7)*power(p,3)-840*power(m,8)*power(p,3)+5600*power(m,7)*power(r,2)-80*power(m,11)*power(p,2)-120*power(n,2)*power(m,9)*p-100*power(m,6)*power(p,2)*power(alpha,2)*n-160*power(m,11)*r+40*power(m,8)*power(p,2)*power(alpha,2)+320*power(m,12)*r+6060*power(n,3)*power(p,2)*r-100*power(m,7)*power(p,3)*n+550*power(m,4)*power(p,4)-240*power(m,10)*power(p,2)*n+80*power(m,10)*power(p,2)*alpha+1340*power(m,5)*n*power(p,3)*alpha
-      +7210*power(m,4)*n*p*power(alpha,2)*r+4750*n*power(m,2)*power(r,2)*power(alpha,2)-31110*power(n,2)*power(m,4)*p*alpha
-      *r-1600*power(m,6)*p*power(alpha,2)*r-3760*power(m,8)*p*alpha*r+1360*power(m,7)*n*power(alpha,2)*r+740*
-      power(m,7)*power(p,3)*alpha+21880*power(m,6)*p*n*r*alpha+16400*power(m,8)*p*n*r+260*power(m,7)*n*alpha*power(p,2)+6325*m*power(p,2)*n*power(alpha,2)*r+25100*power(m,4)*n*power(r,2)*alpha+18000*power(m,6)*power(r,2)*n-5200*power(m,6)*power(r,2)*alpha-7340*power(m,7)*r*power(p,2)+3600*power(m,5)*power(r,2)*alpha-9400*power(m,5)*r*alpha*power(p,2)-18520
-      *power(m,5)*n*p*r*alpha+25800*power(m,5)*n*r*power(p,2)-1750*power(m,4)*power(r,2)*power(alpha,2)+1920*power(m,11)*n*
-      r-320*power(m,11)*r*alpha-160*power(m,9)*power(alpha,2)*r-2160*power(m,10)*r*p+3600*power(m,7)*p*alpha*r-
-      27600*power(m,7)*p*n*r-2960*power(m,8)*n*alpha*r+11360*power(m,6)*n*p*r-660*power(m,6)*power(p,3)*n-2000*
-      power(m,8)*p*r+13100*power(m,6)*power(p,2)*r+4160*power(m,9)*p*r+3375*power(p,5)*alpha+5625*power(p,4)*r-4275*power(p,5)*n+320*power(m,10)*r*alpha-3520*power(m,10)*n*r+9400*power(m,4)*power(p,2)*r*alpha-160*power(m,8)*n*power(p,2)-
-      80*power(m,9)*power(p,2)*alpha+400*power(m,9)*power(p,2)*n-32760*power(m,4)*power(p,2)*n*r+1600*power(m,9)*r*n-340*power(m,8)*
-      power(p,2)*n*alpha-1740*power(m,4)*n*power(p,3)*alpha-30000*power(m,5)*power(r,2)*n-19320*n*power(m,3)*power(p,4)-1560*
-      power(n,4)*power(m,2)*alpha*r-11700*n*power(m,3)*power(r,2)*alpha+11160*n*power(m,3)*r*alpha*power(p,2)-2300*power(m,3)
-      *power(p,5))
-
-      xi = (-xi2 + mp.sqrt(power(xi2,2)-4*xi3*xi1))/(2*xi3)
-
-      eta = -(4*xi*power(m,4)-15*xi*p-21*power(m,2)*p*alpha+10*xi*power(n,2)+21*power(m,3)*n*alpha-4*xi*
-      power(m,3)-56*power(m,3)*power(n,2)-58*m*n*q-20*xi*q-23*m*power(p,2)+4*power(m,6)+23*p*q-4*power(m,7)-10*xi*n*alpha
-      +13*xi*m*n-17*xi*power(m,2)*n+4*xi*power(m,2)*alpha+17*xi*m*p+25*n*p*alpha+29*m*power(n,3)+31*power(m,3)*q+21*m*q*alpha-23*m*power(n,2)*alpha+15*power(p,2)+28*power(m,5)*n-29*p*power(n,2)-25*r*
-      alpha+81*p*power(m,2)*n-6*power(n,3)+35*n*r-28*power(m,4)*p-4*power(m,5)*alpha-52*m*n*p-35*power(m,2)*r-24
-      *n*power(m,4)+22*n*q-26*power(m,2)*q+30*m*r+35*power(m,2)*power(n,2)+26*power(m,3)*p)/(25*m*q-20*q+20*power(m,3)*n+19*n*p-22*power(m,2)*p-19*m*power(n,2)-16*power(m,2)*n+13*n*m*alpha+6*power(n,2)-15*p*alpha-25
-      *r-4*power(m,3)*alpha+20*m*p-4*power(m,5)+4*power(m,4))
-
-   elif (m == 0) and (n != 0):
-      w = mp.sqrt(400*power(q,2)+600*p*q-100*q*power(n,2)+225*power(p,2)+80*p*power(n,2)-500*n*r-200*q*n+
-      60*power(n,3)+60*n*power(p,2))
-
-      Omega = (45562500*power(p,6)*q*power(r,2)-80000000*power(n,2)*power(r,2)*p*power(q,4)+36300000*power(n,4)*power(r,2)*power(p,2)*power(q,2)+25500000*power(n,5)*power(r,4)*p+11520*power(n,9)*power(p,3)*r+291600*power(p,9)*r*n+712800*power(p,5)*power(q,3)*power(n,3)-75937500*power(p,5)*power(r,3)*n-62500000*power(n,3)*power(r,4)*p*q-15673500*power(p,7)*q*r*n-13410000*
-      power(p,2)*power(n,6)*power(r,3)-140625000*power(p,2)*power(r,5)*n+62500000*power(n,2)*power(r,5)*q+25000000*power(q,2)*power(n,3)*power(r,4)-299700*power(p,6)*power(n,3)*power(q,2)+25000000*power(n,2)*power(r,4)*power(q,2)+25312500*power(n,3)*power(r,4)*power(p,2)-6144000
-      *power(q,7)*n*p+619520*power(q,5)*power(n,4)*power(p,2)-51840*power(n,10)*q*p*r+777600*power(p,8)*power(n,2)*r-1166400*
-      power(n,9)*q*power(r,2)+34560*power(n,9)*power(p,2)*power(r,2)-32400000*power(p,5)*power(q,3)*r-3240000*power(p,6)*power(n,3)*r*q+4096000
-      *power(n,3)*power(q,6)*p-84375000*n*power(r,4)*q*power(p,2)+26312500*power(p,2)*power(n,4)*power(r,4)+1795500*power(p,6)*power(n,3)*power(r,2)-58880*power(n,7)*power(q,4)*p+1350000*power(n,7)*power(r,4)-1600000*power(q,4)*power(n,4)*power(r,2)-7680000*power(q,6)
-      *n*p*r+63281250*power(p,4)*power(r,4)+6681600*power(n,3)*power(q,5)*power(p,2)-64125000*power(p,4)*power(n,3)*power(r,3)+40000000
-      *power(n,3)*power(q,3)*power(r,3)-59375000*p*power(n,3)*power(r,5)-2252800*power(n,4)*power(q,6)+39062500*power(n,2)*power(r,6)+77760
-      *power(n,11)*power(r,2)-432000*power(n,8)*p*power(r,3)-546750*power(p,8)*power(q,2)+101250000*power(n,2)*power(r,3)*power(p,3)*q+103680
-      *power(n,10)*power(r,2)*p-11250000*power(n,5)*power(r,4)*q+1473600*power(p,3)*power(n,7)*power(r,2)+207360*power(n,6)*power(p,5)
-      *r+15360*power(n,9)*power(q,3)*p+8869500*power(n,5)*power(r,2)*power(p,4)+77760*power(p,7)*power(n,4)*r+5184000*power(q,5)*power(p,4)
-      +1728000*power(p,4)*power(n,4)*power(q,3)-3840*power(p,3)*power(n,8)*power(q,2)-36160*power(q,4)*power(n,6)*power(p,2)-6696000*power(p,4)*power(n,2)*power(q,4)-650240*power(n,5)*power(q,5)*p-8775000*power(p,5)*power(n,2)*power(r,3)-8524800*power(q,5)*power(n,2)*power(p,3)-19440*power(p,6)*power(n,4)*power(q,2)+8437500*power(p,4)*power(r,4)*n+88080*power(p,4)*power(q,3)*power(n,5)+1468800*power(n,8)*power(r,2)*power(p,2)-4096000
-      *power(n,4)*power(q,5)*r-57600000*power(p,3)*power(q,5)*r-1280*power(p,4)*power(n,7)*power(q,2)+252480*power(n,7)*power(q,3)*power(p,2)-
-      2192000*power(n,5)*power(q,4)*power(p,2)-86400000*power(p,4)*power(q,4)*r+(1980000*power(p,2)*power(n,3)*power(r,2)*power(q,2)-460800
-      *power(q,6)*power(p,2)-25920*power(n,2)*power(p,7)*r-1800000*power(n,4)*power(r,2)*power(q,2)*p+168960*power(q,5)*power(n,2)*power(p,2)-194400
-      *power(p,7)*r*q+10125000*power(r,3)*power(p,3)*q*n+1395000*power(p,3)*power(r,2)*power(n,3)*q-345600*power(q,5)*power(p,3)-5760
-      *power(n,7)*power(q,3)*p-442800*power(n,5)*power(r,2)*power(p,3)-6375000*power(p,2)*power(n,2)*power(r,4)+36450*power(p,7)*power(q,2)-3840
-      *power(n,5)*r*power(p,5)+1350000*power(n,4)*power(r,3)*power(p,2)-60480*power(n,3)*power(p,6)*r-4218750*power(p,3)*power(r,4)+2160000
-      *power(p,4)*power(q,3)*r-4050000*power(p,4)*power(q,2)*power(r,2)+6480*power(p,6)*power(q,2)*power(n,2)-1113750*power(n,2)*power(p,5)*power(r,2)-245760
-      *power(n,3)*power(q,5)*p+15120*power(p,5)*power(q,2)*power(n,3)+307200*power(q,6)*n*p+2880000*power(p,3)*power(q,4)*r+162000
-      *p*power(n,6)*power(r,3)+65280*power(n,5)*power(q,4)*p+1440*power(p,3)*power(n,6)*power(q,2)+960*power(p,4)*power(q,2)*power(n,5)-38880*power(n,8)*power(r,2)*p-2970000*power(p,4)*power(n,2)*power(r,2)*q-78240*power(p,3)*power(n,4)*power(q,3)-3037500*power(p,5)*power(r,2)*q+345600
-      *power(n,2)*power(q,4)*power(p,3)+1920*power(q,4)*power(n,4)*power(p,2)-259200*power(q,4)*n*power(p,4)+24000*power(q,3)*power(n,5)*p*r-1125000
-      *power(n,3)*power(r,4)*p+162000*power(p,6)*power(r,2)*n-5625000*power(r,4)*power(p,2)*q-3840*power(n,6)*power(p,2)*power(q,3)-27360
-      *power(n,3)*power(p,4)*power(q,3)-25920*power(p,2)*power(n,7)*power(r,2)+48600*power(p,6)*power(q,3)+2137500*power(p,3)*power(n,3)*power(r,3)-145800
-      *power(p,8)*r+4687500*p*power(r,5)*n+5062500*power(p,4)*power(r,3)*n-5760*power(n,6)*power(p,4)*r-226800*power(p,5)
-      *power(q,3)*n-174000*power(p,4)*power(n,4)*power(r,2)-86400*power(p,2)*power(n,5)*power(r,2)*q+25920*power(n,7)*r*power(p,2)*q+453600
-      *power(n,6)*power(r,2)*p*q+343200*power(p,4)*power(n,4)*q*r+2400000*power(q,3)*power(r,2)*power(n,2)*p-10800*power(p,3)*power(q,2)*power(n,4)*r-1920000*power(q,4)*r*power(p,2)*n-288000*power(n,5)*r*power(p,2)*power(q,2)+980100*power(p,6)*q*r*n+384000*power(q,5)*n*p*r+3000000*p*power(n,2)*power(r,3)*power(q,2)+3750000*n*power(r,4)*q*p-408000*power(q,3)*power(n,2)*power(p,3)*r+
-      17280*power(n,6)*r*power(p,3)*q-4500000*power(p,2)*power(r,3)*power(n,2)*q-1350000*power(r,3)*p*q*power(n,4)+1248000*power(q,3)*r*power(p,2)*power(n,3)-1512000*power(p,4)*power(q,2)*power(n,2)*r-6000000*power(q,3)*n*power(p,2)*power(r,2)-192000*power(n,3)*p*power(q,4)*r+122400*power(p,5)*power(n,3)*r*q+1093500*power(p,5)*power(q,2)*n*r)*w-4860000*power(p,7)*n*power(r,2)+15360
-      *power(n,8)*r*power(p,4)+9216000*power(q,7)*power(p,2)+577500*power(p,4)*power(n,4)*power(r,2)*q+768000*power(q,3)*power(n,5)*power(p,2)*r+12152000
-      *power(p,3)*power(n,5)*power(r,2)*q+32400*power(p,2)*power(n,7)*power(r,2)*q+141562500*power(p,2)*power(n,2)*power(r,4)*q-40400000
-      *power(q,3)*power(n,3)*power(p,2)*power(r,2)+120000000*power(q,4)*n*power(p,2)*power(r,2)+54337500*power(p,4)*power(n,2)*power(r,2)*power(q,2)+
-      173600*power(p,3)*power(n,6)*r*power(q,2)-1059200*power(p,4)*power(n,6)*r*q-42750000*power(p,3)*power(n,3)*power(r,3)*q+2007000
-      *power(p,5)*power(n,3)*r*power(q,2)-23040*power(p,3)*power(n,8)*r*q-391200*power(p,5)*power(n,5)*r*q-82800000*power(r,2)*power(p,3)*
-      power(q,2)*power(n,3)-26190000*power(p,5)*power(q,3)*n*r-2418000*power(p,4)*power(n,4)*r*power(q,2)-202500000*power(r,3)*power(p,3)*power(q,2)*n-11200000*power(q,4)*power(n,3)*power(p,2)*r+26880000*power(q,5)*n*power(p,2)*r+126000000*power(q,3)*n*power(p,3)*power(r,2)+26000000*p*power(n,4)*power(r,3)*power(q,2)-12800000*r*p*power(q,5)*power(n,2)+748800*power(n,8)*power(q,2)*p*r-20250000
-      *power(p,4)*n*power(q,2)*power(r,2)-540000*p*power(n,6)*power(r,3)*q+32000*power(q,4)*power(n,5)*p*r+26820000*power(q,3)*power(n,2)*power(p,4)*r+45000000*power(p,2)*power(n,2)*power(r,3)*power(q,2)-93750000*power(r,5)*p*q*n-18750000*power(n,4)*power(r,5)+
-      11520*power(n,10)*power(q,3)+3645000*power(p,6)*power(q,3)*n-4416000*power(n,6)*p*r*power(q,3)-168960*power(n,8)*power(q,4)+12160000
-      *power(n,4)*p*r*power(q,4)+8424000*power(q,4)*n*power(p,5)+3888000*power(p,7)*r*power(q,2)-1458000*power(p,7)*power(q,3)
-      -648000*power(n,9)*power(r,3)-9072000*power(n,6)*power(r,2)*p*power(q,2)+273600*power(n,7)*power(p,2)*power(q,2)*r+121500000*power(p,5)*power(q,2)*power(r,2)+1198800*power(n,3)*power(p,7)*r+2816000*power(q,5)*power(n,3)*p*r+13824000*power(q,6)*power(p,3)+81000000
-      *power(p,4)*power(q,3)*power(r,2)-54720*power(p,5)*power(n,5)*power(q,2)+16706250*power(p,6)*power(r,2)*power(n,2)-72900*power(p,8)*power(q,2)*
-      n+2250000*power(n,6)*power(r,4)+5832000*power(p,8)*r*q-30375000*power(n,4)*power(r,3)*power(p,3)+5120000*power(q,6)*power(n,2)
-      *r-2880*power(n,9)*power(p,2)*power(q,2)+191250000*power(p,3)*power(n,2)*power(r,4)+168750000*power(r,4)*power(p,3)*q+4572000*
-      power(p,5)*power(n,4)*power(r,2)-16800000*power(n,5)*power(q,3)*power(r,2)+2048000*power(q,7)*power(n,2)-4531200*power(q,6)*power(n,2)*power(p,2)+926720
-      *power(n,6)*power(q,5)+5120*power(n,8)*power(p,2)*power(q,3)+200000*power(q,3)*power(n,6)*power(r,2)-1113600*power(p,3)*power(n,7)*q*r+
-      9632000*power(p,3)*power(n,5)*power(q,2)*r+29214000*power(n,2)*r*power(p,5)*power(q,2)+50400000*power(n,4)*power(r,2)*p*power(q,3)-22275000
-      *power(p,4)*power(n,3)*q*power(r,2)-12546000*power(n,6)*power(r,2)*power(p,2)*q+218880*power(n,5)*r*power(p,6)+491600*power(p,4)*power(n,6)*power(r,2)+237440*power(n,6)*power(p,3)*power(q,3)-446400*power(q,4)*power(n,3)*power(p,4)+614400*power(q,4)*power(n,4)*power(p,3)-2700000
-      *power(n,7)*p*power(r,3)+18000000*power(n,5)*p*power(r,3)*q-75000000*power(q,2)*power(r,4)*p*n-6912000*power(q,6)*n
-      *power(p,2)+5120*power(p,5)*power(n,7)*r+28500000*power(p,2)*power(n,4)*power(r,3)*q-80000000*power(q,3)*power(n,2)*p*power(r,3)-303750000
-      *power(r,3)*power(p,4)*q*n-35397000*power(p,6)*power(q,2)*r*n+15360000*power(q,4)*power(n,2)*power(p,3)*r+2835000*
-      power(r,2)*power(p,6)*q*n-3392000*power(q,3)*power(n,4)*power(p,3)*r+4128000*power(p,2)*power(n,5)*power(r,2)*power(q,2)-33120000*power(p,3)
-      *power(n,3)*power(q,3)*r-1668600*power(p,7)*power(n,2)*r*q+91260000*power(p,5)*power(n,2)*power(r,2)*q-64000*power(n,7)*p*power(q,3)*
-      r-30000000*power(n,3)*p*power(r,3)*power(q,2)-15000000*power(n,4)*power(r,4)*q+16000000*power(n,3)*power(q,4)*power(r,2)+43200000
-      *power(p,3)*n*power(q,4)*r-7511400*power(p,5)*power(n,4)*q*r-36000000*power(n,2)*power(r,2)*power(p,2)*power(q,3)-69120*power(p,2)
-      *power(n,9)*q*r+112500000*power(r,4)*power(p,2)*power(q,2)-194400*power(p,7)*power(n,2)*power(q,2)-96000*power(n,8)*power(q,3)*r+7560000
-      *power(n,7)*q*power(r,3)+6624000*power(n,7)*power(q,2)*power(r,2)+3200000*power(q,5)*power(n,2)*power(r,2)-972000*power(p,6)*power(q,4)-51840
-      *power(p,4)*power(n,6)*power(q,2)+380700*power(p,6)*power(q,3)*power(n,2)-30000000*power(n,5)*power(q,2)*power(r,3)+5875200*power(q,5)*n
-      *power(p,4)+2187000*power(p,9)*r-4300000*power(p,3)*power(n,5)*power(r,3)+1088000*power(n,6)*power(q,4)*r)
-
-      alpha = 1/10*(-20*q-15*p+10*power(n,2)+w)/n
-
-      eta = (-44*q*power(n,2)+2*w*n*(1/20*(400*power(q,2)*r-260*power(n,2)*q*r-375*p*power(r,2)+36*power(n,4)*r
-      -27*power(p,3)*q+195*n*power(p,2)*r+48*n*power(q,2)*p-4*power(n,3)*q*p)*w/((12*power(n,4)*q-4*power(n,3)*power(p,2)-88*
-      power(n,2)*power(q,2)-40*power(n,2)*p*r+125*n*power(r,2)+117*q*n*power(p,2)+160*power(q,3)-27*power(p,4)-300*r*p*q)*n)+
-      1/20*(-1640*power(n,3)*p*power(q,2)-960*power(p,2)*power(n,3)*r+540*power(p,3)*power(q,2)+240*p*power(n,5)*q-2925*power(p,3)*r
-      *n-11550*power(p,2)*n*r*q+3900*power(n,2)*r*p*q+405*power(p,4)*q-540*power(p,5)*n-6250*n*power(r,3)-8000*
-      power(q,3)*r-80*power(p,3)*power(n,4)+5625*power(p,2)*power(r,2)+2720*power(q,3)*n*p-6000*power(q,2)*r*p+7500*power(r,2)*p*q-720
-      *power(p,2)*n*power(q,2) + mp.sqrt(Omega) +4400*power(q,2)*power(n,2)*r-600*power(n,4)*r*q+2340*power(p,3)*power(n,2)*q+6750
-      *p*power(n,2)*power(r,2)-540*power(n,4)*r*p+60*power(p,2)*power(n,3)*q)/((12*power(n,4)*q-4*power(n,3)*power(p,2)-88*power(n,2)*power(q,2)-
-      40*power(n,2)*p*r+125*n*power(r,2)+117*q*n*power(p,2)+160*power(q,3)-27*power(p,4)-300*r*p*q)*n))+45*n*power(p,2)-5*p*n*w+12*power(n,4)+8*p*power(n,3)+54*p*q*n-100*r*q-75*p*r+5*r*w-20*power(n,2)*r)/(-3*p
-      *w-40*q*n-50*n*r+8*p*power(n,2)+12*power(n,3)+60*p*q+45*power(p,2))
-
-      xi = 1/20*(400*power(q,2)*r-260*power(n,2)*q*r-375*p*power(r,2)+36*power(n,4)*r-27*power(p,3)*q+195*n*power(p,2)*r+48*n*power(q,2)*p-4*power(n,3)*q*p)*w/((12*power(n,4)*q-4*power(n,3)*power(p,2)-88*power(n,2)*power(q,2)-40*power(n,2)*p*r
-      +125*n*power(r,2)+117*q*n*power(p,2)+160*power(q,3)-27*power(p,4)-300*r*p*q)*n)+1/20*(-1640*power(n,3)*p*
-      power(q,2)-960*power(p,2)*power(n,3)*r+540*power(p,3)*power(q,2)+240*p*power(n,5)*q-2925*power(p,3)*r*n-11550*power(p,2)*n*r*q
-      +3900*power(n,2)*r*p*q+405*power(p,4)*q-540*power(p,5)*n-6250*n*power(r,3)-8000*power(q,3)*r-80*power(p,3)*power(n,4)+5625
-      *power(p,2)*power(r,2)+2720*power(q,3)*n*p-6000*power(q,2)*r*p+7500*power(r,2)*p*q-720*power(p,2)*n*power(q,2) + mp.sqrt(
-      Omega) + 4400*power(q,2)*power(n,2)*r-600*power(n,4)*r*q+2340*power(p,3)*power(n,2)*q+6750*p*power(n,2)*power(r,2)-540*power(n,4)*r*p+60*power(p,2)*power(n,3)*q)/((12*power(n,4)*q-4*power(n,3)*power(p,2)-88*power(n,2)*power(q,2)-40*power(n,2)*p*r+125*n*power(r,2)+117*q*n*power(p,2)+160*power(q,3)-27*power(p,4)-300*r*p*q)*n)
-
-   else: #if (m == 0) and (n == 0)
-      alpha = -1/5*(10*q-3*power(p,2)+25*r)/(4*q+3*p)
-
-      xi = 1/10*(7360*power(q,4)*p+5520*power(p,2)*power(q,3)-4000*power(q,3)*r+270*power(q,2)*power(p,3)-10000*power(q,2)*power(r,2)-14100*power(q,2)*power(p,2)*r-12500*q*power(r,3)+3750*q*p*power(r,2)-10800*q*r*power(p,3)-1161*power(p,5)*q-810
-      *power(p,6)-1125*power(r,2)*power(p,3) + mp.sqrt(1843200*power(q,7)*power(p,3)-172800*power(q,6)*power(p,4)+103680*power(q,5)*power(p,6)
-      -194400*power(q,4)*power(p,7)-648000*power(p,5)*power(q,5)-72900*power(p,8)*power(q,3)+28125000*q*power(r,5)*power(p,3)+14062500
-      *power(q,2)*power(p,2)*power(r,4)+8437500*q*power(p,4)*power(r,4)-891000*power(q,3)*power(p,7)*r+777600*power(q,2)*power(p,8)*r+25650000
-      *power(q,2)*power(p,5)*power(r,3)+93750000*power(q,2)*power(r,5)*p+156250000*power(q,2)*power(r,6)-10935*power(p,10)*power(q,2)+
-      112500000*power(q,3)*power(p,2)*power(r,4)+75000000*power(q,3)*power(r,4)*p+22500000*power(q,2)*power(r,4)*power(p,3)+9315000*
-      power(q,2)*power(p,6)*power(r,2)+250000000*power(q,3)*power(r,5)-121500*power(q,4)*power(p,6)+67500000*power(q,3)*power(r,3)*power(p,3)+10125000
-      *power(q,3)*power(p,4)*power(r,2)+100000000*power(q,4)*power(r,4)-7200000*power(q,5)*r*power(p,3)+2592000*power(q,3)*r*power(p,6)
-      -1674000*power(p,5)*power(q,4)*r+24840000*power(p,5)*power(q,3)*power(r,2)+486000*power(p,7)*r*power(q,2)+43740*power(p,11)*r+
-      6144000*power(q,8)*p+1152000*power(q,7)*power(p,2)+8192000*power(q,9)+1265625*power(r,4)*power(p,6)+12800000*power(q,7)
-      *power(r,2)+20480000*power(q,8)*r+1883250*power(p,8)*q*power(r,2)+291600*q*r*power(p,9)+180000000*power(p,2)*power(q,4)
-      *power(r,3)-38400000*power(p,2)*power(q,6)*r-15750000*power(q,4)*power(p,4)*power(r,2)-13680000*power(q,5)*power(p,4)*r+24000000
-      *power(q,5)*power(p,2)*power(r,2)-80000000*power(q,5)*p*power(r,3)+2304000*power(q,6)*power(p,3)*r-128000000*power(q,6)*p*power(r,2)-43520000*power(q,7)*p*r+54000000*power(p,3)*power(q,4)*power(r,2)))/((160*power(q,3)-300*q*p*r-27*power(p,4))*
-      (4*q+3*p))
-
-      eta = (50*q*r-15*power(p,2)*r+125*power(r,2)+129*power(p,2)*q+45*power(p,3)+92*p*power(q,2)-80*power(q,2)*xi-120*q*xi
-      *p-45*power(p,2)*xi)/(100*q*r+80*power(q,2)+30*p*q+9*power(p,3))
-
-   #all cases
-   d3 = (9/5*power(m,5)*q-9/5*power(m,4)*r+24/5*power(m,3)*r-p*power(alpha,3)-2/25*power(n,3)-56/25*n*power(p,2)+36
-   /25*n*power(m,7)+84/25*n*power(m,5)+72/5*q*power(m,2)*n-63/25*power(p,2)*power(m,3)-10*q*m*p-9/5*m*power(n,4)+2/
-   25*power(p,3)+6/5*power(n,2)*power(alpha,2)-36/25*p*power(m,6)-96/25*p*power(m,4)-4/25*power(m,9)-12/25*power(m,7)*alpha
-   +27/5*q*power(n,2)*m+24/25*power(m,6)*alpha+12/25*power(m,4)*power(alpha,2)+power(p,2)+54/25*m*power(p,2)*n-38/
-   5*q*n*m-5*r*power(alpha,2)-4*q*power(alpha,2)+2*r*m+162/25*power(m,3)*p*alpha-87/25*power(m,4)*p*alpha
-   +11/5*q*p*alpha+14/5*m*power(alpha,2)*p-23/5*power(n,2)*p*alpha-3*power(m,2)*p*alpha-4/
-   25*power(m,3)*power(alpha,3)-12/25*power(m,5)*power(alpha,2)+12/5*power(p,2)*alpha-3*r*power(n,2)-5*r*alpha-6/5*
-   power(m,2)*q-3*m*power(q,2)-314/25*n*m*alpha*p+261/25*n*power(m,2)*alpha*p-8*n*m*alpha*q-12
-   /5*power(n,3)*alpha+3*r*n-12/25*power(m,5)*alpha-5*r*power(m,2)+2*p*r+2/5*n*q+10*r*m*alpha+
-   66/25*n*power(m,3)*power(alpha,2)+3/5*n*m*power(alpha,3)+19/5*n*p*power(alpha,2)-3*m*power(n,2)*power(alpha,2)+44/5
-   *q*n*alpha+17/5*q*m*power(alpha,2)-42/5*q*power(m,2)*alpha+33/25*power(n,2)*power(m,2)+21/5*power(m,3)
-   *q*alpha-58/25*m*power(p,2)*alpha+13/5*n*p*alpha-28/5*power(n,2)*q+6/5*power(n,4)+4*power(q,2)-24/
-   5*q*power(m,4)+237/25*power(n,2)*power(m,4)-186/25*power(n,3)*power(m,2)+252/25*power(n,2)*m*p+279/25*power(m,2)*p*n-38
-   /5*m*n*r-23/5*m*power(p,2)-69/25*p*power(n,2)-12/5*m*p*n+27/5*r*power(m,2)*n+27/5*power(m,2)*q*p+21/5
-   *power(m,3)*q-12/5*m*p*r-12/5*q*p*n+23/5*q*p+69/25*m*power(n,3)+3*q*r-162/25*power(m,3)*
-   power(n,2)-108/25*power(m,5)*power(n,2)+123/25*power(m,3)*power(n,3)+102/25*power(m,5)*p-78/5*power(m,3)*p*n+153/25*power(m,2)
-   *power(p,2)-96/25*power(m,6)*n-12/25*power(m,7)+4/25*power(m,6)+21/5*m*alpha*power(n,3)+234/25*power(m,2)*alpha*
-   power(n,2)+63/25*n*power(m,3)*alpha-36/5*n*power(m,3)*q-63/25*m*alpha*power(n,2)-183/25*power(m,3)*alpha*
-   power(n,2)-189/25*power(m,2)*power(n,2)*p+7*r*n*alpha-29/5*r*power(m,2)*alpha+21/5*q*m*alpha+171/25
-   *n*power(m,4)*p-6*n*power(m,4)*alpha+87/25*n*power(m,5)*alpha-54/25*n*power(m,2)*power(alpha,2)-76/25*power(m,2)*power(alpha,2)*p+12/25*power(m,8)-24/25*power(m,4)*n+6/5*power(m,3)*p+9/5*p*power(n,3))
-
-   d2 = (-18/5*q*power(m,2)*eta+246/25*power(m,5)*q+12/25*eta*power(m,8)-138/25*power(m,6)*q-54/5*power(m,4)
-   *r+28/5*power(m,3)*r+694/25*m*power(n,2)*p*alpha-308/25*m*q*p*alpha+162/25*power(m,3)*eta*p
-   *alpha+234/25*eta*power(m,2)*alpha*power(n,2)-10*eta*q*m*p+72/5*eta*q*power(m,2)*n+24/5*power(m,7)
-   *p-24/25*power(m,7)*eta-28/5*n*power(p,2)-24/5*n*power(m,8)+276/25*power(m,4)*power(p,2)+216/25*n*power(m,7)+6/5
-   *q*n*eta+292/25*q*power(m,2)*n-468/25*power(p,2)*power(m,3)-48/5*q*m*p-198/25*m*power(n,4)-12/5*power(p,3)-6/5*power(n,3)*power(alpha,2)-228/25*p*power(m,6)+12/25*power(m,10)+6*power(m,5)*r-6/5*power(n,5)+3*power(p,2)*power(alpha,2)-24/25*power(m,9)-96/25*eta*power(m,6)*n+153/25*eta*power(m,2)*power(p,2)-78/5*eta*power(m,3)*p*n+102/25
-   *eta*power(m,5)*p+252/25*eta*power(n,2)*m*p-186/25*eta*power(n,3)*power(m,2)-24/5*eta*q*power(m,4)+237/25
-   *eta*power(n,2)*power(m,4)-28/5*eta*power(n,2)*q-24/25*power(m,7)*alpha+686/25*q*power(n,2)*m+5*power(r,2)+656/25
-   *m*power(p,2)*n+3*eta*power(p,2)+12/5*power(p,2)*xi+88/25*power(m,3)*power(alpha,2)*p-24/25*power(m,5)*eta*alpha
-   -186/25*power(m,4)*p*alpha+46/5*q*p*alpha-48/5*power(n,2)*q*alpha-12/5*power(n,3)*eta*alpha
-   -38/5*power(n,2)*p*alpha-10*r*alpha*eta+24/25*power(m,4)*alpha*xi+24/25*power(m,8)*alpha+12/25
-   *power(m,6)*power(alpha,2)-12/25*power(m,7)*xi+24/25*power(m,6)*xi-42/5*r*power(n,2)-5*r*xi-10*m*power(q,2)+
-   14/5*p*m*power(alpha,2)*eta-152/25*power(m,2)*alpha*p*xi+34/5*q*m*alpha*xi+44/5*q*n*
-   eta*alpha-42/5*q*power(m,2)*eta*alpha-38/5*r*m*n*eta+10*r*m*alpha*eta+22/5*n*
-   q*power(alpha,2)+42/5*q*m*alpha*eta+572/25*n*power(m,2)*alpha*p-76/5*q*m*n*eta-314/25
-   *n*m*xi*p+126/25*n*power(m,3)*alpha*eta-108/25*n*power(m,2)*alpha*xi+261/25*n*power(m,2)*xi
-   *p-452/25*n*m*alpha*q-126/25*m*alpha*power(n,2)*eta-116/5*r*m*alpha*n+558/25
-   *n*power(m,2)*eta*p+12/5*power(n,4)*alpha-76/5*r*m*q-12/5*power(n,3)*xi+8*p*r+8/5*power(q,2)*alpha
-   +51/5*power(m,2)*power(q,2)-26/5*power(q,2)*n+28/5*m*alpha*p*xi+26/5*n*eta*p*alpha-6*power(m,2)*eta
-   *p*alpha-816/25*n*power(m,3)*alpha*p+638/25*n*power(m,2)*alpha*q-8*n*m*xi*q-54/25*n
-   *eta*power(m,2)*power(alpha,2)-6*n*eta*power(m,4)*alpha+9/5*n*m*power(alpha,2)*xi+132/25*n*power(m,3)*alpha
-   *xi-42/5*n*m*p*power(alpha,2)+38/5*n*p*alpha*xi-6*m*power(n,2)*alpha*xi-314/25*n*eta
-   *m*alpha*p+6*r*n*eta-10*r*power(m,2)*eta+10*r*m*xi-78/25*n*power(m,4)*power(alpha,2)+12/5
-   *power(n,2)*alpha*xi+6/5*power(n,2)*eta*power(alpha,2)+129/25*power(m,2)*power(n,2)*power(alpha,2)-10*power(p,2)*n*alpha
-   +12/5*power(p,2)*alpha*eta-528/25*power(m,3)*q*p+268/25*power(m,2)*power(p,2)*alpha-42/5*q*power(m,2)*xi
-   +44/5*q*n*xi+24/5*r*power(m,3)*eta+6/5*eta*power(n,4)-3*power(m,2)*xi*p+4*eta*power(q,2)-63/25*m*xi
-   *power(n,2)-87/25*power(m,4)*p*xi+162/25*power(m,3)*p*xi+11/5*q*p*xi+216/25*power(m,3)*q*alpha-8*
-   m*power(p,2)*alpha-198/25*n*power(m,6)*alpha+516/25*power(m,4)*alpha*power(n,2)-444/25*power(m,2)*alpha*power(n,3)+21/5*power(m,3)*q*xi-58/25*m*power(p,2)*xi+13/5*n*p*xi-23/5*power(n,2)*p*xi+24/25*power(m,6)*eta
-   *alpha+198/25*power(m,5)*p*alpha+12/25*power(m,4)*power(alpha,2)*eta-3*p*power(alpha,2)*xi-12/25*
-   power(m,5)*xi+63/25*power(m,3)*xi*n-6/25*power(n,3)*eta+171/25*power(p,2)*power(n,2)+99/25*power(n,2)*power(m,2)*eta-32
-   /25*power(n,2)*q+6/25*power(n,4)+4/5*power(q,2)-108/25*q*power(m,4)+234/25*power(n,2)*power(m,4)-168/25*power(n,3)*power(m,2)+
-   312/25*power(n,2)*m*p-56/5*m*n*r+52/25*m*power(p,3)+84/5*power(m,2)*p*r+96/5*m*r*power(n,2)+152/5*
-   r*power(m,2)*n-58/5*p*n*r+748/25*power(m,2)*q*p+18/5*power(m,3)*eta*p-72/25*power(m,4)*eta*n+654/25
-   *q*n*m*p-104/5*m*p*r-476/25*q*p*n+12/25*power(m,6)*eta+10*q*r+6*q*power(n,3)-36/5*n
-   *eta*m*p-642/25*power(m,5)*power(n,2)+696/25*power(m,3)*power(n,3)+108/25*power(m,5)*p-432/25*power(m,3)*p*n+38/
-   5*power(m,2)*power(p,2)-96/25*power(m,6)*n-52/25*q*power(p,2)+321/25*power(n,4)*power(m,2)-24*power(m,3)*r*n-88/25*power(m,2)*
-   power(alpha,2)*q-216/25*power(m,4)*q*alpha+186/25*m*alpha*power(n,3)+228/5*power(m,3)*p*power(n,2)-138/25
-   *power(n,2)*eta*p-792/25*q*power(m,2)*power(n,2)-183/25*power(m,3)*xi*power(n,2)+21/5*m*xi*power(n,3)-324/25*power(m,3)
-   *power(n,2)*eta-492/25*power(n,3)*m*p+87/25*n*power(m,5)*xi+678/25*n*q*power(m,4)-192/5*n*power(m,3)*q+234/25
-   *power(m,2)*xi*power(n,2)-72/5*power(m,3)*alpha*power(n,2)-1296/25*power(m,2)*power(n,2)*p+138/25*m*power(n,3)*eta+
-   56/5*r*power(m,3)*alpha+6*r*m*eta+10*r*n*alpha+10*r*p*alpha+4*r*m*power(alpha,2)-48/
-   5*r*power(m,2)*alpha+7*r*n*xi-29/5*r*power(m,2)*xi+1122/25*n*power(m,4)*p+168/25*n*power(m,5)*eta-
-   6*n*power(m,4)*xi+174/25*n*power(m,5)*alpha+42/5*q*power(m,3)*eta+46/5*q*p*eta-576/25*n*power(m,2)
-   *power(p,2)-702/25*n*power(m,5)*p-192/25*p*power(m,4)*eta-24/25*power(m,5)*alpha*xi-46/5*m*power(p,2)*eta
-   -12/25*power(m,3)*power(alpha,2)*xi+2*p*r*eta-8*q*alpha*xi-4*q*eta*power(alpha,2)-10*r*alpha
-   *xi-56/25*power(p,2)*n*eta+84/5*power(m,6)*power(n,2)+12/25*power(m,8)-606/25*power(n,3)*power(m,4)+21/5*m*xi*q
-   +198/25*p*power(n,3))
-
-   d1 = (-18/5*q*power(m,2)*power(eta,2)+6/5*q*n*power(eta,2)-12/25*power(m,7)*power(eta,2)+31/5*power(p,3)*n-36/5*
-   n*power(eta,2)*m*p+24/25*eta*power(m,8)-126/25*power(m,6)*q-31/5*power(p,2)*r+99/25*power(n,2)*power(m,2)*power(eta,2)+
-   18/5*power(m,3)*power(eta,2)*p-72/25*power(m,4)*power(eta,2)*n-3*power(p,3)*alpha+87/5*n*power(p,2)*m*alpha+367/
-   25*m*power(n,2)*q*alpha+152/5*r*n*power(m,2)*eta+579/25*power(m,4)*p*n*alpha-176/25*power(m,2)*alpha
-   *q*xi-72/5*eta*power(m,3)*alpha*power(n,2)-1296/25*eta*power(m,2)*power(n,2)*p-63/25*m*alpha*power(n,2)
-   *power(eta,2)+202/5*r*p*m*n+279/25*n*power(m,2)*power(eta,2)*p-126/25*eta*m*xi*power(n,2)-6*eta*power(m,2)*xi*p-282/25*power(q,2)*power(m,3)+141/25*power(m,7)*q-24/25*power(m,9)*eta-96/5*eta*q*m*p+584/25
-   *eta*q*power(m,2)*n+126/25*power(m,7)*p-132/25*p*power(m,8)-24/5*n*power(m,8)-186/25*power(p,3)*power(m,2)+327/25
-   *power(m,4)*power(p,2)-15*power(p,2)*power(m,5)-129/25*p*power(n,4)-12/25*power(m,11)+12/25*power(m,10)+12/25*power(m,6)*power(eta,2)-33/5*power(m,6)*r+6*power(m,5)*r-11*m*power(r,2)-6/25*power(n,5)+42/5*eta*m*xi*q-192/25*eta*power(m,6)*
-   n+76/5*eta*power(m,2)*power(p,2)-864/25*eta*power(m,3)*p*n+216/25*eta*power(m,5)*p+624/25*eta*power(n,2)*
-   m*p-336/25*eta*power(n,3)*power(m,2)-216/25*eta*q*power(m,4)+468/25*eta*power(n,2)*power(m,4)-64/25*eta*power(n,2)*q+129/25*m*power(n,5)+126/25*eta*power(m,3)*xi*n+6/5*power(n,2)*power(xi,2)+5*power(r,2)-4*q*power(xi,2)-12/5
-   *power(p,3)*eta-5*r*power(xi,2)+3*power(p,2)*power(eta,2)-69/5*power(n,2)*power(m,5)*alpha-37/25*m*power(q,2)*alpha-123
-   /25*m*power(n,4)*alpha-822/25*power(m,5)*n*q-12/25*power(m,9)*alpha-452/25*n*eta*m*alpha*q-
-   24/25*eta*power(m,5)*xi-24/25*power(m,7)*xi+927/25*power(m,5)*power(n,3)-528/25*power(m,7)*power(n,2)+44/5*n*q*alpha
-   *xi+13/5*p*n*power(eta,2)*alpha-3*p*power(m,2)*power(eta,2)*alpha+46/5*p*q*alpha*eta+24
-   /25*power(m,4)*alpha*eta*xi-104/5*r*m*p*eta-112/5*r*m*n*eta-762/25*power(n,2)*power(m,2)*p*
-   alpha-186/25*power(m,4)*eta*p*alpha+10*r*m*xi*eta+10*r*n*eta*alpha+8*r*m*alpha
-   *xi-192/5*n*eta*power(m,3)*q+656/25*n*eta*m*power(p,2)+21/5*q*m*alpha*power(eta,2)-38/5*q*
-   m*n*power(eta,2)+572/25*n*power(m,2)*xi*p+63/25*n*power(m,3)*alpha*power(eta,2)+186/25*eta*m*alpha
-   *power(n,3)+686/25*eta*m*power(n,2)*q+79/5*r*power(m,2)*n*alpha-116/5*r*m*xi*n+132/25*power(m,9)*n
-   -669/25*power(m,3)*power(n,4)-52/5*r*m*q+12/25*power(m,4)*power(xi,2)+14/5*m*p*power(xi,2)-54/25*power(m,2)*n*power(xi,2)+147/25*power(m,2)*power(q,2)-34/25*power(q,2)*n+28/5*p*m*alpha*xi*eta-8*q*eta*alpha*xi-8
-   *power(p,2)*m*alpha*eta-10*p*n*q*alpha-38/5*p*power(n,2)*eta*alpha+259/25*q*power(m,2)*p*alpha
-   -444/25*q*power(m,3)*n*alpha+216/25*q*power(m,3)*eta*alpha+748/25*p*q*power(m,2)*eta+26/
-   5*n*eta*p*xi+176/25*power(m,3)*xi*p*alpha+174/25*n*eta*power(m,5)*alpha-452/25*n*m*xi
-   *q+1122/25*n*eta*power(m,4)*p-1404/25*p*q*power(m,2)*n-42/5*p*r*m*alpha+9/5*n*m*alpha
-   *power(xi,2)-156/25*n*power(m,4)*alpha*xi+12/5*power(n,2)*eta*alpha*xi+258/25*power(m,2)*power(n,2)*alpha
-   *xi-48/5*r*power(m,2)*eta*alpha-476/25*n*eta*q*p-108/25*n*eta*power(m,2)*alpha*xi-
-   84/5*n*m*p*alpha*xi-42/5*power(n,2)*r*eta+6*power(p,2)*alpha*xi+10*r*q*eta-5*r*power(m,2)*power(eta,2)+3*r*n*power(eta,2)-132/5*p*r*power(m,3)+19/5*n*p*power(xi,2)-12/5*power(n,3)*alpha*xi-10*power(p,2)*
-   n*xi+12/5*power(p,2)*xi*eta-3*p*alpha*power(xi,2)-198/5*power(m,2)*r*power(n,2)-54/5*power(m,4)*r*eta+246
-   /25*power(m,5)*eta*q-504/25*power(m,3)*q*p+217/25*q*power(p,2)*m+24/25*power(m,6)*alpha*xi+111/25*
-   power(m,7)*n*alpha-222/25*power(m,3)*power(p,2)*alpha-111/25*power(m,6)*p*alpha-24/25*power(m,7)*eta*alpha
-   +56/5*r*power(m,3)*eta+12/25*eta*power(n,4)+8/5*eta*power(q,2)-186/25*power(m,4)*p*xi+46/5*q*p*xi
-   +216/25*power(m,3)*q*xi-8*m*power(p,2)*xi-38/5*power(n,2)*p*xi-5*r*alpha*power(eta,2)+5*p*power(n,3)*alpha
-   -10*r*xi*eta-6/25*power(n,3)*power(eta,2)+47/5*power(p,2)*power(n,2)+26/5*m*power(p,3)+94/5*power(m,2)*p*r+94/5
-   *m*r*power(n,2)-84/5*p*n*r+748/25*q*n*m*p+34/25*q*power(n,3)-26/5*q*power(p,2)-3*m*power(xi,2)*power(n,2)
-   -31/25*p*power(q,2)+267/25*power(n,4)*power(m,2)-76/25*power(m,2)*power(xi,2)*p+27/5*r*power(n,3)+66/25*power(m,3)*power(xi,2)
-   *n-24*power(m,3)*r*n+1314/25*power(n,2)*q*power(m,3)-27/5*power(m,4)*r*alpha+33*power(m,4)*r*n-516/25*power(n,3)
-   *q*m-846/25*power(n,2)*power(p,2)*m+1218/25*n*power(p,2)*power(m,3)+252/5*power(m,3)*p*power(n,2)-198/25*eta*m*power(n,4)+69/25*m*power(n,3)*power(eta,2)-69/25*power(n,2)*power(eta,2)*p-132/5*q*power(m,2)*power(n,2)-72/5*power(m,3)*xi*power(n,2)
-   -162/25*power(m,3)*power(n,2)*power(eta,2)+186/25*m*xi*power(n,3)-504/25*power(n,3)*m*p+301/25*n*power(q,2)*m+174/25
-   *n*power(m,5)*xi+606/25*n*q*power(m,4)+84/25*n*power(m,5)*power(eta,2)+696/25*eta*power(m,3)*power(n,3)-642/
-   25*eta*power(m,5)*power(n,2)+198/25*eta*power(n,3)*p+381/25*q*p*power(n,2)-54/5*q*n*r+109/5*q*power(m,2)*
-   r+6*r*m*power(eta,2)+56/5*r*power(m,3)*xi+10*r*n*xi+10*r*p*xi+r*q*alpha-48/5*r*power(m,2)*xi
-   +21/5*q*power(m,3)*power(eta,2)+23/5*q*p*power(eta,2)-5*r*power(n,2)*alpha-804/25*n*power(m,2)*power(p,2)-756/25
-   *n*power(m,5)*p+216/25*n*eta*power(m,7)+183/5*p*power(m,6)*n-468/25*power(p,2)*power(m,3)*eta-96/25*p*power(m,4)*power(eta,2)-228/25*p*power(m,6)*eta+657/25*p*q*power(m,4)-1959/25*p*power(n,2)*power(m,4)+1362/25*p*power(n,3)*power(m,2)+402/25*power(n,3)*power(m,3)*alpha+111/25*q*power(m,5)*alpha-12/25*power(m,5)*power(eta,2)*alpha-23
-   /5*m*power(p,2)*power(eta,2)-10*m*power(q,2)*eta-12/25*power(m,3)*alpha*power(xi,2)+16*p*r*eta-56/5*power(p,2)*n
-   *eta+572/25*n*eta*power(m,2)*alpha*p+12/5*power(n,4)*xi+8/5*power(q,2)*xi-12/25*power(m,5)*power(xi,2)+417/25
-   *power(m,6)*power(n,2)-582/25*power(n,3)*power(m,4)-12/5*power(n,3)*eta*xi-308/25*q*m*p*xi+638/25*q*power(m,2)*n*xi+44/5*q*n*eta*xi-42/5*q*power(m,2)*eta*xi+24/25*power(m,8)*xi+17/5*m*power(xi,2)*q-198/25
-   *power(m,6)*n*xi+268/25*power(m,2)*power(p,2)*xi-816/25*power(m,3)*p*n*xi+198/25*power(m,5)*p*xi-314
-   /25*n*eta*m*p*xi+24/25*power(m,6)*eta*xi-6*power(m,4)*eta*n*xi+162/25*power(m,3)*eta*p*xi+694/25
-   *power(n,2)*m*p*xi-444/25*power(n,3)*power(m,2)*xi+516/25*power(n,2)*power(m,4)*xi-216/25*q*power(m,4)*xi-48/5
-   *power(n,2)*q*xi+234/25*power(n,2)*power(m,2)*eta*xi)
-
-   d0 = (14/25*power(q,2)*power(n,2)-528/25*power(n,2)*q*m*p-12/25*power(n,4)*q+408/25*power(n,3)*q*power(m,2)-72/5
-   *power(m,5)*r*n-24*power(m,3)*r*n*eta+6*power(m,5)*r*eta-27/5*power(m,4)*r*xi+24*power(m,3)*r*power(n,2)+power(p,4)-708
-   /25*n*power(p,2)*power(m,4)+87/5*n*power(p,2)*m*xi+47/5*power(n,2)*power(p,2)*eta-132/5*power(n,2)*q*power(m,4)+12/5*power(m,7)*r-5*r*power(n,2)*xi-48/5*power(m,3)*r*q-24/5*power(n,3)*power(p,2)-37/25*m*power(q,2)*xi-123/25*m*power(n,4)*xi
-   +579/25*power(m,4)*p*n*xi-186/25*power(m,4)*eta*p*xi+259/25*q*power(m,2)*p*xi-444/25*q*power(m,3)
-   *n*xi+216/25*q*power(m,3)*eta*xi+44/5*r*p*power(n,2)-132/5*eta*q*power(m,2)*power(n,2)+186/25*eta*
-   m*xi*power(n,3)-63/25*m*xi*power(n,2)*power(eta,2)+234/25*power(m,4)*power(eta,2)*power(n,2)+33/25*power(m,2)*power(eta,3)*power(n,2)
-   -168/25*power(n,3)*power(m,2)*power(eta,2)+312/25*power(n,2)*power(eta,2)*m*p-32/25*q*power(n,2)*power(eta,2)-432/25*n*
-   power(m,3)*power(eta,2)*p-54/25*n*eta*power(m,2)*power(xi,2)-24/5*n*eta*power(m,8)+6*power(m,2)*power(r,2)+63/25*n*power(m,3)*
-   xi*power(eta,2)+292/25*n*q*power(m,2)*power(eta,2)+6/25*power(n,4)*power(eta,2)-6/25*eta*power(n,5)-582/25*eta*power(n,3)*power(m,4)+34/25*eta*power(n,3)*q-72/5*eta*power(m,3)*xi*power(n,2)+267/25*eta*power(n,4)*power(m,2)+252/5*eta
-   *power(m,3)*p*power(n,2)-504/25*eta*power(n,3)*m*p+56/5*q*m*n*r+417/25*eta*power(m,6)*power(n,2)-2/25*power(n,3)*power(eta,3)-4*n*power(r,2)+4/25*power(q,3)-48/5*n*power(p,3)*m+804/25*power(n,2)*power(p,2)*power(m,2)+2*r*m*power(eta,3)+367/25
-   *m*power(n,2)*q*xi+r*q*xi+10*r*n*eta*xi-48/5*r*power(m,2)*eta*xi+79/5*r*power(m,2)*n*xi
-   +327/25*power(m,4)*power(p,2)*eta-168/25*power(m,2)*power(p,2)*q-8/5*q*p*r-756/25*n*eta*power(m,5)*p+606
-   /25*n*eta*q*power(m,4)+174/25*n*eta*power(m,5)*xi-108/25*q*power(m,4)*power(eta,2)-452/25*n*eta*m*
-   xi*q-96/25*n*power(m,6)*power(eta,2)+21/5*q*m*xi*power(eta,2)-804/25*n*eta*power(m,2)*power(p,2)-24/25*n*
-   power(m,4)*power(eta,3)+136/25*power(m,3)*power(p,3)+2/5*q*n*power(eta,3)-6/5*q*power(m,2)*power(eta,3)-48/5*q*m*p*power(eta,2)+162/25*power(m,6)*power(p,2)+4/5*power(q,2)*power(eta,2)+748/25*n*eta*q*m*p+572/25*n*eta*power(m,2)*xi*
-   p-24/25*power(m,7)*eta*xi-12/25*power(m,5)*power(eta,2)*xi+28/5*q*n*power(p,2)-84/5*p*r*n*eta-144/
-   5*p*r*power(m,2)*n-42/5*p*r*m*xi+12*p*r*power(m,4)+28/25*power(q,2)*m*p-42/5*n*m*p*power(xi,2)-78/
-   25*n*power(m,4)*power(xi,2)+3/5*n*m*power(xi,3)+6/5*power(n,2)*eta*power(xi,2)+129/25*power(m,2)*power(n,2)*power(xi,2)-6/5*power(n,3)*power(xi,2)+5*power(r,2)*eta+4*r*m*power(xi,2)+4/25*power(m,6)*power(eta,3)+12/25*power(m,8)*power(eta,2)+147/25*power(m,2)*
-   power(q,2)*eta-34/25*power(q,2)*n*eta+22/5*n*q*power(xi,2)-4*q*eta*power(xi,2)+94/5*p*r*power(m,2)*eta-38
-   /5*p*power(n,2)*eta*xi-10*p*n*q*xi+108/25*power(m,5)*power(eta,2)*p+126/25*power(m,7)*eta*p-126/25
-   *power(m,6)*eta*q+12/25*power(m,10)*eta-504/25*power(m,3)*eta*q*p-3*p*power(m,2)*power(eta,2)*xi+13/5*p*n
-   *power(eta,2)*xi+46/5*p*q*xi*eta+14/5*p*m*power(xi,2)*eta+102/25*power(m,4)*power(q,2)-48/25*power(m,8)*q
-   +4/25*power(m,12)+111/25*power(m,7)*n*xi-p*power(xi,3)-52/5*r*m*q*eta-56/5*r*m*n*power(eta,2)+94/5
-   *r*m*power(n,2)*eta+28/5*r*power(m,3)*power(eta,2)-48/5*m*power(n,3)*r+2/25*power(n,6)+3*power(p,2)*power(xi,2)-3*power(p,3)*xi
-   +6/5*power(m,3)*p*power(eta,3)-12/5*m*p*n*power(eta,3)+28/5*m*power(p,2)*r+8*p*r*power(eta,2)+816/25*power(m,3)
-   *p*q*n+48/25*power(m,9)*p+26/5*power(p,3)*m*eta-26/5*power(p,2)*q*eta+38/5*power(m,2)*power(p,2)*power(eta,2)-384/25
-   *power(m,7)*p*n-264/25*power(m,5)*p*q+204/5*power(m,5)*p*power(n,2)-1008/25*power(m,3)*p*power(n,3)+252/25*m
-   *p*power(n,4)-28/5*power(p,2)*n*power(eta,2)-8*power(p,2)*m*xi*eta-762/25*power(n,2)*power(m,2)*p*xi+402/25*power(n,3)*
-   power(m,3)*xi+216/25*power(m,8)*power(n,2)-48/25*power(m,10)*n-448/25*power(m,6)*power(n,3)+417/25*power(m,4)*power(n,4)-168/25
-   *power(m,2)*n*power(q,2)+324/25*power(m,6)*n*q-132/25*power(m,2)*power(n,5)-69/5*power(n,2)*power(m,5)*xi+111/25*q*power(m,5)
-   *xi+12/25*power(m,4)*power(xi,2)*eta+88/25*power(m,3)*power(xi,2)*p-88/25*power(m,2)*power(xi,2)*q-222/25*power(m,3)*power(p,2)*xi-111/25*power(m,6)*p*xi-4/25*power(m,3)*power(xi,3)+12/25*power(m,6)*power(xi,2)-12/25*power(m,9)*xi-5*r*xi*
-   power(eta,2)+5*p*power(n,3)*xi+power(p,2)*power(eta,3))
-
-   d = (1/6*power(36*d1*d2*d3-108*d0*power(d3,2)-8*power(d2,3)+12* mp.sqrt(3) * mp.sqrt(4*power(d1,3)*d3-power(d1,2)*power(d2,2)-18*d1*d2*d3*d0+27*power(d0,2)*power(d3,2)+4*d0*power(d2,3))*d3,1/3)/d3-2/3*(3*d1*
-   d3-power(d2,2))/(d3*power(36*d1*d2*d3-108*d0*power(d3,2)-8*power(d2,3)+12* mp.sqrt(3)* mp.sqrt(4*power(d1,3)*d3
-   -power(d1,2)*power(d2,2)-18*d1*d2*d3*d0+27*power(d0,2)*power(d3,2)+4*d0*power(d2,3))*d3,1/3))-1/3*d2/d3)
-
-   b = alpha * d + xi
-   c = d + eta
-
-   a = (1/5*d*power(m,3)+1/5*b*m-3/5*d*m*n-2/5*power(n,2)+4/5*q-1/5*c*power(m,2)+2/5*c*n-4/5*
-   m*p+4/5*power(m,2)*n+3/5*d*p-1/5*power(m,4))
-
-   A = (power(m,2)*r*power(b,3)+6*power(c,2)*r*b*d*p-10*power(c,2)*r*b*a+r*power(d,3)*power(q,2)-2*r*power(b,3)*n+15*power(a,2)*
-   b*r-10*power(q,2)*a*d*m*n-power(q,2)*c*n*d*p-4*power(d,2)*power(q,3)*c-9*c*r*p*power(b,2)+18*power(q,2)*power(a,2)-8*a*
-   power(q,3)-16*q*power(a,3)-6*c*r*power(b,2)*d*n-4*power(c,2)*r*power(b,2)*m+3*c*r*b*power(d,2)*power(n,2)+6*c*r*b*power(p,2)-5
-   *power(c,3)*power(r,2)-6*power(c,2)*r*d*power(p,2)+3*power(c,3)*r*b*n-5*m*power(q,2)*power(b,2)*d-8*m*r*a*power(c,2)*n+4*power(q,2)*a
-   *power(n,2)-8*m*q*power(b,2)*r-2*power(m,2)*q*a*power(b,2)+power(d,4)*power(q,3)+3*power(r,2)*power(d,2)*power(n,2)-2*power(d,3)*n*power(q,2)*b-5*power(d,3)*power(r,2)*b+4*m*r*a*c*power(n,2)-d*r*power(b,3)*m+r*d*power(m,2)*n*power(b,2)-5*r*d*p*power(b,2)*m-r*b*d*p*power(n,2)-2*r*b*a*power(m,2)*n-2*power(c,3)*power(q,2)*n-4*r*d*q*a*c+r*b*power(d,2)*p*m*n+2*r*b*a*power(n,2)+2*r
-   *a*power(b,2)*m+2*r*power(m,2)*p*power(b,2)-r*power(n,2)*power(b,2)*m+r*p*power(b,2)*n+2*power(r,2)*m*p*c+r*b*n*power(p,2)+3*power(b,2)*r*power(d,2)*p+4*d*r*a*c*m*p-power(d,3)*r*b*n*p-power(d,2)*r*power(b,2)*m*n+power(b,4)*q-2*power(b,2)*q*power(d,2)*m
-   *p-3*m*power(q,3)*b+d*power(m,2)*q*power(b,3)+2*d*r*power(c,3)*m*p-8*a*n*power(r,2)-2*power(b,2)*q*c*power(n,2)+3*power(b,2)*q
-   *c*d*p+power(b,2)*q*power(c,2)*n-2*a*power(d,3)*power(p,3)-2*power(c,2)*r*p*b*m+2*c*r*power(d,3)*power(p,2)+10*a*c*power(r,2)-
-   12*q*power(a,2)*power(n,2)-7*p*b*power(r,2)-2*c*power(q,3)*n+13*power(d,2)*power(r,2)*b*m+power(c,2)*q*b*d*m*p+4*power(c,2)*r*
-   m*power(p,2)+4*power(c,3)*r*a*m-2*power(c,2)*r*p*power(d,2)*n+4*q*n*power(r,2)-b*q*power(c,3)*p+b*q*power(d,3)*power(p,2)-power(c,2)*
-   q*p*b*power(m,2)-4*power(m,2)*power(r,2)*power(c,2)+5*power(d,3)*r*b*m*q-8*power(c,2)*power(q,2)*a+4*d*r*power(b,2)*c*power(m,2)-4*power(d,2)*r*b*m*c*p-power(m,3)*q*power(b,3)+power(m,2)*power(q,2)*power(c,3)+3*power(m,2)*power(q,2)*power(b,2)+4*c*power(q,2)*power(b,2)-2*power(m,2)*r*power(c,3)*p-4*power(d,3)*power(r,2)*c*m-3*d*r*b*power(c,2)*m*n-9*power(d,2)*power(r,2)*c*n-2*power(d,2)*r*m*c*power(p,2)+3*power(m,2)*
-   r*b*power(c,2)*n+8*power(r,2)*power(c,2)*n+10*power(d,2)*power(r,2)*a-6*a*power(p,3)*b+4*d*r*p*b*c*power(m,2)-4*power(m,3)*r*power(b,2)*c-3*n*power(q,2)*power(b,2)+power(q,2)*power(c,2)*power(n,2)+6*a*power(p,2)*power(b,2)+3*power(d,4)*power(r,2)*n-2*power(c,4)*r*p+power(b,2)*q*power(n,3)-c*power(q,2)*power(d,3)*p+6*power(m,2)*q*c*power(a,2)+power(c,4)*power(q,2)+d*r*power(c,3)*q+12*a*power(m,2)*power(r,2)+power(r,2)*power(d,2)*q+
-   power(q,2)*c*power(p,2)+7*power(q,2)*b*r+12*power(a,2)*c*n*m*p+3*power(a,2)*c*n*d*p-15*power(a,2)*c*m*d*q-3*power(a,2)*
-   c*n*b*m+3*power(a,2)*d*power(m,2)*n*b-9*power(a,2)*power(d,2)*p*m*n-3*power(a,2)*power(m,3)*n*b+9*power(a,2)*d*p*power(m,2)*n+
-   12*power(a,2)*n*power(p,2)-12*power(a,2)*p*r+3*power(a,2)*power(d,2)*power(n,3)+9*power(a,2)*power(d,2)*power(p,2)+6*power(a,2)*d*p*c*power(m,2)+24
-   *power(a,2)*m*n*r-3*power(a,2)*d*m*power(n,3)-9*power(a,2)*power(d,2)*n*q-12*power(a,2)*m*p*power(n,2)-6*power(a,2)*power(m,3)*p*c+9*
-   power(a,2)*power(n,2)*b*m+3*power(a,2)*d*p*power(n,2)-15*power(a,2)*d*power(p,2)*m+9*power(a,2)*power(d,2)*power(m,2)*q-6*power(a,2)*power(c,2)*m*p
-   -3*power(a,2)*c*power(n,2)*d*m+4*power(a,3)*power(m,4)+8*power(a,3)*power(n,2)+3*power(a,2)*power(n,4)-6*power(q,2)*a*c*power(m,2)+4*power(q,2)*c*n
-   *a+12*power(a,3)*d*m*n+3*power(m,2)*p*power(a,2)*b+21*power(a,2)*d*power(m,2)*r+3*power(a,2)*c*power(n,2)*power(m,2)-6*power(a,2)*b*d
-   *power(n,2)-15*power(a,2)*p*b*n+9*power(a,2)*b*c*p+12*power(a,2)*b*d*q-18*power(a,2)*c*m*r-21*power(a,2)*d*n*r+5
-   *power(a,4)-2*power(q,2)*d*p*a+8*power(q,2)*a*m*p+4*a*c*m*d*power(q,2)+6*a*power(d,2)*power(m,2)*power(q,2)+power(q,2)*d*n*r+3
-   *power(q,2)*p*b*n-5*power(q,2)*b*c*p+3*c*m*d*power(q,3)-16*a*b*d*power(q,2)+4*a*power(d,2)*n*power(q,2)+power(d,2)*n*power(q,3)+3*power(a,2)*power(c,2)*power(n,2)+4*power(a,3)*c*power(m,2)-4*power(a,3)*b*m-8*c*n*power(a,3)-12*d*p*power(a,3)-4*power(a,3)*d*power(m,3)
-   +16*power(a,3)*m*p-16*power(a,3)*power(m,2)*n+3*power(a,2)*power(b,2)*n-6*power(a,2)*c*power(n,3)-12*power(a,2)*power(m,3)*r-9*power(a,2)*c*
-   power(p,2)-4*power(q,2)*p*r+power(q,4)+4*b*d*power(q,3)-d*p*power(q,3)-3*d*p*power(a,2)*b*m+4*c*power(q,2)*b*d*n-3*d*power(q,2)*b*c*power(m,2)-d*power(q,2)*power(c,2)*m*n+power(c,2)*power(q,2)*b*m+power(d,2)*p*b*power(q,2)+15*d*r*c*power(a,2)-9*power(d,2)*r*m
-   *power(a,2)+2*power(c,2)*power(q,3)-power(d,3)*power(q,3)*m+power(q,2)*c*n*b*m+power(d,2)*p*c*m*power(q,2)-m*p*b*d*power(q,2)+12*a*m*
-   p*b*r-3*r*c*d*power(q,2)-r*power(d,2)*m*power(q,2)+3*power(c,2)*p*d*power(q,2)+2*a*power(c,3)*power(p,2)-2*a*power(m,2)*p*c*n*
-   b+2*a*m*p*b*d*power(n,2)-2*a*m*power(p,2)*c*n*d+16*a*power(c,2)*p*r+2*a*c*power(p,2)*power(n,2)+2*a*power(m,2)*power(p,2)*power(c,2)-16*q*a*c*n*d*p+2*q*m*p*b*r+10*a*m*power(q,2)*b+4*power(m,3)*r*a*power(c,2)+6*q*a*d*p
-   *power(n,2)+2*q*a*d*power(p,2)*m+2*q*a*power(n,2)*b*m-16*q*a*c*n*b*m-2*q*a*d*power(m,2)*n*b-6*q*a*
-   power(d,2)*p*m*n+8*q*a*c*n*m*p+4*q*a*p*b*n+4*q*a*b*c*p+8*q*a*c*m*r+12*q*a*d*n
-   *r-16*q*a*m*n*r+4*q*a*c*power(n,2)*d*m+2*q*a*d*p*c*power(m,2)+10*q*a*d*power(m,2)*r-4*q*a*c
-   *power(n,3)+4*q*a*c*power(p,2)-8*q*a*n*power(p,2)+16*q*a*p*r-2*q*a*power(d,2)*power(p,2)+6*q*c*n*power(a,2)+15*q
-   *d*p*power(a,2)-9*q*power(a,2)*d*power(m,3)-24*q*power(a,2)*m*p+12*q*power(a,2)*power(m,2)*n+4*q*a*power(b,2)*n-3*q*power(a,2)
-   *b*m-10*q*power(m,2)*p*a*b+6*q*power(a,2)*d*m*n-4*q*power(c,2)*p*r+8*q*a*power(c,2)*power(n,2)+6*power(c,2)*q*power(a,2)+6*power(a,2)*power(m,2)*power(p,2)-3*q*m*p*power(b,2)*n-16*q*power(d,2)*r*m*a-q*b*p*c*power(n,2)+2*q*b*p*power(c,2)*n
-   -q*power(d,2)*r*n*c*m-22*q*a*b*r+6*a*d*power(p,3)*c-2*a*d*power(p,3)*n+2*a*d*power(p,2)*r+11*q*power(d,2)
-   *r*c*p-2*q*d*r*power(c,2)*n+power(d,3)*r*c*q*n+q*d*r*c*power(n,2)+3*q*power(d,3)*r*m*p-5*q*power(d,2)*r*b
-   *n-5*q*power(d,2)*r*b*power(m,2)-q*c*p*power(b,2)*m+4*q*c*p*n*r+13*q*d*r*power(b,2)-q*power(d,2)*m*power(p,2)*b+
-   3*q*power(p,2)*power(b,2)-6*q*c*power(r,2)-3*q*power(b,3)*p+2*q*d*power(m,2)*p*power(b,2)+10*q*r*b*d*m*n-2*a*power(b,3)
-   *p-q*d*m*power(r,2)+3*q*d*power(p,2)*r+20*q*d*p*a*b*m+q*d*p*c*n*b*m+2*q*m*power(p,2)*b*c-8*
-   q*d*p*c*m*r-3*q*power(d,2)*p*n*r+q*d*p*power(b,2)*n+5*d*power(r,3)-4*m*power(r,3)+2*a*power(p,4)+4*a*d*p*
-   power(b,2)*n-6*a*power(d,2)*p*power(m,2)*r+2*a*power(d,2)*p*n*r+6*a*m*power(p,2)*b*n+2*a*d*p*c*n*b*m-8*a*
-   m*power(p,2)*r+2*a*m*power(p,3)*power(d,2)-3*q*d*power(p,2)*b*c+2*a*m*power(p,2)*b*c+q*d*power(p,2)*b*n-2*a*d*power(p,2)*b*n-2*a*power(d,2)*p*b*power(n,2)-10*a*power(d,2)*p*b*q-6*a*d*power(p,2)*b*c+8*a*c*q*b*d*n-4*a*c
-   *q*power(d,2)*power(n,2)+6*a*power(c,2)*q*b*m-6*a*m*p*power(b,2)*n+2*a*power(d,2)*power(p,2)*c*n-2*a*d*power(p,2)*power(c,2)*m
-   +6*a*power(d,3)*p*n*q+4*a*b*p*c*power(n,2)-2*a*b*p*power(c,2)*n-2*a*b*p*power(n,3)+4*a*power(m,2)*p*c*r-8
-   *a*c*q*power(b,2)+14*a*power(d,2)*r*b*n-8*a*power(d,2)*r*b*power(m,2)-14*a*power(d,2)*r*c*p-6*a*d*r*power(c,2)*n
-   +14*a*d*r*b*c*m+12*a*d*r*c*power(n,2)+6*a*power(d,3)*r*m*p+10*a*power(d,2)*r*n*c*m-4*a*power(c,3)*
-   q*n-4*a*power(m,2)*q*power(c,2)*n+6*a*power(m,3)*q*b*c+2*a*power(c,2)*p*d*q+2*a*c*p*power(b,2)*m-24*a*c*p
-   *n*r-6*a*d*q*b*c*power(m,2)+4*a*d*q*power(c,2)*m*n+2*a*power(m,3)*p*power(b,2)-4*a*power(m,2)*power(p,2)*b*d-6*a
-   *d*r*power(n,3)-6*a*power(d,3)*r*power(n,2)-10*a*d*r*power(b,2)+6*a*r*power(d,2)*power(n,2)*m-10*a*r*d*n*c*power(m,2)-20
-   *a*r*b*d*m*n+8*a*r*b*d*power(m,3)-2*a*d*power(m,2)*p*power(b,2)+4*a*power(d,2)*m*power(p,2)*b-4*a*m*power(p,3)*
-   c+8*a*r*p*power(n,2)-6*a*power(d,3)*power(q,2)*m+8*a*power(d,2)*power(q,2)*c-22*a*d*m*power(r,2)-4*a*power(c,2)*power(p,2)*n-2
-   *a*power(d,2)*p*c*m*q+b*d*n*power(r,2)-5*p*d*n*power(r,2)-2*r*p*power(c,2)*power(n,2)+5*b*m*n*power(r,2)-8*b*d*power(m,2)*power(r,2)-2*b*c*m*power(r,2)+4*c*p*d*power(r,2)+2*r*power(c,2)*p*d*n*m-5*r*b*q*power(n,2)+4*r*power(c,3)*p*n
-   -4*d*r*a*power(c,2)*power(m,2)+2*r*b*c*n*q+2*r*b*d*p*a-3*r*b*c*power(n,2)*d*m+3*r*b*c*power(n,3)-6
-   *r*b*power(c,2)*power(n,2)+2*r*m*power(q,2)*c-8*r*p*c*n*b*m+5*power(b,2)*power(r,2)-5*d*power(r,2)*c*b-10*r*p*b*
-   d*q+2*r*c*n*d*power(p,2)+4*power(d,2)*power(r,2)*c*power(m,2)-3*power(d,3)*power(r,2)*m*n+3*d*power(r,2)*power(c,2)*m+5*r*b*c*
-   n*d*p-6*r*b*a*c*power(m,2)+8*r*b*c*n*a+r*d*q*power(c,2)*power(m,2)-2*c*r*power(p,3)+3*r*power(c,2)*q*b+11
-   *r*c*n*power(b,2)*m+4*r*p*a*d*m*n+2*power(r,2)*d*n*c*m+2*power(r,2)*power(d,2)*m*p-3*power(r,2)*c*power(n,2)+2*power(p,2)*power(r,2)-2*power(d,3)*power(r,2)*p+2*power(d,2)*power(q,2)*m*b*n+3*m*q*power(b,3)*n+2*power(m,2)*q*b*c*r-2*d*power(q,2)*b
-   *power(n,2)+5*c*r*power(b,3)-m*q*power(b,2)*d*power(n,2)+power(m,2)*q*c*n*power(b,2)+2*power(d,2)*power(q,2)*power(b,2)+3*power(d,2)*power(q,2)*b*c
-   *m+2*power(d,2)*q*b*a*m*n-power(d,2)*q*b*c*n*p+6*power(d,3)*q*r*a-d*power(q,2)*power(c,3)*m-4*d*power(q,2)*power(c,2)*b
-   +2*d*q*a*power(b,2)*m-7*power(d,2)*q*r*c*b-d*q*c*n*power(b,2)*m+power(d,2)*q*power(b,2)*power(n,2)-3*power(d,4)*q*r*p-2
-   *d*q*power(b,3)*n-power(d,2)*q*r*power(c,2)*m+power(d,2)*power(q,2)*power(c,2)*n-2*power(c,2)*power(q,2)*p*m+5*power(d,2)*power(r,2)*power(c,2)-c*q
-   *power(b,3)*m-q*power(p,3)*b)
-
-   B = (3*m*power(r,2)*power(b,3)-3*r*power(p,2)*power(b,3)+2*m*power(r,3)*power(c,2)+a*power(d,4)*power(q,3)+power(d,4)*power(r,3)*m-power(b,3)*r*power(n,3)+5*a*power(b,2)*power(r,2)-5*power(c,2)*r*b*power(a,2)+power(r,3)*power(d,2)*p-3*r*b*power(a,2)*c*power(m,2)+4*r*b*c*n*power(a,2)+2*
-   r*p*power(a,2)*d*m*n+power(d,2)*q*b*power(a,2)*m*n+d*q*power(a,2)*power(b,2)*m-power(a,2)*power(d,2)*p*c*m*q-2*d*r*power(a,2)*
-   power(c,2)*power(m,2)+r*b*d*p*power(a,2)-power(m,2)*q*power(a,2)*power(b,2)+2*power(c,3)*r*power(a,2)*m+2*power(m,2)*q*c*power(a,3)+r*power(p,3)*power(b,2)+power(r,2)*power(c,3)*power(n,2)+power(a,2)*power(c,2)*p*d*q+power(a,2)*c*p*power(b,2)*m-12*power(a,2)*c*p*n*r-3*power(a,2)*d*q*b*c
-   *power(m,2)+2*power(a,2)*d*q*power(c,2)*m*n-2*power(a,2)*power(m,2)*power(p,2)*b*d+3*power(a,2)*r*power(d,2)*power(n,2)*m-5*power(a,2)*r*d*n
-   *c*power(m,2)-10*power(a,2)*r*b*d*m*n+4*power(a,2)*r*b*d*power(m,3)-power(a,2)*d*power(m,2)*p*power(b,2)-2*power(a,2)*m*power(p,3)*c+
-   power(a,2)*power(d,2)*p*n*r+3*power(a,2)*m*power(p,2)*b*n+power(a,2)*d*p*c*n*b*m+power(a,2)*m*power(p,2)*b*c-power(a,2)*d*power(p,2)*
-   b*n-power(a,2)*power(d,2)*p*b*power(n,2)-5*power(a,2)*power(d,2)*p*b*q-3*power(a,2)*d*power(p,2)*b*c+4*power(a,2)*c*q*b*d*n-2*
-   power(a,2)*c*q*power(d,2)*power(n,2)+3*power(a,2)*power(c,2)*q*b*m-3*power(a,2)*m*p*power(b,2)*n+power(a,2)*power(d,2)*power(p,2)*c*n-power(a,2)*d*
-   power(p,2)*power(c,2)*m+3*power(a,2)*power(d,3)*p*n*q+2*power(a,2)*b*p*c*power(n,2)-power(a,2)*b*p*power(c,2)*n+2*power(a,2)*power(m,2)*p*c*
-   r+7*power(a,2)*power(d,2)*r*b*n-4*power(a,2)*power(d,2)*r*b*power(m,2)-7*power(a,2)*power(d,2)*r*c*p-3*power(a,2)*d*r*power(c,2)*n+2*
-   power(a,2)*d*p*power(b,2)*n+6*power(a,2)*d*r*c*power(n,2)+3*power(a,2)*power(d,3)*r*m*p+5*power(a,2)*power(d,2)*r*n*c*m-2*power(a,2)*
-   power(m,2)*q*power(c,2)*n+3*power(a,2)*power(m,3)*q*b*c+2*q*power(a,3)*d*m*n+4*q*power(a,2)*c*m*r+6*q*power(a,2)*d*n*r-
-   8*q*power(a,2)*m*n*r+2*q*power(a,2)*c*power(n,2)*d*m+q*power(a,2)*d*p*c*power(m,2)+5*q*power(a,2)*d*power(m,2)*r+2*q*c*
-   n*power(a,3)+5*q*d*p*power(a,3)-3*q*power(a,3)*d*power(m,3)-8*q*power(a,3)*m*p+4*q*power(a,3)*power(m,2)*n+2*q*power(a,2)*power(b,2)*
-   n-q*power(a,3)*b*m+4*q*power(a,2)*power(c,2)*power(n,2)-11*q*power(a,2)*b*r+3*power(a,2)*d*power(p,3)*c+2*q*power(a,2)*b*c*p-5
-   *q*power(m,2)*p*power(a,2)*b-8*q*power(d,2)*r*m*power(a,2)-power(a,2)*d*power(p,3)*n+power(a,2)*d*power(p,2)*r-4*power(a,2)*m*power(p,2)*r+power(a,2)*m*power(p,3)*power(d,2)-power(a,2)*b*p*power(n,3)-4*power(a,2)*c*q*power(b,2)-2*power(a,2)*power(c,3)*q*n+power(a,2)*power(m,3)*p*power(b,2)-3*power(a,2)*d*r*power(n,3)-3*power(a,2)*power(d,3)*r*power(n,2)-5*power(a,2)*d*r*power(b,2)+4*power(a,2)*r*p*power(n,2)-3*power(a,2)*power(d,3)*power(q,2)*m
-   +4*power(a,2)*power(d,2)*power(q,2)*c-11*power(a,2)*d*m*power(r,2)-2*power(a,2)*power(c,2)*power(p,2)*n+3*power(d,3)*q*r*power(a,2)+power(a,2)*power(p,4)+
-   2*power(a,2)*c*m*d*power(q,2)+5*d*r*c*power(a,3)-3*power(d,2)*r*m*power(a,3)+8*power(a,2)*power(c,2)*p*r+power(a,2)*c*power(p,2)*power(n,2)+
-   power(a,2)*power(m,2)*power(p,2)*power(c,2)+5*power(a,2)*m*power(q,2)*b+2*power(m,3)*r*power(a,2)*power(c,2)-2*q*power(a,2)*c*power(n,3)+2*q*power(a,2)*c*
-   power(p,2)-4*q*power(a,2)*n*power(p,2)+8*q*power(a,2)*p*r-q*power(a,2)*power(d,2)*power(p,2)+3*power(a,3)*d*p*power(m,2)*n+2*power(a,3)*d*p*
-   c*power(m,2)+power(a,5)+2*a*power(p,2)*power(r,2)-3*power(a,3)*power(d,2)*p*m*n-power(a,3)*c*power(n,2)*d*m-d*p*power(a,3)*b*m+6*power(a,2)*
-   m*p*b*r-power(a,2)*power(m,2)*p*c*n*b+power(a,2)*m*p*b*d*power(n,2)-power(a,2)*m*power(p,2)*c*n*d-8*q*power(a,2)*c*n*d*
-   p+3*q*power(a,2)*d*p*power(n,2)+q*power(a,2)*d*power(p,2)*m+q*power(a,2)*power(n,2)*b*m-8*q*power(a,2)*c*n*b*m-q*power(a,2)*d*
-   power(m,2)*n*b-3*q*power(a,2)*power(d,2)*p*m*n+4*q*power(a,2)*c*n*m*p+2*q*power(a,2)*p*b*n+4*power(a,3)*c*n*m*p+
-   power(a,3)*c*n*d*p-5*power(a,3)*c*m*d*q-power(a,3)*c*n*b*m+power(a,3)*d*power(m,2)*n*b+power(a,4)*power(m,4)+2*power(a,4)*power(n,2)+
-   power(a,3)*power(n,4)+a*power(q,4)-power(a,3)*power(m,3)*n*b+8*power(a,3)*m*n*r-power(a,3)*d*m*power(n,3)-3*power(a,3)*power(d,2)*n*q-4*power(a,3)*
-   m*p*power(n,2)-2*power(a,3)*power(m,3)*p*c+3*power(a,3)*power(n,2)*b*m+power(a,3)*d*p*power(n,2)-5*power(a,3)*d*power(p,2)*m+3*power(a,3)*power(d,2)*power(m,2)*q-2*power(a,3)*power(c,2)*m*p-3*power(q,2)*power(a,2)*c*power(m,2)+2*power(q,2)*c*n*power(a,2)+3*power(a,4)*d*m*n+power(m,2)*p*
-   power(a,3)*b+7*power(a,3)*d*power(m,2)*r+power(a,3)*c*power(n,2)*power(m,2)-2*power(a,3)*b*d*power(n,2)-5*power(a,3)*p*b*n+3*power(a,3)*b*c*
-   p+4*power(a,3)*b*d*q-6*power(a,3)*c*m*r-7*power(a,3)*d*n*r-power(q,2)*d*p*power(a,2)+4*power(q,2)*power(a,2)*m*p+3*power(a,2)*
-   power(d,2)*power(m,2)*power(q,2)-8*power(a,2)*b*d*power(q,2)+2*power(a,2)*power(d,2)*n*power(q,2)+6*power(q,2)*power(a,3)-4*power(a,2)*power(q,3)-4*q*power(a,4)+
-   5*power(a,3)*b*r+a*power(d,2)*n*power(q,3)-4*a*power(q,2)*p*r-a*d*p*power(q,3)-a*power(d,3)*power(q,3)*m+10*q*d*p*power(a,2)*b
-   *m-3*power(a,2)*power(d,2)*p*power(m,2)*r+7*power(a,2)*d*r*b*c*m+2*power(a,2)*power(d,2)*m*power(p,2)*b-3*a*power(r,2)*c*power(n,2)-2
-   *a*power(d,3)*power(r,2)*p+5*a*c*r*power(b,3)+2*a*power(d,2)*power(q,2)*power(b,2)+5*a*power(d,2)*power(r,2)*power(c,2)-a*q*power(p,3)*b+5*a
-   *d*power(r,3)+5*power(d,3)*power(r,3)*c-a*c*power(q,2)*power(d,3)*p+a*d*r*power(c,3)*q-4*a*power(d,3)*power(r,2)*c*m-3*a*d*r*b
-   *power(c,2)*m*n-9*a*power(d,2)*power(r,2)*c*n-2*a*power(d,2)*r*m*c*power(p,2)+3*a*power(m,2)*r*b*power(c,2)*n+4*a*d*r*p
-   *b*c*power(m,2)-4*a*power(m,3)*r*power(b,2)*c+4*a*c*power(q,2)*power(b,2)+8*a*power(r,2)*power(c,2)*n-3*a*n*power(q,2)*power(b,2)+a*power(q,2)*power(c,2)*power(n,2)+3*a*power(d,4)*power(r,2)*n-2*a*power(c,4)*r*p+a*power(b,2)*q*power(n,3)+a*power(r,2)*power(d,2)*q+7*a*power(q,2)*b
-   *r-2*a*power(c,2)*r*p*b*m+2*a*c*r*power(d,3)*power(p,2)+13*a*power(d,2)*power(r,2)*b*m+a*power(c,2)*q*b*d*m*p+4*
-   a*power(c,2)*r*m*power(p,2)-2*a*power(c,2)*r*p*power(d,2)*n-a*b*q*power(c,3)*p+a*b*q*power(d,3)*power(p,2)-a*power(c,2)*q*p*b*
-   power(m,2)+5*a*power(d,3)*r*b*m*q+4*a*d*r*power(b,2)*c*power(m,2)-2*a*power(d,3)*n*power(q,2)*b-2*a*power(b,2)*q*power(d,2)*m*
-   p+a*d*power(m,2)*q*power(b,3)+2*a*d*r*power(c,3)*m*p-2*a*power(b,2)*q*c*power(n,2)+3*a*power(b,2)*q*c*d*p-6*a*c*
-   r*power(b,2)*d*n+3*a*c*r*b*power(d,2)*power(n,2)+6*a*c*r*b*power(p,2)-6*a*power(c,2)*r*d*power(p,2)+3*a*power(c,3)*r*b*
-   n-5*a*m*power(q,2)*power(b,2)*d-8*a*m*q*power(b,2)*r-a*power(q,2)*c*n*d*p-4*a*power(d,2)*power(q,3)*c+3*a*power(r,2)*power(d,2)*power(n,2)-5*a*power(d,3)*power(r,2)*b-2*a*power(c,3)*power(q,2)*n-3*a*m*power(q,3)*b-7*a*p*b*power(r,2)-2*a*c*power(q,3)*n+
-   4*a*q*n*power(r,2)-4*a*power(m,2)*power(r,2)*power(c,2)-a*power(m,3)*q*power(b,3)+a*power(m,2)*power(q,2)*power(c,3)+3*a*power(m,2)*power(q,2)*power(b,2)-
-   9*a*c*r*p*power(b,2)+6*a*power(c,2)*r*b*d*p-4*a*power(d,2)*r*b*m*c*p-2*a*power(m,2)*r*power(c,3)*p+a*power(q,2)*
-   c*power(p,2)-5*d*power(r,3)*power(c,2)+a*r*power(d,3)*power(q,2)-2*power(c,4)*power(r,2)*n+5*b*c*power(r,3)-3*b*n*power(r,3)-a*power(d,2)*q*
-   r*power(c,2)*m+a*power(d,2)*power(q,2)*power(c,2)*n-2*a*power(c,2)*power(q,2)*p*m-a*c*q*power(b,3)*m+2*a*power(r,2)*d*n*c*m+2*
-   a*power(d,2)*power(q,2)*m*b*n+3*a*m*q*power(b,3)*n+2*a*power(m,2)*q*b*c*r-2*a*d*power(q,2)*b*power(n,2)-a*m*q*power(b,2)*d*power(n,2)+a*power(m,2)*q*c*n*power(b,2)+3*a*power(d,2)*power(q,2)*b*c*m-a*power(d,2)*q*b*c*n*p-a*d*power(q,2)*power(c,3)*
-   m-4*a*d*power(q,2)*power(c,2)*b-7*a*power(d,2)*q*r*c*b-a*d*q*c*n*power(b,2)*m+a*power(d,2)*q*power(b,2)*power(n,2)-3*a*
-   power(d,4)*q*r*p-5*a*d*power(r,2)*c*b-10*a*r*p*b*d*q+2*a*r*c*n*d*power(p,2)+4*a*power(d,2)*power(r,2)*c*power(m,2)-3*a*power(d,3)*power(r,2)*m*n+3*a*d*power(r,2)*power(c,2)*m+5*a*r*b*c*n*d*p+a*r*d*q*power(c,2)*power(m,2)+3*a
-   *r*power(c,2)*q*b+11*a*r*c*n*power(b,2)*m+2*a*power(r,2)*power(d,2)*m*p-5*a*p*d*n*power(r,2)-2*a*r*p*power(c,2)*
-   power(n,2)+5*a*b*m*n*power(r,2)-8*a*b*d*power(m,2)*power(r,2)-2*a*b*c*m*power(r,2)+4*a*c*p*d*power(r,2)+2*a*r*power(c,2)*p*d*n*m-5*a*r*b*q*power(n,2)+4*a*r*power(c,3)*p*n+2*a*r*b*c*n*q-3*a*r*b*c*power(n,2)*d*m+
-   3*a*r*b*c*power(n,3)-6*a*r*b*power(c,2)*power(n,2)+2*a*r*m*power(q,2)*c-a*q*d*m*power(r,2)+3*a*q*d*power(p,2)*r+
-   a*q*d*p*c*n*b*m+2*a*q*m*power(p,2)*b*c-8*a*q*d*p*c*m*r-3*a*q*power(d,2)*p*n*r+a*q*d*
-   p*power(b,2)*n-3*a*q*d*power(p,2)*b*c+a*q*d*power(p,2)*b*n+a*b*d*n*power(r,2)-8*a*r*p*c*n*b*m-2*a*
-   d*q*power(b,3)*n-4*a*q*power(c,2)*p*r-3*a*q*m*p*power(b,2)*n-a*q*b*p*c*power(n,2)+13*a*q*d*r*power(b,2)+3
-   *a*power(c,2)*p*d*power(q,2)+2*a*q*b*p*power(c,2)*n-a*q*power(d,2)*r*n*c*m+11*a*q*power(d,2)*r*c*p-2*a*q*
-   d*r*power(c,2)*n+a*power(d,3)*r*c*q*n+a*q*d*r*c*power(n,2)+3*a*q*power(d,3)*r*m*p-5*a*q*power(d,2)*r*b*n-
-   5*a*q*power(d,2)*r*b*power(m,2)-a*q*c*p*power(b,2)*m+4*a*q*c*p*n*r-a*q*power(d,2)*m*power(p,2)*b+2*a*q*d*
-   power(m,2)*p*power(b,2)+10*a*q*r*b*d*m*n+4*a*c*power(q,2)*b*d*n-3*a*d*power(q,2)*b*c*power(m,2)-a*d*power(q,2)*power(c,2)*m*n+a*power(c,2)*power(q,2)*b*m+a*power(d,2)*p*b*power(q,2)+a*power(q,2)*c*n*b*m+a*power(d,2)*p*c*m*power(q,2)-a*m*p
-   *b*d*power(q,2)-3*a*r*c*d*power(q,2)-a*r*power(d,2)*m*power(q,2)+2*a*q*m*p*b*r+a*power(q,2)*d*n*r+3*a*power(q,2)
-   *p*b*n+3*a*c*m*d*power(q,3)+4*a*b*d*power(q,3)+2*power(d,4)*power(r,2)*b*p+4*d*power(r,3)*b*m+5*power(d,2)*power(r,2)*c
-   *power(b,2)+2*d*r*power(b,4)*n-power(d,2)*r*power(b,3)*power(n,2)-2*r*d*q*c*power(a,2)+2*r*m*q*b*power(c,2)*p-r*b*q*c*power(p,2)+3*r*d*power(p,2)*power(b,2)*c+r*b*a*n*power(p,2)+r*b*d*p*power(q,2)-r*b*power(a,2)*power(m,2)*n+r*b*a*power(d,2)*p*m
-   *n-r*b*a*d*p*power(n,2)-r*b*power(d,2)*p*c*m*q+r*b*q*c*n*d*p-3*r*b*power(c,2)*p*d*q-2*r*m*power(p,2)*power(b,2)*c-r*d*p*power(b,3)*n+r*a*d*power(m,2)*n*power(b,2)-r*a*power(n,2)*power(b,2)*m+2*r*power(m,2)*p*a*power(b,2)+r*power(d,2)*m*power(p,2)*power(b,2)+r*c*p*power(b,3)*m-r*d*p*c*n*power(b,2)*m-5*r*d*p*a*power(b,2)*m-3*r*q*p*power(b,2)*n
-   +r*power(b,2)*p*c*power(n,2)-2*r*power(b,2)*p*power(c,2)*n+3*r*m*p*power(b,3)*n-r*d*power(p,2)*power(b,2)*n-r*power(d,2)*p*power(b,2)
-   *q+r*m*p*power(b,2)*d*q-2*r*d*power(m,2)*p*power(b,3)+5*r*q*power(b,2)*c*p+r*a*p*power(b,2)*n-d*power(r,2)*power(c,3)*m
-   *n-4*d*power(r,2)*b*power(c,2)*power(m,2)-d*power(r,2)*p*power(c,2)*n+power(r,2)*c*q*power(d,2)*n+power(d,2)*power(r,2)*p*power(c,2)*m-power(r,2)*p
-   *c*d*q+power(r,2)*b*power(c,2)*m*n+2*power(r,2)*a*c*m*p+4*b*d*p*c*m*power(r,2)+2*b*power(d,2)*p*n*power(r,2)-b*q
-   *d*n*power(r,2)-6*b*power(d,2)*power(r,2)*c*p+6*b*d*power(r,2)*power(c,2)*n-3*b*d*power(r,2)*c*power(n,2)+b*c*p*n*power(r,2)+7
-   *b*power(r,2)*c*d*q+b*power(r,2)*power(d,2)*m*q+3*b*power(d,2)*power(r,2)*n*c*m-5*m*q*b*c*power(r,2)-power(d,5)*power(r,3)-7*d
-   *power(r,2)*power(b,2)*c*m+3*power(d,2)*power(r,2)*power(b,2)*n+3*d*power(r,3)*c*n-4*power(d,2)*power(r,3)*c*m-2*b*d*power(p,2)*power(r,2)+3
-   *b*q*p*power(r,2)-3*b*power(c,2)*p*power(r,2)-power(d,3)*q*power(r,2)*b+7*power(r,2)*power(b,2)*p*d-2*power(r,2)*q*power(c,2)*n+3*d*power(r,2)*power(c,3)*p+power(c,3)*power(r,2)*b*m-2*r*a*power(b,3)*n+r*b*power(a,2)*power(n,2)+r*power(a,2)*power(b,2)*m+2*power(c,3)*power(r,2)*q+power(m,2)*r*a*power(b,3)-3*m*r*power(b,4)*n+2*power(d,2)*power(r,2)*power(b,2)*power(m,2)-3*m*p*power(b,2)*power(r,2)-5*power(r,2)*power(b,2)*d*m*n
-   +c*power(r,2)*power(q,2)+4*power(m,2)*power(r,2)*power(b,2)*c+c*r*power(b,4)*m-7*c*power(r,2)*power(b,2)*n+3*power(n,2)*power(r,2)*power(b,2)+d*r*power(n,2)*power(b,3)*m+power(d,2)*r*power(b,2)*c*n*p+d*r*c*n*power(b,3)*m-4*d*r*power(b,2)*c*n*q-2*power(d,2)*r*m*q*power(b,2)
-   *n+2*d*r*power(b,2)*q*power(n,2)+power(m,2)*power(r,2)*power(c,4)-d*r*a*power(b,3)*m+d*r*b*m*q*power(c,2)*n-2*power(d,3)*power(r,2)*b
-   *m*p-power(d,2)*r*b*q*power(c,2)*n+3*d*power(r,2)*q*m*power(c,2)-power(d,3)*r*b*n*p*a+4*power(d,2)*power(r,2)*b*power(c,2)*m+2
-   *d*r*power(a,2)*c*m*p-power(d,3)*power(r,2)*q*c*m-power(d,2)*r*b*power(q,2)*n-power(d,2)*r*power(b,2)*a*m*n-3*power(d,3)*power(r,2)*c
-   *b*n+2*power(d,3)*r*n*q*power(b,2)-d*power(r,2)*power(c,4)*m-5*d*power(r,2)*power(c,3)*b+power(d,2)*power(r,2)*power(c,3)*n-power(c,3)*r*b*q
-   *power(m,2)+power(c,3)*r*b*q*d*m+power(c,2)*r*p*power(b,2)*power(m,2)+3*c*r*power(b,2)*d*power(m,2)*q-power(c,2)*r*power(b,2)*m*q-power(c,2)
-   *r*power(b,2)*d*m*p-3*c*r*power(b,2)*power(d,2)*m*q-d*power(r,3)*q+power(m,3)*r*power(b,4)-m*r*power(b,2)*c*n*q-power(m,2)*r*c
-   *n*power(b,3)+a*power(b,4)*q-5*a*power(q,2)*b*c*p-3*c*r*b*d*m*power(q,2)-5*d*power(r,2)*power(b,3)-2*c*power(r,3)*p-4*power(c,2)*power(r,2)*q*power(d,2)-power(d,3)*power(r,3)*n+power(c,5)*power(r,2)+2*a*power(c,2)*power(q,3)+c*power(r,2)*power(d,4)*q-power(c,2)*power(r,2)*power(d,3)*p-2
-   *power(c,3)*power(r,2)*m*p-d*power(m,2)*r*power(b,4)-2*power(d,3)*m*power(r,2)*power(b,2)-5*a*power(c,3)*power(r,2)-3*q*power(b,2)*power(r,2)+a*power(b,2)
-   *q*power(c,2)*n+b*r*c*q*power(d,3)*p+2*b*r*c*power(q,2)*n+power(b,2)*r*power(c,3)*p-4*power(b,2)*r*d*power(q,2)+5*power(b,3)*r
-   *d*m*q-3*power(b,3)*r*c*d*p+2*power(b,3)*r*power(d,2)*m*p+3*power(b,2)*r*a*power(d,2)*p+4*power(b,2)*r*d*q*power(c,2)-2
-   *power(b,3)*r*power(d,2)*q+3*power(b,3)*r*n*q-3*power(b,3)*r*power(m,2)*q-power(b,3)*r*power(c,2)*n-b*r*power(c,4)*q-b*r*power(d,4)*power(q,2)-power(b,5)*r-4*a*power(c,2)*r*power(b,2)*m-4*a*m*power(r,3)+power(c,2)*power(r,2)*power(p,2)+2*b*r*power(c,3)*q*n-b*r*q*power(c,2)
-   *power(n,2)+3*r*power(b,4)*p-2*b*r*power(c,2)*power(q,2)-4*power(b,3)*r*c*q-power(b,2)*r*power(d,3)*power(p,2)+b*r*power(d,3)*power(q,2)*m+4
-   *b*r*power(d,2)*power(q,2)*c+3*power(b,2)*r*m*power(q,2)+2*power(b,3)*r*c*power(n,2)+5*power(c,2)*power(r,2)*power(b,2)-4*m*r*power(a,2)*power(c,2)
-   *n+2*power(q,2)*power(a,2)*power(n,2)-4*power(a,2)*n*power(r,2)-power(a,2)*power(d,3)*power(p,3)+5*power(a,2)*c*power(r,2)-4*q*power(a,3)*power(n,2)-4*power(c,2)
-   *power(q,2)*power(a,2)+5*power(d,2)*power(r,2)*power(a,2)-3*power(a,2)*power(p,3)*b+3*power(a,2)*power(p,2)*power(b,2)+6*power(a,2)*power(m,2)*power(r,2)+4*power(a,3)*n
-   *power(p,2)-4*power(a,3)*p*r+power(a,3)*power(d,2)*power(n,3)+3*power(a,3)*power(d,2)*power(p,2)+power(a,3)*power(c,2)*power(n,2)+power(a,4)*c*power(m,2)-power(a,4)*b*m
-   -2*c*n*power(a,4)-3*d*p*power(a,4)-power(a,4)*d*power(m,3)+4*power(a,4)*m*p-4*power(a,4)*power(m,2)*n+power(a,3)*power(b,2)*n-2*power(a,3)*c
-   *power(n,3)-4*power(a,3)*power(m,3)*r-3*power(a,3)*c*power(p,2)+power(a,2)*power(c,3)*power(p,2)+2*power(c,2)*q*power(a,3)+2*power(a,3)*power(m,2)*power(p,2)-power(a,2)
-   *power(b,3)*p+power(r,4)-5*power(q,2)*power(a,2)*d*m*n+2*m*r*power(a,2)*c*power(n,2)+3*a*q*power(p,2)*power(b,2)-6*a*q*c*power(r,2)-3
-   *a*q*power(b,3)*p-2*a*c*r*power(p,3)+a*power(c,4)*power(q,2)-b*r*power(q,3)-5*power(d,2)*power(r,3)*b)
-
-   return d, c, b, a, A, B
+def eq_solve2(m, n, p, q, r):
+   # a m - 5 b - m^2 + 2 n = 0 # c1 ==> b = (am + m^2 + 2n)/5
+   # 10 b^2 + b (- 4 a m + 4 m^2 - 8 n) + a^2 n - a m n + 3 a p - 2 m p + n^2 + 2 q = 0 # c2
+   dd = m*m + 2*n # = d
+   # 10 (a^2m^2 + 2amd + d^2)/25 - 4 a m(am + d)/5 + 4 m^2(am + d)/5 - 8 n(am + d)/5 + a^2 n - a m n + 3 a p - 2 m p + n^2 + 2 q = 0
+   aa = (2*m*m - 4*m*m)/5 + n
+   bb = (4*m*dd  - 8*m*n)/5 - m*n + 3*p
+   cc = (2*dd*dd + 4 * m*m*dd - 8*m*dd)/5 - 2*m*p + n*n + 2*q
+   if aa != 0:
+      a1 = (- bb - mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+      a2 = (- bb + mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+      flag = processar0(a1, m,n,p,q,r,"-")
+      flag = flag or processar0(a2, m,n,p,q,r,"+")
+   else:
+      flag = processar0(0, m,n,p,q,r,"-")
 
 mp.dps = 500
 print("Example 1")
@@ -3145,7 +2701,13 @@ eq_solve_tangent(1)
 
 eq_solve_tangent(mp.tan(60 * mp.pi()/180))
 
-# Release 0.1 from 2021/Jan/18
+# from https://math.stackexchange.com/questions/542108/how-to-transform-a-general-higher-degree-five-or-higher-equation-to-normal-form/
+# it solves particular quintics, by luck.
+eq_solve_tangent2(-1)
+
+eq_solve_tangent2(-2)
+
+# Release 0.1 from 2024/Ago/11
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
