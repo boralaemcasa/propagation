@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+$x^n - nx + (n-1)a = 0$
+
+Grau 2
+
+\begin{align}
+x^2 - 2x + a &= 0 \Rightarrow (x - 1)^2 = 1 - a \\
+2x x' - 2 x' + 1 &= 0 \\
+2(x - 1)x' &= -1 \\
+4(x - 1)^2(x')^2 &= 1 \therefore (4 - 4a)(x')^2 &= 1
+\end{align}
+
+Grau 3
+
+\begin{align}
+x^3 - 3x + 2a &= 0 \Rightarrow 4(a^2 - 1) = x^6 - 6x^4 + 9x^2 - 4 = (x^2 - 1)^3 g \\
+g &= 1 - \cfrac{3}{x^2 - 1} \\
+3x^2 x' - 3x' + 2 &= 0 \\
+3(x^2 - 1)x' &= -2 \Rightarrow x^2 - 1 = -2/(3x') \Rightarrow 2g = 2 + 9x' \\
+27(x^2 - 1)^3g(x')^3 &= -8g \\
+27(a^2 - 1)(x')^3 &= -2 - 9x' \\
+(a^2 - 1)(3x')^3 h &= -2h - 9hx' \\
+\xi^3 - 3\xi + 2h &= 0 \Rightarrow -3\xi = 9hx' \Rightarrow \xi = \sqrt[3]{(a^2-1)h} \cdot 3x' = -3hx' \\
+h^2 &= 1 - a^2 \therefore x = \varphi(a) \wedge \xi = \varphi(h) \\
+x' &= -\cfrac{\xi}{3h} \therefore \varphi'(a) = - \cfrac{\varphi(h)}{3h}
+\end{align}
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/June/29
+
+\end{document}

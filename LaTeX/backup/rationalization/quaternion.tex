@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\begin{align}
+  q &= \cfrac{1}{a + bi + cj + dk} = x + yi + zj + wk = f(a,b,c,d) \\
+  1 &= (a + bi + cj + dk)x + (a + bi + cj + dk)yi + (a + bi + cj + dk)zj + (a + bi + cj + dk)wk \\
+    &= ax + bxi + cxj + dxk + ayi - by - cyk + dyj + azj + bzk - cz - dzi + awk - bwj + cwi - dw \\
+  1 &=  ax - by - cz - dw \\
+  0i &= bx + ay - dz + cw \\
+  0j &= cx + dy + az - bw \\
+  0k &= dx - cy + bz + aw \\
+  \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} &= \begin{pmatrix} a & -b & -c & -d \\ b & a & -d & c \\ c & d & a & -b \\ d & -c & b & a \end{pmatrix} \cdot \begin{pmatrix} x \\ y \\ z \\ w \end{pmatrix} \\
+  \begin{pmatrix} x \\ y \\ z \\ w \end{pmatrix} &= \begin{pmatrix} a & -b & -c & -d \\ b & a & -d & c \\ c & d & a & -b \\ d & -c & b & a \end{pmatrix}^{-1} \cdot \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} 
+\end{align}
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/July/24
+
+\end{document}

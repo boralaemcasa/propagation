@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+It's proved by the machine that $y^7 + y^6 + y^3 + 2 y^2 + 3y + t = 0$ is equivalent to:
+
+*** RODA ISSO DE NOVO! EST\'A GIGANTESCO DEMAIS.
+
+\begin{align}
+0 &= m_{377}\cdot y + \cfrac{m_{943}}{m_{745}}\cdot y' + \cfrac{m_{1120}}{m_{658}}\cdot y'' + \cfrac{m_{1107}}{m_{705}}\cdot y''' + \cfrac{m_{1085}}{m_{728}}\cdot y^{(4)} + \cfrac{m_{1038}}{m_{740}}\cdot y^{(5)} + \cfrac{m_{1125}}{m_{565}}\cdot y^{(6)} + m_{378} \\
+y^{(6)} &= f_0 y + f_1 y' + f_2 y'' + f_3 y''' + f_4 y^{(4)} + f_5 y^{(5)} + f_7
+\end{align}
+
+\vspace{3mm}
+
+1) Let's solve the O.D.E. by variation of parameters, using the companion matrix.
+
+\begin{align}
+Y &= e^{tM(t)} \int_0^t e^{-\tau M(\tau)}\cdot Q(\tau)\,\mathrm{d}\tau + Y(0) \\
+P &= \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 \\ f_0 & f_1 & f_2 & f_3 & f_4 & f_5 \end{pmatrix} \\
+Q &= \begin{pmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 0 \\ f_7 \end{pmatrix} \\
+M(\tau) &= \begin{pmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 1 \\ F_0/\tau & F_1/\tau & F_2/\tau & F_3/\tau & F_4/\tau & F_5/\tau \end{pmatrix} \Leftarrow F_i'(\tau) = f_i(\tau) \\
+\exp (\tau M(\tau)) &= E(\tau) = \begin{pmatrix} \varphi_1 & \varphi_2 & \varphi_3 & \varphi_4 & \varphi_5 & \varphi_6 \\ \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\ \varphi_1^{(5)} & \cdots &  &  &  & \varphi_6^{(5)} \end{pmatrix} \cdot \begin{pmatrix} 1 & r_1 & r_1^2/2 & r_1^3/6 & r_1^4/24 & r_1^5/120 \\ 1 & r_2 & \cdots \\ 1 & r_3 & \cdots \\ 1 & r_4 & \cdots \\ 1 & r_5 & \cdots \\ 1 & r_6 & \cdots \end{pmatrix}^{-\top} \\
+G(\tau) &= \begin{pmatrix} E_{16}(-\tau) f_7 \\ E_{26}(-\tau) f_7 \\ E_{36}(-\tau) f_7 \\ E_{46}(-\tau) f_7 \\ E_{56}(-\tau) f_7 \\ E_{66}(-\tau) f_7 \end{pmatrix} \Rightarrow \int_0^t G(\tau)\,\mathrm{d}\tau = H(t) \\
+Y &= [E(t)]_{6 \times 6} [H(t)]_{6 \times 1} + Y(0) \\
+y(t) &= E_{11} H_1 + E_{12} H_2 + E_{13} H_3 + E_{14} H_4 + E_{15} H_5 + E_{16} H_6 + y(0)
+\end{align}
+
+The problem shrinked to the characteristic polynomial equation polinomial whose degree is $6 < 7$:
+
+\begin{align}
+A_i = F_i/\tau \Rightarrow 0 &= z^6 - A_5 z^5 + A_4 z^4 - A_3 z^3 + A_2 z^2 - A_1 z + A_0 \Rightarrow z = r_i(\tau) \\
+0 &= y^{(6)} - A_5 y^{(5)} + A_4 y^{(4)} - A_3 y''' + A_2 y'' - A_1 y' + A_0 y \\
+y(\tau) &= c_1 \varphi_1(\tau) + \cdots + c_6 \varphi_6(\tau)
+\end{align}
+
+We may use Uytdewilligen with functions of $\tau$.
+
+If some processor at the world returns $m_i$, we turn back to line (1) with degree 5.
+
+Characteristic polynomial equation polinomial whose degree is $5$.
+
+If some processor at the world returns $m_i$, we turn back to line (1) with degree 4.
+
+Characteristic polynomial equation polinomial whose degree is $4$.
+
+We may use Ferrari with functions of $\tau$.
+
+We write down the line (10) of the step 5.
+
+We write down the line (10) of the step 6.
+
+We write down the line (10) of the step 7.
+
+\vspace{3mm}
+
+Hilbert used to know the genus-form of the solutions. Genus 1:
+
+\vspace{3mm}
+
+2) Take the wikipedia entry ``Bring's radical" example and conclude that the polynomial$(x)$ is identically null.
+
+\vspace{3mm}
+
+3) If $x$ has the form below and is the solution of $x^5 + sx + t = 0$,
+
+\begin{align}
+x &= \sum_{k = 0}^3 h_k t^k {}_4F_3(a; b; ct^4)
+\end{align}
+
+Then determine who are $(h^4, a^4, b^3, c) = \Phi(1, 0, 0, 0, s)$. 
+
+We may use Delphi and the gradient method.
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/June/29
+
+\end{document}

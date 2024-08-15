@@ -1,0 +1,221 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{colortbl}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+It's proved by the machine \href{https://drive.google.com/file/d/1z0QdJhS-eVbJG3I8OK82LsEDsDLimAiU/view?usp=sharing}{\color{blue}\underline{[here]}} that $y^5 - y + t = 0$ is equivalent to:
+
+\begin{align}
+y^{(4)} &= \cfrac{m_{52}}{m_{49}}\cdot y + \cfrac{m_{50}}{m_{48}}\cdot y' + \cfrac{m_{52}}{m_{53}}\cdot y'' + \cfrac{m_{28.3}}{m_{28.0}}\cdot y''' + \cfrac{m_{46}}{m_{44}} \\
+y^{(4)} &= f_0 y + f_1 y' + f_2 y'' + f_3 y''' + f_4
+\end{align}
+
+Where $m_{52}$ is a polynomial$(t)$ whose degree is $52$.
+
+\Large
+
+\textbf{Theorem:} The solution to the quintic is like this monster:
+
+\begin{align}
+y_n(t) = \sum_{i,j=1}^4 F_{1i} \delta_{ij} \alpha_{n,j-1} + \sum_{i,j=1}^4 k_{1i}(r) e^{r_i t} \int_0^t k_{j4}(r) e^{-r_j\tau} \cdot \cfrac{m_p(\tau)}{m_q(\tau)}\,\mathrm{d}\tau,\,\,1\le n \le 5 \nonumber
+\end{align}
+
+\normalsize
+
+\vspace{3mm}
+
+$\textbf{Demo:}$ Let's solve the O.D.E. by variation of parameters, using the companion matrix.
+
+\begin{align}
+Y &= e^{tM(t)} \int_0^t e^{-\tau M(\tau)}\cdot Q(\tau)\,\mathrm{d}\tau + e^{tM(t)} e^{-D(0)} Y(0) \\
+P &= \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ f_0 & f_1 & f_2 & f_3 \end{pmatrix}\,;\,Q = \begin{pmatrix} 0 \\ 0 \\ 0 \\ f_4 \end{pmatrix} \\
+M(\tau) &= \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ F_0/\tau & F_1/\tau & F_2/\tau & F_3/\tau \end{pmatrix} \Leftarrow F_i'(\tau) = f_i(\tau) \\
+\tau M(\tau) &= D(\tau) = \int P(\tau) \\
+e^{-D(0)} &= [\delta]_{4 \times 4} \\
+\exp (\tau M(\tau)) &= E(\tau) = \begin{pmatrix} \varphi_1 & \varphi_2 & \varphi_3 & \varphi_4 \\ \vdots & \vdots & \vdots & \vdots \\ \varphi_1''' & \cdots &  & \varphi_4''' \end{pmatrix} \cdot \begin{pmatrix} 1 & r_1 & r_1^2/2 & r_1^3/6 \\ 1 & r_2 & r_2^2/2 & r_2^3/6 \\ 1 & r_3 & r_3^2/2 & r_3^3/6 \\ 1 & r_4 & r_4^2/2 & r_4^3/6 \end{pmatrix}^{-\top} \\
+G(\tau) &= \begin{pmatrix} E_{14}(-\tau) f_4 \\ E_{24}(-\tau) f_4 \\ E_{34}(-\tau) f_4 \\ E_{44}(-\tau) f_4 \end{pmatrix} \Rightarrow \int_0^t G(\tau)\,\mathrm{d}\tau = H(t) \\
+Y &= [E(t)]_{4 \times 4} [H(t)]_{4 \times 1} + E(t)\cdot e^{-D(0)}\cdot Y(0) \\
+y(t) &= E_{11} (H_1 + C_1) + E_{12} (H_2 + C_2) + E_{13} (H_3 + C_3) + E_{14} (H_4 + C_4) \\
+\text{where }y^5 - y &= 0 \Rightarrow y(0) \in \{\alpha_1 = 0, \alpha_2 = 1, \alpha_3 = -1, \alpha_4 = i, \alpha_5 = -i \} \\
+5y^4 y' - y' + 1 &= 0 \Rightarrow y'(0) = -\cfrac{1}{5\alpha^4 - 1} \nonumber \\
+20y^3 (y')^2 + 5y^4 y'' - y'' &= 0 \Rightarrow y''(0) = -\cfrac{20\alpha^3 (y'(0))^2}{5\alpha^4 - 1} \nonumber 
+\end{align}
+
+The problem shrinked to the characteristic polynomial equation polinomial whose degree is $4 < 5$:
+
+\begin{align}
+0 &= z^4 - S z^3 + Q z^2 - U z + P_1 \Rightarrow z = r_i(\tau) \\
+0 &= z^{(4)} - S z''' + Q z'' - U z' + P_1 z \\
+z(\tau) &= c_1 \varphi_1(\tau) + c_2 \varphi_2(\tau) + c_3 \varphi_3(\tau) + c_4 \varphi_4(\tau)
+\end{align}
+
+First, we calculate $S, Q, U, P = \pm \cfrac{1}{\tau}\int f_i(\tau)\,\mathrm{d}\tau$. That is the antiderivative of an algebraic fraction.
+
+\vspace{3mm}
+
+After that, we may use Ferrari with functions of $\tau$.
+
+\begin{align}
+  z &= X + \cfrac{1}{4}\cdot S\,;\,XS = SX \\
+  0 &= X^4 + P_2 X^2 + Q_2 X + R \\
+  P_2 &= \cfrac{3}{8}\cdot S^2 - \cfrac{3}{4}\cdot  S^2 + Q \\
+  Q_2 &= \cfrac{1}{16}\cdot  S^3 - \cfrac{3}{16}\cdot  S^3 + \cfrac{1}{2}\cdot  QS - U \\
+  R &= \cfrac{1}{256}\cdot  S^4 - \cfrac{1}{64}\cdot  S^4 + \cfrac{1}{16}\cdot  QS^2 + \cfrac{1}{4}\cdot  US + P_1 \\
+  0 &= (X^2 + P_2)^2 - P_2 X^2 - P_2^2 + Q_2 X + R\,;\,P_2 X = X P_2\,;\,P_2 Y = Y P_2 \\
+  \forall Y \in \mathcal{L},\,0 &= (X^2 + P_2 + Y)^2 + ( - P_2 - 2Y) X^2 + Q_2 X - P_2^2 + R - 2 P_2 Y - Y^2\,;\,XY = YX \\
+  A &= 2 Y + P_2 \\
+  B &= - Q_2 \\
+  C &= Y^2 + 2 P_2 Y + P_2^2 - R \\
+  \Delta &= Q_2^2 - 8 Y^3 - 16 P_2 Y^2 - 8 P_2^2Y + 8RY - 4 P_2 Y^2 - 8 P_2^2 Y - 4 P_2^3 + 4 P_2 R\,;\,YR = RY \\
+  \Delta &= 0 \Leftrightarrow Y_0^3 + A' Y_0^2 + B' Y_0 + C' = 0 \\
+  A' &= \cfrac{5}{2}\cdot P_2 \\
+  B' &= 2 P_2^2 - R \\
+  C' &= -\cfrac{1}{8}\cdot Q_2^2 + \cfrac{1}{2}\cdot P_2^3 - \cfrac{1}{2}\cdot P_2 R \\
+  &\text{Evaluate }Y_0 \\
+  0 &= A (X^2 + P_2 + Y_0)^2 - A^2 X^2 - ABX - AC \\
+  0 &= A (X^2 + P_2 + Y_0)^2 - (AX + \cfrac{1}{2}\cdot B)^2 + \cancel{\cfrac{1}{4}\cdot B^2 - AC}\,;\,AXB = BAX \\
+  0 &= E^2 Z^2 - W^2 = (EZ + W)(EZ - W)\,;\,A = E^2\,;\,EZW = WEZ \\
+  0 &= E X^2 + E P_2 + E Y_0 \pm AX \pm \cfrac{1}{2}\cdot B \\
+  0 &= X^2 - S' X + P_3 = X^2 + S'X + Q_3 \\
+  X &= \cfrac{1}{2}\cdot S' + V_1D_1V_1^{-1}\,;\,\cfrac{1}{4}\cdot S'^2 - P_3 = V_1D_1^2 V_1^{-1} \\
+  X &= - \cfrac{1}{2}\cdot S' + V_2D_2V_2^{-1}\,;\,\cfrac{1}{4}\cdot S'^2 - Q_3 = V_2D_2^2 V_2^{-1} \\
+  &\text{Evaluate }X 
+\end{align}
+
+\begin{align}
+  &\text{Evaluate }z = X + \cfrac{1}{4}\cdot S
+\end{align}
+
+If the four roots are distinct, then we turn back to the exponential as below.
+
+\footnotesize
+
+\begin{align} 
+\exp tM &=  \left(\begin{matrix}\exp{r_1 t} & \exp{r_2 t} & \exp{r_3 t} & \exp{r_4 t} \\ r_1 \exp{r_1 t} & r_2 \exp{r_2 t} & r_3 \exp{r_3 t} & r_4 \exp{r_4 t}  \\ r_1^2 \exp{r_1 t} & r_2^2 \exp{r_2 t} & r_3^2 \exp{r_3 t} & r_4^2 \exp{r_4 t} \\ r_1^3 \exp{r_1 t} & r_2^3 \exp{r_2 t} & r_3^3 \exp{r_3 t} & r_4^3 \exp{r_4 t}  \end{matrix}\right) \cdot \nonumber \\
+&\cdot \begin{pmatrix} 
+- \frac{r_2 r_3 r_4}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4)} & \frac{r_3 r_4 + r_2 r_3 + r_2 r_4}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4)}
+& -\frac{2(r_2 + r_3 + r_4)}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4) } & \frac{6}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4)}  \\ 
+\frac{r_1 r_3 r_4}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} & -\frac{r_1 r_3 + r_1 r_4 + r_3 r_4}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} 
+& \frac{2(r_1 + r_3 + r_4)}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} & -\frac{6}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} \\ 
+-\frac{r_1 r_2 r_4}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} & \frac{r_1 r_2 + r_1 r_4 + r_2 r_4}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} 
+& -\frac{2(r_1 + r_2 + r_4)}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} & \frac{6}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} \\ 
+\frac{r_1 r_2 r_3}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)} & -\frac{r_1 r_2 + r_1 r_3 + r_2 r_3}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)} 
+& \frac{2(r_1 + r_2 + r_3)}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)} & -\frac{6}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)}  \end{pmatrix} 
+\end{align} 
+
+\normalsize
+
+As in line (9), we take the fourth column, evaluate four integrals and calculate $H$.
+
+\footnotesize
+
+\begin{align}
+E_{14} &= \frac{6\exp r_1 t}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4)} -\frac{6\exp r_2 t}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} + \frac{6\exp r_3 t}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} -\frac{6\exp r_4 t}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)} \nonumber 
+\end{align}
+
+\normalsize
+
+\begin{align}
+H_1 &= \int_0^t E_{14}(-\tau) f_4(\tau)\,\mathrm{d}\tau
+\end{align}
+
+As in line (10), we take the first line of the matrix, inner product with H.
+
+\footnotesize
+
+\begin{align}
+E_{11} &= - \frac{r_2 r_3 r_4 \exp r_1 t}{(r_1 - r_2)(r_1 - r_3)(r_1 - r_4)} +\frac{r_1 r_3 r_4 \exp r_2 t}{(r_1 - r_2)(r_2 - r_3)(r_2 - r_4)} - \frac{r_1 r_2 r_4 \exp r_3 t}{(r_1 - r_3)(r_2 - r_3)(r_3 - r_4)} +\frac{r_1 r_2 r_3\exp r_4 t}{(r_1 - r_4)(r_2 - r_4)(r_3 - r_4)} \nonumber 
+\end{align}
+
+\Large
+
+\textbf{Therefore:} The solution to the quintic is like this monster:
+
+\begin{align}
+y_n(t) = \sum_{i,j=1}^4 F_{1i} \delta_{ij} \alpha_{n,j-1} + \sum_{i,j=1}^4 k_{1i}(r) e^{r_i t} \int_0^t k_{j4}(r) e^{-r_j\tau} \cdot \cfrac{m_p(\tau)}{m_q(\tau)}\,\mathrm{d}\tau,\,\,1\le n \le 5\,\,\blacksquare \nonumber
+\end{align}
+
+\normalsize
+
+There are $16$ hard integrands. By Bhaskara, we would set $r_1,r_2 = \cfrac{S(\tau) \pm \sqrt{S(\tau)^2 - 4P(\tau)}}{2}$ . 
+
+The expression for those integrals are missing.
+
+\vspace{100mm}
+
+Our new equation is $y^6 - y + t = 0$. 
+
+The machine gives us $y^{(5)} = f_0 y + f_1 y' + f_2 y'' + f_3 y''' + f_4 y^{(4)} + f_5$.
+
+By line (13), the problem becomes $\rho^5 - S\rho^4 + T\rho^3 + U\rho^2 - V\rho + P = 0$, with functions of $\tau$.
+
+By line (12), we define $y^6 - y = 0 \Rightarrow y(0) \in \{\beta_1 = 0, \beta_2 = 1, \beta_3 = e^{i\cdot 72^\circ}, \beta_4 = -\overline{\beta_3}, \beta_5 = -\beta_3, \beta_6 = \overline{\beta_3} \}$. 
+
+We eliminate three zeroes, then $w^5 - w + q(\tau) = 0$, where $\rho = T(w)$.
+
+We use the theorem and find $w_n(q(\tau)) = \sum \alpha_{n,i} q(\tau)^i/i! + \psi(\tau)$. Now we have $\rho_n(\tau)$.
+
+If they are five distinct roots, the exponential of the $5 \times 5$ matrix is known, like line (41).
+
+\Large
+
+\textbf{Therefore:} The solution to the sextic is like this monster:
+
+\begin{align}
+y_n(t) = \sum_{i,j=1}^5 F_{1i} \delta_{ij} \alpha_{n,j-1} + \sum_{i,j=1}^5 k_{1i}(r) e^{r_i t} \int_0^t k_{j5}(r) e^{-r_j\tau} \cdot \cfrac{m_p(\tau)}{m_q(\tau)}\,\mathrm{d}\tau,\,\,1\le n \le 6 \nonumber
+\end{align}
+
+\normalsize
+
+There are $25$ hard integrands. Note that for knowing $\rho$, there are $16$ integrals hidden inside that formula.
+
+\vspace{6mm}
+
+Our new equation is $y^7 - y + t = 0$. 
+
+The machine gives us $y^{(6)} = f_0 y + f_1 y' + f_2 y'' + f_3 y''' + f_4 y^{(4)} + f_5 y^{(5)} + f_6$.
+
+By line (13), the problem becomes $\sigma^6 - S\sigma^5 + T\sigma^4 + U\sigma^3 - V\sigma^2 + W\sigma + P = 0$, with functions of $\tau$.
+
+By line (12), we define $y^7 - y = 0 \Rightarrow y(0) \in \{\gamma_1 = 0, \gamma_2 = 1, \gamma_3 = e^{i\cdot 60^\circ}, \gamma_4 = -\overline{\gamma_3}, \gamma_5 = -1, \gamma_6 = -\gamma_3,$
+
+$\gamma_7 = \overline{\gamma_3} \}$. 
+
+We eliminate three zeroes, then $w^6 + q_2 w^2 + q_1 w + q(\tau) = 0$, where $\sigma = T(w)$.
+
+We use \textbf{a variant of} the theorem and find $w_n(q(\tau)) = \sum \alpha_{n,i} q(\tau)^i/i! + \psi(q_1(\tau), q_2(\tau), \tau)$. 
+
+Now we have $\sigma_n(\tau)$.
+
+If they are six distinct roots, the exponential of the $6 \times 6$ matrix is known, like line (41).
+
+\Large
+
+\textbf{Therefore:} The solution to the septic is like this monster:
+
+\begin{align}
+y_n(t) = \sum_{i,j=1}^6 F_{1i} \delta_{ij} \alpha_{n,j-1} + \sum_{i,j=1}^6 k_{1i}(r) e^{r_i t} \int_0^t k_{j6}(r) e^{-r_j\tau} \cdot \cfrac{m_p(\tau)}{m_q(\tau)}\,\mathrm{d}\tau,\,\,1\le n \le 7 \nonumber
+\end{align}
+
+\normalsize
+
+There are $36$ hard integrands. Note that for knowing $\sigma$, there are $25 + 16$ integrals hidden inside that formula.
+
+\vspace{3mm}
+
+Note also that we might go to the eighth degree with more $49$ integrands!!!
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/July/$2^{nd}$
+
+\end{document}

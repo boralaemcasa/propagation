@@ -1,0 +1,19 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\begin{align}
+S &\subset \mathbb{R}^n\,;\,n \ge 4 \\
+\iint_S \,\mathrm{d}S &= \iint_R \Vert \varphi_u \Vert \cdot \Vert \varphi_v \Vert \cdot \sin \theta\,\mathrm{d}u\,\mathrm{d}v \\
+&= \iint_R \text{sgn}(\langle \varphi_u, \varphi_v \rangle) \cdot \Vert \varphi_u \Vert \cdot \Vert \varphi_v \Vert \cdot \sqrt{1 - \cfrac{\langle \varphi_u, \varphi_v \rangle^2}{\Vert \varphi_u \Vert^2 \cdot \Vert \varphi_v \Vert^2}}\,\,\mathrm{d}u\,\mathrm{d}v \\
+&= \iint_R \text{sgn}(\langle \varphi_u, \varphi_v \rangle) \cdot \sqrt{\Vert \varphi_u \Vert^2 \cdot \Vert \varphi_v \Vert^2 - \langle \varphi_u, \varphi_v \rangle^2}\,\,\mathrm{d}u\,\mathrm{d}v
+\end{align}
+
+
+\end{document}

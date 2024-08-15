@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+Fractionary roots is too easy. Suppose integral coefficients and irrational roots.
+
+With multiplicity it's too easy. Suppose that the roots are all distinct.
+
+\vspace{3mm}
+
+Discard $y^5 - y - 30 = 0 \Rightarrow y = 2$.
+
+Discard $y^5 - y - \pi^5 + \pi = 0 \Rightarrow y = \pi$.
+
+Discard or not? $y^5 - y + 3\sqrt{2} = 0 \Rightarrow y = -\sqrt{2}$.
+
+Discard or not? $y^5 - y - \cos^5 20^\circ + \cos 20^\circ = 0 \Rightarrow y = \cos 20^\circ$.
+
+\vspace{3mm}
+
+(Density) Consider the image of $f(x) = - x^5 + x$ by (A) $x \in G_0$, (B) $x \in G_1$. So, there is a dense set where genus is zero $(t = -$ radical$^5 +$ radical$)$, and a dense set where the genus is one.
+
+\vspace{3mm}
+
+1) (Quintic) Determine the form of the solution without the 3 zeroes of the Tchirnhaus's theorem.
+
+\vspace{3mm}
+
+1++) (Sextic) $y^6 + ay^2 + by + t = 0$. Determine the form of the solution with the 3 zeroes of the Tchirnhaus's theorem.
+
+\vspace{3mm}
+
+Gradient method searches for 36 numbers:
+
+\begin{align}
+F(t) = {}_{(6,6)}F_{(6,6)} (a; b; c_1 t^{k_1}, c_2 t^{k_2}) \therefore \dim D = 36
+\end{align}
+
+\vspace{3mm}
+
+Today, using Delphi, and the project is \href{https://drive.google.com/file/d/1z0QdJhS-eVbJG3I8OK82LsEDsDLimAiU/view?usp=sharing}{\color{blue}\underline{[here]}}, I searched for Glasser's formula $(a_1, a_2, a_3, a_4)$ as an unknown, hoping to find $\bigg(\cfrac{1}{5}, \cfrac{2}{5}, \cfrac{3}{5}, \cfrac{4}{5}\bigg)$.
+
+But no. For each initial random vector in $a \in \mathbb{R}^4$, I found new final values. There are uncountably many $a$'s for the same $y(a)$, with $t = 0.09$.
+
+I hope to solve this futurely, considering not only a single root, but the five roots at the same time.
+
+When the project become ok for degree (5), it will also work for higher degrees.
+
+\vspace{3mm}
+
+Definition: We say that $y(t) \in G_i^\delta$, whenever genus$(y(t)) = i$ and deg(minimal polynomial$(y(t))) = \delta$.
+
+\vspace{3mm}
+
+$\mathbb{R} = \mathbb{A} \cup S \cup T \cup L$. That divides the real numbers onto $4$ distinct sets.
+
+\vspace{3mm}
+
+2) Decide whether $x \in \mathbb{A}$ or $x \notin \mathbb{A}$. Is $x$ an algebraic number or not?
+
+\vspace{3mm}
+
+$\mathbb{A} = G_0 \cup G_1 \cup \cdots$. That divides the algebraic numbers onto countably many distinct sets.
+
+\vspace{3mm}
+
+$G_0 = G_0^1 \cup G_0^2 \cup \cdots \Rightarrow y(t) \in G_0 \Leftrightarrow y(t)$ is a radical. 
+
+\vspace{3mm}
+
+That divides the expressable by radicals numbers onto countably distinct deltas.
+
+\vspace{3mm}
+
+$\mathbb{Q} = G_0^1$ because the minimal polynomial of $\cfrac{p}{q}$ is equal to: $qy - p = 0$.
+
+\vspace{3mm}
+
+$i \ge 1 \Rightarrow G_i = G_i^{i + 4} \cup G_i^{i + 5} \cup \cdots$. That divides the $i$-th Genus Set onto countably distinct deltas.
+
+\vspace{3mm}
+
+The radicals are exhibitable, $G_i$ are not (yet).
+
+\vspace{3mm}
+
+$G_1$ has to do with ``Bring's radical". What about $G_2$? What is it exactly? See 1++ again.
+
+\vspace{3mm}
+
+3) (Quintic) Decide whether $y(t) \in G_0$ or $y(t) \notin G_0$. Is it a radical or not?
+
+\vspace{3mm}
+
+It's free at wikipedia.
+
+\vspace{3mm}
+
+3++) $i \ge 1 \Rightarrow$ Decide whether $y(t) \in G_i$ or $y(t) \notin G_i$.
+
+\vspace{3mm}
+
+function genus(differential or polynomial equation, $t, \delta)$: integer; 
+
+\vspace{3mm}
+
+First line: if $(\delta \le 4)$ returns $0$.
+
+\vspace{3mm}
+
+4) (Quintic) Decide the genus$(y(t), \delta = 5)$, which returns $0$ or $1$.
+
+\vspace{3mm}
+
+Equivalently: Or $t = -g_0^5 + g_0$ or $t = -g_1^5 + g_1$.
+
+\vspace{3mm}
+
+4++) genus$(\delta \ge 5)$ returns $0, 1, \cdots,$ or $\delta - 4$.
+
+\vspace{3mm}
+
+5) (Quintic form) Decide when exists a simplification from $G_1$ to $G_0$.
+
+\vspace{3mm}
+
+5++) The simplification might be by the O.D.E. from ${}_{(pp)}F_{(qq)}$ to ${}_pF_q$, that is, from $G_2$ to $G_1$.
+
+\vspace{3mm}
+
+Aff. (Sextic) $y^6 - y + t = 0$ has max genus $= 1$. $y^6 + ay^2 - y + t = 0$ has max genus $= 2$.
+
+\vspace{3mm}
+
+Aff. (Septic) $y^7 - y + t = 0$ has max genus $= 1$. 
+
+\vspace{3mm}
+
+$y^7 + ay^3 + by^2 - y + t = 0$ has max genus $= 3$. Hilbert $=$ true.
+
+\vspace{3mm}
+
+6) Determine for which septics max genus $= 2$.
+
+\vspace{3mm}
+
+Decomposition: (Quintic) $y(t) \in G_0 \Leftrightarrow (ay^4 + by^3 + cy^2 + dy + e)(y - g_0) = 0$.
+
+\vspace{3mm}
+
+$\cfrac{y^5 - y + t}{y - g_1} = y^4 + g_1 y^3 + g_1^2 y^2 + g_1^3 y + g_1^4 - 1$. 
+
+\vspace{3mm}
+
+7) Decide whether the coefficient of $y^3$ is a radical or not.
+
+\vspace{3mm}
+
+7++) Degree 6 or 7 $\Rightarrow$ Determine for which $i$ the coefficient of $y^{n - 2}$ is in $G_i$.
+
+\vspace{3mm}
+
+I'm free to multiply. Nothing prohibits me:
+
+\begin{align}
+m_{26}(t) = \prod_n^{5+6} (y - g_{1,n}) \prod_n^2 (y - g_{0,n}) \prod_n^{6+7} (y - g_{2,n}) 
+\end{align}
+
+8) Prove that the $g_1$'s always come grouped by at least $5$.
+
+\vspace{3mm}
+
+8++) $i \ge 1 \Rightarrow$ Prove that the $g_i$'s always come grouped by at least $i + 4$.
+
+\vspace{3mm}
+
+$\bigcup \bigcup G_i^\delta$ is a countable union of countable sets. 
+
+\vspace{3mm}
+
+9) $G_i^\delta$ is dense in $\mathbb{R} \Leftrightarrow \forall x \in \mathbb{R}, \forall \epsilon > 0, \exists a \in G_i^\delta\,;\,|x - a| < \epsilon$. 
+
+\vspace{3mm}
+
+Pascal's triangle by $(\delta, i)$:
+
+$\begin{matrix} (1,0) \\ (2,0) \\ (3,0) \\ (4,0) \\ (5,0) & (5,1) \\ (6,0) & (6,1) & (6,2) \\ (7,0) & (7,1) & (7,2) & (7,3) \\ \vdots  \end{matrix}$
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/July/$2^{nd}$
+
+\end{document}

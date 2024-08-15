@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+\begin{align}
+  x &= \cfrac{1}{a + \sqrt{b} + \sqrt{c} + \sqrt{d}} \cdot \cfrac{a + \sqrt{b} - \sqrt{c} - \sqrt{d}}{a + \sqrt{b} - \sqrt{c} - \sqrt{d}} \\
+    &= \cfrac{a + \sqrt{b} - \sqrt{c} - \sqrt{d}}{(a + \sqrt{b})^2 - (\sqrt{c} + \sqrt{d})^2} \\
+    &= \cfrac{a + \sqrt{b} - \sqrt{c} - \sqrt{d}}{a^2 + 2a\sqrt{b} + b - c - 2\sqrt{cd} - d} \cdot \cfrac{a^2 + b - c - d + 2a\sqrt{b} + 2\sqrt{cd}}{a^2 + b - c - d + 2a\sqrt{b} + 2\sqrt{cd}} \\
+    &= \cfrac{P_1(b, c, d, cd)}{(a^2 + b - c - d + 2a\sqrt{b})^2 - 4cd} \\
+    &= \cfrac{P_1}{(a^2 + b - c - d)^2 + 4a(a^2 + b - c - d)\sqrt{b} + 4a^2 b - 4cd} \\
+    &= \cfrac{P_1}{F + G\sqrt{b}} \cdot \cfrac{F - G\sqrt{b}}{F - G\sqrt{b}} \\
+    &= \cfrac{P_2}{F^2 - bG^2} = x \\
+  F &= (a^2 + b - c - d)^2 + 4a^2 b - 4cd \\
+  G &= 4a(a^2 + b - c - d) \\
+  P_1 &= (a + \sqrt{b} - \sqrt{c} - \sqrt{d})(a^2 + b - c - d + 2a\sqrt{b} + 2\sqrt{cd}) \\
+  P_2 &= P_1 (F - G\sqrt{b})
+\end{align}
+
+\vspace{6mm}
+
+Out of charity, there is no salvation at all.
+
+Vinicius Claudino Ferraz. 2020/July/24
+
+\end{document}

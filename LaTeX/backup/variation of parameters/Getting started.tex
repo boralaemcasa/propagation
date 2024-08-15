@@ -1,0 +1,22 @@
+\documentclass[14pt,a3paper]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm, landscape]{geometry}
+
+\begin{document}
+
+\begin{align}
+x''''(t) + a_4(t) \cdot x'''(t) + a_3(t) \cdot x''(t) + a_2(t) \cdot x'(t) + a_1(t) \cdot x(t)  &= a_0(t) \\
+y_1 &= x \\
+y_2 &= x' \\
+y_3 &= x'' \\
+y_4 &= x''' \\
+y_4' + a_4 \cdot y_4 + a_3 \cdot y_3 + a_2 \cdot y_2 + a_1 \cdot y_1 &= a_0 \\
+\left( \begin{matrix} y_1' \\ y_2' \\ y_3' \\ y_4'  \end{matrix} \right) + \left( \begin{matrix} 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \\ a_1 & a_2 & a_3 & a_4 \end{matrix} \right) \cdot \left( \begin{matrix} y_1 \\ y_2 \\ y_3 \\ y_4 \end{matrix} \right) &=  \left( \begin{matrix} 0 \\ 0 \\ 0 \\ a_0 \end{matrix} \right)  \\
+Y' + P \cdot Y &= Q \\
+Y &= \exp \left( - \int P \right) \left[ \int \left( \exp \int P \right) \cdot Q + C \right] \\
+\left( \begin{matrix} x(t) \\ x'(t) \\ x''(t) \\ x'''(t)  \end{matrix} \right) &= \exp \left( - \int  \left( \begin{matrix} 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \\ a_1(t) & a_2(t) & a_3(t) & a_4(t) \end{matrix} \right) \,\mathrm{d}t \right) \left[ \int \left( \exp \int   \left( \begin{matrix} 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & -1 \\ a_1(t) & a_2(t) & a_3(t) & a_4(t) \end{matrix} \right) \,\mathrm{d}t  \right) \cdot \left( \begin{matrix} 0 \\ 0 \\ 0 \\ a_0(t) \end{matrix} \right) \,\mathrm{d}t  + C \right]
+\end{align}
+
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb} %mathbb
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+\usepackage[top=1.0cm,bottom=1.3cm,left=1.0cm,right=1.0cm]{geometry}
+
+\begin{document}
+
+Definition: $(a)_0 = 1$ and $n \ge 1 \Rightarrow (a)_n = a(a+1)(a+2)\cdots (a+n-1)$.
+
+\vspace{5mm}
+
+\large
+
+\textbf{Generalized Hypergeometric Functions} | Genus 1
+
+\Large
+
+\begin{align}
+w_1 &= \sum_i \cfrac{x^i}{i!} \cdot \cfrac{(a_1)_i \cdots (a_p)_i}{(b_1)_i \cdots (b_q)_i} = {}_p F _q(\vec a^p; \vec b^q; x)
+\end{align}
+
+\normalsize
+
+Genus 2
+
+\begin{align}
+w_2 &= \sum_{i,j} \cfrac{x_1^i}{i!} \cdot \cfrac{(a_1^1)_{i+j} \cdots (a_{p_x}^1)_{i+j}}{(b_1^1)_{i+j} \cdots (b_{q_x}^1)_{i+j}} \cdot \cfrac{x_2^j}{j!} \cdot \cfrac{(a_{1,1}^2)_i \cdots (a_{{p_y},1}^2)_i}{(b_{1,1}^2)_i \cdots (b_{{q_y},1}^2)_i} \cdot \cfrac{(a_{1,2}^2)_j \cdots (a_{{p_y},2}^2)_j}{(b_{1,2}^2)_j \cdots (b_{{q_y},2}^2)_j} = {}_{\vec p} F _{\vec q}(\vec a^{p_x + 2 p_y}; \vec b^{q_x + 2 q_y}; \vec x^2)
+\end{align}
+
+Genus 3
+
+\begin{align}
+w_3 = \sum_{i,j,k} &\cfrac{x_1^i}{i!} \cdot \cfrac{(a_1^1)_{i+j+k} \cdots (a_{p_x}^1)_{i+j+k}}{(b_1^1)_{i+j+k} \cdots (b_{q_x}^1)_{i+j+k}} \cdot \\
+    \cdot &\cfrac{x_2^j}{j!} \cdot \cfrac{(a_{1,1}^2)_{i+j} \cdots (a_{p_y,1}^2)_{i+j}}{(b_{1,1}^2)_{i+j} \cdots (b_{q_y,1}^2)_{i+j}}\cdot \cfrac{(a_{1,1}^2)_{i+k} \cdots (a_{p_y,2}^2)_{i+k}}{(b_{1,1}^2)_{i+k} \cdots (b_{q_y,2}^2)_{i+k}}\cdot \cfrac{(a_{1,1}^2)_{j+k} \cdots (a_{p_y,3}^2)_{j+k}}{(b_{1,1}^2)_{j+k} \cdots (b_{q_y,3}^2)_{j+k}} \cdot \\
+    \cdot &\cfrac{x_3^k}{k!} \cdot \cfrac{(a_{1,1}^3)_i \cdots (a_{{p_z},1}^3)_i}{(b_{1,1}^3)_i \cdots (b_{{q_z},1}^3)_i} \cdot \cfrac{(a_{1,2}^3)_j \cdots (a_{{p_z},2}^3)_j}{(b_{1,2}^3)_j \cdots (b_{{q_z},2}^3)_j} \cdot \cfrac{(a_{1,3}^3)_k \cdots (a_{{p_z},3}^3)_k}{(b_{1,3}^3)_k \cdots (b_{{q_z},3}^3)_k} = {}_{\vec p} F _{\vec q}(\vec a^{p_x + 3 p_y + 3 p_z}; \vec b^{q_x + 3 q_y + 3 q_z}; \vec x^3)
+\end{align}
+
+I have the Taylor series for $f(t) = w_3(x_1(t), x_2(t), x_3(t)) = c_0 t^0 + c_1 t^1 + c_2 t^2 + \cdots$ and I want to recover $a,b,p,q$.
+
+\vspace{5mm}
+
+I want to show that
+
+\begin{align}
+\sum_n c_n t^n = h_1 F_1(t) + h_2 t F_2(t) + h_3 t^2 F_3(t) + h_4 t^3 F_4(t) + h_5 t^4 F_5(t) + h_6 t^5 F_6(t)
+\end{align}
+
+where $F_i(t) = {}_p F_q({}_ia; {}_ib; x_1, x_2, x_3)$ and $x_i = \alpha_i t^{m_i}$.
+
+\vspace{5mm}
+
+If for all $y_i$ of the genus 2 form: 
+
+\begin{align}
+y_i &= \sum_{k = 0}^i h_k t^k \cdot {}_{p} F_{q}(a(k); b(k); c_1 t^{d_1}, c_2 t^{d_2})
+\end{align}
+
+and for all $i \ge 1$, $f(t) = m_0 y + m_1 y' + \cdots + m_6 y^{(6)} + m_7$ is not identically null, i.e. $f(t) \ne 0, \exists t \in \mathbb{R}$,
+
+then Hilbert's 13th is false $\Leftrightarrow$ it's impossible to solve my particular septic equation with only genuses $2$.
+
+The question is: may I set $i = 6$?
+
+\end{document}
