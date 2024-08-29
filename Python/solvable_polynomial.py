@@ -9,7 +9,7 @@
 from mpmath import *
 
 def processarR(m,n,p,q,r,r1):
-   erro = power(r1, 5)+m*power(r1, 4)+n*power(r1, 3)+p*power(r1, 2)+q*r1+r
+   erro = somar([power(r1, 5),fmul(m,power(r1, 4)),fmul(n,power(r1, 3)),fmul(p,power(r1, 2)),fmul(q,r1),r])
    print("erro =", erro)
    if mp.fabs(erro) < 1e-6:
       print("r1 =", r1, " y = ", erro)
@@ -17,141 +17,141 @@ def processarR(m,n,p,q,r,r1):
       # briot ruffini
       #    | 1 |   m    |  n  |  p  |  q  |  r
       # r1 | 1 | m + r1 |  c  |  b  |  y  |  0
-      d = m + r1
-      c = d * r1 + n
-      a1 = c * r1 + p
-      a0 = a1 * r1 + q
+      d = fadd(m , r1)
+      c = fadd(fmul(d, r1), n)
+      a1 = fadd(fmul(c, r1), p)
+      a0 = fadd(fmul(a1, r1), q)
 
       # x4 + d x3 + c x2 + b x + a = 0
       # Ferrari
       y1, y2, y3, y4 = Ferrari(d, c, a1, a0)
 
       #Do the roots of the Quartic satisfy the Quintic?
-      print("r2 =", y1, " y =", power(y1, 5)+m*power(y1, 4)+n*power(y1, 3)+p*power(y1, 2)+q*y1+r)
-      print("r3 =", y2, " y =", power(y2, 5)+m*power(y2, 4)+n*power(y2, 3)+p*power(y2, 2)+q*y2+r)
-      print("r4 =", y3, " y =", power(y3, 5)+m*power(y3, 4)+n*power(y3, 3)+p*power(y3, 2)+q*y3+r)
-      print("r5 =", y4, " y =", power(y4, 5)+m*power(y4, 4)+n*power(y4, 3)+p*power(y4, 2)+q*y4+r)
+      print("r2 =", y1, " y =", somar([power(y1, 5),fmul(m,power(y1, 4)),fmul(n,power(y1, 3)),fmul(p,power(y1, 2)),fmul(q,y1),r]))
+      print("r3 =", y2, " y =", somar([power(y2, 5),fmul(m,power(y2, 4)),fmul(n,power(y2, 3)),fmul(p,power(y2, 2)),fmul(q,y2),r]))
+      print("r4 =", y3, " y =", somar([power(y3, 5),fmul(m,power(y3, 4)),fmul(n,power(y3, 3)),fmul(p,power(y3, 2)),fmul(q,y3),r]))
+      print("r5 =", y4, " y =", somar([power(y4, 5),fmul(m,power(y4, 4)),fmul(n,power(y4, 3)),fmul(p,power(y4, 2)),fmul(q,y4),r]))
       return True
    return False
 
-def processar3(sigma,tau,m,n,p,q,r,P,Q,R,S,u,v,w, msg):
-   print(msg)
-   A = (power(v,3) *power(P,4) - 3 *u *v *w *power(P,4) - 2 *S *power(u,3) *power(P,3) - Q *u *power(v,2) *power(P,3) - 5 *R *power(w,2) *power(P,3) - 2 *u *power(w,2)* power(P,3) 
-      + R *power(u,2) *v *power(P,3) + 2 *Q *power(u,2) *w *power(P,3) + power(v,2) *w *power(P,3) + 6 *S *v *w *power(P,3) - 4 *Q *power(v,3) *power(P,2) 
-      + 9* power(S,2) *power(u,2) *power(P,2) + 2 *power(R,2) *power(v,2) *power(P,2) + 8 *Q *S *power(v,2) *power(P,2) + R *u *power(v,2) *power(P,2) + 5 *power(Q,2) *power(w,2) *power(P,2) 
-      + 10 *S *power(w,2) *power(P,2) + v *power(w,2) *power(P,2) - 2 *S *power(u,2) *v *power(P,2) - 10 *R *S *u *v *power(P,2) + 3 *power(R,2) *u *w *power(P,2) 
-      - 14 *Q *S *u *w *power(P,2) - 7 *Q *R *v *w *power(P,2) + 11 *Q *u *v *w *power(P,2) + 6 *Q *S *power(u,3) *P + 4 *R *power(v,3) *P 
-      - u *power(v,3) *P + 5 *power(w,3) *P - 6 *Q *R *S *power(u,2) *P - 4 *power(Q,2) *R *power(v,2) *P - 16 *R *S *power(v,2) *P 
-      + 3 *power(Q,2) *u *power(v,2) *P - 2 *S *u *power(v,2) *P - 5 *Q *R *power(w,2) *P + 4 *Q *u *power(w,2) *P - 12 *power(S,3) *u *P 
-      + 12 *R *power(S,2) *v *P - 3 *Q *R *power(u,2) *v *P + 3 *Q *power(R,2) *u *v *P + 15 *power(S,2) *u *v *P + 2 *power(Q,2) *S *u *v *P 
-      + 15 *Q *power(S,2) *w *P - 6* power(Q,2) *power(u,2) *w *P + 2 *S *power(u,2) *w *P - 3* Q *power(v,2) *w *P - 10 *power(R,2) *S* w *P 
-      + 6 *power(Q,2) *R *u *w *P + 2 *R *S *u *w *P + power(Q,3) *v *w *P + 13 *power(R,2) *v *w *P + 3 *power(u,2) *v *w *P 
-      - 4 *Q *S *v *w *P - 10 *R *u *v *w *P + 5 *power(S,4) + 2 *S *power(u,4) + power(v,4) - 6 *R *S *power(u,3) + 2 *power(Q,2) *power(v,3) 
-      - 8* S *power(v,3) - 9 *Q *power(S,2) *power(u,2) + 2* power(Q,3) *S *power(u,2) + 6 *power(R,2) *S* power(u,2) + power(Q,4) *power(v,2) + 4 *Q *power(R,2) *power(v,2) 
-      + 18 *power(S,2) *power(v,2) + Q *power(u,2) *power(v,2) - 8 *power(Q,2) *S *power(v,2) - 5 *Q *R *u *power(v,2) - 5 *power(Q,3) *power(w,2) + 5* power(R,2) *power(w,2) 
-      + 2* power(u,2)* power(w,2) + 10* Q* S *power(w,2) - 7* R* u* power(w,2) - 6 *Q *v *power(w,2) + 9 *Q *R *power(S,2) *u - 2 *power(R,3) *S *u 
-      + power(R,4) *v - 16 *power(S,3) *v - R *power(u,3) *v + 6* power(Q,2)* power(S,2)* v + 3* power(R,2)* power(u,2)* v + 4 *Q *S *power(u,2) *v 
-      - 8* Q *power(R,2) *S *v - 3 *power(R,3) *u *v - power(Q,3) *R *u *v + 4 *Q *R *S *u *v + 5 *Q *power(R,3) *w - 2 *Q *power(u,3) *w 
-      + 15 *R *power(S,2) *w + 6 *Q *R *power(u,2) *w + 7 *R *power(v,2) *w - 4 *u *power(v,2)* w - 10 *power(Q,2) *R *S *w - 2 *power(Q,4) *u *w 
-      - 9 *Q *power(R,2) *u* w - 12 *power(S,2)* u *w + 16 *power(Q,2) *S *u *w + 3 *power(Q,2) *R *v *w - 22 *R *S *v *w - 4* power(Q,2) *u *v *w 
-      + 16* S *u *v *w)
-   B = (power(w,3) *power(P,5) - S *power(v,3) *power(P,4) - 2 *R *u *power(w,2) *power(P,4) - Q *v *power(w,2) *power(P,4) + R* power(v,2) *w *power(P,4) + 3 *S *u *v *w *power(P,4) 
-      + power(S,2) *power(u,3) *power(P,3) - 5 *Q *power(w,3) *power(P,3) + Q *S *u *power(v,2) *power(P,3) + 5 *R *S *power(w,2) *power(P,3) + power(Q,2) *u *power(w,2)* power(P,3) 
-      + 2 *S *u *power(w,2) *power(P,3) + R *v *power(w,2) *power(P,3) - R *S *power(u,2) *v *power(P,3) + power(R,2) *power(u,2) *w *power(P,3) - 2 *Q *S *power(u,2) *w *power(P,3) 
-      - S *power(v,2) *w *power(P,3) - 3* power(S,2) *v *w *power(P,3) - Q *R *u *v *w *power(P,3) + 4 *Q *S *power(v,3) *power(P,2) + 5 *R *power(w,3) *power(P,2) 
-      - u *power(w,3) *power(P,2) - 3* power(S,3) *power(u,2) *power(P,2) - 4 *Q *power(S,2) *power(v,2) *power(P,2) - 2 *power(R,2) *S *power(v,2) *power(P,2) - R *S *u *power(v,2) *power(P,2) 
-      - 5 *Q *power(R,2) *power(w,2) *power(P,2) - 5 *power(S,2) *power(w,2) *power(P,2) - 5 *power(Q,2) *S *power(w,2) *power(P,2) + 6 *Q *R *u *power(w,2) *power(P,2) 
-      + 4 *power(Q,2) *v *power(w,2)* power(P,2) - S *v *power(w,2) *power(P,2) + power(S,2) *power(u,2) *v *power(P,2) + 5 *R *power(S,2) *u *v *power(P,2) - 4 *Q *R *power(v,2) *w *power(P,2) 
-      + 7 *Q *power(S,2) *u *w *power(P,2) - 3 *power(R,2) *S *u *w *power(P,2) + 2 *power(R,3) *v *w *power(P,2) + 7 *Q *R *S *v *w *power(P,2) 
-      + power(R,2) *u *v *w *power(P,2) - 11 *Q *S *u *v *w *power(P,2) - 3 *Q *power(S,2) *power(u,3) *P - 4 *R *S *power(v,3) *P + S *u *power(v,3) *P 
-      + 5 *power(Q,2) *power(w,3) *P - 5 *S *power(w,3) *P + v *power(w,3) *P + 3 *Q *R *power(S,2) *power(u,2) *P + 8 *R *power(S,2) *power(v,2) *P 
-      + 4 *power(Q,2) *R *S *power(v,2) *P + power(S,2) *u *power(v,2) *P - 3 *power(Q,2) *S* u *power(v,2) *P + 5 *power(R,3) *power(w,2) *P + 2 *R *power(u,2) *power(w,2) *P 
-      + 5 *power(Q,3) *R *power(w,2) *P + 5 *Q *R *S *power(w,2) *P - 3 *power(Q,3) *u* power(w,2) *P - 7 *power(R,2) *u* power(w,2) *P - 4 *Q *S *u *power(w,2) *P 
-      - 7 *Q *R *v *power(w,2) *P + Q *u *v *power(w,2) *P + 3 *power(S,4) *u *P - 4 *R *power(S,3) *v *P + 3 *Q *R *S *power(u,2) *v *P 
-      - 5 *power(S,3) *u *v *P - power(Q,2) *power(S,2) *u *v *P - 3 *Q *power(R,2) *S *u *v *P - 5 *Q *power(S,3) *w *P + 5 *power(R,2) *power(S,2) *w *P 
-      - 3 *Q *power(R,2) *power(u,2) *w *P - power(S,2) *power(u,2) *w *P + 6 *power(Q,2) *S *power(u,2) *w *P + 4 *power(R,2) *power(v,2) *w *P + 3 *Q *S *power(v,2) *w *P 
-      - R *u *power(v,2) *w *P + 3 *Q *power(R,3) *u *w *P - R *power(S,2) *u *w *P - 6 *power(Q,2) *R* S *u *w *P - 4* power(Q,2)* power(R,2)* v *w *P 
-      + 2 *Q *power(S,2) *v *w *P - 3 *S *power(u,2) *v *w *P - power(Q,3) *S *v *w *P - 13 *power(R,2) *S *v *w *P + 3 *power(Q,2) *R *u *v *w *P 
-      + 10 *R *S *u *v *w *P - power(S,5) - power(S,2) *power(u,4) - S *power(v,4) - power(w,4) + 3 *R *power(S,2) *power(u,3) + 4 *power(S,2) *power(v,3) 
-      - 2 *power(Q,2) *S *power(v,3) - 5* Q *R *power(w,3) + 2 *Q *u *power(w,3) + 3 *Q *power(S,3) *power(u,2) - power(Q,3) *power(S,2) *power(u,2) - 3 *power(R,2) *power(S,2) *power(u,2) 
-      - 6 *power(S,3) *power(v,2) + 4* power(Q,2) *power(S,2) *power(v,2) - Q *S *power(u,2) *power(v,2) - power(Q,4) *S *power(v,2) - 4 *Q *power(R,2) *S *power(v,2) 
-      + 5 *Q *R *S *u *power(v,2) - power(Q,5) *power(w,2) - 5* power(Q,2) *power(R,2) *power(w,2) - 5 *Q *power(S,2) *power(w,2) - power(Q,2) *power(u,2)* power(w,2) - 2 *S *power(u,2) *power(w,2) 
-      - Q *power(v,2) *power(w,2) + 5 *power(Q,3) *S *power(w,2) - 5 *power(R,2) *S *power(w,2) + 3* power(Q,2) *R *u *power(w,2) + 7 *R *S *u *power(w,2) - 2 *power(Q,3) *v *power(w,2) 
-      + 3 *power(R,2) *v *power(w,2) + 6 *Q *S *v *power(w,2) - 3 *R *u *v *power(w,2) - 3 *Q *R *power(S,3) *u + power(R,3) *power(S,2) *u + 4* power(S,4) *v 
-      - 2 *power(Q,2) *power(S,3) *v + R *S *power(u,3) *v + 4 *Q *power(R,2) *power(S,2) *v - 2 *Q *power(S,2) *power(u,2) *v - 3 *power(R,2) *S *power(u,2) *v - power(R,4) *S *v 
-      - 2 *Q *R *power(S,2) *u *v + 3 *power(R,3) *S *u *v + power(Q,3) *R *S *u *v + power(R,5) *w - 5 *R *power(S,3) *w - power(R,2) *power(u,3) *w 
-      + 2 *Q *S *power(u,3) *w + R* power(v,3) *w + 5 *power(Q,2) *R *power(S,2) *w + 3 *power(R,3) *power(u,2) *w - 6 *Q *R *S *power(u,2) *w + 2* power(Q,2) *R *power(v,2) *w 
-      - 7 *R *S *power(v,2) *w + 4 *S *u *power(v,2) *w - 5 *Q *power(R,3) *S *w - 3 *power(R,4) *u* w + 4 *power(S,3) *u *w - power(Q,3) *power(R,2) *u *w 
-      - 8* power(Q,2) *power(S,2) *u *w + 2*power(Q,4) *S *u *w + 9* Q *power(R,2) *S* u* w + 4 *Q *power(R,3) *v *w + 11 *R *power(S,2) *v *w 
-      + Q *R *power(u,2) *v *w + power(Q,4) *R *v *w - 3 *power(Q,2) *R *S *v *w - 5 *Q *power(R,2) *u *v *w - 8 *power(S,2) *u *v *w
-      + 4 *power(Q,2) *S *u *v *w)
+def mult(x):
+   result = mpc(x[0])
+   for i in range(1,len(x)):
+      result = fmul(result, mpc(x[i]))
+   return result
 
-   f = power(-1/A, 1/4) # d4 f^4 = -1
-   s = -B * power(f,5) # s = -k = -d5 f^5
+def somar(x):
+   result = mpc(x[0])
+   for i in range(1,len(x)):
+      result = fadd(result, mpc(x[i]))
+   return result
+
+def processar3(sigma,tau,m,n,p,q,r,PP,QQ,RR,S,u,v,w, msg):
+   print(msg)
+   A = somar([mult([power(v,3),power(PP,4)]) , mult([-3,u,v,w,power(PP,4)]) , mult([-2,S,power(u,3),power(PP,3)]) , mult([-QQ,u,power(v,2),power(PP,3)]) , mult([-5,RR,power(w,2),power(PP,3)]) , mult([-2,u,power(w,2),power(PP,3)]) , mult([RR,power(u,2),v,power(PP,3)]) , mult([2,QQ,power(u,2),w,power(PP,3)]) 
+        , mult([power(v,2),w,power(PP,3)]) , mult([6,S,v,w,power(PP,3)]) , mult([-4,QQ,power(v,3),power(PP,2)]) , mult([9,power(S,2),power(u,2),power(PP,2)]) , mult([2,power(RR,2),power(v,2),power(PP,2)]) , mult([8,QQ,S,power(v,2),power(PP,2)]) , mult([RR,u,power(v,2),power(PP,2)]) 
+        , mult([5,power(QQ,2),power(w,2),power(PP,2)]) , mult([10,S,power(w,2),power(PP,2)]) , mult([v,power(w,2),power(PP,2)]) , mult([-2,S,power(u,2), v,power(PP,2)]) , mult([-10,RR,S,u,v,power(PP,2)]) , mult([3,power(RR,2),u,w,power(PP,2)]) , mult([-14,QQ,S,u,w,power(PP,2)]) 
+        , mult([-7,QQ,RR,v,w,power(PP,2)]) , mult([11,QQ,u,v,w,power(PP,2)]) , mult([6,QQ,S,power(u,3),PP]) , mult([4,RR,power(v,3),PP]) , mult([-u,power(v,3),PP]) , mult([5,power(w,3),PP]) , mult([-6,QQ,RR,S,power(u,2),PP]) , mult([-4,power(QQ,2),RR,power(v,2),PP]) 
+        , mult([-16,RR,S,power(v,2),PP]) , mult([3,power(QQ,2),u,power(v,2),PP]) , mult([-2,S,u,power(v,2),PP]) , mult([-5,QQ,RR,power(w,2),PP]) , mult([4,QQ,u,power(w,2),PP]) , mult([-12,power(S,3),u,PP]) , mult([12,RR,power(S,2),v,PP]) 
+        , mult([-3,QQ,RR,power(u,2),v,PP]) , mult([3,QQ,power(RR,2),u,v,PP]) , mult([15,power(S,2),u,v,PP]) , mult([2,power(QQ,2),S,u,v,PP]) , mult([15,QQ,power(S,2),w,PP]) , mult([-6,power(QQ,2),power(u,2),w,PP]) , mult([2,S,power(u,2),w,PP]) 
+        , mult([-3,QQ,power(v,2),w,PP]) , mult([-10,power(RR,2),S,w,PP]) , mult([6,power(QQ,2),RR,u,w,PP]) , mult([2,RR,S,u,w,PP]) , mult([power(QQ,3),v,w,PP]) , mult([13,power(RR,2),v,w,PP]) , mult([3,power(u,2),v,w,PP]) , mult([-4,QQ,S,v,w,PP]) 
+        , mult([-10,RR,u,v,w,PP]) , mult([5,power(S,4)]) , mult([2,S,power(u,4)]) , power(v,4) , mult([-6,RR,S,power(u,3)]) , mult([2,power(QQ,2),power(v,3)]) , mult([-8,S,power(v,3)]) , mult([-9,QQ,power(S,2),power(u,2)]) , mult([2,power(QQ,3),S,power(u,2)]) , mult([6,power(RR,2),S,power(u,2)]) 
+        , mult([power(QQ,4),power(v,2)]) , mult([4,QQ,power(RR,2),power(v,2)]) , mult([18,power(S,2),power(v,2)]) , mult([QQ,power(u,2),power(v,2)]) , mult([-8,power(QQ,2),S,power(v,2)]) , mult([-5,QQ,RR,u,power(v,2)]) , mult([-5,power(QQ,3),power(w,2)]) , mult([5,power(RR,2),power(w,2)]) , mult([2,power(u,2),power(w,2)]) 
+        , mult([10,QQ,S,power(w,2)]) , mult([-7,RR,u,power(w,2)]) , mult([-6,QQ,v,power(w,2)]) , mult([9,QQ,RR,power(S,2),u]) , mult([-2,power(RR,3),S,u]) , mult([power(RR,4),v]) , mult([-16,power(S,3),v]) , mult([-RR,power(u,3),v]) , mult([6,power(QQ,2),power(S,2),v]) 
+        , mult([3,power(RR,2),power(u,2),v]) , mult([4,QQ,S,power(u,2),v]) , mult([-8,QQ,power(RR,2),S,v]) , mult([-3,power(RR,3),u,v]) , mult([-power(QQ,3),RR,u,v]) , mult([4,QQ,RR,S,u,v]) , mult([5,QQ,power(RR,3),w]) , mult([-2,QQ,power(u,3),w]) 
+        , mult([15,RR,power(S,2),w]) , mult([6,QQ,RR,power(u,2),w]) , mult([7,RR,power(v,2),w]) , mult([-4,u,power(v,2),w]) , mult([-10,power(QQ,2),RR,S,w]) , mult([-2,power(QQ,4),u,w]) , mult([-9,QQ,power(RR,2),u,w]) , mult([-12,power(S,2),u,w]) 
+        , mult([16,power(QQ,2),S,u,w]) , mult([3,power(QQ,2),RR,v,w]) , mult([-22,RR,S,v,w]) , mult([-4,power(QQ,2),u,v,w]) , mult([16,S,u,v,w])])
+   B = somar([mult([power(w,3) ,power(PP,5)]), mult([- S ,power(v,3) ,power(PP,4)]), mult([- 2 ,RR ,u ,power(w,2) ,power(PP,4)]), mult([- QQ ,v ,power(w,2) ,power(PP,4)]), mult([ RR ,power(v,2) ,w ,power(PP,4)]), mult([ 3 ,S ,u ,v ,w ,power(PP,4)]), mult([ power(S,2) ,power(u,3) ,power(PP,3)]), mult([- 5 ,QQ ,power(w,3) ,power(PP,3) 
+       ]), mult([ QQ ,S ,u ,power(v,2) ,power(PP,3)]), mult([ 5 ,RR ,S ,power(w,2) ,power(PP,3)]), mult([ power(QQ,2) ,u ,power(w,2) ,power(PP,3)]), mult([ 2 ,S ,u ,power(w,2) ,power(PP,3)]), mult([ RR ,v ,power(w,2) ,power(PP,3)]), mult([- RR ,S ,power(u,2) ,v ,power(PP,3)]), mult([ power(RR,2) ,power(u,2) ,w ,power(PP,3) 
+       ]), mult([- 2 ,QQ ,S ,power(u,2) ,w ,power(PP,3)]), mult([- S ,power(v,2) ,w ,power(PP,3)]), mult([- 3 ,power(S,2) ,v ,w ,power(PP,3)]), mult([- QQ ,RR ,u ,v ,w ,power(PP,3)]), mult([ 4 ,QQ ,S ,power(v,3) ,power(PP,2)]), mult([ 5 ,RR ,power(w,3) ,power(PP,2) 
+       ]), mult([- u ,power(w,3) ,power(PP,2)]), mult([- 3 ,power(S,3) ,power(u,2) ,power(PP,2)]), mult([- 4 ,QQ ,power(S,2) ,power(v,2) ,power(PP,2)]), mult([- 2 ,power(RR,2) ,S ,power(v,2) ,power(PP,2)]), mult([- RR ,S ,u ,power(v,2) ,power(PP,2)]), mult([- 5 ,QQ ,power(RR,2) ,power(w,2) ,power(PP,2)]), mult([- 5 ,power(S,2) ,power(w,2) ,power(PP,2) 
+       ]), mult([- 5 ,power(QQ,2) ,S ,power(w,2) ,power(PP,2)]), mult([ 6 ,QQ ,RR ,u ,power(w,2) ,power(PP,2)]), mult([ 4 ,power(QQ,2) ,v ,power(w,2) ,power(PP,2)]), mult([- S ,v ,power(w,2) ,power(PP,2)]), mult([ power(S,2) ,power(u,2) ,v ,power(PP,2)]), mult([ 5 ,RR ,power(S,2) ,u ,v ,power(PP,2) 
+       ]), mult([- 4 ,QQ ,RR ,power(v,2) ,w ,power(PP,2)]), mult([ 7 ,QQ ,power(S,2) ,u ,w ,power(PP,2)]), mult([- 3 ,power(RR,2) ,S ,u ,w ,power(PP,2)]), mult([ 2 ,power(RR,3) ,v ,w ,power(PP,2)]), mult([ 7 ,QQ ,RR ,S ,v ,w ,power(PP,2)]), mult([ power(RR,2) ,u ,v ,w ,power(PP,2) 
+       ]), mult([- 11 ,QQ ,S ,u ,v ,w ,power(PP,2)]), mult([- 3 ,QQ ,power(S,2) ,power(u,3) ,PP]), mult([- 4 ,RR ,S ,power(v,3) ,PP]), mult([ S ,u ,power(v,3) ,PP]), mult([ 5 ,power(QQ,2) ,power(w,3) ,PP]), mult([- 5 ,S ,power(w,3) ,PP]), mult([ v ,power(w,3) ,PP]), mult([ 3 ,QQ ,RR ,power(S,2) ,power(u,2) ,PP 
+       ]), mult([ 8 ,RR ,power(S,2) ,power(v,2) ,PP]), mult([ 4 ,power(QQ,2) ,RR ,S ,power(v,2) ,PP]), mult([ power(S,2) ,u ,power(v,2) ,PP]), mult([- 3 ,power(QQ,2) ,S ,u ,power(v,2) ,PP]), mult([ 5 ,power(RR,3) ,power(w,2) ,PP]), mult([ 2 ,RR ,power(u,2) ,power(w,2) ,PP]), mult([ 5 ,power(QQ,3) ,RR ,power(w,2) ,PP 
+       ]), mult([ 5 ,QQ ,RR ,S ,power(w,2) ,PP]), mult([- 3 ,power(QQ,3) ,u ,power(w,2) ,PP]), mult([- 7 ,power(RR,2) ,u ,power(w,2) ,PP]), mult([- 4 ,QQ ,S ,u ,power(w,2) ,PP]), mult([- 7 ,QQ ,RR ,v ,power(w,2) ,PP]), mult([ QQ ,u ,v ,power(w,2) ,PP]), mult([ 3 ,power(S,4) ,u ,PP 
+       ]), mult([- 4 ,RR ,power(S,3) ,v ,PP]), mult([ 3 ,QQ ,RR ,S ,power(u,2) ,v ,PP]), mult([- 5 ,power(S,3) ,u ,v ,PP]), mult([- power(QQ,2) ,power(S,2) ,u ,v ,PP]), mult([- 3 ,QQ ,power(RR,2) ,S ,u ,v ,PP]), mult([- 5 ,QQ ,power(S,3) ,w ,PP]), mult([ 5 ,power(RR,2) ,power(S,2) ,w ,PP 
+       ]), mult([- 3 ,QQ ,power(RR,2) ,power(u,2) ,w ,PP]), mult([- power(S,2) ,power(u,2) ,w ,PP]), mult([ 6 ,power(QQ,2) ,S ,power(u,2) ,w ,PP]), mult([ 4 ,power(RR,2) ,power(v,2) ,w ,PP]), mult([ 3 ,QQ ,S ,power(v,2) ,w ,PP]), mult([- RR ,u ,power(v,2) ,w ,PP]), mult([ 3 ,QQ ,power(RR,3) ,u ,w ,PP 
+       ]), mult([- RR ,power(S,2) ,u ,w ,PP]), mult([- 6 ,power(QQ,2) ,RR ,S ,u ,w ,PP]), mult([- 4 ,power(QQ,2) ,power(RR,2) ,v ,w ,PP]), mult([ 2 ,QQ ,power(S,2) ,v ,w ,PP]), mult([- 3 ,S ,power(u,2) ,v ,w ,PP]), mult([- power(QQ,3) ,S ,v ,w ,PP]), mult([- 13 ,power(RR,2) ,S ,v ,w ,PP 
+       ]), mult([ 3 ,power(QQ,2) ,RR ,u ,v ,w ,PP]), mult([ 10 ,RR ,S ,u ,v ,w ,PP]), mult([- power(S,5)]), mult([- power(S,2) ,power(u,4)]), mult([- S ,power(v,4)]), mult([- power(w,4)]), mult([ 3 ,RR ,power(S,2) ,power(u,3)]), mult([ 4 ,power(S,2) ,power(v,3)]), mult([- 2 ,power(QQ,2) ,S ,power(v,3) 
+       ]), mult([- 5 ,QQ ,RR ,power(w,3)]), mult([ 2 ,QQ ,u ,power(w,3)]), mult([ 3 ,QQ ,power(S,3) ,power(u,2)]), mult([- power(QQ,3) ,power(S,2) ,power(u,2)]), mult([- 3 ,power(RR,2) ,power(S,2) ,power(u,2)]), mult([- 6 ,power(S,3) ,power(v,2)]), mult([ 4 ,power(QQ,2) ,power(S,2) ,power(v,2)]), mult([- QQ ,S ,power(u,2) ,power(v,2) 
+       ]), mult([- power(QQ,4) ,S ,power(v,2)]), mult([- 4 ,QQ ,power(RR,2) ,S ,power(v,2)]), mult([ 5 ,QQ ,RR ,S ,u ,power(v,2)]), mult([- power(QQ,5) ,power(w,2)]), mult([- 5 ,power(QQ,2) ,power(RR,2) ,power(w,2)]), mult([- 5 ,QQ ,power(S,2) ,power(w,2)]), mult([- power(QQ,2) ,power(u,2) ,power(w,2)]), mult([- 2 ,S ,power(u,2) ,power(w,2) 
+       ]), mult([- QQ ,power(v,2) ,power(w,2)]), mult([ 5 ,power(QQ,3) ,S ,power(w,2)]), mult([- 5 ,power(RR,2) ,S ,power(w,2)]), mult([ 3 ,power(QQ,2) ,RR ,u ,power(w,2)]), mult([ 7 ,RR ,S ,u ,power(w,2)]), mult([- 2 ,power(QQ,3) ,v ,power(w,2)]), mult([ 3 ,power(RR,2) ,v ,power(w,2)]), mult([ 6 ,QQ ,S ,v ,power(w,2) 
+       ]), mult([- 3 ,RR ,u ,v ,power(w,2)]), mult([- 3 ,QQ ,RR ,power(S,3) ,u]), mult([ power(RR,3) ,power(S,2) ,u]), mult([ 4 ,power(S,4) ,v]), mult([- 2 ,power(QQ,2) ,power(S,3) ,v]), mult([ RR ,S ,power(u,3) ,v]), mult([ 4 ,QQ ,power(RR,2) ,power(S,2) ,v]), mult([- 2 ,QQ ,power(S,2) ,power(u,2) ,v 
+       ]), mult([- 3 ,power(RR,2) ,S ,power(u,2) ,v]), mult([- power(RR,4) ,S ,v]), mult([- 2 ,QQ ,RR ,power(S,2) ,u ,v]), mult([ 3 ,power(RR,3) ,S ,u ,v]), mult([ power(QQ,3) ,RR ,S ,u ,v]), mult([ power(RR,5) ,w]), mult([- 5 ,RR ,power(S,3) ,w]), mult([- power(RR,2) ,power(u,3) ,w 
+       ]), mult([ 2 ,QQ ,S ,power(u,3) ,w]), mult([ RR ,power(v,3) ,w]), mult([ 5 ,power(QQ,2) ,RR ,power(S,2) ,w]), mult([ 3 ,power(RR,3) ,power(u,2) ,w]), mult([- 6 ,QQ ,RR ,S ,power(u,2) ,w]), mult([ 2 ,power(QQ,2) ,RR ,power(v,2) ,w]), mult([- 7 ,RR ,S ,power(v,2) ,w]), mult([ 4 ,S ,u ,power(v,2) ,w 
+       ]), mult([- 5 ,QQ ,power(RR,3) ,S ,w]), mult([- 3 ,power(RR,4) ,u ,w]), mult([ 4 ,power(S,3) ,u ,w]), mult([- power(QQ,3) ,power(RR,2) ,u ,w]), mult([- 8 ,power(QQ,2) ,power(S,2) ,u ,w]), mult([ 2 ,power(QQ,4) ,S ,u ,w]), mult([ 9 ,QQ ,power(RR,2) ,S ,u ,w]), mult([ 4 ,QQ ,power(RR,3) ,v ,w 
+       ]), mult([ 11 ,RR ,power(S,2) ,v ,w]), mult([ QQ ,RR ,power(u,2) ,v ,w]), mult([ power(QQ,4) ,RR ,v ,w]), mult([- 3 ,power(QQ,2) ,RR ,S ,v ,w]), mult([- 5 ,QQ ,power(RR,2) ,u ,v ,w]), mult([- 8 ,power(S,2) ,u ,v ,w]), mult([ 4 ,power(QQ,2) ,S ,u ,v ,w])])
+
+   print("A =", A)
+
+   f = power(-A, fdiv(1,4))
+   s = fdiv(-B, power(f,5))
    print("s =", s)
-   t = -s*hyperg(4, 3, [1/5,2/5,3/5,4/5],[1/2,3/4,5/4],3125/256*power(s, 4))
-   print("f(t) =", power(t, 5) - t - s)
-   y = t/f # y = z
-   print("f(y) =", power(y, 5) + A* y + B)
+   t = fmul(-s,hyperg(4, 3, [fdiv(1,5),fdiv(2,5),fdiv(3,5),fdiv(4,5)],[fdiv(1,2),fdiv(3,4),fdiv(5,4)],fmul(fdiv(3125,256),power(s, 4))))
+   print("f(t) =", somar([power(t, 5), - t, - s]))
+   y = fmul(t,f)
+   zero = fadd(power(y, 5), fadd(fmul(A,y), B))
+   print("f(y) =", zero)
 
    # briot ruffini
    #   | 1 | 0 |  0  |  0  |    A    |  B
    # y | 1 | y | y^2 | y^3 | y^4 + A |  0
    d = y
-   c = d * y
-   b = c * y
-   a = b * y + A
+   c = fmul(d, y)
+   b = fmul(c, y)
+   a = fadd(fmul(b, y), A)
    z1, z2, z3, z4 = Ferrari(d, c, b, a)
 
-   # x4 + P x3 + Q x2 + R x + s - y = 0
+   # x4 + PP x3 + QQ x2 + RR x + s - y = 0
    # Ferrari
-   y01, y02, y03, y04 = Ferrari(P, Q, R, S - y)
-   y11, y12, y13, y14 = Ferrari(P, Q, R, S - z1)
-   y21, y22, y23, y24 = Ferrari(P, Q, R, S - z2)
-   y31, y32, y33, y34 = Ferrari(P, Q, R, S - z3)
-   y41, y42, y43, y44 = Ferrari(P, Q, R, S - z4)
+   y01, y02, y03, y04 = Ferrari(PP, QQ, RR, S - y)
+   y11, y12, y13, y14 = Ferrari(PP, QQ, RR, S - z1)
+   y21, y22, y23, y24 = Ferrari(PP, QQ, RR, S - z2)
+   y31, y32, y33, y34 = Ferrari(PP, QQ, RR, S - z3)
+   y41, y42, y43, y44 = Ferrari(PP, QQ, RR, S - z4)
 
    #now looking for the root that solves both the Quartic and the Quintic
    r1 = mp.inf
-   if printifzero("f01 =", power(y01, 5)+u*power(y01, 2)+v*y01+w):
+   if printifzero("f01 =", somar([power(y01, 5),fmul(u,power(y01, 2)),fmul(v,y01),w])):
       r1 = y01
-   elif printifzero("f02 =", power(y02, 5)+u*power(y02, 2)+v*y02+w):
+   elif printifzero("f02 =", somar([power(y02, 5),fmul(u,power(y02, 2)),fmul(v,y02),w])):
       r1 = y02
-   elif printifzero("f03 =", power(y03, 5)+u*power(y03, 2)+v*y03+w):
+   elif printifzero("f03 =", somar([power(y03, 5),fmul(u,power(y03, 2)),fmul(v,y03),w])):
       r1 = y03
-   elif printifzero("f04 =", power(y04, 5)+u*power(y04, 2)+v*y04+w):
+   elif printifzero("f04 =", somar([power(y04, 5),fmul(u,power(y04, 2)),fmul(v,y04),w])):
       r1 = y04
-   elif printifzero("f11 =", power(y11, 5)+u*power(y11, 2)+v*y11+w):
+   elif printifzero("f11 =", somar([power(y11, 5),fmul(u,power(y11, 2)),fmul(v,y11),w])):
       r1 = y11
-   elif printifzero("f12 =", power(y12, 5)+u*power(y12, 2)+v*y12+w):
+   elif printifzero("f12 =", somar([power(y12, 5),fmul(u,power(y12, 2)),fmul(v,y12),w])):
       r1 = y12
-   elif printifzero("f13 =", power(y13, 5)+u*power(y13, 2)+v*y13+w):
+   elif printifzero("f13 =", somar([power(y13, 5),fmul(u,power(y13, 2)),fmul(v,y13),w])):
       r1 = y13
-   elif printifzero("f14 =", power(y14, 5)+u*power(y14, 2)+v*y14+w):
+   elif printifzero("f14 =", somar([power(y14, 5),fmul(u,power(y14, 2)),fmul(v,y14),w])):
       r1 = y14
-   elif printifzero("f21 =", power(y21, 5)+u*power(y21, 2)+v*y21+w):
+   elif printifzero("f21 =", somar([power(y21, 5),fmul(u,power(y21, 2)),fmul(v,y21),w])):
       r1 = y21
-   elif printifzero("f22 =", power(y22, 5)+u*power(y22, 2)+v*y22+w):
+   elif printifzero("f22 =", somar([power(y22, 5),fmul(u,power(y22, 2)),fmul(v,y22),w])):
       r1 = y22
-   elif printifzero("f23 =", power(y23, 5)+u*power(y23, 2)+v*y23+w):
+   elif printifzero("f23 =", somar([power(y23, 5),fmul(u,power(y23, 2)),fmul(v,y23),w])):
       r1 = y23
-   elif printifzero("f24 =", power(y24, 5)+u*power(y24, 2)+v*y24+w):
+   elif printifzero("f24 =", somar([power(y24, 5),fmul(u,power(y24, 2)),fmul(v,y24),w])):
       r1 = y24
-   elif printifzero("f31 =", power(y31, 5)+u*power(y31, 2)+v*y31+w):
+   elif printifzero("f31 =", somar([power(y31, 5),fmul(u,power(y31, 2)),fmul(v,y31),w])):
       r1 = y31
-   elif printifzero("f32 =", power(y32, 5)+u*power(y32, 2)+v*y32+w):
+   elif printifzero("f32 =", somar([power(y32, 5),fmul(u,power(y32, 2)),fmul(v,y32),w])):
       r1 = y32
-   elif printifzero("f33 =", power(y33, 5)+u*power(y33, 2)+v*y33+w):
+   elif printifzero("f33 =", somar([power(y33, 5),fmul(u,power(y33, 2)),fmul(v,y33),w])):
       r1 = y33
-   elif printifzero("f34 =", power(y34, 5)+u*power(y34, 2)+v*y34+w):
+   elif printifzero("f34 =", somar([power(y34, 5),fmul(u,power(y34, 2)),fmul(v,y34),w])):
       r1 = y34
-   elif printifzero("f41 =", power(y41, 5)+u*power(y41, 2)+v*y41+w):
+   elif printifzero("f41 =", somar([power(y41, 5),fmul(u,power(y41, 2)),fmul(v,y41),w])):
       r1 = y41
-   elif printifzero("f42 =", power(y42, 5)+u*power(y42, 2)+v*y42+w):
+   elif printifzero("f42 =", somar([power(y42, 5),fmul(u,power(y42, 2)),fmul(v,y42),w])):
       r1 = y42
-   elif printifzero("f43 =", power(y43, 5)+u*power(y43, 2)+v*y43+w):
+   elif printifzero("f43 =", somar([power(y43, 5),fmul(u,power(y43, 2)),fmul(v,y43),w])):
       r1 = y43
-   elif printifzero("f44 =", power(y44, 5)+u*power(y44, 2)+v*y44+w):
+   elif printifzero("f44 =", somar([power(y44, 5),fmul(u,power(y44, 2)),fmul(v,y44),w])):
       r1 = y44
    if mp.isinf(r1):
       return
@@ -159,66 +159,59 @@ def processar3(sigma,tau,m,n,p,q,r,P,Q,R,S,u,v,w, msg):
    if (m == 0) and (n == 0):
       return processarR(m,n,p,q,r,r1)
 
+   aa = 1
    bb = sigma
-   cc = tau - r1
-   r01 = (- bb - mp.sqrt(bb*bb - 4*cc))/2
-   r02 = (- bb + mp.sqrt(bb*bb - 4*cc))/2
+   cc = fadd(tau, - r1)
+   r01 = fdiv(fadd(- bb, - mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
+   r02 = fdiv(fadd(- bb, mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
    flag = processarR(m,n,p,q,r,r01)
    return flag or processarR(m,n,p,q,r,r02)
 
-def processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P,u,v,w,msg):
-   Q = alfa * P + beta
-   S = gamma * P + delta
+def processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, PP,u,v,w,msg):
+   Q = fadd(fmul(alfa, PP) , beta)
+   S = fadd(fmul(gamma, PP), delta)
 
-   e2 = (- 3 * power(u,2) + 4 * Q * v + 5 * P * w)/u
-   e1 = (3 * power(u,3) + 3 *P *Q * power(u,2) - 9 *Q *S *u + 5 *power(P,2) *v *u - 2 *Q *v *u - P *w *u + 8 *P *power(v,2) 
-         - 12 *P *S *v + 5 *power(Q,2) *w - 15 *S *w + 11 *v *w)/u
-   e0 = (-power(u,4) + power(P,3) *power(u,3) - 3 *P *Q *power(u,3) - power(Q,3) *power(u,2) - 9 *power(P,2) *S *power(u,2) + 9 *Q *S *power(u,2) + power(P,2) *v *power(u,2) 
-         - 2 *Q *v *power(u,2) - P *w *power(u,2) + 18 *P *power(S,2) *u + P *power(v,2) *u - P *power(Q,2) *v *u - 15 *P *S *v *u 
-         - 8 *power(Q,2) *w *u + 7 *power(P,2) *Q *w *u + 12 *S *w *u - 8 *v *w *u - 10* power(S,3) + 4 *power(v,3) + 4* power(Q,2)* power(v,2) 
-         - 4 *power(P,2) *Q *power(v,2) - 18 *S *power(v,2) - 5 *power(P,2) *power(w,2) - 5 *Q* power(w,2) + 24 *power(S,2) *v - 6* power(Q,2) *S *v 
-         - 15 *P *Q *S *w - 3 *power(P,3) *v *w + 2 *P *Q *v *w)/u
+   e2 = fdiv(somar([fmul(-3, power(u,2)), mult([4, Q, v]), mult([5, PP, w])]),u)
+   e1 = fdiv(somar([fmul(3, power(u,3)) , mult([ 3 ,PP ,Q , power(u,2) ]), mult([- 9 ,Q ,S ,u ]), mult([ 5 ,power(PP,2) ,v ,u ]), mult([- 2 ,Q ,v ,u ]), mult([- PP ,w ,u ]), mult([ 8 ,PP ,power(v,2) 
+         ]), mult([- 12 ,PP ,S ,v ]), mult([ 5 ,power(Q,2) ,w ]), mult([- 15 ,S ,w ]), mult([ 11 ,v ,w])]),u)
+   e0 = fdiv(somar([mult([-power(u,4) ]), mult([ power(PP,3) ,power(u,3) ]), mult([- 3 ,PP ,Q ,power(u,3) ]), mult([- power(Q,3) ,power(u,2) ]), mult([- 9 ,power(PP,2) ,S ,power(u,2) ]), mult([ 9 ,Q ,S ,power(u,2) ]), mult([ power(PP,2) ,v ,power(u,2) 
+         ]), mult([- 2 ,Q ,v ,power(u,2) ]), mult([- PP ,w ,power(u,2) ]), mult([ 18 ,PP ,power(S,2) ,u ]), mult([ PP ,power(v,2) ,u ]), mult([- PP ,power(Q,2) ,v ,u ]), mult([- 15 ,PP ,S ,v ,u 
+         ]), mult([- 8 ,power(Q,2) ,w ,u ]), mult([ 7 ,power(PP,2) ,Q ,w ,u ]), mult([ 12 ,S ,w ,u ]), mult([- 8 ,v ,w ,u ]), mult([- 10, power(S,3) ]), mult([ 4 ,power(v,3) ]), mult([ 4, power(Q,2), power(v,2) 
+         ]), mult([- 4 ,power(PP,2) ,Q ,power(v,2) ]), mult([- 18 ,S ,power(v,2) ]), mult([- 5 ,power(PP,2) ,power(w,2) ]), mult([- 5 ,Q, power(w,2) ]), mult([ 24 ,power(S,2) ,v ]), mult([- 6, power(Q,2) ,S ,v 
+         ]), mult([- 15 ,PP ,Q ,S ,w ]), mult([- 3 ,power(PP,3) ,v ,w ]), mult([ 2 ,PP ,Q ,v ,w])]),u)
 
    R1,R2,R3 = Cardano(e2,e1,e0)
-   flag = processar3(sigma,tau,m,n,p,q,r,P,Q,R1,S,u,v,w, msg + " R1")
-   flag = flag or processar3(sigma,tau,m,n,p,q,r,P,Q,R2,S,u,v,w, msg + " R2")
-   return flag or processar3(sigma,tau,m,n,p,q,r,P,Q,R3,S,u,v,w, msg + " R3")
+   flag = processar3(sigma,tau,m,n,p,q,r,PP,Q,R1,S,u,v,w, msg + " R1")
+   flag = flag or processar3(sigma,tau,m,n,p,q,r,PP,Q,R2,S,u,v,w, msg + " R2")
+   return flag or processar3(sigma,tau,m,n,p,q,r,PP,Q,R3,S,u,v,w, msg + " R3")
 
 def processar0(sigma, m,n,p,q,r, msg0):
-   tau = (sigma *m - m*m + 2 *n)/5
-   a, b = sigma, tau
+   tau = fdiv(somar([fmul(sigma, m), - power(m,2), fmul(2,n)]), 5)
+   f,g = sigma, tau
 
    if (m == 0) and (n == 0):
       u,v,w = p,q,r
    else:
-      u = (power(a,3) *p - 3 *power(a,2) *b *n - power(a,2) *m *p + 4 *power(a,2) *q + 6 *a *power(b,2) *m + 3 *a *b *m *n - 9 *a *b *p - 3 *a *m *q 
-            + a *n *p + 5 *a *r - 10 *power(b,3) - 6 *power(b,2) *power(m,2) + 12 *power(b,2) *n + 6 *b *m *p - 3 *b *power(n,2) - 6 *b *q - 2 *m *r 
-            + 2 *n *q - power(p,2)) # c3
-      v = (power(a,4) *q - 2 *power(a,3) *b *p - power(a,3) *m *q + 5 *power(a,3) *r + 3 *power(a,2) *power(b,2) *n + 2* power(a,2) *b *m *p 
-            - 8 *power(a,2) *b *q - 4 *power(a,2) *m *r + power(a,2) *n *q - 4 *a *power(b,3) *m - 3 *a *power(b,2) *m *n + 9 *a *power(b,2) *p 
-            + 6 *a *b *m *q - 2* a *b *n *p - 10 *a *b *r + 3 *a *n *r - a *p *q + 5 *power(b,4) + 4 *power(b,3) *power(m,2) - 8 *power(b,3) *n 
-            - 6 *power(b,2) *m *p + 3 *power(b,2) *power(n,2) + 6* power(b,2) *q + 4 *b *m *r - 4 *b *n *q + 2 *b *power(p,2) - 2 *p *r + power(q,2)) # c4
-      w = (power(a,5) *r - power(a,4) *b *q - power(a,4) *m *r + power(a,3) *power(b,2) *p + power(a,3) *b *m *q - 5 *power(a,3) *b *r + power(a,3) *n *r 
-            - power(a,2) *power(b,3) *n - power(a,2) *power(b,2) *m *p + 4 *power(a,2) *power(b,2) *q + 4 *power(a,2) *b *m *r - power(a,2) *b *n *q 
-            - power(a,2) *p *r + a *power(b,4) *m + a* power(b,3) *m* n - 3 *a *power(b,3) *p - 3 *a *power(b,2) *m *q + a* power(b,2) *n *p 
-            + 5 *a *power(b,2) *r - 3 *a *b *n *r + a *b *p *q + a *q *r - power(b,5) - power(b,4) *power(m,2) + 2 *power(b,4) *n + 2 *power(b,3) *m* p 
-            - power(b,3) *power(n,2) - 2 *power(b,3) *q - 2 *power(b,2) *m *r + 2 *power(b,2) *n *q - power(b,2) *power(p,2) + 2 *b *p *r - b *power(q,2) - r*r) # c5
+      a,b,c,d,e = m,n,p,q,r
+      u = (-6 *a**2 *g**2 + 3 *a *b *f *g - a *c *f**2 + 6 *a *c *g - 3 *a *d *f - 2 *a *e + 6 *a *f *g**2 - 3 *b**2 *g + b *c *f + 2 *b *d - 3 *b *f**2 *g + 12 *b *g**2 - c**2 + c *f**3 - 9 *c *f *g + 4 *d *f**2 - 6 *d *g + 5 *e *f - 10 *g**3)
+      v = (4 *a**2 *g**3 - 3 *a *b *f *g**2 + 2 *a *c *f**2 *g - 6 *a *c *g**2 - a *d *f**3 + 6 *a *d *f *g - 4 *a *e *f**2 + 4 *a *e *g - 4 *a *f *g**3 + 3 *b**2 *g**2 - 2 *b *c *f *g + b *d *f**2 - 4 *b *d *g + 3 *b *e *f + 3 *b *f**2 *g**2 - 8 *b *g**3 + 2 *c**2 *g - c *d *f - 2 *c *e - 2 *c *f**3 *g + 9 *c *f *g**2 + d**2 + d *f**4 - 8 *d *f**2 *g + 6 *d *g**2 + 5 *e *f**3 - 10 *e *f *g + 5 *g**4)
+      w = (-a**2 *g**4 + a *b *f *g**3 - a *c *f**2 *g**2 + 2 *a *c *g**3 + a *d *f**3 *g - 3 *a *d *f *g**2 - a *e *f**4 + 4 *a *e *f**2 *g - 2 *a *e *g**2 + a *f *g**4 - b**2 *g**3 + b *c *f *g**2 - b *d *f**2 *g + 2 *b *d *g**2 + b *e *f**3 - 3 *b *e *f *g - b *f**2 *g**3 + 2 *b *g**4 - c**2 *g**2 + c *d *f *g - c *e *f**2 + 2 *c *e *g + c *f**3 *g**2 - 3 *c *f *g**3 - d**2 *g + d *e *f - d *f**4 *g + 4 *d *f**2 *g**2 - 2 *d *g**3 - e**2 + e *f**5 - 5 *e *f**3 *g + 5 *e *f *g**2 - g**5)
 
-   # Q = (- 4*P*v - 5*w)/3/u = alfa * p + beta
-   alfa = -4*v/3/u
-   beta = -5*w/3/u
-   # S = (3*P*u + 4*v)/5 = gamma * p + delta # d1
-   gamma = 3*u/5
-   delta = 4*v/5
+   # Q = (- 4*PP*v - 5*w)/3/u = alfa * PP + beta
+   alfa = fdiv(fmul(fdiv(-4,3),v),u)
+   beta = fdiv(fmul(fdiv(-5,3),w),u)
+   # S = (3*PP*u + 4*v)/5 = gamma * PP + delta # d1
+   gamma = fmul(fdiv(3,5),u)
+   delta = fmul(fdiv(4,5),v)
 
    # 10*s*s- 12*p*s*u + 3*p*p*u*u - 3*q*u*u + 2*q*q*v - 16*s*v + 5*p*u*v + 6*v*v + 5*p*q*w - 4*u*w = 0 # d2
    # 10*(gamma * p + delta)**2- 12*p*(gamma * p + delta)*u + 3*p*p*u*u - 3*u*u*(alfa * p + beta) 
    # + 2*v*(alfa * p + beta)**2 - 16*(gamma * p + delta)*v + 5*p*u*v + 6*v*v + 5*p*w*(alfa * p + beta) - 4*u*w = 0 
-   aa = power(gamma,2) * 10 - 12*gamma*u + 3*u*u + 2*v*power(alfa,2) + 5*w*alfa
-   bb = 2*gamma*delta * 10 - 12*delta*u - 3*u*u*alfa + 2*v*2*alfa*beta - 16*gamma*v + 5*u*v + 5*w*beta
-   cc = power(delta,2) * 10 - 3*u*u*beta + 2*v*power(beta,2) - 16*delta*v + 6*v*v - 4*u*w
-   P1 = (- bb - mp.sqrt(bb*bb - 4*aa*cc))/2/aa
-   P2 = (- bb + mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+   aa = somar([fmul(power(gamma,2), 10), mult([- 12, gamma, u]), fmul(3, power(u,2)) , mult([2,v,power(alfa,2)]) , mult([5,w,alfa])])
+   bb = somar([mult([20,gamma,delta]), mult([- 12,delta,u]), mult([- 3, power(u,2), alfa]), mult([4,v,alfa,beta]), mult([- 16,gamma,v]), mult([5,u,v]), mult([5,w,beta])])
+   cc = somar([fmul(power(delta,2), 10), mult([- 3, power(u,2), beta]), mult([2,v,power(beta,2)]), mult([- 16,delta,v]), fmul(6, power(v,2)), mult([- 4,u,w])])
+   P1 = fdiv(fadd(- bb, - mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
+   P2 = fdiv(fadd(- bb, mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
    flag = processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P1,u,v,w,msg0 + " P1")
    return flag or processar2(m,n,p,q,r,alfa,beta,gamma,delta,sigma,tau, P2,u,v,w,msg0 + " P2")
 
@@ -252,7 +245,6 @@ def discriminant(a, b, c, d, e):
            +2000 *b *power(d, 2) *power(e, 2)       +108 *power(c, 5) *e
            -27 *power(c, 4) *power(d, 2)            +2250 *power(c, 2) *d *power(e, 2)
            -1600 *c *power(d, 3) *e          +256 *power(d, 5)           +3125 *power(e, 4)) # from math.stack.exchange
-
 
 def power(x, y):
    if (y / 2 == mp.floor(y / 2)) and (mp.im(x) == 0) and (mp.re(x) < 0):
@@ -2560,13 +2552,13 @@ def eq_solve_tangent(v):
 def hyperg(p, q, a, b, z):
    result = 1
    termo = 1
-   for i in range(0, 100):
+   for i in range(0, 500):
       for j in range(0, p):
-         termo = termo * (a[j] + i)
+         termo = fmul(termo, fadd(a[j], i))
       for j in range(0, q):
-         termo = termo / (b[j] + i)
-      termo = termo * z / (i + 1) # factorial
-      result = result + termo
+         termo = fdiv(termo, fadd(b[j] , i))
+      termo = fdiv(fmul(termo, z), i + 1) # factorial
+      result = fadd(result, termo)
    return result
 
 def Cardano(A2, A1, A0):
@@ -2575,25 +2567,25 @@ def Cardano(A2, A1, A0):
    p_1 = - A0
    # 0 = t^3 - s t^2 + q_1 t - p_1
    # t = x + s/3
-   p_2 = q_1 - fdiv(power(s,2), 3)
-   q_2 = - 2 * fdiv(power(s,3), 27) + fdiv(q_1,3) * s - p_1
+   p_2 = fadd(q_1, - fdiv(power(s,2), 3))
+   q_2 = somar([fmul(- 2 , fdiv(power(s,3), 27)) , fmul(fdiv(q_1,3) , s), - p_1])
 
    x = mp.zeros(3, 1)
 
    #0 = x^3 + p_2 x + q_2
-   delta = fdiv(power(q_2,2), 4) + fdiv(power(p_2,3), 27)
-   z1 = - q_2/2 + mp.sqrt(delta)
-   z2 = - q_2/2 - mp.sqrt(delta)
+   delta = fadd(fdiv(power(q_2,2), 4) , fdiv(power(p_2,3), 27))
+   z1 = fadd(- fdiv(q_2,2), mp.sqrt(delta))
+   z2 = fadd(- fdiv(q_2,2), -mp.sqrt(delta))
    for i in range (0, 3):
       w1 = mp.root(z1, 3, i)
       for j in range (0, 3):
          w2 = mp.root(z2, 3, j)
-         if mp.fabs(w1 * w2 + fdiv(p_2,3)) < 1e-9:
-            x[i] = w1 + w2
+         if mp.fabs(fadd(fmul(w1 , w2) , fdiv(p_2,3))) < 1e-9:
+            x[i] = fadd(w1 , w2)
 
-   t1 = x[0] + fdiv(s, 3)
-   t2 = x[1] + fdiv(s, 3)
-   t3 = x[2] + fdiv(s, 3)
+   t1 = fadd(x[0] , fdiv(s, 3))
+   t2 = fadd(x[1] , fdiv(s, 3))
+   t3 = fadd(x[2] , fdiv(s, 3))
    return t1, t2, t3
 
 def Ferrari(A3, A2, A1, A0):
@@ -2604,14 +2596,14 @@ def Ferrari(A3, A2, A1, A0):
    # 0 = t4 - st3 + qt2 - ut + p_1
    # t = x + s/4
    # 0 = x4 + p_2 x2 + q_2 x + r
-   p_2 = -3 * fdiv(power(s,2), 8) + q
-   q_2 = -2 * fdiv(power(s,3), 16) + fdiv(q*s, 2) - u
-   r = -3 * fdiv(power(s,4), 256) + fdiv(q*power(s,2), 16) - fdiv(u*s, 4) + p_1
+   p_2 = fadd(fmul(-3, fdiv(power(s,2), 8)) , q)
+   q_2 = somar([fmul(-2, fdiv(power(s,3), 16)) , fdiv(fmul(q,s), 2), - u])
+   r = somar([fmul(-3, fdiv(power(s,4), 256)) , fdiv(fmul(q,power(s,2)), 16), - fdiv(fmul(u,s), 4) , p_1])
 
    # delta = 0 <=> y**3 + a1 y**2 + b1 y + c1 = 0
-   a1 = 5 * fdiv(p_2, 2)
-   b1 = 2* power(p_2,2) - r
-   c1 = - fdiv(power(q_2,2), 8) + fdiv(power(p_2,3), 2) - fdiv(p_2* r, 2)
+   a1 = fmul(5, fdiv(p_2, 2))
+   b1 = fmul(2, power(p_2,2)) - r
+   c1 = somar([- fdiv(power(q_2,2), 8), fdiv(power(p_2,3), 2), - fdiv(fmul(p_2, r), 2)])
 
    y0, y1, y2 = Cardano(a1, b1, c1)
    if y0 == 0:
@@ -2626,7 +2618,7 @@ def Ferrari(A3, A2, A1, A0):
    #print("c1 =", c1)
    #print("y0 =", y0)
 
-   A = 2*y0 + p_2
+   A = fadd(fmul(2,y0), p_2)
    if A == 0:
       return 0, 0, 0, 0  # would divide by zero
    B = - q_2
@@ -2636,23 +2628,23 @@ def Ferrari(A3, A2, A1, A0):
    # (i) sqrtA (x^2 + p_2 + y0) + Ax + B/2 = 0
    alfa  = mp.sqrt(A)
    beta  = A
-   gamma = mp.sqrt(A) * (p_2 + y0) + fdiv(B,2)
-   delta = power(beta,2) - 4 * alfa * gamma
-   x1 = (- beta + mp.sqrt(delta))/(2*alfa)
-   x2 = (- beta - mp.sqrt(delta))/(2*alfa)
+   gamma = fadd(fmul(mp.sqrt(A), fadd(p_2, y0)) , fdiv(B,2))
+   delta = fadd(power(beta,2), - mult([4, alfa, gamma]))
+   x1 = fdiv(fadd(- beta, mp.sqrt(delta)), fmul(2,alfa))
+   x2 = fdiv(fadd(- beta, -mp.sqrt(delta)), fmul(2,alfa))
 
    # (ii) sqrtA (x^2 + p_2 + y0) - Ax - B/2 = 0
    alfa  = mp.sqrt(A)
    beta  = - A
-   gamma = mp.sqrt(A) * (p_2 + y0) - fdiv(B,2)
-   delta = power(beta,2) - 4 * alfa * gamma
-   x3 = (- beta + mp.sqrt(delta))/(2*alfa)
-   x4 = (- beta - mp.sqrt(delta))/(2*alfa)
+   gamma = fmul(mp.sqrt(A), fadd(p_2, y0)) - fdiv(B,2)
+   delta = fadd(power(beta,2), - mult([4, alfa, gamma]))
+   x3 = fdiv(fadd(- beta, mp.sqrt(delta)), fmul(2,alfa))
+   x4 = fdiv(fadd(- beta, -mp.sqrt(delta)), fmul(2,alfa))
 
-   t1 = x1 + fdiv(s, 4)
-   t2 = x2 + fdiv(s, 4)
-   t3 = x3 + fdiv(s, 4)
-   t4 = x4 + fdiv(s, 4)
+   t1 = fadd(x1 , fdiv(s, 4))
+   t2 = fadd(x2 , fdiv(s, 4))
+   t3 = fadd(x3 , fdiv(s, 4))
+   t4 = fadd(x4 , fdiv(s, 4))
    return t1, t2, t3, t4
 
 def printifzero(ch, z):
@@ -2672,22 +2664,22 @@ def eq_solve_tangent2(vv):
       eq_solve2(- 20 - 25*v2, 110 + 100*v2, - 100 - 110*v2, 25 + 20*v2, - v2)
 
 def eq_solve2(m, n, p, q, r):
-   # a m - 5 b - m^2 + 2 n = 0 # c1 ==> b = (am + m^2 + 2n)/5
+   # a m - 5 b - m^2 + 2 n = 0 # c1 ==> b = (am - m^2 + 2n)/5
    # 10 b^2 + b (- 4 a m + 4 m^2 - 8 n) + a^2 n - a m n + 3 a p - 2 m p + n^2 + 2 q = 0 # c2
-   dd = m*m + 2*n # = d
    # 10 (a^2m^2 + 2amd + d^2)/25 - 4 a m(am + d)/5 + 4 m^2(am + d)/5 - 8 n(am + d)/5 + a^2 n - a m n + 3 a p - 2 m p + n^2 + 2 q = 0
-   aa = (2*m*m - 4*m*m)/5 + n
-   bb = (4*m*dd  - 8*m*n)/5 - m*n + 3*p
-   cc = (2*dd*dd + 4 * m*m*dd - 8*m*dd)/5 - 2*m*p + n*n + 2*q
+   a,b,c,d,e = m,n,p,q,r
+   aa = -4*a**2 + 5*b + 2*a**2
+   bb = 4 *a**3 - 5*a*b - 4*a*(-a**2 + 2*b) - 8*b*a + 15*c + 4*(2*b -a**2)*a
+   cc = 4 *a**2 *(-a**2 + 2 *b) - 10 *a *c + 5 *b**2 - 8 *b *(-a**2 + 2 *b) + 10 *d + 2 *(2*b-a**2)**2
    if aa != 0:
-      a1 = (- bb - mp.sqrt(bb*bb - 4*aa*cc))/2/aa
-      a2 = (- bb + mp.sqrt(bb*bb - 4*aa*cc))/2/aa
+      a1 = fdiv(fadd(- bb, - mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
+      a2 = fdiv(fadd(- bb, mp.sqrt(fadd(power(bb,2), mult([-4,aa,cc])))), fmul(2,aa))
       flag = processar0(a1, m,n,p,q,r,"-")
       flag = flag or processar0(a2, m,n,p,q,r,"+")
    else:
-      flag = processar0(0, m,n,p,q,r,"-")
+      flag = processar0(fdiv(-cc,bb), m,n,p,q,r,"-")
 
-mp.dps = 500
+mp.dps = 250
 print("Example 1")
 eq_solve(1, 0, 0, 0, 15, 12)
 
@@ -2702,12 +2694,14 @@ eq_solve_tangent(1)
 eq_solve_tangent(mp.tan(60 * mp.pi()/180))
 
 # from https://math.stackexchange.com/questions/542108/how-to-transform-a-general-higher-degree-five-or-higher-equation-to-normal-form/
-# it solves particular quintics, by luck.
-eq_solve_tangent2(-1)
-
+print("___________________________________")
 eq_solve_tangent2(-2)
+print("___________________________________")
+eq_solve_tangent2(-1)
+print("___________________________________")
+eq_solve_tangent2(1)
 
-# Release 0.1 from 2024/Ago/11
+# Release 0.1 from 2024/Ago/29
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
