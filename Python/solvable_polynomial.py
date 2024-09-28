@@ -8,6 +8,36 @@
 
 from mpmath import *
 
+# x^n - x + t = 0, from arxiv: 9411224
+def glasser(n, t):
+   p = mp.pi()
+   m = n-1 
+   w = mp.exp(fdiv(mult([2,p,j]),m))
+   soma = 0
+   wtm = fdiv(fmul(w,t),m)
+   z = fmul(power(wtm, m), power(n,n))
+   a = mp.ones(n+1,1)
+   b = mp.zeros(n,1)
+   for q in range(0,m):
+      p1 = 1
+      qm = fdiv(q,m)
+      nqm = fmul(n, qm)
+      for k in range(0,m):
+         p1 = fmul(p1, fdiv(mp.gamma(fdiv(nqm + 1 + k,n)), mp.gamma(fdiv(q+k+2,m))))
+      p2 = mp.gamma(fadd(qm, 1))
+      p3 = mp.gamma(fdiv(fadd(nqm, n),n))
+      for k in range(0, n):
+         a[k] = fdiv(fadd(nqm, k + 1),n)
+         b[k] = fdiv(q + k + 2,m)
+      b[m] = fadd(qm, 1)
+      h = hyperg(n+1,n, a, b, z)
+      termo = fdiv(mult([power(wtm, q), power(n, nqm), p1, p3, h]), p2)
+      soma = fadd(soma, termo)
+   result = fadd(mp.conj(w), mult([-soma, fdiv(t,power(m,2)), mp.sqrt(fdiv(n, mult([2,p,m])))]))
+   y = somar([power(result, n), - result, t])
+   print(mp.fabs(y))
+   return result
+
 def processarR(m,n,p,q,r,r1):
    erro = somar([power(r1, 5),fmul(m,power(r1, 4)),fmul(n,power(r1, 3)),fmul(p,power(r1, 2)),fmul(q,r1),r])
    print("erro =", erro)
@@ -2680,6 +2710,10 @@ def eq_solve2(m, n, p, q, r):
       flag = processar0(fdiv(-cc,bb), m,n,p,q,r,"-")
 
 mp.dps = 250
+print(glasser(5, 0.5))
+print("___________________________________")
+print(glasser(6, 0.55))
+
 print("Example 1")
 eq_solve(1, 0, 0, 0, 15, 12)
 
@@ -2701,7 +2735,7 @@ eq_solve_tangent2(-1)
 print("___________________________________")
 eq_solve_tangent2(1)
 
-# Release 0.1 from 2024/Ago/29
+# Release 0.1 from 2024/Sep/28
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
