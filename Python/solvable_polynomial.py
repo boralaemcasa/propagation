@@ -9,9 +9,34 @@
 from mpmath import *
 
 # x^n - x + t = 0, from arxiv: 9411224
-def glasser(n, t):
-   p = mp.pi()
+def glasser(n, A, B): # (n, s) := (n, -1, s)
    m = n-1 
+
+   # x^n - x + s = 0
+   # x = ay
+   # y^n - a^(1-n) y + s * a^(-n) = 0
+   # y^n + Ay + B = 0
+   # A := 1
+   # A = - a^(1-n) => a = (-A)^(1/(1-n))
+   # aa = power(-A, -fdiv(1,m))
+   # B = fmul(s, power(aa, -n))
+
+   # y = bz
+   # b^n z^n + Abz + B = 0
+   # z^n + A * b^(1-n) z + B * b^(-n) = 0
+   # z^n + C z + D = 0
+   # t = D/(-C)^(n/(n-1)) = B * b^(-n)/(-A * b^(1-n))^(n/(n-1))
+   # t = B/(-A)^(n/(n-1)) = s, therefore they will never be different
+   # bb = 10
+   # C = fmul(A, power(bb, -m))
+   # D = fmul(B, power(bb, -n))
+   # A, B, C, D = C, D, A, B
+
+   f = power(-A, fdiv(1,m))
+   t = fdiv(B, power(f,n))
+   print("t =", t)
+
+   p = mp.pi()
    w = mp.exp(fdiv(mult([2,p,j]),m))
    soma = 0
    wtm = fdiv(fmul(w,t),m)
@@ -36,7 +61,10 @@ def glasser(n, t):
    result = fadd(mp.conj(w), mult([-soma, fdiv(t,power(m,2)), mp.sqrt(fdiv(n, mult([2,p,m])))]))
    y = somar([power(result, n), - result, t])
    print(mp.fabs(y))
-   return result
+   y = fmul(result,f)
+   zero = fadd(power(y, n), fadd(fmul(A,y), B))
+   print(mp.fabs(zero))
+   return y
 
 def processarR(m,n,p,q,r,r1):
    erro = somar([power(r1, 5),fmul(m,power(r1, 4)),fmul(n,power(r1, 3)),fmul(p,power(r1, 2)),fmul(q,r1),r])
@@ -2710,9 +2738,9 @@ def eq_solve2(m, n, p, q, r):
       flag = processar0(fdiv(-cc,bb), m,n,p,q,r,"-")
 
 mp.dps = 250
-print(glasser(5, 0.5))
+print(glasser(5, -1, 0.5))
 print("___________________________________")
-print(glasser(6, 0.55))
+print(glasser(6, 1, 0.55))
 
 print("Example 1")
 eq_solve(1, 0, 0, 0, 15, 12)
@@ -2735,7 +2763,7 @@ eq_solve_tangent2(-1)
 print("___________________________________")
 eq_solve_tangent2(1)
 
-# Release 0.1 from 2024/Sep/28
+# Release 0.2 from 2024/Sep/28
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
