@@ -59,7 +59,7 @@ def anfis_yamakawa(x, yd, xitp, xftp, nEpocas, nFuncPertinencia, constEpsilon, h
                 elif jj[v] < 1:
                     jj[v] = 1
                 xa = xit[v] + (jj[v]-1)*out.gamma[v]
-                mujj[v] = 1/out.gamma[v] * (xa[v] - x[k,v]) + 1
+                mujj[v] = 1/out.gamma[v] * (xa - x[k,v]) + 1
                 mujjinf[v] = np.max((mujj[v] - out.epsilon, 0))
                 mujjsup[v] = np.min((mujj[v] + out.epsilon, 1))
                 ystinf[k] = ystinf[k] + mujjinf[v] * out.winf[v,jj[v]-1] + (1 - mujjinf[v]) * out.winf[v,jj[v]]
