@@ -68,6 +68,8 @@ mp.dps = 20
 #H = np.array([[0,1],[-1,-1]])
 n = 5
 H = np.array([[0,1,0,0,0],[0,0,1,0,0],[0,0,0,1,0],[0,0,0,0,1],[1,1,0,0,0]])
+#n = 3
+#H = np.array([[-2,0,0],[1,0,1],[0,-2,-2]])
 L = linalg.eigvals(H)
 L = np.diag(L)
 V = np.zeros((n, n), dtype=complex)
@@ -79,13 +81,13 @@ for i in range(0,n):
       a = np.real(L[i,i])
       b = np.imag(L[i,i])
       M = H - L[i,i] * np.identity(n)
-      A = np.zeros((n-1,n-1), dtype=complex) # I've dropped the last column and the last row. You might choose another randomic one!
-      B = np.zeros((n-1,1), dtype=complex)
-      for u in range (0,n-1):
+      A = np.zeros((n,n-1), dtype=complex) # I've dropped the last column.
+      B = np.zeros((n,1), dtype=complex)
+      for u in range (0,n):
          for v in range (0,n-1):
             A[u,v] = M[u,v]
             B[u] = - M[u,n-1] # I've replaced the last column by 1 => AC + 1 M = 0 => C = A^{-1} * (-1 M).
-      C = np.dot(linalg.inv(A), B)
+      C = np.dot(linalg.pinv(A), B) # for one line full of zeroes.
       for u in range (0,n-1):
          V[u,i] = C[u]
       V[n-1,i] = 1
@@ -108,7 +110,7 @@ print("L", L)
 print("W", W)
 print("H =", np.dot(np.dot(V, L), W))
 
-# Release 0.1 from 2022/Mar/18th
+# Release 0.2 from 2024/Nov/21th
 # Vinicius Claudino Ferraz @ Santa Luzia, MG, Brazil
 # out of charity, there is no salvation at all.
 # with charity, there is evolution.
