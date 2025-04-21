@@ -2,6 +2,7 @@ program SplitFile;
 
 uses Dialogs, SysUtils;
 
+procedure processar(nomearq: string);
 var
   f,g: file of byte;
   splits: longint;
@@ -11,13 +12,11 @@ var
 begin
   filemode := 0;
   splits := 5 * 961536; // 5 min
-  //assignfile(f, 'H:\salvar\Dream Dance vol' + paramstr(1) + '.mp3');
-  assignfile(f, 'H:\backup do youtube\Retrospectiva 2022 — de 15 de Dezembro até 02 de Fevereiro de 2023.mp3');
+  assignfile(f, nomearq + '.mp3');
   reset(f);
-  for i := 1 to 1 do // fileSize(f) div splits + 1 do
+  for i := 1 to fileSize(f) div splits + 1 do
   begin
-    //assignfile(g, 'H:\salvar\Dream Dance vol' + paramstr(1) + ' part ' + inttostr(i) + '.mp3');
-    assignfile(g, 'C:\temptemp\R part ' + inttostr(i) + '.mp3');
+    assignfile(g, nomearq + ' part ' + inttostr(i) + '.mp3');
     rewrite(g);
     for j := 1 to splits do
     begin
@@ -29,4 +28,9 @@ begin
     closefile(g);
   end;
   closefile(f);
+end;
+
+begin
+   processar('H:\musics\espiritas\Casimiro Cunha\selecoes 1 cunha split\Kevin_Kern_Our_selections');
+   processar('H:\musics\espiritas\Casimiro Cunha\selecoes 1 cunha split\Pachelbel - Forest Garden');
 end.
